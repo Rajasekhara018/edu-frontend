@@ -9,8 +9,8 @@
 html {
   @include mat.theme((
     color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
+      primary: mat.$rose-palette,
+      tertiary: mat.$red-palette,
     ),
     typography: Roboto,
     density: 0,
@@ -31,3 +31,1260 @@ html {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* You can add global styles to this file, and also import other style files */
+// @use '@angular/material' as mat;
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import '../src/typography.scss';
+
+// Define primary themes
+// $mat-primary-scheme: (
+//   11:#ffffff,
+//   87: #ffffffde,
+//   7: #ffffff12,
+//   10: #ffffff1A,
+//   50: #fafafa,
+//   100:#f5f5f5,
+//   200:#eeeeee,
+//   300: #e0e0e0,
+//   400: #14B8A6,
+//   500: #9e9e9e,
+//   600: #757575,
+//   700: #616161,
+//   800: #424242,
+//   900: #212121,
+//   950: #121212,
+//   contrast: (11: rgba(0, 0, 0, 0.9),
+//     87: rgba(0, 0, 0, 0.7),
+//     7: rgba(255, 255, 255, 0.87),
+//     50: rgba(0, 0, 0, 0.7),
+//     100: rgba(0, 0, 0, 0.7),
+//     200: rgba(0, 0, 0, 0.7),
+//     300: rgba(0, 0, 0, 0.7),
+//     400: rgba(0, 0, 0, 0.7),
+//     500: rgba(0, 0, 0, 0.7),
+//     600: rgba(255, 255, 255, 0.87),
+//     700: rgba(255, 255, 255, 0.87),
+//     800: rgba(255, 255, 255, 0.87),
+//     900: rgba(255, 255, 255, 0.87),
+//     950: rgba(255, 255, 255, 0.87),
+//   )
+// );
+$blue-palette-theme: (
+  16: #D7C9FF,
+  50: #E2E7F2,
+  100: #c5cae9,
+  200: #9fa8da,
+  300: #7986cb,
+  400: #304ffe,
+  // 500: #F3BC00,
+  500: #304ffe,
+  600: #3949ab,
+  700: #303f9f,
+  800: #283593,
+  900: #1a237e,
+  A100: #8c9eff,
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (16: #ffffffde,
+    50: #ffffffde,
+    100: #ffffffde,
+    200: #ffffffde,
+    300: #000,
+    400: #ffffffde,
+    500: #000,
+    600: #ffffffde,
+    700: #ffffffde,
+    800: #ffffffde,
+    900: #ffffffde,
+  )
+);
+$tou-ops-primary: mat.m2-define-palette($blue-palette-theme, 400);
+$tou-ops-accent: mat.m2-define-palette($blue-palette-theme, 500);
+$tou-ops-warn: mat.m2-define-palette(mat.$m2-red-palette);
+$tou-ops-typography: mat.m2-define-typography-config($font-family: '"Poppins", "Helvetica Neue", sans-serif');
+
+// Define light theme
+$tou-ops-theme: mat.m2-define-light-theme((color: (primary: $tou-ops-primary,
+        accent: $tou-ops-accent,
+        warn: $tou-ops-warn,
+      ),
+      typography: $tou-ops-typography,
+      density: 0));
+
+// Define dark theme
+$dark-primary: mat.m2-define-palette(mat.$m2-deep-purple-palette);
+$dark-accent: mat.m2-define-palette(mat.$m2-lime-palette, A200);
+$dark-warn: mat.m2-define-palette(mat.$m2-red-palette);
+$dark-theme: mat.m2-define-dark-theme((color: (primary: $dark-primary,
+        accent: $dark-accent,
+        warn: $dark-warn,
+      ),
+      typography: $tou-ops-typography));
+
+// Include global material styles once
+// @include mat.core();
+
+// Apply the light theme globally
+:root {
+  @include mat.core-theme($tou-ops-theme);
+  @include mat.all-component-themes($tou-ops-theme);
+  @include mat.strong-focus-indicators-theme($tou-ops-theme);
+  @include mat.form-field-density(-4);
+}
+
+// Apply dark theme styles conditionally with the `.dark-theme` class
+.dark-theme {
+  @include mat.all-component-colors($dark-theme);
+
+  .primary-header {
+    position: fixed;
+    z-index: 999;
+    width: calc(100% - 250px);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0 32px 0 8px;
+    background-color: #121212 !important;
+    border-bottom: 2px solid #e0e0e0;
+  }
+
+  .link-active {
+    background-color: #420eee;
+    border-radius: 4px;
+  }
+
+  .pagination-bg {
+    padding: 0px !important;
+    background: #121212;
+  }
+
+  .mat-mdc-table .mdc-data-table__header-row {
+    height: 56px;
+    background-color: #404040;
+  }
+
+  :host .mat-mdc-tab-header {
+    background-color: #404040;
+    height: 200px;
+  }
+
+  .mat-app-background {
+    background-color: inherit !important;
+  }
+
+  .graph-toolbar {
+    // width: 786px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #404040 !important;
+  }
+
+  .graphTableToolbar {
+    height: 50px !important;
+    background-color: #404040 !important;
+  }
+
+  .form-control {
+    background-color: #404040 !important;
+  }
+
+  .subContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #404040 !important;
+    border-radius: 4px 0px 0px 0px;
+  }
+
+  .custom-table .mat-mdc-header-row {
+    background-color: #404040 !important;
+  }
+
+  .breadcrumb {
+    background-color: #404040 !important;
+  }
+}
+
+.breadcrumb {
+  background-color: none !important;
+}
+
+// @media (prefers-color-scheme: light) {
+//   // Use the `-color` mixins to only apply color styles without reapplying the same
+//   // typography and density styles.
+//   @include mat.core-color($light-theme);
+//   @include mat.button-color($light-theme);
+//  }
+
+$indigo-palette-theme: (
+  16: #D7C9FF,
+  50: #DEE9ED,
+  100: #c5cae9,
+  200: #9fa8da,
+  300: #7986cb,
+  400: #0876A2,
+  500: #F3BC00,
+  600: #3949ab,
+  700: #303f9f,
+  800: #283593,
+  900: #1a237e,
+  A100: #8c9eff,
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (16: #ffffffde,
+    50: #ffffffde,
+    100: #ffffffde,
+    200: #ffffffde,
+    300: #000,
+    400: #ffffffde,
+    500: #000,
+    600: #ffffffde,
+    700: #ffffffde,
+    800: #ffffffde,
+    900: #ffffffde,
+  )
+);
+$theme1-primary: mat.m2-define-palette($indigo-palette-theme, 400);
+$theme1-accent: mat.m2-define-palette($indigo-palette-theme, 500);
+$theme1: mat.m2-define-light-theme((color: (primary: $theme1-primary,
+        accent: $theme1-accent,
+        warn: $tou-ops-warn,
+      ),
+      typography: $tou-ops-typography));
+
+.theme1 {
+  @include mat.all-component-colors($theme1);
+
+  .primary-header {
+    position: fixed;
+    z-index: 999;
+    width: calc(100% - 250px);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0 32px 0 8px;
+    background-color: none !important;
+    // border-bottom: 2px solid mat.get-color-from-palette($theme2-accent, 400) !important;
+  }
+
+  .link-active {
+    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+    border-radius: 4px;
+  }
+
+  .pagination-bg {
+    padding: 0px !important;
+    background: none;
+  }
+
+  .mat-mdc-table .mdc-data-table__header-row {
+    height: 56px;
+    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+  }
+
+  :host .mat-mdc-tab-header {
+    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+    height: 200px;
+  }
+
+  .graph-toolbar {
+    // width: 786px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none !important;
+  }
+
+  .graphTableToolbar {
+    height: 50px !important;
+    background-color: none !important;
+  }
+
+  .form-control {
+    background-color: none !important;
+  }
+
+  .subContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+    border-radius: 4px 0px 0px 0px;
+  }
+
+  .custom-table .mat-mdc-header-row {
+    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+  }
+
+  .tableheader.mat-mdc-table .mdc-data-table__header-row {
+    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+  }
+
+  mat-list-item:hover .menu-item p {
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+    color: #3266D6;
+    /* Adjust hover color as needed */
+    // color: #414950; __<<ngM2ThemingMigrationEscapedComment2>>__
+  }
+
+  mat-list-item.link-active .menu-item p {
+    /* Green color for active text */
+    /* Optional: make the active text bold */
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+  }
+}
+
+$deep-purple-palette-theme: (
+  16: #FFF2FE,
+  50: #E6E7ED,
+  100: #d1c4e9,
+  200: #b39ddb,
+  300: #9575cd,
+  400: #6F42C1,
+  500: #F3BC00,
+  600: #5e35b1,
+  700: #512da8,
+  800: #4527a0,
+  900: #311b92,
+  A100: #b388ff,
+  A200: #7c4dff,
+  A400: #651fff,
+  A700: #6200ea,
+  contrast: (16: #ffffffde,
+    50: #ffffffde,
+    100: #ffffffde,
+    200: #ffffffde,
+    300: #000,
+    400: #ffffffde,
+    500: #000,
+    600: #ffffffde,
+    700: #ffffffde,
+    800: #ffffffde,
+    900: #ffffffde,
+  )
+);
+$theme2-primary: mat.m2-define-palette($deep-purple-palette-theme, 400);
+$theme2-accent: mat.m2-define-palette($deep-purple-palette-theme, 500);
+$theme2: mat.m2-define-light-theme((color: (primary: $theme2-primary,
+        accent: $theme2-accent,
+        warn: $tou-ops-warn,
+      ),
+      typography: $tou-ops-typography));
+
+.theme2 {
+  @include mat.all-component-colors($theme2);
+
+  .primary-header {
+    position: fixed;
+    z-index: 999;
+    width: calc(100% - 250px);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0 32px 0 8px;
+    background-color: none !important;
+    // border-bottom: 2px solid mat.get-color-from-palette($theme2-accent, 400) !important;
+  }
+
+  .link-active {
+    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+    border-radius: 4px;
+  }
+
+  .pagination-bg {
+    padding: 0px !important;
+    background: none;
+  }
+
+  .mat-mdc-table .mdc-data-table__header-row {
+    height: 56px;
+    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+  }
+
+  :host .mat-mdc-tab-header {
+    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+    height: 200px;
+  }
+
+  .graph-toolbar {
+    // width: 786px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none !important;
+  }
+
+  .graphTableToolbar {
+    height: 50px !important;
+    background-color: none !important;
+  }
+
+  .form-control {
+    background-color: none !important;
+  }
+
+  .subContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+    border-radius: 4px 0px 0px 0px;
+  }
+
+  .custom-table .mat-mdc-header-row {
+    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+  }
+
+  .tableheader.mat-mdc-table .mdc-data-table__header-row {
+    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+  }
+
+  mat-list-item:hover .menu-item p {
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+    color: #3266D6;
+    /* Adjust hover color as needed */
+    // color: #414950; __<<ngM2ThemingMigrationEscapedComment6>>__
+  }
+
+  mat-list-item.link-active .menu-item p {
+    /* Green color for active text */
+    /* Optional: make the active text bold */
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+  }
+}
+
+$cyan-palette-theme: (
+  16: #E4FDFF,
+  50: #E8E4F0,
+  100: #b2ebf2,
+  200: #80deea,
+  300: #4dd0e1,
+  400: #6f42c1,
+  500: #F3BC00,
+  600: #00acc1,
+  700: #0097a7,
+  800: #00838f,
+  900: #006064,
+  contrast: (16: #ffffffde,
+    50: #ffffffde,
+    100: #ffffffde,
+    200: #ffffffde,
+    300: #000,
+    400: #ffffffde,
+    500: #000,
+    600: #ffffffde,
+    700: #ffffffde,
+    800: #ffffffde,
+    900: #ffffffde,
+  )
+);
+
+$theme3-primary: mat.m2-define-palette($cyan-palette-theme, 400);
+$theme3-accent: mat.m2-define-palette($cyan-palette-theme, 500);
+$theme3: mat.m2-define-light-theme((color: (primary: $theme3-primary,
+        accent: $theme3-accent,
+        warn: $tou-ops-warn,
+      ),
+      typography: $tou-ops-typography));
+
+.theme3 {
+  @include mat.all-component-colors($theme3);
+
+  .primary-header {
+    position: fixed;
+    z-index: 999;
+    width: calc(100% - 250px);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0 32px 0 8px;
+    background-color: none !important;
+    // border-bottom: 2px solid mat.get-color-from-palette($theme2-accent, 400) !important;
+  }
+
+  .link-active {
+    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+    border-radius: 4px;
+  }
+
+  .pagination-bg {
+    padding: 0px !important;
+    background: none;
+  }
+
+  .mat-mdc-table .mdc-data-table__header-row {
+    height: 56px;
+    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+  }
+
+  :host .mat-mdc-tab-header {
+    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+    height: 200px;
+  }
+
+  .graph-toolbar {
+    // width: 786px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none !important;
+  }
+
+  .graphTableToolbar {
+    height: 50px !important;
+    background-color: none !important;
+  }
+
+  .form-control {
+    background-color: none !important;
+  }
+
+  .subContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+    border-radius: 4px 0px 0px 0px;
+  }
+
+  .custom-table .mat-mdc-header-row {
+    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+  }
+
+  .tableheader.mat-mdc-table .mdc-data-table__header-row {
+    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+  }
+
+  mat-list-item:hover .menu-item p {
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+    color: #3266D6;
+    /* Adjust hover color as needed */
+    // color: #414950; __<<ngM2ThemingMigrationEscapedComment10>>__
+  }
+
+  mat-list-item.link-active .menu-item p {
+    /* Green color for active text */
+    /* Optional: make the active text bold */
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+  }
+}
+
+$pink-palette-theme: (
+  16: #D7C9FF,
+  50: #E6E4E9,
+  100: #c5cae9,
+  200: #9fa8da,
+  300: #7986cb,
+  400: #574476,
+  500: #F3BC00,
+  600: #3949ab,
+  700: #303f9f,
+  800: #283593,
+  900: #1a237e,
+  A100: #8c9eff,
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (16: #ffffffde,
+    50: #ffffffde,
+    100: #ffffffde,
+    200: #ffffffde,
+    300: #000,
+    400: #ffffffde,
+    500: #000,
+    600: #ffffffde,
+    700: #ffffffde,
+    800: #ffffffde,
+    900: #ffffffde,
+  )
+);
+$theme4-primary: mat.m2-define-palette($pink-palette-theme, 400);
+$theme4-accent: mat.m2-define-palette($pink-palette-theme, 500);
+$theme4: mat.m2-define-light-theme((color: (primary: $theme4-primary,
+        accent: $theme4-accent,
+        warn: $tou-ops-warn,
+      ),
+      typography: $tou-ops-typography));
+
+
+.theme4 {
+  @include mat.all-component-colors($theme4);
+
+  .primary-header {
+    position: fixed;
+    z-index: 999;
+    width: calc(100% - 250px);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0 32px 0 8px;
+    background-color: none !important;
+    // border-bottom: 2px solid mat.get-color-from-palette($theme2-accent, 400) !important;
+  }
+
+  .link-active {
+    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+    border-radius: 4px;
+  }
+
+  .pagination-bg {
+    padding: 0px !important;
+    background: none;
+  }
+
+  .mat-mdc-table .mdc-data-table__header-row {
+    height: 56px;
+    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+  }
+
+  :host .mat-mdc-tab-header {
+    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+    height: 200px;
+  }
+
+  .graph-toolbar {
+    // width: 786px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none !important;
+  }
+
+  .graphTableToolbar {
+    height: 50px !important;
+    background-color: none !important;
+  }
+
+  .form-control {
+    background-color: none !important;
+  }
+
+  .subContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+    border-radius: 4px 0px 0px 0px;
+  }
+
+  .custom-table .mat-mdc-header-row {
+    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+  }
+
+  .tableheader.mat-mdc-table .mdc-data-table__header-row {
+    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+  }
+
+  mat-list-item:hover .menu-item p {
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+    color: #3266D6;
+    /* Adjust hover color as needed */
+    // color: #414950; __<<ngM2ThemingMigrationEscapedComment14>>__
+  }
+
+  mat-list-item.link-active .menu-item p {
+    /* Green color for active text */
+    /* Optional: make the active text bold */
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+  }
+}
+
+$blue-palette-theme: (
+  16: #D7C9FF,
+  50: #E2E7F2,
+  100: #c5cae9,
+  200: #9fa8da,
+  300: #7986cb,
+  400: #3266D6,
+  500: #F3BC00,
+  600: #3949ab,
+  700: #303f9f,
+  800: #283593,
+  900: #1a237e,
+  A100: #8c9eff,
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (16: #ffffffde,
+    50: #ffffffde,
+    100: #ffffffde,
+    200: #ffffffde,
+    300: #000,
+    400: #ffffffde,
+    500: #000,
+    600: #ffffffde,
+    700: #ffffffde,
+    800: #ffffffde,
+    900: #ffffffde,
+  )
+);
+$theme5-primary: mat.m2-define-palette($blue-palette-theme, 400);
+$theme5-accent: mat.m2-define-palette($blue-palette-theme, 500);
+$theme5: mat.m2-define-light-theme((color: (primary: $theme5-primary,
+        accent: $theme5-accent,
+        warn: $tou-ops-warn,
+      ),
+      typography: $tou-ops-typography));
+
+
+.theme5 {
+  @include mat.all-component-colors($theme5);
+
+  .primary-header {
+    position: fixed;
+    z-index: 999;
+    width: calc(100% - 250px);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0 32px 0 8px;
+    background-color: none !important;
+    // border-bottom: 2px solid mat.get-color-from-palette($theme2-accent, 400) !important;
+  }
+
+  .link-active {
+    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+    border-radius: 4px;
+  }
+
+  .pagination-bg {
+    padding: 0px !important;
+    background: none;
+  }
+
+  .mat-mdc-table .mdc-data-table__header-row {
+    height: 56px;
+    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+  }
+
+  :host .mat-mdc-tab-header {
+    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+    height: 200px;
+  }
+
+  .graph-toolbar {
+    // width: 786px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none !important;
+  }
+
+  .graphTableToolbar {
+    height: 50px !important;
+    background-color: none !important;
+  }
+
+  .form-control {
+    background-color: none !important;
+  }
+
+  .subContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+    border-radius: 4px 0px 0px 0px;
+  }
+
+  .custom-table .mat-mdc-header-row {
+    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+  }
+
+  .tableheader.mat-mdc-table .mdc-data-table__header-row {
+    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+  }
+
+  mat-list-item:hover .menu-item p {
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0.9) saturate(120%) invert(20%) sepia(30%) saturate(1500%) hue-rotate(220deg) brightness(95%) contrast(90%);
+    color: mat.m2-get-color-from-palette($theme5-accent, 400) !important;
+    /* Adjust hover color as needed */
+    // color: #414950; __<<ngM2ThemingMigrationEscapedComment18>>__
+  }
+
+  mat-list-item.link-active .menu-item p {
+    /* Green color for active text */
+    /* Optional: make the active text bold */
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0.9) saturate(120%) invert(20%) sepia(30%) saturate(1500%) hue-rotate(220deg) brightness(95%) contrast(90%);
+  }
+}
+
+$orange-palette-theme: (
+  16: #D7C9FF,
+  50: #F6EBE0,
+  100: #c5cae9,
+  200: #9fa8da,
+  300: #7986cb,
+  400: #FF9800,
+  500: #F3BC00,
+  600: #3949ab,
+  700: #303f9f,
+  800: #283593,
+  900: #1a237e,
+  A100: #8c9eff,
+  A200: #536dfe,
+  A400: #3d5afe,
+  A700: #304ffe,
+  contrast: (16: #ffffffde,
+    50: #ffffffde,
+    100: #ffffffde,
+    200: #ffffffde,
+    300: #000,
+    400: #ffffffde,
+    500: #000,
+    600: #ffffffde,
+    700: #ffffffde,
+    800: #ffffffde,
+    900: #ffffffde,
+  )
+);
+$theme6-primary: mat.m2-define-palette($orange-palette-theme, 400);
+$theme6-accent: mat.m2-define-palette($orange-palette-theme, 500);
+$theme6: mat.m2-define-light-theme((color: (primary: $theme6-primary,
+        accent: $theme6-accent,
+        warn: $tou-ops-warn,
+      ),
+      typography: $tou-ops-typography));
+
+.theme6 {
+  @include mat.all-component-colors($theme6);
+
+  .primary-header {
+    position: fixed;
+    z-index: 999;
+    width: calc(100% - 250px);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 0 32px 0 8px;
+    background-color: none !important;
+    // border-bottom: 2px solid mat.get-color-from-palette($theme2-accent, 400) !important;
+  }
+
+  .link-active {
+    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+    border-radius: 4px;
+  }
+
+  .pagination-bg {
+    padding: 0px !important;
+    background: none;
+  }
+
+  .mat-mdc-table .mdc-data-table__header-row {
+    height: 56px;
+    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+  }
+
+  :host .mat-mdc-tab-header {
+    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+    height: 200px;
+  }
+
+  .graph-toolbar {
+    // width: 786px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: none !important;
+  }
+
+  .graphTableToolbar {
+    height: 50px !important;
+    background-color: none !important;
+  }
+
+  .form-control {
+    background-color: none !important;
+  }
+
+  .subContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+    border-radius: 4px 0px 0px 0px;
+  }
+
+  .custom-table .mat-mdc-header-row {
+    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+  }
+
+  .tableheader.mat-mdc-table .mdc-data-table__header-row {
+    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+  }
+
+  mat-list-item:hover .menu-item p {
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(20%) sepia(70%) saturate(2500%) hue-rotate(330deg) brightness(92%) contrast(85%);
+    color: mat.m2-get-color-from-palette($theme6-accent, 400) !important;
+    /* Adjust hover color as needed */
+    // color: #414950; __<<ngM2ThemingMigrationEscapedComment22>>__
+  }
+
+  mat-list-item.link-active .menu-item p {
+    /* Green color for active text */
+    /* Optional: make the active text bold */
+    // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+    filter: brightness(0) saturate(100%) invert(20%) sepia(70%) saturate(2500%) hue-rotate(330deg) brightness(92%) contrast(85%);
+  }
+}
+
+
+// Custom scrollbar styles
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow-y: auto;
+}
+
+.tou-spacer {
+  flex: 1 1 auto;
+}
+
+.insideContainer {
+  margin: 100px 100px !important;
+  //margin-bottom: 0px !important;
+  // height: 100%;
+}
+
+.userContainer {
+  margin: 20px 0px 0px 40px !important;
+  //margin-bottom: 0px !important;
+  // height: 100%;
+}
+
+.tableInsideContainer {
+  margin: 70px 100px !important;
+}
+
+
+.w-1300 {
+  width: 1300px;
+}
+
+// Webkit scrollbar
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  overflow: hidden !important;
+  // background-color: #397E75;
+  background-color: #3266D6;
+  border-radius: 8px;
+  border: 1px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  // background-color: #397E75;
+  background-color: #3266D6;
+}
+
+// Firefox scrollbar
+.scrollbar-custom {
+  scrollbar-width: 1px;
+  // scrollbar-color: teal #f1f1f1;
+  scrollbar-color: #3266D6 #f1f1f1;
+}
+
+.paginator {
+  border: 1px solid #bdbdbd;
+  border-top: none;
+  height: 63px !important;
+  background-color: transparent;
+  padding: 0 8px;
+
+  .mat-toolbar {
+    background-color: transparent;
+  }
+
+  .mat-toolbar-row {
+    box-shadow: none;
+    padding: 0px !important;
+  }
+
+  .mat-mdc-paginator {
+    height: 63px !important;
+  }
+}
+
+.pagination-bg {
+  padding: 0px !important;
+  background: #ffffff;
+}
+
+.mat-body p,
+.mat-body-2 p,
+.mat-typography .mat-body p,
+.mat-typography .mat-body-2 p,
+.mat-typography p {
+  margin: 0 0 0px;
+}
+
+.mat-drawer-inner-container {
+  overflow-x: hidden !important;
+  overflow-y: auto;
+}
+
+// .primarySideNav.mat-sidenav {
+//   max-width: 275px;
+//   min-width: 275px;
+//   position: fixed;
+//   min-height: auto;
+//   top: 0px;
+// }
+
+// .primarySideNav ::-webkit-scrollbar {
+//   width: 0;
+// }
+
+// .primarySideNav ::-moz-scrollbar {
+//   width: 0;
+// }
+
+.graphContainer {
+  width: 500px !important;
+  height: 450px;
+}
+
+.graphrow {
+  display: flex;
+  justify-content: flex-start;
+  /* Aligns the cards to the left */
+  gap: 150px;
+  margin-left: -40px;
+}
+
+.graphcontainer {
+  margin: 0 100px;
+  /* Adds additional margin around each card */
+}
+
+.mdc-list {
+  padding: 0 !important;
+}
+
+.tablerow {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* Aligns the cards to the left */
+  // gap: 10px;
+  margin-left: -40px;
+}
+
+.graphCard {
+  height: 450px !important;
+}
+
+.cardConatinerheight {
+  height: 490px !important;
+}
+
+.cardAlign-center {
+  display: flex;
+  align-items: center;
+}
+
+.graphTableToolbar {
+  height: 50px !important;
+  background-color: white !important;
+}
+
+.tableheader.mat-mdc-table .mdc-data-table__header-row {
+  height: 56px;
+  background-color: #E2E8F0 !important;
+}
+
+mat-list-item:hover .menu-item p {
+  // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+  filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+  color: #3266D6;
+  /* Adjust hover color as needed */
+  // color: #414950; __<<ngM2ThemingMigrationEscapedComment29>>__
+}
+
+mat-list-item.link-active .menu-item p {
+  /* Green color for active text */
+  /* Optional: make the active text bold */
+  // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
+  filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+
+
+.stat-card {
+  padding: 1rem 1.25rem;
+  border-radius: 0.75rem;
+  background-color: #fff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+  min-width: 160px;
+}
+
+.dropdown-item i {
+  width: 18px;
+  text-align: center;
+}
+
+.bg-purple {
+  background-color: #8B5CF6 !important;
+}
+
+.text-purple {
+  color: #8B5CF6 !important;
+}
+
+.bg-lime {
+  background-color: #84CC16 !important;
+}
+
+.text-lime {
+  color: #84CC16 !important;
+}
+
+.bg-orange {
+  background-color: #F97316 !important;
+}
+
+.text-orange {
+  color: #F97316 !important;
+}
+
+.bg-indigo {
+  background-color: #6366F1 !important;
+}
+
+.text-indigo {
+  color: #6366F1 !important;
+}
+
+.bg-pink {
+  background-color: #EC4899 !important;
+}
+
+.text-pink {
+  color: #EC4899 !important;
+}
+
+
+body,
+html {
+  overflow-x: hidden;
+}
+
+// input.ng-invalid.ng-touched,
+// select.ng-invalid.ng-touched {
+//     border: 1px solid red;
+//     box-shadow: none;
+// }
+
+.table td,
+.table th {
+  border-left: none !important;
+  border-right: none !important;
+}
+
+
+.toast-error {
+  background-color: #ffffff;
+  border-left: 4px solid #dc3545;
+  /* Bootstrap 'danger' red */
+  padding: 12px 16px;
+  border-radius: 8px;
+  min-width: 280px;
+}
+
+
+.toast-success {
+  background-color: #e6f4ea;
+  border-left: 4px solid #28a745;
+  padding: 0.75rem 1rem;
+  border-radius: 0.375rem;
+}
+
+/* styles.css */
+/* Hide top banner */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+/* Hide Google logo and text */
+.goog-logo-link,
+.goog-te-gadget span {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+}
+
+/* Hide Google Translate top banner */
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+}
+
+/* Hide floating "Options" and branding */
+.goog-logo-link,
+.goog-te-gadget span,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+.goog-te-menu-value {
+  color: transparent;
+}
+
+.goog-te-gadget {
+  height: 28px;
+  overflow: hidden;
+}
