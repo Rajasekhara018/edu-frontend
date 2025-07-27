@@ -1,0 +1,127 @@
+
+  mat-card {
+    border-radius: 5px;
+    width: 1430px;
+    height: 100px;
+}
+  .custom-tabs {
+  font-weight: 500;
+  font-size: 14px;
+  // width: 108em;;
+
+  .tab-item {
+    cursor: pointer;
+    color: #999;
+    position: relative;
+  }
+
+  .tab-item.active {
+    color: #002B5B; /* dark blue */
+  }
+
+  .tab-item.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    height: 3px;
+    width: 100px;
+    background-color: #002B5B;
+    border-radius: 2px;
+  }
+}
+
+.tab-item::after {
+  transition: width 0.3s ease-in-out;
+}
+
+.custom-btn-height {
+  height: 44px; 
+  line-height: 48px;
+  padding: 0 16px;
+}
+
+.table-header {
+    background-color: #12B39308 !important;
+    background-size: cover;
+    color: #1A1A1A !important;
+}
+
+.custom-pagination .page-link {
+  font-size: 1rem; /* Increase font size */
+  padding: 8px 16px; /* More padding */
+  border: 1px solid #ccc;
+  color: #333;
+  cursor: pointer;
+  min-width: 45px;
+  height: 45px;
+  text-align: center;
+}
+
+.custom-pagination .page-item.active .page-link {
+  background-color: #eef3ff;
+  border-color: #4a90e2;
+  color: #4a90e2;
+  font-weight: 600;
+}
+
+.custom-pagination .page-item.disabled .page-link {
+  color: #ccc;
+  pointer-events: none;
+  background-color: #f8f8f8;
+}
+
+.custom-pagination .page-link.arrow {
+  font-size: 1.5rem; /* Increase arrow size */
+  line-height: 1;
+  padding-top: 8px;
+}
+
+
+.paginator-select {
+  font-size: 1rem;
+  padding: 6px 10px;
+  height: 45px;
+  min-width: 80px;         
+  box-shadow: none !important;
+  outline: none;        
+  background-color: white; 
+  appearance: none;      
+}
+
+.insideContainer {
+    width: 1470px !important;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.profile-image {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.image-cell {
+  text-align: center; /* horizontal center */
+  vertical-align: middle; /* vertical alignment inside table row */
+  padding: 10px;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  height: 100%;
+}
+
+
+
+
+
+
+
+
+  

@@ -1,0 +1,142 @@
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="https://i.imgur.com/1V0j6WB.png" alt="Payease" height="40">
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Bill Payments</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Pay Electricity</a></li>
+                        <li><a class="dropdown-item">Pay Water</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Statements</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Download</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Complaints</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Raise Ticket</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center">
+                <img src="https://via.placeholder.com/40" class="rounded-circle" alt="user" />
+            </div>
+        </div>
+    </div>
+</nav> -->
+
+<div class="ticker-wrapper">
+    <div class="ticker">
+        <span class="font-lg">Hello Payease User! MASTER CARD % HAS BEEN DECREASED..! FOR VISA CARD USE PG 6..! </span>
+    </div>
+</div>
+<h5 class="text-center font-2xl">Hi, <strong>Badam Rajasekhara Reddy</strong>, Happy to see you again!</h5>
+<mat-card class="m-5">
+    <div class="row container-fluid m-3">
+        <div class="row mt-3 col-lg-6">
+            <h6 class="text-primary fw-bold font-xl text-center">YOUR SERVICES ARE HERE</h6>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="service-card" [routerLink]="['/dashboard/add-money']">
+                    <img src="../../../assets/add-money.jpg" height="50" width="50"><br />
+                    <p class="font-lg">Add Money</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="service-card" [routerLink]="['/dashboard/bill-transfer']">
+                    <img src="../../../assets/bill-transfer.jpg" height="50" width="50"><br />
+                    <p class="font-lg">Bill Transfer</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="service-card" [routerLink]="['/dashboard/customers']">
+                    <img src="../../../assets/payment-cutomers.webp" height="50" width="50"><br />
+                    <p class="font-lg">Customers</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="service-card" [routerLink]="['/dashboard/history']">
+                    <img src="../../../assets/payment-history.avif" height="50" width="50"><br />
+                    <p class="font-lg">History</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="service-card" [routerLink]="['/dashboard/payment-link']">
+                    <img src="../../../assets/payment-link.jpg" height="50" width="50"><br />
+                    Payment Link
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="service-card" [routerLink]="['/dashboard/internal-transfer']">
+                    <img src="../../../assets/internal-transfer.jpg" height="50" width="50"><br />
+                    <p class="font-lg">Internal Transfer</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="service-card" [routerLink]="['/dashboard/bill-payments']">
+                    <img src="../../../assets/bill-payments.jpg" height="50" width="50"><br />
+                    <p class="font-lg">Bill Payments</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="service-card" [routerLink]="['/dashboard/cc-payments']">
+                    <img src="../../../assets/credit-card-payment.jpg" height="50" width="50"><br />
+                    <p class="font-lg">CC Payments</p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3 col-lg-6">
+            <h6 class="text-primary fw-bold font-xl text-center">TODAY REPORT</h6>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
+                <div class="report-card bg-primary">
+                    <p class="font-xl text-white">OPENING</p>
+                    <p class="font-xl text-white">2663.53</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
+                <div class="report-card bg-warning">
+                    <p class="font-xl text-white">CREDIT</p>
+                    <p class="font-xl text-white">1019.50</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
+                <div class="report-card bg-info">
+                    <p class="font-xl text-white">DEBIT</p>
+                    <p class="font-xl text-white">1010.00</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
+                <div class="report-card bg-secondary">
+                    <p class="font-xl text-white">CLOSING</p>
+                    <p class="font-xl text-white">2666.23</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
+                <div class="report-card bg-success">
+                    <p class="font-xl text-white">SUCCESS</p>
+                    <p class="font-xl text-white">109385.06</p>
+                </div>
+            </div>
+            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
+                <div class="report-card bg-danger">
+                    <p class="font-xl text-white">FAILED</p>
+                    <p class="font-xl text-white">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</mat-card>
+
+<mat-card class="m-5">
+    <div class="note-box m-3">
+        <strong>Note:</strong> 1. Hello Payease User! MASTER CARD % HAS BEEN DECREASED..! FOR VISA CARD USE PG 6..!
+        Thank you.
+    </div>
+</mat-card>

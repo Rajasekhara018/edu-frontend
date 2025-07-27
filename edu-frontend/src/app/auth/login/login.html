@@ -1,0 +1,179 @@
+<div class="login-container" (click)="hideContextMenu()">
+    <div class="row login-box w-100" style="max-width: 850px;">
+        <div class="login-card" *ngIf="islogin">
+            <div class="brand d-flex align-items-center mb-3">
+                <img src="../../../assets/payease-logo.png" alt="App Logo" class="brand-icon" />
+                <img src="../../../assets/logopayease.jpeg" alt="App Logo" class="brand-icon" />
+            </div>
+            <mat-divider></mat-divider>
+            <h2 class="welcome-text">Hey there, Welcome back!</h2>
+            <form #userobjForm="ngForm" (keydown.enter)="$event.preventDefault()" name="objForm" autocomplete="off">
+                <div class="mb-3 col-12">
+                    <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                    <input class="form-control" id="email" name="email" [(ngModel)]="userEmail" required
+                        #emailInput="ngModel" [disabled]="isDisabled"
+                        [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
+                    <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger"
+                        placeholder="work@example.com">
+                        <small *ngIf="emailInput.errors?.['required']">Email is required.</small>
+                        <small *ngIf="emailInput.errors?.['email']">Invalid email format.</small>
+                    </div>
+                </div>
+                <div class="mb-3 col-12">
+                    <label for="password" class="form-label">Password<span class="text-danger">*</span></label>
+                    <input input id="password" class="form-control" type="password" placeholder="Enter your Password"
+                        matInput name="password" #password="ngModel" [(ngModel)]="userPassword" placeholder="Password*"
+                        placeholder="Password*" [type]="hide ? 'password' : 'text'" required minlength="5"
+                        maxlength="50" (keypress)="onKeyPress($event)" [type]="hide ? 'password' : 'text'"
+                        (keyup.enter)="login(userEmail, userPassword)"
+                        [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
+                    <div *ngIf="password.invalid && password.touched" class="text-danger"
+                        placeholder="work@example.com">
+                        <small *ngIf="password.errors?.['required']">Password is required.</small>
+                    </div>
+                </div>
+                <div class="actions">
+                    <label><input type="checkbox" /> Remember me</label>
+                    <button mat-button [routerLink]="['/reset-password']">Forgot password?</button>
+                </div>
+                <button
+                    class="btn btn-primary w-100 mb-3 mt-3 rounded-pill d-flex align-items-center justify-content-center"
+                    [disabled]="!userobjForm.form.valid || isLoading" (click)="localLogin(userEmail, userPassword)">
+                    <span *ngIf="!isLoading">Login</span>
+                    <div *ngIf="isLoading" class="d-flex align-items-center gap-2">
+                        <span class="spinner-border spinner-border-sm text-light" role="status"
+                            aria-hidden="true"></span>
+                        <span>Logging in...</span>
+                    </div>
+                </button>
+            </form>
+            <div class="footer">
+                Don’t have an account? <a [routerLink]="['/register']">Create New</a>
+            </div>
+            <!-- <footer class="terms">
+                <small>By continuing, you agree to our <a href="#">Terms of Service</a> & <a href="#">Privacy
+                        Policy</a></small>
+            </footer> -->
+            <div class="security-info">
+                🔐 SSL Secured &nbsp; | &nbsp; ✅ SOC 2 Compliant &nbsp; | &nbsp; 🔄 99.9% Uptime
+            </div>
+        </div>
+        <div class="col-md-6 d-none d-md-block info-box">
+            <h5>Payease Provides best solutions for our customers</h5>
+            <ul class="mt-3">
+                <li class="font-xl">We will provide robust security measures, including two-factor authentication, to
+                    protect users sensitive information.</li>
+                <li class="font-xl">We offer multiple payment methods, including credit/debit cards, net banking, and
+                    bank transfers, so you can choose what works best for you</li>
+                <li class="font-xl">Receive timely reminders and notifications about fee due dates to ensure you never
+                    miss a payment.</li>
+                <li class="font-xl">Get immediate confirmation of your payment along with a detailed receipt for your
+                    record.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="login-card" *ngIf="isChangePassword">
+        <div class="p-4" style="max-width: 450px; width: 100%; font-family: 'Segoe UI', sans-serif;">
+            <div class="d-flex justify-content-start">
+                <button color="primary" mat-flat-button aria-label="Close" (click)="backbtn()"><i
+                        class="bi bi-chevron-left"></i>Back</button>
+            </div>
+            <div class="text-center my-3">
+                <img src="../../../assets/images/change-password.svg" alt="Change Password Logo" class="img-fluid"
+                    style="max-height: 120px;">
+            </div>
+            <div class="text-center">
+                <h5 class="fw-bold text-dark mb-2">Change Password Required</h5>
+                <p class="text-muted small mb-4">You must change your password now to log in.</p>
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-primary rounded-pill p-2 fw-semibold" (click)="nextScreen()">OK</button>
+            </div>
+        </div>
+    </div>
+    <div class="login-card" *ngIf="screen1">
+        <!-- Header -->
+        <div class="d-flex justify-content-start mb-2">
+            <button color="primary" mat-flat-button aria-label="Close" (click)="backbtn()"><i
+                    class="bi bi-chevron-left"></i>Back</button>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold m-0 ms-2">Change Password</h5>
+            <!-- <button type="button" class="btn-close" aria-label="Close" (click)="cancelChangePassword()"></button> -->
+        </div>
+        <!-- Form -->
+        <form #loginForm="ngForm">
+            <!-- Current Password -->
+            <div class="mb-4">
+                <label for="currentPassword" class="form-label">Current Password</label>
+                <div class="input-group">
+                    <!-- type="{{ hideCurrentPassword ? 'password' : 'text' }}" -->
+                    <input class="form-control" id="currentPassword" name="curntPwd" [(ngModel)]="currentPassword"
+                        required minlength="5" maxlength="50" />
+                    <!-- <button type="button" class="btn btn-outline-secondary"
+                            (click)="hideCurrentPassword = !hideCurrentPassword">
+                            <i class="bi" [ngClass]="hideCurrentPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+                        </button> -->
+                </div>
+            </div>
+            <!-- New Password -->
+            <div class="mb-4">
+                <label for="newPassword" class="form-label">New Password</label>
+                <div class="input-group">
+                    <!-- type="{{ hideNewPassword ? 'password' : 'text' }}" -->
+                    <input class="form-control" id="newPassword" name="newPwd" [(ngModel)]="newPassword" required
+                        minlength="5" maxlength="50" />
+                    <!-- <button type="button" class="btn btn-outline-secondary"
+                            (click)="hideNewPassword = !hideNewPassword">
+                            <i class="bi" [ngClass]="hideNewPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+                        </button> -->
+                </div>
+            </div>
+            <!-- Confirm Password -->
+            <div class="mb-4">
+                <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                <div class="input-group">
+                    <!-- type="{{ hideConfirmPassword ? 'password' : 'text' }}" -->
+                    <input class="form-control" id="confirmPassword" name="cnfrmPwd" [(ngModel)]="confirmPassword"
+                        required minlength="5" maxlength="50" />
+                    <!-- <button type="button" class="btn btn-outline-secondary"
+                            (click)="hideConfirmPassword = !newPassword">
+                            <i class="bi" [ngClass]="hideConfirmPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
+                        </button> -->
+                </div>
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-primary rounded-pill fw-semibold" type="submit"
+                    (click)="changePassword(currentPassword, newPassword, confirmPassword)">
+                    Change Password
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="login-card" *ngIf="screen2">
+        <div class="mb-3">
+            <img src="../../../assets/lock-img.svg" alt="Password Changed" style="height: 80px;" />
+        </div>
+        <h5 class="fw-bold" style="color:#252525;">Password Changed!</h5>
+        <p class="text-muted" style="font-size: 0.95rem;">Your password has been changed successfully.</p>
+        <div class="d-grid mt-4">
+            <button class="btn btn-primary rounded-pill fw-semibold" type="button" (click)="pwdSuccess()">OK</button>
+        </div>
+    </div>
+    <div class="footer-note">
+        <small>Powered by PayEase</small>
+    </div>
+</div>
+<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1100" (click)="hideContextMenu()">
+    <div id="toastMessage" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
+        aria-atomic="true">
+        <div class="d-flex align-items-center toast-error shadow-sm" *ngIf="!reqFS">
+            <i class="bi bi-exclamation-triangle-fill text-danger fs-5 me-2"></i>
+            <span class="fw-medium text-dark">Incorrect email or password</span>
+        </div>
+        <div class="d-flex align-items-center toast-success shadow-sm" *ngIf="reqFS">
+            <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+            <span class="fw-medium text-dark">Login successful</span>
+        </div>
+    </div>
+</div>
