@@ -1,0 +1,165 @@
+<div class="container py-4">
+    <div class="card card-profile p-4">
+        <!-- Tabs -->
+        <ul class="nav nav-tabs mb-4" id="profileTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="myProfile-tab" data-bs-toggle="tab" data-bs-target="#myProfile"
+                    type="button" role="tab" aria-controls="myProfile" aria-selected="true">
+                    My Profile
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="changePassword-tab" data-bs-toggle="tab" data-bs-target="#changePassword"
+                    type="button" role="tab" aria-controls="changePassword" aria-selected="false">
+                    Change Password
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="changePin-tab" data-bs-toggle="tab" data-bs-target="#changePin"
+                    type="button" role="tab" aria-controls="changePin" aria-selected="false">
+                    Change PIN
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="documents-tab" data-bs-toggle="tab" data-bs-target="#documents"
+                    type="button" role="tab" aria-controls="documents" aria-selected="false">
+                    Documents
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="profileTabsContent">
+            <div class="tab-pane fade show active" id="myProfile" role="tabpanel" aria-labelledby="myProfile-tab">
+                <div class="d-flex flex-lg-row flex-column">
+                    <div class="col-lg-3 profile-left text-center px-3 pb-4">
+                        <div class="bg-white rounded shadow-sm p-3">
+                            <label for="imageUpload" class="cursor-pointer">
+                                <img *ngIf="croppedImage" [src]="croppedImage" alt="Profile"
+                                    class="img-thumbnail rounded-circle shadow profile-img"
+                                    style="width: 140px; height: 140px; object-fit: cover;" />
+                                <img *ngIf="!croppedImage" src="assets/images/picture-icon.svg"
+                                    class="img-thumbnail rounded-circle bg-light p-3 profile-img" alt="Default Profile"
+                                    style="width: 140px; height: 140px;" />
+                            </label>
+                            <input type="file" id="imageUpload" (change)="fileChangeEvent($event)" hidden />
+                            <div *ngIf="checkType">
+                                <span style="color: red;">{{invalidTypeMessage}}</span>
+                            </div>
+                            <h5 class="mb-1">Indoori Kavya</h5>
+                            <div class="mb-1 text-muted" style="font-size: 0.97rem;">KAVYA SOLUTIONS</div>
+                            <div class="mb-3 text-secondary" style="font-size: 0.96rem;">8179085457</div>
+                            <button class="btn btn-primary edit-profile-btn">Edit Profile</button>
+                        </div>
+                        <div class="bg-white rounded shadow-sm mt-4 p-3">
+                            <h6 class="fw-bold mb-3">Transaction Charges</h6>
+                            <table class="table table-borderless charges-table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td>Card</td>
+                                        <td class="text-end">1.25</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Money</td>
+                                        <td class="text-end">1.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 px-lg-5 px-2">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="info-label">Full Name</div>
+                                <div class="info-value">Indoori Kavya</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-label">Business Name</div>
+                                <div class="info-value">KAVYA SOLUTIONS</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-label">Aadhar</div>
+                                <div class="info-value">311568585973</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-label">PAN Name</div>
+                                <div class="info-value">AFDPI2089B</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-label">PAN</div>
+                                <div class="info-value">AFDPI2089B</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-label">Date of Birth</div>
+                                <div class="info-value">1984-01-27</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-label">Email</div>
+                                <div class="info-value">kavya.indoori@gmail.com</div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-label">Phone</div>
+                                <div class="info-value">8179085457</div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="info-label">Address</div>
+                                <div class="info-value">
+                                    C/O: Indoori Laxmi Narayana, F No 102 Bharathi Arcade, Ashok Colony, Kapra, Ecil,
+                                    Medchal-malkajgiri, Telangana, India
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="info-label">Business Address</div>
+                                <div class="info-value">GOLETI TOWNSHIP</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="changePassword" role="tabpanel" aria-labelledby="changePassword-tab">
+                <div class="p-4">
+                    <h5>Change Password</h5>
+                    <form class="mt-3" style="max-width: 350px;">
+                        <div class="mb-3">
+                            <label for="currentPassword" class="form-label">Current Password</label>
+                            <input type="password" class="form-control" id="currentPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPassword" class="form-label">New Password</label>
+                            <input type="password" class="form-control" id="newPassword">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                            <input type="password" class="form-control" id="confirmPassword">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Update Password</button>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="changePin" role="tabpanel" aria-labelledby="changePin-tab">
+                <div class="p-4">
+                    <h5>Change PIN</h5>
+                    <form class="mt-3" style="max-width: 350px;">
+                        <div class="mb-3">
+                            <label for="currentPin" class="form-label">Current PIN</label>
+                            <input type="password" class="form-control" id="currentPin" maxlength="6">
+                        </div>
+                        <div class="mb-3">
+                            <label for="newPin" class="form-label">New PIN</label>
+                            <input type="password" class="form-control" id="newPin" maxlength="6">
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPin" class="form-label">Confirm New PIN</label>
+                            <input type="password" class="form-control" id="confirmPin" maxlength="6">
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Update PIN</button>
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
+                <div class="p-4">
+                    <h5>Documents</h5>
+                    <div class="alert alert-info mt-3">No documents uploaded yet.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

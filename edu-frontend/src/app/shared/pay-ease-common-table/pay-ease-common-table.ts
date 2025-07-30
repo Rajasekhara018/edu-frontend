@@ -207,6 +207,9 @@ export class PayEaseCommonTable implements OnInit {
       case 'GET_ROLES':
         this.router.navigate(['/add-roles/cre']);
         return;
+      case 'GET_CUSTOMERS':
+        this.router.navigate(['/dashboard/customers/cre']);
+        return;
     }
   }
   getRoleNames(roles: string[]): string {

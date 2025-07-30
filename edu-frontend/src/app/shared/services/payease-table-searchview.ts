@@ -23,6 +23,9 @@ export class PayeaseTableSearchview {
       case 'GET_USERS':
         returnValue = 'Users';
         break;
+      case 'GET_CUSTOMERS':
+        returnValue = 'List of Customers';
+        break;
       default:
         break;
     }
@@ -185,15 +188,27 @@ export class PayeaseTableSearchview {
         }
         displayedColumns = Object.keys(columnNames);
         break;
+      case 'GET_CUSTOMERS':
+        columnNames = {
+          name: 'Name',
+          mobile: 'Mobile',
+          email: 'Email Address',
+          scheme: 'Scheme',
+          documentStatus: 'Document Status',
+          status:'Status',
+          action: 'Actions',
+        }
+        displayedColumns = Object.keys(columnNames);
+        break;
       case 'GET_USERS':
         columnNames = {
-          image:'USER',
+          image: 'USER',
           // fullName: 'Name',
           // email: 'Email',
           roles: 'ROLE',
-          department:'DEPARTMENT',
+          department: 'DEPARTMENT',
           status: 'STATUS',
-          lastLoginAt:'LAST ACTIVE',
+          lastLoginAt: 'LAST ACTIVE',
           action: 'ACTIONS',
         }
         displayedColumns = Object.keys(columnNames);
@@ -286,7 +301,7 @@ export class PayeaseTableSearchview {
         columnName = ['description', 'roleName', 'action'];
         break;
       case 'GET_USERS':
-        columnName = ['image','name', 'email', 'roles','department', 'status','lastLoginAt', 'action'];
+        columnName = ['image', 'name', 'email', 'roles', 'department', 'status', 'lastLoginAt', 'action'];
         break;
       case 'GET_TEMPLATE_EMAIL':
       case 'GET_TEMPLATE_NOTIFICATION':

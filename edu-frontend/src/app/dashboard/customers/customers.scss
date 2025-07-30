@@ -1,0 +1,31 @@
+input.ng-invalid.ng-touched,
+select.ng-invalid.ng-touched {
+    border: 1px solid red;
+    box-shadow: none;
+}
+
+.container {
+    height: auto;
+    position: relative;
+    padding: 30px;
+    // top: 10%;
+}
+
+// permissions table border 
+.mdc-data-table__table{
+  border:1px solid #E2E8F0;
+}
+
+.toggle{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.uploaded_img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #dee2e6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

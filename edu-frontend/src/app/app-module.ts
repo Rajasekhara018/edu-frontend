@@ -10,12 +10,14 @@ import { FormsModule } from '@angular/forms';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { Landing } from './landing/landing';
+import { Profile } from './profile/profile';
 
 @NgModule({
   declarations: [
     App,
     Header,
-    Landing
+    Landing,
+    Profile
   ],
   imports: [
     BrowserModule,

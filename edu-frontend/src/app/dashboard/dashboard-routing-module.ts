@@ -15,6 +15,8 @@ const routes: Routes = [
   { path: 'bill-transfer', component: BillTransfer },
   { path: 'cc-payments', component: CcPayments },
   { path: 'customers', component: Customers },
+  { path: 'customers/cre', component: Customers },
+  { path: 'customers/:id', component: Customers },
   { path: 'history', component: History },
   { path: 'internal-transfer', component: InternalTransfer },
   { path: 'payment-link', component: PaymentLink },

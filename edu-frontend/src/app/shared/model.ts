@@ -53,3 +53,13 @@ export class CommonReqObject {
     sortField!: string;
     sortOrder!: string;
 }
+export class Customer {
+    name!: string;
+    mobile!: string;
+    email!: string;
+    scheme!:string;
+    businessName!: string;
+    image!:any;
+    aadhar!:string;
+    pan!:string;
+}

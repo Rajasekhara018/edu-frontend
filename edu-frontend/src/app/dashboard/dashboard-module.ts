@@ -10,7 +10,11 @@ import { PaymentLink } from './payment-link/payment-link';
 import { InternalTransfer } from './internal-transfer/internal-transfer';
 import { BillPayments } from './bill-payments/bill-payments';
 import { CcPayments } from './cc-payments/cc-payments';
-
+import { ImageCropDialog } from './image-crop-dialog/image-crop-dialog';
+import { SharedModule } from '../shared/shared-module';
+import { MaterialModule } from '../shared/material.module';
+import { FormsModule } from '@angular/forms';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 @NgModule({
   declarations: [
@@ -21,11 +25,16 @@ import { CcPayments } from './cc-payments/cc-payments';
     PaymentLink,
     InternalTransfer,
     BillPayments,
-    CcPayments
+    CcPayments,
+    ImageCropDialog
   ],
   imports: [
     CommonModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    SharedModule,
+    MaterialModule,
+    FormsModule,
+    ImageCropperModule
   ]
 })
 export class DashboardModule { }
