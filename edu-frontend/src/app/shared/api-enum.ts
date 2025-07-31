@@ -1,6 +1,6 @@
 export enum APIPath {
-    AUTH_REGISTER ="/api/auth/register",
-    AUTH_LOGIN ="/api/auth/login",
+    AUTH_REGISTER ="/api/auth/signup",
+    AUTH_LOGIN ="/api/auth/signin",
 
     // Customer
     CUSTOMER_GETALL= "/api/dstuser/getall",

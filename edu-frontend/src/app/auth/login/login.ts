@@ -76,9 +76,10 @@ export class Login {
     // this.loginObj.salt = encryptedSalt;
     // this.loginObj.encryptedPassword = encryptedPassword;
     const loginPayload = {
-      keyValue: this.loginObj.salt,
-      requestObject: {
-        email: this.userEmail,
+      // keyValue: this.loginObj.salt,
+      // reuestType:"SIGNIN"
+      object: {
+        userName: this.userEmail,
         password: sha512.sha512(password)
       }
     };
@@ -175,6 +176,18 @@ export class Login {
     this.isPassword = true;
     this.isForgetPassword = false;
   }
+  async computeSHA512(data:any) {
+  // Encode string as Uint8Array
+  const encoder = new TextEncoder();
+  const dataBuffer = encoder.encode(data);
+
+  // Compute SHA-512 digest
+  const hashBuffer = await crypto.subtle.digest("SHA-512", dataBuffer);
+
+  // Convert to hex string
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
+}
   showContextMenu = false;
   x = 0;
   y = 0;
