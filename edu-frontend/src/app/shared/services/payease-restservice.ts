@@ -115,12 +115,33 @@ export class PayeaseRestservice {
     return this.postObservable(reqData, messageId);
   }
   // Backeng View
+  // public doPostInq(messageId: APIPath, id: string) {
+  //   const reqDataVo = new CommonReqObjectVo();
+  //   const reqData = new CommonInqReqObject();
+  //   reqData.id = id;
+  //   reqDataVo.requestObject = reqData;
+  //   return this.postObservable(reqDataVo, messageId);
+  // }
   public doPostInq(messageId: APIPath, id: string) {
-    const reqDataVo = new CommonReqObjectVo();
-    const reqData = new CommonInqReqObject();
-    reqData.id = id;
-    reqDataVo.requestObject = reqData;
-    return this.postObservable(reqDataVo, messageId);
+    // const reqDataVo = new CommonReqObjectVo();
+    // const reqData = new CommonInqReqObject();
+    // reqData.id = id;
+    // reqDataVo.requestObject = reqData;
+    return this.postObservableInq(messageId, id);
+  }
+  private postObservableInq(messageID: any, id: string) {
+    let token = localStorage.getItem('token');
+    if (!token) {
+      token = sessionStorage.getItem('token');
+    }
+    const jwtToken = 'Bearer ' + token;
+    const httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', Authorization: jwtToken });
+    let apiUrl = '';
+    apiUrl = this.getBaseUrl() + messageID + '/' + id;
+    return this.http.post<ResObjectModule>(apiUrl, { headers: httpOptions })
+      .pipe(
+        catchError(err => this.handleError(err))
+      );
   }
   // Backeng Update
   public doPostUpd(messageId: APIPath, updObj: any) {

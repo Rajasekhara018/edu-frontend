@@ -8,7 +8,7 @@
             <button *ngIf="!isEditMode" class="btn btn-primary" (click)="onEditClick()">Edit</button>
             <ng-container *ngIf="isEditMode">
                 <button class="btn btn-outline-secondary me-2" (click)="onCancelEdit()">Cancel</button>
-                <button class="btn btn-primary" (click)="submitUserDetails()" [disabled]="customerForm.invalid">
+                <button class="btn btn-primary" (click)="submitCustomerDetails()" [disabled]="customerForm.invalid">
                     {{ isCreateMode ? 'Create User' : 'Update User' }}
                 </button>
             </ng-container>
@@ -40,12 +40,12 @@
                         <span style="color: red;">{{invalidTypeMessage}}</span>
                     </div>
                 </div> -->
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="row g-3">
                         <div class="col-md-4">
                             <mat-form-field appearance="outline" class="col-md-12">
                                 <mat-label>Full Name</mat-label>
-                                <input matInput name="fName" [(ngModel)]="customerObj.name" #fName="ngModel"
+                                <input matInput name="fName" [(ngModel)]="customerObj.fullName" #fName="ngModel"
                                     [disabled]="disabledMode" required />
                                 <mat-error *ngIf="fName.errors?.['required']">
                                     Full Name is
@@ -56,8 +56,8 @@
                         <div class="col-md-4">
                             <mat-form-field appearance="outline" class="col-md-12">
                                 <mat-label>Mobile Number</mat-label>
-                                <span matTextPrefix>+91 &nbsp;</span>
-                                <input matInput name="mblNum" [(ngModel)]="customerObj.mobile" #mblNum="ngModel"
+                                <!-- <span matTextPrefix>+91 &nbsp;</span> -->
+                                <input matInput name="mblNum" [(ngModel)]="customerObj.phNo" #mblNum="ngModel"
                                     [disabled]="disabledMode" required />
                                 <mat-error *ngIf="mblNum.errors?.['required']">
                                     Mobile Number is
@@ -68,7 +68,7 @@
                         <div class="col-md-4">
                             <mat-form-field appearance="outline" class="col-md-12">
                                 <mat-label>Email</mat-label>
-                                <input matInput name="eml" [(ngModel)]="customerObj.email" #eml="ngModel"
+                                <input matInput name="eml" [(ngModel)]="customerObj.emailId" #eml="ngModel"
                                     [disabled]="disabledMode" required />
                                 <mat-error *ngIf="eml.errors?.['required']">
                                     Email is
@@ -78,11 +78,22 @@
                         </div>
                         <div class="col-md-4">
                             <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Scheme</mat-label>
-                                <input matInput name="sch" [(ngModel)]="customerObj.scheme" #sch="ngModel"
+                                <mat-label>Address</mat-label>
+                                <input matInput name="add" [(ngModel)]="customerObj.address" #add="ngModel"
                                     [disabled]="disabledMode" required />
-                                <mat-error *ngIf="sch.errors?.['required']">
-                                    scheme is
+                                <mat-error *ngIf="add.errors?.['required']">
+                                    Address is
+                                    required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field appearance="outline" class="col-md-12">
+                                <mat-label>Date of Birth</mat-label>
+                                <input matInput name="dbth" [(ngModel)]="customerObj.dateOfBirth" #dbth="ngModel"
+                                    [disabled]="disabledMode" required />
+                                <mat-error *ngIf="dbth.errors?.['required']">
+                                    Date of Birth is
                                     required
                                 </mat-error>
                             </mat-form-field>
@@ -98,15 +109,37 @@
                                 </mat-error>
                             </mat-form-field>
                         </div>
+                        <div class="col-md-4">
+                            <mat-form-field appearance="outline" class="col-md-12">
+                                <mat-label>Business Address</mat-label>
+                                <input matInput name="bAdd" [(ngModel)]="customerObj.businessAddress" #bAdd="ngModel"
+                                    [disabled]="disabledMode" required />
+                                <mat-error *ngIf="bAdd.errors?.['required']">
+                                    Business Address is
+                                    required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field appearance="outline" class="col-md-12">
+                                <mat-label>Distribute Id</mat-label>
+                                <input matInput name="dstId" [(ngModel)]="customerObj.distributeId" #dstId="ngModel"
+                                    [disabled]="disabledMode" required />
+                                <mat-error *ngIf="dstId.errors?.['required']">
+                                    Distribute Id is
+                                    required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-12">
                     <div class="row g-3">
                         <p class="font-xl weight-bold">Verification Details</p>
                         <div class="col-md-4">
                             <mat-form-field appearance="outline" class="col-md-12">
                                 <mat-label>Aadhar</mat-label>
-                                <input matInput name="adh" [(ngModel)]="customerObj.aadhar" #adh="ngModel"
+                                <input matInput name="adh" [(ngModel)]="customerObj.aadharNo" #adh="ngModel"
                                     [disabled]="disabledMode" required />
                                 <mat-error *ngIf="adh.errors?.['required']">
                                     Aadhar is
@@ -117,7 +150,7 @@
                         <div class="col-md-4">
                             <mat-form-field appearance="outline" class="col-md-12">
                                 <mat-label>PAN</mat-label>
-                                <input matInput name="pn" [(ngModel)]="customerObj.pan" #pn="ngModel"
+                                <input matInput name="pn" [(ngModel)]="customerObj.panNo" #pn="ngModel"
                                     [disabled]="disabledMode" required />
                                 <mat-error *ngIf="pn.errors?.['required']">
                                     PAN is

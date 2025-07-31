@@ -52,7 +52,7 @@ export class PayEaseCommonTable implements OnInit {
   pageSize: number = 10;
   pageSizeOptions: number[] = [5, 10, 25, 50, 100];
   totalElements: number = 0;
-  constructor(private tableService: PayeaseTableSearchview, private route: ActivatedRoute,
+  constructor(public tableService: PayeaseTableSearchview, private route: ActivatedRoute,
     public postService: PayeaseRestservice, private router: Router, public dialog: MatDialog
   ) {
     this.route.params.subscribe(routeParams => {
@@ -86,10 +86,10 @@ export class PayEaseCommonTable implements OnInit {
     this.commonGetallCall(this.pageNumber, this.pageSize);
   }
   commonGetallCall(pageNumber: any, pageSize: any) {
-    this.postService.doPostGetAll(this.tableService.getAPIPath(this.tableID), 0, 1000).subscribe((data: any) => {
-      if (data.success) {
-        const result = data?.responseObject;
-        this.dataSource = result.content;
+    this.postService.doPostGetAll(this.tableService.getAPIPath(this.tableID), 0, 10).subscribe((data: any) => {
+      if (data.status) {
+        const result = data?.object;
+        this.dataSource = result;
         this.totalElements = result.totalElements;
         this.pageSize = result.pageable.pageSize;
         this.currentPage = result.pageable.pageNumber + 1;
@@ -189,29 +189,29 @@ export class PayEaseCommonTable implements OnInit {
 
   }
   isLoading!: boolean;
-  editRow(tableID: any, data: any) {
-    switch (tableID) {
-      case 'GET_USERS':
-        this.router.navigate(['/add-users/' + data.id]);
-        return;
-      case 'GET_ROLES':
-        this.router.navigate(['/add-roles/' + data.id]);
-        return;
-    }
-  }
-  newRow(tableID: string) {
-    switch (tableID) {
-      case 'GET_USERS':
-        this.router.navigate(['/add-users/cre']);
-        return;
-      case 'GET_ROLES':
-        this.router.navigate(['/add-roles/cre']);
-        return;
-      case 'GET_CUSTOMERS':
-        this.router.navigate(['/dashboard/customers/cre']);
-        return;
-    }
-  }
+  // editRow(tableID: any, data: any) {
+  //   switch (tableID) {
+  //     case 'GET_USERS':
+  //       this.router.navigate(['/add-users/' + data.id]);
+  //       return;
+  //     case 'GET_ROLES':
+  //       this.router.navigate(['/add-roles/' + data.id]);
+  //       return;
+  //   }
+  // }
+  // newRow(tableID: string) {
+  //   switch (tableID) {
+  //     case 'GET_USERS':
+  //       this.router.navigate(['/add-users/cre']);
+  //       return;
+  //     case 'GET_ROLES':
+  //       this.router.navigate(['/add-roles/cre']);
+  //       return;
+  //     case 'GET_CUSTOMERS':
+  //       this.router.navigate(['/dashboard/customers/cre']);
+  //       return;
+  //   }
+  // }
   getRoleNames(roles: string[]): string {
     return roles?.length ? roles.join(', ') : '-';
   }

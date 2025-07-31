@@ -92,7 +92,7 @@ export class Profile {
     // formData.append('size', ImageData.size.toString());
     let apiUrl = this.postService.getBaseUrl() + APIPath.FILE_UPLOAD;
     return this.http.post(apiUrl, formData).subscribe((res: any) => {
-      this.customerObj.image = res.object;
+      // this.customerObj.image = res.object;
     }, (error) => {
       console.log(error);
     });

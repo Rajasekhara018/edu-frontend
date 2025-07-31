@@ -38,7 +38,7 @@
                 </div>
                 <button
                     class="btn btn-primary w-100 mb-3 mt-3 rounded-pill d-flex align-items-center justify-content-center"
-                    [disabled]="!userobjForm.form.valid || isLoading" (click)="login(userEmail, userPassword)">
+                    [disabled]="!userobjForm.form.valid || isLoading" (click)="localLogin(userEmail, userPassword)">
                     <span *ngIf="!isLoading">Login</span>
                     <div *ngIf="isLoading" class="d-flex align-items-center gap-2">
                         <span class="spinner-border spinner-border-sm text-light" role="status"

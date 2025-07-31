@@ -54,12 +54,44 @@ export class CommonReqObject {
     sortOrder!: string;
 }
 export class Customer {
-    name!: string;
-    mobile!: string;
-    email!: string;
-    scheme!:string;
+    // name!: string;
+    // mobile!: string;
+    // email!: string;
+    // scheme!:string;
+    // businessName!: string;
+    // image!:any;
+    // aadhar!:string;
+    // pan!:string;
+    fullName!: string;
     businessName!: string;
-    image!:any;
-    aadhar!:string;
-    pan!:string;
+    emailId!: string;
+    phNo!: string;
+    userName!: string;
+    password!: string;
+    oldPassword!: string;
+    forcePasswordChange!: boolean;
+    aadharNo!: string;
+    panName!: string;
+    panNo!: string;
+    dateOfBirth!: string;        // could also be Date if you want
+    address!: string;
+    businessAddress!: string;
+    adminUser!: boolean;
+    distributeUser!: boolean;
+    retailUser!: boolean;
+    distributeId!: string;
+    profilePicLocation!: string;
+}
+
+export class RequestObject {
+    reqType!: string; // "CREATE" ""
+    filters!: { [key: string]: any };  // key-value pairs like a Map
+    key!: string;
+    object!: any;
+}
+
+export class ResponseObject {
+    status!: boolean;
+    object: any;
+    errorMsg!: string;
 }
