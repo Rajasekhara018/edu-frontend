@@ -14,7 +14,7 @@ import { RaiseCompliant } from './raise-compliant/raise-compliant';
 import { ComplaintStatus } from './complaint-status/complaint-status';
 
 const routes: Routes = [
-  { path: 'add-money', component: ComplaintStatus },
+  { path: 'add-money', component: AddMoney },
   { path: 'bill-payments', component: BillPayments },
   { path: 'bill-transfer', component: BillTransfer },
   { path: 'cc-payments', component: CcPayments },

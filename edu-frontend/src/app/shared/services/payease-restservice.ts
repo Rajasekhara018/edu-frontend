@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class PayeaseRestservice {
- // localNotifs: Array<NotifObj> = new Array<NotifObj>();
+  // localNotifs: Array<NotifObj> = new Array<NotifObj>();
   public message: any = new Subject();
   public isMobileMenu = false
   public isMobile = false;
@@ -132,7 +132,7 @@ export class PayeaseRestservice {
   public doPostFindAll(messageID: string) {
     return this.postObservableFindAll(messageID);
   }
-    private postObservableFindAll(messageID: string) {
+  private postObservableFindAll(messageID: string) {
     let token = localStorage.getItem('token');
     if (!token) {
       token = sessionStorage.getItem('token');
@@ -141,7 +141,7 @@ export class PayeaseRestservice {
     const httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', Authorization: jwtToken });
     let apiUrl = '';
     apiUrl = this.getBaseUrl() + messageID;
-    return this.http.get<ResObjectModule>(apiUrl,{ headers: httpOptions })
+    return this.http.get<ResObjectModule>(apiUrl, { headers: httpOptions })
       .pipe(
         catchError(err => this.handleError(err))
       );
@@ -224,7 +224,7 @@ export class PayeaseRestservice {
         // Core
         // localUrl = 'http://localhost:9030';
         // IAM
-        localUrl = 'http://localhost:9000';
+        localUrl = 'http://localhost:8080';
       }
       if (baseUrl.endsWith('4201')) {
         localUrl = 'https://admin-dev.swt.toucanint.com';

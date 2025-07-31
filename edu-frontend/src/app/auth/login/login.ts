@@ -7,6 +7,7 @@ import { PayeaseThemeService } from '../../shared/services/payease-theme-service
 import { PayeaseRestservice } from '../../shared/services/payease-restservice';
 import { PayeaseIdleTimeoutService } from '../../shared/services/payease-idle-timeout-service';
 import { APIPath } from '../../shared/api-enum';
+import * as sha512 from 'js-sha512';
 declare var bootstrap: any;
 
 @Component({
@@ -68,20 +69,20 @@ export class Login {
   screen1!: boolean;
   screen2!: boolean;
   login(username: string, password: string) {
-    this.saltpass = Math.random().toString(36).substring(2, 8);
-    const combinedPassword = this.loginObj.password + this.saltpass;
-    const encryptedPassword = this.aesService.encryptUsingAES256(combinedPassword);
-    const encryptedSalt = this.aesService.encryptUsingAES256(this.saltpass);
-    this.loginObj.salt = encryptedSalt;
-    this.loginObj.encryptedPassword = encryptedPassword;
+    // this.saltpass = Math.random().toString(36).substring(2, 8);
+    // const combinedPassword = this.loginObj.password + this.saltpass;
+    // const encryptedPassword = this.aesService.encryptUsingAES256(combinedPassword);
+    // const encryptedSalt = this.aesService.encryptUsingAES256(this.saltpass);
+    // this.loginObj.salt = encryptedSalt;
+    // this.loginObj.encryptedPassword = encryptedPassword;
     const loginPayload = {
       keyValue: this.loginObj.salt,
       requestObject: {
         email: this.userEmail,
-        password: this.loginObj.encryptedPassword
+        password: sha512.sha512(password)
       }
     };
-    let apiUrl = this.postService.getBaseUrl() + APIPath.USER_AUTHENTICATE;
+    let apiUrl = this.postService.getBaseUrl() + APIPath.AUTH_LOGIN;
     this.http.post(apiUrl, loginPayload, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }).subscribe({
