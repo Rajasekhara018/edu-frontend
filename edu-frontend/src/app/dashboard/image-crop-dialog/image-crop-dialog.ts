@@ -17,13 +17,14 @@ croppedImage: string = '';
   }
 
   async imageCropped(event: ImageCroppedEvent) {
-    if (!event.base64) {
+    debugger
+    if (!event.objectUrl) {
       console.error('objectUrl is null or undefined');
       return;
     }
 
     try {
-      const blob = await this.getObjectUrlAsBlob(event.base64);
+      const blob = await this.getObjectUrlAsBlob(event.objectUrl);
       const base64DataUrl = await this.blobToDataUrl(blob);
       this.croppedImage = base64DataUrl;
 

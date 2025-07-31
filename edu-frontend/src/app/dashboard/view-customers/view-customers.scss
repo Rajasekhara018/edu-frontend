@@ -1,0 +1,34 @@
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.table thead {
+    background-color: #f1f3f5;
+    font-weight: 600;
+}
+
+.btn-back {
+    background-color: #6c757d;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.btn-back:hover {
+    background-color: #5a6268;
+}
+
+.badge-status {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.badge-approved {
+    background-color: #0d6efd;
+}
+
+.badge-rejected {
+    background-color: #dc3545;
+}

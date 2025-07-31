@@ -15,6 +15,11 @@ import { SharedModule } from '../shared/shared-module';
 import { MaterialModule } from '../shared/material.module';
 import { FormsModule } from '@angular/forms';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { ViewCustomers } from './view-customers/view-customers';
+import { TransactionStatus } from './transaction-status/transaction-status';
+import { TransactionHistory } from './transaction-history/transaction-history';
+import { RaiseCompliant } from './raise-compliant/raise-compliant';
+import { ComplaintStatus } from './complaint-status/complaint-status';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     InternalTransfer,
     BillPayments,
     CcPayments,
-    ImageCropDialog
+    ImageCropDialog,
+    ViewCustomers,
+    TransactionStatus,
+    TransactionHistory,
+    RaiseCompliant,
+    ComplaintStatus
   ],
   imports: [
     CommonModule,

@@ -1,1 +1,182 @@
-<p>history works!</p>
+<div class="container py-4">
+
+    <!-- Navigation Tabs -->
+    <ul class="nav nav-tabs mb-4" id="transactionTabs">
+        <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#cards">Cards Transactions</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#bank">Bank Transactions</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#statements">Statements</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#commission">Commission Report</a></li>
+        <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#cc">CC Payments</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+        <!-- Cards Transactions -->
+        <div class="tab-pane fade show active" id="cards">
+            <div class="filter-box mb-3">
+                <div class="row g-3">
+                    <div class="col-md-3"><input type="date" class="form-control" value="2025-07-14"></div>
+                    <div class="col-md-3"><input type="date" class="form-control" value="2025-07-14"></div>
+                    <div class="col-md-3"><input type="text" class="form-control"
+                            placeholder="Search Mobile/Payment Id/Order Id"></div>
+                    <div class="col-md-2">
+                        <select class="form-select">
+                            <option>Select Status</option>
+                            <option>Success</option>
+                            <option>Failed</option>
+                            <option>Pending</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1 d-grid">
+                        <button class="btn btn-primary">Search</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary Cards -->
+            <div class="row g-3 mb-3">
+                <div class="col-md-3 col-6">
+                    <div class="summary-card summary-total">
+                        <h4>Total</h4><span>2 - 1995.34</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="summary-card summary-success">
+                        <h4>Success</h4><span>1 - 997.15</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="summary-card summary-failed">
+                        <h4>Failed</h4><span>0</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="summary-card summary-pending">
+                        <h4>Pending</h4><span>0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Table -->
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Payment Date</th>
+                            <th>URN</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Payment Id</th>
+                            <th>Account Details</th>
+                            <th>Amount</th>
+                            <th>Charge</th>
+                            <th>Transfer Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>07/14/2025 12:23:06</td>
+                            <td>5457250714065305393IN</td>
+                            <td>Laxmi</td>
+                            <td>9441188744</td>
+                            <td>24281494005</td>
+                            <td>CardType:NA, Issuer:NA, Card#3025</td>
+                            <td>997.15</td>
+                            <td>15.95</td>
+                            <td>981.20</td>
+                            <td><span class="badge bg-success">Success</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Statements -->
+        <div class="tab-pane fade" id="statements">
+            <div class="filter-box mb-3">
+                <div class="row g-3">
+                    <div class="col-md-3"><input type="date" class="form-control"></div>
+                    <div class="col-md-3"><input type="date" class="form-control"></div>
+                    <div class="col-md-3"><input type="text" class="form-control"
+                            placeholder="Search Mobile/Payment Id/Order Id"></div>
+                    <div class="col-md-2"><select class="form-select">
+                            <option>Status</option>
+                        </select></div>
+                    <div class="col-md-1 d-grid"><button class="btn btn-primary">Search</button></div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Payment Date</th>
+                            <th>Payment Type</th>
+                            <th>URN</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Account Details</th>
+                            <th>Mode</th>
+                            <th>PG</th>
+                            <th>Payment Id</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>07/14/2025 21:44:32</td>
+                            <td>Commission</td>
+                            <td>5457250714161432765IN</td>
+                            <td>Indoori Kavya</td>
+                            <td>8179085457</td>
+                            <td>CardType:NA, Card#4817</td>
+                            <td>Commission</td>
+                            <td>PAYEASE PG 6</td>
+                            <td>24289166146</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Commission Report -->
+        <div class="tab-pane fade" id="commission">
+            <div class="filter-box mb-3">
+                <div class="row g-3">
+                    <div class="col-md-3"><input type="date" class="form-control"></div>
+                    <div class="col-md-3"><input type="date" class="form-control"></div>
+                    <div class="col-md-4"><input type="text" class="form-control"
+                            placeholder="Search Mobile/Payment Id/Order Id"></div>
+                    <div class="col-md-2 d-grid"><button class="btn btn-primary">Search</button></div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Payment Date</th>
+                            <th>Name</th>
+                            <th>Mobile</th>
+                            <th>Amount</th>
+                            <th>Commission</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>07/14/2025 10:29:29</td>
+                            <td>M Rajnikanth</td>
+                            <td>9912074607</td>
+                            <td>24996.19</td>
+                            <td>12.50</td>
+                            <td><span class="badge bg-success">Success</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

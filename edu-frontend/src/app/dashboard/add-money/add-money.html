@@ -1,1 +1,92 @@
-<p>add-money works!</p>
+<div class="container py-4">
+    <div class="row g-4">
+
+        <!-- Left Column - Add Money Form -->
+        <div class="col-lg-6">
+            <div class="card p-4 h-100">
+                <div class="card-header text-primary">
+                    Add Money to Wallet
+                </div>
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Mobile #</label>
+                            <input type="text" class="form-control" placeholder="Enter mobile number">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Enter full name">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Amount</label>
+                            <input type="number" class="form-control" placeholder="Enter amount">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Select Payment Method</label>
+                            <select class="form-select">
+                                <option selected disabled>Choose method</option>
+                                <option>Net Banking</option>
+                                <option>Debit Card</option>
+                                <option>Credit Card</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="form-label">Wallet Type</label>
+                            <input type="text" class="form-control" value="Instant" readonly>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">PROCEED TO PAYMENT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right Column - Gateway Limit Info -->
+        <div class="col-lg-6">
+            <div class="card p-4 h-100">
+                <div class="card-header text-primary">
+                    Gateways Limit per Transaction
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Gateway</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PAYEASE PG 6</td>
+                                <td>₹ 2,00,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>PAYEASE FEEZY 1</td>
+                                <td>₹ 1,50,000.00</td>
+                            </tr>
+                            <tr>
+                                <td>Payease R</td>
+                                <td>₹ 2,00,000.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card p-4 h-100">
+                <div class="info-text mt-3">
+                    <p>To fund your wallet, you can use any of the following methods:</p>
+                    <ol class="mb-0">
+                        <li>From your own accounts <span class="highlight">(Only for Existing CASA users)</span></li>
+                        <li>Request funds from another user wallet</li>
+                        <li>Funding from external accounts (credit/debit card, other banks) <span
+                                class="highlight">(based
+                                on aggregator support)</span></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

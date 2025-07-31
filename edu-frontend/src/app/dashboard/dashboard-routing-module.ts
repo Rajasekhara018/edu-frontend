@@ -8,9 +8,13 @@ import { Customers } from './customers/customers';
 import { CcPayments } from './cc-payments/cc-payments';
 import { BillTransfer } from './bill-transfer/bill-transfer';
 import { BillPayments } from './bill-payments/bill-payments';
+import { TransactionStatus } from './transaction-status/transaction-status';
+import { TransactionHistory } from './transaction-history/transaction-history';
+import { RaiseCompliant } from './raise-compliant/raise-compliant';
+import { ComplaintStatus } from './complaint-status/complaint-status';
 
 const routes: Routes = [
-  { path: 'add-money', component: AddMoney },
+  { path: 'add-money', component: ComplaintStatus },
   { path: 'bill-payments', component: BillPayments },
   { path: 'bill-transfer', component: BillTransfer },
   { path: 'cc-payments', component: CcPayments },
