@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CommonInqReqObject, CommonReqObject, CommonReqObjectVo, DetailErrorModule, ErrorMessageModule, ResObjectModule, ToastMessage } from '../model';
+import { CommonInqReqObject, CommonReqObject, CommonReqObjectVo, DetailErrorModule, ErrorMessageModule, RequestObject, ResObjectModule, ResponseObject, ToastMessage } from '../model';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { catchError, Observable, Subject, throwError } from 'rxjs';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
@@ -108,9 +108,10 @@ export class PayeaseRestservice {
   }
   // Backend Create
   public doPost(messageId: APIPath, reqObj: any) {
-    const reqData = new CommonReqObjectVo();
+    const reqData = new RequestObject();
     if (reqObj) {
-      reqData.requestObject = reqObj;
+      reqData.object = reqObj;
+      reqData.reqType = "CREATE";
     }
     return this.postObservable(reqData, messageId);
   }
@@ -123,10 +124,6 @@ export class PayeaseRestservice {
   //   return this.postObservable(reqDataVo, messageId);
   // }
   public doPostInq(messageId: APIPath, id: string) {
-    // const reqDataVo = new CommonReqObjectVo();
-    // const reqData = new CommonInqReqObject();
-    // reqData.id = id;
-    // reqDataVo.requestObject = reqData;
     return this.postObservableInq(messageId, id);
   }
   private postObservableInq(messageID: any, id: string) {
@@ -135,10 +132,15 @@ export class PayeaseRestservice {
       token = sessionStorage.getItem('token');
     }
     const jwtToken = 'Bearer ' + token;
-    const httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', Authorization: jwtToken });
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json; charset=utf-8',
+        Authorization: jwtToken
+      })
+    };
     let apiUrl = '';
-    apiUrl = this.getBaseUrl() + messageID + '/' + id;
-    return this.http.post<ResObjectModule>(apiUrl, { headers: httpOptions })
+    apiUrl = `${this.getBaseUrl()}${messageID}?id=${id}`;
+    return this.http.post<ResponseObject>(apiUrl,null, httpOptions)
       .pipe(
         catchError(err => this.handleError(err))
       );

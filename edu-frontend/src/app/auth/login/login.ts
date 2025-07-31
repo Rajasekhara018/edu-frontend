@@ -133,7 +133,6 @@ export class Login {
   localLogin(username: string, password: string) {
     this.inProgressBar = true;
     this.isLoading = true;
-    debugger
     if (username == 'superadmin' && password == 'Password@123') {
       setTimeout(() => {
         sessionStorage.setItem('token', 'tou123');

@@ -38,14 +38,15 @@ export class Customers {
   isEditMode!: boolean;
   isCreateMode!: boolean;
   ngOnInit(): void {
-    debugger
     this.modelkey = this.route.snapshot.paramMap.get('id')!;
     if (this.modelkey) {
       this.isEditMode = false;
+      this.disabledMode = true;
       this.isCreateMode = false;
       this.gotoInq(this.modelkey);
     } else {
       this.isEditMode = true;
+      this.disabledMode = false;
       this.isCreateMode = true;
     }
   }
@@ -58,7 +59,8 @@ export class Customers {
     };
     this.postService.doPost(apiPath, requestObj).subscribe({
       next: (response: any) => {
-        if (response.success) {
+        if (response.status) {
+          this.customerObj = response.status;
           this.location.back();
           this.postService.showToast('success', response?.message?.toString());
         } else {
@@ -70,11 +72,11 @@ export class Customers {
       }
     });
   }
-  gotoInq(modelkey:string) {
+  gotoInq(modelkey: string) {
     this.postService.doPostInq(APIPath.CUSTOMER_INQ, modelkey).subscribe({
       next: (response: any) => {
-        if (response.success) {
-          this.location.back();
+        if (response.status) {
+          this.customerObj = response.object;
           this.postService.showToast('success', response?.message?.toString());
         } else {
           this.postService.showToast('error', response?.message?.toString());

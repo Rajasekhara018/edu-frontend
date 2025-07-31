@@ -67,7 +67,6 @@ export class Profile {
     if (this.imageModal) this.imageModal.hide();
   }
   openCropDialog(event: any) {
-    debugger
     const dialogRef = this.dialog.open(ImageCropDialog, {
       width: '600px',
       data: { imageChangedEvent: event }

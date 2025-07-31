@@ -151,7 +151,7 @@ export class PayeaseTableSearchview {
         creurl = 'config/user/cre/';
         break;
       case 'GET_CUSTOMERS':
-        creurl = '/dashboard/customers / cre';
+        creurl = '/dashboard/customers/cre';
         break;
       default:
         break;

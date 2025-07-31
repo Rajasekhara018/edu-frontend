@@ -17,7 +17,6 @@ croppedImage: string = '';
   }
 
   async imageCropped(event: ImageCroppedEvent) {
-    debugger
     if (!event.objectUrl) {
       console.error('objectUrl is null or undefined');
       return;
