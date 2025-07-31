@@ -111,7 +111,11 @@ export class PayeaseRestservice {
     const reqData = new RequestObject();
     if (reqObj) {
       reqData.object = reqObj;
-      reqData.reqType = "CREATE";
+      if (reqData.object.id) {
+        reqData.reqType = "UPDATE";
+      } else {
+        reqData.reqType = "CREATE";
+      }
     }
     return this.postObservable(reqData, messageId);
   }
@@ -140,7 +144,7 @@ export class PayeaseRestservice {
     };
     let apiUrl = '';
     apiUrl = `${this.getBaseUrl()}${messageID}?id=${id}`;
-    return this.http.post<ResponseObject>(apiUrl,null, httpOptions)
+    return this.http.post<ResponseObject>(apiUrl, null, httpOptions)
       .pipe(
         catchError(err => this.handleError(err))
       );
