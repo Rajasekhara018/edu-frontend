@@ -1,6 +1,6 @@
-<div class="login-container" (click)="hideContextMenu()">
+<div class="login-container">
     <div class="row login-box w-100" style="max-width: 850px;">
-        <div class="login-card" *ngIf="islogin">
+        <div class="login-card">
             <div class="brand d-flex align-items-center mb-3">
                 <img src="../../../assets/payease-logo.png" alt="App Logo" class="brand-icon" />
                 <img src="../../../assets/logopayease.jpeg" alt="App Logo" class="brand-icon" />
@@ -8,7 +8,7 @@
             <mat-divider></mat-divider>
             <h2 class="welcome-text">Hey there, Welcome back!</h2>
             <form #userobjForm="ngForm" (keydown.enter)="$event.preventDefault()" name="objForm" autocomplete="off">
-                <div class="mb-3 col-12">
+                <!-- <div class="mb-3 col-12">
                     <label for="email" class="form-label">Full Name <span class="text-danger">*</span></label>
                     <input class="form-control" id="email" name="email" [(ngModel)]="userEmail" required
                         #emailInput="ngModel" [disabled]="isDisabled"
@@ -48,8 +48,7 @@
                         [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
                     <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger"
                         placeholder="work@example.com">
-                        <small *ngIf="emailInput.errors?.['required']">Email is required.</small>
-                        <small *ngIf="emailInput.errors?.['email']">Invalid email format.</small>
+                        <small *ngIf="emailInput.errors?.['required']">Mobile Number is required.</small>
                     </div>
                 </div>
                 <div class="mb-3 col-12">
@@ -59,25 +58,97 @@
                         [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
                     <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger"
                         placeholder="work@example.com">
-                        <small *ngIf="emailInput.errors?.['required']">Email is required.</small>
-                        <small *ngIf="emailInput.errors?.['email']">Invalid email format.</small>
+                        <small *ngIf="emailInput.errors?.['required']">Aadhar is required.</small>
                     </div>
                 </div>
                 <div class="mb-3 col-12">
                     <label for="email" class="form-label">Enter PAN <span class="text-danger">*</span></label>
-                    <input class="form-control" id="email" name="email" [(ngModel)]="userEmail" required
+                    <input class="form-control" id="pan" name="pan" [(ngModel)]="userEmail" required
                         #emailInput="ngModel" [disabled]="isDisabled"
                         [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
                     <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger"
                         placeholder="work@example.com">
-                        <small *ngIf="emailInput.errors?.['required']">Email is required.</small>
-                        <small *ngIf="emailInput.errors?.['email']">Invalid email format.</small>
+                        <small *ngIf="emailInput.errors?.['required']">PAN is required.</small>
                     </div>
-                </div>
+                </div> -->
+                <mat-form-field appearance="outline" class="col-md-12">
+                    <mat-label>Full Name</mat-label>
+                    <input matInput name="fName" [(ngModel)]="customerObj.fullName" #fName="ngModel"
+                        [disabled]="disabledMode" required />
+                    <mat-error *ngIf="fName.errors?.['required']">
+                        Full Name is
+                        required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-12">
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput name="mblNum" [(ngModel)]="customerObj.phNo" #mblNum="ngModel"
+                        [disabled]="disabledMode" required />
+                    <mat-error *ngIf="mblNum.errors?.['required']">
+                        Mobile Number is
+                        required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-12">
+                    <mat-label>Email</mat-label>
+                    <input matInput name="eml" [(ngModel)]="customerObj.emailId" #eml="ngModel"
+                        [disabled]="disabledMode" required />
+                    <mat-error *ngIf="eml.errors?.['required']">
+                        Email is
+                        required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-12">
+                    <mat-label>Address</mat-label>
+                    <input matInput name="add" [(ngModel)]="customerObj.address" #add="ngModel"
+                        [disabled]="disabledMode" required />
+                    <mat-error *ngIf="add.errors?.['required']">
+                        Address is
+                        required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-12">
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput name="dbth" [(ngModel)]="customerObj.dateOfBirth" #dbth="ngModel"
+                        [disabled]="disabledMode" required [matDatepicker]="datepicker" />
+                    <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #datepicker></mat-datepicker>
+                    <mat-error *ngIf="dbth.errors?.['required']">
+                        Date of Birth is
+                        required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-12">
+                    <mat-label>Business Name</mat-label>
+                    <input matInput name="bnam" [(ngModel)]="customerObj.businessName" #bnam="ngModel"
+                        [disabled]="disabledMode" required />
+                    <mat-error *ngIf="bnam.errors?.['required']">
+                        Business Name is
+                        required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-12">
+                    <mat-label>Business Address</mat-label>
+                    <input matInput name="bAdd" [(ngModel)]="customerObj.businessAddress" #bAdd="ngModel"
+                        [disabled]="disabledMode" required />
+                    <mat-error *ngIf="bAdd.errors?.['required']">
+                        Business Address is
+                        required
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="col-md-12">
+                    <mat-label>Distribute Id</mat-label>
+                    <input matInput name="dstId" [(ngModel)]="customerObj.distributeId" #dstId="ngModel"
+                        [disabled]="disabledMode" required />
+                    <mat-error *ngIf="dstId.errors?.['required']">
+                        Distribute Id is
+                        required
+                    </mat-error>
+                </mat-form-field>
                 <button
                     class="btn btn-primary w-100 mb-3 mt-3 rounded-pill d-flex align-items-center justify-content-center"
-                    [disabled]="!userobjForm.form.valid || isLoading" (click)="localLogin(userEmail, userPassword)">
-                    <span *ngIf="!isLoading">Login</span>
+                    [disabled]="!userobjForm.form.valid || isLoading" (click)="register()">
+                    <span *ngIf="!isLoading">Register</span>
                     <div *ngIf="isLoading" class="d-flex align-items-center gap-2">
                         <span class="spinner-border spinner-border-sm text-light" role="status"
                             aria-hidden="true"></span>
@@ -106,99 +177,8 @@
             </ul>
         </div>
     </div>
-    <div class="login-card" *ngIf="isChangePassword">
-        <div class="p-4" style="max-width: 450px; width: 100%; font-family: 'Segoe UI', sans-serif;">
-            <div class="d-flex justify-content-start">
-                <button color="primary" mat-flat-button aria-label="Close" (click)="backbtn()"><i
-                        class="bi bi-chevron-left"></i>Back</button>
-            </div>
-            <div class="text-center my-3">
-                <img src="../../../assets/images/change-password.svg" alt="Change Password Logo" class="img-fluid"
-                    style="max-height: 120px;">
-            </div>
-            <div class="text-center">
-                <h5 class="fw-bold text-dark mb-2">Change Password Required</h5>
-                <p class="text-muted small mb-4">You must change your password now to log in.</p>
-            </div>
-            <div class="d-grid">
-                <button class="btn btn-primary rounded-pill p-2 fw-semibold" (click)="nextScreen()">OK</button>
-            </div>
-        </div>
-    </div>
-    <div class="login-card" *ngIf="screen1">
-        <!-- Header -->
-        <div class="d-flex justify-content-start mb-2">
-            <button color="primary" mat-flat-button aria-label="Close" (click)="backbtn()"><i
-                    class="bi bi-chevron-left"></i>Back</button>
-        </div>
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="fw-bold m-0 ms-2">Change Password</h5>
-            <!-- <button type="button" class="btn-close" aria-label="Close" (click)="cancelChangePassword()"></button> -->
-        </div>
-        <!-- Form -->
-        <form #loginForm="ngForm">
-            <!-- Current Password -->
-            <div class="mb-4">
-                <label for="currentPassword" class="form-label">Current Password</label>
-                <div class="input-group">
-                    <!-- type="{{ hideCurrentPassword ? 'password' : 'text' }}" -->
-                    <input class="form-control" id="currentPassword" name="curntPwd" [(ngModel)]="currentPassword"
-                        required minlength="5" maxlength="50" />
-                    <!-- <button type="button" class="btn btn-outline-secondary"
-                            (click)="hideCurrentPassword = !hideCurrentPassword">
-                            <i class="bi" [ngClass]="hideCurrentPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
-                        </button> -->
-                </div>
-            </div>
-            <!-- New Password -->
-            <div class="mb-4">
-                <label for="newPassword" class="form-label">New Password</label>
-                <div class="input-group">
-                    <!-- type="{{ hideNewPassword ? 'password' : 'text' }}" -->
-                    <input class="form-control" id="newPassword" name="newPwd" [(ngModel)]="newPassword" required
-                        minlength="5" maxlength="50" />
-                    <!-- <button type="button" class="btn btn-outline-secondary"
-                            (click)="hideNewPassword = !hideNewPassword">
-                            <i class="bi" [ngClass]="hideNewPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
-                        </button> -->
-                </div>
-            </div>
-            <!-- Confirm Password -->
-            <div class="mb-4">
-                <label for="confirmPassword" class="form-label">Confirm New Password</label>
-                <div class="input-group">
-                    <!-- type="{{ hideConfirmPassword ? 'password' : 'text' }}" -->
-                    <input class="form-control" id="confirmPassword" name="cnfrmPwd" [(ngModel)]="confirmPassword"
-                        required minlength="5" maxlength="50" />
-                    <!-- <button type="button" class="btn btn-outline-secondary"
-                            (click)="hideConfirmPassword = !newPassword">
-                            <i class="bi" [ngClass]="hideConfirmPassword ? 'bi-eye-slash' : 'bi-eye'"></i>
-                        </button> -->
-                </div>
-            </div>
-            <div class="d-grid">
-                <button class="btn btn-primary rounded-pill fw-semibold" type="submit"
-                    (click)="changePassword(currentPassword, newPassword, confirmPassword)">
-                    Change Password
-                </button>
-            </div>
-        </form>
-    </div>
-    <div class="login-card" *ngIf="screen2">
-        <div class="mb-3">
-            <img src="../../../assets/lock-img.svg" alt="Password Changed" style="height: 80px;" />
-        </div>
-        <h5 class="fw-bold" style="color:#252525;">Password Changed!</h5>
-        <p class="text-muted" style="font-size: 0.95rem;">Your password has been changed successfully.</p>
-        <div class="d-grid mt-4">
-            <button class="btn btn-primary rounded-pill fw-semibold" type="button" (click)="pwdSuccess()">OK</button>
-        </div>
-    </div>
-    <div class="footer-note">
-        <small>Powered by PayEase</small>
-    </div>
 </div>
-<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1100" (click)="hideContextMenu()">
+<div class="position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 1100">
     <div id="toastMessage" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
         aria-atomic="true">
         <div class="d-flex align-items-center toast-error shadow-sm" *ngIf="!reqFS">

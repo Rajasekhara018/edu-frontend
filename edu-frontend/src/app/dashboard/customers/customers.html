@@ -56,7 +56,6 @@
                         <div class="col-md-4">
                             <mat-form-field appearance="outline" class="col-md-12">
                                 <mat-label>Mobile Number</mat-label>
-                                <!-- <span matTextPrefix>+91 &nbsp;</span> -->
                                 <input matInput name="mblNum" [(ngModel)]="customerObj.phNo" #mblNum="ngModel"
                                     [disabled]="disabledMode" required />
                                 <mat-error *ngIf="mblNum.errors?.['required']">

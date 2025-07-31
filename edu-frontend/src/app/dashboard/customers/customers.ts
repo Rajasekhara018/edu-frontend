@@ -57,7 +57,8 @@ export class Customers {
       ...this.customerObj,
       ...(this.isCreateMode ? {} : { id: this.modelkey })
     };
-    this.postService.doPost(apiPath, requestObj).subscribe({
+    let requestType = this.isCreateMode ? "CREATE" : "UPDATE";
+    this.postService.doPost(apiPath, requestObj, requestType).subscribe({
       next: (response: any) => {
         if (response.status) {
           this.customerObj = response.status;

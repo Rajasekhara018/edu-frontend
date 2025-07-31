@@ -107,15 +107,11 @@ export class PayeaseRestservice {
     return null;
   }
   // Backend Create
-  public doPost(messageId: APIPath, reqObj: any) {
+  public doPost(messageId: APIPath, reqObj: any, reqType: string) {
     const reqData = new RequestObject();
     if (reqObj) {
       reqData.object = reqObj;
-      if (reqData.object.id) {
-        reqData.reqType = "UPDATE";
-      } else {
-        reqData.reqType = "CREATE";
-      }
+      reqData.reqType = reqType
     }
     return this.postObservable(reqData, messageId);
   }
