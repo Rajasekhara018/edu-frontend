@@ -1,5 +1,6 @@
 # Stage 1: Build the Angular project
-FROM node:18-alpine as build-step
+FROM node:20-alpine as build-step
+
 
 # Set the working directory inside the container
 WORKDIR /app
