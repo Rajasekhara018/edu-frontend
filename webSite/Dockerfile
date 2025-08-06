@@ -21,7 +21,7 @@ RUN ng build --configuration production
 FROM nginx:alpine
 
 # Copy the build output from stage 1
-COPY --from=build-step /app/dist/edu-frontend /usr/share/nginx/html
+COPY --from=build-step /app/dist/web-site /usr/share/nginx/html
 
 # Expose port 80
 EXPOSE 80
