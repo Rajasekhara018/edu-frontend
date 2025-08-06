@@ -1,5 +1,5 @@
 # Stage 1: Build the Angular project
-FROM node:20-alpine as build-step
+FROM node:18-alpine as build-step
 
 
 # Set the working directory inside the container
@@ -9,7 +9,7 @@ WORKDIR /app
 COPY package*.json /app/
 
 # Install Angular CLI globally and project dependencies
-RUN npm install -g @angular/cli@20 && npm install --legacy-peer-deps
+RUN npm install -g @angular/cli@16 && npm install --legacy-peer-deps
 
 # Copy the rest of the app to the working directory
 COPY . /app
