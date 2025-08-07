@@ -1,0 +1,43 @@
+.hero-section {
+  background: #1a1a1a;
+  color: #fff;
+  padding: 3rem 1rem;
+}
+.form-section {
+  background: #f8f9fa;
+  padding: 3rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.benefit-item i {
+  color: #007bff;
+}
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-image {
+  max-width: 100%;
+  height: auto;
+}
+.form-control,
+.form-select {
+  border-radius: 6px;
+  height: 50px;
+}
+textarea.form-control {
+  height: 120px;
+}
+.btn-send {
+  height: 50px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}

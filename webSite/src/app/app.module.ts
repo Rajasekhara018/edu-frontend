@@ -5,6 +5,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LandingComponent } from './components/header/landing/landing.component';
+import { FormsModule } from '@angular/forms';
+import { MaterialModule } from './Services/material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CurrencyPipe, DatePipe } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [ 
@@ -13,10 +18,14 @@ import { LandingComponent } from './components/header/landing/landing.component'
     LandingComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    MaterialModule
   ],
-  providers: [],
+  providers: [DatePipe,CurrencyPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
