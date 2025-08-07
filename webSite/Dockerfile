@@ -9,7 +9,7 @@ WORKDIR /app
 COPY package*.json /app/
 
 # Install Angular CLI globally and project dependencies
-RUN npm install -g @angular/cli@16 && npm install --legacy-peer-deps
+RUN npm install --legacy-peer-deps
 
 # Copy the rest of the app to the working directory
 COPY . /app
