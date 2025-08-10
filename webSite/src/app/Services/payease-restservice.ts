@@ -68,7 +68,7 @@ export class PayeaseRestservice {
     const jwtToken = 'Bearer ' + token;
     const httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', Authorization: jwtToken });
     let apiUrl = '';
-    apiUrl = this.getBaseUrl() + messageID;
+    apiUrl = "http://172.31.45.200:8070" + messageID;
 
     if (reqData.object) {
       let obj = this.modifyReqResp(reqData.object);
@@ -240,25 +240,25 @@ export class PayeaseRestservice {
     return this.postObservable(reqData, messageId);
   }
   getBaseUrl() {
-    let baseUrl = window.location.href.split('/#/')[0];
-    let localUrl = baseUrl;
-    if (baseUrl.includes('localhost')) {
-      if (baseUrl.endsWith('4200')) {
+    // let baseUrl = window.location.href.split('/#/')[0];
+    let localUrl = "172.31.45.200:8070";
+    // if (baseUrl.includes('localhost')) {
+    //   if (baseUrl.endsWith('4200')) {
         // Core
         // localUrl = 'http://localhost:9030';
         // IAM
-        localUrl = 'http://localhost:8080';
-      }
-      if (baseUrl.endsWith('4201')) {
-        localUrl = 'https://admin-dev.swt.toucanint.com';
-      }
-      if (baseUrl.endsWith('4202')) {
-        localUrl = 'https://admin-qa.swt.toucanint.com';
-      }
-      if (baseUrl.endsWith('4203')) {
-        localUrl = 'https://admin-perf.swt.toucanint.com';
-      }
-    }
+        // localUrl = 'http://localhost:8080';
+      // }
+      // if (baseUrl.endsWith('4201')) {
+      //   localUrl = 'https://admin-dev.swt.toucanint.com';
+      // }
+      // if (baseUrl.endsWith('4202')) {
+      //   localUrl = 'https://admin-qa.swt.toucanint.com';
+      // }
+      // if (baseUrl.endsWith('4203')) {
+      //   localUrl = 'https://admin-perf.swt.toucanint.com';
+      // }
+    // }
     return localUrl;
   }
   respDataFormatter(data: ResObjectModule) {
