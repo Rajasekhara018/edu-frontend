@@ -69,48 +69,40 @@ export class Login {
   screen1!: boolean;
   screen2!: boolean;
   login(username: string, password: string) {
-    // this.saltpass = Math.random().toString(36).substring(2, 8);
-    // const combinedPassword = this.loginObj.password + this.saltpass;
-    // const encryptedPassword = this.aesService.encryptUsingAES256(combinedPassword);
-    // const encryptedSalt = this.aesService.encryptUsingAES256(this.saltpass);
-    // this.loginObj.salt = encryptedSalt;
-    // this.loginObj.encryptedPassword = encryptedPassword;
     const loginPayload = {
-      // keyValue: this.loginObj.salt,
-      // reuestType:"SIGNIN"
       object: {
         userName: this.userEmail,
         password: sha512.sha512(password)
       }
     };
-    let apiUrl = this.postService.getBaseUrl() + APIPath.AUTH_LOGIN;
+    let apiUrl = "http://65.2.171.228:8070"+ APIPath.AUTH_LOGIN;
     this.http.post(apiUrl, loginPayload, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }).subscribe({
       next: (res: any) => {
         this.inProgressBar = false;
-        const response = res?.responseObject;
+        const response = res?.Object;
         if (response?.mfarequired) {
           localStorage.setItem('email', this.loginObj.email);
           this.router.navigate(['./auth/otp-screen']);
           return;
         }
-        if (response?.token) {
-          localStorage.setItem('userId', response.id)!;
-          sessionStorage.setItem('token', response.token);
-          localStorage.setItem('token', response.token);
-          localStorage.setItem('name', response.fullName);
-          localStorage.setItem('email', response.email);
-          localStorage.setItem('lastActive', Date.now().toString());
-          localStorage.setItem('id', response.id);
-          localStorage.setItem('userStatus', response.status);
-          localStorage.setItem('currentFailedLoginCount', response.currentFailedLoginCount);
-          localStorage.setItem('LoggedInUserroles', JSON.stringify(response.roles));
-          // sessionStorage.setItem('LoggedInUserroles', JSON.stringify(response.roles));
-          localStorage.setItem('LoggedInUserImage', JSON.stringify(response?.image?.name));
-          localStorage.setItem('LoggedInUserDepartment', JSON.stringify(response?.department));
-          localStorage.setItem('p', response.privilege);
-          if (response.forcePasswordChange) {
+        if (response?.token || res?.status) {
+          // localStorage.setItem('userId', response.id)!;
+          // sessionStorage.setItem('token', response.token);
+          // localStorage.setItem('token', response.token);
+          // localStorage.setItem('name', response.fullName);
+          // localStorage.setItem('email', response.email);
+          // localStorage.setItem('lastActive', Date.now().toString());
+          // localStorage.setItem('id', response.id);
+          // localStorage.setItem('userStatus', response.status);
+          // localStorage.setItem('currentFailedLoginCount', response.currentFailedLoginCount);
+          // localStorage.setItem('LoggedInUserroles', JSON.stringify(response.roles));
+          // // sessionStorage.setItem('LoggedInUserroles', JSON.stringify(response.roles));
+          // localStorage.setItem('LoggedInUserImage', JSON.stringify(response?.image?.name));
+          // localStorage.setItem('LoggedInUserDepartment', JSON.stringify(response?.department));
+          // localStorage.setItem('p', response.privilege);
+          if (response?.forcePasswordChange) {
             this.router.navigate(['./auth/change-password']);
             this.postService.openSnackBar('Change Password is Required', 'SUCCESS');
           } else {

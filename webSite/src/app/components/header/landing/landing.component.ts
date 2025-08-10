@@ -23,7 +23,6 @@ export class LandingComponent {
       next: (response: any) => {
         if (response.status) {
           this.customerObj = response.status;
-          debugger
           this.postService.showToast('success', "Registration is successfully completed");
         } else {
           this.postService.showToast('error', response?.message?.toString());
