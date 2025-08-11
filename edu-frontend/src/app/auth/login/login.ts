@@ -75,7 +75,7 @@ export class Login {
         password: sha512.sha512(password)
       }
     };
-    let apiUrl = "http://localhost:8080"+ APIPath.AUTH_LOGIN;
+    let apiUrl = "http://65.2.171.228:8070"+ APIPath.AUTH_LOGIN;
     this.http.post(apiUrl, loginPayload, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }).subscribe({
