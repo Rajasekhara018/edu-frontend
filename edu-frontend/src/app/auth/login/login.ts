@@ -75,7 +75,7 @@ export class Login {
         password: sha512.sha512(password)
       }
     };
-    let apiUrl = "http://65.2.171.228:8070"+ APIPath.AUTH_LOGIN;
+    let apiUrl = "http://localhost:8080"+ APIPath.AUTH_LOGIN;
     this.http.post(apiUrl, loginPayload, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }).subscribe({
@@ -89,7 +89,7 @@ export class Login {
         }
         if (response?.token || res?.status) {
           // localStorage.setItem('userId', response.id)!;
-          // sessionStorage.setItem('token', response.token);
+          sessionStorage.setItem('token', "EDUTECH234156");
           // localStorage.setItem('token', response.token);
           // localStorage.setItem('name', response.fullName);
           // localStorage.setItem('email', response.email);

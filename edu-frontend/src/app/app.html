@@ -3,7 +3,7 @@
 <div>
   <div class="row">
     <!-- *ngIf="authService.isloggedin() " -->
-    <app-header></app-header>
+    <app-header *ngIf="authService.isloggedin()"></app-header>
     <router-outlet />
   </div>
   <!-- <mat-sidenav-container autosize mode="side" opened>
