@@ -1,4 +1,4 @@
-import { NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
@@ -11,13 +11,15 @@ import { CurrencyPipe, DatePipe } from '@angular/common';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { Landing } from './landing/landing';
 import { Profile } from './profile/profile';
-
+import { Sidenav } from './sidenav/sidenav';
+import { LucideAngularModule, Home, FileText, CheckCircle, Clock, FolderOpen, Users, BarChart3, Settings, Trash } from 'lucide-angular';
 @NgModule({
   declarations: [
     App,
     Header,
     Landing,
-    Profile
+    Profile,
+    Sidenav
   ],
   imports: [
     BrowserModule,
@@ -25,6 +27,17 @@ import { Profile } from './profile/profile';
     HttpClientModule,
     MaterialModule,
     FormsModule,
+    LucideAngularModule.pick({
+      Home,
+      FileText,
+      CheckCircle,
+      Clock,
+      FolderOpen,
+      Users,
+      BarChart3,
+      Settings,
+      Trash
+    }),
   ],
   providers: [
     DatePipe,

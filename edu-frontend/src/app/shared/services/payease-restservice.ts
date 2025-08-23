@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CommonInqReqObject, CommonReqObject, CommonReqObjectVo, DetailErrorModule, ErrorMessageModule, RequestObject, ResObjectModule, ResponseObject, ToastMessage } from '../model';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
-import { catchError, Observable, Subject, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, Observable, Subject, throwError } from 'rxjs';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { APIPath } from '../api-enum';
 import { CurrencyPipe, DatePipe } from '@angular/common';
@@ -454,6 +454,12 @@ export class PayeaseRestservice {
     setTimeout(() => {
       this.toastMessages = this.toastMessages.filter(t => t.id !== toast.id);
     }, 1000);
+  }
+  private navMenuSubject = new BehaviorSubject<string>(localStorage.getItem('navMenu') || '');
+  navMenu$ = this.navMenuSubject.asObservable();
+  setNavMenu(value: string) {
+    localStorage.setItem('navMenu', value);
+    this.navMenuSubject.next(value);
   }
 }
 

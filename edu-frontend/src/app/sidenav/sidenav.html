@@ -1,0 +1,24 @@
+<div class="nav-body" [ngClass]="postService.isCollapsed ? 'nav-collapsed' : 'nav-expanded'" [ngStyle]="{
+       'background-image': 'url(' + backgroundImageUrl + ')',
+       'background-size': 'cover',
+       'background-position': 'center',
+       'background-repeat': 'no-repeat'
+     }">
+    <!-- [ngStyle]="{
+       'background-image': 'linear-gradient(rgba(255,0,0,0.8), rgba(255,0,0,0.8)), url(' + backgroundImageUrl + ')',
+       'background-size': 'cover',
+       'background-position': 'center',
+       'background-repeat': 'no-repeat'
+     }"> -->
+    <mat-list>
+        <mat-list-item *ngFor="let item of navItems" [routerLink]="[item.route]" [routerLinkActive]="'link-active'"
+            [matTooltip]="postService.isCollapsed ? item.tooltip : ''" matTooltipPosition="after"
+            (click)="storeSelectedMenu(item)">
+            <div matListItemTitle class="d-flex align-items-center">
+                <lucide-icon *ngIf="item.iconType === 'lucide'" [name]="item.icon" class="m-1" size="20"></lucide-icon>
+                <i *ngIf="item.iconType === 'bootstrap'" class="bi {{ item.icon }} fs-5 me-2"></i>
+                <span class="font-medium" *ngIf="!postService.isCollapsed">{{ item.label }}</span>
+            </div>
+        </mat-list-item>
+    </mat-list>
+</div>

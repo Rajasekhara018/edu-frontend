@@ -6,7 +6,7 @@
     <app-header *ngIf="authService.isloggedin()"></app-header>
     <router-outlet />
   </div>
-  <!-- <mat-sidenav-container autosize mode="side" opened>
+  <mat-sidenav-container autosize mode="side" opened>
       <mat-sidenav #sidenav class="primarySideNav" [opened]="true" mode="side" *ngIf="authService.isloggedin()">
           <app-sidenav></app-sidenav>
       </mat-sidenav>
@@ -14,7 +14,7 @@
           [ngStyle]="themeService.themeType =='dark_mode' ? {  'background-color': '#424242','height':'100vh'}:{'background-color': '#FBFCFC','height':'100vh'}">
           <router-outlet />
       </mat-sidenav-content>
-  </mat-sidenav-container> -->
+  </mat-sidenav-container>
 </div>
 <div class="position-fixed end-0 p-3" style="z-index: 1100; top: 80px;">
   <div *ngFor="let toast of this.postService.toastMessages;trackBy: trackById"
