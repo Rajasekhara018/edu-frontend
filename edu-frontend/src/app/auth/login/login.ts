@@ -69,13 +69,14 @@ export class Login {
   screen1!: boolean;
   screen2!: boolean;
   login(username: string, password: string) {
+    debugger
     const loginPayload = {
       object: {
-        userName: this.userEmail,
+        userName: username,
         password: sha512.sha512(password)
       }
     };
-    let apiUrl = "http://65.2.171.228:8070"+ APIPath.AUTH_LOGIN;
+    let apiUrl = "http://localhost:8080"+ APIPath.AUTH_LOGIN;
     this.http.post(apiUrl, loginPayload, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }).subscribe({
@@ -112,7 +113,7 @@ export class Login {
             this.postService.openSnackBar('Logged In Successfully', 'SUCCESS');
           }
         } else {
-          this.postService.openSnackBar('Enter Valid Credentials', 'ERROR');
+          this.postService.openSnackBar(res.errorMsg, 'ERROR');
         }
       },
       error: (err) => {

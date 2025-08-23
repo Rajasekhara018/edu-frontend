@@ -512,3 +512,8 @@ button .spinner-border {
   padding: 2rem;
   height: 100%;
 }
+
+.input-group .form-control {
+  flex: 1 1 auto !important;
+  width: 1% !important;
+}

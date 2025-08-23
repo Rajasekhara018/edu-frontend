@@ -68,7 +68,7 @@ export class PayeaseRestservice {
     const jwtToken = 'Bearer ' + token;
     const httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', Authorization: jwtToken });
     let apiUrl = '';
-    apiUrl = "http://65.2.171.228:8070" + messageID;
+    apiUrl = "http://localhost:8080" + messageID;
     // apiUrl = "http://localhost:8080" + messageID;
 
     if (reqData.object) {

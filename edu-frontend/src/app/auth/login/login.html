@@ -21,13 +21,19 @@
                     </div>
                 </div>
                 <div class="mb-3 col-12">
-                    <label for="password" class="form-label">Password<span class="text-danger">*</span></label>
-                    <input input id="password" class="form-control" type="password" placeholder="Enter your Password"
-                        matInput name="password" #password="ngModel" [(ngModel)]="userPassword" placeholder="Password*"
-                        placeholder="Password*" [type]="hide ? 'password' : 'text'" required minlength="5"
-                        maxlength="50" (keypress)="onKeyPress($event)" [type]="hide ? 'password' : 'text'"
-                        (keyup.enter)="login(userEmail, userPassword)"
-                        [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
+                    <label for="password" class="form-label">
+                        Password <span class="text-danger">*</span>
+                    </label>
+                    <div class="input-group">
+                        <input type="password" id="password" class="form-control" placeholder="Password"
+                            [(ngModel)]="userPassword" [type]="hidePwd ? 'password' : 'text'" required minlength="5"
+                            maxlength="50" (keypress)="onKeyPress($event)" (keyup.enter)="login(userEmail, userPassword)"
+                            [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" #password="ngModel">
+                        <button class="btn btn-outline-secondary" type="button" (click)="hidePwd = !hidePwd">
+                            <i [class]="'bi ' + (hidePwd ? 'bi-eye-slash' : 'bi-eye')"></i>
+                        </button>
+                    </div>
+                    <!-- Error messages -->
                     <div *ngIf="password.invalid && password.touched" class="text-danger"
                         placeholder="work@example.com">
                         <small *ngIf="password.errors?.['required']">Password is required.</small>
