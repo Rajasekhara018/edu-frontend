@@ -19,7 +19,7 @@ declare var bootstrap: any;
 export class Login {
   // settingsObj = new UserSettings();
   userEmail!: string;
-  userPassword: string = '';
+  userPassword!: string;
   inProgressBar = false;
 
   hidePwd = true;
@@ -68,15 +68,15 @@ export class Login {
   islogin: boolean = true;
   screen1!: boolean;
   screen2!: boolean;
-  login(username: string, password: string) {
+  login() {
     debugger
     const loginPayload = {
       object: {
-        userName: username,
-        password: sha512.sha512(password)
+        userName: this.userEmail,
+        password: sha512.sha512(this.userPassword)
       }
     };
-    let apiUrl = "http://localhost:8080"+ APIPath.AUTH_LOGIN;
+    let apiUrl = "http://localhost:8080" + APIPath.AUTH_LOGIN;
     this.http.post(apiUrl, loginPayload, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }).subscribe({
@@ -169,18 +169,6 @@ export class Login {
     this.isPassword = true;
     this.isForgetPassword = false;
   }
-  async computeSHA512(data:any) {
-  // Encode string as Uint8Array
-  const encoder = new TextEncoder();
-  const dataBuffer = encoder.encode(data);
-
-  // Compute SHA-512 digest
-  const hashBuffer = await crypto.subtle.digest("SHA-512", dataBuffer);
-
-  // Convert to hex string
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, "0")).join("");
-}
   showContextMenu = false;
   x = 0;
   y = 0;
