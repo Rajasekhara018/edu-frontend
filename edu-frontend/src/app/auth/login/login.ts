@@ -105,15 +105,15 @@ export class Login {
           // localStorage.setItem('p', response.privilege);
           if (response?.forcePasswordChange) {
             this.router.navigate(['./auth/change-password']);
-            this.postService.openSnackBar('Change Password is Required', 'SUCCESS');
+            this.postService.showToast('success', "Change Password is Required");
           } else {
             this.idleTimeoutService.enableIdleDetection();
             this.idleTimeoutService.ping();
             this.router.navigate(['/home']);
-            this.postService.openSnackBar('Logged In Successfully', 'SUCCESS');
+            this.postService.showToast('success', "Logged In Successfully");
           }
         } else {
-          this.postService.openSnackBar(res.errorMsg, 'ERROR');
+          this.postService.showToast('error', res.errorMsg);
         }
       },
       error: (err) => {

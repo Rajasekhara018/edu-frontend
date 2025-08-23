@@ -1,20 +1,21 @@
-
 // Include theming for Angular Material with `mat.theme()`.
 // This Sass mixin will define CSS variables that are used for styling Angular Material
 // components according to the Material 3 design spec.
 // Learn more about theming and how to use it for your application's
 // custom components at https://material.angular.dev/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 
 html {
-  @include mat.theme((
-    color: (
-      primary: mat.$rose-palette,
-      tertiary: mat.$red-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$rose-palette,
+        tertiary: mat.$red-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
 
   // Default the application to a light color theme. This can be changed to
   // `dark` to enable the dark color theme, or to `light dark` to defer to the
@@ -27,15 +28,21 @@ html {
   background-color: var(--mat-sys-surface);
   color: var(--mat-sys-on-surface);
   font: var(--mat-sys-body-medium);
-}/* You can add global styles to this file, and also import other style files */
+} /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 /* You can add global styles to this file, and also import other style files */
 // @use '@angular/material' as mat;
 @import "../node_modules/bootstrap/scss/bootstrap";
-@import '../src/typography.scss';
+@import "../src/typography.scss";
 
 // Define primary themes
 // $mat-primary-scheme: (
@@ -71,8 +78,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 //   )
 // );
 $blue-palette-theme: (
-  16: #D7C9FF,
-  50: #E2E7F2,
+  16: #d7c9ff,
+  50: #e2e7f2,
   100: #c5cae9,
   200: #9fa8da,
   300: #7986cb,
@@ -87,7 +94,8 @@ $blue-palette-theme: (
   A200: #536dfe,
   A400: #3d5afe,
   A700: #304ffe,
-  contrast: (16: #ffffffde,
+  contrast: (
+    16: #ffffffde,
     50: #ffffffde,
     100: #ffffffde,
     200: #ffffffde,
@@ -98,30 +106,42 @@ $blue-palette-theme: (
     700: #ffffffde,
     800: #ffffffde,
     900: #ffffffde,
-  )
+  ),
 );
 $tou-ops-primary: mat.m2-define-palette($blue-palette-theme, 400);
 $tou-ops-accent: mat.m2-define-palette($blue-palette-theme, 500);
 $tou-ops-warn: mat.m2-define-palette(mat.$m2-red-palette);
-$tou-ops-typography: mat.m2-define-typography-config($font-family: '"Poppins", "Helvetica Neue", sans-serif');
+$tou-ops-typography: mat.m2-define-typography-config(
+  $font-family: '"Poppins", "Helvetica Neue", sans-serif',
+);
 
 // Define light theme
-$tou-ops-theme: mat.m2-define-light-theme((color: (primary: $tou-ops-primary,
-        accent: $tou-ops-accent,
-        warn: $tou-ops-warn,
-      ),
-      typography: $tou-ops-typography,
-      density: 0));
+$tou-ops-theme: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $tou-ops-primary,
+      accent: $tou-ops-accent,
+      warn: $tou-ops-warn,
+    ),
+    typography: $tou-ops-typography,
+    density: 0,
+  )
+);
 
 // Define dark theme
 $dark-primary: mat.m2-define-palette(mat.$m2-deep-purple-palette);
 $dark-accent: mat.m2-define-palette(mat.$m2-lime-palette, A200);
 $dark-warn: mat.m2-define-palette(mat.$m2-red-palette);
-$dark-theme: mat.m2-define-dark-theme((color: (primary: $dark-primary,
-        accent: $dark-accent,
-        warn: $dark-warn,
-      ),
-      typography: $tou-ops-typography));
+$dark-theme: mat.m2-define-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+      warn: $dark-warn,
+    ),
+    typography: $tou-ops-typography,
+  )
+);
 
 // Include global material styles once
 // @include mat.core();
@@ -220,13 +240,13 @@ $dark-theme: mat.m2-define-dark-theme((color: (primary: $dark-primary,
 //  }
 
 $indigo-palette-theme: (
-  16: #D7C9FF,
-  50: #DEE9ED,
+  16: #d7c9ff,
+  50: #dee9ed,
   100: #c5cae9,
   200: #9fa8da,
   300: #7986cb,
-  400: #0876A2,
-  500: #F3BC00,
+  400: #0876a2,
+  500: #f3bc00,
   600: #3949ab,
   700: #303f9f,
   800: #283593,
@@ -235,7 +255,8 @@ $indigo-palette-theme: (
   A200: #536dfe,
   A400: #3d5afe,
   A700: #304ffe,
-  contrast: (16: #ffffffde,
+  contrast: (
+    16: #ffffffde,
     50: #ffffffde,
     100: #ffffffde,
     200: #ffffffde,
@@ -246,15 +267,20 @@ $indigo-palette-theme: (
     700: #ffffffde,
     800: #ffffffde,
     900: #ffffffde,
-  )
+  ),
 );
 $theme1-primary: mat.m2-define-palette($indigo-palette-theme, 400);
 $theme1-accent: mat.m2-define-palette($indigo-palette-theme, 500);
-$theme1: mat.m2-define-light-theme((color: (primary: $theme1-primary,
-        accent: $theme1-accent,
-        warn: $tou-ops-warn,
-      ),
-      typography: $tou-ops-typography));
+$theme1: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $theme1-primary,
+      accent: $theme1-accent,
+      warn: $tou-ops-warn,
+    ),
+    typography: $tou-ops-typography,
+  )
+);
 
 .theme1 {
   @include mat.all-component-colors($theme1);
@@ -271,7 +297,10 @@ $theme1: mat.m2-define-light-theme((color: (primary: $theme1-primary,
   }
 
   .link-active {
-    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme1-primary,
+      50
+    ) !important;
     border-radius: 4px;
   }
 
@@ -282,11 +311,17 @@ $theme1: mat.m2-define-light-theme((color: (primary: $theme1-primary,
 
   .mat-mdc-table .mdc-data-table__header-row {
     height: 56px;
-    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme1-primary,
+      50
+    ) !important;
   }
 
   :host .mat-mdc-tab-header {
-    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme1-primary,
+      50
+    ) !important;
     height: 200px;
   }
 
@@ -312,22 +347,32 @@ $theme1: mat.m2-define-light-theme((color: (primary: $theme1-primary,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme1-primary,
+      50
+    ) !important;
     border-radius: 4px 0px 0px 0px;
   }
 
   .custom-table .mat-mdc-header-row {
-    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme1-primary,
+      50
+    ) !important;
   }
 
   .tableheader.mat-mdc-table .mdc-data-table__header-row {
-    background-color: mat.m2-get-color-from-palette($theme1-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme1-primary,
+      50
+    ) !important;
   }
 
   mat-list-item:hover .menu-item p {
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
-    color: #3266D6;
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%)
+      hue-rotate(210deg) brightness(89%) contrast(91%);
+    color: #3266d6;
     /* Adjust hover color as needed */
     // color: #414950; __<<ngM2ThemingMigrationEscapedComment2>>__
   }
@@ -336,18 +381,19 @@ $theme1: mat.m2-define-light-theme((color: (primary: $theme1-primary,
     /* Green color for active text */
     /* Optional: make the active text bold */
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%)
+      hue-rotate(210deg) brightness(89%) contrast(91%);
   }
 }
 
 $deep-purple-palette-theme: (
-  16: #FFF2FE,
-  50: #E6E7ED,
+  16: #fff2fe,
+  50: #e6e7ed,
   100: #d1c4e9,
   200: #b39ddb,
   300: #9575cd,
-  400: #6F42C1,
-  500: #F3BC00,
+  400: #6f42c1,
+  500: #f3bc00,
   600: #5e35b1,
   700: #512da8,
   800: #4527a0,
@@ -356,7 +402,8 @@ $deep-purple-palette-theme: (
   A200: #7c4dff,
   A400: #651fff,
   A700: #6200ea,
-  contrast: (16: #ffffffde,
+  contrast: (
+    16: #ffffffde,
     50: #ffffffde,
     100: #ffffffde,
     200: #ffffffde,
@@ -367,15 +414,20 @@ $deep-purple-palette-theme: (
     700: #ffffffde,
     800: #ffffffde,
     900: #ffffffde,
-  )
+  ),
 );
 $theme2-primary: mat.m2-define-palette($deep-purple-palette-theme, 400);
 $theme2-accent: mat.m2-define-palette($deep-purple-palette-theme, 500);
-$theme2: mat.m2-define-light-theme((color: (primary: $theme2-primary,
-        accent: $theme2-accent,
-        warn: $tou-ops-warn,
-      ),
-      typography: $tou-ops-typography));
+$theme2: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $theme2-primary,
+      accent: $theme2-accent,
+      warn: $tou-ops-warn,
+    ),
+    typography: $tou-ops-typography,
+  )
+);
 
 .theme2 {
   @include mat.all-component-colors($theme2);
@@ -392,7 +444,10 @@ $theme2: mat.m2-define-light-theme((color: (primary: $theme2-primary,
   }
 
   .link-active {
-    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme2-primary,
+      50
+    ) !important;
     border-radius: 4px;
   }
 
@@ -403,11 +458,17 @@ $theme2: mat.m2-define-light-theme((color: (primary: $theme2-primary,
 
   .mat-mdc-table .mdc-data-table__header-row {
     height: 56px;
-    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme2-primary,
+      50
+    ) !important;
   }
 
   :host .mat-mdc-tab-header {
-    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme2-primary,
+      50
+    ) !important;
     height: 200px;
   }
 
@@ -433,22 +494,32 @@ $theme2: mat.m2-define-light-theme((color: (primary: $theme2-primary,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme2-primary,
+      50
+    ) !important;
     border-radius: 4px 0px 0px 0px;
   }
 
   .custom-table .mat-mdc-header-row {
-    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme2-primary,
+      50
+    ) !important;
   }
 
   .tableheader.mat-mdc-table .mdc-data-table__header-row {
-    background-color: mat.m2-get-color-from-palette($theme2-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme2-primary,
+      50
+    ) !important;
   }
 
   mat-list-item:hover .menu-item p {
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
-    color: #3266D6;
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%)
+      hue-rotate(210deg) brightness(89%) contrast(91%);
+    color: #3266d6;
     /* Adjust hover color as needed */
     // color: #414950; __<<ngM2ThemingMigrationEscapedComment6>>__
   }
@@ -457,23 +528,25 @@ $theme2: mat.m2-define-light-theme((color: (primary: $theme2-primary,
     /* Green color for active text */
     /* Optional: make the active text bold */
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%)
+      hue-rotate(210deg) brightness(89%) contrast(91%);
   }
 }
 
 $cyan-palette-theme: (
-  16: #E4FDFF,
-  50: #E8E4F0,
+  16: #e4fdff,
+  50: #e8e4f0,
   100: #b2ebf2,
   200: #80deea,
   300: #4dd0e1,
   400: #6f42c1,
-  500: #F3BC00,
+  500: #f3bc00,
   600: #00acc1,
   700: #0097a7,
   800: #00838f,
   900: #006064,
-  contrast: (16: #ffffffde,
+  contrast: (
+    16: #ffffffde,
     50: #ffffffde,
     100: #ffffffde,
     200: #ffffffde,
@@ -484,16 +557,21 @@ $cyan-palette-theme: (
     700: #ffffffde,
     800: #ffffffde,
     900: #ffffffde,
-  )
+  ),
 );
 
 $theme3-primary: mat.m2-define-palette($cyan-palette-theme, 400);
 $theme3-accent: mat.m2-define-palette($cyan-palette-theme, 500);
-$theme3: mat.m2-define-light-theme((color: (primary: $theme3-primary,
-        accent: $theme3-accent,
-        warn: $tou-ops-warn,
-      ),
-      typography: $tou-ops-typography));
+$theme3: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $theme3-primary,
+      accent: $theme3-accent,
+      warn: $tou-ops-warn,
+    ),
+    typography: $tou-ops-typography,
+  )
+);
 
 .theme3 {
   @include mat.all-component-colors($theme3);
@@ -510,7 +588,10 @@ $theme3: mat.m2-define-light-theme((color: (primary: $theme3-primary,
   }
 
   .link-active {
-    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme3-primary,
+      50
+    ) !important;
     border-radius: 4px;
   }
 
@@ -521,11 +602,17 @@ $theme3: mat.m2-define-light-theme((color: (primary: $theme3-primary,
 
   .mat-mdc-table .mdc-data-table__header-row {
     height: 56px;
-    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme3-primary,
+      50
+    ) !important;
   }
 
   :host .mat-mdc-tab-header {
-    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme3-primary,
+      50
+    ) !important;
     height: 200px;
   }
 
@@ -551,22 +638,32 @@ $theme3: mat.m2-define-light-theme((color: (primary: $theme3-primary,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme3-primary,
+      50
+    ) !important;
     border-radius: 4px 0px 0px 0px;
   }
 
   .custom-table .mat-mdc-header-row {
-    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme3-primary,
+      50
+    ) !important;
   }
 
   .tableheader.mat-mdc-table .mdc-data-table__header-row {
-    background-color: mat.m2-get-color-from-palette($theme3-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme3-primary,
+      50
+    ) !important;
   }
 
   mat-list-item:hover .menu-item p {
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
-    color: #3266D6;
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%)
+      hue-rotate(210deg) brightness(89%) contrast(91%);
+    color: #3266d6;
     /* Adjust hover color as needed */
     // color: #414950; __<<ngM2ThemingMigrationEscapedComment10>>__
   }
@@ -575,18 +672,19 @@ $theme3: mat.m2-define-light-theme((color: (primary: $theme3-primary,
     /* Green color for active text */
     /* Optional: make the active text bold */
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%)
+      hue-rotate(210deg) brightness(89%) contrast(91%);
   }
 }
 
 $pink-palette-theme: (
-  16: #D7C9FF,
-  50: #E6E4E9,
+  16: #d7c9ff,
+  50: #e6e4e9,
   100: #c5cae9,
   200: #9fa8da,
   300: #7986cb,
   400: #574476,
-  500: #F3BC00,
+  500: #f3bc00,
   600: #3949ab,
   700: #303f9f,
   800: #283593,
@@ -595,7 +693,8 @@ $pink-palette-theme: (
   A200: #536dfe,
   A400: #3d5afe,
   A700: #304ffe,
-  contrast: (16: #ffffffde,
+  contrast: (
+    16: #ffffffde,
     50: #ffffffde,
     100: #ffffffde,
     200: #ffffffde,
@@ -606,16 +705,20 @@ $pink-palette-theme: (
     700: #ffffffde,
     800: #ffffffde,
     900: #ffffffde,
-  )
+  ),
 );
 $theme4-primary: mat.m2-define-palette($pink-palette-theme, 400);
 $theme4-accent: mat.m2-define-palette($pink-palette-theme, 500);
-$theme4: mat.m2-define-light-theme((color: (primary: $theme4-primary,
-        accent: $theme4-accent,
-        warn: $tou-ops-warn,
-      ),
-      typography: $tou-ops-typography));
-
+$theme4: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $theme4-primary,
+      accent: $theme4-accent,
+      warn: $tou-ops-warn,
+    ),
+    typography: $tou-ops-typography,
+  )
+);
 
 .theme4 {
   @include mat.all-component-colors($theme4);
@@ -632,7 +735,10 @@ $theme4: mat.m2-define-light-theme((color: (primary: $theme4-primary,
   }
 
   .link-active {
-    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme4-primary,
+      50
+    ) !important;
     border-radius: 4px;
   }
 
@@ -643,11 +749,17 @@ $theme4: mat.m2-define-light-theme((color: (primary: $theme4-primary,
 
   .mat-mdc-table .mdc-data-table__header-row {
     height: 56px;
-    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme4-primary,
+      50
+    ) !important;
   }
 
   :host .mat-mdc-tab-header {
-    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme4-primary,
+      50
+    ) !important;
     height: 200px;
   }
 
@@ -673,22 +785,32 @@ $theme4: mat.m2-define-light-theme((color: (primary: $theme4-primary,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme4-primary,
+      50
+    ) !important;
     border-radius: 4px 0px 0px 0px;
   }
 
   .custom-table .mat-mdc-header-row {
-    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme4-primary,
+      50
+    ) !important;
   }
 
   .tableheader.mat-mdc-table .mdc-data-table__header-row {
-    background-color: mat.m2-get-color-from-palette($theme4-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme4-primary,
+      50
+    ) !important;
   }
 
   mat-list-item:hover .menu-item p {
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
-    color: #3266D6;
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%)
+      hue-rotate(210deg) brightness(89%) contrast(91%);
+    color: #3266d6;
     /* Adjust hover color as needed */
     // color: #414950; __<<ngM2ThemingMigrationEscapedComment14>>__
   }
@@ -697,18 +819,19 @@ $theme4: mat.m2-define-light-theme((color: (primary: $theme4-primary,
     /* Green color for active text */
     /* Optional: make the active text bold */
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+    filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%)
+      hue-rotate(210deg) brightness(89%) contrast(91%);
   }
 }
 
 $blue-palette-theme: (
-  16: #D7C9FF,
-  50: #E2E7F2,
+  16: #d7c9ff,
+  50: #e2e7f2,
   100: #c5cae9,
   200: #9fa8da,
   300: #7986cb,
-  400: #3266D6,
-  500: #F3BC00,
+  400: #3266d6,
+  500: #f3bc00,
   600: #3949ab,
   700: #303f9f,
   800: #283593,
@@ -717,7 +840,8 @@ $blue-palette-theme: (
   A200: #536dfe,
   A400: #3d5afe,
   A700: #304ffe,
-  contrast: (16: #ffffffde,
+  contrast: (
+    16: #ffffffde,
     50: #ffffffde,
     100: #ffffffde,
     200: #ffffffde,
@@ -728,16 +852,20 @@ $blue-palette-theme: (
     700: #ffffffde,
     800: #ffffffde,
     900: #ffffffde,
-  )
+  ),
 );
 $theme5-primary: mat.m2-define-palette($blue-palette-theme, 400);
 $theme5-accent: mat.m2-define-palette($blue-palette-theme, 500);
-$theme5: mat.m2-define-light-theme((color: (primary: $theme5-primary,
-        accent: $theme5-accent,
-        warn: $tou-ops-warn,
-      ),
-      typography: $tou-ops-typography));
-
+$theme5: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $theme5-primary,
+      accent: $theme5-accent,
+      warn: $tou-ops-warn,
+    ),
+    typography: $tou-ops-typography,
+  )
+);
 
 .theme5 {
   @include mat.all-component-colors($theme5);
@@ -754,7 +882,10 @@ $theme5: mat.m2-define-light-theme((color: (primary: $theme5-primary,
   }
 
   .link-active {
-    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme5-primary,
+      50
+    ) !important;
     border-radius: 4px;
   }
 
@@ -765,11 +896,17 @@ $theme5: mat.m2-define-light-theme((color: (primary: $theme5-primary,
 
   .mat-mdc-table .mdc-data-table__header-row {
     height: 56px;
-    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme5-primary,
+      50
+    ) !important;
   }
 
   :host .mat-mdc-tab-header {
-    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme5-primary,
+      50
+    ) !important;
     height: 200px;
   }
 
@@ -795,21 +932,31 @@ $theme5: mat.m2-define-light-theme((color: (primary: $theme5-primary,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme5-primary,
+      50
+    ) !important;
     border-radius: 4px 0px 0px 0px;
   }
 
   .custom-table .mat-mdc-header-row {
-    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme5-primary,
+      50
+    ) !important;
   }
 
   .tableheader.mat-mdc-table .mdc-data-table__header-row {
-    background-color: mat.m2-get-color-from-palette($theme5-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme5-primary,
+      50
+    ) !important;
   }
 
   mat-list-item:hover .menu-item p {
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0.9) saturate(120%) invert(20%) sepia(30%) saturate(1500%) hue-rotate(220deg) brightness(95%) contrast(90%);
+    filter: brightness(0.9) saturate(120%) invert(20%) sepia(30%)
+      saturate(1500%) hue-rotate(220deg) brightness(95%) contrast(90%);
     color: mat.m2-get-color-from-palette($theme5-accent, 400) !important;
     /* Adjust hover color as needed */
     // color: #414950; __<<ngM2ThemingMigrationEscapedComment18>>__
@@ -819,18 +966,19 @@ $theme5: mat.m2-define-light-theme((color: (primary: $theme5-primary,
     /* Green color for active text */
     /* Optional: make the active text bold */
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0.9) saturate(120%) invert(20%) sepia(30%) saturate(1500%) hue-rotate(220deg) brightness(95%) contrast(90%);
+    filter: brightness(0.9) saturate(120%) invert(20%) sepia(30%)
+      saturate(1500%) hue-rotate(220deg) brightness(95%) contrast(90%);
   }
 }
 
 $orange-palette-theme: (
-  16: #D7C9FF,
-  50: #F6EBE0,
+  16: #d7c9ff,
+  50: #f6ebe0,
   100: #c5cae9,
   200: #9fa8da,
   300: #7986cb,
-  400: #FF9800,
-  500: #F3BC00,
+  400: #ff9800,
+  500: #f3bc00,
   600: #3949ab,
   700: #303f9f,
   800: #283593,
@@ -839,7 +987,8 @@ $orange-palette-theme: (
   A200: #536dfe,
   A400: #3d5afe,
   A700: #304ffe,
-  contrast: (16: #ffffffde,
+  contrast: (
+    16: #ffffffde,
     50: #ffffffde,
     100: #ffffffde,
     200: #ffffffde,
@@ -850,15 +999,20 @@ $orange-palette-theme: (
     700: #ffffffde,
     800: #ffffffde,
     900: #ffffffde,
-  )
+  ),
 );
 $theme6-primary: mat.m2-define-palette($orange-palette-theme, 400);
 $theme6-accent: mat.m2-define-palette($orange-palette-theme, 500);
-$theme6: mat.m2-define-light-theme((color: (primary: $theme6-primary,
-        accent: $theme6-accent,
-        warn: $tou-ops-warn,
-      ),
-      typography: $tou-ops-typography));
+$theme6: mat.m2-define-light-theme(
+  (
+    color: (
+      primary: $theme6-primary,
+      accent: $theme6-accent,
+      warn: $tou-ops-warn,
+    ),
+    typography: $tou-ops-typography,
+  )
+);
 
 .theme6 {
   @include mat.all-component-colors($theme6);
@@ -875,7 +1029,10 @@ $theme6: mat.m2-define-light-theme((color: (primary: $theme6-primary,
   }
 
   .link-active {
-    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme6-primary,
+      50
+    ) !important;
     border-radius: 4px;
   }
 
@@ -886,11 +1043,17 @@ $theme6: mat.m2-define-light-theme((color: (primary: $theme6-primary,
 
   .mat-mdc-table .mdc-data-table__header-row {
     height: 56px;
-    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme6-primary,
+      50
+    ) !important;
   }
 
   :host .mat-mdc-tab-header {
-    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme6-primary,
+      50
+    ) !important;
     height: 200px;
   }
 
@@ -916,21 +1079,31 @@ $theme6: mat.m2-define-light-theme((color: (primary: $theme6-primary,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme6-primary,
+      50
+    ) !important;
     border-radius: 4px 0px 0px 0px;
   }
 
   .custom-table .mat-mdc-header-row {
-    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme6-primary,
+      50
+    ) !important;
   }
 
   .tableheader.mat-mdc-table .mdc-data-table__header-row {
-    background-color: mat.m2-get-color-from-palette($theme6-primary, 50) !important;
+    background-color: mat.m2-get-color-from-palette(
+      $theme6-primary,
+      50
+    ) !important;
   }
 
   mat-list-item:hover .menu-item p {
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0) saturate(100%) invert(20%) sepia(70%) saturate(2500%) hue-rotate(330deg) brightness(92%) contrast(85%);
+    filter: brightness(0) saturate(100%) invert(20%) sepia(70%) saturate(2500%)
+      hue-rotate(330deg) brightness(92%) contrast(85%);
     color: mat.m2-get-color-from-palette($theme6-accent, 400) !important;
     /* Adjust hover color as needed */
     // color: #414950; __<<ngM2ThemingMigrationEscapedComment22>>__
@@ -940,10 +1113,10 @@ $theme6: mat.m2-define-light-theme((color: (primary: $theme6-primary,
     /* Green color for active text */
     /* Optional: make the active text bold */
     // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-    filter: brightness(0) saturate(100%) invert(20%) sepia(70%) saturate(2500%) hue-rotate(330deg) brightness(92%) contrast(85%);
+    filter: brightness(0) saturate(100%) invert(20%) sepia(70%) saturate(2500%)
+      hue-rotate(330deg) brightness(92%) contrast(85%);
   }
 }
-
 
 // Custom scrollbar styles
 html,
@@ -977,7 +1150,6 @@ body {
   margin: 70px 100px !important;
 }
 
-
 .w-1300 {
   width: 1300px;
 }
@@ -995,21 +1167,21 @@ body {
 ::-webkit-scrollbar-thumb {
   overflow: hidden !important;
   // background-color: #397E75;
-  background-color: #3266D6;
+  background-color: #3266d6;
   border-radius: 8px;
   border: 1px solid #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   // background-color: #397E75;
-  background-color: #3266D6;
+  background-color: #3266d6;
 }
 
 // Firefox scrollbar
 .scrollbar-custom {
   scrollbar-width: 1px;
   // scrollbar-color: teal #f1f1f1;
-  scrollbar-color: #3266D6 #f1f1f1;
+  scrollbar-color: #3266d6 #f1f1f1;
 }
 
 .paginator {
@@ -1118,13 +1290,14 @@ body {
 
 .tableheader.mat-mdc-table .mdc-data-table__header-row {
   height: 56px;
-  background-color: #E2E8F0 !important;
+  background-color: #e2e8f0 !important;
 }
 
 mat-list-item:hover .menu-item p {
   // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-  filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
-  color: #3266D6;
+  filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%)
+    hue-rotate(210deg) brightness(89%) contrast(91%);
+  color: #3266d6;
   /* Adjust hover color as needed */
   // color: #414950; __<<ngM2ThemingMigrationEscapedComment29>>__
 }
@@ -1133,7 +1306,8 @@ mat-list-item.link-active .menu-item p {
   /* Green color for active text */
   /* Optional: make the active text bold */
   // filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(120deg) brightness(95%) contrast(90%);
-  filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%) hue-rotate(210deg) brightness(89%) contrast(91%);
+  filter: brightness(0) saturate(100%) invert(34%) sepia(86%) saturate(1903%)
+    hue-rotate(210deg) brightness(89%) contrast(91%);
 }
 
 html,
@@ -1145,10 +1319,6 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-
-
-
 
 .stat-card {
   padding: 1rem 1.25rem;
@@ -1168,45 +1338,44 @@ body {
 }
 
 .bg-purple {
-  background-color: #8B5CF6 !important;
+  background-color: #8b5cf6 !important;
 }
 
 .text-purple {
-  color: #8B5CF6 !important;
+  color: #8b5cf6 !important;
 }
 
 .bg-lime {
-  background-color: #84CC16 !important;
+  background-color: #84cc16 !important;
 }
 
 .text-lime {
-  color: #84CC16 !important;
+  color: #84cc16 !important;
 }
 
 .bg-orange {
-  background-color: #F97316 !important;
+  background-color: #f97316 !important;
 }
 
 .text-orange {
-  color: #F97316 !important;
+  color: #f97316 !important;
 }
 
 .bg-indigo {
-  background-color: #6366F1 !important;
+  background-color: #6366f1 !important;
 }
 
 .text-indigo {
-  color: #6366F1 !important;
+  color: #6366f1 !important;
 }
 
 .bg-pink {
-  background-color: #EC4899 !important;
+  background-color: #ec4899 !important;
 }
 
 .text-pink {
-  color: #EC4899 !important;
+  color: #ec4899 !important;
 }
-
 
 body,
 html {
@@ -1225,7 +1394,6 @@ html {
   border-right: none !important;
 }
 
-
 .toast-error {
   background-color: #ffffff;
   border-left: 4px solid #dc3545;
@@ -1234,7 +1402,6 @@ html {
   border-radius: 8px;
   min-width: 280px;
 }
-
 
 .toast-success {
   background-color: #e6f4ea;
@@ -1287,4 +1454,54 @@ body {
 .goog-te-gadget {
   height: 28px;
   overflow: hidden;
+}
+
+// ----Snack Bar  ---
+
+.snackBar-success.mat-mdc-snack-bar-container {
+  .mdc-snackbar__surface {
+    background-color: #2ea651;
+
+    .mdc-button.mat-mdc-button {
+      color: #fff;
+    }
+  }
+}
+
+.snackBar-error.mat-mdc-snack-bar-container {
+  .mdc-snackbar__surface {
+    background-color: #da1d27;
+
+    .mdc-button.mat-mdc-button {
+      color: #fff;
+    }
+  }
+}
+
+.snackBar-warn.mat-mdc-snack-bar-container {
+  .mdc-snackbar__surface {
+    background-color: #f1c219;
+
+    .mdc-snackbar__label {
+      color: #333;
+    }
+
+    .mdc-button.mat-mdc-button {
+      color: #333;
+    }
+  }
+}
+
+.snackBar-info.mat-mdc-snack-bar-container {
+  .mdc-snackbar__surface {
+    background-color: #fff;
+
+    .mdc-snackbar__label {
+      color: #333;
+    }
+
+    .mdc-button.mat-mdc-button {
+      color: #333;
+    }
+  }
 }

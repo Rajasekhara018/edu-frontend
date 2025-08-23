@@ -15,6 +15,7 @@ import { PayeaseRestservice } from '../services/payease-restservice';
   styleUrl: './pay-ease-common-table.scss'
 })
 export class PayEaseCommonTable implements OnInit {
+  reqFS!: boolean;
   ctFields: any = [];
   // breadCrumb = new Array<OPSMenu>();
   columnName: any;
@@ -90,10 +91,10 @@ export class PayEaseCommonTable implements OnInit {
       if (data.status) {
         const result = data?.object;
         this.dataSource = result;
+        this.postService.showToast('success', "Data fetched Successfully!");
         this.totalElements = result.totalElements;
         this.pageSize = result.pageable.pageSize;
         this.currentPage = result.pageable.pageNumber + 1;
-        this.postService.showToast('success', data?.message?.toString());
         this.isLoading = true;
       } else {
         this.postService.showToast('error', data?.message?.toString());
