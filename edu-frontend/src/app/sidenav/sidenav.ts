@@ -86,8 +86,8 @@ export class Sidenav {
     { label: 'Dashboard', route: '/home', icon: 'home', iconType: 'lucide', tooltip: 'Dashboard' },
     { label: 'Add Money', route: '/dashboard/add-money', icon: 'file-text', iconType: 'lucide', tooltip: 'Add Money' },
     { label: 'Bill Transafer', route: '/dashboard/bill-transfer', icon: 'check-circle', iconType: 'lucide', tooltip: 'Bill Transafer' },
-    { label: 'History', route: '/dashboard/history', icon: 'users', iconType: 'lucide', tooltip: 'History', rolesAllowed: ['SUPER_ADMIN', 'HOD'] },
-    { label: 'Customer', route: 'csearch/GET_CUSTOMERS', icon: 'folder-open', iconType: 'lucide', tooltip: 'Customer' },
+    { label: 'History', route: '/dashboard/history', icon: 'folder-open', iconType: 'lucide', tooltip: 'History', rolesAllowed: ['SUPER_ADMIN', 'HOD'] },
+    { label: 'Customer', route: 'csearch/GET_CUSTOMERS', icon: 'users', iconType: 'lucide', tooltip: 'Customers' },
     { label: 'Bill Payments', route: '/dashboard/bill-payments', icon: 'check-circle', iconType: 'lucide', tooltip: 'Bill Payments' },
     { label: 'Internal Transfer', route: '/dashboard/internal-transfer', icon: 'bar-chart-3', iconType: 'lucide', tooltip: 'Internal Transfer' },
     { label: 'Payment Link', route: '/dashboard/payment-link', icon: 'settings', iconType: 'lucide', tooltip: 'Payment Link' }

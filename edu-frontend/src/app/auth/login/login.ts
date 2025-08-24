@@ -108,10 +108,10 @@ export class Login {
             this.router.navigate(['./auth/change-password']);
             this.postService.showToast('success', "Change Password is Required");
           } else {
-            this.idleTimeoutService.enableIdleDetection();
-            this.idleTimeoutService.ping();
+            // this.idleTimeoutService.enableIdleDetection();
+            // this.idleTimeoutService.ping();
             this.router.navigate(['/home']);
-            this.postService.showToast('success', "Logged In Successfully");
+            this.postService.showToast('success', res.errorMsg);
           }
         } else {
           this.postService.showToast('error', res.errorMsg);

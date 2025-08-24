@@ -91,13 +91,13 @@ export class PayEaseCommonTable implements OnInit {
       if (data.status) {
         const result = data?.object;
         this.dataSource = result;
-        this.postService.showToast('success', "Data fetched Successfully!");
+        this.postService.showToast('success', data.errorMsg);
         this.totalElements = result.totalElements;
         this.pageSize = result.pageable.pageSize;
         this.currentPage = result.pageable.pageNumber + 1;
         this.isLoading = true;
       } else {
-        this.postService.showToast('error', data?.message?.toString());
+        this.postService.showToast('error', data.errorMsg);
       }
     },
       (error: any) => {

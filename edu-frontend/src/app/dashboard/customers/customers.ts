@@ -63,13 +63,13 @@ export class Customers {
         if (response.status) {
           this.customerObj = response.status;
           this.location.back();
-          this.postService.showToast('success', response?.message?.toString());
+          this.postService.showToast('success', response?.errorMsg?.toString());
         } else {
-          this.postService.showToast('error', response?.message?.toString());
+          this.postService.showToast('error', response?.errorMsg?.toString());
         }
       },
       error: (err: any) => {
-        this.postService.showToast('error', err?.message?.toString());
+        this.postService.showToast('error', err?.errorMsg?.toString());
       }
     });
   }
@@ -78,13 +78,13 @@ export class Customers {
       next: (response: any) => {
         if (response.status) {
           this.customerObj = response.object;
-          this.postService.showToast('success', response?.message?.toString());
+          this.postService.showToast('success', response?.errorMsg?.toString());
         } else {
-          this.postService.showToast('error', response?.message?.toString());
+          this.postService.showToast('error', response?.errorMsg?.toString());
         }
       },
       error: (err: any) => {
-        this.postService.showToast('error', err?.message?.toString());
+        this.postService.showToast('error', err?.errorMsg?.toString());
       }
     });
   }

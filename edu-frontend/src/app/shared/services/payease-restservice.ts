@@ -248,7 +248,7 @@ export class PayeaseRestservice {
         // Core
         // localUrl = 'http://localhost:9030';
         // IAM
-        // localUrl = 'http://localhost:8080';
+        localUrl = "http://65.0.86.93:8070";
       }
       if (baseUrl.endsWith('4201')) {
         localUrl = 'https://admin-dev.swt.toucanint.com';
