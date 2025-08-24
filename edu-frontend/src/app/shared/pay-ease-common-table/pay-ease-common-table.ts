@@ -87,14 +87,14 @@ export class PayEaseCommonTable implements OnInit {
     this.commonGetallCall(this.pageNumber, this.pageSize);
   }
   commonGetallCall(pageNumber: any, pageSize: any) {
-    this.postService.doPostGetAll(this.tableService.getAPIPath(this.tableID), 0, 10).subscribe((data: any) => {
+    this.postService.doPostGetAll(this.tableService.getAPIPath(this.tableID), pageNumber, pageSize).subscribe((data: any) => {
       if (data.status) {
-        const result = data?.object;
+        const result = data?.object?.content;
         this.dataSource = result;
         this.postService.showToast('success', data.errorMsg);
-        this.totalElements = result.totalElements;
-        this.pageSize = result.pageable.pageSize;
-        this.currentPage = result.pageable.pageNumber + 1;
+        this.totalElements = data?.object?.totalElements;
+        this.pageSize = data.pageable.pageSize;
+        this.currentPage = data.pageable.pageNumber + 1;
         this.isLoading = true;
       } else {
         this.postService.showToast('error', data.errorMsg);

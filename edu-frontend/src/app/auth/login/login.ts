@@ -69,7 +69,6 @@ export class Login {
   screen1!: boolean;
   screen2!: boolean;
   login() {
-    debugger
     const loginPayload = {
       object: {
         userName: this.userEmail,
