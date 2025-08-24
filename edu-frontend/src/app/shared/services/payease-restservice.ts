@@ -68,7 +68,8 @@ export class PayeaseRestservice {
     const jwtToken = 'Bearer ' + token;
     const httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', Authorization: jwtToken });
     let apiUrl = '';
-    apiUrl = "http://localhost:8080" + messageID;
+    // apiUrl = "http://localhost:8080" + messageID;
+    apiUrl = "http://65.0.86.93:8070" + messageID;
 
     if (reqData.object) {
       let obj = this.modifyReqResp(reqData.object);
@@ -247,7 +248,7 @@ export class PayeaseRestservice {
         // Core
         // localUrl = 'http://localhost:9030';
         // IAM
-        localUrl = 'http://localhost:8080';
+        // localUrl = 'http://localhost:8080';
       }
       if (baseUrl.endsWith('4201')) {
         localUrl = 'https://admin-dev.swt.toucanint.com';
