@@ -15,6 +15,7 @@ import { JuspayPgComponent } from './paymentGateways/juspay-pg/juspay-pg.compone
 import { RazorpayPgComponent } from './paymentGateways/razorpay-pg/razorpay-pg.component';
 import { PaymentGatewayComponent } from './paymentGateways/payment-gateway/payment-gateway.component';
 import { PinelabsPgComponent } from './paymentGateways/pinelabs-pg/pinelabs-pg.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [ 
@@ -25,7 +26,8 @@ import { PinelabsPgComponent } from './paymentGateways/pinelabs-pg/pinelabs-pg.c
     JuspayPgComponent,
     RazorpayPgComponent,
     PaymentGatewayComponent,
-    PinelabsPgComponent
+    PinelabsPgComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserAnimationsModule,
