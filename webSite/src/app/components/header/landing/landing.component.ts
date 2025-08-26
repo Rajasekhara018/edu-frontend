@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { APIPath } from 'src/app/Services/api-enum';
 import { Customer } from 'src/app/Services/model';
 import { PayeaseRestservice } from 'src/app/Services/payease-restservice';
@@ -11,7 +12,7 @@ import { PayeaseRestservice } from 'src/app/Services/payease-restservice';
 export class LandingComponent {
   isLoading!: boolean;
   customerObj = new Customer();
-  constructor(private postService: PayeaseRestservice) {
+  constructor(private postService: PayeaseRestservice, public router: Router) {
 
   }
 
@@ -32,5 +33,8 @@ export class LandingComponent {
         this.postService.showToast('error', err?.message?.toString());
       }
     });
+  }
+  paymentPage(course:string,amount: number) {
+    this.router.navigate(['/payment-page',course, amount]);
   }
 }

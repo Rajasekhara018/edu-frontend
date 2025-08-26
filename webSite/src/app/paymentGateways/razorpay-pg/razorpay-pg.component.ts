@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './razorpay-pg.component.html',
   styleUrls: ['./razorpay-pg.component.scss']
 })
-export class RazorpayPgComponent {
+export class RazorpayPgComponent implements OnInit {
   paymentChannel!: string;
   walletsAppsList = ['ApplePay','GooglePay','PayPal','Zelle','Venmo','PhonePay','AmazonPay'];
 
@@ -73,11 +73,12 @@ export class RazorpayPgComponent {
   errorMessage!: boolean;
   cardImg!: string;
   hide = true;
-  amount: string | null;
+  amount!:number;
   constructor(private snackbar: MatSnackBar, private router: Router, public route: ActivatedRoute) {
-    this.amount = this.route.snapshot.paramMap.get('id');
+    // this.amount = this.route.snapshot.paramMap.get('id');
   }
   ngOnInit(): void {
+    this.amount = Number(this.route.snapshot.paramMap.get('amount'));
     this.route.queryParams.subscribe(params => {
       this.paymentChannel = params['paymentChannel'];
       if(this.paymentChannel == 'CARDS') {

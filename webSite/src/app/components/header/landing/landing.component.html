@@ -48,12 +48,147 @@
       </ul>
     </div>
   </section>
-
   <section class="py-5">
     <div class="container">
       <h3 class="text-uppercase text-muted mb-5">Our Courses</h3>
       <div class="row g-4">
+
         <!-- Python Programming Card -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="../../../../assets/python.webp" class="card-img-top" alt="Python Programming" />
+            <div class="card-body">
+              <h5 class="card-title">Python Programming</h5>
+              <p class="fw-semibold">Beginner Level</p>
+              <ul>
+                <li>
+                  Learn programming fundamentals, syntax, control structures,
+                  functions, and basic file operations in Python. Ideal for
+                  students and beginners.
+                </li>
+              </ul>
+              <p class="fw-semibold">Advanced Level</p>
+              <ul>
+                <li>
+                  Deep dive into OOP, modules, decorators, generators, error
+                  handling, advanced file handling, regular expressions, and
+                  working with APIs.
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+              <span class="fw-bold text-success">₹ 4,999</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('python',4999)">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Java Programming Card -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="../../../../assets/java.webp" class="card-img-top" alt="Java Programming" />
+            <div class="card-body">
+              <h5 class="card-title">JAVA Programming</h5>
+              <p class="fw-semibold">Beginner Level</p>
+              <ul>
+                <li>
+                  Build a strong foundation in Java with basic syntax, data
+                  types, loops, conditional logic, and object-oriented concepts.
+                </li>
+              </ul>
+              <p class="fw-semibold">Advanced Level</p>
+              <ul>
+                <li>
+                  Explore multithreading, collections framework, JDBC, JavaFX,
+                  and project development.
+                </li>
+              </ul>
+            </div>
+            <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+              <span class="fw-bold text-success">₹ 5,499</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('java',5499)">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Science Card -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="../../../../assets/datascience.webp" class="card-img-top" alt="Data Science" />
+            <div class="card-body">
+              <h5 class="card-title">Data Science</h5>
+              <p>Understand the fundamentals of data science including:</p>
+              <ul>
+                <li>Introduction to Data Science</li>
+                <li>Python for Data Analysis</li>
+                <li>Basic statistics and visualization</li>
+                <li>Pandas, NumPy, Matplotlib</li>
+                <li>Real-world mini projects</li>
+              </ul>
+            </div>
+            <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+              <span class="fw-bold text-success">₹ 6,999</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('datascience',6999)">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Full Stack Course -->
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="../../../../assets/fullstack.webp" class="card-img-top" alt="Full Stack" />
+            <div class="card-body">
+              <h5 class="card-title">Full Stack</h5>
+              <ul>
+                <li>Introduction to Full Stack development</li>
+                <li>Web basics</li>
+                <li>Front End development</li>
+                <li>Backend development</li>
+                <li>Full Stack integration</li>
+              </ul>
+            </div>
+            <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+              <span class="fw-bold text-success">₹ 9,999</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('fullstack',9999)">Buy Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- NoSQL Course -->
+        <div class="col-12 col-md-4">
+          <div class="card h-100 border-0 shadow-sm">
+            <img src="../../../../assets/nosql.webp" class="card-img-top" alt="NoSQL" />
+            <div class="card-body">
+              <h5 class="card-title">NoSQL</h5>
+              <ul>
+                <li>Introduction</li>
+                <li>Document oriented databases</li>
+                <li>Key-value databases</li>
+                <li>Column-Family databases</li>
+                <li>Graph databases</li>
+                <li>Real-time database</li>
+              </ul>
+            </div>
+            <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
+              <span class="fw-bold text-success">₹ 7,499</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('nosql',7499)">Buy Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <section class="py-5">
+    <div class="container">
+      <h3 class="text-uppercase text-muted mb-5">Our Courses</h3>
+      <div class="row g-4">
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card h-100 border-0">
             <img src="../../../../assets/python.webp" class="card-img-top" alt="Python Programming" />
@@ -79,7 +214,6 @@
           </div>
         </div>
 
-        <!-- Java Programming Card -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card h-100 border-0">
             <img src="../../../../assets/java.webp" class="card-img-top" alt="Java Programming" />
@@ -103,7 +237,6 @@
           </div>
         </div>
 
-        <!-- Data Science Card -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card h-100 border-0">
             <img src="../../../../assets/datascience.webp" class="card-img-top" alt="Data Science" />
@@ -122,13 +255,12 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- Courses Section -->
-  <section class="py-5">
+  <!-- <section class="py-5">
     <div class="container">
       <div class="row g-4">
-        <!-- Full Stack Course -->
         <div class="col-12 col-md-4">
           <div class="card h-100 border-0">
             <img src="../../../../assets/fullstack.webp" class="card-img-top" alt="Full Stack" />
@@ -144,8 +276,6 @@
             </div>
           </div>
         </div>
-
-        <!-- NoSQL Course -->
         <div class="col-12 col-md-4">
           <div class="card h-100 border-0">
             <img src="../../../../assets/nosql.webp" class="card-img-top" alt="NoSQL" />
@@ -164,7 +294,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <div class="container py-5">
     <div class="row align-items-center">
       <div class="col-lg-6 mb-4 mb-lg-0 text-center">
@@ -296,7 +426,7 @@
           </div>
           <div class="d-grid">
             <button type="submit" class="btn btn-primary btn-send" (click)="register()"
-            [disabled]="!userobjForm.form.valid">
+              [disabled]="!userobjForm.form.valid">
               Register
             </button>
           </div>

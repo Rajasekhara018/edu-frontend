@@ -1,5 +1,5 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -7,13 +7,39 @@ export class TAmount {
   value!: any;
   code!: string;
 }
-
+export const COURSE_DATA: Record<string, { name: string; price: number; image: string }> = {
+  'fullstack': {
+    name: 'Full Stack',
+    price: 9999,
+    image: '../../../../assets/fullstack.webp'
+  },
+  'nosql': {
+    name: 'NoSQL',
+    price: 7499,
+    image: '../../../../assets/nosql.webp'
+  },
+  'python': {
+    name: 'Python Programming',
+    price: 4999,
+    image: '../../../../assets/python.webp'
+  },
+  'datascience': {
+    name: 'Data Science',
+    price: 6999,
+    image: '../../../../assets/datascience.webp'
+  },
+  'java': {
+    name: 'JAVA Programming',
+    price: 5499,
+    image: '../../../../assets/java.webp'
+  }
+};
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
   styleUrls: ['./checkout.component.scss']
 })
-export class CheckoutComponent {
+export class CheckoutComponent implements OnInit {
   selectedPaymentMethod: string = '';
   amtValue = new TAmount();
   amount: number = 100;
@@ -21,19 +47,29 @@ export class CheckoutComponent {
   taxes: number = 2;
   currencyCode!: string;
   redirectURL!: string;
-  constructor(public router: Router,public cdr: ChangeDetectorRef, public http: HttpClient, public dialog: MatDialog,
+  constructor(public router: Router, public cdr: ChangeDetectorRef, public http: HttpClient, public dialog: MatDialog,
+    public route: ActivatedRoute
   ) {
     this.currencyCode = localStorage.getItem('currencyCode')!;
     this.amtValue = new TAmount();
-
+  }
+  course!: any;
+  ngOnInit(): void {
+    this.amount = Number(this.route.snapshot.paramMap.get('amount'));
+    // this.course = this.route.snapshot.paramMap.get('course')!;
+    const courseKey = this.route.snapshot.paramMap.get('course');
+    if (courseKey) {
+      this.course = COURSE_DATA[courseKey];
+    }
   }
   generateRandomId() {
     return Math.random().toString(36).substring(2, 10);
   }
-
-
   getSum(amount: number, taxes: number): number {
     return Number(amount) + Number(taxes);
+  }
+  navigatetoCheckout() {
+    this.router.navigate(['/checkout-page', this.getSum(this.amount, this.taxes)]);
   }
 
   navigatetopay(payType: string) {
@@ -204,8 +240,8 @@ export class CheckoutComponent {
 
       popObj.transactionAmount = this.amount;
       popObj.paymentChannel = this.selectedPaymentMethod;
-      
-      
+
+
 
       if (this.selectedPaymentMethod == 'ApplePay' || this.selectedPaymentMethod == 'GooglePay' || this.selectedPaymentMethod == 'PayPal' || this.selectedPaymentMethod == 'Zelle' || this.selectedPaymentMethod == 'Venmo' || this.selectedPaymentMethod == 'PhonePay' || this.selectedPaymentMethod == 'AmazonPay') {
         popObj.paymentChannel = "WALLETS";
@@ -282,22 +318,22 @@ export class CheckoutComponent {
   navigatetoTxnComparison() {
     let popObj = new ServiceProviders();
 
-      this.amtValue.value = this.amount;
-      this.amtValue.code = "USD";
-      popObj.typeofRule = "U"
-      popObj.transactionAmount = Number(this.amount) + Number(this.taxes);
-      popObj.paymentChannel = this.selectedPaymentMethod;
+    this.amtValue.value = this.amount;
+    this.amtValue.code = "USD";
+    popObj.typeofRule = "U"
+    popObj.transactionAmount = Number(this.amount) + Number(this.taxes);
+    popObj.paymentChannel = this.selectedPaymentMethod;
 
-      const data = {
-        typeofRule : "U",
-        transactionAmount: Number(this.amount) + Number(this.taxes),
-        paymentChannel: popObj.paymentChannel,
-        walletName: popObj.walletName
-      };
+    const data = {
+      typeofRule: "U",
+      transactionAmount: Number(this.amount) + Number(this.taxes),
+      paymentChannel: popObj.paymentChannel,
+      walletName: popObj.walletName
+    };
 
     this.router.navigate(['checkout/txncompare'], { queryParams: data });
   }
-  
+
 
   popCallSuccess(popData: any) {
     var gatewayName = popData.ai_results.data.priority_gateway_1.gateway_name;
@@ -333,7 +369,7 @@ export class CheckoutComponent {
     }
   }
 
- 
+
 
 }
 

@@ -148,18 +148,20 @@
             <div class="font-2xl weight-medium">Order Summary</div>&nbsp;&nbsp;
             <div class="row">
                 <div class="col-auto">
-                    <img src="../../../assets/images/checkout.svg" alt="Logo" class="ms-3" width="70px" height="70px">
+                    <!-- <img src="../../../assets/images/checkout.svg" alt="Logo" class="ms-3" width="70px" height="70px"> -->
+                    <img [src]="course.image" [alt]="course.name" width="70" height="70" class="ms-3">
                 </div>
                 <div class="col-auto">
-                    <p class=" weight-regular">Women's Lined Wool
+                    <!-- <p class=" weight-regular">Women's Lined Wool
                         <span style="display: block;">Packer Core </span>
-                    </p>
-                    <div class="font-md weight-regular" style="color: #8992A3;">Quantity
+                    </p> -->
+                    <p class=" weight-regular">{{course.name}}</p>
+                    <div class="font-md weight-regular" style="color: #8992A3;">Quantity:1
                     </div>
                 </div>
                 <div class="col">
                     <mat-form-field style="width: 200px;" appearance="outline">
-                        <input matInput [ngModel]="amount  | currency: 'INR'"
+                        <input matInput [ngModel]="amount  | currency: 'INR'" readonly
                             pattern="^(?!-)([^\d\s]{1,}\s?[+-]?)(\d{1,3})(\,\d{3})*(\.\d{1,})?$"
                             (ngModelChange)="amount =checkTxnAmtFn($event,currencyCode)"
                             [ngModelOptions]="{updateOn:'blur'}" />
@@ -167,10 +169,10 @@
                 </div>
             </div>
             <hr>
-            <div class="font-md weight-regular">Promotion Code</div>
+            <!-- <div class="font-md weight-regular">Promotion Code</div>
             <hr>
             <div class="font-md weight-regular">Gift Card</div>
-            <hr>
+            <hr> -->
             <div>
                 <div class="row">
                     <div class="col-auto">
@@ -180,14 +182,14 @@
                         <p class=" font-md weight-regular float-end">{{amount | currency:'INR'}}</p>
                     </div>
                 </div>&nbsp;
-                <div class="row">
-                    <div class="col-auto">
+                <!-- <div class="row"> -->
+                <!-- <div class="col-auto">
                         <p class="font-md weight-regular ">Delivery</p>
                     </div>
                     <div class="col">
                         <p class=" font-md weight-regular float-end">{{delivery | currency:'INR'}}</p>
-                    </div>
-                </div>&nbsp;
+                    </div> -->
+                <!-- </div>&nbsp; -->
                 <div class="row">
                     <div class="col-auto">
                         <p class="font-md weight-regular ">Taxes</p>
@@ -249,7 +251,7 @@
                 </div> -->
                 <div class="w-100 col-lg-9 mb-3">
                     <button color="primary" mat-flat-button class="w-100 p-3 text-white" style="border-radius: 30px;"
-                        (click)="navigatetopay('PayNow')" [disabled]="!selectedPaymentMethod">Pay
+                        (click)="navigatetoCheckout()" [disabled]="!selectedPaymentMethod">Pay
                         {{ getSum(amount, taxes) | currency:'INR'}}</button>
                 </div>
             </div>

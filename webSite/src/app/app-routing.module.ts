@@ -9,17 +9,21 @@ import { PinelabsPgComponent } from './paymentGateways/pinelabs-pg/pinelabs-pg.c
 import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
-   { path: '', component: LandingComponent },
-   { path: 'jio', component: JioPgComponent},
-   { path: 'razorpay', component: RazorpayPgComponent},
-   { path: 'juspay', component: JuspayPgComponent},
-   { path: 'pinelabs', component: PinelabsPgComponent},
-   { path: 'pg', component: PaymentGatewayComponent},
-   { path: 'checkout', component: CheckoutComponent},
+  { path: '', component: LandingComponent },
+  { path: 'jio', component: JioPgComponent },
+  { path: 'razorpay', component: RazorpayPgComponent },
+  { path: 'juspay', component: JuspayPgComponent },
+  { path: 'pinelabs', component: PinelabsPgComponent },
+  { path: 'pg', component: PaymentGatewayComponent },
+  { path: 'checkout', component: CheckoutComponent },
+  { path: 'payment-page', component: CheckoutComponent },
+  { path: 'payment-page/:course/:amount', component: CheckoutComponent },
+  { path: 'checkout-page', component: RazorpayPgComponent },
+  { path: 'checkout-page/:amount', component: RazorpayPgComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{ useHash: true, onSameUrlNavigation: 'reload' })],
+  imports: [RouterModule.forRoot(routes, { useHash: true, onSameUrlNavigation: 'reload' })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
