@@ -1,0 +1,46 @@
+.checkoutContainer {
+  margin: 0 auto;
+  max-width: 960px;
+  overflow: hidden;
+  padding: 0 16px;
+  width: 100%;
+  margin-top: 100px !important;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Aligns first image to start and second image to end */
+  align-items: center;            /* Centers images vertically if footer height is larger */
+}
+
+.footer-image-start {
+  margin-left: 200px;
+}
+
+.footer-image-end {
+  margin-left: 300px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.overlapping-image {
+  position: absolute;
+  width: 57px;
+  height: 57px;
+  top: 0px;
+  left: 47%;
+}
+
+.pymtOpt {
+  width: 926px;
+  height: 52px;
+  top: 161px;
+  left: 280px;
+  gap: 0px;
+  background: #F2F2F2;
+  border-radius: 3px 0px 0px 0px;
+  opacity: 0px;
+  
+  // background-color: #F7FAFC;
+}

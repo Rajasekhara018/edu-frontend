@@ -1,0 +1,15 @@
+<svg id="local_offer-24px" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #9e9e9e;
+      }
+    </style>
+  </defs>
+  <path id="Path_2063" data-name="Path 2063" class="cls-1" d="M0,0H24V24H0Z"/>
+  <path id="Path_2064" data-name="Path 2064" class="cls-2" d="M22.83,12.99,11.83,2H2v9.83L12.99,22.82ZM5.5,7A1.5,1.5,0,1,1,7,5.5,1.5,1.5,0,0,1,5.5,7Z"/>
+</svg>

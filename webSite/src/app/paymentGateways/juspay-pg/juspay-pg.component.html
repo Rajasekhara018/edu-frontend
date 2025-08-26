@@ -1,0 +1,252 @@
+<div class="checkoutContainer" style="margin-top: 100px!important; height: 800px">
+    <div class="row image-container1" style="width: 926px; height: 55px; margin-left: 0px;">
+        <!-- <div class="col" style="align-content: center; padding-right: 0px !important">
+            <p class="font-2xl weight-medium ms-3 mb-3">checkout</p>
+        </div> -->
+        <!-- <div class="col" style="padding-left: 0px !important">
+            <img src="../../assets/images/checkout/PGnew5.png" class="overlapping-image"   />
+        </div> -->
+    </div>
+    <mat-card class="content-card mb-5 p-4">
+        <div class="pymtOpt" style="margin-left: 9px;">
+            <p class="p-3 font-lg weight-medium">Transaction Amount : {{amount | currency:'INR'}}</p>
+        </div>
+        <div class="container">
+            <!-- <div class="row">
+                <div class="col-3">
+                    <mat-card class="card1bgc">
+                            <img src="../../assets/images/apple.svg" width="auto" height="50px" class="ps-2" />
+                        
+                    </mat-card>
+                </div>
+                <div class="col-3">
+                    <mat-card class="card2bgc">
+                        
+                            <img src="../../assets/images/checkout/gPay.svg" width="auto" height="50px" class="ps-2" />
+                       
+                    </mat-card>
+                </div>
+                <div class="col-3">
+                    <mat-card class="card3bgc">
+                       
+                            <img src="../../assets/images/checkout/PayPal_Pg.svg" width="auto" height="50px" class="ps-2" />
+                    
+                    </mat-card>
+                </div>
+                <div class="col-3">
+                    <mat-card class="card4bgc">
+                          <img src="../../assets/images/checkout/Amazon.svg" width="auto" height="50px" />
+                        
+                    </mat-card>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-12 mb-4">
+                    <div class="divider-with-text col-12">
+                        <mat-divider></mat-divider>
+                        <span class="divider-text">Payment Options</span>
+                    </div>
+                    <mat-card>
+                        <mat-card-content>
+                            <mat-radio-group [(ngModel)]="selectedPmtption" class="d-flex flex-row">
+                                <mat-radio-button value="cards" class="me-5">Cards</mat-radio-button>
+                                <mat-radio-button value="netbanking" class="me-5">Net Banking</mat-radio-button>
+                                <mat-radio-button value="upi" class="me-5">UPI</mat-radio-button>
+                                <mat-radio-button value="wallets">wallets</mat-radio-button>
+                            </mat-radio-group>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+                <div class="row innerCard" *ngIf="selectedPmtption=='cards'">
+                    <p class="font-lg weight-regular pb-3">Card Details</p>
+                    <form #AdvancePayForm="ngForm">
+                        <mat-form-field style="width: 500px">
+                            <mat-label>Card Number</mat-label>
+                            <input matInput type="text" placeholder="Card Number" maxlength="16" name="cardnumber"
+                                required pattern="[3-6]{1}[0-9]{15}"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                [(ngModel)]="adObj.cardnumber" #cardnumber="ngModel"
+                                (change)="showCardInInput(adObj.cardnumber)" />
+                            <img *ngIf="!cardImg == false" [src]="cardImg" matSuffix
+                                style="height: 40px; margin-top: 10px" />
+                            <mat-error *ngIf="cardnumber.errors?.['required']">
+                                Card Number is required
+                            </mat-error>
+                            <mat-error *ngIf="cardnumber.errors?.['pattern']">
+                                Enter valid Card Number
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field style="width: 300px;" class="me-2">
+                            <mat-label> Expiry </mat-label>
+                            <input matInput type="text" name="validity" placeholder="MM/YY" minlength="5" maxlength="5"
+                                oninput="this.value = this.value.replace(/[^0-9./]/g, '').replace(/(\..*)\./g, '$1');"
+                                [(ngModel)]="adObj.validity" #validity="ngModel" required
+                                pattern="^(?:0?[1-9]|1[0-2]) *[/\/-] *[1-9][0-9]$" />
+                            <mat-error *ngIf="validity.errors?.['required']">
+                                Expiry is required
+                            </mat-error>
+                            <mat-error *ngIf="validity .errors?.['pattern']">
+                                Enter Valid Expiry
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field style="width: 190px;">
+                            <mat-label>CVV</mat-label>
+                            <input matInput type="password" placeholder="CVV" required pattern="[0-9]{3}"
+                                [type]="hide ? 'password' : 'text'"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                maxlength="3" name="cvv" [(ngModel)]="adObj.cvv" #cvv="ngModel" />
+                            <mat-error *ngIf="cvv.errors?.['required']">
+                                CVV is required
+                            </mat-error>
+                            <mat-error *ngIf="cvv.errors?.['pattern']">
+                               Enter Valid CVV
+                            </mat-error>
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                                [attr.aria-pressed]="hide">
+                                <mat-icon>{{
+                                    hide ? "visibility_off" : "visibility"
+                                    }}</mat-icon>
+                            </button>
+                        </mat-form-field>
+                        <mat-form-field style="width: 500px">
+                            <mat-label>Name</mat-label>
+                            <input matInput type="text" placeholder="Name on Card" required pattern="[a-zA-Z]{5,20}"
+                                name="nameonCard" [(ngModel)]="adObj.nameonCard" #nameonCard="ngModel" />
+                            <mat-error *ngIf="nameonCard.errors?.['required']">
+                                Name is required
+                            </mat-error>
+                            <mat-error *ngIf="nameonCard.errors?.['pattern']">
+                                Enter Valid Name
+                            </mat-error>
+                        </mat-form-field>
+                        <div>
+                            <button mat-flat-button color="primary" style="width: 500px; color:white;"
+                                [disabled]="AdvancePayForm.invalid" (click)="storeCardDetails(AdvancePayForm.value)">
+                                <mat-icon>lock</mat-icon>
+                                Pay {{amount | currency:'INR'}}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="innerCard" *ngIf="selectedPmtption=='netbanking'">
+                    <div class="pb-3">
+                        <p class="font-lg weight-regular pb-2">Select Bank</p>
+                        <mat-chip-grid>
+                            <mat-chip (click)="selectBank('HDFC')" class="me-2 mb-2">
+                                <img matChipAvatar src="../../assets/images/checkout/hdfc.png" />
+                                HDFC
+                            </mat-chip>
+                            <mat-chip (click)="selectBank('SBI')" class="me-2 mb-2">
+                                <img matChipAvatar src="../../assets/images/checkout/sbi.png" />
+                                SBI
+                            </mat-chip>
+                            <mat-chip (click)="selectBank('ICICI')" class="me-2 mb-2">
+                                <img matChipAvatar src="../../assets/images/checkout/icici.png" />
+                                ICICI
+                            </mat-chip>
+                        </mat-chip-grid>
+                        <mat-chip-grid>
+                            <mat-chip (click)="selectBank('AXIS')" class="me-2 mb-2">
+                                <img matChipAvatar src="../../assets/images/checkout/axis.png" />
+                                AXIS
+                            </mat-chip>
+                            <mat-chip (click)="selectBank('KOTAK')" class="me-2 mb-2">
+                                <img matChipAvatar src="../../assets/images/checkout/kotak.png" />
+                                KOTAK
+                            </mat-chip>
+                            <mat-chip (click)="selectBank('PNB')" class="me-2 mb-2">
+                                <img matChipAvatar src="../../assets/images/checkout/pnb.png" />
+                                PNB
+                            </mat-chip>
+                        </mat-chip-grid>
+                    </div>
+                    <form #NetBankForm="ngForm">
+                        <mat-form-field style="width: 500px">
+                            <mat-label>Search Bank</mat-label>
+                            <input matInput placeholder="Bank" [(ngModel)]="netBValue" name="unet"
+                                #u_net_select="ngModel" required />
+                        </mat-form-field>
+                        <div class="spc-24"></div>
+                        <button mat-flat-button color="primary" style="width: 500px; color:white;"
+                            [disabled]="NetBankForm.invalid" (click)="storeNetBAnkDetails(netBValue)">
+                            <mat-icon>lock</mat-icon>
+                            Pay {{amount | currency:'INR'}}
+                        </button>
+                    </form>
+                </div>
+                <div class="innerCard" *ngIf="selectedPmtption=='upi'">
+                    <div class="pb-3">
+                        <p class="font-lg weight-regular pb-2"> Enter VPA details</p>
+                        <form #AdvancePayForm="ngForm">
+                            <mat-form-field style="width: 500px">
+                                <mat-label>VPA Id</mat-label>
+                                <input matInput type="text" placeholder="Ex:Sanjeev@sbi" name="upiid" required
+                                    pattern="[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z]{2,64}" [(ngModel)]="adObj.upiid"
+                                    #upiid="ngModel" />
+                                <mat-error *ngIf="upiid.errors?.['required']">
+                                    VPA Id is required
+                                </mat-error>
+                                <mat-error *ngIf="upiid.errors?.['pattern']">
+                                    Enter Valid VPA Id
+                                </mat-error>
+                            </mat-form-field>
+                            <div>
+                                <button mat-flat-button color="primary" style="width: 500px; color:white;"
+                                    [disabled]="AdvancePayForm.invalid" (click)="storeupiDetails(AdvancePayForm.value)">
+                                    <mat-icon>lock</mat-icon>
+                                    Pay {{amount | currency:'INR'}}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="innerCard" *ngIf="selectedPmtption=='wallets'">
+                    <div class="pb-3">
+                        <p class="font-lg weight-regular pb-2"> Express Checkout</p>
+                        <mat-chip-grid>
+                            <mat-chip (click)="selectBank('paytm')" class="me-2 mb-2">
+                                <img matChipAvatar src="../../assets/images/checkout/paytm.png" />
+                                Paytm
+                            </mat-chip>
+                            <mat-chip (click)="selectBank('phonepay')" class="me-2 mb-2">
+                                <img matChipAvatar src="../../assets/images/checkout/phonepe.png" />
+                                Phonepe
+                            </mat-chip>
+                            <mat-chip (click)="selectBank('Googlepay')" class="me-2 mb-2">
+                                <img matChipAvatar src="../../assets/images/checkout/gpay.png" />
+                                Googlepay
+                            </mat-chip>
+                        </mat-chip-grid>
+                    </div>
+                    <form #AdvancePayForm="ngForm">
+                        <div fxLayout="column">
+                            <mat-form-field style="width: 500px">
+                                <mat-label>Mobile</mat-label>
+                                <input matInput type="text" placeholder="Ex:7458865479" name="wallet" maxlength="10"
+                                    required
+                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                                    pattern="^[0-9]{10}$" [(ngModel)]="adObj.wallet" #wallet="ngModel" />
+                                <mat-error *ngIf="wallet.errors?.['required']">
+                                    Mobile is required
+                                </mat-error>
+                                <mat-error *ngIf="wallet.errors?.['pattern']">
+                                    Enter Valid Mobile
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <button mat-flat-button color="primary" style="width: 500px; color:white;"
+                                [disabled]="AdvancePayForm.invalid" (click)="storewalletDetails(AdvancePayForm.value)">
+                                <mat-icon>lock</mat-icon>
+                                Pay {{amount | currency:'INR'}}
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <!-- <div class="footer-content justify-content-center" style="margin-top: 200px;margin-bottom: 20px;">
+                    <img src="../../assets/images/checkout/jio.png" width="150px" height="25px" />
+                </div> -->
+            </div>
+        </div>
+    </mat-card>
+</div>

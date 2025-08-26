@@ -1,0 +1,210 @@
+::ng-deep .mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab {
+    flex-grow: 0 !important;
+}
+
+
+.tab-label-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 16px;
+}
+
+.tab-icon {
+    width: 24px;
+    /* Set the desired size for the icon */
+    height: 24px;
+    flex-shrink: 0;
+    /* Prevents the icon from resizing */
+}
+
+.tab-card {
+    width: 100px;
+    text-align: center;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+    /* Optional: To give rounded corners */
+    transition: box-shadow 0.3s ease;
+}
+
+.tab-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+:host ::ng-deep .mdc-tab {
+    justify-content: flex-start;
+    padding: 0px;
+}
+
+.checkoutContainer {
+    margin: 0 auto;
+    max-width: 900px;
+    height: 700px;
+    overflow: hidden;
+    padding: 0 16px;
+    width: 100%;
+    margin-top: 100px !important;
+}
+
+.db-bg {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    /* Aligns first image to start and second image to end */
+    align-items: center;
+    /* Centers images vertically if footer height is larger */
+}
+
+.footer-image-start {
+    margin-left: 200px;
+}
+
+.footer-image-end {
+    margin-left: 300px;
+}
+
+::ng-deep .mat-mdc-tab-body-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    transition: height 500ms cubic-bezier(0.35, 0, 0.25, 1);
+    height: 500px;
+}
+
+::ng-deep .mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab {
+    height: 84px;
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+.mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+    background-color: #EB1165 !important;
+    color: black;
+    width: 100px;
+    padding: 0px;
+    border: 2px solid #3f51b5;
+    /* Border color */
+}
+
+mat-card {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  mat-card img.card-img {
+    width: 100%; /* Makes the image take up full card width */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 8px; /* Optional for rounded corners */
+    object-fit: cover; /* Ensures the image fills the area without distortion */
+  }
+  
+  mat-card {
+    overflow: hidden; /* Ensures content doesn’t overflow the card */
+  }
+  
+  mat-card-content {
+    text-align: center; /* Align text content */
+    padding: 16px;
+  }
+
+  .image-container {
+    width: 100%; /* Makes the container take the full width of the card */
+    height: 150px; /* Set a fixed height for all images */
+    //overflow: hidden; /* Ensures no image overflows the container */
+  }
+  
+  .image-container img {
+    width: 50%; /* Ensures the image spans the container width */
+    height: 50%; /* Makes the image fill the container height */
+    object-fit: cover; /* Crops the image to fit the dimensions without distortion */
+    border-radius: 8px; /* Optional for rounded corners */
+  } 
+
+.card1bgc {
+   
+    background: rgba(239, 247, 226, 0.8);
+}
+
+.card2bgc {
+    
+    background: rgba(252, 239, 209, 0.8);
+}
+
+.card3bgc {
+    background: rgba(239, 246, 255, 0.6); 
+}
+
+.card4bgc {
+    background: rgba(240, 253, 244, 0.6); 
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .radio-button {
+    margin-bottom: 15px; /* Adjust the gap as needed */
+  }
+  
+  /* Remove the margin for the last radio button */
+  .radio-button:last-child {
+    margin-bottom: 0;
+  }
+  
+  .divider-with-text {
+    position: relative;
+    text-align: center;
+    margin: 20px 0; /* Adjust spacing around the divider */
+  }
+  
+  .mat-divider {
+    background-color: #dee2e6; /* Light gray for the divider */
+  }
+  
+  .divider-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white; /* Match the card background */
+    padding: 0 10px; /* Add spacing around the text */
+    font-size: 1rem;
+    font-weight: 500;
+    color: #6c757d; /* Text color (gray) */
+  }
+
+  .image-container1 {
+    position: relative;
+  }
+  
+  .overlapping-image {
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    top: 0px;
+    left: 42%;
+  }
+  
+  .pymtOpt {
+    width: 800px;
+    height: 52px;
+    top: 161px;
+    left: 280px;
+    gap: 0px;
+    background: #F2F2F2;
+    border-radius: 3px 0px 0px 0px;
+    opacity: 0px;
+    
+    // background-color: #F7FAFC;
+  }

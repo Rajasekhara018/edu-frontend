@@ -10,12 +10,22 @@ import { MaterialModule } from './Services/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { JioPgComponent } from './paymentGateways/jio-pg/jio-pg.component';
+import { JuspayPgComponent } from './paymentGateways/juspay-pg/juspay-pg.component';
+import { RazorpayPgComponent } from './paymentGateways/razorpay-pg/razorpay-pg.component';
+import { PaymentGatewayComponent } from './paymentGateways/payment-gateway/payment-gateway.component';
+import { PinelabsPgComponent } from './paymentGateways/pinelabs-pg/pinelabs-pg.component';
 
 @NgModule({
   declarations: [ 
   AppComponent,
     HeaderComponent,
-    LandingComponent
+    LandingComponent,
+    JioPgComponent,
+    JuspayPgComponent,
+    RazorpayPgComponent,
+    PaymentGatewayComponent,
+    PinelabsPgComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -23,7 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [DatePipe,CurrencyPipe],
   bootstrap: [AppComponent]

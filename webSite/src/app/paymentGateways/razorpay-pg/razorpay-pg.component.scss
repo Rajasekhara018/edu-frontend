@@ -1,0 +1,179 @@
+::ng-deep .mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab {
+    flex-grow: 0 !important;
+}
+
+
+.tab-label-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 8px 16px;
+}
+
+.tab-icon {
+    width: 24px;
+    /* Set the desired size for the icon */
+    height: 24px;
+    flex-shrink: 0;
+    /* Prevents the icon from resizing */
+}
+
+.tab-card {
+    width: 100px;
+    text-align: center;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+    /* Optional: To give rounded corners */
+    transition: box-shadow 0.3s ease;
+}
+
+.tab-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+:host ::ng-deep .mdc-tab {
+    justify-content: flex-start;
+    padding: 0px;
+}
+
+.mainContainer {
+    margin: 0 auto;
+    max-width: 670px;
+    overflow: visible;
+    //padding: 0 16px;
+    width: 100%;
+    margin-top: 150px !important;
+}
+
+.checkoutContainer {
+    margin: 0 auto;
+    max-width: 670px;
+    overflow: hidden;
+    padding: 0 16px;
+    width: 100%;
+}
+
+.db-bg {
+    width: 100%;
+
+    img {
+        width: 100%;
+    }
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    /* Aligns first image to start and second image to end */
+    align-items: center;
+    /* Centers images vertically if footer height is larger */
+}
+
+.footer-image-start {
+    margin-left: 200px;
+}
+
+.footer-image-end {
+    margin-left: 300px;
+}
+
+::ng-deep .mat-mdc-tab-body-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    transition: height 500ms cubic-bezier(0.35, 0, 0.25, 1);
+    height: 500px;
+}
+
+::ng-deep .mat-mdc-tab-group.mat-mdc-tab-group-stretch-tabs>.mat-mdc-tab-header .mat-mdc-tab {
+    height: 84px;
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+.mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+    background-color: #6d3bbe !important;
+    color: black;
+    width: 100px;
+    padding: 0px;
+    border: 2px solid #3f51b5;
+    /* Border color */
+}
+
+.no-highlight {
+    background-color: transparent !important;
+    /* Removes the background highlight */
+    box-shadow: none !important;
+    /* Removes shadow effect */
+    border-radius: 8px !important;
+}
+
+.no-highlight .mat-expansion-panel-header {
+    background-color: transparent !important;
+    border: none !important;
+    /* Removes any border applied to the header */
+}
+
+.no-highlight .mat-expansion-panel-header:hover {
+    background-color: transparent !important;
+    /* Ensures no highlight on hover */
+}
+
+.no-highlight .mat-expansion-panel-header:focus {
+    outline: none !important;
+    /* Removes focus outline */
+    background-color: transparent !important;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    /* Aligns first image to start and second image to end */
+    align-items: center;
+    /* Centers images vertically if footer height is larger */
+}
+
+.circle {
+    width: 25px; /* Adjust size as needed */
+    height: 25px;
+    border-radius: 50%;
+    background-color: white; /* White background */
+    display: inline-block;
+    margin-right: 8px; /* Adds spacing after the circle */
+    border: 1px solid #ccc; /* Optional border for visibility */
+}
+
+.flex-align {
+    display: flex;
+    align-items: center;
+}
+
+.image-container {
+    position: relative;
+  }
+  
+.overlapping-image {
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    top: -65px;
+    left: 4.5%;
+    transform: translateX(-50%);
+    // z-index: 1;
+    // clip-path: inset(0 0 50% 0);
+  }
+
+.pymtOpt {
+    width: 670px;
+    height: 52px;
+    // top: 161px;
+    // left: 280px;
+    // gap: 0px;
+    background: #F2F2F2;
+    border-radius: 3px 0px 0px 0px;
+    opacity: 0px;
+    
+    // background-color: #F7FAFC;
+  }

@@ -1,0 +1,163 @@
+mat-tab-group {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+}
+
+:host ::ng-deep .mat-tab-body-wrapper {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-tab-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+::ng-deep .mat-tab-body-content {
+  height: auto !important;
+  padding: 2px;
+}
+
+:host ::ng-deep mat-ink-bar {
+  display: none;
+}
+
+.innerCard {
+  padding: 40px;
+}
+
+:host ::ng-deep .mat-mdc-tab-labels {
+  display: inline !important;
+}
+
+.content-card {
+  width: 824px;
+  height: 545px;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.graph-content {
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  /* Aligns the cards to the left */
+  gap: 70px;
+  margin-left: -40px;
+}
+
+.graphcontainer {
+  margin: 0 100px;
+  /* Adds additional margin around each card */
+}
+
+:host ::ng-deep .custom-tab-group .mat-tab-label.mat-tab-label-active {
+  background-color: #14B8A6 !important;
+  /* Desired background color */
+  color: #ffffff;
+  border-radius: 4px;
+}
+
+.image-container {
+  position: relative;
+}
+
+.overlapping-image {
+  position: absolute;
+  width: 57px;
+  height: 57px;
+  top: 0px;
+  left: 47%;
+}
+
+.pymtOpt {
+  width: 824px;
+  height: 52px;
+  top: 161px;
+  left: 280px;
+  gap: 0px;
+  background: #F2F2F2;
+  border-radius: 3px 0px 0px 0px;
+  opacity: 0px;
+  
+  // background-color: #F7FAFC;
+}
+
+:host ::ng-deep .mat-mdc-tab-header {
+  // background-color: #FAFAFA;
+  height: 200px;
+}
+
+.tab-label-content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Align items to the start of the container */
+  padding: 8px 16px;
+  /* Padding for spacing around the label content */
+  gap: 24px;
+  /* Space between the icon and the text label */
+  width: 100%;
+  /* Full width to take up the entire label area */
+}
+
+/* Image inside the tab label */
+.tab-icon {
+  width: 24px;
+  /* Set the desired size for the icon */
+  height: 24px;
+  flex-shrink: 0;
+  /* Prevents the icon from resizing */
+}
+
+:host ::ng-deep .mdc-tab {
+  justify-content: flex-start;
+  padding: 0px;
+}
+
+::ng-deep .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label,
+.mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label {
+  background-color: #14B8A6 !important;
+  color: black;
+  width: 220px;
+  padding: 0px;
+}
+
+.checkoutContainer {
+  margin: 0 auto;
+  max-width: 960px;
+  overflow: hidden;
+  padding: 0 16px;
+  width: 100%;
+  margin-top: 100px !important;
+}
+
+.db-bg {
+  width: 100%;
+
+  img {
+    width: 100%;
+  }
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between; /* Aligns first image to start and second image to end */
+  align-items: center;            /* Centers images vertically if footer height is larger */
+}
+
+.footer-image-start {
+  margin-left: 200px;
+}
+
+.footer-image-end {
+  margin-left: 300px;
+}
