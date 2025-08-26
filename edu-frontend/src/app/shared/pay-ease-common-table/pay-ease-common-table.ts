@@ -213,8 +213,12 @@ export class PayEaseCommonTable implements OnInit {
   //       return;
   //   }
   // }
-  getRoleNames(roles: string[]): string {
-    return roles?.length ? roles.join(', ') : '-';
+  getRoles(user: any): string[] {
+    const roles: string[] = [];
+    if (user.adminUser) roles.push('Admin');
+    if (user.distributeUser) roles.push('Distributor');
+    if (user.retailUser) roles.push('Retailer');
+    return roles;
   }
   getUserStatusLabel(status: string): string {
     switch (status) {

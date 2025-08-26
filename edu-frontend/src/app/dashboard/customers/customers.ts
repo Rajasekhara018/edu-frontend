@@ -50,7 +50,8 @@ export class Customers {
       this.isCreateMode = true;
     }
   }
-
+  userType!:string;
+  userTypes =["DISTRIBUTOR","RETAILOR"];
   submitCustomerDetails(): void {
     const apiPath = this.isCreateMode ? APIPath.CUSTOMER_CRE : APIPath.CUSTOMER_UPD;
     const requestObj: any = {

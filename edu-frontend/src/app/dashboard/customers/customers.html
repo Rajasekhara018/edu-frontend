@@ -121,13 +121,47 @@
                                 </mat-error>
                             </mat-form-field>
                         </div>
-                        <div class="col-md-4">
+                        <mat-form-field appearance="outline" class="col-md-4">
+                            <mat-label>User Type</mat-label>
+                            <mat-select [(ngModel)]="userType" #usrTyp="ngModel" name="usrTyp" required
+                                [disabled]="disabledMode">
+                                <mat-option *ngFor="let user of userTypes" [value]="user">
+                                    {{ user }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="usrTyp.errors?.['required']">
+                                User Type is required
+                            </mat-error>
+                        </mat-form-field>
+                        <div class="col-md-4" *ngIf="userType === 'RETAILOR'">
                             <mat-form-field appearance="outline" class="col-md-12">
                                 <mat-label>Distribute Id</mat-label>
                                 <input matInput name="dstId" [(ngModel)]="customerObj.distributeId" #dstId="ngModel"
                                     [disabled]="disabledMode" required />
                                 <mat-error *ngIf="dstId.errors?.['required']">
                                     Distribute Id is
+                                    required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4" *ngIf="userType === 'RETAILOR'">
+                            <mat-form-field appearance="outline" class="col-md-12">
+                                <mat-label>Retailer Account Details</mat-label>
+                                <input matInput name="reAcc" [(ngModel)]="customerObj.retailerAccountDetails"
+                                    #reAcc="ngModel" [disabled]="disabledMode" required />
+                                <mat-error *ngIf="reAcc.errors?.['required']">
+                                    Retailer Account Details is
+                                    required
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4" *ngIf="userType === 'DISTRIBUTOR'">
+                            <mat-form-field appearance="outline" class="col-md-12">
+                                <mat-label>Distributor Account Details</mat-label>
+                                <input matInput name="dAcc" [(ngModel)]="customerObj.distributorAccountDetails"
+                                    #dAcc="ngModel" [disabled]="disabledMode" required />
+                                <mat-error *ngIf="dAcc.errors?.['required']">
+                                    Distributor Account Details is
                                     required
                                 </mat-error>
                             </mat-form-field>

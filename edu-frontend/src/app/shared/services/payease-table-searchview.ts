@@ -75,6 +75,8 @@ export class PayeaseTableSearchview {
           businessName: 'Business Name',
           aadharNo: 'Aadhar No',
           panNo: 'Pan No',
+          roles: 'ROLE',
+          status: 'STATUS',
           action: 'Actions',
         }
         displayedColumns = Object.keys(columnNames);

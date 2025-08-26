@@ -81,6 +81,8 @@ export class Customer {
     retailUser!: boolean;
     distributeId!: string;
     profilePicLocation!: string;
+    retailerAccountDetails!:string;
+    distributorAccountDetails!:string;
 }
 
 export class RequestObject {
