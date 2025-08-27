@@ -1,4 +1,4 @@
-<div class="insideContainer">
+<!-- <div class="insideContainer">
     <div class="row mb-3">
         <div class="col-lg-6 p-3 me-3 border" [ngStyle]="{'height':'530px'}">
             <div class="font-2xl weight-medium">Payment Options</div>&nbsp;&nbsp;
@@ -132,29 +132,15 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
-            <!-- <div class="col" style="justify-items: center; margin-top: 66px;">
-            <div class="row-lg-4 p-3">
-                <p class="font-lg weight-regular text-secondary  pb-3">paymethods</p>
-                <img matChipAvatar src="../../assets/images/checkout/paymentmode.png" width="195px" height="40px" />
-            </div>
-        </div> -->
-
         </div>
         <div class="col-lg-5 p-3 border">
             <div class="font-2xl weight-medium">Order Summary</div>&nbsp;&nbsp;
             <div class="row">
                 <div class="col-auto">
-                    <!-- <img src="../../../assets/images/checkout.svg" alt="Logo" class="ms-3" width="70px" height="70px"> -->
                     <img [src]="course.image" [alt]="course.name" width="70" height="70" class="ms-3">
                 </div>
                 <div class="col-auto">
-                    <!-- <p class=" weight-regular">Women's Lined Wool
-                        <span style="display: block;">Packer Core </span>
-                    </p> -->
                     <p class=" weight-regular">{{course.name}}</p>
                     <div class="font-md weight-regular" style="color: #8992A3;">Quantity:1
                     </div>
@@ -169,10 +155,6 @@
                 </div>
             </div>
             <hr>
-            <!-- <div class="font-md weight-regular">Promotion Code</div>
-            <hr>
-            <div class="font-md weight-regular">Gift Card</div>
-            <hr> -->
             <div>
                 <div class="row">
                     <div class="col-auto">
@@ -182,14 +164,6 @@
                         <p class=" font-md weight-regular float-end">{{amount | currency:'INR'}}</p>
                     </div>
                 </div>&nbsp;
-                <!-- <div class="row"> -->
-                <!-- <div class="col-auto">
-                        <p class="font-md weight-regular ">Delivery</p>
-                    </div>
-                    <div class="col">
-                        <p class=" font-md weight-regular float-end">{{delivery | currency:'INR'}}</p>
-                    </div> -->
-                <!-- </div>&nbsp; -->
                 <div class="row">
                     <div class="col-auto">
                         <p class="font-md weight-regular ">Taxes</p>
@@ -201,7 +175,6 @@
                 <hr>
             </div>
             <div class="font-md weight-bold">Total</div>&nbsp;
-
             <div class="row">
                 <div class="row mb-4">
                     <div class="col-auto">
@@ -212,84 +185,151 @@
                             conditions </p>
                     </div>
                 </div>
-                <!-- <div class="w-100 col-lg-11 mb-3">
-                    <div class="col-lg-12">
-                        <input type="checkbox" id="exampleCheckbox" style="height:19px; width:19px;">
-                        <p class="font-xl weight-regular">I have read and accept the sales terms & conditions </p>
-                    </div>
-                    
-                </div> -->
-                <!-- <div class="w-100 col-lg-9 mb-3">
-                    <button color="primary" mat-flat-button class="w-100 p-3 text-white" style="border-radius: 30px;"
-                        (click)="navigatetopay('Rule')" [disabled]="!selectedPaymentMethod"><img
-                            src="../../assets/images/checkout/Rule_Based_img.svg" width="20px" height="35px"
-                            class="me-2" />rulepay' |
-                        translate}}
-                        {{ getSum(amount, taxes) | currency:'INR'}}</button>
-                </div>
-                <div class="w-100 col-lg-9 mb-3">
-                    <button color="primary" mat-flat-button class="w-100 p-3 text-white" style="border-radius: 30px;"
-                        (click)="navigatetopay('AI')" [disabled]="!selectedPaymentMethod"><img
-                            src="../../assets/images/checkout/AI_Based_IMG.svg" width="20px" height="35px"
-                            class="me-2" />aipay' |
-                        translate}}
-                        {{ getSum(amount, taxes) | currency:'INR'}}</button>
-                </div>
-                <div class="w-100 col-lg-9 mb-3">
-                    <button color="primary" mat-flat-button class="w-100 p-3 text-white" style="border-radius: 30px;"
-                        (click)="navigatetopay('Volume')" [disabled]="!selectedPaymentMethod"><img
-                            src="../../assets/images/checkout/VB_icon.svg" width="20px" height="35px" class="me-2" />
-                        volumepay'
-                        | translate}}
-                        {{ getSum(amount, taxes) | currency:'INR'}}</button>
-                </div>
-                <div class="w-100 col-lg-9 mb-3">
-                    <button color="accent" mat-flat-button class="w-100 p-3" style="border-radius: 30px;"
-                        (click)="navigatetoTxnComparison()" [disabled]="!selectedPaymentMethod"
-                        [disabled]="!selectedPaymentMethod">
-                        runtxn</button>
-                </div> -->
                 <div class="w-100 col-lg-9 mb-3">
                     <button color="primary" mat-flat-button class="w-100 p-3 text-white" style="border-radius: 30px;"
                         (click)="navigatetoCheckout()" [disabled]="!selectedPaymentMethod">Pay
                         {{ getSum(amount, taxes) | currency:'INR'}}</button>
                 </div>
             </div>
-
-            <!-- <div class="col p-3">
-                <button color="primary" mat-raised-button class="w-100 p-3" (click)="navigatetopay('All')"
-                    [disabled]="!amount">All-Pay
-                    {{ getSum(amount, taxes) | currency:'INR'}}</button>
-            </div> -->
-            <!-- Empty card with no content -->
         </div>
     </div>
-    <!-- <div class="col-lg-4 p-3">
-        <button color="primary" mat-raised-button class="w-100 p-3" (click)="navigatetopay('All')">
-            Run Txn Comparison</button>
-    </div> -->
+</div> -->
+<div class="container mt-5">
+    <div class="row g-4">
+        <!-- Payment Options -->
+        <div class="col-12 col-lg-5 p-3 border me-lg-4 mb-3 mb-lg-0">
+            <div class="h4 fw-medium">Payment Options</div>
+            <p class="text-secondary mb-3">After selecting your payment method, proceed to pay</p>
+            <!-- Payment Rows -->
+            <div class="row g-3">
+                <div class="col-12 col-sm-6">
+                    <div class="border p-2 d-flex align-items-center">
+                        <input type="radio" name="paymentMethod" value="CARDS" [(ngModel)]="selectedPaymentMethod"
+                            class="me-2" />
+                        <img src="../../assets/images/checkout/cards.svg" width="50" height="50" class="me-2" />
+                        <span>Cards</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="border p-2 d-flex align-items-center">
+                        <input type="radio" name="paymentMethod" value="NET_BANKING" [(ngModel)]="selectedPaymentMethod"
+                            class="me-2" />
+                        <img src="../../assets/images/checkout/netbanking.svg" width="50" height="50" class="me-2" />
+                        <span>Net Banking</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="border p-2 d-flex align-items-center">
+                        <input type="radio" name="paymentMethod" value="UPI" [(ngModel)]="selectedPaymentMethod"
+                            class="me-2" />
+                        <img src="../../assets/images/checkout/upi.svg" width="50" height="50" class="me-2" />
+                        <span>UPI</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="border p-2 d-flex align-items-center">
+                        <input type="radio" name="paymentMethod" value="ApplePay" [(ngModel)]="selectedPaymentMethod"
+                            class="me-2" />
+                        <img src="../../assets/images/ap.svg" width="60" height="50" class="me-2" />
+                        <span>Apple Pay</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="border p-2 d-flex align-items-center">
+                        <input type="radio" name="paymentMethod" value="GooglePay" [(ngModel)]="selectedPaymentMethod"
+                            class="me-2" />
+                        <img src="../../assets/images/gp.svg" width="54" height="50" class="me-2" />
+                        <span>Gpay</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="border p-2 d-flex align-items-center">
+                        <input type="radio" name="paymentMethod" value="PayPal" [(ngModel)]="selectedPaymentMethod"
+                            class="me-2" />
+                        <img src="../../assets/images/payp.svg" width="70" height="50" class="me-2" />
+                        <span>Paypal</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="border p-2 d-flex align-items-center">
+                        <input type="radio" name="paymentMethod" value="Zelle" [(ngModel)]="selectedPaymentMethod"
+                            class="me-2" />
+                        <img src="../../assets/images/zell.svg" width="60" height="50" class="me-2" />
+                        <span>Zelle</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="border p-2 d-flex align-items-center">
+                        <input type="radio" name="paymentMethod" value="Venmo" [(ngModel)]="selectedPaymentMethod"
+                            class="me-2" />
+                        <img src="../../assets/images/venm.svg" width="60" height="50" class="me-2" />
+                        <span>Venmo</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="border p-2 d-flex align-items-center">
+                        <input type="radio" name="paymentMethod" value="PhonePay" [(ngModel)]="selectedPaymentMethod"
+                            class="me-2" />
+                        <img src="../../assets/images/phonepayim.svg" width="60" height="50" class="me-2" />
+                        <span>PhonePe</span>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <div class="border p-2 d-flex align-items-center">
+                        <input type="radio" name="paymentMethod" value="AmazonPay" [(ngModel)]="selectedPaymentMethod"
+                            class="me-2" />
+                        <img src="../../assets/images/amazpay.svg" width="60" height="50" class="me-2" />
+                        <span>Amazon Pay</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Order Summary -->
+        <div class="col-12 col-lg-6 p-3 border">
+            <div class="h4 fw-medium">Order Summary</div>
+            <div class="row align-items-center mt-3 g-2 mb-2">
+                <!-- Image -->
+                <div class="col-auto">
+                    <img [src]="course.image" [alt]="course.name" width="70" height="70" class="ms-2" />
+                </div>
 
-    <!-- <div style="margin-left: 600px;">
-        
-        <div class="col-auto mb-3">
-            <button color="primary"  mat-button class="w-75 p-3 ms-4" (click)="navigatetoToucanPay()"
-                [disabled]="!amount">Toucan Pay {{amount+taxes | currency:'INR'}}</button>
+                <!-- Course name & quantity -->
+                <div class="col">
+                    <p class="mb-1">{{course.name}}</p>
+                    <small class="text-secondary">Quantity: 1</small>
+                </div>
+
+                <!-- Input field (same row, fixed width) -->
+                <div class="col-auto" style="min-width: 180px;">
+                    <input type="text" class="form-control" [ngModel]="amount | currency:'INR'" readonly
+                        (ngModelChange)="amount = checkTxnAmtFn($event,currencyCode)"
+                        [ngModelOptions]="{updateOn:'blur'}" />
+                </div>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+                <span>Sub Total</span>
+                <span>{{amount | currency:'INR'}}</span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <span>Taxes</span>
+                <span>{{taxes | currency:'INR'}}</span>
+            </div>
+            <hr />
+            <div class="d-flex justify-content-between">
+                <span>Total</span>
+                <span>{{getSum(amount, taxes) | currency:'INR'}}</span>
+            </div>
+            <div class="form-check mt-3">
+                <input type="checkbox" class="form-check-input" id="terms" />
+                <label class="form-check-label text-secondary" for="terms">
+                    I have read and accept the sales terms & conditions
+                </label>
+            </div>
+            <button class="btn btn-primary w-100 mt-3 py-2" style="border-radius:30px;" (click)="navigatetoCheckout()"
+                [disabled]="!selectedPaymentMethod">
+                Pay {{ getSum(amount, taxes) | currency:'INR'}}
+            </button>
         </div>
-        <div class="col-auto mb-3">
-            <button color="primary"  mat-button class="w-75 p-3 ms-4" (click)="navigatetoJio()"
-                [disabled]="!amount">JIO Pay {{amount+taxes | currency:'INR'}}</button>
-        </div>
-        <div class="col-auto mb-3">
-            <button color="primary"  mat-button class="w-75 p-3 ms-4" (click)="navigatetoRazorpay()"
-                [disabled]="!amount">Razor Pay {{amount+taxes | currency:'INR'}}</button>
-        </div>
-        <div class="col-auto mb-3">
-            <button color="primary"  mat-button class="w-75 p-3 ms-4" (click)="navigatetoPinelabs()"
-                [disabled]="!amount">Pinelabs Pay {{amount+taxes | currency:'INR'}}</button>
-        </div>
-        <div class="col-auto">
-            <button color="primary"  mat-button class="w-75 p-3 ms-4" (click)="navigatetoJuspay()"
-                [disabled]="!amount">JusPay {{amount+taxes | currency:'USD'}}</button>
-        </div>
-    </div>  -->
+    </div>
 </div>
