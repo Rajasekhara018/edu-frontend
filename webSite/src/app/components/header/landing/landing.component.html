@@ -24,13 +24,13 @@
         Unlock potential with our expert-led courses and resources.
       </p>
       <button class="border border-gray-700 px-6 py-2 uppercase tracking-wider hover:bg-gray-200 transition">
-        Join Now For Success
+        <a href="#register" class="nav-link">Join Now For Success</a>
       </button>
     </div>
   </section>
 
   <!-- About Us Section -->
-  <section class="py-5 text-center">
+  <section class="py-5 text-center" id="about">
     <div class="container">
       <h2 class="mb-4" style="color: #9a8f55">About Us</h2>
       <p class="fw-semibold">Who We Are:</p>
@@ -48,7 +48,7 @@
       </ul>
     </div>
   </section>
-  <section class="py-5">
+  <section class="py-5" id="courses">
     <div class="container">
       <h3 class="text-uppercase text-muted mb-5">Our Courses</h3>
       <div class="row g-4">
@@ -77,8 +77,8 @@
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">₹ 4,999</span>
-              <button class="btn btn-primary btn-sm" (click)="paymentPage('python',4999)">Buy Now</button>
+              <span class="fw-bold text-success">₹ 30,000</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('python',30000)">Buy Now</button>
             </div>
           </div>
         </div>
@@ -105,8 +105,8 @@
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">₹ 5,499</span>
-              <button class="btn btn-primary btn-sm" (click)="paymentPage('java',5499)">Buy Now</button>
+              <span class="fw-bold text-success">₹ 35,000</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('java',35000)">Buy Now</button>
             </div>
           </div>
         </div>
@@ -127,8 +127,8 @@
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">₹ 6,999</span>
-              <button class="btn btn-primary btn-sm" (click)="paymentPage('datascience',6999)">Buy Now</button>
+              <span class="fw-bold text-success">₹ 75,000</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('datascience',75000)">Buy Now</button>
             </div>
           </div>
         </div>
@@ -154,8 +154,8 @@
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">₹ 9,999</span>
-              <button class="btn btn-primary btn-sm" (click)="paymentPage('fullstack',9999)">Buy Now</button>
+              <span class="fw-bold text-success">₹ 85,000</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('fullstack',85000)">Buy Now</button>
             </div>
           </div>
         </div>
@@ -176,8 +176,8 @@
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">₹ 7,499</span>
-              <button class="btn btn-primary btn-sm" (click)="paymentPage('nosql',7499)">Buy Now</button>
+              <span class="fw-bold text-success">₹ 45,000</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('nosql',45000)">Buy Now</button>
             </div>
           </div>
         </div>
@@ -295,7 +295,7 @@
       </div>
     </div>
   </section> -->
-  <div class="container py-5">
+  <div class="container py-5" id="register">
     <div class="row align-items-center">
       <div class="col-lg-6 mb-4 mb-lg-0 text-center">
         <img src="../../../../assets/ContactUs.jpg" alt="Contact Support" class="contact-image" />
@@ -394,13 +394,13 @@
           </div>
           <mat-form-field class="col-12 mb-3">
             <mat-label>Select Course</mat-label>
-            <mat-select [(ngModel)]="customerObj.courseName" #usrTyp="ngModel" name="usrTyp" required>
+            <mat-select [(ngModel)]="customerObj.courseName" #usrTyp="ngModel" name="usrTyp" required multiple>
               <mat-option *ngFor="let user of courses" [value]="user">
                 {{ user }}
               </mat-option>
             </mat-select>
             <mat-error *ngIf="usrTyp.errors?.['required']">
-              User Type is required
+              Course is required
             </mat-error>
           </mat-form-field>
           <!-- <div class="mb-3">
@@ -425,9 +425,12 @@
             </div>
           </div> -->
           <div class="d-grid">
-            <button type="submit" class="btn btn-primary btn-send" (click)="register()"
-              [disabled]="!userobjForm.form.valid">
-              Register
+            <button type="submit" class="btn btn-primary btn-send d-flex align-items-center justify-content-center"
+              (click)="register()" [disabled]="!userobjForm.form.valid || loading">
+              <span *ngIf="!loading">Register</span>
+              <div *ngIf="loading" class="spinner-border spinner-border-sm text-light ms-2" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
             </button>
           </div>
         </form>

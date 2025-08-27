@@ -12,30 +12,37 @@ import { PayeaseRestservice } from 'src/app/Services/payease-restservice';
 export class LandingComponent {
   isLoading!: boolean;
   customerObj = new Customer();
-  courses=['Full Stack','NoSQL','Python Programming','Data Science','Java Programming',];
+  reqFS!: boolean;
+  courses = ['Full Stack', 'NoSQL', 'Python Programming', 'Data Science', 'Java Programming',];
   constructor(private postService: PayeaseRestservice, public router: Router) {
 
   }
-
+  loading!:boolean;
   register() {
+    this.loading = true;
     const requestObj: any = {
       ...this.customerObj,
     };
-    this.postService.doPost(APIPath.AUTH_REGISTER, requestObj, "SIGNUP").subscribe({
+    this.postService.doPost(APIPath.COURSE_REGISTER, requestObj, "SIGNUP").subscribe({
       next: (response: any) => {
         if (response.status) {
+          this.loading = false;
           this.customerObj = response.status;
-          this.postService.showToast('success', "Registration is successfully completed");
+          // this.postService.openSnackBar('success',response.errorMsg);
+          this.postService.openSnackBar(response.errorMsg, 'success', 3000);
         } else {
-          this.postService.showToast('error', response?.message?.toString());
+          this.loading = false;
+          this.postService.openSnackBar(response.errorMsg, 'error', 3000);
         }
       },
       error: (err: any) => {
-        this.postService.showToast('error', err?.message?.toString());
+        this.loading = false;
+        // this.postService.openSnackBar('error', err.errorMsg);
+        this.postService.openSnackBar(err.errorMsg, 'error', 3000);
       }
     });
   }
-  paymentPage(course:string,amount: number) {
-    this.router.navigate(['/payment-page',course, amount]);
+  paymentPage(course: string, amount: number) {
+    this.router.navigate(['/payment-page', course, amount]);
   }
 }

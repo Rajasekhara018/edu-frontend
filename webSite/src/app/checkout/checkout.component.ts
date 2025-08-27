@@ -10,27 +10,27 @@ export class TAmount {
 export const COURSE_DATA: Record<string, { name: string; price: number; image: string }> = {
   'fullstack': {
     name: 'Full Stack',
-    price: 9999,
+    price: 85000,
     image: '../../../../assets/fullstack.webp'
   },
   'nosql': {
     name: 'NoSQL',
-    price: 7499,
+    price: 45000,
     image: '../../../../assets/nosql.webp'
   },
   'python': {
     name: 'Python Programming',
-    price: 4999,
+    price: 30000,
     image: '../../../../assets/python.webp'
   },
   'datascience': {
     name: 'Data Science',
-    price: 6999,
+    price: 75000,
     image: '../../../../assets/datascience.webp'
   },
   'java': {
     name: 'Java Programming',
-    price: 5499,
+    price: 35000,
     image: '../../../../assets/java.webp'
   }
 };
@@ -65,18 +65,21 @@ export class CheckoutComponent implements OnInit {
   generateRandomId() {
     return Math.random().toString(36).substring(2, 10);
   }
-  getSum(amount: number, taxes: number): number {
-    return Number(amount) + Number(taxes);
+  getTax(amount: number,){
+    return Number(amount)*0.18;
+  }
+  getSum(amount: number): number {
+    return Number(amount) + this.getTax(amount);
   }
   navigatetoCheckout() {
-    this.router.navigate(['/checkout-page', this.getSum(this.amount, this.taxes)]);
+    this.router.navigate(['/checkout-page', this.getSum(this.amount)]);
   }
 
   navigatetopay(payType: string) {
 
     if (payType == "AI") {
       let popObj = new AIPayRequest();
-      popObj.transaction_amount = this.getSum(this.amount, this.taxes);
+      popObj.transaction_amount = this.getSum(this.amount);
       popObj.transaction_id = "TXN34357";//this.generateRandomId();
 
       switch (this.selectedPaymentMethod) {

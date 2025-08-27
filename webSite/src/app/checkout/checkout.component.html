@@ -226,14 +226,14 @@
                         <span>UPI</span>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6">
+                <!-- <div class="col-12 col-sm-6">
                     <div class="border p-2 d-flex align-items-center">
                         <input type="radio" name="paymentMethod" value="ApplePay" [(ngModel)]="selectedPaymentMethod"
                             class="me-2" />
                         <img src="../../assets/images/ap.svg" width="60" height="50" class="me-2" />
                         <span>Apple Pay</span>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-12 col-sm-6">
                     <div class="border p-2 d-flex align-items-center">
                         <input type="radio" name="paymentMethod" value="GooglePay" [(ngModel)]="selectedPaymentMethod"
@@ -242,30 +242,30 @@
                         <span>Gpay</span>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6">
+                <!-- <div class="col-12 col-sm-6">
                     <div class="border p-2 d-flex align-items-center">
                         <input type="radio" name="paymentMethod" value="PayPal" [(ngModel)]="selectedPaymentMethod"
                             class="me-2" />
                         <img src="../../assets/images/payp.svg" width="70" height="50" class="me-2" />
                         <span>Paypal</span>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6">
+                </div> -->
+                <!-- <div class="col-12 col-sm-6">
                     <div class="border p-2 d-flex align-items-center">
                         <input type="radio" name="paymentMethod" value="Zelle" [(ngModel)]="selectedPaymentMethod"
                             class="me-2" />
                         <img src="../../assets/images/zell.svg" width="60" height="50" class="me-2" />
                         <span>Zelle</span>
                     </div>
-                </div>
-                <div class="col-12 col-sm-6">
+                </div> -->
+                <!-- <div class="col-12 col-sm-6">
                     <div class="border p-2 d-flex align-items-center">
                         <input type="radio" name="paymentMethod" value="Venmo" [(ngModel)]="selectedPaymentMethod"
                             class="me-2" />
                         <img src="../../assets/images/venm.svg" width="60" height="50" class="me-2" />
                         <span>Venmo</span>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-12 col-sm-6">
                     <div class="border p-2 d-flex align-items-center">
                         <input type="radio" name="paymentMethod" value="PhonePay" [(ngModel)]="selectedPaymentMethod"
@@ -274,14 +274,14 @@
                         <span>PhonePe</span>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6">
+                <!-- <div class="col-12 col-sm-6">
                     <div class="border p-2 d-flex align-items-center">
                         <input type="radio" name="paymentMethod" value="AmazonPay" [(ngModel)]="selectedPaymentMethod"
                             class="me-2" />
                         <img src="../../assets/images/amazpay.svg" width="60" height="50" class="me-2" />
                         <span>Amazon Pay</span>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <!-- Order Summary -->
@@ -312,24 +312,167 @@
                 <span>{{amount | currency:'INR'}}</span>
             </div>
             <div class="d-flex justify-content-between">
-                <span>Taxes</span>
-                <span>{{taxes | currency:'INR'}}</span>
+                <span>Taxes (18% GST)</span>
+                <span>{{getTax(amount) | currency:'INR'}}</span>
             </div>
             <hr />
             <div class="d-flex justify-content-between">
                 <span>Total</span>
-                <span>{{getSum(amount, taxes) | currency:'INR'}}</span>
+                <span>{{getSum(amount) | currency:'INR'}}</span>
             </div>
             <div class="form-check mt-3">
                 <input type="checkbox" class="form-check-input" id="terms" />
                 <label class="form-check-label text-secondary" for="terms">
-                    I have read and accept the sales terms & conditions
+                    I have read and accept the
+                    <a href="#" class="text-primary text-decoration-underline" data-bs-toggle="modal" data-bs-target="#termsModal">sales terms & conditions</a>
                 </label>
             </div>
             <button class="btn btn-primary w-100 mt-3 py-2" style="border-radius:30px;" (click)="navigatetoCheckout()"
                 [disabled]="!selectedPaymentMethod">
-                Pay {{ getSum(amount, taxes) | currency:'INR'}}
+                Pay {{ getSum(amount) | currency:'INR'}}
             </button>
+            <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="termsModalLabel">EduSoft Terms & Conditions & Privacy Policy
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h6>Terms and Conditions – EduSoft Online Course Offerings</h6>
+                            <p><strong>Platform Name:</strong> EduSoft Academy</p>
+
+                            <h6>1. Acceptance of Terms</h6>
+                            <p>By enrolling in or accessing our online courses, you agree to comply with and be bound by
+                                these Terms
+                                and Conditions, our Refund Policy, our Privacy Policy, and any other policies
+                                communicated to you.
+                            </p>
+
+                            <h6>2. Eligibility</h6>
+                            <p>You must be at least 18 years old, or have parental/guardian consent if under 18, to
+                                access the
+                                courses. You agree to provide accurate and complete registration details when signing
+                                up.</p>
+
+                            <h6>3. Course Access & Use</h6>
+                            <p>Access to purchased courses is granted only to the registered user and is
+                                non-transferable. Course
+                                content, including videos, materials, quizzes, and assignments, are for personal
+                                educational use
+                                only. You may not share, resell, copy, record, or distribute course content without
+                                prior written
+                                permission.</p>
+
+                            <h6>4. Payments & Refund Policy</h6>
+                            <ul>
+                                <li>All course fees must be paid in full at the time of registration unless otherwise
+                                    specified.
+                                </li>
+                                <li>Refund Eligibility: Refunds can be requested within 7 days of purchase if less than
+                                    20% of the
+                                    course has been accessed.</li>
+                                <li>No refunds will be granted once a certificate of completion has been issued.</li>
+                                <li>For subscription-based models, cancellations will apply to the next billing cycle
+                                    and are
+                                    non-refundable for the current cycle.</li>
+                                <li>Refunds, once approved, will be processed to the original payment method within 7–14
+                                    business
+                                    days. Any applicable taxes or transaction charges may be deducted.</li>
+                            </ul>
+
+                            <h6>5. Intellectual Property Rights</h6>
+                            <p>All course materials, including text, graphics, videos, and software, are owned by
+                                EduSoft Academy or
+                                its licensors. You are granted a limited, non-exclusive, revocable license to access and
+                                use the
+                                content for learning purposes.</p>
+
+                            <h6>6. User Responsibilities</h6>
+                            <p>You are responsible for maintaining the confidentiality of your account login details.
+                                You agree not
+                                to misuse the platform, attempt unauthorized access, or disrupt services.</p>
+
+                            <h6>7. Certificates of Completion</h6>
+                            <p>Certificates will be issued upon fulfilling all course requirements such as attendance,
+                                quizzes, and
+                                assessments. Certificates are for personal achievement only and do not guarantee
+                                employment or
+                                accreditation unless explicitly stated.</p>
+
+                            <h6>8. Cancellation & Termination</h6>
+                            <p>We reserve the right to suspend or terminate your access to courses if you breach these
+                                Terms. In
+                                such cases, no refunds will be provided.</p>
+
+                            <h6>9. Limitation of Liability</h6>
+                            <p>EduSoft Academy will not be liable for any indirect, incidental, or consequential damages
+                                arising out
+                                of your use of the course or platform. Course content is for educational purposes only
+                                and does not
+                                constitute professional advice unless explicitly mentioned.</p>
+
+                            <h6>10. Amendments</h6>
+                            <p>We may revise these Terms and Conditions at any time. Updates will be communicated via
+                                email or
+                                platform notification.</p>
+
+                            <h6>11. Governing Law & Dispute Resolution</h6>
+                            <p>These Terms shall be governed by and construed in accordance with the laws of India. Any
+                                disputes
+                                shall be subject to the exclusive jurisdiction of the courts of India.</p>
+
+                            <hr>
+                            <h6>Privacy Policy</h6>
+
+                            <h6>1. Information We Collect</h6>
+                            <ul>
+                                <li>Personal details such as name, email, contact number, billing address, and payment
+                                    information.
+                                </li>
+                                <li>Course activity, quiz results, progress reports, and feedback.</li>
+                                <li>Technical information such as IP address, device type, and browser used.</li>
+                            </ul>
+
+                            <h6>2. How We Use Your Information</h6>
+                            <ul>
+                                <li>To provide access to courses and learning materials.</li>
+                                <li>To process payments and issue certificates.</li>
+                                <li>To improve course quality through analytics and user feedback.</li>
+                                <li>To communicate important updates, offers, or policy changes.</li>
+                            </ul>
+
+                            <h6>3. Information Sharing</h6>
+                            <p>We do not sell or rent your personal data. Information may be shared with trusted service
+                                providers
+                                (e.g., payment gateways, certification bodies) solely for course delivery. We may
+                                disclose
+                                information if legally required by government or regulatory authorities.</p>
+
+                            <h6>4. Data Security</h6>
+                            <p>Industry-standard measures (SSL encryption, firewalls, access controls) are used to
+                                protect your
+                                data. However, no system is 100% secure; users are encouraged to protect their login
+                                details.</p>
+
+                            <h6>5. Your Rights</h6>
+                            <p>You may request access, correction, or deletion of your personal data at any time by
+                                contacting us.
+                                You may unsubscribe from marketing emails via the unsubscribe link in our
+                                communications.</p>
+
+                            <h6>6. Cookies Policy</h6>
+                            <p>Our platform may use cookies for analytics, login management, and personalization. You
+                                may disable
+                                cookies in your browser settings, but some features may not work properly.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
