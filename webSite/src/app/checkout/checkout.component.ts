@@ -29,7 +29,7 @@ export const COURSE_DATA: Record<string, { name: string; price: number; image: s
     image: '../../../../assets/datascience.webp'
   },
   'java': {
-    name: 'JAVA Programming',
+    name: 'Java Programming',
     price: 5499,
     image: '../../../../assets/java.webp'
   }

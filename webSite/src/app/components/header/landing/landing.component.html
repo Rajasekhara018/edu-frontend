@@ -88,7 +88,7 @@
           <div class="card h-100 border-0 shadow-sm">
             <img src="../../../../assets/java.webp" class="card-img-top" alt="Java Programming" />
             <div class="card-body">
-              <h5 class="card-title">JAVA Programming</h5>
+              <h5 class="card-title">Java Programming</h5>
               <p class="fw-semibold">Beginner Level</p>
               <ul>
                 <li>
@@ -301,7 +301,7 @@
         <img src="../../../../assets/ContactUs.jpg" alt="Contact Support" class="contact-image" />
       </div>
       <div class="col-lg-6">
-        <h3 class="mb-4 text-primary">Register as a Distributor</h3>
+        <h3 class="mb-4 text-primary">Register a course</h3>
         <form #userobjForm="ngForm" (keydown.enter)="$event.preventDefault()" name="objForm" autocomplete="off">
           <!-- <mat-form-field appearance="outline" class="col-md-12">
             <mat-label>Full Name</mat-label>
@@ -371,39 +371,39 @@
             </div>
           </button> -->
           <!-- </form> -->
-          <div class="row mb-3">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Your Name" name="fName"
-                [(ngModel)]="customerObj.fullName" #fName="ngModel" required />
-              <div *ngIf="fName.invalid && fName.touched" class="text-danger small mt-1">
-                Name is required.
-              </div>
-            </div>
-            <div class="col">
-              <input type="email" class="form-control" placeholder="Your Email" name="eml"
-                [(ngModel)]="customerObj.emailId" #eml="ngModel" required />
-              <div *ngIf="eml.invalid && eml.touched" class="text-danger small mt-1">
-                Email is required.
-              </div>
+          <div class="col-12 mb-3">
+            <input type="text" class="form-control" placeholder="Your Name" name="fName"
+              [(ngModel)]="customerObj.fullName" #fName="ngModel" required />
+            <div *ngIf="fName.invalid && fName.touched" class="text-danger small mt-1">
+              Name is required.
             </div>
           </div>
-          <div class="row mb-3">
-            <div class="col">
-              <input type="tel" class="form-control" placeholder="Your Phone No" name="mblNum"
-                [(ngModel)]="customerObj.phNo" #mblNum="ngModel" required />
-              <div *ngIf="mblNum.invalid && mblNum.touched" class="text-danger small mt-1">
-                Phone No is required.
-              </div>
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Your Business Name" name="bnam"
-                [(ngModel)]="customerObj.businessName" #bnam="ngModel" required />
-              <div *ngIf="bnam.invalid && bnam.touched" class="text-danger small mt-1">
-                Business Name is required.
-              </div>
+          <div class="col-12 mb-3">
+            <input type="email" class="form-control" placeholder="Your Email" name="eml"
+              [(ngModel)]="customerObj.emailId" #eml="ngModel" required />
+            <div *ngIf="eml.invalid && eml.touched" class="text-danger small mt-1">
+              Email is required.
             </div>
           </div>
-          <div class="mb-3">
+          <div class="col-12 mb-3">
+            <input type="tel" class="form-control" placeholder="Your Phone No" name="mblNum"
+              [(ngModel)]="customerObj.phNo" #mblNum="ngModel" required />
+            <div *ngIf="mblNum.invalid && mblNum.touched" class="text-danger small mt-1">
+              Phone No is required.
+            </div>
+          </div>
+          <mat-form-field class="col-12 mb-3">
+            <mat-label>Select Course</mat-label>
+            <mat-select [(ngModel)]="customerObj.courseName" #usrTyp="ngModel" name="usrTyp" required>
+              <mat-option *ngFor="let user of courses" [value]="user">
+                {{ user }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="usrTyp.errors?.['required']">
+              User Type is required
+            </mat-error>
+          </mat-form-field>
+          <!-- <div class="mb-3">
             <input type="text" class="form-control" placeholder="Distribute Id" name="dstId"
               [(ngModel)]="customerObj.distributeId" #dstId="ngModel" required />
             <div *ngIf="dstId.invalid && dstId.touched" class="text-danger small mt-1">
@@ -423,7 +423,7 @@
             <div *ngIf="bAdd.invalid && bAdd.touched" class="text-danger small mt-1">
               Business Address is required.
             </div>
-          </div>
+          </div> -->
           <div class="d-grid">
             <button type="submit" class="btn btn-primary btn-send" (click)="register()"
               [disabled]="!userobjForm.form.valid">

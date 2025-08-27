@@ -12,6 +12,7 @@ import { PayeaseRestservice } from 'src/app/Services/payease-restservice';
 export class LandingComponent {
   isLoading!: boolean;
   customerObj = new Customer();
+  courses=['Full Stack','NoSQL','Python Programming','Data Science','Java Programming',];
   constructor(private postService: PayeaseRestservice, public router: Router) {
 
   }

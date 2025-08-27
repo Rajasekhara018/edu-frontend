@@ -63,6 +63,7 @@ export class Customer {
     // aadhar!:string;
     // pan!:string;
     fullName!: string;
+    courseName!:string;
     businessName!: string;
     emailId!: string;
     phNo!: string;
