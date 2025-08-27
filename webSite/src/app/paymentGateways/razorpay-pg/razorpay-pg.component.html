@@ -1,11 +1,8 @@
-<div class="mainContainer border position-relative">
+<!-- <div class="mainContainer border position-relative">
     <div class="image-container position-relative">
         <div class="pymtOpt pb-3 position-relative z-index-1">
             <p class="p-3 font-lg weight-medium mb-2">Payment Options:{{amount | currency:'INR'}}</p>
         </div>
-        <!-- <div class="pb-2"> 
-            <img src="../../assets/images/checkout/PGnew2.png" class="overlapping-image"   />
-        </div> -->
     </div>
     <div class="checkoutContainer mb-3 mt-3">
         <div class="border">
@@ -13,18 +10,13 @@
                 <mat-expansion-panel hideToggle [expanded]="step === 0" (opened)="setStep(0)" class="no-highlight">
                     <mat-expansion-panel-header>
                         <mat-panel-title class="flex-align">
-                            <!-- <div class="circle"></div> -->
                             <img matChipAvatar src="../../assets/images/checkout/cards.svg" class="tab-icon me-3" />
                             <p class="font-lg weight-medium mb-0">Cards</p>
                         </mat-panel-title>
                         <mat-panel-description class="float-end">
-                            <!-- <div class="float-end">
-                                <img matChipAvatar src="../../assets/images/checkout/paymentmode.png" width="95px"
-                                    height="20px" />
-                            </div> -->
                         </mat-panel-description>
                     </mat-expansion-panel-header>
-                    <div class="innerCard m-5">
+                    <div class="innerCard m-2">
                         <p class="font-lg weight-regular pb-3">Card Details</p>
                         <form #AdvancePayForm="ngForm">
                             <mat-form-field  style="width: 438px">
@@ -108,7 +100,7 @@
                         <mat-panel-description class="float-end">
                         </mat-panel-description>
                     </mat-expansion-panel-header>
-                    <div class="innerCard m-5">
+                    <div class="innerCard m-2">
                         <div class="pb-3">
                             <p class="font-lg weight-regular pb-2">Select Bank</p>
                             <mat-chip-grid>
@@ -160,14 +152,13 @@
                 <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle class="no-highlight">
                     <mat-expansion-panel-header>
                         <mat-panel-title class="flex-align">
-                            <!-- <div class="circle"></div> -->
                             <img matChipAvatar src="../../assets/images/checkout/upi.svg" class="tab-icon me-3" />
                             <p class="font-lg weight-medium mb-0">UPI</p>
                         </mat-panel-title>
                         <mat-panel-description class="float-end">
                         </mat-panel-description>
                     </mat-expansion-panel-header>
-                    <div class="innerCard m-5">
+                    <div class="innerCard m-2">
                         <div class="pb-3">
                             <p class="font-lg weight-regular pb-2">Enter VPA details</p>
                             <form #AdvancePayForm="ngForm">
@@ -199,14 +190,13 @@
                 <mat-expansion-panel hideToggle [expanded]="step === 3" (opened)="setStep(3)" class="no-highlight">
                     <mat-expansion-panel-header>
                         <mat-panel-title class="flex-align">
-                            <!-- <div class="circle"></div> -->
                             <img matChipAvatar src="../../assets/images/checkout/wallet.svg" class="tab-icon me-3" />
                             <p class="font-lg weight-medium mb-0">Wallets</p>
                         </mat-panel-title>
                         <mat-panel-description>
                         </mat-panel-description>
                     </mat-expansion-panel-header>
-                    <div class="innerCard m-5">
+                    <div class="innerCard m-2">
                         <div class="pb-3">
                             <p class="font-lg weight-regular pb-2">Express checkout</p>
                             <mat-chip-grid>
@@ -253,11 +243,520 @@
                 </mat-expansion-panel>
             </mat-accordion>
         </div>
-        <!-- <div class="footer-content m-5 justify-content-center">
-            <img src="../../assets/images/checkout/Razorpay.png" width="139px" height="48px" />
-        </div> -->
     </div>
+</div> -->
+<div class="border position-relative checkoutContainer mt-5 mb-5">
+  <div class="position-relative">
+    <div class="position-relative z-index-1">
+      <p class="p-3 font-xl mb-2">Payment Options: <span class="weight-medium">{{amount | currency:'INR'}}</span></p>
+    </div>
+  </div>
+  <div class="mb-3 mt-2">
+    <div class="border">
+      <mat-accordion>
+        <mat-expansion-panel hideToggle [expanded]="step === 0" (opened)="setStep(0)" class="no-highlight">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="flex-align">
+              <img matChipAvatar src="../../assets/images/checkout/cards.svg" class="tab-icon me-3" />
+              <p class="font-lg weight-medium mb-0">Cards</p>
+            </mat-panel-title>
+            <mat-panel-description class="float-end">
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="innerCard m-2">
+            <p class="font-xl weight-regular pb-3">Card Details</p>
+            <form #AdvancePayForm="ngForm" novalidate>
+              <!-- Card Number -->
+              <div class="mb-3">
+                <label for="cardnumber" class="form-label font-lg">Card Number</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="cardnumber" placeholder="Card Number" maxlength="16"
+                    name="cardnumber" required pattern="[3-6]{1}[0-9]{15}"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')" [(ngModel)]="adObj.cardnumber"
+                    #cardnumber="ngModel" (change)="showCardInInput(adObj.cardnumber)" />
+                  <!-- <span *ngIf="!cardImg == false" class="input-group-text p-0">
+                    <img [src]="cardImg" style="height: 40px;" />
+                  </span> -->
+                </div>
+                <div *ngIf="cardnumber.invalid && (cardnumber.dirty || cardnumber.touched)" class="text-danger mt-1">
+                  <div *ngIf="cardnumber.errors?.['required']">Card number required</div>
+                  <div *ngIf="cardnumber.errors?.['pattern']">Enter Valid Card Number</div>
+                </div>
+              </div>
+              <!-- Expiry -->
+              <div class="mb-3">
+                <label for="validity" class="form-label font-lg">Expiry (MM/YY)</label>
+                <input type="text" class="form-control" id="validity" placeholder="MM/YY" name="validity" minlength="5"
+                  maxlength="5" required pattern="^(?:0?[1-9]|1[0-2]) *[/\/-] *[1-9][0-9]$"
+                  oninput="this.value = this.value.replace(/[^0-9/]/g, '')" [(ngModel)]="adObj.validity"
+                  #validity="ngModel" />
+                <div *ngIf="validity.invalid && (validity.dirty || validity.touched)" class="text-danger mt-1">
+                  <div *ngIf="validity.errors?.['required']">Expiry required</div>
+                  <div *ngIf="validity.errors?.['pattern']">Enter Valid Expiry</div>
+                </div>
+              </div>
+              <!-- CVV -->
+              <div class="mb-3">
+                <label for="cvv" class="form-label font-lg">CVV</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="cvv" placeholder="CVV" maxlength="3" name="cvv"
+                    required pattern="[0-9]{3}" [type]="hide ? 'password' : 'text'"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')" [(ngModel)]="adObj.cvv" #cvv="ngModel" />
+                  <button class="btn btn-outline-secondary" type="button" (click)="hide = !hide">
+                    <i [class]="'bi ' + (hide ? 'bi-eye-slash' : 'bi-eye')"></i>
+                  </button>
+                </div>
+                <div *ngIf="cvv.invalid && (cvv.dirty || cvv.touched)" class="text-danger mt-1">
+                  <div *ngIf="cvv.errors?.['required']">CVV required</div>
+                  <div *ngIf="cvv.errors?.['pattern']">Enter Valid CVV</div>
+                </div>
+              </div>
+              <!-- Name on Card -->
+              <div class="mb-3">
+                <label for="nameonCard" class="form-label font-lg">Name on Card</label>
+                <input type="text" class="form-control" id="nameonCard" placeholder="Name on Card" required
+                  pattern="[a-zA-Z]{5,20}" name="nameonCard" [(ngModel)]="adObj.nameonCard" #nameonCard="ngModel" />
+                <div *ngIf="nameonCard.invalid && (nameonCard.dirty || nameonCard.touched)" class="text-danger mt-1">
+                  <div *ngIf="nameonCard.errors?.['required']">Name is Required</div>
+                  <div *ngIf="nameonCard.errors?.['pattern']">Enter Valid Name</div>
+                </div>
+              </div>
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button type="button" class="btn btn-primary" [disabled]="AdvancePayForm.invalid"
+                  (click)="storeCardDetails(AdvancePayForm.value)">
+                  <i class="bi bi-lock-fill me-2"></i> Pay {{amount | currency:'INR'}}
+                </button>
+              </div>
+            </form>
+          </div>
+        </mat-expansion-panel>
+        <hr />
+        <mat-expansion-panel hideToggle [expanded]="step === 1" (opened)="setStep(1)" class="no-highlight">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <img matChipAvatar src="../../assets/images/checkout/netbanking.svg" class="tab-icon me-3" />
+              <p class="font-lg weight-medium mb-0">Net Banking</p>
+            </mat-panel-title>
+            <mat-panel-description class="float-end">
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="innerCard m-2">
+            <div class="pb-3">
+              <p class="font-lg weight-regular pb-2">Select Bank</p>
+              <mat-chip-grid>
+                <mat-chip (click)="selectBank('HDFC')" class="me-2 mb-2">
+                  <img matChipAvatar src="../../assets/images/checkout/hdfc.png" />
+                  HDFC
+                </mat-chip>
+                <mat-chip (click)="selectBank('SBI')" class="me-2 mb-2">
+                  <img matChipAvatar src="../../assets/images/checkout/sbi.png" />
+                  SBI
+                </mat-chip>
+                <mat-chip (click)="selectBank('ICICI')" class="me-2 mb-2">
+                  <img matChipAvatar src="../../assets/images/checkout/icici.png" />
+                  ICICI
+                </mat-chip>
+              </mat-chip-grid>
+              <mat-chip-grid>
+                <mat-chip (click)="selectBank('AXIS')" class="me-2 mb-2">
+                  <img matChipAvatar src="../../assets/images/checkout/axis.png" />
+                  AXIS
+                </mat-chip>
+
+                <mat-chip (click)="selectBank('KOTAK')" class="me-2 mb-2">
+                  <img matChipAvatar src="../../assets/images/checkout/kotak.png" />
+                  KOTAK
+                </mat-chip>
+                <mat-chip (click)="selectBank('PNB')" class="me-2 mb-2">
+                  <img matChipAvatar src="../../assets/images/checkout/pnb.png" />
+                  PNB
+                </mat-chip>
+              </mat-chip-grid>
+            </div>
+            <form #NetBankForm="ngForm" class="mx-auto p-3">
+              <div class="mb-3">
+                <label for="bankInput" class="form-label">Search Bank</label>
+                <input type="text" id="bankInput" class="form-control" placeholder="Bank" [(ngModel)]="netBValue"
+                  name="unet" #u_net_select="ngModel" required />
+                <div *ngIf="u_net_select.invalid && u_net_select.touched" class="text-danger mt-1">
+                  Bank is required
+                </div>
+              </div>
+              <div class="mb-3"></div>
+              <button type="button" class="btn btn-primary w-100 d-flex align-items-center justify-content-center"
+                [disabled]="NetBankForm.invalid" (click)="storeNetBAnkDetails(netBValue)">
+                <i class="bi bi-lock-fill me-2"></i>
+                Pay {{ amount | currency:'INR' }}
+              </button>
+            </form>
+
+          </div>
+        </mat-expansion-panel>
+        <hr />
+        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle class="no-highlight">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="flex-align">
+              <img matChipAvatar src="../../assets/images/checkout/upi.svg" class="tab-icon me-3" />
+              <p class="font-lg weight-medium mb-0">UPI</p>
+            </mat-panel-title>
+            <mat-panel-description class="float-end">
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="innerCard m-2">
+            <div class="pb-3">
+              <p class="font-lg weight-regular pb-2">Enter VPA details</p>
+              <form #AdvancePayForm="ngForm" class="mx-auto p-3">
+                <div class="mb-3">
+                  <label for="upiId" class="form-label">VPA Id</label>
+                  <input type="text" id="upiId" class="form-control" placeholder="Ex: Sanjeev@sbi" name="upiid"
+                    [(ngModel)]="adObj.upiid" #upiid="ngModel" required
+                    pattern="[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z]{2,64}" />
+                  <div *ngIf="upiid.errors?.['required'] && upiid.touched" class="text-danger mt-1">
+                    VPA Id is required.
+                  </div>
+                  <div *ngIf="upiid.errors?.['pattern'] && upiid.touched" class="text-danger mt-1">
+                    Enter a valid VPA Id.
+                  </div>
+                </div>
+                <div class="d-grid">
+                  <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center"
+                    [disabled]="AdvancePayForm.invalid" (click)="storeupiDetails(AdvancePayForm.value)">
+                    <i class="bi bi-lock-fill me-2"></i>
+                    Pay {{ amount | currency:'INR' }}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <hr />
+        <mat-expansion-panel hideToggle [expanded]="step === 3" (opened)="setStep(3)" class="no-highlight">
+          <mat-expansion-panel-header>
+            <mat-panel-title class="flex-align">
+              <img matChipAvatar src="../../assets/images/checkout/wallet.svg" class="tab-icon me-3" />
+              <p class="font-lg weight-medium mb-0">Wallets</p>
+            </mat-panel-title>
+            <mat-panel-description>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="innerCard m-2">
+            <div class="pb-3">
+              <p class="font-lg weight-regular pb-2">Express checkout</p>
+              <mat-chip-grid>
+                <mat-chip (click)="selectBank('paytm')" class="me-2 mb-2">
+                  <img matChipAvatar src="../../assets/images/checkout/paytm.png" />
+                  Paytm
+                </mat-chip>
+                <mat-chip (click)="selectBank('phonepay')" class="me-2 mb-2">
+                  <img matChipAvatar src="../../assets/images/checkout/phonepe.png" />
+                  Phonepe
+                </mat-chip>
+                <mat-chip (click)="selectBank('Googlepay')" class="me-2 mb-2">
+                  <img matChipAvatar src="../../assets/images/checkout/gpay.png" />
+                  Googlepay
+                </mat-chip>
+              </mat-chip-grid>
+            </div>
+            <form #AdvancePayForm="ngForm" class="mx-auto p-3">
+              <div class="mb-3">
+                <label for="walletInput" class="form-label">Mobile Number</label>
+                <input type="text" id="walletInput" class="form-control" placeholder="Ex: 7458865479" name="wallet"
+                  maxlength="10" [(ngModel)]="adObj.wallet" #wallet="ngModel" required pattern="^[0-9]{10}$"
+                  oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0,10);" />
+                <div *ngIf="wallet.errors?.['required'] && wallet.touched" class="text-danger mt-1">
+                  Mobile Number is required
+                </div>
+                <div *ngIf="wallet.errors?.['pattern'] && wallet.touched" class="text-danger mt-1">
+                  Enter a valid Mobile Number
+                </div>
+              </div>
+              <div class="d-grid">
+                <button type="button" class="btn btn-primary d-flex align-items-center justify-content-center"
+                  [disabled]="AdvancePayForm.invalid" (click)="storewalletDetails(AdvancePayForm.value)">
+                  <i class="bi bi-lock-fill me-2"></i>
+                  Pay {{ amount | currency:'INR' }}
+                </button>
+              </div>
+            </form>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
 </div>
-<div class="db-bg">
-    <img [src]="bgImg">
-</div>
+<!-- <div class="container my-4">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <div class="border rounded shadow-sm p-3">
+        <h4 class="mb-4">Payment Options: {{ amount | currency:'INR' }}</h4>
+        <div class="accordion" id="paymentAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingCards">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseCards" aria-expanded="true" aria-controls="collapseCards">
+                <img src="assets/images/checkout/cards.svg" alt="cards" class="me-2" width="30" /> Cards
+              </button>
+            </h2>
+            <div id="collapseCards" class="accordion-collapse collapse show"
+              aria-labelledby="headingCards" data-bs-parent="#paymentAccordion">
+              <div class="accordion-body">
+                <form #cardForm="ngForm" novalidate>
+                  <div class="mb-3">
+                    <label class="form-label font-lg">Card Number</label>
+                    <input type="text" name="cardnumber" class="form-control" placeholder="Card Number"
+                      maxlength="16" required pattern="[3-6]{1}[0-9]{15}"
+                      [(ngModel)]="adObj.cardnumber" #cardnumber="ngModel" />
+                    <div *ngIf="cardnumber.invalid && (cardnumber.dirty || cardnumber.touched)"
+                      class="text-danger small">
+                      <div *ngIf="cardnumber.errors?.['required']">Card number required</div>
+                      <div *ngIf="cardnumber.errors?.['pattern']">Enter valid card number</div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label font-lg">Expiry (MM/YY)</label>
+                      <input type="text" name="validity" class="form-control" placeholder="MM/YY"
+                        minlength="5" maxlength="5" required
+                        pattern="^(?:0?[1-9]|1[0-2])[/][0-9]{2}$"
+                        [(ngModel)]="adObj.validity" #validity="ngModel" />
+                      <div *ngIf="validity.invalid && (validity.dirty || validity.touched)"
+                        class="text-danger small">
+                        <div *ngIf="validity.errors?.['required']">Expiry required</div>
+                        <div *ngIf="validity.errors?.['pattern']">Enter valid expiry</div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                      <label class="form-label font-lg">CVV</label>
+                      <input type="password" name="cvv" class="form-control" placeholder="CVV"
+                        maxlength="3" required pattern="[0-9]{3}"
+                        [(ngModel)]="adObj.cvv" #cvv="ngModel" />
+                      <div *ngIf="cvv.invalid && (cvv.dirty || cvv.touched)"
+                        class="text-danger small">
+                        <div *ngIf="cvv.errors?.['required']">CVV required</div>
+                        <div *ngIf="cvv.errors?.['pattern']">Enter valid CVV</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label font-lg">Name on Card</label>
+                    <input type="text" name="nameonCard" class="form-control" placeholder="Name on Card"
+                      required pattern="[a-zA-Z ]{5,20}"
+                      [(ngModel)]="adObj.nameonCard" #nameonCard="ngModel" />
+                    <div *ngIf="nameonCard.invalid && (nameonCard.dirty || nameonCard.touched)"
+                      class="text-danger small">
+                      <div *ngIf="nameonCard.errors?.['required']">Name required</div>
+                      <div *ngIf="nameonCard.errors?.['pattern']">Enter valid name</div>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary w-100"
+                    [disabled]="cardForm.invalid">
+                    <i class="bi bi-lock-fill"></i> Pay {{ amount | currency:'INR' }}
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingNet">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseNet" aria-expanded="false" aria-controls="collapseNet">
+                <img src="assets/images/checkout/netbanking.svg" alt="netbanking" class="me-2" width="30" />
+                Net Banking
+              </button>
+            </h2>
+            <div id="collapseNet" class="accordion-collapse collapse" aria-labelledby="headingNet"
+              data-bs-parent="#paymentAccordion">
+              <div class="accordion-body">
+                <form #netBankForm="ngForm">
+                  <div class="mb-3">
+                    <label class="form-label font-lg">Bank</label>
+                    <input type="text" name="bank" class="form-control" placeholder="Enter Bank"
+                      [(ngModel)]="netBValue" #bank="ngModel" required />
+                    <div *ngIf="bank.invalid && (bank.dirty || bank.touched)"
+                      class="text-danger small">
+                      Bank name is required
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100"
+                    [disabled]="netBankForm.invalid">
+                    <i class="bi bi-lock-fill"></i> Pay {{ amount | currency:'INR' }}
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingUPI">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseUPI" aria-expanded="false" aria-controls="collapseUPI">
+                <img src="assets/images/checkout/upi.svg" alt="upi" class="me-2" width="30" /> UPI
+              </button>
+            </h2>
+            <div id="collapseUPI" class="accordion-collapse collapse" aria-labelledby="headingUPI"
+              data-bs-parent="#paymentAccordion">
+              <div class="accordion-body">
+                <form #upiForm="ngForm">
+                  <div class="mb-3">
+                    <label class="form-label font-lg">VPA Id</label>
+                    <input type="text" name="upiid" class="form-control" placeholder="example@sbi"
+                      required pattern="[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z]{2,64}"
+                      [(ngModel)]="adObj.upiid" #upiid="ngModel" />
+                    <div *ngIf="upiid.invalid && (upiid.dirty || upiid.touched)"
+                      class="text-danger small">
+                      <div *ngIf="upiid.errors?.['required']">VPA Id required</div>
+                      <div *ngIf="upiid.errors?.['pattern']">Enter valid VPA Id</div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100"
+                    [disabled]="upiForm.invalid">
+                    <i class="bi bi-lock-fill"></i> Pay {{ amount | currency:'INR' }}
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingWallets">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseWallets" aria-expanded="false" aria-controls="collapseWallets">
+                <img src="assets/images/checkout/wallet.svg" alt="wallet" class="me-2" width="30" /> Wallets
+              </button>
+            </h2>
+            <div id="collapseWallets" class="accordion-collapse collapse"
+              aria-labelledby="headingWallets" data-bs-parent="#paymentAccordion">
+              <div class="accordion-body">
+                <form #walletForm="ngForm">
+                  <div class="mb-3">
+                    <label class="form-label font-lg">Mobile Number</label>
+                    <input type="text" name="wallet" class="form-control"
+                      placeholder="Ex: 9876543210" maxlength="10" required
+                      pattern="^[0-9]{10}$" [(ngModel)]="adObj.wallet" #wallet="ngModel" />
+                    <div *ngIf="wallet.invalid && (wallet.dirty || wallet.touched)"
+                      class="text-danger small">
+                      <div *ngIf="wallet.errors?.['required']">Mobile number required</div>
+                      <div *ngIf="wallet.errors?.['pattern']">Enter valid mobile number</div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100"
+                    [disabled]="walletForm.invalid">
+                    <i class="bi bi-lock-fill"></i> Pay {{ amount | currency:'INR' }}
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- <div class="container my-4">
+  <h3 class="mb-4">Payment Options: {{ amount | currency:'INR' }}</h3>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Cards
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <form #cardForm="ngForm" novalidate>
+        <div class="mb-3">
+          <label class="form-label font-lg">Card Number</label>
+          <input type="text" name="cardnumber" class="form-control" placeholder="Card Number"
+                 maxlength="16" required pattern="[3-6]{1}[0-9]{15}"
+                 [(ngModel)]="adObj.cardnumber" #cardnumber="ngModel">
+          <div *ngIf="cardnumber.invalid && (cardnumber.dirty || cardnumber.touched)"
+               class="text-danger small">
+            <div *ngIf="cardnumber.errors?.['required']">Card number required</div>
+            <div *ngIf="cardnumber.errors?.['pattern']">Enter valid card number</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label class="form-label font-lg">Expiry (MM/YY)</label>
+            <input type="text" name="validity" class="form-control" placeholder="MM/YY"
+                   minlength="5" maxlength="5" required
+                   pattern="^(?:0?[1-9]|1[0-2])[/][0-9]{2}$"
+                   [(ngModel)]="adObj.validity" #validity="ngModel">
+            <div *ngIf="validity.invalid && (validity.dirty || validity.touched)"
+                 class="text-danger small">
+              <div *ngIf="validity.errors?.['required']">Expiry required</div>
+              <div *ngIf="validity.errors?.['pattern']">Enter valid expiry</div>
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="form-label font-lg">CVV</label>
+            <input type="password" name="cvv" class="form-control" placeholder="CVV"
+                   maxlength="3" required pattern="[0-9]{3}"
+                   [(ngModel)]="adObj.cvv" #cvv="ngModel">
+            <div *ngIf="cvv.invalid && (cvv.dirty || cvv.touched)" class="text-danger small">
+              <div *ngIf="cvv.errors?.['required']">CVV required</div>
+              <div *ngIf="cvv.errors?.['pattern']">Enter valid CVV</div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="form-label font-lg">Name on Card</label>
+          <input type="text" name="nameonCard" class="form-control" placeholder="Name on Card"
+                 required pattern="[a-zA-Z ]{5,20}"
+                 [(ngModel)]="adObj.nameonCard" #nameonCard="ngModel">
+          <div *ngIf="nameonCard.invalid && (nameonCard.dirty || nameonCard.touched)"
+               class="text-danger small">
+            <div *ngIf="nameonCard.errors?.['required']">Name required</div>
+            <div *ngIf="nameonCard.errors?.['pattern']">Enter valid name</div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100" [disabled]="cardForm.invalid">
+          Pay {{ amount | currency:'INR' }}
+        </button>
+      </form>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Net Banking</mat-panel-title>
+      </mat-expansion-panel-header>
+      <form #netBankForm="ngForm">
+        <div class="mb-3">
+          <label class="form-label font-lg">Bank Name</label>
+          <input type="text" name="bank" class="form-control" placeholder="Bank"
+                 required [(ngModel)]="netBValue" #bank="ngModel">
+          <div *ngIf="bank.invalid && (bank.dirty || bank.touched)" class="text-danger small">
+            Bank required
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100" [disabled]="netBankForm.invalid">
+          Pay {{ amount | currency:'INR' }}
+        </button>
+      </form>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>UPI</mat-panel-title>
+      </mat-expansion-panel-header>
+      <form #upiForm="ngForm">
+        <div class="mb-3">
+          <label class="form-label font-lg">VPA Id</label>
+          <input type="text" name="upiid" class="form-control" placeholder="example@sbi"
+                 required pattern="[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z]{2,64}"
+                 [(ngModel)]="adObj.upiid" #upiid="ngModel">
+          <div *ngIf="upiid.invalid && (upiid.dirty || upiid.touched)" class="text-danger small">
+            <div *ngIf="upiid.errors?.['required']">VPA Id required</div>
+            <div *ngIf="upiid.errors?.['pattern']">Enter valid VPA Id</div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100" [disabled]="upiForm.invalid">
+          Pay {{ amount | currency:'INR' }}
+        </button>
+      </form>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div> -->

@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class RazorpayPgComponent implements OnInit {
   paymentChannel!: string;
-  walletsAppsList = ['ApplePay','GooglePay','PayPal','Zelle','Venmo','PhonePay','AmazonPay'];
+  walletsAppsList = ['ApplePay', 'GooglePay', 'PayPal', 'Zelle', 'Venmo', 'PhonePay', 'AmazonPay'];
 
   tabIndex = 0;
   walletImg: any;
@@ -73,7 +73,7 @@ export class RazorpayPgComponent implements OnInit {
   errorMessage!: boolean;
   cardImg!: string;
   hide = true;
-  amount!:number;
+  amount!: number;
   constructor(private snackbar: MatSnackBar, private router: Router, public route: ActivatedRoute) {
     // this.amount = this.route.snapshot.paramMap.get('id');
   }
@@ -81,13 +81,13 @@ export class RazorpayPgComponent implements OnInit {
     this.amount = Number(this.route.snapshot.paramMap.get('amount'));
     this.route.queryParams.subscribe(params => {
       this.paymentChannel = params['paymentChannel'];
-      if(this.paymentChannel == 'CARDS') {
+      if (this.paymentChannel == 'CARDS') {
         this.step = 0;
-      } else if(this.paymentChannel == 'NET_BANKING') {
+      } else if (this.paymentChannel == 'NET_BANKING') {
         this.step = 1;
-      } else if(this.paymentChannel == 'UPI') {
+      } else if (this.paymentChannel == 'UPI') {
         this.step = 2;
-      } else if(this.walletsAppsList.includes(this.paymentChannel)) {
+      } else if (this.walletsAppsList.includes(this.paymentChannel)) {
         this.step = 3;
       }
     });
@@ -280,6 +280,10 @@ export class RazorpayPgComponent implements OnInit {
     // if(val=="PNB"){
     //   localStorage.setItem("walletimage",JSON.stringify("../../assets/cardimages/pnbimg.webp"))
     // }
+  }
+  selectWallet(val: string) {
+
+    this.netBValue = val;
   }
   step = 0;
 
