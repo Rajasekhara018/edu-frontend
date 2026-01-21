@@ -1,0 +1,103 @@
+<header class="mega-header">
+  <div class="top-bar">
+    <div class="brand" aria-label="Home Foods Market home">
+      <div class="logo-mark">HF</div>
+      <div class="logo-text">HomeFoods<span class="logo-dot">.market</span></div>
+    </div>
+
+    <button class="location" type="button">
+      <span class="loc-line">
+        <span class="loc-dot"></span>
+        Delivering to Hyderabad 500062
+      </span>
+      <span class="loc-action">Update location</span>
+    </button>
+
+    <div class="search">
+      <label class="sr-only" for="product-search">Search products</label>
+      <select aria-label="Search category">
+        <option>All</option>
+        <option>Pickles</option>
+        <option>Sweets</option>
+        <option>Savories</option>
+        <option>Snacks</option>
+        <option>Spice Powders</option>
+        <option>Ready Mixes</option>
+        <option>Oils & Ghee</option>
+        <option>Beverages</option>
+      </select>
+      <input id="product-search" type="text" placeholder="Search Home Foods" />
+      <button class="search-btn" type="button" aria-label="Search">
+        <span class="search-icon"></span>
+      </button>
+    </div>
+
+    <div class="header-actions">
+      <button class="lang" type="button" aria-label="Language">
+        <span class="flag"></span>
+        EN
+      </button>
+      <button class="account" type="button">
+        <span class="small">Hello, sign in</span>
+        <span class="strong">Account & Lists</span>
+      </button>
+      <button class="orders" type="button">
+        <span class="small">Track</span>
+        <span class="strong">My Orders</span>
+      </button>
+      <button class="cart" type="button" (click)="goToCart()">
+        <span class="cart-icon"></span>
+        <span class="cart-count">{{ (cartCount$ | async) || 0 }}</span>
+        Cart
+      </button>
+    </div>
+
+    <button class="hamburger" type="button" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="nav-bar">
+    <button class="menu-all" type="button">
+      <span class="menu-icon"><span></span></span>
+      All
+    </button>
+    <nav class="nav-links">
+      <a href="#products">Pickles</a>
+      <a href="#products">Sweets</a>
+      <a href="#products">Savories</a>
+      <a href="#products">Snacks</a>
+      <a href="#products">Ready Mixes</a>
+      <a href="#products">Oils & Ghee</a>
+      <a href="#products">Beverages</a>
+      <a href="#about">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="promo">
+      <span>Fresh batches every week</span>
+      <span class="promo-sep">|</span>
+      <span>Free delivery over Rs 999</span>
+    </div>
+  </div>
+
+  <div *ngIf="isMobileMenuOpen" class="mobile-panel">
+    <div class="mobile-search">
+      <input type="text" placeholder="Search Home Foods" />
+      <button type="button">Search</button>
+    </div>
+    <div class="mobile-links">
+      <a href="#products" (click)="closeMenu()">All</a>
+      <a href="#products" (click)="closeMenu()">Pickles</a>
+      <a href="#products" (click)="closeMenu()">Sweets</a>
+      <a href="#products" (click)="closeMenu()">Savories</a>
+      <a href="#products" (click)="closeMenu()">Snacks</a>
+      <a href="#products" (click)="closeMenu()">Ready Mixes</a>
+      <a href="#products" (click)="closeMenu()">Oils & Ghee</a>
+      <a href="#about" (click)="closeMenu()">Our Story</a>
+      <a href="#contact" (click)="closeMenu()">Contact</a>
+      <a href="#" (click)="goToCart()">Cart</a>
+    </div>
+  </div>
+</header>
