@@ -1,0 +1,266 @@
+<div class="products-page">
+  <!-- Header Section -->
+  <!-- <div class="products-header">
+    <h1>Electronics & Appliances</h1>
+    <p class="subtitle">Best deals on laptops, smartphones, appliances & more</p>
+  </div> -->
+
+  <div class="products-wrapper">
+    <!-- Sidebar Filters (Desktop) -->
+    <aside class="sidebar filters-sidebar" [ngClass]="{'mobile-open': showMobileFilters}">
+      <div class="sidebar-header">
+        <h3>Filters</h3>
+        <button class="close-btn md:hidden" (click)="toggleMobileFilters()">X</button>
+      </div>
+
+      <!-- Search Bar in Sidebar -->
+      <div class="filter-section search-filter">
+        <input
+          type="text"
+          [(ngModel)]="searchTerm"
+          (input)="onSearch(searchTerm)"
+          placeholder="Search products..."
+          class="search-input"
+        >
+      </div>
+
+      <!-- Category Filter -->
+      <div class="filter-section">
+        <h4>Category</h4>
+        <div class="category-list">
+          <label *ngFor="let cat of categories" class="filter-checkbox">
+            <input
+              type="radio"
+              [checked]="selectedCategory === cat"
+              (change)="onCategoryChange(cat)"
+              [value]="cat"
+            >
+            <span>{{ cat }}</span>
+          </label>
+          <label class="filter-checkbox" *ngIf="selectedCategory">
+            <input
+              type="radio"
+              [checked]="selectedCategory === ''"
+              (change)="onCategoryChange('')"
+              value=""
+            >
+            <span>All Categories</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Brand Filter -->
+      <div class="filter-section">
+        <h4>Brand</h4>
+        <div class="brand-list">
+          <label *ngFor="let brand of brands" class="filter-checkbox">
+            <input
+              type="checkbox"
+              [checked]="selectedBrands.includes(brand)"
+              (change)="onBrandChange(brand)"
+            >
+            <span>{{ brand }}</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Price Range Filter -->
+      <div class="filter-section">
+        <h4>Price Range</h4>
+        <div class="price-filter">
+          <div class="price-inputs">
+            <input
+              type="number"
+              [(ngModel)]="selectedPriceRange.min"
+              (change)="onPriceRangeChange()"
+              placeholder="Min"
+              class="price-input"
+            >
+            <span>-</span>
+            <input
+              type="number"
+              [(ngModel)]="selectedPriceRange.max"
+              (change)="onPriceRangeChange()"
+              placeholder="Max"
+              class="price-input"
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Rating Filter -->
+      <div class="filter-section">
+        <h4>Rating</h4>
+        <div class="rating-list">
+          <label *ngFor="let rating of [4, 3, 2, 1]" class="filter-checkbox">
+            <input
+              type="radio"
+              [checked]="selectedRating === rating"
+              (change)="onRatingChange(rating)"
+              [value]="rating"
+            >
+            <span class="rating-stars">
+              <i *ngFor="let i of [1,2,3,4,5]" class="bi bi-star-fill"
+                [ngClass]="{'empty': i > rating}"></i>
+              {{ rating }} & up
+            </span>
+          </label>
+          <label class="filter-checkbox" *ngIf="selectedRating">
+            <input
+              type="radio"
+              [checked]="selectedRating === 0"
+              (change)="onRatingChange(0)"
+              value="0"
+            >
+            <span>All Ratings</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Clear Filters Button -->
+      <button class="clear-filters-btn" (click)="clearFilters()" *ngIf="selectedCategory || selectedBrands.length > 0 || selectedRating">
+        Clear All Filters
+      </button>
+    </aside>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Top Controls Bar -->
+      <div class="controls-bar">
+        <div class="results-info">
+          <button class="filter-toggle md:hidden" (click)="toggleMobileFilters()">
+            <i class="bi bi-sliders"></i> Filters
+          </button>
+          <span class="results-count">{{ filteredProducts.length }} Products</span>
+        </div>
+
+        <div class="sort-section">
+          <label>Sort By:</label>
+          <select [(ngModel)]="sortBy" (change)="onSortChange(sortBy)" class="sort-select">
+            <option value="relevance">Relevance</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+            <option value="newest">Newest</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Loading State -->
+      <div *ngIf="isLoading" class="loading-state">
+        <mat-spinner diameter="40"></mat-spinner>
+        <p>Loading products...</p>
+      </div>
+
+      <!-- No Results State -->
+      <div *ngIf="!isLoading && displayedProducts.length === 0" class="no-results">
+        <p>No products found matching your filters.</p>
+        <button class="reset-btn" (click)="clearFilters()">Reset Filters</button>
+      </div>
+
+      <!-- Products Grid -->
+      <div *ngIf="!isLoading && displayedProducts.length > 0" class="products-grid">
+        <div *ngFor="let product of displayedProducts" class="product-card" [ngClass]="{'out-of-stock': isOutOfStock(product)}">
+          <div class="best-seller" *ngIf="isBestSeller(product)">Best seller</div>
+          <!-- Product Badge -->
+          <div class="product-badge" [ngClass]="'badge-' + getBadgeText(product).toLowerCase().replace(' ', '-')">
+            <span *ngIf="getDiscountPercentage(product) > 0">-{{ getDiscountPercentage(product) }}%</span>
+            <span *ngIf="getDiscountPercentage(product) === 0">NEW</span>
+          </div>
+
+          <!-- Product Image -->
+          <div class="product-image-wrapper">
+            <img [src]="product.image" [alt]="product.name" class="product-image" loading="lazy" decoding="async">
+            <div class="quick-actions">
+              <button class="quick-btn" title="Add to Wishlist">
+                <i class="bi bi-heart"></i>
+              </button>
+              <button class="quick-btn" title="Compare">
+                <i class="bi bi-arrows-fullscreen"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Product Info -->
+          <div class="product-info">
+            <div class="category-tag">{{ product.category }}</div>
+            <h3 class="product-title" (click)="viewProductDetails(product.id)">{{ product.name }}</h3>
+
+            <!-- Rating & Reviews -->
+            <div class="rating-row" *ngIf="product.rating">
+              <div class="rating">
+                <i class="bi bi-star-fill"></i>
+                <span class="rating-value">{{ product.rating }}</span>
+              </div>
+              <span class="review-count">({{ product.reviews }} reviews)</span>
+            </div>
+
+            <!-- Price Section -->
+            <div class="price-section">
+              <span class="current-price">Rs {{ product.price | number }}</span>
+              <span *ngIf="product.originalPrice" class="mrp">M.R.P.: <span class="original-price">Rs {{ product.originalPrice | number }}</span></span>
+              <span *ngIf="getDiscountPercentage(product) > 0" class="discount-percent">
+                ({{ getDiscountPercentage(product) }}% off)
+              </span>
+            </div>
+
+            <div class="delivery-line">FREE delivery <strong>Tomorrow</strong></div>
+            <div class="popularity" *ngIf="getPopularityText(product)">{{ getPopularityText(product) }}</div>
+
+            <!-- Stock Status -->
+            <div class="stock-status" [ngClass]="product.inStock ? 'in-stock' : 'out-of-stock'">
+              {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
+            </div>
+
+            <!-- CTA Button -->
+            <div class="card-actions">
+              <button
+                class="add-to-cart-btn"
+                [disabled]="!product.inStock"
+                (click)="addToCart(product)"
+              >
+                {{ product.inStock ? 'Add to Cart' : 'Out of Stock' }}
+              </button>
+              <button
+                class="view-details-btn"
+                (click)="viewProductDetails(product.id)"
+              >
+                View Product
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div *ngIf="!isLoading && totalPages > 1" class="pagination">
+        <button
+          class="pagination-btn"
+          [disabled]="currentPage === 1"
+          (click)="goToPage(currentPage - 1)"
+        >
+          Previous
+        </button>
+
+        <div class="page-numbers">
+          <button
+            *ngFor="let page of pages"
+            [ngClass]="{'active': page === currentPage}"
+            (click)="goToPage(page)"
+            class="page-number"
+          >
+            {{ page }}
+          </button>
+        </div>
+
+        <button
+          class="pagination-btn"
+          [disabled]="currentPage === totalPages"
+          (click)="goToPage(currentPage + 1)"
+        >
+          Next
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

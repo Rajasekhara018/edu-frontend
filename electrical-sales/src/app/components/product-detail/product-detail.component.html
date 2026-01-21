@@ -1,0 +1,124 @@
+<div class="product-detail-container">
+  <button class="back-button" (click)="goBack()">
+    <i class="bi bi-arrow-left"></i> Back to Products
+  </button>
+
+  <div *ngIf="isLoading" class="loading">
+    <mat-spinner diameter="40"></mat-spinner>
+    <p>Loading product details...</p>
+  </div>
+
+  <div *ngIf="!isLoading && product" class="product-detail">
+    <div class="product-image-section">
+      <div class="main-image">
+        <img [src]="product.image" [alt]="product.name" decoding="async" fetchpriority="high">
+        <div *ngIf="getDiscountPercentage() > 0" class="discount-badge">
+          -{{ getDiscountPercentage() }}% OFF
+        </div>
+      </div>
+      <div class="thumb-row">
+        <button class="thumb active">
+          <img [src]="product.image" [alt]="product.name + ' thumbnail'" loading="lazy" decoding="async">
+        </button>
+        <button class="thumb" disabled>
+          <span>+</span>
+        </button>
+        <button class="thumb" disabled>
+          <span>+</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="product-info-section">
+      <div class="product-header">
+        <div class="category">{{ product.category }}</div>
+        <h1>{{ product.name }}</h1>
+        <div class="rating-section" *ngIf="product.rating">
+          <span class="rating">
+            <i class="bi bi-star-fill"></i>
+            {{ product.rating }}/5.0
+          </span>
+          <span class="reviews">({{ product.reviews }} customer reviews)</span>
+        </div>
+      </div>
+
+      <div class="pricing-section">
+        <span class="current-price">Rs {{ product.price }}</span>
+        <span *ngIf="product.originalPrice" class="original-price">Rs {{ product.originalPrice }}</span>
+        <span *ngIf="getDiscountPercentage() > 0" class="savings">
+          You save Rs {{ product.originalPrice! - product.price }}
+        </span>
+      </div>
+
+      <div class="stock-section">
+        <span [ngClass]="{'in-stock': product.inStock, 'out-of-stock': !product.inStock}">
+          <i [ngClass]="{'bi bi-check-circle': product.inStock, 'bi bi-x-circle': !product.inStock}"></i>
+          {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
+        </span>
+        <span class="delivery">FREE delivery Tomorrow</span>
+      </div>
+
+      <div class="description-section">
+        <h3>Description</h3>
+        <p>{{ product.description }}</p>
+      </div>
+
+      <div class="specifications-section" *ngIf="product.specifications">
+        <h3>Specifications</h3>
+        <table class="specs-table">
+          <tr *ngFor="let spec of product.specifications | keyvalue">
+            <td class="spec-key">{{ spec.key }}</td>
+            <td class="spec-value">{{ spec.value }}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="action-section">
+        <div class="quantity-section">
+          <label>Quantity</label>
+          <div class="quantity-control">
+            <button (click)="decreaseQuantity()" [disabled]="quantity <= 1">-</button>
+            <input type="number" [(ngModel)]="quantity" min="1" readonly>
+            <button (click)="increaseQuantity()">+</button>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <button class="add-to-cart-btn" [disabled]="!product.inStock" (click)="addToCart()">
+            <i class="bi bi-cart-plus"></i> Add to Cart
+          </button>
+          <button class="buy-now-btn" [disabled]="!product.inStock" (click)="buyNow()">
+            <i class="bi bi-lightning-fill"></i> Buy Now
+          </button>
+        </div>
+      </div>
+
+      <div class="sku-section">
+        <p><strong>SKU:</strong> {{ product.sku }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading && !product" class="not-found">
+    <p>Product not found.</p>
+    <button (click)="goBack()">Go Back</button>
+  </div>
+
+  <!-- Related Products Section -->
+  <div *ngIf="relatedProducts.length > 0" class="related-products-section">
+    <h2>Related Products</h2>
+    <div class="related-products-grid">
+      <div *ngFor="let relProduct of relatedProducts" class="related-product-card" (click)="viewRelatedProduct(relProduct.id)">
+        <div class="related-product-image">
+          <img [src]="relProduct.image" [alt]="relProduct.name" loading="lazy" decoding="async">
+        </div>
+        <h4>{{ relProduct.name }}</h4>
+        <div class="related-product-price">
+          <span class="price">Rs {{ relProduct.price }}</span>
+          <span *ngIf="relProduct.originalPrice" class="original">Rs {{ relProduct.originalPrice }}</span>
+        </div>
+        <button class="view-btn">View Product</button>
+      </div>
+    </div>
+  </div>
+</div>

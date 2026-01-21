@@ -1,0 +1,99 @@
+<header class="mega-header">
+  <div class="top-bar">
+    <div class="brand" aria-label="Electrical Sales home">
+      <div class="logo-mark">ES</div>
+      <div class="logo-text">Electro<span class="logo-dot">.in</span></div>
+    </div>
+
+    <button class="location" type="button">
+      <span class="loc-line">
+        <span class="loc-dot"></span>
+        Delivering to Hyderabad 500062
+      </span>
+      <span class="loc-action">Update location</span>
+    </button>
+
+    <div class="search">
+      <label class="sr-only" for="product-search">Search products</label>
+      <select aria-label="Search category">
+        <option>All</option>
+        <option>Lighting</option>
+        <option>Fans & Coolers</option>
+        <option>Power Solutions</option>
+        <option>Kitchen</option>
+        <option>Appliances</option>
+      </select>
+      <input id="product-search" type="text" placeholder="Search Electrical Sales" />
+      <button class="search-btn" type="button" aria-label="Search">
+        <span class="search-icon"></span>
+      </button>
+    </div>
+
+    <div class="header-actions">
+      <button class="lang" type="button" aria-label="Language">
+        <span class="flag"></span>
+        EN
+      </button>
+      <button class="account" type="button">
+        <span class="small">Hello, sign in</span>
+        <span class="strong">Account & Lists</span>
+      </button>
+      <button class="orders" type="button">
+        <span class="small">Returns</span>
+        <span class="strong">& Orders</span>
+      </button>
+      <button class="cart" type="button" (click)="goToCart()">
+        <span class="cart-icon"></span>
+        <span class="cart-count">{{ (cartCount$ | async) || 0 }}</span>
+        Cart
+      </button>
+    </div>
+
+    <button class="hamburger" type="button" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="nav-bar">
+    <button class="menu-all" type="button">
+      <span class="menu-icon"><span></span></span>
+      All
+    </button>
+    <nav class="nav-links">
+      <a href="#products">Fresh</a>
+      <a href="#products">Best Sellers</a>
+      <a href="#products">Deals</a>
+      <a href="#products">Mobiles</a>
+      <a href="#products">Customer Service</a>
+      <a href="#products">New Releases</a>
+      <a href="#products">Amazon Pay</a>
+      <a href="#products">Fashion</a>
+      <a href="#products">Electronics</a>
+    </nav>
+    <div class="promo">
+      <span>Great Republic Day Sale</span>
+      <span class="promo-sep">|</span>
+      <span>Live Now</span>
+    </div>
+  </div>
+
+  <div *ngIf="isMobileMenuOpen" class="mobile-panel">
+    <div class="mobile-search">
+      <input type="text" placeholder="Search Electrical Sales" />
+      <button type="button">Search</button>
+    </div>
+    <div class="mobile-links">
+      <a href="#products" (click)="closeMenu()">All</a>
+      <a href="#products" (click)="closeMenu()">Deals</a>
+      <a href="#products" (click)="closeMenu()">Mobiles</a>
+      <a href="#products" (click)="closeMenu()">Customer Service</a>
+      <a href="#products" (click)="closeMenu()">New Releases</a>
+      <a href="#products" (click)="closeMenu()">Electronics</a>
+      <a href="#products" (click)="closeMenu()">Account & Lists</a>
+      <a href="#products" (click)="closeMenu()">Returns & Orders</a>
+      <a href="#" (click)="goToCart()">Cart</a>
+    </div>
+  </div>
+</header>
