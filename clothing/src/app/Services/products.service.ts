@@ -630,23 +630,33 @@ export class ProductsService {
   }
 
   private buildImageUrl(category: string, seed: number): string {
-    const categoryKeywords: Record<string, string[]> = {
-      Women: ['women fashion', 'dress', 'blazer', 'skirt'],
-      Men: ['menswear', 'denim', 'shirt', 'jacket'],
-      Kids: ['kids fashion', 'kids outfit', 'kids wear'],
-      Footwear: ['sneakers', 'boots', 'heels', 'loafers'],
-      Accessories: ['handbag', 'watch', 'sunglasses', 'belt'],
-      Beauty: ['makeup', 'perfume', 'skincare'],
-      Home: ['home decor', 'throw blanket', 'cushion'],
-      Sports: ['activewear', 'training', 'sportswear'],
-      Luxe: ['luxury fashion', 'coat', 'designer'],
-      Streetwear: ['streetwear', 'hoodie', 'sneaker']
-    };
-
-    const keywords = categoryKeywords[category] ?? ['fashion'];
-    const index = Math.abs(seed) % keywords.length;
-    const keyword = keywords[index];
-    return `https://source.unsplash.com/featured/640x640?${encodeURIComponent(keyword)}`;
+    const palette = [
+      { bg: '#f6d7c8', accent: '#f26b5b' },
+      { bg: '#fde6d8', accent: '#f4b860' },
+      { bg: '#f3d2d8', accent: '#c96f7b' },
+      { bg: '#f2d7c9', accent: '#b46b54' },
+      { bg: '#f7e1d4', accent: '#8c5e52' }
+    ];
+    const index = Math.abs(seed) % palette.length;
+    const colors = palette[index];
+    const label = category.replace(/[^a-zA-Z0-9 ]/g, '').toUpperCase();
+    const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640">
+        <defs>
+          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="${colors.bg}"/>
+            <stop offset="100%" stop-color="#ffffff"/>
+          </linearGradient>
+        </defs>
+        <rect width="640" height="640" fill="url(#bg)"/>
+        <rect x="56" y="72" width="528" height="496" rx="36" fill="#ffffff" opacity="0.7"/>
+        <circle cx="480" cy="176" r="64" fill="${colors.accent}" opacity="0.75"/>
+        <circle cx="192" cy="472" r="78" fill="${colors.accent}" opacity="0.45"/>
+        <text x="72" y="168" font-family="Outfit, Arial, sans-serif" font-size="28" fill="#1b1a1f" letter-spacing="2">${label}</text>
+        <text x="72" y="214" font-family="Bodoni Moda, Georgia, serif" font-size="44" fill="#1b1a1f">Threadline</text>
+      </svg>
+    `;
+    return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
   }
 
   getAllProducts(): Observable<Product[]> {
