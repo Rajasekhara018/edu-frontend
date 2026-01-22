@@ -1,0 +1,566 @@
+.product-detail-container {
+  --ink: #1b1a1f;
+  --muted: #5c5551;
+  --neon: #f4b860;
+  --mint: #fde6d8;
+  --border: rgba(27, 26, 31, 0.14);
+
+  padding: 2.8rem 1.5rem 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  color: var(--ink);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 10%, rgba(244, 184, 96, 0.25), transparent 45%),
+      radial-gradient(circle at 85% 15%, rgba(253, 230, 216, 0.35), transparent 45%);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #1b1a1f;
+    color: var(--neon);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(27, 26, 31, 0.25);
+    }
+  }
+
+  .loading,
+  .not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+    gap: 1rem;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+
+    p {
+      color: #6b605a;
+      font-size: 1.05rem;
+    }
+
+    button {
+      padding: 0.7rem 1.4rem;
+      background-color: #1b1a1f;
+      color: var(--neon);
+      border: none;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px rgba(27, 26, 31, 0.3);
+      }
+    }
+  }
+
+  .product-detail {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+    animation: rise 0.6s ease both;
+
+    @media (max-width: 900px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .product-image-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      .main-image {
+        position: relative;
+        width: 100%;
+        max-width: 520px;
+        border-radius: 22px;
+        overflow: hidden;
+        background: linear-gradient(160deg, #fff4ea 0%, #f6e4d9 100%);
+        border: 1px solid rgba(27, 26, 31, 0.16);
+        box-shadow: 0 18px 32px rgba(23, 18, 20, 0.15);
+
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+
+        .discount-badge {
+          position: absolute;
+          top: 18px;
+          right: 18px;
+          background-color: #1b1a1f;
+          color: var(--neon);
+          padding: 0.5rem 0.9rem;
+          border-radius: 999px;
+          font-weight: 700;
+          font-size: 0.82rem;
+          letter-spacing: 0.3px;
+          box-shadow: 0 10px 22px rgba(27, 26, 31, 0.3);
+        }
+      }
+
+      .thumb-row {
+        display: flex;
+        gap: 0.6rem;
+      }
+
+      .thumb {
+        width: 62px;
+        height: 62px;
+        border-radius: 12px;
+        border: 1px solid rgba(27, 26, 31, 0.2);
+        background: #ffffff;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .thumb.active {
+        border-color: #1b1a1f;
+        box-shadow: 0 8px 18px rgba(27, 26, 31, 0.25);
+      }
+    }
+
+    .product-info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+
+      .product-header {
+        .category {
+          color: #b54732;
+          font-size: 0.85rem;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        h1 {
+          font-family: 'Bodoni Moda', 'Outfit', serif;
+          font-size: 2.2rem;
+          color: #1b1a1f;
+          margin: 0.35rem 0 0.5rem 0;
+        }
+      }
+
+      .rating-section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px dashed rgba(27, 26, 31, 0.2);
+
+        .rating {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 600;
+          color: #1b1a1f;
+          font-size: 0.95rem;
+
+          i {
+            font-size: 1.1rem;
+            color: #facc15;
+          }
+        }
+
+        .reviews {
+          color: #857971;
+          font-size: 0.9rem;
+        }
+      }
+
+      .pricing-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.6rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(27, 26, 31, 0.12);
+
+        .current-price {
+          font-size: 2rem;
+          font-weight: 800;
+          color: #1b1a1f;
+        }
+
+        .original-price {
+          font-size: 1rem;
+          color: #a9988c;
+          text-decoration: line-through;
+        }
+
+        .savings {
+          color: #b54732;
+          font-weight: 700;
+          font-size: 0.85rem;
+          background: rgba(228, 87, 59, 0.12);
+          padding: 0.25rem 0.6rem;
+          border-radius: 999px;
+        }
+      }
+
+      .stock-section {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+
+        span {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          padding: 0.35rem 0.7rem;
+          border-radius: 999px;
+          font-weight: 700;
+          font-size: 0.82rem;
+
+          &.in-stock {
+            background-color: rgba(228, 87, 59, 0.15);
+            color: #b54732;
+          }
+
+          &.out-of-stock {
+            background-color: rgba(27, 26, 31, 0.12);
+            color: #7d6f66;
+          }
+        }
+
+        .delivery {
+          font-size: 0.85rem;
+          color: #5c5551;
+          font-weight: 600;
+        }
+      }
+
+      .description-section {
+        h3 {
+          font-family: 'Bodoni Moda', 'Outfit', serif;
+          font-size: 1.2rem;
+          color: #1b1a1f;
+          margin: 0 0 0.7rem 0;
+        }
+
+        p {
+          color: #6b605a;
+          line-height: 1.6;
+          margin: 0;
+        }
+      }
+
+      .specifications-section {
+        h3 {
+          font-family: 'Bodoni Moda', 'Outfit', serif;
+          font-size: 1.2rem;
+          color: #1b1a1f;
+          margin: 0 0 1rem 0;
+        }
+
+        .specs-table {
+          width: 100%;
+          border-collapse: collapse;
+
+          tr {
+            border-bottom: 1px solid rgba(27, 26, 31, 0.12);
+
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+
+          td {
+            padding: 0.7rem 0;
+
+            &.spec-key {
+              font-weight: 600;
+              color: #1b1a1f;
+              width: 40%;
+            }
+
+            &.spec-value {
+              color: #6b605a;
+            }
+          }
+        }
+      }
+
+      .action-section {
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(27, 26, 31, 0.12);
+
+        .quantity-section {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          label {
+            font-weight: 600;
+            color: #5c5551;
+            min-width: 80px;
+          }
+
+          .quantity-control {
+            display: flex;
+            border: 1px solid rgba(27, 26, 31, 0.2);
+            border-radius: 999px;
+            overflow: hidden;
+            background: #ffffff;
+
+            button {
+              background-color: #fbf2ea;
+              border: none;
+              width: 36px;
+              height: 36px;
+              font-size: 1.1rem;
+              cursor: pointer;
+              transition: all 0.3s ease;
+
+              &:hover:not(:disabled) {
+                background-color: #f2dfd3;
+              }
+
+              &:disabled {
+                color: #b9a8a0;
+                cursor: not-allowed;
+              }
+            }
+
+            input {
+              width: 54px;
+              border: none;
+              text-align: center;
+              font-size: 1rem;
+              font-weight: 600;
+              background: transparent;
+            }
+          }
+        }
+
+        .buttons {
+          display: flex;
+          gap: 1rem;
+
+          @media (max-width: 480px) {
+            flex-direction: column;
+          }
+
+          button {
+            flex: 1;
+            padding: 0.95rem 1.4rem;
+            border: none;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+
+            &:disabled {
+              opacity: 0.6;
+              cursor: not-allowed;
+            }
+          }
+
+          .add-to-cart-btn {
+            background-color: #1b1a1f;
+            color: var(--neon);
+
+            &:hover:not(:disabled) {
+              transform: translateY(-1px);
+              box-shadow: 0 10px 20px rgba(27, 26, 31, 0.35);
+            }
+          }
+
+          .buy-now-btn {
+            background-color: #e4573b;
+            color: #ffffff;
+
+            &:hover:not(:disabled) {
+              transform: translateY(-1px);
+              box-shadow: 0 8px 18px rgba(228, 87, 59, 0.3);
+            }
+          }
+        }
+      }
+
+      .sku-section {
+        padding-top: 1rem;
+        border-top: 1px solid rgba(27, 26, 31, 0.12);
+
+        p {
+          color: #7d6f66;
+          margin: 0;
+          font-size: 0.92rem;
+        }
+      }
+    }
+  }
+
+  .related-products-section {
+    margin-top: 3rem;
+
+    h2 {
+      font-family: 'Bodoni Moda', 'Outfit', serif;
+      font-size: 1.7rem;
+      color: #1b1a1f;
+      margin-bottom: 1.6rem;
+    }
+
+    .related-products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      }
+
+      .related-product-card {
+        background: #ffffff;
+        border: 1px solid rgba(27, 26, 31, 0.16);
+        border-radius: 16px;
+        padding: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        animation: cardRise 0.55s ease both;
+
+        &:hover {
+          box-shadow: 0 12px 22px rgba(27, 26, 31, 0.18);
+          transform: translateY(-3px);
+        }
+
+        .related-product-image {
+          width: 100%;
+          height: 170px;
+          background-color: #fff4ea;
+          border-radius: 10px;
+          overflow: hidden;
+          margin-bottom: 0.75rem;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        h4 {
+          font-size: 0.95rem;
+          color: #1b1a1f;
+          margin: 0 0 0.5rem 0;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .related-product-price {
+          display: flex;
+          gap: 0.5rem;
+          margin-bottom: 0.75rem;
+
+          .price {
+            font-weight: 700;
+            color: #1b1a1f;
+            font-size: 0.95rem;
+          }
+
+          .original {
+            color: #a9988c;
+            text-decoration: line-through;
+            font-size: 0.85rem;
+          }
+        }
+
+        .view-btn {
+          width: 100%;
+          padding: 0.55rem;
+          background-color: #fbf2ea;
+          color: #1b1a1f;
+          border: 1px solid rgba(27, 26, 31, 0.2);
+          border-radius: 999px;
+          font-size: 0.85rem;
+          font-weight: 700;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #1b1a1f;
+            color: var(--neon);
+            border-color: #1b1a1f;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

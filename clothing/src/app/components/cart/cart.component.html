@@ -1,0 +1,62 @@
+<section class="cart-page">
+  <div class="cart-header">
+    <h1>Style Bag</h1>
+    <button class="clear-btn" (click)="clearCart()">Clear all</button>
+  </div>
+
+  <div class="cart-layout">
+    <div class="cart-items" *ngIf="cartItems$ | async as items">
+      <div *ngIf="items.length === 0" class="empty-state">
+        <h3>No items yet</h3>
+        <p>Add pieces to see them here.</p>
+      </div>
+
+      <div class="cart-item" *ngFor="let item of items">
+        <img [src]="item.product.image" [alt]="item.product.name" loading="lazy" decoding="async">
+        <div class="item-info">
+          <h3>{{ item.product.name }}</h3>
+          <p class="item-category">{{ item.product.category }}</p>
+          <p class="item-price">Rs {{ item.product.price | number }}</p>
+        </div>
+        <div class="item-quantity">
+          <button (click)="updateQuantity(item, -1)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="updateQuantity(item, 1)">+</button>
+        </div>
+        <div class="item-total">
+          Rs {{ item.product.price * item.quantity | number }}
+        </div>
+        <button class="remove-btn" (click)="removeItem(item)">Remove</button>
+      </div>
+    </div>
+
+    <aside class="cart-summary" *ngIf="summary$ | async as summary">
+      <h2>Checkout</h2>
+      <div class="summary-row">
+        <span>Items</span>
+        <span>{{ summary.itemsCount }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Subtotal</span>
+        <span>Rs {{ summary.subtotal | number }}</span>
+      </div>
+      <div class="summary-row" *ngIf="summary.savings > 0">
+        <span>Savings</span>
+        <span class="savings">-Rs {{ summary.savings | number }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax (18%)</span>
+        <span>Rs {{ summary.tax | number }}</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping</span>
+        <span>{{ summary.shipping === 0 ? 'Free' : ('Rs ' + summary.shipping) }}</span>
+      </div>
+      <div class="summary-total">
+        <span>Total</span>
+        <span>Rs {{ summary.total | number }}</span>
+      </div>
+      <button class="checkout-btn" [disabled]="summary.itemsCount === 0">Place order</button>
+    </aside>
+  </div>
+</section>

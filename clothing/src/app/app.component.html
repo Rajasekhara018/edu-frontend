@@ -1,0 +1,200 @@
+<div class="app-container">
+  <app-header></app-header>
+
+  <router-outlet></router-outlet>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-hero">
+        <div class="about-copy">
+          <span class="eyebrow">Threadline Fashion House</span>
+          <h2>Runway-ready looks curated for city wardrobes.</h2>
+          <p class="lead">We style seasonal drops, timeless staples, and premium edits from emerging designers. Build outfits with smart bundles, track your size history, and get personalized styling cues.</p>
+          <div class="about-actions">
+            <a class="primary-btn" routerLink="/products">Start shopping</a>
+            <a class="ghost-btn" href="#contact">Book a stylist call</a>
+          </div>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <i class="bi bi-magic"></i>
+            <div>
+              <h3>Trend Edits</h3>
+              <p>Daily capsules curated by in-house fashion scouts.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <i class="bi bi-scissors"></i>
+            <div>
+              <h3>Tailored Fit</h3>
+              <p>Size guidance, fit notes, and easy exchanges.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <i class="bi bi-recycle"></i>
+            <div>
+              <h3>Conscious Materials</h3>
+              <p>Certified blends and transparent supply chains.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-card">
+          <span class="stat-value">120+</span>
+          <span class="stat-label">Design Partners</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">48 hr</span>
+          <span class="stat-label">Dispatch Promise</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">4.9</span>
+          <span class="stat-label">Style Rating</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">1M+</span>
+          <span class="stat-label">Looks Styled</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <div class="contact-header">
+        <div>
+          <span class="eyebrow">24x7 Style Desk</span>
+          <h2>Need help with a fit?</h2>
+          <p>Reach us for order updates, return pickups, or styling guidance. Our experts reply fast.</p>
+        </div>
+        <button class="contact-cta">Chat with a stylist</button>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="info-card">
+            <i class="bi bi-telephone"></i>
+            <div>
+              <h4>Instant Support</h4>
+              <p>+91 (800) 555-1110</p>
+              <p>WhatsApp: +91 90000 12345</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="bi bi-chat-dots"></i>
+            <div>
+              <h4>Live Chat</h4>
+              <p>In-app support, 24x7</p>
+              <p>support@threadline.co</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="bi bi-geo-alt"></i>
+            <div>
+              <h4>Style Studio</h4>
+              <p>Sunset Atelier</p>
+              <p>Jubilee Hills, Hyderabad</p>
+              <p>India - 500033</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="bi bi-clock"></i>
+            <div>
+              <h4>Operating Hours</h4>
+              <p>Mon - Sun: 9:00 AM - 11:00 PM</p>
+              <p>Stylist sessions every 30 mins</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Request a return or exchange</h3>
+          <form>
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input id="contact-name" type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input id="contact-email" type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Order ID</label>
+              <input id="contact-phone" type="text" placeholder="TL-02451" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" placeholder="Tell us what needs a better fit and we will help" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit request</button>
+          </form>
+          <p class="form-note">We respond within 30 minutes on average.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-mark">TL</span>
+          <span class="logo-text">Threadline<span class="logo-dot">.co</span></span>
+        </div>
+        <p class="footer-tagline">Modern wardrobes, curated edits, and premium essentials tailored for every city mood.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Shop</h4>
+          <a href="/products">Women</a>
+          <a href="/products">Men</a>
+          <a href="/products">Kids</a>
+          <a href="/products">Footwear</a>
+        </div>
+        <div class="link-group">
+          <h4>Support</h4>
+          <a href="#contact">Order status</a>
+          <a href="#contact">Returns & exchanges</a>
+          <a href="#contact">Size help</a>
+          <a href="#contact">Business</a>
+        </div>
+        <div class="link-group">
+          <h4>Company</h4>
+          <a href="#about">Our process</a>
+          <a href="#about">Careers</a>
+          <a href="#about">Sustainability</a>
+          <a href="#about">Press</a>
+        </div>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="bi bi-telephone"></i> +91 (800) 555-1110</p>
+        <p><i class="bi bi-envelope"></i> support@threadline.co</p>
+        <p><i class="bi bi-geo-alt"></i> Jubilee Hills, Hyderabad</p>
+        <button class="footer-cta">Get the app</button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Threadline. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms</a>
+        <span>|</span>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+</div>

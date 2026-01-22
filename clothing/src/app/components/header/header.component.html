@@ -1,0 +1,104 @@
+<header class="mega-header">
+  <div class="top-bar">
+    <div class="brand" aria-label="Threadline home">
+      <div class="logo-mark">TL</div>
+      <div class="logo-text">Threadline<span class="logo-dot">.co</span></div>
+    </div>
+
+    <button class="location" type="button">
+      <span class="loc-line">
+        <span class="loc-dot"></span>
+        Style hub: Jubilee Hills, 500033
+      </span>
+      <span class="loc-action">Change store</span>
+    </button>
+
+    <div class="search">
+      <label class="sr-only" for="product-search">Search fashion</label>
+      <select aria-label="Search category">
+        <option>All</option>
+        <option>Women</option>
+        <option>Men</option>
+        <option>Kids</option>
+        <option>Footwear</option>
+        <option>Accessories</option>
+        <option>Beauty</option>
+        <option>Home</option>
+        <option>Sports</option>
+      </select>
+      <input id="product-search" type="text" placeholder="Search dresses, sneakers, bags..." />
+      <button class="search-btn" type="button" aria-label="Search">
+        <span class="search-icon"></span>
+      </button>
+    </div>
+
+    <div class="header-actions">
+      <button class="lang" type="button" aria-label="Language">
+        <span class="flag"></span>
+        EN
+      </button>
+      <button class="account" type="button">
+        <span class="small">Welcome back</span>
+        <span class="strong">Style member</span>
+      </button>
+      <button class="orders" type="button">
+        <span class="small">Track</span>
+        <span class="strong">Orders & returns</span>
+      </button>
+      <button class="cart" type="button" (click)="goToCart()">
+        <span class="cart-icon"></span>
+        <span class="cart-count">{{ (cartCount$ | async) || 0 }}</span>
+        Bag
+      </button>
+    </div>
+
+    <button class="hamburger" type="button" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="nav-bar">
+    <button class="menu-all" type="button">
+      <span class="menu-icon"><span></span></span>
+      Shop
+    </button>
+    <nav class="nav-links">
+      <a href="#products">New In</a>
+      <a href="#products">Women</a>
+      <a href="#products">Men</a>
+      <a href="#products">Kids</a>
+      <a href="#products">Footwear</a>
+      <a href="#products">Beauty</a>
+      <a href="#products">Luxe</a>
+      <a href="#products">Sale</a>
+      <a href="#about">Style guide</a>
+      <a href="#contact">Help</a>
+    </nav>
+    <div class="promo">
+      <span>Free shipping above Rs 999</span>
+      <span class="promo-sep">|</span>
+      <span>Easy 30-day returns</span>
+    </div>
+  </div>
+
+  <div *ngIf="isMobileMenuOpen" class="mobile-panel">
+    <div class="mobile-search">
+      <input type="text" placeholder="Search fashion" />
+      <button type="button">Search</button>
+    </div>
+    <div class="mobile-links">
+      <a href="#products" (click)="closeMenu()">New In</a>
+      <a href="#products" (click)="closeMenu()">Women</a>
+      <a href="#products" (click)="closeMenu()">Men</a>
+      <a href="#products" (click)="closeMenu()">Kids</a>
+      <a href="#products" (click)="closeMenu()">Footwear</a>
+      <a href="#products" (click)="closeMenu()">Beauty</a>
+      <a href="#products" (click)="closeMenu()">Sale</a>
+      <a href="#about" (click)="closeMenu()">Style guide</a>
+      <a href="#contact" (click)="closeMenu()">Help</a>
+      <a href="#" (click)="goToCart()">Bag</a>
+    </div>
+  </div>
+</header>
