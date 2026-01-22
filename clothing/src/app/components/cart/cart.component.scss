@@ -195,4 +195,34 @@
   }
 }
 
+@media (max-width: 600px) {
+  .cart-page {
+    padding: 20px 16px 40px;
+  }
+
+  .cart-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item img {
+    width: 100%;
+    height: 160px;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+
+  .clear-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 

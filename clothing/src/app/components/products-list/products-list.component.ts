@@ -124,6 +124,7 @@ export class ProductsListComponent implements OnInit {
     this.currentPage = 1;
     this.applySort();
     this.updateDisplayedProducts();
+    this.closeMobileFiltersIfNeeded();
   }
 
   // Apply sorting
@@ -232,6 +233,12 @@ export class ProductsListComponent implements OnInit {
   // Toggle mobile filters
   toggleMobileFilters(): void {
     this.showMobileFilters = !this.showMobileFilters;
+  }
+
+  private closeMobileFiltersIfNeeded(): void {
+    if (this.showMobileFilters && window.innerWidth < 1280) {
+      this.showMobileFilters = false;
+    }
   }
 
   // View product details

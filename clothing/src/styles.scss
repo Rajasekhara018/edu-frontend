@@ -13,8 +13,24 @@ body {
   font-family: 'Outfit', 'Segoe UI', sans-serif;
   background: radial-gradient(circle at top, #fff4ea 0%, #f7efe6 45%, #f2ebe2 100%);
   color: #1b1a1f;
+  overflow-x: hidden;
 }
 
 * {
   box-sizing: border-box;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }

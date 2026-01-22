@@ -541,6 +541,33 @@
   }
 }
 
+@media (max-width: 640px) {
+  .product-detail-container {
+    padding: 2.2rem 1.1rem 3rem;
+  }
+
+  .product-detail-container .product-detail {
+    margin-bottom: 3rem;
+  }
+
+  .product-detail-container .product-info-section .product-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .product-detail-container .product-image-section .thumb-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product-detail-container .product-info-section .pricing-section .current-price {
+    font-size: 1.6rem;
+  }
+
+  .product-detail-container .specifications-section .specs-table td.spec-key {
+    width: 45%;
+  }
+}
+
 @keyframes rise {
   from {
     opacity: 0;
