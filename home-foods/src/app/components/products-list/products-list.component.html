@@ -137,6 +137,12 @@
         Clear All Filters
       </button>
     </aside>
+    <div
+      class="filters-overlay"
+      *ngIf="showMobileFilters"
+      (click)="toggleMobileFilters()"
+      aria-hidden="true"
+    ></div>
 
     <!-- Main Content Area -->
     <div class="main-content">

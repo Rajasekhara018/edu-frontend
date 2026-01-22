@@ -52,6 +52,11 @@
       </button>
     </div>
 
+    <button class="mobile-cart" type="button" (click)="goToCart()" aria-label="Open cart">
+      <span class="cart-icon"></span>
+      <span class="cart-count">{{ (cartCount$ | async) || 0 }}</span>
+    </button>
+
     <button class="hamburger" type="button" (click)="toggleMenu()" aria-label="Toggle menu">
       <span></span>
       <span></span>
