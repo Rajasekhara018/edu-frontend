@@ -1,55 +1,80 @@
-<div class="container">
-  <header class="flex justify-center py-6">
-    <div class="text-2xl font-medium border border-gray-400 px-4 py-1">
-      EduSoft Academy
-    </div>
-  </header>
-
+<div class="landing">
   <!-- Hero Section -->
-  <section class="flex flex-col lg:flex-row items-center justify-center px-4 lg:px-0">
+  <section class="hero-section flex flex-col lg:flex-row items-center justify-center px-4 lg:px-0 reveal">
     <!-- Left Image -->
-    <div class="w-full lg:w-2/3">
+    <div class="w-full lg:w-2/3 hero-media">
       <img src="../../../../assets/bg.webp" alt="E-Learning" class="w-full h-auto" />
     </div>
 
     <!-- Right Text Box -->
-    <div class="w-full lg:w-1/3 bg-yellow-100 p-8 text-center">
+    <div class="w-full lg:w-1/3 bg-yellow-100 p-8 text-center hero-card">
+      <span class="eyebrow">Career Track Programs</span>
       <h1 class="text-3xl font-semibold mb-4 leading-snug">
         Empower <br />
         Your <br />
         Learning <br />
         Journey
       </h1>
-      <p class="text-gray-700 mb-6">
-        Unlock potential with our expert-led courses and resources.
+      <p class="text-gray-700 mb-6 hero-sub">
+        Unlock potential with expert-led courses, real projects, and career-ready mentoring.
       </p>
-      <button class="border border-gray-700 px-6 py-2 uppercase tracking-wider hover:bg-gray-200 transition">
-        <a href="#register" class="nav-link">Join Now For Success</a>
-      </button>
+      <div class="hero-actions">
+        <a href="#register" class="hero-cta">Join now</a>
+        <a href="#courses" class="hero-cta secondary">Explore courses</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-band reveal">
+    <div class="content-shell stats-grid">
+      <div class="stat-card">
+        <span class="stat-value">25k+</span>
+        <span class="stat-label">Learners upskilled</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">180+</span>
+        <span class="stat-label">Hiring partners</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value">92%</span>
+        <span class="stat-label">Placement support</span>
+      </div>
     </div>
   </section>
 
   <!-- About Us Section -->
-  <section class="py-5 text-center" id="about">
-    <div class="container">
-      <p class="mb-4 fw-semibold" >About Us</p>
-      <p class="fw-semibold">Who We Are:</p>
-      <p class="mx-auto" style="max-width: 600px">
-        We are a team of passionate software professionals and educators with a
-        mission to simplify coding education. Whether you’re preparing for a
-        tech career or upskilling, we offer high-quality, hands-on training.
-      </p>
-      <p class="fw-semibold">Why Choose Us:</p>
-      <ul class="list-unstyled d-inline-block text-start">
-        <li>• Expert Instructors with Industry Experience</li>
-        <li>• Practical Projects & Assignments</li>
-        <li>• Online Classes</li>
-        <li>• Certification on Completion</li>
-      </ul>
+  <section class="py-5 about-section reveal" id="about">
+    <div class="container content-shell">
+      <div class="about-grid">
+        <div class="about-copy">
+          <span class="eyebrow">About Us</span>
+          <h2>Build career-ready skills with expert-led programs.</h2>
+          <p>
+            We are a team of software professionals and educators on a mission to simplify coding
+            education. Whether you are preparing for a tech career or upskilling, we deliver
+            hands-on, project-based training with mentorship that matters.
+          </p>
+        </div>
+        <div class="about-panels">
+          <div class="about-card">
+            <h4>Who we are</h4>
+            <p>Industry practitioners, mentors, and curriculum designers focused on outcomes.</p>
+          </div>
+          <div class="about-card">
+            <h4>Why choose us</h4>
+            <ul>
+              <li>Expert instructors with industry experience</li>
+              <li>Practical projects and assignments</li>
+              <li>Flexible online classes</li>
+              <li>Certification on completion</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
-  <section class="py-5" id="courses">
-    <div class="container">
+  <section class="py-5 courses-section reveal" id="courses">
+    <div class="container content-shell">
       <h3 class="fw-semibold text-muted mb-5">Our Courses</h3>
       <div class="row g-4">
 
@@ -59,6 +84,10 @@
             <img src="../../../../assets/python.webp" class="card-img-top" alt="Python Programming" />
             <div class="card-body">
               <h5 class="card-title fw-semibold">Python Programming</h5>
+              <div class="course-meta">
+                <span class="badge">Beginner</span>
+                <span class="meta">12 weeks</span>
+              </div>
               <p class="fw-semibold">Beginner Level</p>
               <ul>
                 <li>
@@ -77,7 +106,7 @@
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">₹ 30,000</span>
+              <span class="fw-bold text-success">Rs  30,000</span>
               <button class="btn btn-primary btn-sm" (click)="paymentPage('python',30000)">Buy Now</button>
             </div>
           </div>
@@ -89,6 +118,10 @@
             <img src="../../../../assets/java.webp" class="card-img-top" alt="Java Programming" />
             <div class="card-body">
               <h5 class="card-title fw-semibold">Java Programming</h5>
+              <div class="course-meta">
+                <span class="badge">Intermediate</span>
+                <span class="meta">14 weeks</span>
+              </div>
               <p class="fw-semibold">Beginner Level</p>
               <ul>
                 <li>
@@ -105,7 +138,7 @@
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">₹ 35,000</span>
+              <span class="fw-bold text-success">Rs  35,000</span>
               <button class="btn btn-primary btn-sm" (click)="paymentPage('java',35000)">Buy Now</button>
             </div>
           </div>
@@ -117,6 +150,10 @@
             <img src="../../../../assets/datascience.webp" class="card-img-top" alt="Data Science" />
             <div class="card-body">
               <h5 class="card-title fw-semibold">Data Science</h5>
+              <div class="course-meta">
+                <span class="badge">Advanced</span>
+                <span class="meta">16 weeks</span>
+              </div>
               <p>Understand the fundamentals of data science including:</p>
               <ul>
                 <li>Introduction to Data Science</li>
@@ -127,7 +164,7 @@
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">₹ 75,000</span>
+              <span class="fw-bold text-success">Rs  75,000</span>
               <button class="btn btn-primary btn-sm" (click)="paymentPage('datascience',75000)">Buy Now</button>
             </div>
           </div>
@@ -135,8 +172,8 @@
       </div>
     </div>
   </section>
-  <section class="py-5">
-    <div class="container">
+  <section class="py-5 courses-section alt reveal">
+    <div class="container content-shell">
       <div class="row g-4">
 
         <!-- Full Stack Course -->
@@ -145,6 +182,10 @@
             <img src="../../../../assets/fullstack.webp" class="card-img-top" alt="Full Stack" />
             <div class="card-body">
               <h5 class="card-title fw-semibold">Full Stack</h5>
+              <div class="course-meta">
+                <span class="badge">Career Track</span>
+                <span class="meta">20 weeks</span>
+              </div>
               <ul>
                 <li>Introduction to Full Stack development</li>
                 <li>Web basics</li>
@@ -154,7 +195,7 @@
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">₹ 85,000</span>
+              <span class="fw-bold text-success">Rs  85,000</span>
               <button class="btn btn-primary btn-sm" (click)="paymentPage('fullstack',85000)">Buy Now</button>
             </div>
           </div>
@@ -166,6 +207,10 @@
             <img src="../../../../assets/nosql.webp" class="card-img-top" alt="NoSQL" />
             <div class="card-body">
               <h5 class="card-title fw-semibold">NoSQL</h5>
+              <div class="course-meta">
+                <span class="badge">Specialization</span>
+                <span class="meta">8 weeks</span>
+              </div>
               <ul>
                 <li>Introduction</li>
                 <li>Document oriented databases</li>
@@ -176,7 +221,7 @@
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">₹ 45,000</span>
+              <span class="fw-bold text-success">Rs  45,000</span>
               <button class="btn btn-primary btn-sm" (click)="paymentPage('nosql',45000)">Buy Now</button>
             </div>
           </div>
@@ -295,13 +340,27 @@
       </div>
     </div>
   </section> -->
-  <div class="container py-5" id="register">
-    <div class="row align-items-center">
-      <div class="col-lg-6 mb-4 mb-lg-0 text-center">
-        <img src="../../../../assets/ContactUs.jpg" alt="Contact Support" class="contact-image" />
-      </div>
-      <div class="col-lg-6">
-        <h3 class="mb-4 text-primary fw-semibold">Register a course</h3>
+  <section class="contact-section reveal" id="register">
+    <div class="container contact-shell">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="eyebrow">Admissions Desk</span>
+          <h3>Register a course</h3>
+          <p>Talk to our counselors for cohort dates, career support, and fees.</p>
+          <div class="contact-cards">
+            <div class="info-card">
+              <h4>Call us</h4>
+              <p>+91 (800) 555-1212</p>
+              <p>Mon - Sat, 9:00 AM - 7:00 PM</p>
+            </div>
+            <div class="info-card">
+              <h4>Email</h4>
+              <p>admissions@edusoft.academy</p>
+              <p>support@edusoft.academy</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
         <form #userobjForm="ngForm" (keydown.enter)="$event.preventDefault()" name="objForm" autocomplete="off">
           <!-- <mat-form-field appearance="outline" class="col-md-12">
             <mat-label>Full Name</mat-label>
@@ -371,38 +430,40 @@
             </div>
           </button> -->
           <!-- </form> -->
-          <div class="col-12 mb-3">
-            <input type="text" class="form-control" placeholder="Your Name" name="fName"
-              [(ngModel)]="customerObj.fullName" #fName="ngModel" required />
-            <div *ngIf="fName.invalid && fName.touched" class="text-danger small mt-1">
-              Name is required.
+          <div class="form-grid">
+            <div class="col-12 mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" name="fName"
+                [(ngModel)]="customerObj.fullName" #fName="ngModel" required />
+              <div *ngIf="fName.invalid && fName.touched" class="text-danger small mt-1">
+                Name is required.
+              </div>
             </div>
-          </div>
-          <div class="col-12 mb-3">
-            <input type="email" class="form-control" placeholder="Your Email" name="eml"
-              [(ngModel)]="customerObj.emailId" #eml="ngModel" required />
-            <div *ngIf="eml.invalid && eml.touched" class="text-danger small mt-1">
-              Email is required.
+            <div class="col-12 mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" name="eml"
+                [(ngModel)]="customerObj.emailId" #eml="ngModel" required />
+              <div *ngIf="eml.invalid && eml.touched" class="text-danger small mt-1">
+                Email is required.
+              </div>
             </div>
-          </div>
-          <div class="col-12 mb-3">
-            <input type="tel" class="form-control" placeholder="Your Phone No" name="mblNum"
-              [(ngModel)]="customerObj.phNo" #mblNum="ngModel" required />
-            <div *ngIf="mblNum.invalid && mblNum.touched" class="text-danger small mt-1">
-              Phone No is required.
+            <div class="col-12 mb-3">
+              <input type="tel" class="form-control" placeholder="Your Phone No" name="mblNum"
+                [(ngModel)]="customerObj.phNo" #mblNum="ngModel" required />
+              <div *ngIf="mblNum.invalid && mblNum.touched" class="text-danger small mt-1">
+                Phone No is required.
+              </div>
             </div>
+            <mat-form-field class="col-12 mb-3">
+              <mat-label>Select Course</mat-label>
+              <mat-select [(ngModel)]="customerObj.courseName" #usrTyp="ngModel" name="usrTyp" required multiple>
+                <mat-option *ngFor="let user of courses" [value]="user">
+                  {{ user }}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="usrTyp.errors?.['required']">
+                Course is required
+              </mat-error>
+            </mat-form-field>
           </div>
-          <mat-form-field class="col-12 mb-3">
-            <mat-label>Select Course</mat-label>
-            <mat-select [(ngModel)]="customerObj.courseName" #usrTyp="ngModel" name="usrTyp" required multiple>
-              <mat-option *ngFor="let user of courses" [value]="user">
-                {{ user }}
-              </mat-option>
-            </mat-select>
-            <mat-error *ngIf="usrTyp.errors?.['required']">
-              Course is required
-            </mat-error>
-          </mat-form-field>
           <!-- <div class="mb-3">
             <input type="text" class="form-control" placeholder="Distribute Id" name="dstId"
               [(ngModel)]="customerObj.distributeId" #dstId="ngModel" required />
@@ -434,29 +495,39 @@
             </button>
           </div>
         </form>
+        </div>
       </div>
     </div>
-  </div>
-  <footer>
-    <div class="container m-4">
-      <div class="row align-items-center">
-        <div class="col-12 col-md-6 text-center text-md-start mb-2 mb-md-0">
-          <span>COPYRIGHT © 2025 EDUSOFT ACADEMY - ALL RIGHTS RESERVED.</span>
-        </div>
+  </section>
 
-        <div
-          class="col-12 col-md-6 text-center text-md-end d-flex justify-content-center justify-content-md-end align-items-center">
-          <span class="me-2">POWERED BY</span>
-          <svg viewBox="0 0 163 34" xmlns="http://www.w3.org/2000/svg" width="100" height="24">
+  <footer class="site-footer">
+    <div class="container footer-shell">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-title">EduSoft Academy</span>
+          <p>Professional training pathways in software engineering, data, and full-stack development.</p>
+        </div>
+        <div class="footer-links">
+          <a href="#about">About</a>
+          <a href="#courses">Courses</a>
+          <a href="#register">Admissions</a>
+          <a href="#">Privacy</a>
+        </div>
+        <div class="footer-meta">
+          <span>COPYRIGHT (C) 2025 EDUSOFT ACADEMY</span>
+          <div class="footer-powered">
+            <span>POWERED BY</span>
+            <svg viewBox="0 0 163 34" xmlns="http://www.w3.org/2000/svg" width="100" height="24">
             <path
               d="M32.937 1.554c-3.968-2.48-9.193-1.89-13.852 1.039C14.44-.335 9.213-.925 5.25 1.553c-6.27 3.919-7.032 14.01-1.701 22.54 3.93 6.289 10.074 9.974 15.544 9.906 5.47.068 11.615-3.617 15.545-9.906 5.324-8.53 4.568-18.621-1.701-22.54zM6.43 22.292a20.436 20.436 0 0 1-2.46-5.632 16.104 16.104 0 0 1-.534-5.31c.238-3.153 1.521-5.608 3.612-6.914s4.855-1.385 7.8-.217c.441.177.878.38 1.312.606a24.092 24.092 0 0 0-4.228 5.08C8.697 15.086 7.71 20.849 8.84 25.444a20.912 20.912 0 0 1-2.408-3.151H6.43zM34.216 16.658a20.484 20.484 0 0 1-2.46 5.632 21.103 21.103 0 0 1-2.408 3.158c1.01-4.12.324-9.165-2.153-13.897a.624.624 0 0 0-.895-.243l-7.72 4.823a.629.629 0 0 0-.2.87l1.133 1.81a.632.632 0 0 0 .869.2l5.004-3.125c.162.486.324.97.445 1.457.472 1.725.653 3.518.536 5.303-.238 3.15-1.521 5.606-3.612 6.914a7.061 7.061 0 0 1-3.579 1.036h-.16a7.051 7.051 0 0 1-3.578-1.036c-2.093-1.308-3.376-3.763-3.614-6.914a16.143 16.143 0 0 1 .534-5.31 21.015 21.015 0 0 1 6.444-10.314 16.136 16.136 0 0 1 4.532-2.806c2.936-1.168 5.705-1.09 7.797.217 2.093 1.308 3.375 3.76 3.613 6.914a16.145 16.145 0 0 1-.528 5.31z" />
           </svg>
+          </div>
         </div>
       </div>
     </div>
   </footer>
   <!-- <footer class="py-6 text-center text-gray-700 text-sm">
-    &copy; Copyright © 2025 EduSoft Academy - All Rights Reserved.
+    &copy; Copyright (C) 2025 EduSoft Academy - All Rights Reserved.
   </footer> -->
   <!-- <section
     class="text-center bg-gradient-to-r from-orange-50 to-orange-100 py-16 px-4"
@@ -519,7 +590,7 @@
       About Us
     </h2>
     <p class="mt-6 text-gray-700 text-center leading-relaxed">
-      At MyBrand, we’re passionate about building scalable and modern web
+      At MyBrand, we're passionate about building scalable and modern web
       experiences. Our team brings expertise in design, development, and
       business strategy to help our clients succeed.
     </p>

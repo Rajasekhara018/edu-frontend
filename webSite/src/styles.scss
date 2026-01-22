@@ -3,7 +3,59 @@
 @tailwind components;
 @tailwind utilities;
 
+@import './typography';
+
 /* You can now use your own SCSS below */
+:root {
+  color-scheme: light;
+  --ink: #0f172a;
+  --muted: #5b677a;
+  --accent: #1b4b8b;
+  --accent-strong: #133864;
+  --gold: #f2a900;
+  --surface: #ffffff;
+  --border: rgba(15, 23, 42, 0.12);
+  --shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+html,
 body {
-  @apply text-gray-800 bg-white;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #f5f8ff 0%, #eef3fb 45%, #e9eff7 100%);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.app-shell {
+  padding-top: 88px;
+}
+
+@media (max-width: 960px) {
+  .app-shell {
+    padding-top: 96px;
+  }
 }

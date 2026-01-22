@@ -1,43 +1,620 @@
-.hero-section {
-  background: #1a1a1a;
-  color: #fff;
-  padding: 3rem 1rem;
-}
-.form-section {
-  background: #f8f9fa;
-  padding: 3rem 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-.benefit-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.benefit-item i {
-  color: #007bff;
-}
-.step {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
+.landing {
+  padding: 2rem 0 3rem;
 }
 
-.contact-image {
-  max-width: 100%;
-  height: auto;
+.content-shell {
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.form-control,
-.form-select {
-  border-radius: 6px;
-  height: 50px;
+
+.hero-section {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 1.5rem;
+  align-items: stretch;
+  padding: 0 1.5rem;
 }
-textarea.form-control {
-  height: 120px;
+
+.hero-media {
+  height: 100%;
+  display: flex;
 }
-.btn-send {
-  height: 50px;
-  font-weight: bold;
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.18);
+}
+
+.hero-card {
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.15);
+  text-align: left;
+  width: 100%;
+  max-width: 420px;
+  justify-self: stretch;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-card h1 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 2.8rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.hero-card p {
+  color: #5b677a;
+  margin-bottom: 1.5rem;
+}
+
+.hero-card .eyebrow {
+  display: inline-flex;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(27, 75, 139, 0.12);
+  color: #1b4b8b;
   letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  background: #1b4b8b;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(27, 75, 139, 0.35);
+}
+
+.hero-cta.secondary {
+  background: #ffffff;
+  color: #1b4b8b;
+  border: 1px solid rgba(27, 75, 139, 0.2);
+  box-shadow: none;
+}
+
+.stats-band {
+  padding: 0 1.5rem 2.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.1);
+  display: grid;
+  gap: 0.4rem;
+}
+
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1b4b8b;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #5b677a;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.about-section {
+  background: linear-gradient(180deg, #f1f5ff 0%, #ffffff 100%);
+  border-top: 1px solid rgba(27, 75, 139, 0.12);
+  border-bottom: 1px solid rgba(27, 75, 139, 0.12);
+}
+
+.about-section .content-shell {
+  padding: 2.5rem 1.5rem;
+}
+
+.about-section p {
+  color: #5b677a;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-copy h2 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 2.1rem;
+  margin: 0.6rem 0 0.8rem;
+  color: #0f172a;
+}
+
+.about-panels {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 1.25rem 1.4rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.12);
+}
+
+.about-card h4 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #1b4b8b;
+}
+
+.about-card ul {
+  padding-left: 1.1rem;
+  margin: 0;
+  color: #5b677a;
+  line-height: 1.6;
+}
+
+.about-card li {
+  margin-bottom: 0.35rem;
+}
+
+.about-list {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #24324b;
+}
+
+.about-section .eyebrow {
+  display: inline-flex;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(27, 75, 139, 0.12);
+  color: #1b4b8b;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+}
+
+.courses-section .content-shell {
+  padding: 0 1.5rem;
+}
+
+.courses-section .section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.courses-section .section-head h3 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.courses-section .section-head p {
+  color: #5b677a;
+  margin: 0;
+}
+
+.courses-section .card {
+  border-radius: 18px;
+  box-shadow: 0 18px 32px rgba(15, 23, 42, 0.14);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.courses-section .card-body {
+  color: #4a5a70;
+}
+
+.courses-section .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 36px rgba(15, 23, 42, 0.18);
+}
+
+.courses-section .card-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.15rem;
+  color: #0f172a;
+}
+
+.courses-section .card-body ul {
+  padding-left: 1.1rem;
+  margin: 0.5rem 0 1rem;
+  color: #5b677a;
+  line-height: 1.6;
+}
+
+.courses-section .card-body li {
+  margin-bottom: 0.35rem;
+}
+
+.courses-section .card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  background: #f1f5ff !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.courses-section .card-footer .fw-bold {
+  color: #1b4b8b !important;
+  font-size: 1rem;
+}
+
+.courses-section .card-footer .btn-primary {
+  background: #1b4b8b;
+  border-color: #1b4b8b;
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  font-weight: 600;
+}
+
+.courses-section .card-footer .btn-primary:hover {
+  background: #133864;
+  border-color: #133864;
+}
+
+.courses-section .card-footer {
+  background: #f1f5ff !important;
+}
+
+.courses-section.alt {
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .courses-section .row.g-4 {
+    --bs-gutter-x: 1.25rem;
+    --bs-gutter-y: 1.25rem;
+  }
+}
+
+.register-section {
+  background: linear-gradient(135deg, #0f2a4a 0%, #1b4b8b 55%, #2563eb 100%);
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(27, 75, 139, 0.35);
+  color: #f8fafc;
+}
+
+.register-section h3 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  color: #f8fafc;
+}
+
+.register-section .form-control,
+.register-section .mat-mdc-form-field {
+  border-radius: 12px;
+}
+
+.register-section .btn-send {
+  background: #f59e0b;
+  border: none;
+  border-radius: 999px;
+  color: #ffffff;
+}
+
+.register-section label,
+.register-section .text-secondary {
+  color: rgba(248, 250, 252, 0.78) !important;
+}
+
+.register-section .form-control {
+  background: #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.site-footer {
+  padding: 2.5rem 0 2rem;
+  background: #0f172a;
+  color: rgba(248, 250, 252, 0.8);
+}
+
+.footer-shell {
+  border-top: 1px solid rgba(248, 250, 252, 0.12);
+  padding-top: 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: start;
+}
+
+.footer-brand p {
+  color: rgba(248, 250, 252, 0.7);
+  margin: 0.5rem 0 0;
+}
+
+.footer-title {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 1.1rem;
+  color: #f8fafc;
+}
+
+.footer-links {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.footer-links a {
+  color: rgba(248, 250, 252, 0.75);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: #f2a900;
+}
+
+.footer-meta {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: start;
+}
+
+.footer-powered {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: rgba(248, 250, 252, 0.7);
+}
+
+.footer-powered svg {
+  fill: #f2a900;
+}
+
+.contact-section {
+  padding: 3rem 0 4rem;
+}
+
+.contact-shell {
+  background: #0f172a;
+  color: #f8fafc;
+  border-radius: 28px;
+  padding: 2.5rem;
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.contact-info .eyebrow {
+  display: inline-flex;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.18);
+  color: #93c5fd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.72rem;
+}
+
+.contact-info h3 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  font-size: 2rem;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.contact-info p {
+  color: rgba(248, 250, 252, 0.72);
+}
+
+.contact-cards {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.info-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 16px;
+  padding: 1rem 1.25rem;
+}
+
+.info-card h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+  color: #f8fafc;
+}
+
+.info-card p {
+  margin: 0.2rem 0;
+  color: rgba(248, 250, 252, 0.7);
+}
+
+.contact-form {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  color: #0f172a;
+}
+
+.contact-form h3 {
+  font-family: 'Playfair Display', 'Georgia', serif;
+  color: #0f172a;
+}
+
+.contact-form .btn-send {
+  background: #1b4b8b;
+  border-color: #1b4b8b;
+}
+
+.form-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.contact-form .form-control {
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  height: 48px;
+}
+
+.contact-form .mat-mdc-form-field {
+  width: 100%;
+}
+
+.contact-form .form-control:focus {
+  border-color: #1b4b8b;
+  box-shadow: 0 0 0 3px rgba(27, 75, 139, 0.15);
+}
+
+.reveal {
+  animation: rise 0.6s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .contact-shell {
+    padding: 2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-shell {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-card {
+    text-align: left;
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .hero-section {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-card h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-card {
+    padding: 1.5rem;
+  }
+
+  .hero-section {
+    padding: 0 1rem;
+  }
+
+  .about-section .content-shell {
+    padding: 2rem 1rem;
+  }
+
+  .courses-section .section-head h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .form-grid .col-12,
+  .form-grid .mat-mdc-form-field {
+    margin-bottom: 0 !important;
+  }
+
+  .form-grid .col-12:nth-child(3),
+  .form-grid .mat-mdc-form-field {
+    grid-column: span 2;
+  }
+}
+.course-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.course-meta .badge {
+  background: rgba(27, 75, 139, 0.12);
+  color: #1b4b8b;
+  border-radius: 999px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-weight: 700;
+}
+
+.course-meta .meta {
+  font-size: 0.8rem;
+  color: #6b778c;
 }

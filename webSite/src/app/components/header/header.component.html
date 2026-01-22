@@ -1,31 +1,31 @@
-<header class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-  <div class="container mx-auto flex justify-between items-center p-4">
-    <!-- Logo -->
-    <div class="brand d-flex align-items-start">
-      <img src="../../../assets/edutech.png" alt="App Logo" class="brand-icon" />
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="../../../assets/edutech.png" alt="EduSoft Academy" class="brand-icon" />
+      <div class="brand-text">
+        <span class="brand-title">EduSoft Academy</span>
+        <span class="brand-tagline">Industry-led learning pathways</span>
+      </div>
     </div>
 
-    <!-- Desktop Nav -->
-    <nav class="hidden md:flex space-x-6">
-      <a href="#" class="nav-link fw-semibold">Home</a>
-      <a href="#about" class="nav-link fw-semibold">About</a>
-      <a href="#courses" class="nav-link fw-semibold">Courses</a>
-      <a href="#register" class="nav-link fw-semibold">Contact</a>
+    <nav class="nav-links">
+      <a href="#" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#courses" class="nav-link">Courses</a>
+      <a href="#register" class="nav-link">Contact</a>
     </nav>
 
-    <!-- Mobile Hamburger -->
-    <button class="md:hidden focus:outline-none" (click)="toggleMenu()">
-      <svg class="h-6 w-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
+    <button class="menu-toggle" type="button" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 
-  <!-- Mobile SideNav -->
-  <div *ngIf="isMobileMenuOpen" class="md:hidden bg-white shadow-lg">
-    <a href="#" class="fw-semibold block px-4 py-2 border-b" (click)="closeMenu()">Home</a>
-    <a href="#about" class="fw-semibold block px-4 py-2 border-b" (click)="closeMenu()">About</a>
-    <a href="#courses" class="fw-semibold fw-semiboldblock px-4 py-2 border-b" (click)="closeMenu()">Courses</a>
-    <a href="#register" class="fw-semibold block px-4 py-2 border-b" (click)="closeMenu()">Contact</a>
+  <div *ngIf="isMobileMenuOpen" class="mobile-menu">
+    <a href="#" class="mobile-link" (click)="closeMenu()">Home</a>
+    <a href="#about" class="mobile-link" (click)="closeMenu()">About</a>
+    <a href="#courses" class="mobile-link" (click)="closeMenu()">Courses</a>
+    <a href="#register" class="mobile-link" (click)="closeMenu()">Contact</a>
   </div>
 </header>
