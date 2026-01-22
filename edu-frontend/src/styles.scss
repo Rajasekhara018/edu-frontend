@@ -1505,3 +1505,36 @@ body {
     }
   }
 }
+
+:root {
+  --edu-ink: #1b1a1f;
+  --edu-muted: #5c5551;
+  --edu-accent: #e4573b;
+  --edu-neon: #f4b860;
+  --edu-mint: #fde6d8;
+  --edu-cream: #fffaf6;
+  --edu-panel: #ffffff;
+  --edu-border: rgba(27, 26, 31, 0.12);
+  --edu-shadow: 0 18px 40px rgba(23, 18, 20, 0.12);
+}
+
+body {
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #fff4ea 0%, #f7efe6 45%, #f2ebe2 100%);
+  color: var(--edu-ink);
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
