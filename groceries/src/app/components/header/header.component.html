@@ -1,0 +1,102 @@
+<header class="mega-header">
+  <div class="top-bar">
+    <div class="brand" aria-label="ZipGrocer home">
+      <div class="logo-mark">ZG</div>
+      <div class="logo-text">ZipGrocer<span class="logo-dot">.now</span></div>
+    </div>
+
+    <button class="location" type="button">
+      <span class="loc-line">
+        <span class="loc-dot"></span>
+        Delivery hub: Jubilee Hills, 500033
+      </span>
+      <span class="loc-action">Change address</span>
+    </button>
+
+    <div class="search">
+      <label class="sr-only" for="product-search">Search groceries</label>
+      <select aria-label="Search category">
+        <option>All</option>
+        <option>Fresh Produce</option>
+        <option>Dairy & Eggs</option>
+        <option>Bakery</option>
+        <option>Staples</option>
+        <option>Snacks</option>
+        <option>Beverages</option>
+        <option>Household</option>
+        <option>Personal Care</option>
+      </select>
+      <input id="product-search" type="text" placeholder="Search milk, fruits, snacks..." />
+      <button class="search-btn" type="button" aria-label="Search">
+        <span class="search-icon"></span>
+      </button>
+    </div>
+
+    <div class="header-actions">
+      <button class="lang" type="button" aria-label="Language">
+        <span class="flag"></span>
+        EN
+      </button>
+      <button class="account" type="button">
+        <span class="small">Good evening</span>
+        <span class="strong">Prime Member</span>
+      </button>
+      <button class="orders" type="button">
+        <span class="small">Schedule</span>
+        <span class="strong">Delivery slots</span>
+      </button>
+      <button class="cart" type="button" (click)="goToCart()">
+        <span class="cart-icon"></span>
+        <span class="cart-count">{{ (cartCount$ | async) || 0 }}</span>
+        Cart
+      </button>
+    </div>
+
+    <button class="hamburger" type="button" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <div class="nav-bar">
+    <button class="menu-all" type="button">
+      <span class="menu-icon"><span></span></span>
+      Browse
+    </button>
+    <nav class="nav-links">
+      <a href="#products">Fresh</a>
+      <a href="#products">Dairy</a>
+      <a href="#products">Bakery</a>
+      <a href="#products">Staples</a>
+      <a href="#products">Snacks</a>
+      <a href="#products">Household</a>
+      <a href="#about">How it works</a>
+      <a href="#contact">Help</a>
+    </nav>
+    <div class="promo">
+      <span>10-minute delivery zones</span>
+      <span class="promo-sep">|</span>
+      <span>Free on orders above Rs 499</span>
+    </div>
+  </div>
+
+  <div *ngIf="isMobileMenuOpen" class="mobile-panel">
+    <div class="mobile-search">
+      <input type="text" placeholder="Search groceries" />
+      <button type="button">Search</button>
+    </div>
+    <div class="mobile-links">
+      <a href="#products" (click)="closeMenu()">All items</a>
+      <a href="#products" (click)="closeMenu()">Fresh Produce</a>
+      <a href="#products" (click)="closeMenu()">Dairy & Eggs</a>
+      <a href="#products" (click)="closeMenu()">Bakery</a>
+      <a href="#products" (click)="closeMenu()">Staples</a>
+      <a href="#products" (click)="closeMenu()">Snacks</a>
+      <a href="#products" (click)="closeMenu()">Household</a>
+      <a href="#about" (click)="closeMenu()">How it works</a>
+      <a href="#contact" (click)="closeMenu()">Help</a>
+      <a href="#" (click)="goToCart()">Cart</a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,200 @@
+<div class="app-container">
+  <app-header></app-header>
+
+  <router-outlet></router-outlet>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-hero">
+        <div class="about-copy">
+          <span class="eyebrow">ZipGrocer Quick Commerce</span>
+          <h2>Groceries in 10 minutes, curated for city life.</h2>
+          <p class="lead">We keep fresh essentials stocked in hyperlocal hubs, so your cart flies from shelf to doorstep. Track a live runner, build smart repeat baskets, and always know what's arriving.</p>
+          <div class="about-actions">
+            <a class="primary-btn" routerLink="/products">Start shopping</a>
+            <a class="ghost-btn" href="#contact">Schedule a delivery</a>
+          </div>
+        </div>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <i class="bi bi-lightning-charge"></i>
+            <div>
+              <h3>Lightning Picks</h3>
+              <p>Top essentials are packed first with auto-prioritized routes.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <i class="bi bi-thermometer-snow"></i>
+            <div>
+              <h3>Cold Chain Ready</h3>
+              <p>Dairy and frozen items travel in chilled bins.</p>
+            </div>
+          </div>
+          <div class="highlight-card">
+            <i class="bi bi-stars"></i>
+            <div>
+              <h3>Smart Refill</h3>
+              <p>Reorder your weekly staples in a single tap.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-stats">
+        <div class="stat-card">
+          <span class="stat-value">120+</span>
+          <span class="stat-label">Dark Stores</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">9 min</span>
+          <span class="stat-label">Median Drop</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">4.8</span>
+          <span class="stat-label">App Rating</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-value">30k+</span>
+          <span class="stat-label">Daily Orders</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <div class="contact-header">
+        <div>
+          <span class="eyebrow">24x7 Help Desk</span>
+          <h2>Need help with a delivery?</h2>
+          <p>Reach us anytime for order updates, quality checks, or business partnerships. We answer in minutes.</p>
+        </div>
+        <button class="contact-cta">Chat with support</button>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <div class="info-card">
+            <i class="bi bi-telephone"></i>
+            <div>
+              <h4>Instant Support</h4>
+              <p>+91 (800) 555-9090</p>
+              <p>WhatsApp: +91 91234 56789</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="bi bi-chat-dots"></i>
+            <div>
+              <h4>Live Chat</h4>
+              <p>In-app support, 24x7</p>
+              <p>support@zipgrocer.now</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="bi bi-geo-alt"></i>
+            <div>
+              <h4>City Hub</h4>
+              <p>Skyline Arcade</p>
+              <p>Hitech City, Hyderabad</p>
+              <p>India - 500081</p>
+            </div>
+          </div>
+          <div class="info-card">
+            <i class="bi bi-clock"></i>
+            <div>
+              <h4>Operating Hours</h4>
+              <p>Mon - Sun: 6:00 AM - 1:00 AM</p>
+              <p>Slots auto-scheduled every 15 mins</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form">
+          <h3>Report a delivery issue</h3>
+          <form>
+            <div class="form-group">
+              <label for="contact-name">Full Name</label>
+              <input id="contact-name" type="text" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email Address</label>
+              <input id="contact-email" type="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Order ID</label>
+              <input id="contact-phone" type="text" placeholder="ZIP-04251" required>
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" placeholder="Tell us what went wrong and we will fix it fast" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit ticket</button>
+          </form>
+          <p class="form-note">We respond within 15 minutes on average.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-mark">ZG</span>
+          <span class="logo-text">ZipGrocer<span class="logo-dot">.now</span></span>
+        </div>
+        <p class="footer-tagline">Your 10-minute grocery partner for fresh, frozen, and pantry essentials.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Shop</h4>
+          <a href="/products">Fresh Produce</a>
+          <a href="/products">Dairy & Eggs</a>
+          <a href="/products">Staples</a>
+          <a href="/products">Household</a>
+        </div>
+        <div class="link-group">
+          <h4>Support</h4>
+          <a href="#contact">Delivery status</a>
+          <a href="#contact">Returns</a>
+          <a href="#contact">Order issues</a>
+          <a href="#contact">Business</a>
+        </div>
+        <div class="link-group">
+          <h4>Company</h4>
+          <a href="#about">How it works</a>
+          <a href="#about">Careers</a>
+          <a href="#about">Sustainability</a>
+          <a href="#about">Press</a>
+        </div>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><i class="bi bi-telephone"></i> +91 (800) 555-9090</p>
+        <p><i class="bi bi-envelope"></i> support@zipgrocer.now</p>
+        <p><i class="bi bi-geo-alt"></i> Hitech City, Hyderabad</p>
+        <button class="footer-cta">Download app</button>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 ZipGrocer. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <span>|</span>
+        <a href="#">Terms</a>
+        <span>|</span>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+</div>
