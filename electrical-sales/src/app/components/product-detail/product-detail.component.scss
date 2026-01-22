@@ -1,27 +1,50 @@
 .product-detail-container {
-  padding: 2.5rem 1.5rem;
+  --ink: #1b1a1f;
+  --muted: #5c5551;
+  --neon: #f4b860;
+  --mint: #fde6d8;
+  --border: rgba(27, 26, 31, 0.14);
+
+  padding: 2.8rem 1.5rem 4rem;
   max-width: 1400px;
   margin: 0 auto;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  color: var(--ink);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 10%, rgba(244, 184, 96, 0.25), transparent 45%),
+      radial-gradient(circle at 85% 15%, rgba(253, 230, 216, 0.35), transparent 45%);
+    opacity: 0.7;
+    pointer-events: none;
+  }
+
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 
   .back-button {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #fff;
-    border: 1px solid #d9e1ec;
+    background-color: #1b1a1f;
+    color: var(--neon);
+    border: none;
     padding: 0.6rem 1.2rem;
     border-radius: 999px;
-    font-size: 0.95rem;
-    font-weight: 500;
+    font-size: 0.92rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-bottom: 2rem;
 
     &:hover {
-      border-color: #ffb347;
-      color: #b45309;
-      background: #fff5e5;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(27, 26, 31, 0.25);
     }
   }
 
@@ -33,35 +56,41 @@
     align-items: center;
     min-height: 400px;
     gap: 1rem;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid var(--border);
 
     p {
-      color: #666;
-      font-size: 1.1rem;
+      color: #6b605a;
+      font-size: 1.05rem;
     }
 
     button {
-      padding: 0.75rem 1.5rem;
-      background-color: #007bff;
-      color: white;
+      padding: 0.7rem 1.4rem;
+      background-color: #1b1a1f;
+      color: var(--neon);
       border: none;
-      border-radius: 4px;
-      font-size: 0.95rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
 
       &:hover {
-        background-color: #0056b3;
+        transform: translateY(-1px);
+        box-shadow: 0 8px 18px rgba(27, 26, 31, 0.3);
       }
     }
   }
 
   .product-detail {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 1fr;
     gap: 3rem;
     margin-bottom: 4rem;
+    animation: rise 0.6s ease both;
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
       grid-template-columns: 1fr;
       gap: 2rem;
     }
@@ -76,10 +105,11 @@
         position: relative;
         width: 100%;
         max-width: 520px;
-        border-radius: 16px;
+        border-radius: 22px;
         overflow: hidden;
-        background-color: #f3f5f9;
-        border: 1px solid #e1e7f0;
+        background: linear-gradient(160deg, #fff4ea 0%, #f6e4d9 100%);
+        border: 1px solid rgba(27, 26, 31, 0.16);
+        box-shadow: 0 18px 32px rgba(23, 18, 20, 0.15);
 
         img {
           width: 100%;
@@ -89,14 +119,16 @@
 
         .discount-badge {
           position: absolute;
-          top: 20px;
-          right: 20px;
-          background-color: #ff4444;
-          color: white;
+          top: 18px;
+          right: 18px;
+          background-color: #1b1a1f;
+          color: var(--neon);
           padding: 0.5rem 0.9rem;
           border-radius: 999px;
           font-weight: 700;
-          font-size: 0.85rem;
+          font-size: 0.82rem;
+          letter-spacing: 0.3px;
+          box-shadow: 0 10px 22px rgba(27, 26, 31, 0.3);
         }
       }
 
@@ -106,11 +138,11 @@
       }
 
       .thumb {
-        width: 64px;
-        height: 64px;
-        border-radius: 10px;
-        border: 1px solid #e1e7f0;
-        background: #fff;
+        width: 62px;
+        height: 62px;
+        border-radius: 12px;
+        border: 1px solid rgba(27, 26, 31, 0.2);
+        background: #ffffff;
         display: grid;
         place-items: center;
         cursor: pointer;
@@ -125,29 +157,30 @@
       }
 
       .thumb.active {
-        border-color: #ffb347;
-        box-shadow: 0 6px 16px rgba(255, 179, 71, 0.3);
+        border-color: #1b1a1f;
+        box-shadow: 0 8px 18px rgba(27, 26, 31, 0.25);
       }
     }
 
     .product-info-section {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
+      gap: 1.4rem;
 
       .product-header {
         .category {
-          color: #b45309;
+          color: #b54732;
           font-size: 0.85rem;
           font-weight: 700;
           text-transform: uppercase;
-          letter-spacing: 0.8px;
+          letter-spacing: 1px;
         }
 
         h1 {
-          font-size: 2.1rem;
-          color: #111827;
-          margin: 0.3rem 0 0.5rem 0;
+          font-family: 'Bodoni Moda', 'Outfit', serif;
+          font-size: 2.2rem;
+          color: #1b1a1f;
+          margin: 0.35rem 0 0.5rem 0;
         }
       }
 
@@ -156,24 +189,25 @@
         align-items: center;
         gap: 1rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px dashed rgba(27, 26, 31, 0.2);
 
         .rating {
           display: flex;
           align-items: center;
           gap: 0.5rem;
           font-weight: 600;
-          color: #b45309;
-          font-size: 1rem;
+          color: #1b1a1f;
+          font-size: 0.95rem;
 
           i {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
+            color: #facc15;
           }
         }
 
         .reviews {
-          color: #999;
-          font-size: 0.95rem;
+          color: #857971;
+          font-size: 0.9rem;
         }
       }
 
@@ -183,25 +217,25 @@
         align-items: baseline;
         gap: 0.6rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid #e0e0e0;
+        border-bottom: 1px solid rgba(27, 26, 31, 0.12);
 
         .current-price {
-          font-size: 2.1rem;
+          font-size: 2rem;
           font-weight: 800;
-          color: #111827;
+          color: #1b1a1f;
         }
 
         .original-price {
           font-size: 1rem;
-          color: #8b94a7;
+          color: #a9988c;
           text-decoration: line-through;
         }
 
         .savings {
-          color: #0f5132;
+          color: #b54732;
           font-weight: 700;
-          font-size: 0.9rem;
-          background: #e6f4ea;
+          font-size: 0.85rem;
+          background: rgba(228, 87, 59, 0.12);
           padding: 0.25rem 0.6rem;
           border-radius: 999px;
         }
@@ -216,39 +250,40 @@
         span {
           display: inline-flex;
           align-items: center;
-          gap: 0.5rem;
-          padding: 0.4rem 0.75rem;
+          gap: 0.45rem;
+          padding: 0.35rem 0.7rem;
           border-radius: 999px;
           font-weight: 700;
-          font-size: 0.85rem;
+          font-size: 0.82rem;
 
           &.in-stock {
-            background-color: #e8f5e9;
-            color: #2e7d32;
+            background-color: rgba(228, 87, 59, 0.15);
+            color: #b54732;
           }
 
           &.out-of-stock {
-            background-color: #ffebee;
-            color: #c62828;
+            background-color: rgba(27, 26, 31, 0.12);
+            color: #7d6f66;
           }
         }
 
         .delivery {
           font-size: 0.85rem;
-          color: #1f2937;
+          color: #5c5551;
           font-weight: 600;
         }
       }
 
       .description-section {
         h3 {
+          font-family: 'Bodoni Moda', 'Outfit', serif;
           font-size: 1.2rem;
-          color: #333;
-          margin: 0 0 0.75rem 0;
+          color: #1b1a1f;
+          margin: 0 0 0.7rem 0;
         }
 
         p {
-          color: #666;
+          color: #6b605a;
           line-height: 1.6;
           margin: 0;
         }
@@ -256,8 +291,9 @@
 
       .specifications-section {
         h3 {
+          font-family: 'Bodoni Moda', 'Outfit', serif;
           font-size: 1.2rem;
-          color: #333;
+          color: #1b1a1f;
           margin: 0 0 1rem 0;
         }
 
@@ -266,7 +302,7 @@
           border-collapse: collapse;
 
           tr {
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid rgba(27, 26, 31, 0.12);
 
             &:last-child {
               border-bottom: none;
@@ -274,16 +310,16 @@
           }
 
           td {
-            padding: 0.75rem 0;
+            padding: 0.7rem 0;
 
             &.spec-key {
               font-weight: 600;
-              color: #333;
+              color: #1b1a1f;
               width: 40%;
             }
 
             &.spec-value {
-              color: #666;
+              color: #6b605a;
             }
           }
         }
@@ -292,9 +328,9 @@
       .action-section {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.3rem;
         padding-top: 1rem;
-        border-top: 1px solid #e0e0e0;
+        border-top: 1px solid rgba(27, 26, 31, 0.12);
 
         .quantity-section {
           display: flex;
@@ -303,31 +339,32 @@
 
           label {
             font-weight: 600;
-            color: #1f2937;
+            color: #5c5551;
             min-width: 80px;
           }
 
           .quantity-control {
             display: flex;
-            border: 1px solid #d9e1ec;
+            border: 1px solid rgba(27, 26, 31, 0.2);
             border-radius: 999px;
             overflow: hidden;
+            background: #ffffff;
 
             button {
-              background-color: #f3f5f9;
+              background-color: #fbf2ea;
               border: none;
               width: 36px;
               height: 36px;
-              font-size: 1.2rem;
+              font-size: 1.1rem;
               cursor: pointer;
               transition: all 0.3s ease;
 
               &:hover:not(:disabled) {
-                background-color: #e0e0e0;
+                background-color: #f2dfd3;
               }
 
               &:disabled {
-                color: #ccc;
+                color: #b9a8a0;
                 cursor: not-allowed;
               }
             }
@@ -338,6 +375,7 @@
               text-align: center;
               font-size: 1rem;
               font-weight: 600;
+              background: transparent;
             }
           }
         }
@@ -352,11 +390,11 @@
 
           button {
             flex: 1;
-            padding: 1rem 1.5rem;
+            padding: 0.95rem 1.4rem;
             border: none;
             border-radius: 999px;
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 0.95rem;
+            font-weight: 700;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
@@ -371,23 +409,22 @@
           }
 
           .add-to-cart-btn {
-            background-color: #ffd814;
-            color: #111827;
-            border: none;
+            background-color: #1b1a1f;
+            color: var(--neon);
 
             &:hover:not(:disabled) {
               transform: translateY(-1px);
-              box-shadow: 0 10px 20px rgba(255, 216, 20, 0.4);
+              box-shadow: 0 10px 20px rgba(27, 26, 31, 0.35);
             }
           }
 
           .buy-now-btn {
-            background-color: #ff8c00;
-            color: #1b2733;
+            background-color: #e4573b;
+            color: #ffffff;
 
             &:hover:not(:disabled) {
-              background-color: #ffb347;
-              box-shadow: 0 6px 16px rgba(255, 140, 0, 0.3);
+              transform: translateY(-1px);
+              box-shadow: 0 8px 18px rgba(228, 87, 59, 0.3);
             }
           }
         }
@@ -395,24 +432,25 @@
 
       .sku-section {
         padding-top: 1rem;
-        border-top: 1px solid #e0e0e0;
+        border-top: 1px solid rgba(27, 26, 31, 0.12);
 
         p {
-          color: #6b7280;
+          color: #7d6f66;
           margin: 0;
-          font-size: 0.95rem;
+          font-size: 0.92rem;
         }
       }
     }
   }
 
   .related-products-section {
-    margin-top: 4rem;
+    margin-top: 3rem;
 
     h2 {
-      font-size: 1.8rem;
-      color: #333;
-      margin-bottom: 2rem;
+      font-family: 'Bodoni Moda', 'Outfit', serif;
+      font-size: 1.7rem;
+      color: #1b1a1f;
+      margin-bottom: 1.6rem;
     }
 
     .related-products-grid {
@@ -425,23 +463,24 @@
       }
 
       .related-product-card {
-        background: white;
-        border: 1px solid #e0e0e0;
-        border-radius: 12px;
+        background: #ffffff;
+        border: 1px solid rgba(27, 26, 31, 0.16);
+        border-radius: 16px;
         padding: 1rem;
         cursor: pointer;
         transition: all 0.3s ease;
+        animation: cardRise 0.55s ease both;
 
         &:hover {
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-          transform: translateY(-4px);
+          box-shadow: 0 12px 22px rgba(27, 26, 31, 0.18);
+          transform: translateY(-3px);
         }
 
         .related-product-image {
           width: 100%;
           height: 170px;
-          background-color: #f9f9f9;
-          border-radius: 4px;
+          background-color: #fff4ea;
+          border-radius: 10px;
           overflow: hidden;
           margin-bottom: 0.75rem;
 
@@ -454,7 +493,7 @@
 
         h4 {
           font-size: 0.95rem;
-          color: #333;
+          color: #1b1a1f;
           margin: 0 0 0.5rem 0;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -468,12 +507,12 @@
 
           .price {
             font-weight: 700;
-            color: #ff4444;
+            color: #1b1a1f;
             font-size: 0.95rem;
           }
 
           .original {
-            color: #999;
+            color: #a9988c;
             text-decoration: line-through;
             font-size: 0.85rem;
           }
@@ -481,21 +520,74 @@
 
         .view-btn {
           width: 100%;
-          padding: 0.5rem;
-          background-color: #ffd814;
-          color: #111827;
-          border: none;
+          padding: 0.55rem;
+          background-color: #fbf2ea;
+          color: #1b1a1f;
+          border: 1px solid rgba(27, 26, 31, 0.2);
           border-radius: 999px;
           font-size: 0.85rem;
-          font-weight: 600;
+          font-weight: 700;
           cursor: pointer;
-          transition: background-color 0.3s ease;
+          transition: all 0.3s ease;
 
           &:hover {
-            background-color: #ffb347;
+            background-color: #1b1a1f;
+            color: var(--neon);
+            border-color: #1b1a1f;
           }
         }
       }
     }
   }
 }
+
+@media (max-width: 640px) {
+  .product-detail-container {
+    padding: 2.2rem 1.1rem 3rem;
+  }
+
+  .product-detail-container .product-detail {
+    margin-bottom: 3rem;
+  }
+
+  .product-detail-container .product-info-section .product-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .product-detail-container .product-image-section .thumb-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product-detail-container .product-info-section .pricing-section .current-price {
+    font-size: 1.6rem;
+  }
+
+  .product-detail-container .specifications-section .specs-table td.spec-key {
+    width: 45%;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+

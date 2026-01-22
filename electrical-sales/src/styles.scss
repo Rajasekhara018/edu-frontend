@@ -1,4 +1,10 @@
+@import './typography';
+
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  color-scheme: light;
+}
 
 html, body {
   height: 100%;
@@ -6,5 +12,27 @@ html, body {
 
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #fff4ea 0%, #f7efe6 45%, #f2ebe2 100%);
+  color: #1b1a1f;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }

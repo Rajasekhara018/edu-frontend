@@ -1,9 +1,24 @@
 <div class="products-page">
-  <!-- Header Section -->
-  <!-- <div class="products-header">
-    <h1>Electronics & Appliances</h1>
-    <p class="subtitle">Best deals on laptops, smartphones, appliances & more</p>
-  </div> -->
+  <section class="market-hero">
+    <div class="hero-content">
+      <p class="eyebrow">Electrical Sales</p>
+      <h1>Power-ready supplies for homes, projects, and businesses.</h1>
+      <p class="subtext">Shop certified lighting, wiring, safety gear, and power solutions with dependable dispatch and transparent pricing.</p>
+      <div class="hero-tags">
+        <span>Verified brands</span>
+        <span>Bulk pricing</span>
+        <span>Fast dispatch</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <p class="card-title">This week's focus</p>
+      <ul>
+        <li>LED panels and smart lighting</li>
+        <li>Industrial-grade switches</li>
+        <li>Inverters and surge protection</li>
+      </ul>
+    </div>
+  </section>
 
   <div class="products-wrapper">
     <!-- Sidebar Filters (Desktop) -->
@@ -122,6 +137,12 @@
         Clear All Filters
       </button>
     </aside>
+    <div
+      class="filters-overlay"
+      *ngIf="showMobileFilters"
+      (click)="toggleMobileFilters()"
+      aria-hidden="true"
+    ></div>
 
     <!-- Main Content Area -->
     <div class="main-content">
