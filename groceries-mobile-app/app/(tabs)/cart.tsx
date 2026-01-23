@@ -2,11 +2,11 @@ import React, { useMemo } from 'react';
 import {
   FlatList,
   Pressable,
-  SafeAreaView,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image } from 'expo-image';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useRouter } from 'expo-router';
@@ -24,7 +24,7 @@ export default function CartScreen() {
   const styles = useMemo(() => createStyles(palette), [palette]);
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView edges={['top', 'left', 'right']} style={styles.safeArea}>
       <View style={styles.header}>
         <Text style={styles.title}>Your Cart</Text>
         <Text style={styles.subtitle}>{totalItems} items</Text>

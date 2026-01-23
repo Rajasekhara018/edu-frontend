@@ -3,6 +3,7 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 import React, { useMemo } from 'react';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { CartProvider } from '@/context/CartContext';
 import { ThemeSettingsProvider, useTheme } from '@/context/ThemeContext';
@@ -34,7 +35,6 @@ function AppShell() {
       <CartProvider>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="product/[id]" options={{ headerShown: false }} />
           <Stack.Screen name="login" options={{ headerShown: false }} />
           <Stack.Screen name="register" options={{ headerShown: false }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
@@ -47,8 +47,10 @@ function AppShell() {
 
 export default function RootLayout() {
   return (
-    <ThemeSettingsProvider>
-      <AppShell />
-    </ThemeSettingsProvider>
+    <SafeAreaProvider>
+      <ThemeSettingsProvider>
+        <AppShell />
+      </ThemeSettingsProvider>
+    </SafeAreaProvider>
   );
 }

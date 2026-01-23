@@ -3,7 +3,6 @@ import {
   FlatList,
   Modal,
   Pressable,
-  SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
@@ -11,6 +10,7 @@ import {
   useWindowDimensions,
   View,
 } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image } from 'expo-image';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useRouter } from 'expo-router';
@@ -92,7 +92,7 @@ export default function HomeScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeAreaView edges={['top', 'left', 'right']} style={styles.safeArea}>
       <View style={styles.header}>
         <View>
           <Text style={styles.brandTitle}>GrocerEase</Text>
@@ -235,7 +235,7 @@ export default function HomeScreen() {
         renderItem={({ item }) => (
           <Pressable
             style={styles.productCard}
-            onPress={() => router.push(`/product/${item.id}`)}>
+            onPress={() => router.push(`/(tabs)/product/${item.id}`)}>
             <Image
               source={{ uri: item.image }}
               style={styles.productImage}
@@ -266,7 +266,7 @@ export default function HomeScreen() {
                 <View style={styles.cardActions}>
                   <Pressable
                     style={styles.detailsButton}
-                    onPress={() => router.push(`/product/${item.id}`)}>
+                    onPress={() => router.push(`/(tabs)/product/${item.id}`)}>
                     <Text style={styles.detailsButtonText}>Details</Text>
                   </Pressable>
                   <Pressable
