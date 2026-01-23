@@ -1,0 +1,174 @@
+import React, { useMemo, useState } from 'react';
+import {
+  Pressable,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import { useRouter } from 'expo-router';
+
+import { useTheme } from '@/context/ThemeContext';
+import { ThemePalette } from '@/constants/theme';
+
+export default function LoginScreen() {
+  const router = useRouter();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const { palette } = useTheme();
+  const styles = useMemo(() => createStyles(palette), [palette]);
+
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView contentContainerStyle={styles.content}>
+        <View style={styles.header}>
+          <Pressable
+            accessibilityLabel="Go back"
+            style={styles.iconButton}
+            onPress={() => router.back()}>
+            <MaterialIcons name="arrow-back" size={22} color={palette.text} />
+          </Pressable>
+          <Text style={styles.headerTitle}>Log in</Text>
+          <View style={styles.iconSpacer} />
+        </View>
+
+        <View style={styles.card}>
+          <Text style={styles.title}>Welcome back</Text>
+          <Text style={styles.subtitle}>
+            Sign in to manage orders, track delivery, and save favorites.
+          </Text>
+
+          <View style={styles.fieldGroup}>
+            <Text style={styles.label}>Email or phone</Text>
+            <TextInput
+              value={email}
+              onChangeText={setEmail}
+              placeholder="you@example.com"
+              placeholderTextColor={palette.mutedAlt}
+              keyboardType="email-address"
+              autoCapitalize="none"
+              style={styles.input}
+            />
+          </View>
+
+          <View style={styles.fieldGroup}>
+            <Text style={styles.label}>Password</Text>
+            <TextInput
+              value={password}
+              onChangeText={setPassword}
+              placeholder="Enter password"
+              placeholderTextColor={palette.mutedAlt}
+              secureTextEntry
+              style={styles.input}
+            />
+          </View>
+
+          <Pressable style={styles.primaryButton}>
+            <Text style={styles.primaryButtonText}>Sign in</Text>
+          </Pressable>
+
+          <Pressable
+            style={styles.linkButton}
+            onPress={() => router.push('/register')}>
+            <Text style={styles.linkText}>
+              New here? Create an account
+            </Text>
+          </Pressable>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
+}
+
+const createStyles = (palette: ThemePalette) =>
+  StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: palette.background,
+  },
+  content: {
+    padding: 18,
+    gap: 16,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  headerTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: palette.text,
+  },
+  iconButton: {
+    width: 38,
+    height: 38,
+    borderRadius: 14,
+    backgroundColor: palette.cardAlt,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  iconSpacer: {
+    width: 38,
+    height: 38,
+  },
+  card: {
+    backgroundColor: palette.card,
+    borderRadius: 20,
+    padding: 16,
+    borderWidth: 1,
+    borderColor: palette.border,
+    gap: 12,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: palette.text,
+  },
+  subtitle: {
+    fontSize: 12,
+    color: palette.muted,
+    lineHeight: 18,
+  },
+  fieldGroup: {
+    gap: 6,
+  },
+  label: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: palette.muted,
+  },
+  input: {
+    backgroundColor: palette.cardAlt,
+    borderRadius: 14,
+    borderWidth: 1,
+    borderColor: palette.border,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    fontSize: 14,
+    color: palette.text,
+  },
+  primaryButton: {
+    marginTop: 4,
+    backgroundColor: palette.primary,
+    paddingVertical: 12,
+    borderRadius: 16,
+    alignItems: 'center',
+  },
+  primaryButtonText: {
+    color: '#fff',
+    fontWeight: '600',
+  },
+  linkButton: {
+    alignItems: 'center',
+    paddingVertical: 6,
+  },
+  linkText: {
+    color: palette.primary,
+    fontSize: 12,
+    fontWeight: '600',
+  },
+});

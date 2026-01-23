@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   Pressable,
   SafeAreaView,
@@ -12,7 +12,9 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 
 import { useCart } from '@/context/CartContext';
+import { useTheme } from '@/context/ThemeContext';
 import { products } from '@/data/products';
+import { ThemePalette } from '@/constants/theme';
 
 const formatPrice = (value: number) => `₹${value.toFixed(0)}`;
 
@@ -20,6 +22,8 @@ export default function ProductDetailsScreen() {
   const { id } = useLocalSearchParams<{ id?: string }>();
   const router = useRouter();
   const { addItem, totalItems } = useCart();
+  const { palette } = useTheme();
+  const styles = useMemo(() => createStyles(palette), [palette]);
 
   const product = products.find((item) => item.id === Number(id));
   const suggestedProducts = products
@@ -52,13 +56,13 @@ export default function ProductDetailsScreen() {
         <Pressable
           style={styles.iconButton}
           onPress={() => router.back()}>
-          <MaterialIcons name="arrow-back" size={22} color="#1b1f1d" />
+          <MaterialIcons name="arrow-back" size={22} color={palette.text} />
         </Pressable>
         <Text style={styles.headerTitle}>Details</Text>
         <Pressable
           style={styles.iconButton}
           onPress={() => router.push('/(tabs)/cart')}>
-          <MaterialIcons name="shopping-cart" size={22} color="#1f8b4c" />
+          <MaterialIcons name="shopping-cart" size={22} color={palette.primary} />
           {totalItems > 0 ? (
             <View style={styles.cartBadge}>
               <Text style={styles.cartBadgeText}>
@@ -79,7 +83,7 @@ export default function ProductDetailsScreen() {
           <Text style={styles.productName}>{product.name}</Text>
           <Text style={styles.productDesc}>{product.description}</Text>
           <View style={styles.ratingRow}>
-            <MaterialIcons name="star" size={16} color="#f4b740" />
+            <MaterialIcons name="star" size={16} color={palette.warning} />
             <Text style={styles.ratingText}>
               {(product.rating ?? 0).toFixed(1)}
             </Text>
@@ -150,7 +154,7 @@ export default function ProductDetailsScreen() {
                     ) : null}
                   </View>
                   <View style={styles.suggestedRatingRow}>
-                    <MaterialIcons name="star" size={12} color="#f4b740" />
+                    <MaterialIcons name="star" size={12} color={palette.warning} />
                     <Text style={styles.suggestedRatingText}>
                       {(item.rating ?? 0).toFixed(1)}
                     </Text>
@@ -165,10 +169,11 @@ export default function ProductDetailsScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const createStyles = (palette: ThemePalette) =>
+  StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#fbf6f1',
+    backgroundColor: palette.background,
   },
   header: {
     paddingHorizontal: 18,
@@ -181,13 +186,13 @@ const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   iconButton: {
     width: 38,
     height: 38,
     borderRadius: 14,
-    backgroundColor: '#f1f1ed',
+    backgroundColor: palette.cardAlt,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -195,13 +200,13 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -6,
     right: -6,
-    backgroundColor: '#e25d3a',
+    backgroundColor: palette.badge,
     borderRadius: 12,
     paddingHorizontal: 5,
     paddingVertical: 2,
   },
   cartBadgeText: {
-    color: '#fff',
+    color: palette.badgeText,
     fontSize: 10,
     fontWeight: '700',
   },
@@ -216,21 +221,21 @@ const styles = StyleSheet.create({
     borderRadius: 24,
   },
   infoCard: {
-    backgroundColor: '#fff',
+    backgroundColor: palette.card,
     borderRadius: 20,
     padding: 16,
     borderWidth: 1,
-    borderColor: '#e2e7e3',
+    borderColor: palette.border,
     gap: 10,
   },
   productName: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   productDesc: {
     fontSize: 13,
-    color: '#6c756f',
+    color: palette.muted,
   },
   ratingRow: {
     flexDirection: 'row',
@@ -240,11 +245,11 @@ const styles = StyleSheet.create({
   ratingText: {
     fontSize: 13,
     fontWeight: '600',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   reviewText: {
     fontSize: 12,
-    color: '#7a827b',
+    color: palette.muted,
   },
   priceRow: {
     flexDirection: 'row',
@@ -254,16 +259,16 @@ const styles = StyleSheet.create({
   priceText: {
     fontSize: 20,
     fontWeight: '700',
-    color: '#1f8b4c',
+    color: palette.primary,
   },
   priceOld: {
     fontSize: 13,
-    color: '#9aa39c',
+    color: palette.mutedAlt,
     textDecorationLine: 'line-through',
   },
   primaryButton: {
     marginTop: 4,
-    backgroundColor: '#1f8b4c',
+    backgroundColor: palette.primary,
     paddingVertical: 12,
     borderRadius: 16,
     alignItems: 'center',
@@ -273,17 +278,17 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   specCard: {
-    backgroundColor: '#fff',
+    backgroundColor: palette.card,
     borderRadius: 20,
     padding: 16,
     borderWidth: 1,
-    borderColor: '#e2e7e3',
+    borderColor: palette.border,
     gap: 10,
   },
   specTitle: {
     fontSize: 15,
     fontWeight: '600',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   specRow: {
     flexDirection: 'row',
@@ -291,11 +296,11 @@ const styles = StyleSheet.create({
   },
   specKey: {
     fontSize: 12,
-    color: '#7a827b',
+    color: palette.muted,
   },
   specValue: {
     fontSize: 12,
-    color: '#1b1f1d',
+    color: palette.text,
     fontWeight: '600',
   },
   suggestedSection: {
@@ -309,11 +314,11 @@ const styles = StyleSheet.create({
   suggestedTitle: {
     fontSize: 15,
     fontWeight: '600',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   suggestedMeta: {
     fontSize: 12,
-    color: '#6c756f',
+    color: palette.muted,
   },
   suggestedRow: {
     paddingRight: 12,
@@ -321,10 +326,10 @@ const styles = StyleSheet.create({
   },
   suggestedCard: {
     width: 160,
-    backgroundColor: '#fff',
+    backgroundColor: palette.card,
     borderRadius: 18,
     borderWidth: 1,
-    borderColor: '#e2e7e3',
+    borderColor: palette.border,
     overflow: 'hidden',
   },
   suggestedImage: {
@@ -338,7 +343,7 @@ const styles = StyleSheet.create({
   suggestedName: {
     fontSize: 13,
     fontWeight: '600',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   suggestedPriceRow: {
     flexDirection: 'row',
@@ -348,11 +353,11 @@ const styles = StyleSheet.create({
   suggestedPrice: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#1f8b4c',
+    color: palette.primary,
   },
   suggestedPriceOld: {
     fontSize: 11,
-    color: '#9aa39c',
+    color: palette.mutedAlt,
     textDecorationLine: 'line-through',
   },
   suggestedRatingRow: {
@@ -363,7 +368,7 @@ const styles = StyleSheet.create({
   suggestedRatingText: {
     fontSize: 11,
     fontWeight: '600',
-    color: '#4f4f4f',
+    color: palette.chipText,
   },
   missingState: {
     flex: 1,
@@ -374,6 +379,6 @@ const styles = StyleSheet.create({
   missingTitle: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#1b1f1d',
+    color: palette.text,
   },
 });

@@ -2,27 +2,53 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
+import React, { useMemo } from 'react';
 
 import { CartProvider } from '@/context/CartContext';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { ThemeSettingsProvider, useTheme } from '@/context/ThemeContext';
 
 export const unstable_settings = {
   anchor: '(tabs)',
 };
 
-export default function RootLayout() {
-  const colorScheme = useColorScheme();
+function AppShell() {
+  const { palette, resolvedTheme } = useTheme();
+
+  const navTheme = useMemo(() => {
+    const base = resolvedTheme === 'dark' ? DarkTheme : DefaultTheme;
+    return {
+      ...base,
+      colors: {
+        ...base.colors,
+        background: palette.background,
+        card: palette.card,
+        text: palette.text,
+        border: palette.border,
+        primary: palette.primary,
+      },
+    };
+  }, [palette, resolvedTheme]);
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={navTheme}>
       <CartProvider>
         <Stack>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen name="product/[id]" options={{ headerShown: false }} />
+          <Stack.Screen name="login" options={{ headerShown: false }} />
+          <Stack.Screen name="register" options={{ headerShown: false }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
         </Stack>
-        <StatusBar style="auto" />
+        <StatusBar style={resolvedTheme === 'dark' ? 'light' : 'dark'} />
       </CartProvider>
     </ThemeProvider>
+  );
+}
+
+export default function RootLayout() {
+  return (
+    <ThemeSettingsProvider>
+      <AppShell />
+    </ThemeSettingsProvider>
   );
 }

@@ -16,7 +16,9 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useRouter } from 'expo-router';
 
 import { useCart } from '@/context/CartContext';
+import { useTheme } from '@/context/ThemeContext';
 import { categories, products } from '@/data/products';
+import { ThemePalette } from '@/constants/theme';
 
 const ratingOptions = [4.5, 4.0, 3.5];
 
@@ -26,6 +28,8 @@ export default function HomeScreen() {
   const router = useRouter();
   const { width } = useWindowDimensions();
   const { addItem, totalItems } = useCart();
+  const { palette } = useTheme();
+  const styles = useMemo(() => createStyles(palette), [palette]);
 
   const [search, setSearch] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -94,19 +98,27 @@ export default function HomeScreen() {
           <Text style={styles.brandTitle}>GrocerEase</Text>
           <Text style={styles.brandSubtitle}>Fresh groceries. Local picks.</Text>
         </View>
-        <Pressable
-          accessibilityLabel="Open cart"
-          style={styles.cartButton}
-          onPress={() => router.push('/(tabs)/cart')}>
-          <MaterialIcons name="shopping-cart" size={24} color="#1f8b4c" />
-          {totalItems > 0 ? (
-            <View style={styles.cartBadge}>
-              <Text style={styles.cartBadgeText}>
-                {totalItems > 9 ? '9+' : totalItems}
-              </Text>
-            </View>
-          ) : null}
-        </Pressable>
+        <View style={styles.headerActions}>
+          <Pressable
+            accessibilityLabel="Open account"
+            style={styles.accountButton}
+            onPress={() => router.push('/login')}>
+            <MaterialIcons name="person" size={22} color={palette.primary} />
+          </Pressable>
+          <Pressable
+            accessibilityLabel="Open cart"
+            style={styles.cartButton}
+            onPress={() => router.push('/(tabs)/cart')}>
+            <MaterialIcons name="shopping-cart" size={24} color={palette.primary} />
+            {totalItems > 0 ? (
+              <View style={styles.cartBadge}>
+                <Text style={styles.cartBadgeText}>
+                  {totalItems > 9 ? '9+' : totalItems}
+                </Text>
+              </View>
+            ) : null}
+          </Pressable>
+        </View>
       </View>
 
       <FlatList
@@ -125,7 +137,7 @@ export default function HomeScreen() {
                   <Text style={styles.heroBadgeText}>30 min delivery</Text>
                 </View>
                 <View style={styles.heroBadgeAlt}>
-                  <MaterialIcons name="verified" size={16} color="#1f8b4c" />
+                  <MaterialIcons name="verified" size={16} color={palette.primary} />
                   <Text style={styles.heroBadgeAltText}>Freshness guaranteed</Text>
                 </View>
               </View>
@@ -160,10 +172,10 @@ export default function HomeScreen() {
 
             <View style={styles.searchRow}>
               <View style={styles.searchInputWrapper}>
-                <MaterialIcons name="search" size={20} color="#67736c" />
+                <MaterialIcons name="search" size={20} color={palette.icon} />
                 <TextInput
                   placeholder="Search vegetables, snacks, staples..."
-                  placeholderTextColor="#9aa39c"
+                  placeholderTextColor={palette.mutedAlt}
                   value={search}
                   onChangeText={setSearch}
                   style={styles.searchInput}
@@ -172,7 +184,7 @@ export default function HomeScreen() {
               <Pressable
                 style={styles.filterButton}
                 onPress={() => setFiltersOpen(true)}>
-                <MaterialIcons name="tune" size={20} color="#1f8b4c" />
+                <MaterialIcons name="tune" size={20} color={palette.primary} />
                 <Text style={styles.filterButtonText}>Filters</Text>
               </Pressable>
             </View>
@@ -213,7 +225,7 @@ export default function HomeScreen() {
         }
         ListEmptyComponent={
           <View style={styles.emptyState}>
-            <MaterialIcons name="search-off" size={36} color="#b0b7b2" />
+            <MaterialIcons name="search-off" size={36} color={palette.mutedAlt} />
             <Text style={styles.emptyTitle}>No items found</Text>
             <Text style={styles.emptyText}>
               Try clearing filters or searching for something else.
@@ -246,7 +258,7 @@ export default function HomeScreen() {
               </View>
               <View style={styles.cardFooter}>
                 <View style={styles.ratingPill}>
-                  <MaterialIcons name="star" size={14} color="#f4b740" />
+                  <MaterialIcons name="star" size={14} color={palette.warning} />
                   <Text style={styles.ratingText}>
                     {(item.rating ?? 0).toFixed(1)}
                   </Text>
@@ -279,7 +291,7 @@ export default function HomeScreen() {
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>Filters</Text>
               <Pressable onPress={() => setFiltersOpen(false)}>
-                <MaterialIcons name="close" size={22} color="#2b2f2c" />
+                <MaterialIcons name="close" size={22} color={palette.text} />
               </Pressable>
             </View>
 
@@ -292,7 +304,7 @@ export default function HomeScreen() {
                   onChangeText={setMinPriceInput}
                   keyboardType="numeric"
                   placeholder="0"
-                  placeholderTextColor="#adb5af"
+                  placeholderTextColor={palette.mutedAlt}
                   style={styles.priceField}
                 />
               </View>
@@ -303,7 +315,7 @@ export default function HomeScreen() {
                   onChangeText={setMaxPriceInput}
                   keyboardType="numeric"
                   placeholder="999"
-                  placeholderTextColor="#adb5af"
+                  placeholderTextColor={palette.mutedAlt}
                   style={styles.priceField}
                 />
               </View>
@@ -324,7 +336,7 @@ export default function HomeScreen() {
                     <MaterialIcons
                       name="star"
                       size={14}
-                      color={active ? '#fff' : '#f4b740'}
+                      color={active ? '#fff' : palette.warning}
                     />
                     <Text
                       style={[
@@ -355,10 +367,11 @@ export default function HomeScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const createStyles = (palette: ThemePalette) =>
+  StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#fbf6f1',
+    backgroundColor: palette.background,
   },
   header: {
     paddingHorizontal: 18,
@@ -367,35 +380,45 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    backgroundColor: '#fbf6f1',
+    backgroundColor: palette.background,
   },
   brandTitle: {
     fontSize: 22,
     fontWeight: '700',
-    color: '#1a1a1a',
+    color: palette.text,
   },
   brandSubtitle: {
     fontSize: 12,
-    color: '#6c756f',
+    color: palette.muted,
     marginTop: 2,
   },
   cartButton: {
-    backgroundColor: '#f1f5f0',
+    backgroundColor: palette.cardAlt,
     borderRadius: 18,
     padding: 8,
     position: 'relative',
+  },
+  headerActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+  },
+  accountButton: {
+    backgroundColor: palette.cardAlt,
+    borderRadius: 18,
+    padding: 8,
   },
   cartBadge: {
     position: 'absolute',
     top: -6,
     right: -6,
-    backgroundColor: '#e25d3a',
+    backgroundColor: palette.badge,
     borderRadius: 12,
     paddingHorizontal: 5,
     paddingVertical: 2,
   },
   cartBadgeText: {
-    color: '#fff',
+    color: palette.badgeText,
     fontSize: 10,
     fontWeight: '700',
   },
@@ -404,7 +427,7 @@ const styles = StyleSheet.create({
     paddingBottom: 120,
   },
   heroCard: {
-    backgroundColor: '#1f8b4c',
+    backgroundColor: palette.primary,
     borderRadius: 20,
     padding: 18,
     marginTop: 8,
@@ -416,7 +439,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   heroBadge: {
-    backgroundColor: '#1a6f3b',
+    backgroundColor: palette.primaryDark,
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 16,
@@ -430,7 +453,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   heroBadgeAlt: {
-    backgroundColor: '#eaf5ee',
+    backgroundColor: palette.primarySoft,
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 16,
@@ -439,7 +462,7 @@ const styles = StyleSheet.create({
     gap: 6,
   },
   heroBadgeAltText: {
-    color: '#1f8b4c',
+    color: palette.primary,
     fontSize: 12,
     fontWeight: '600',
   },
@@ -460,21 +483,21 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   infoCard: {
-    backgroundColor: '#ffffff',
+    backgroundColor: palette.card,
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: '#e2e7e3',
+    borderColor: palette.border,
     padding: 14,
   },
   infoTitle: {
     fontSize: 14,
     fontWeight: '700',
-    color: '#1b1f1d',
+    color: palette.text,
     marginBottom: 6,
   },
   infoText: {
     fontSize: 12,
-    color: '#5f6963',
+    color: palette.muted,
     lineHeight: 17,
   },
   searchRow: {
@@ -486,17 +509,17 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: palette.card,
     borderRadius: 16,
     paddingHorizontal: 12,
     paddingVertical: 10,
     borderWidth: 1,
-    borderColor: '#e0e4e1',
+    borderColor: palette.border,
   },
   searchInput: {
     marginLeft: 6,
     flex: 1,
-    color: '#1c201e',
+    color: palette.text,
     fontSize: 14,
   },
   filterButton: {
@@ -505,13 +528,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 10,
     borderRadius: 16,
-    backgroundColor: '#eaf5ee',
+    backgroundColor: palette.primarySoft,
     borderWidth: 1,
-    borderColor: '#cfe3d7',
+    borderColor: palette.border,
     gap: 6,
   },
   filterButtonText: {
-    color: '#1f8b4c',
+    color: palette.primary,
     fontWeight: '600',
   },
   categoryRow: {
@@ -522,13 +545,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 14,
     paddingVertical: 8,
     borderRadius: 18,
-    backgroundColor: '#f1f1ed',
+    backgroundColor: palette.cardAlt,
   },
   categoryChipActive: {
-    backgroundColor: '#1f8b4c',
+    backgroundColor: palette.primary,
   },
   categoryChipText: {
-    color: '#525a54',
+    color: palette.muted,
     fontSize: 13,
   },
   categoryChipTextActive: {
@@ -544,11 +567,11 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   sectionMeta: {
     fontSize: 12,
-    color: '#6c756f',
+    color: palette.muted,
   },
   columnRow: {
     gap: 16,
@@ -556,11 +579,11 @@ const styles = StyleSheet.create({
   },
   productCard: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: palette.card,
     borderRadius: 18,
     overflow: 'hidden',
     borderWidth: 1,
-    borderColor: '#e2e7e3',
+    borderColor: palette.border,
     marginBottom: 16,
     minHeight: 280,
   },
@@ -576,11 +599,11 @@ const styles = StyleSheet.create({
   productName: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#1a1a1a',
+    color: palette.text,
   },
   productDesc: {
     fontSize: 12,
-    color: '#6c756f',
+    color: palette.muted,
     marginTop: 4,
   },
   priceRow: {
@@ -592,11 +615,11 @@ const styles = StyleSheet.create({
   priceText: {
     fontSize: 15,
     fontWeight: '700',
-    color: '#1f8b4c',
+    color: palette.primary,
   },
   priceOld: {
     fontSize: 12,
-    color: '#9aa39c',
+    color: palette.mutedAlt,
     textDecorationLine: 'line-through',
   },
   cardFooter: {
@@ -614,18 +637,18 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    backgroundColor: '#f5f1e7',
+    backgroundColor: palette.chip,
     paddingHorizontal: 8,
     paddingVertical: 4,
     borderRadius: 12,
   },
   ratingText: {
     fontSize: 12,
-    color: '#4f4f4f',
+    color: palette.chipText,
     fontWeight: '600',
   },
   addButton: {
-    backgroundColor: '#1f8b4c',
+    backgroundColor: palette.primary,
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 12,
@@ -636,15 +659,15 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   detailsButton: {
-    backgroundColor: '#f1f5f0',
+    backgroundColor: palette.cardAlt,
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: '#dfe6e0',
+    borderColor: palette.border,
   },
   detailsButtonText: {
-    color: '#2f3a34',
+    color: palette.text,
     fontSize: 12,
     fontWeight: '600',
   },
@@ -656,11 +679,11 @@ const styles = StyleSheet.create({
   emptyTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#2e322f',
+    color: palette.text,
   },
   emptyText: {
     fontSize: 13,
-    color: '#7a827b',
+    color: palette.muted,
     textAlign: 'center',
   },
   modalOverlay: {
@@ -669,7 +692,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   modalCard: {
-    backgroundColor: '#fff',
+    backgroundColor: palette.card,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
     padding: 18,
@@ -683,12 +706,12 @@ const styles = StyleSheet.create({
   modalTitle: {
     fontSize: 18,
     fontWeight: '700',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   modalLabel: {
     fontSize: 13,
     fontWeight: '600',
-    color: '#4a514c',
+    color: palette.muted,
     marginBottom: 8,
   },
   priceRowInputs: {
@@ -700,18 +723,18 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 14,
     borderWidth: 1,
-    borderColor: '#e3e7e4',
+    borderColor: palette.border,
     padding: 10,
-    backgroundColor: '#f9faf8',
+    backgroundColor: palette.cardAlt,
   },
   priceLabel: {
     fontSize: 11,
-    color: '#7b827d',
+    color: palette.mutedAlt,
     marginBottom: 4,
   },
   priceField: {
     fontSize: 14,
-    color: '#1c201e',
+    color: palette.text,
   },
   ratingRow: {
     flexDirection: 'row',
@@ -725,14 +748,14 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     paddingHorizontal: 12,
     paddingVertical: 6,
-    backgroundColor: '#f5f1e7',
+    backgroundColor: palette.chip,
   },
   ratingChipActive: {
-    backgroundColor: '#1f8b4c',
+    backgroundColor: palette.primary,
   },
   ratingChipText: {
     fontSize: 12,
-    color: '#4a4a4a',
+    color: palette.chipText,
     fontWeight: '600',
   },
   ratingChipTextActive: {
@@ -746,18 +769,18 @@ const styles = StyleSheet.create({
     flex: 1,
     borderRadius: 16,
     borderWidth: 1,
-    borderColor: '#e3e7e4',
+    borderColor: palette.border,
     paddingVertical: 12,
     alignItems: 'center',
   },
   clearButtonText: {
-    color: '#4c534e',
+    color: palette.muted,
     fontWeight: '600',
   },
   applyButton: {
     flex: 1,
     borderRadius: 16,
-    backgroundColor: '#1f8b4c',
+    backgroundColor: palette.primary,
     paddingVertical: 12,
     alignItems: 'center',
   },

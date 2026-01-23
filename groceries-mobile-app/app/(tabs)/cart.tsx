@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
   FlatList,
   Pressable,
@@ -12,12 +12,16 @@ import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useRouter } from 'expo-router';
 
 import { useCart } from '@/context/CartContext';
+import { useTheme } from '@/context/ThemeContext';
+import { ThemePalette } from '@/constants/theme';
 
 const formatPrice = (value: number) => `₹${value.toFixed(0)}`;
 
 export default function CartScreen() {
   const router = useRouter();
   const { items, totalItems, totalPrice, updateQuantity, removeItem } = useCart();
+  const { palette } = useTheme();
+  const styles = useMemo(() => createStyles(palette), [palette]);
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -28,7 +32,7 @@ export default function CartScreen() {
 
       {items.length === 0 ? (
         <View style={styles.emptyState}>
-          <MaterialIcons name="shopping-cart" size={40} color="#c3c8c4" />
+          <MaterialIcons name="shopping-cart" size={40} color={palette.mutedAlt} />
           <Text style={styles.emptyTitle}>Your cart is empty</Text>
           <Text style={styles.emptyText}>
             Browse fresh groceries and add them to your basket.
@@ -64,7 +68,7 @@ export default function CartScreen() {
                     onPress={() =>
                       updateQuantity(item.product.id, item.quantity - 1)
                     }>
-                    <MaterialIcons name="remove" size={18} color="#1f8b4c" />
+                    <MaterialIcons name="remove" size={18} color={palette.primary} />
                   </Pressable>
                   <Text style={styles.qtyValue}>{item.quantity}</Text>
                   <Pressable
@@ -72,12 +76,12 @@ export default function CartScreen() {
                     onPress={() =>
                       updateQuantity(item.product.id, item.quantity + 1)
                     }>
-                    <MaterialIcons name="add" size={18} color="#1f8b4c" />
+                    <MaterialIcons name="add" size={18} color={palette.primary} />
                   </Pressable>
                   <Pressable
                     style={styles.removeButton}
                     onPress={() => removeItem(item.product.id)}>
-                    <MaterialIcons name="delete" size={16} color="#cc4b33" />
+                    <MaterialIcons name="delete" size={16} color={palette.danger} />
                     <Text style={styles.removeText}>Remove</Text>
                   </Pressable>
                 </View>
@@ -114,10 +118,11 @@ export default function CartScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const createStyles = (palette: ThemePalette) =>
+  StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#fbf6f1',
+    backgroundColor: palette.background,
   },
   header: {
     paddingHorizontal: 18,
@@ -127,11 +132,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: '700',
-    color: '#1a1a1a',
+    color: palette.text,
   },
   subtitle: {
     fontSize: 12,
-    color: '#6c756f',
+    color: palette.muted,
     marginTop: 2,
   },
   listContent: {
@@ -140,11 +145,11 @@ const styles = StyleSheet.create({
     gap: 16,
   },
   cartItem: {
-    backgroundColor: '#fff',
+    backgroundColor: palette.card,
     borderRadius: 18,
     padding: 12,
     borderWidth: 1,
-    borderColor: '#e2e7e3',
+    borderColor: palette.border,
     flexDirection: 'row',
     gap: 12,
   },
@@ -159,12 +164,12 @@ const styles = StyleSheet.create({
   itemName: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   itemPrice: {
     fontSize: 13,
     fontWeight: '700',
-    color: '#1f8b4c',
+    color: palette.primary,
     marginTop: 6,
   },
   qtyRow: {
@@ -178,14 +183,14 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     borderRadius: 10,
-    backgroundColor: '#eef6f0',
+    backgroundColor: palette.primarySoft,
     alignItems: 'center',
     justifyContent: 'center',
   },
   qtyValue: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#1b1f1d',
+    color: palette.text,
     minWidth: 20,
     textAlign: 'center',
   },
@@ -196,16 +201,16 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
   },
   removeText: {
-    color: '#cc4b33',
+    color: palette.danger,
     fontWeight: '600',
     fontSize: 12,
   },
   summaryCard: {
-    backgroundColor: '#fff',
+    backgroundColor: palette.card,
     borderRadius: 18,
     padding: 16,
     borderWidth: 1,
-    borderColor: '#e2e7e3',
+    borderColor: palette.border,
   },
   summaryRow: {
     flexDirection: 'row',
@@ -215,26 +220,26 @@ const styles = StyleSheet.create({
   },
   summaryLabel: {
     fontSize: 13,
-    color: '#6c756f',
+    color: palette.muted,
   },
   summaryValue: {
     fontSize: 13,
     fontWeight: '600',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   summaryDivider: {
     height: 1,
-    backgroundColor: '#e2e7e3',
+    backgroundColor: palette.border,
     marginVertical: 10,
   },
   summaryTotal: {
     fontSize: 15,
     fontWeight: '700',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   checkoutButton: {
     marginTop: 14,
-    backgroundColor: '#1f8b4c',
+    backgroundColor: palette.primary,
     paddingVertical: 12,
     borderRadius: 16,
     alignItems: 'center',
@@ -253,16 +258,16 @@ const styles = StyleSheet.create({
   emptyTitle: {
     fontSize: 18,
     fontWeight: '600',
-    color: '#1b1f1d',
+    color: palette.text,
   },
   emptyText: {
     fontSize: 13,
-    color: '#7a827b',
+    color: palette.muted,
     textAlign: 'center',
   },
   primaryButton: {
     marginTop: 12,
-    backgroundColor: '#1f8b4c',
+    backgroundColor: palette.primary,
     paddingHorizontal: 20,
     paddingVertical: 12,
     borderRadius: 18,
