@@ -10,12 +10,14 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 
 import { useTheme } from '@/context/ThemeContext';
 import { ThemePalette } from '@/constants/theme';
 
 export default function RegisterScreen() {
   const router = useRouter();
+  const { t } = useTranslation();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -34,18 +36,16 @@ export default function RegisterScreen() {
             onPress={() => router.back()}>
             <MaterialIcons name="arrow-back" size={22} color={palette.text} />
           </Pressable>
-          <Text style={styles.headerTitle}>Register</Text>
+          <Text style={styles.headerTitle}>{t('register_title')}</Text>
           <View style={styles.iconSpacer} />
         </View>
 
         <View style={styles.card}>
-          <Text style={styles.title}>Create your account</Text>
-          <Text style={styles.subtitle}>
-            Join Zepto to save lists, track delivery, and earn rewards.
-          </Text>
+          <Text style={styles.title}>{t('register_heading')}</Text>
+          <Text style={styles.subtitle}>{t('register_subtitle')}</Text>
 
           <View style={styles.fieldGroup}>
-            <Text style={styles.label}>Full name</Text>
+            <Text style={styles.label}>{t('register_fullname')}</Text>
             <TextInput
               value={name}
               onChangeText={setName}
@@ -56,7 +56,7 @@ export default function RegisterScreen() {
           </View>
 
           <View style={styles.fieldGroup}>
-            <Text style={styles.label}>Email</Text>
+            <Text style={styles.label}>{t('register_email')}</Text>
             <TextInput
               value={email}
               onChangeText={setEmail}
@@ -69,7 +69,7 @@ export default function RegisterScreen() {
           </View>
 
           <View style={styles.fieldGroup}>
-            <Text style={styles.label}>Phone number</Text>
+            <Text style={styles.label}>{t('register_phone')}</Text>
             <TextInput
               value={phone}
               onChangeText={setPhone}
@@ -81,7 +81,7 @@ export default function RegisterScreen() {
           </View>
 
           <View style={styles.fieldGroup}>
-            <Text style={styles.label}>Password</Text>
+            <Text style={styles.label}>{t('register_password')}</Text>
             <TextInput
               value={password}
               onChangeText={setPassword}
@@ -93,7 +93,7 @@ export default function RegisterScreen() {
           </View>
 
           <View style={styles.fieldGroup}>
-            <Text style={styles.label}>Confirm password</Text>
+            <Text style={styles.label}>{t('register_confirm')}</Text>
             <TextInput
               value={confirmPassword}
               onChangeText={setConfirmPassword}
@@ -105,13 +105,13 @@ export default function RegisterScreen() {
           </View>
 
           <Pressable style={styles.primaryButton}>
-            <Text style={styles.primaryButtonText}>Create account</Text>
+            <Text style={styles.primaryButtonText}>{t('register_button')}</Text>
           </Pressable>
 
           <Pressable
             style={styles.linkButton}
             onPress={() => router.push('/login')}>
-            <Text style={styles.linkText}>Already have an account? Log in</Text>
+            <Text style={styles.linkText}>{t('register_login')}</Text>
           </Pressable>
         </View>
       </ScrollView>

@@ -2,11 +2,14 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
-import React, { useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { CartProvider } from '@/context/CartContext';
 import { ThemeSettingsProvider, useTheme } from '@/context/ThemeContext';
+import { loadSavedLanguage } from '@/i18n';
+
+import '@/i18n';
 
 export const unstable_settings = {
   anchor: '(tabs)',
@@ -46,6 +49,10 @@ function AppShell() {
 }
 
 export default function RootLayout() {
+  useEffect(() => {
+    loadSavedLanguage();
+  }, []);
+
   return (
     <SafeAreaProvider>
       <ThemeSettingsProvider>

@@ -10,12 +10,14 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 
 import { useTheme } from '@/context/ThemeContext';
 import { ThemePalette } from '@/constants/theme';
 
 export default function LoginScreen() {
   const router = useRouter();
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { palette } = useTheme();
@@ -31,18 +33,16 @@ export default function LoginScreen() {
             onPress={() => router.back()}>
             <MaterialIcons name="arrow-back" size={22} color={palette.text} />
           </Pressable>
-          <Text style={styles.headerTitle}>Log in</Text>
+          <Text style={styles.headerTitle}>{t('login_title')}</Text>
           <View style={styles.iconSpacer} />
         </View>
 
         <View style={styles.card}>
-          <Text style={styles.title}>Welcome back</Text>
-          <Text style={styles.subtitle}>
-            Sign in to manage orders, track delivery, and save favorites.
-          </Text>
+          <Text style={styles.title}>{t('login_welcome')}</Text>
+          <Text style={styles.subtitle}>{t('login_subtitle')}</Text>
 
           <View style={styles.fieldGroup}>
-            <Text style={styles.label}>Email or phone</Text>
+            <Text style={styles.label}>{t('login_email')}</Text>
             <TextInput
               value={email}
               onChangeText={setEmail}
@@ -55,7 +55,7 @@ export default function LoginScreen() {
           </View>
 
           <View style={styles.fieldGroup}>
-            <Text style={styles.label}>Password</Text>
+            <Text style={styles.label}>{t('login_password')}</Text>
             <TextInput
               value={password}
               onChangeText={setPassword}
@@ -67,15 +67,13 @@ export default function LoginScreen() {
           </View>
 
           <Pressable style={styles.primaryButton}>
-            <Text style={styles.primaryButtonText}>Sign in</Text>
+            <Text style={styles.primaryButtonText}>{t('login_button')}</Text>
           </Pressable>
 
           <Pressable
             style={styles.linkButton}
             onPress={() => router.push('/register')}>
-            <Text style={styles.linkText}>
-              New here? Create an account
-            </Text>
+            <Text style={styles.linkText}>{t('login_create_account')}</Text>
           </Pressable>
         </View>
       </ScrollView>

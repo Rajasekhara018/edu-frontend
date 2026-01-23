@@ -4,6 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image } from 'expo-image';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 
 import { useCart } from '@/context/CartContext';
 import { useTheme } from '@/context/ThemeContext';
@@ -15,6 +16,7 @@ const formatPrice = (value: number) => `â‚¹${value.toFixed(0)}`;
 export default function ProductDetailsScreen() {
   const { id } = useLocalSearchParams<{ id?: string }>();
   const router = useRouter();
+  const { t } = useTranslation();
   const { addItem, totalItems } = useCart();
   const { palette } = useTheme();
   const styles = useMemo(() => createStyles(palette), [palette]);
@@ -47,7 +49,7 @@ export default function ProductDetailsScreen() {
         <Pressable style={styles.iconButton} onPress={() => router.back()}>
           <MaterialIcons name="arrow-back" size={22} color={palette.text} />
         </Pressable>
-        <Text style={styles.headerTitle}>Details</Text>
+        <Text style={styles.headerTitle}>{t('product_details')}</Text>
         <Pressable
           style={styles.iconButton}
           onPress={() => router.push('/(tabs)/cart')}>
@@ -79,7 +81,7 @@ export default function ProductDetailsScreen() {
             ) : null}
           </View>
           <Pressable style={styles.primaryButton} onPress={() => addItem(product, 1)}>
-            <Text style={styles.primaryButtonText}>Add to cart</Text>
+            <Text style={styles.primaryButtonText}>{t('product_add_to_cart')}</Text>
           </Pressable>
         </View>
 
@@ -97,7 +99,7 @@ export default function ProductDetailsScreen() {
 
         <View style={styles.suggestedSection}>
           <View style={styles.suggestedHeader}>
-            <Text style={styles.suggestedTitle}>Suggested for you</Text>
+            <Text style={styles.suggestedTitle}>{t('product_suggested')}</Text>
             <Text style={styles.suggestedMeta}>{fallbackSuggestions.length} items</Text>
           </View>
           <ScrollView

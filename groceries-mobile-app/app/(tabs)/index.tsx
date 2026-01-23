@@ -14,6 +14,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image } from 'expo-image';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 
 import { useCart } from '@/context/CartContext';
 import { useTheme } from '@/context/ThemeContext';
@@ -26,6 +27,7 @@ const formatPrice = (value: number) => `₹${value.toFixed(0)}`;
 
 export default function HomeScreen() {
   const router = useRouter();
+  const { t } = useTranslation();
   const { width } = useWindowDimensions();
   const { addItem, totalItems } = useCart();
   const { palette } = useTheme();
@@ -95,8 +97,8 @@ export default function HomeScreen() {
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safeArea}>
       <View style={styles.header}>
         <View>
-          <Text style={styles.brandTitle}>GrocerEase</Text>
-          <Text style={styles.brandSubtitle}>Fresh groceries. Local picks.</Text>
+          <Text style={styles.brandTitle}>{t('home_title')}</Text>
+          <Text style={styles.brandSubtitle}>{t('home_subtitle')}</Text>
         </View>
         <View style={styles.headerActions}>
           <Pressable
@@ -174,7 +176,7 @@ export default function HomeScreen() {
               <View style={styles.searchInputWrapper}>
                 <MaterialIcons name="search" size={20} color={palette.icon} />
                 <TextInput
-                  placeholder="Search vegetables, snacks, staples..."
+                  placeholder={t('home_search_placeholder')}
                   placeholderTextColor={palette.mutedAlt}
                   value={search}
                   onChangeText={setSearch}
@@ -185,7 +187,7 @@ export default function HomeScreen() {
                 style={styles.filterButton}
                 onPress={() => setFiltersOpen(true)}>
                 <MaterialIcons name="tune" size={20} color={palette.primary} />
-                <Text style={styles.filterButtonText}>Filters</Text>
+                <Text style={styles.filterButtonText}>{t('home_filters')}</Text>
               </Pressable>
             </View>
 
@@ -216,9 +218,9 @@ export default function HomeScreen() {
             </ScrollView>
 
             <View style={styles.sectionHeader}>
-              <Text style={styles.sectionTitle}>Top picks for you</Text>
+              <Text style={styles.sectionTitle}>{t('home_top_picks')}</Text>
               <Text style={styles.sectionMeta}>
-                {filteredProducts.length} items
+                {t('home_items', { count: filteredProducts.length })}
               </Text>
             </View>
           </View>

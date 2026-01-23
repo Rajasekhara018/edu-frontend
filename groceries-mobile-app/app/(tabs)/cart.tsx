@@ -10,6 +10,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Image } from 'expo-image';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 
 import { useCart } from '@/context/CartContext';
 import { useTheme } from '@/context/ThemeContext';
@@ -19,6 +20,7 @@ const formatPrice = (value: number) => `₹${value.toFixed(0)}`;
 
 export default function CartScreen() {
   const router = useRouter();
+  const { t } = useTranslation();
   const { items, totalItems, totalPrice, updateQuantity, removeItem } = useCart();
   const { palette } = useTheme();
   const styles = useMemo(() => createStyles(palette), [palette]);
@@ -26,21 +28,21 @@ export default function CartScreen() {
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safeArea}>
       <View style={styles.header}>
-        <Text style={styles.title}>Your Cart</Text>
-        <Text style={styles.subtitle}>{totalItems} items</Text>
+        <Text style={styles.title}>{t('cart_title')}</Text>
+        <Text style={styles.subtitle}>{t('cart_items', { count: totalItems })}</Text>
       </View>
 
       {items.length === 0 ? (
         <View style={styles.emptyState}>
           <MaterialIcons name="shopping-cart" size={40} color={palette.mutedAlt} />
-          <Text style={styles.emptyTitle}>Your cart is empty</Text>
+          <Text style={styles.emptyTitle}>{t('cart_empty_title')}</Text>
           <Text style={styles.emptyText}>
-            Browse fresh groceries and add them to your basket.
+            {t('cart_empty_subtitle')}
           </Text>
           <Pressable
             style={styles.primaryButton}
             onPress={() => router.push('/(tabs)')}>
-            <Text style={styles.primaryButtonText}>Start shopping</Text>
+            <Text style={styles.primaryButtonText}>{t('cart_start_shopping')}</Text>
           </Pressable>
         </View>
       ) : (
@@ -82,7 +84,7 @@ export default function CartScreen() {
                     style={styles.removeButton}
                     onPress={() => removeItem(item.product.id)}>
                     <MaterialIcons name="delete" size={16} color={palette.danger} />
-                    <Text style={styles.removeText}>Remove</Text>
+                    <Text style={styles.removeText}>{t('cart_remove')}</Text>
                   </Pressable>
                 </View>
               </View>
@@ -91,24 +93,24 @@ export default function CartScreen() {
           ListFooterComponent={
             <View style={styles.summaryCard}>
               <View style={styles.summaryRow}>
-                <Text style={styles.summaryLabel}>Subtotal</Text>
+                <Text style={styles.summaryLabel}>{t('cart_subtotal')}</Text>
                 <Text style={styles.summaryValue}>
                   {formatPrice(totalPrice)}
                 </Text>
               </View>
               <View style={styles.summaryRow}>
-                <Text style={styles.summaryLabel}>Delivery</Text>
+                <Text style={styles.summaryLabel}>{t('cart_delivery')}</Text>
                 <Text style={styles.summaryValue}>Free</Text>
               </View>
               <View style={styles.summaryDivider} />
               <View style={styles.summaryRow}>
-                <Text style={styles.summaryTotal}>Total</Text>
+                <Text style={styles.summaryTotal}>{t('cart_total')}</Text>
                 <Text style={styles.summaryTotal}>
                   {formatPrice(totalPrice)}
                 </Text>
               </View>
               <Pressable style={styles.checkoutButton}>
-                <Text style={styles.checkoutText}>Proceed to checkout</Text>
+                <Text style={styles.checkoutText}>{t('cart_checkout')}</Text>
               </Pressable>
             </View>
           }
