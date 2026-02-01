@@ -26,6 +26,20 @@ export class CartService {
     }))
   );
 
+  private readonly storageKey = 'md_cart';
+
+  constructor() {
+    const saved = localStorage.getItem(this.storageKey);
+    if (saved) {
+      try {
+        const parsed: CartItem[] = JSON.parse(saved);
+        this.itemsSubject.next(parsed);
+      } catch {
+        this.persist([]);
+      }
+    }
+  }
+
   addItem(item: CartItem, qty = 1): void {
     const items = [...this.itemsSubject.value];
     const index = items.findIndex(existing => existing.id === item.id);
@@ -35,6 +49,7 @@ export class CartService {
       items.push({ ...item, qty });
     }
     this.itemsSubject.next(items);
+    this.persist(items);
   }
 
   setQty(id: string, qty: number): void {
@@ -49,6 +64,7 @@ export class CartService {
       items[index] = { ...items[index], qty };
     }
     this.itemsSubject.next(items);
+    this.persist(items);
   }
 
   getQty(id: string): number {
@@ -57,5 +73,10 @@ export class CartService {
 
   clear(): void {
     this.itemsSubject.next([]);
+    this.persist([]);
+  }
+
+  private persist(items: CartItem[]): void {
+    localStorage.setItem(this.storageKey, JSON.stringify(items));
   }
 }

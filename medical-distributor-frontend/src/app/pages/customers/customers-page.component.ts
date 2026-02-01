@@ -34,7 +34,7 @@ export class CustomersPageComponent implements OnInit {
   load(): void {
     this.loading = true;
     const search = this.filterForm.value.search ?? '';
-    this.customerService.list(search, this.pageIndex, this.pageSize, this.sort).subscribe({
+    this.customerService.list(search, this.pageIndex, this.pageSize).subscribe({
       next: response => {
         let rows = response.data;
         const status = this.filterForm.value.status ?? 'all';

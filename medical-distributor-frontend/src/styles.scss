@@ -1,8 +1,8 @@
 @use '@angular/material' as mat;
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600,700&family=Manrope:wght@400;500;600&display=swap');
 
-$primary: mat.m2-define-palette(mat.$m2-blue-grey-palette, 700);
-$accent: mat.m2-define-palette(mat.$m2-blue-palette, 600);
+$primary: mat.m2-define-palette(mat.$m2-blue-grey-palette, 600);
+$accent: mat.m2-define-palette(mat.$m2-amber-palette, 600);
 $warn: mat.m2-define-palette(mat.$m2-red-palette, 700);
 
 $theme: mat.m2-define-light-theme((
@@ -12,49 +12,70 @@ $theme: mat.m2-define-light-theme((
     warn: $warn,
   ),
   typography: mat.m2-define-typography-config(
-    $font-family: 'IBM Plex Sans',
+    $font-family: 'IBM Plex Sans'
   ),
-  density: 0,
+  density: 0
 ));
 
 @include mat.core();
 @include mat.all-component-themes($theme);
 
 :root {
-  --erp-background: #f4f6f9;
+  --erp-background: #f1f4f7;
+  --erp-ink: #0f172a;
+  --erp-muteds: #4d576b;
+  --erp-slate: #e2e8f0;
   --erp-surface: #ffffff;
-  --erp-border: #d9dfe6;
-  --erp-muted: #5c6470;
-  --erp-primary: #2e5da4;
-  --erp-soft: #eef1f5;
-  --erp-input: #f8fafc;
-  --erp-shadow-soft: 0 12px 24px rgba(17, 24, 39, 0.08);
+  --erp-border: rgba(15, 23, 42, 0.08);
+  --erp-gradient: linear-gradient(135deg, #334454, #0f172a);
+  --erp-accent: #16a34a;
+  --erp-shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.18);
+}
+
+.dark-theme {
+  --erp-background: #090b12;
+  --erp-ink: #f1f5f9;
+  --erp-muteds: #bfc7d6;
+  --erp-slate: #0e111a;
+  --erp-surface: #101827;
+  --erp-border: rgba(255, 255, 255, 0.08);
+  --erp-gradient: linear-gradient(135deg, #1d2433, #0b0f1b);
+  --erp-shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
+  font-family: 'IBM Plex Sans', 'Manrope', system-ui, sans-serif;
+  background: var(--erp-background);
+  color: var(--erp-ink);
 }
 
 body {
   margin: 0;
-  font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
-  color: #1f2933;
-  background-color: var(--erp-background);
 }
 
 a {
-  text-decoration: none;
+  color: inherit;
 }
 
-mat-form-field {
-  width: 220px;
+button {
+  font: inherit;
 }
 
-.table-card table {
-  width: 100%;
+.mat-toolbar {
+  font-weight: 500;
 }
 
-.mat-mdc-table .mdc-data-table__header-row {
-  background: var(--erp-soft);
+main {
+  display: block;
+  min-height: 100vh;
+}
+
+section {
+  position: relative;
 }

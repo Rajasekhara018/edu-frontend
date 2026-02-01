@@ -528,6 +528,7 @@ export class PharmaProductsService {
 
   constructor() {
     this.assignImageUrls();
+    this.populateProductTax();
     this.ensureMinimumProducts(420);
   }
 
@@ -535,6 +536,14 @@ export class PharmaProductsService {
     this.products = this.products.map(product => ({
       ...product,
       image: this.buildImageUrl(product.category, product.id)
+    }));
+  }
+
+  private populateProductTax(): void {
+    this.products = this.products.map(product => ({
+      ...product,
+      hsn: product.hsn ?? this.nextHsn(product.category),
+      gstRate: product.gstRate ?? this.nextGst(product.category)
     }));
   }
 
@@ -709,7 +718,9 @@ export class PharmaProductsService {
         manufacturer: brand,
         pack,
         prescriptionRequired: rxCategories.has(category),
-        specifications: categorySpecs[category]
+        specifications: categorySpecs[category],
+        hsn: this.nextHsn(category),
+        gstRate: this.nextGst(category)
       });
 
       index += 1;
@@ -743,6 +754,30 @@ export class PharmaProductsService {
 
   private toWikimediaFilePath(fileName: string): string {
     return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}?width=640`;
+  }
+
+  private nextHsn(category: string): string {
+    const base = category.replace(/[^A-Za-z]/g, '').slice(0, 3).toUpperCase();
+    const suffix = (base.charCodeAt(0) % 500).toString().padStart(3, '0');
+    return `${suffix}${Math.floor(1000 + Math.random() * 9000)}`;
+  }
+
+  private nextGst(category: string): number {
+    const mapping: Record<string, number> = {
+      'Pain Relief': 5,
+      'Respiratory & Allergy': 12,
+      'Gastro & Liver': 12,
+      'Antibiotics': 12,
+      'Diabetes Care': 5,
+      'Cardio & BP': 5,
+      'Vitamins & Nutrition': 12,
+      'Dermatology': 12,
+      "Women's Health": 12,
+      'Baby & Mother': 5,
+      'First Aid & Devices': 12,
+      'OTC Essentials': 18
+    };
+    return mapping[category] ?? 12;
   }
 
   getAllProducts(): Observable<PharmaProduct[]> {

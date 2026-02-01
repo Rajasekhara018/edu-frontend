@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { Observable, of, map } from 'rxjs';
+import { OrderService, SalesOrderResponse } from './order.service';
 
 export interface InvoiceResponse {
   id: string;
@@ -12,15 +11,52 @@ export interface InvoiceResponse {
 
 @Injectable({ providedIn: 'root' })
 export class CheckoutService {
-  private readonly baseUrl = environment.apiUrl;
+  private readonly storageKey = 'md_invoices';
+  private invoices: InvoiceResponse[] = [];
+  private sequence = 2000;
 
-  constructor(private http: HttpClient) {}
+  constructor(private orderService: OrderService) {
+    const stored = localStorage.getItem(this.storageKey);
+    if (stored) {
+      try {
+        this.invoices = JSON.parse(stored);
+        this.sequence = this.invoices.length + 2000;
+      } catch {
+        this.invoices = [];
+      }
+    }
+  }
 
   createInvoice(orderId: string): Observable<InvoiceResponse> {
-    return this.http.post<InvoiceResponse>(`${this.baseUrl}/checkout/${orderId}/invoice`, {});
+    return this.orderService.get(orderId).pipe(
+      map(order => this.buildInvoice(order))
+    );
   }
 
   getInvoicePdf(invoiceId: string): Observable<Blob> {
-    return this.http.get(`${this.baseUrl}/invoices/${invoiceId}/pdf`, { responseType: 'blob' });
+    const payload = `Invoice ID: ${invoiceId}`;
+    return of(new Blob([payload], { type: 'application/pdf' }));
+  }
+
+  private buildInvoice(order: SalesOrderResponse): InvoiceResponse {
+    let existing = this.invoices.find(invoice => invoice.id === order.id);
+    if (existing) {
+      existing.netTotal = order.netTotal;
+      existing.status = 'Updated';
+    } else {
+      existing = {
+        id: order.id,
+        invoiceNo: `INV-${++this.sequence}`,
+        status: 'Issued',
+        netTotal: order.netTotal
+      };
+      this.invoices.push(existing);
+    }
+    this.persist();
+    return existing;
+  }
+
+  private persist(): void {
+    localStorage.setItem(this.storageKey, JSON.stringify(this.invoices));
   }
 }

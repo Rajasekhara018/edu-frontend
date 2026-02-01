@@ -17,8 +17,8 @@
   <section class="panel" *ngIf="selectedProduct">
     <div class="panel-title">Product Detail</div>
     <div class="detail-row"><span>SKU</span><strong>{{ selectedProduct.sku }}</strong></div>
-    <div class="detail-row"><span>HSN</span><strong>{{ selectedProduct.hsn }}</strong></div>
-    <div class="detail-row"><span>GST %</span><strong>{{ selectedProduct.gstRate }}</strong></div>
+    <div class="detail-row"><span>HSN</span><strong>{{ selectedProduct.hsn ?? 'TBD' }}</strong></div>
+    <div class="detail-row"><span>GST %</span><strong>{{ selectedProduct.gstRate ?? 'N/A' }}</strong></div>
     <div class="detail-row"><span>Manufacturer</span><strong>{{ selectedProduct.manufacturer }}</strong></div>
   </section>
 

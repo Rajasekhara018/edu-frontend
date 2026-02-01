@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { Observable, of } from 'rxjs';
 
 export interface ReturnLine {
   productId: string;
@@ -26,15 +24,39 @@ export interface CreditNoteResponse {
 
 @Injectable({ providedIn: 'root' })
 export class ReturnsService {
-  private readonly baseUrl = environment.apiUrl;
+  private readonly storageKey = 'md_credit_notes';
+  private notes: CreditNoteResponse[] = [];
 
-  constructor(private http: HttpClient) {}
-
-  createReturn(payload: ReturnRequest): Observable<CreditNoteResponse> {
-    return this.http.post<CreditNoteResponse>(`${this.baseUrl}/returns`, payload);
+  constructor() {
+    const stored = localStorage.getItem(this.storageKey);
+    if (stored) {
+      try {
+        this.notes = JSON.parse(stored);
+      } catch {
+        this.notes = [];
+      }
+    }
   }
 
-  getCreditNote(id: string): Observable<CreditNoteResponse> {
-    return this.http.get<CreditNoteResponse>(`${this.baseUrl}/credit-notes/${id}`);
+  createReturn(payload: ReturnRequest): Observable<CreditNoteResponse> {
+    const amount = payload.lines.reduce((sum, line) => sum + line.returnQty * 10, 0);
+    const note: CreditNoteResponse = {
+      id: `CRT-${Date.now()}`,
+      creditNoteNo: `CN-${this.notes.length + 1}`,
+      invoiceNo: payload.invoiceId,
+      totalAmount: amount,
+      status: 'Issued'
+    };
+    this.notes.push(note);
+    this.persist();
+    return of(note);
+  }
+
+  getCreditNote(id: string): Observable<CreditNoteResponse | undefined> {
+    return of(this.notes.find(note => note.id === id));
+  }
+
+  private persist(): void {
+    localStorage.setItem(this.storageKey, JSON.stringify(this.notes));
   }
 }

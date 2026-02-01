@@ -29,6 +29,8 @@ export class PublicTopbarComponent implements OnInit {
     '24h dispatch SLA'
   ];
 
+  isDark = false;
+
   ngOnInit(): void {
     this.catalogSearch.search$
       .pipe(distinctUntilChanged(), takeUntilDestroyed(this.destroyRef))
@@ -49,5 +51,29 @@ export class PublicTopbarComponent implements OnInit {
 
   goToCheckout(): void {
     this.router.navigate(['/shop/checkout']);
+  }
+
+  goToProfile(target: string): void {
+    this.router.navigate(['/shop']).then(() => {
+      const element = document.getElementById(target);
+      element?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+  openOrders(): void {
+    this.router.navigate(['/shop']).then(() => this.goToProfile('profile'));
+  }
+
+  openReturns(): void {
+    this.router.navigate(['/shop']).then(() => this.goToProfile('support'));
+  }
+
+  openSettings(): void {
+    this.router.navigate(['/shop']);
+  }
+
+  toggleTheme(state?: boolean): void {
+    this.isDark = state !== undefined ? state : !this.isDark;
+    document.body.classList.toggle('dark-theme', this.isDark);
   }
 }

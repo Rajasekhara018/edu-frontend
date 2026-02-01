@@ -56,6 +56,56 @@
   gap: 12px;
 }
 
+.product-detail-dialog-content {
+  .price-row,
+  .status-item strong {
+    font-family: 'Unbounded', 'Space Grotesk', sans-serif;
+  }
+}
+
+.pill {
+  padding: 0.15rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.category-pill {
+  background: rgba(16, 19, 17, 0.06);
+  color: #0f172a;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.status-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 12px;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  background: #fafafb;
+  border: 1px dashed rgba(16, 19, 17, 0.08);
+}
+
+.status-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  color: #5c6470;
+
+  .label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  strong {
+    font-size: 1.1rem;
+    color: #101311;
+  }
+}
+
 .meta-row {
   display: flex;
   flex-wrap: wrap;

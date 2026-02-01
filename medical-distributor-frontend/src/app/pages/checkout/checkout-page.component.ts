@@ -42,13 +42,13 @@ export class CheckoutPageComponent implements OnInit {
     { key: 'invoiced', label: 'Invoiced' }
   ];
 
-  readonly cartItems$ = this.cartService.items$;
-  readonly cartSummary$ = this.cartService.summary$;
-
   private route = inject(ActivatedRoute);
   private orderService = inject(OrderService);
   private checkoutService = inject(CheckoutService);
   private cartService = inject(CartService);
+
+  readonly cartItems$ = this.cartService.items$;
+  readonly cartSummary$ = this.cartService.summary$;
 
   constructor() {}
 

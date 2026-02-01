@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { Observable, of } from 'rxjs';
 import { PageResponse } from './page-response';
+import { CUSTOMERS } from '../data/seeds';
 
 export interface Customer {
   id: string;
@@ -19,18 +18,34 @@ export interface Customer {
 
 @Injectable({ providedIn: 'root' })
 export class CustomerService {
-  private readonly baseUrl = environment.apiUrl;
-
-  constructor(private http: HttpClient) {}
-
-  list(search: string, page: number, size: number, sort?: string): Observable<PageResponse<Customer>> {
-    let params = new HttpParams().set('page', page).set('size', size);
-    if (search) params = params.set('search', search);
-    if (sort) params = params.set('sort', sort);
-    return this.http.get<PageResponse<Customer>>(`${this.baseUrl}/customers`, { params });
+  list(search: string, page: number, size: number): Observable<PageResponse<Customer>> {
+    const filtered = this.applySearch(CUSTOMERS, search);
+    const slice = filtered.slice(page * size, page * size + size);
+    const totalElements = filtered.length;
+    return of({
+      data: slice,
+      totalElements,
+      page,
+      size,
+      totalPages: size ? Math.ceil(totalElements / size) : 0
+    });
   }
 
-  get(id: string): Observable<Customer> {
-    return this.http.get<Customer>(`${this.baseUrl}/customers/${id}`);
+  get(id: string): Observable<Customer | undefined> {
+    return of(CUSTOMERS.find(customer => customer.id === id));
+  }
+
+  private applySearch(customers: Customer[], term: string): Customer[] {
+    if (!term) {
+      return customers;
+    }
+    const lowered = term.toLowerCase();
+    return customers.filter(customer => {
+      return (
+        customer.name.toLowerCase().includes(lowered) ||
+        customer.gstin.toLowerCase().includes(lowered) ||
+        customer.territory.toLowerCase().includes(lowered)
+      );
+    });
   }
 }

@@ -68,7 +68,7 @@ export class ReportsPageComponent implements OnInit {
     this.salesLoading = true;
     this.salesError = '';
     const { from, to } = this.salesForm.value;
-    this.reportsService.salesReport(from || null, to || null, this.salesPageIndex, this.salesPageSize, this.salesSort).subscribe({
+    this.reportsService.salesReport(from || null, to || null, this.salesPageIndex, this.salesPageSize).subscribe({
       next: response => {
         this.salesRows = response.data;
         this.salesTotal = response.totalElements;
@@ -100,7 +100,7 @@ export class ReportsPageComponent implements OnInit {
     this.expiryLoading = true;
     this.expiryError = '';
     const days = Number(this.expiryForm.value.days ?? 60);
-    this.reportsService.nearExpiry(days, this.expiryPageIndex, this.expiryPageSize, this.expirySort).subscribe({
+    this.reportsService.nearExpiry(days, this.expiryPageIndex, this.expiryPageSize).subscribe({
       next: response => {
         this.expiryRows = response.data;
         this.expiryTotal = response.totalElements;

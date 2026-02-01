@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, tap } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { Observable, of } from 'rxjs';
 
 export interface AuthResponse {
   accessToken: string;
@@ -9,22 +7,27 @@ export interface AuthResponse {
   expiresInSeconds: number;
 }
 
+const MOCK_USERS = [
+  { username: 'admin', password: 'admin', roles: ['SUPER_ADMIN', 'FINANCE', 'WAREHOUSE'] },
+  { username: 'sales', password: 'sales', roles: ['SALES_REP', 'SALES_MANAGER'] }
+];
+
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-  private readonly baseUrl = environment.apiUrl;
-
-  constructor(private http: HttpClient) {}
-
   login(username: string, password: string): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`${this.baseUrl}/auth/login`, { username, password }).pipe(
-      tap(response => this.storeTokens(response))
-    );
+    const user = MOCK_USERS.find(u => u.username === username && u.password === password);
+    if (!user) {
+      throw new Error('Invalid credentials');
+    }
+    const response = this.buildResponse(user.roles);
+    this.storeTokens(response);
+    return of(response);
   }
 
   refresh(refreshToken: string): Observable<AuthResponse> {
-    return this.http.post<AuthResponse>(`${this.baseUrl}/auth/refresh`, { refreshToken }).pipe(
-      tap(response => this.storeTokens(response))
-    );
+    const response = this.buildResponse(this.getRoles());
+    this.storeTokens(response);
+    return of(response);
   }
 
   logout(): void {
@@ -53,14 +56,23 @@ export class AuthService {
     localStorage.setItem('roles', JSON.stringify(roles));
   }
 
+  private buildResponse(roles: string[]): AuthResponse {
+    const payload = {
+      roles
+    };
+    const token = `header.${btoa(JSON.stringify(payload))}.signature`;
+    return {
+      accessToken: token,
+      refreshToken: `${token}-refresh`,
+      expiresInSeconds: 3600
+    };
+  }
+
   private decodeRoles(token: string): string[] {
     try {
       const payload = JSON.parse(atob(token.split('.')[1]));
       if (Array.isArray(payload.roles)) {
         return payload.roles;
-      }
-      if (Array.isArray(payload.authorities)) {
-        return payload.authorities;
       }
       return [];
     } catch {

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+import { Observable, of, map } from 'rxjs';
 import { PageResponse } from './page-response';
+import { OrderService } from './order.service';
+import { InventoryService, InventoryBatch } from './inventory.service';
 
 export interface SalesReportRow {
   invoiceId: string;
@@ -34,25 +34,69 @@ export interface NearExpiryRow {
 
 @Injectable({ providedIn: 'root' })
 export class ReportsService {
-  private readonly baseUrl = environment.apiUrl;
+  constructor(private orderService: OrderService, private inventoryService: InventoryService) {}
 
-  constructor(private http: HttpClient) {}
-
-  salesReport(from: string | null, to: string | null, page: number, size: number, sort?: string): Observable<PageResponse<SalesReportRow>> {
-    let params = new HttpParams().set('page', page).set('size', size);
-    if (from) params = params.set('from', from);
-    if (to) params = params.set('to', to);
-    if (sort) params = params.set('sort', sort);
-    return this.http.get<PageResponse<SalesReportRow>>(`${this.baseUrl}/reports/sales`, { params });
+  salesReport(from: string | null, to: string | null, page: number, size: number): Observable<PageResponse<SalesReportRow>> {
+    const orders = this.orderService.listOrders();
+    const rows = orders
+      .filter(order => this.inRange(order.orderDate, from, to))
+      .map(order => ({
+        invoiceId: order.id,
+        invoiceNo: order.orderNo,
+        invoiceDate: order.orderDate,
+        customerId: order.customerId,
+        customerName: order.customerName,
+        netTotal: order.netTotal
+      }));
+    const totalElements = rows.length;
+    return of({
+      data: rows.slice(page * size, page * size + size),
+      totalElements,
+      page,
+      size,
+      totalPages: size ? Math.ceil(totalElements / size) : 0
+    });
   }
 
   outstandingAging(): Observable<OutstandingAgingRow[]> {
-    return this.http.get<OutstandingAgingRow[]>(`${this.baseUrl}/reports/outstanding-aging`);
+    const orders = this.orderService.listOrders();
+    return of(
+      orders.map(order => ({
+        customerId: order.customerId,
+        customerName: order.customerName,
+        bucket0to30: order.netTotal * 0.4,
+        bucket31to60: order.netTotal * 0.3,
+        bucket61to90: order.netTotal * 0.2,
+        bucket90plus: order.netTotal * 0.1,
+        totalOutstanding: order.netTotal
+      }))
+    );
   }
 
-  nearExpiry(days: number, page: number, size: number, sort?: string): Observable<PageResponse<NearExpiryRow>> {
-    let params = new HttpParams().set('days', days).set('page', page).set('size', size);
-    if (sort) params = params.set('sort', sort);
-    return this.http.get<PageResponse<NearExpiryRow>>(`${this.baseUrl}/reports/near-expiry`, { params });
+  nearExpiry(days: number, page: number, size: number): Observable<PageResponse<NearExpiryRow>> {
+    return this.inventoryService.nearExpiry(days, page, size).pipe(
+      map(batchPage => ({
+        ...batchPage,
+        data: batchPage.data.map(batch => ({
+          batchId: batch.id,
+          productId: batch.productId,
+          productName: batch.productName,
+          batchNo: batch.batchNo,
+          expiryDate: batch.expiryDate,
+          qtyAvailable: batch.qtyAvailable
+        }))
+      }))
+    );
+  }
+
+  private inRange(date: string, from: string | null, to: string | null): boolean {
+    const value = new Date(date).getTime();
+    if (from && value < new Date(from).getTime()) {
+      return false;
+    }
+    if (to && value > new Date(to).getTime()) {
+      return false;
+    }
+    return true;
   }
 }

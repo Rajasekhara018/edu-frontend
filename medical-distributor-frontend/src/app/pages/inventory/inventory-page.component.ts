@@ -1,6 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { ProductService, Product } from '../../core/services/product.service';
+import { ProductService } from '../../core/services/product.service';
+import { PharmaProduct } from '../../core/models/pharma-product.model';
 import { InventoryService, InventoryBatch } from '../../core/services/inventory.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class InventoryPageComponent implements OnInit {
     productId: ['']
   });
 
-  products: Product[] = [];
+  products: PharmaProduct[] = [];
   batches: InventoryBatch[] = [];
   loading = false;
 
@@ -30,7 +31,7 @@ export class InventoryPageComponent implements OnInit {
     this.productService.list('', 0, 50).subscribe(response => {
       this.products = response.data;
       if (this.products.length) {
-        this.filterForm.patchValue({ productId: this.products[0].id });
+        this.filterForm.patchValue({ productId: String(this.products[0].id) });
         this.loadBatches();
       }
     });
@@ -42,7 +43,7 @@ export class InventoryPageComponent implements OnInit {
       return;
     }
     this.loading = true;
-    this.inventoryService.listBatches(productId, 0, 200, 'expiryDate,asc').subscribe({
+    this.inventoryService.listBatches(productId, 0, 200).subscribe({
       next: response => {
         this.batches = response.data;
         this.loading = false;
@@ -51,9 +52,10 @@ export class InventoryPageComponent implements OnInit {
     });
   }
 
-  get selectedProduct(): Product | undefined {
+  get selectedProduct(): PharmaProduct | undefined {
     const id = this.filterForm.value.productId;
-    return this.products.find(p => p.id === id);
+    const numId = Number(id);
+    return this.products.find(p => p.id === numId);
   }
 
   isNearExpiry(expiryDate: string): boolean {

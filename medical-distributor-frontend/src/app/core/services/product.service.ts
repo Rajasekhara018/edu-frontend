@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { environment } from '../../../environments/environment';
+﻿import { Injectable } from '@angular/core';
+import { Observable, map } from 'rxjs';
 import { PageResponse } from './page-response';
+import { PharmaProductsService } from './pharma-products.service';
+import { PharmaProduct } from '../models/pharma-product.model';
 
 export interface Product {
   id: string;
@@ -16,14 +16,34 @@ export interface Product {
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
-  private readonly baseUrl = environment.apiUrl;
+  constructor(private pharmaProducts: PharmaProductsService) {}
 
-  constructor(private http: HttpClient) {}
+  list(search: string, page: number, size: number, sort?: string): Observable<PageResponse<PharmaProduct>> {
+    return this.pharmaProducts.getAllProducts().pipe(
+      map(products => {
+        const filtered = this.applySearch(products, search);
+        const slice = filtered.slice(page * size, page * size + size);
+        const totalElements = filtered.length;
+        return {
+          data: slice,
+          totalElements,
+          page,
+          size,
+          totalPages: size ? Math.ceil(totalElements / size) : 0
+        } satisfies PageResponse<PharmaProduct>;
+      })
+    );
+  }
 
-  list(search: string, page: number, size: number, sort?: string): Observable<PageResponse<Product>> {
-    let params = new HttpParams().set('page', page).set('size', size);
-    if (search) params = params.set('search', search);
-    if (sort) params = params.set('sort', sort);
-    return this.http.get<PageResponse<Product>>(`${this.baseUrl}/products`, { params });
+  private applySearch(products: PharmaProduct[], term: string): PharmaProduct[] {
+    if (!term) {
+      return products;
+    }
+    const lowered = term.toLowerCase();
+    return products.filter(product =>
+      product.name.toLowerCase().includes(lowered) ||
+      product.description.toLowerCase().includes(lowered) ||
+      product.sku.toLowerCase().includes(lowered)
+    );
   }
 }

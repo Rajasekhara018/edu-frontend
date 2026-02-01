@@ -14,4 +14,6 @@ export interface PharmaProduct {
   pack: string;
   prescriptionRequired?: boolean;
   specifications?: Record<string, string>;
+  hsn?: string;
+  gstRate?: number;
 }

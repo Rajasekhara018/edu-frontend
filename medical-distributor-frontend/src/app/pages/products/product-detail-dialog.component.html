@@ -1,5 +1,5 @@
 <h2 mat-dialog-title>{{ data.name }}</h2>
-<mat-dialog-content>
+<mat-dialog-content class="product-detail-dialog-content">
   <div class="detail-grid">
     <div class="image-panel">
       <img
@@ -16,7 +16,7 @@
     </div>
     <div class="info-panel">
       <div class="meta-row">
-        <span class="category">{{ data.category }}</span>
+        <span class="pill category-pill">{{ data.category }}</span>
         <span class="sku">SKU {{ data.sku }}</span>
       </div>
       <div class="manufacturer">{{ data.manufacturer }}</div>
@@ -29,6 +29,22 @@
         </span>
       </div>
       <p class="description">{{ data.description }}</p>
+
+      <div class="status-row">
+        <div class="status-item">
+          <span class="label">Rating</span>
+          <strong>{{ data.rating ?? '—' }}</strong>
+          <small>{{ data.reviews ?? 0 }} reviews</small>
+        </div>
+        <div class="status-item">
+          <span class="label">HSN</span>
+          <strong>{{ data.hsn ?? 'TBD' }}</strong>
+        </div>
+        <div class="status-item">
+          <span class="label">GST</span>
+          <strong>{{ data.gstRate ?? '—' }}%</strong>
+        </div>
+      </div>
 
       <div class="specs" *ngIf="specEntries.length > 0">
         <h4>Specifications</h4>
