@@ -1,0 +1,30 @@
+<div class="data-table">
+  <table mat-table [dataSource]="data" matSort (matSortChange)="onSort($event)">
+    <ng-container *ngFor="let col of columns" [matColumnDef]="col.key">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ col.label }}</th>
+      <td mat-cell *matCellDef="let row">
+        <ng-container [ngSwitch]="col.type">
+          <app-status-pill *ngSwitchCase="'status'" [status]="row[col.key]"></app-status-pill>
+          <span *ngSwitchCase="'currency'">{{ row[col.key] | currency:'INR':'code':'1.0-2' }}</span>
+          <span *ngSwitchCase="'date'">{{ row[col.key] | date:'mediumDate' }}</span>
+          <span *ngSwitchCase="'number'">{{ row[col.key] | number:'1.0-2' }}</span>
+          <span *ngSwitchDefault>{{ row[col.key] }}</span>
+        </ng-container>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <app-skeleton-table *ngIf="loading"></app-skeleton-table>
+  <div class="empty-state" *ngIf="!loading && data.length === 0">{{ emptyMessage }}</div>
+
+  <mat-paginator
+    [length]="total"
+    [pageIndex]="pageIndex"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="[10, 25, 50]"
+    (page)="onPage($event)">
+  </mat-paginator>
+</div>

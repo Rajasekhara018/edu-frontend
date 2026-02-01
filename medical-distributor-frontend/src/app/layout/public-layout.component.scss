@@ -1,0 +1,9 @@
+.public-layout .layout-content {
+  padding: 24px;
+}
+
+@media (max-width: 1024px) {
+  .public-layout .layout-content {
+    padding: 16px;
+  }
+}

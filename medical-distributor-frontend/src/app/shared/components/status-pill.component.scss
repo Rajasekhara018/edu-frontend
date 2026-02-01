@@ -1,0 +1,30 @@
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-pill.positive {
+  background: rgba(33, 130, 70, 0.14);
+  color: #1f6d42;
+}
+
+.status-pill.warning {
+  background: rgba(191, 133, 20, 0.16);
+  color: #9c6a10;
+}
+
+.status-pill.negative {
+  background: rgba(182, 62, 62, 0.18);
+  color: #a33636;
+}
+
+.status-pill.neutral {
+  background: rgba(90, 95, 110, 0.12);
+  color: #4b5563;
+}

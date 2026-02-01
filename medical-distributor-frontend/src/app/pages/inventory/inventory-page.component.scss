@@ -1,0 +1,80 @@
+.filter-form {
+  display: flex;
+  gap: 12px;
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.panel {
+  background: var(--erp-surface);
+  border: 1px solid var(--erp-border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.panel-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  color: var(--erp-muted);
+  margin-bottom: 12px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--erp-border);
+}
+
+.batch-table {
+  border: 1px solid var(--erp-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.batch-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.8fr 0.8fr 0.8fr 1fr;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--erp-border);
+  font-size: 13px;
+}
+
+.batch-row.header {
+  background: var(--erp-soft);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--erp-muted);
+}
+
+.batch-row.near-expiry {
+  background: rgba(191, 133, 20, 0.08);
+}
+
+.batch-row.expired {
+  color: #a33636;
+  background: rgba(182, 62, 62, 0.08);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.batch-viewport {
+  height: 320px;
+}
+
+.empty-state {
+  padding: 12px;
+  text-align: center;
+  color: var(--erp-muted);
+}
+
+@media (max-width: 1024px) {
+  .inventory-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,135 @@
+﻿.customer-detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.customer-hero {
+  background: var(--erp-surface);
+  border-radius: 18px;
+  padding: 1.6rem 2rem;
+  border: 1px solid var(--erp-border);
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+}
+
+.hero-content h2 {
+  margin: 0.4rem 0;
+  font-size: 2rem;
+}
+
+.hero-subtitle {
+  margin: 0;
+  color: #4b5563;
+}
+
+.hero-tags {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.hero-metrics div {
+  background: #f5f7fb;
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.hero-metrics strong {
+  font-size: 1.25rem;
+}
+
+.hero-metrics .muted {
+  color: #6b7280;
+  margin: 0;
+  font-size: 0.8rem;
+}
+
+.customer-panels {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.panel {
+  background: var(--erp-surface);
+  border-radius: 16px;
+  border: 1px solid var(--erp-border);
+  padding: 1.3rem;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.05);
+}
+
+.panel-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--erp-muted);
+  margin-bottom: 0.8rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.8rem;
+}
+
+.activity-grid div {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+}
+
+.activity-grid span {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.activity-grid strong {
+  font-size: 1.1rem;
+}
+
+.muted {
+  color: #6b7280;
+  font-size: 0.82rem;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+@media (max-width: 960px) {
+  .customer-hero {
+    flex-direction: column;
+  }
+
+  .customer-panels {
+    grid-template-columns: 1fr;
+  }
+}

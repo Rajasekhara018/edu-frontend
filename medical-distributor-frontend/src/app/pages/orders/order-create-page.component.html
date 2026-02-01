@@ -1,0 +1,84 @@
+<app-page-header title="Create Sales Order" subtitle="Draft to confirmed booking with credit visibility">
+  <button mat-stroked-button color="primary" (click)="saveDraft()">Save Draft</button>
+  <button mat-raised-button color="primary" (click)="confirmOrder()" [disabled]="submitting">Confirm Order</button>
+</app-page-header>
+
+<div class="order-grid">
+  <section class="panel">
+    <form [formGroup]="form">
+      <mat-form-field appearance="outline" class="customer-field">
+        <mat-label>Customer</mat-label>
+        <input matInput placeholder="Search customer" formControlName="customer" />
+      </mat-form-field>
+
+      <table mat-table [dataSource]="lines.controls" class="order-lines">
+      <ng-container matColumnDef="product">
+        <th mat-header-cell *matHeaderCellDef>Product</th>
+        <td mat-cell *matCellDef="let row; let i = index">
+          <input matInput placeholder="Search product" [formControl]="row.get('product')" />
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef>Qty</th>
+        <td mat-cell *matCellDef="let row">
+          <input matInput type="number" [formControl]="row.get('quantity')" />
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="unitPrice">
+        <th mat-header-cell *matHeaderCellDef>Price</th>
+        <td mat-cell *matCellDef="let row">
+          <input matInput type="number" [formControl]="row.get('unitPrice')" />
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="discount">
+        <th mat-header-cell *matHeaderCellDef>Discount</th>
+        <td mat-cell *matCellDef="let row">
+          <input matInput type="number" [formControl]="row.get('discount')" />
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="taxRate">
+        <th mat-header-cell *matHeaderCellDef>GST %</th>
+        <td mat-cell *matCellDef="let row">
+          <input matInput type="number" [formControl]="row.get('taxRate')" />
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row; let i = index">
+          <button mat-icon-button color="warn" (click)="removeLine(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['product','quantity','unitPrice','discount','taxRate','actions']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['product','quantity','unitPrice','discount','taxRate','actions']"></tr>
+      </table>
+
+      <button mat-stroked-button type="button" (click)="addLine()">Add Line</button>
+      <div class="error" *ngIf="error">{{ error }}</div>
+    </form>
+  </section>
+
+  <app-summary-panel title="Summary">
+    <div class="summary-item">
+      <span>Subtotal</span>
+      <strong>{{ subtotal | currency:'INR':'code':'1.0-2' }}</strong>
+    </div>
+    <div class="summary-item">
+      <span>Discount</span>
+      <strong>{{ discountTotal | currency:'INR':'code':'1.0-2' }}</strong>
+    </div>
+    <div class="summary-item">
+      <span>GST</span>
+      <strong>{{ taxTotal | currency:'INR':'code':'1.0-2' }}</strong>
+    </div>
+    <div class="summary-item total">
+      <span>Net Total</span>
+      <strong>{{ netTotal | currency:'INR':'code':'1.0-2' }}</strong>
+    </div>
+    <div class="credit-hint">
+      Credit remaining: {{ creditRemaining | currency:'INR':'code':'1.0-0' }}
+    </div>
+  </app-summary-panel>
+</div>

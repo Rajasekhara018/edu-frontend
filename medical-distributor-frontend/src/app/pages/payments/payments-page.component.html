@@ -1,0 +1,70 @@
+<app-page-header title="Payments & Outstanding" subtitle="Allocate receipts to invoices and track aging">
+  <button mat-raised-button color="primary" (click)="openAllocation()">Allocate Payment</button>
+</app-page-header>
+
+<app-filter-bar>
+  <form [formGroup]="filterForm" class="filter-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Bucket</mat-label>
+      <mat-select formControlName="bucket">
+        <mat-option value="all">All</mat-option>
+        <mat-option value="0-30">0-30</mat-option>
+        <mat-option value="31-60">31-60</mat-option>
+        <mat-option value="61-90">61-90</mat-option>
+        <mat-option value="90+">90+</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput formControlName="search" placeholder="Invoice or customer" />
+    </mat-form-field>
+    <button mat-stroked-button type="button" (click)="applyFilters()">Apply</button>
+  </form>
+</app-filter-bar>
+
+<div class="table-card">
+  <table mat-table [dataSource]="data" matSort (matSortChange)="onSort($event)">
+    <ng-container matColumnDef="invoiceNo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="invoiceNo">Invoice</th>
+      <td mat-cell *matCellDef="let row">{{ row.invoiceNo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="customer">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="customer">Customer</th>
+      <td mat-cell *matCellDef="let row">{{ row.customer }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="bucket">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="bucket">Aging</th>
+      <td mat-cell *matCellDef="let row">{{ row.bucket }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="outstanding">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="outstanding">Outstanding</th>
+      <td mat-cell *matCellDef="let row">{{ row.outstanding | currency:'INR':'code':'1.0-0' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-button color="primary" (click)="openAllocation()">Allocate</button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="['invoiceNo','customer','bucket','outstanding','actions']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['invoiceNo','customer','bucket','outstanding','actions']"></tr>
+  </table>
+
+  <app-skeleton-table *ngIf="loading"></app-skeleton-table>
+  <div class="empty-state" *ngIf="!loading && data.length === 0">
+    No outstanding invoices match the current filters.
+  </div>
+
+  <mat-paginator
+    [length]="total"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    [pageSizeOptions]="[10, 25, 50]"
+    (page)="onPage($event)">
+  </mat-paginator>
+</div>

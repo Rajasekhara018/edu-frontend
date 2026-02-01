@@ -1,0 +1,40 @@
+.filter-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.table-card {
+  background: var(--erp-surface);
+  border: 1px solid var(--erp-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.name-cell {
+  font-weight: 600;
+}
+
+.meta {
+  font-size: 11px;
+  color: var(--erp-muted);
+}
+
+.credit-cell {
+  display: grid;
+  gap: 6px;
+  min-width: 220px;
+}
+
+mat-progress-bar {
+  height: 6px;
+  border-radius: 999px;
+}
+
+.empty-state {
+  padding: 20px;
+  text-align: center;
+  color: var(--erp-muted);
+  border-top: 1px dashed var(--erp-border);
+}

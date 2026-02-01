@@ -1,0 +1,72 @@
+﻿<app-page-header title="Customer Detail" subtitle="Account, credit and territory overview">
+  <div class="detail-actions">
+    <button mat-stroked-button color="primary">Edit profile</button>
+    <button mat-flat-button color="accent">Send reminder</button>
+  </div>
+</app-page-header>
+
+<section class="customer-detail-page" *ngIf="customer">
+  <div class="customer-hero">
+    <div class="hero-content">
+      <p class="eyebrow">Customer account</p>
+      <h2>{{ customer.name }}</h2>
+      <p class="hero-subtitle">GSTIN {{ customer.gstin }} • License {{ customer.licenseNo || 'N/A' }}</p>
+      <div class="hero-tags">
+        <app-status-pill [status]="customer.status"></app-status-pill>
+        <mat-chip *ngIf="customer.paymentTermsDays">T+{{ customer.paymentTermsDays }} terms</mat-chip>
+        <mat-chip>{{ customer.territory }}</mat-chip>
+      </div>
+    </div>
+    <div class="hero-metrics">
+      <div>
+        <span>Credit utilization</span>
+        <strong>{{ customer.creditUsed | currency:'INR':'code':'1.0-0' }} / {{ customer.creditLimit | currency:'INR':'code':'1.0-0' }}</strong>
+        <mat-progress-bar mode="determinate" [value]="creditUtilization()"></mat-progress-bar>
+      </div>
+      <div>
+        <span>Current status</span>
+        <strong>{{ customer.status }}</strong>
+        <p class="muted">{{ creditUtilization() | number:'1.0-0' }}% used</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="customer-panels">
+    <section class="panel contact-panel">
+      <div class="panel-title">Contact & delivery</div>
+      <div class="detail-row">
+        <span>Primary contact</span>
+        <strong>{{ customer.primaryContact || 'N/A' }}</strong>
+      </div>
+      <div class="detail-row">
+        <span>Territory</span>
+        <strong>{{ customer.territory }}</strong>
+      </div>
+      <div class="detail-row">
+        <span>Payment terms</span>
+        <strong>{{ customer.paymentTermsDays ? (customer.paymentTermsDays + ' days') : 'Standard' }}</strong>
+      </div>
+    </section>
+
+    <section class="panel activity-panel">
+      <div class="panel-title">Outstanding</div>
+      <div class="activity-grid">
+        <div>
+          <span>Current outstandings</span>
+          <strong>{{ customer.creditUsed | currency:'INR':'code':'1.0-0' }}</strong>
+        </div>
+        <div>
+          <span>Available credit</span>
+          <strong>{{ (customer.creditLimit - customer.creditUsed) | currency:'INR':'code':'1.0-0' }}</strong>
+        </div>
+        <div>
+          <span>Last touchpoint</span>
+          <strong>Jan 25, 2026</strong>
+        </div>
+      </div>
+      <p class="muted">
+        Reserved orders and open invoices impact the available credit—release inventory via checkout or apply a credit note when needed.
+      </p>
+    </section>
+  </div>
+</section>

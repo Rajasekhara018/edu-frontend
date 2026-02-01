@@ -1,0 +1,139 @@
+.detail-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.image-panel {
+  position: relative;
+  background: #f7f8fb;
+  border-radius: 18px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  border: 1px solid rgba(17, 24, 39, 0.08);
+}
+
+.image-panel img {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 14px;
+  object-fit: cover;
+  background: #ffffff;
+}
+
+.stock-pill,
+.rx-pill {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+}
+
+.stock-pill.in-stock {
+  background: #e6f6ec;
+  color: #0f7a3c;
+}
+
+.stock-pill.out-of-stock {
+  background: #fdecea;
+  color: #b42318;
+}
+
+.rx-pill {
+  background: #ffe8cc;
+  color: #9a3412;
+}
+
+.info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: #5c6470;
+}
+
+.category {
+  font-weight: 600;
+  color: #1f2933;
+}
+
+.manufacturer {
+  font-weight: 600;
+  color: #1f2933;
+}
+
+.pack {
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.current-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1f2933;
+}
+
+.mrp {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.original-price {
+  text-decoration: line-through;
+}
+
+.description {
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.specs h4 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
+
+.spec-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+.spec-item {
+  background: #f3f4f6;
+  border-radius: 10px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spec-item .label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6b7280;
+}
+
+.spec-item .value {
+  font-weight: 600;
+  color: #1f2933;
+}

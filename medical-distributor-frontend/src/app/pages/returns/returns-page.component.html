@@ -1,0 +1,59 @@
+<app-page-header title="Returns & Credit Notes" subtitle="Batch-wise returns against invoice"></app-page-header>
+
+<app-filter-bar>
+  <form [formGroup]="form" class="return-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Invoice No</mat-label>
+      <input matInput formControlName="invoiceNo" placeholder="Search invoice" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Reason</mat-label>
+      <mat-select formControlName="reason">
+        <mat-option value="expiry">Near expiry</mat-option>
+        <mat-option value="damage">Damaged</mat-option>
+        <mat-option value="excess">Excess supply</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</app-filter-bar>
+
+<div class="return-grid">
+  <section class="panel">
+    <div class="panel-title">Batch Return Lines</div>
+    <table mat-table [dataSource]="lines.controls">
+      <ng-container matColumnDef="product">
+        <th mat-header-cell *matHeaderCellDef>Product</th>
+        <td mat-cell *matCellDef="let row">{{ row.get('product')?.value }}</td>
+      </ng-container>
+      <ng-container matColumnDef="batch">
+        <th mat-header-cell *matHeaderCellDef>Batch</th>
+        <td mat-cell *matCellDef="let row">{{ row.get('batch')?.value }}</td>
+      </ng-container>
+      <ng-container matColumnDef="invoiced">
+        <th mat-header-cell *matHeaderCellDef>Invoiced</th>
+        <td mat-cell *matCellDef="let row">{{ row.get('invoiced')?.value }}</td>
+      </ng-container>
+      <ng-container matColumnDef="returnQty">
+        <th mat-header-cell *matHeaderCellDef>Return Qty</th>
+        <td mat-cell *matCellDef="let row">
+          <input matInput type="number" [formControl]="row.get('returnQty')" />
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="saleable">
+        <th mat-header-cell *matHeaderCellDef>Saleable</th>
+        <td mat-cell *matCellDef="let row">
+          <mat-slide-toggle [formControl]="row.get('saleable')"></mat-slide-toggle>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="['product','batch','invoiced','returnQty','saleable']"></tr>
+      <tr mat-row *matRowDef="let row; columns: ['product','batch','invoiced','returnQty','saleable']"></tr>
+    </table>
+  </section>
+
+  <app-summary-panel title="Credit Note Preview">
+    <div class="summary-item"><span>Estimated Credit</span><strong>INR 12,840</strong></div>
+    <div class="summary-item"><span>Reason</span><strong>{{ form.value.reason || '-' }}</strong></div>
+    <button mat-raised-button color="primary">Generate Credit Note</button>
+  </app-summary-panel>
+</div>

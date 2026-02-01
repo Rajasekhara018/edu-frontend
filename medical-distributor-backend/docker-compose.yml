@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:16
+    container_name: meddist-db
+    environment:
+      POSTGRES_DB: meddist
+      POSTGRES_USER: meddist
+      POSTGRES_PASSWORD: meddist
+    ports:
+      - "5432:5432"
+    volumes:
+      - meddist_data:/var/lib/postgresql/data
+volumes:
+  meddist_data:

@@ -1,0 +1,31 @@
+<app-page-header title="Operations Dashboard" subtitle="Daily overview for sales, warehouse and finance"></app-page-header>
+
+<div class="kpi-grid">
+  <div class="kpi-card" *ngFor="let kpi of kpis">
+    <div class="kpi-label">{{ kpi.label }}</div>
+    <div class="kpi-value">{{ kpi.value }}</div>
+  </div>
+</div>
+
+<div class="dashboard-grid">
+  <section class="panel">
+    <div class="panel-header">Alerts</div>
+    <mat-list>
+      <mat-list-item *ngFor="let alert of alerts">
+        <div class="alert-type">{{ alert.type }}</div>
+        <div class="alert-message">{{ alert.message }}</div>
+      </mat-list-item>
+    </mat-list>
+  </section>
+
+  <section class="panel">
+    <div class="panel-header">Pending Checkout</div>
+    <app-data-table
+      [columns]="pendingColumns"
+      [data]="pendingTable"
+      [total]="pendingTable.length"
+      [pageSize]="5"
+      [pageIndex]="0">
+    </app-data-table>
+  </section>
+</div>

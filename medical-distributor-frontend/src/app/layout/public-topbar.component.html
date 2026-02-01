@@ -1,0 +1,51 @@
+<header class="public-topbar">
+  <div class="top-row">
+    <div class="brand">
+      <div class="brand-title">MedDistributor ERP</div>
+      <div class="brand-subtitle">Wholesale pharmaceutical storefront</div>
+    </div>
+
+    <div class="search">
+      <mat-icon>search</mat-icon>
+      <input
+        matInput
+        [(ngModel)]="search"
+        (ngModelChange)="onSearchChange($event)"
+        placeholder="Search products, SKU, manufacturer"
+      />
+    </div>
+
+    <div class="actions">
+      <a mat-button routerLink="/shop">Products</a>
+      <a mat-stroked-button routerLink="/shop/checkout">Checkout</a>
+      <a mat-flat-button color="primary" routerLink="/login">Sign in</a>
+      <a class="about-link" href="#about">About us</a>
+    </div>
+  </div>
+
+  <div class="nav-row">
+    <nav>
+      <a routerLink="/shop" routerLinkActive="active">Home</a>
+      <a routerLink="/shop" routerLinkActive="active">Products</a>
+      <a href="#about">About</a>
+      <a href="#support">Support</a>
+    </nav>
+    <div class="category-links">
+      <button *ngFor="let category of categories" mat-stroked-button>
+        {{ category }}
+      </button>
+    </div>
+  </div>
+
+  <div class="feature-row">
+    <span *ngFor="let feature of features">{{ feature }}</span>
+    <div class="spacer"></div>
+    <div class="cart-summary" *ngIf="summary$ | async as summary" (click)="goToCheckout()" role="button" tabindex="0">
+      <mat-icon matBadge="{{ summary.count }}" matBadgeColor="primary">shopping_cart</mat-icon>
+      <div class="cart-meta">
+        <div class="label">Cart Total</div>
+        <div class="value">{{ summary.total | currency:'INR':'code':'1.0-2' }}</div>
+      </div>
+    </div>
+  </div>
+</header>

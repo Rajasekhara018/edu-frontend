@@ -1,0 +1,60 @@
+@use '@angular/material' as mat;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap');
+
+$primary: mat.m2-define-palette(mat.$m2-blue-grey-palette, 700);
+$accent: mat.m2-define-palette(mat.$m2-blue-palette, 600);
+$warn: mat.m2-define-palette(mat.$m2-red-palette, 700);
+
+$theme: mat.m2-define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+  ),
+  typography: mat.m2-define-typography-config(
+    $font-family: 'IBM Plex Sans',
+  ),
+  density: 0,
+));
+
+@include mat.core();
+@include mat.all-component-themes($theme);
+
+:root {
+  --erp-background: #f4f6f9;
+  --erp-surface: #ffffff;
+  --erp-border: #d9dfe6;
+  --erp-muted: #5c6470;
+  --erp-primary: #2e5da4;
+  --erp-soft: #eef1f5;
+  --erp-input: #f8fafc;
+  --erp-shadow-soft: 0 12px 24px rgba(17, 24, 39, 0.08);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans', 'Segoe UI', sans-serif;
+  color: #1f2933;
+  background-color: var(--erp-background);
+}
+
+a {
+  text-decoration: none;
+}
+
+mat-form-field {
+  width: 220px;
+}
+
+.table-card table {
+  width: 100%;
+}
+
+.mat-mdc-table .mdc-data-table__header-row {
+  background: var(--erp-soft);
+}

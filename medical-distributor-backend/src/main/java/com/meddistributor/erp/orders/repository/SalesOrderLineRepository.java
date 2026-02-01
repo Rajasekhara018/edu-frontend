@@ -1,0 +1,10 @@
+package com.meddistributor.erp.orders.repository;
+
+import com.meddistributor.erp.orders.entity.SalesOrderLine;
+import java.util.List;
+import java.util.UUID;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface SalesOrderLineRepository extends JpaRepository<SalesOrderLine, UUID> {
+  List<SalesOrderLine> findByOrderId(UUID orderId);
+}

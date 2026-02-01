@@ -1,0 +1,87 @@
+<app-page-header title="Customers" subtitle="Manage credit limits, terms, and territory ownership">
+  <button mat-raised-button color="primary">New Customer</button>
+</app-page-header>
+
+<app-filter-bar>
+  <form [formGroup]="filterForm" class="filter-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Search</mat-label>
+      <input matInput formControlName="search" placeholder="Name, GSTIN, territory" />
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Status</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="all">All</mat-option>
+        <mat-option value="active">Active</mat-option>
+        <mat-option value="hold">Hold</mat-option>
+        <mat-option value="blocked">Blocked</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-stroked-button type="button" (click)="applyFilters()">Apply</button>
+  </form>
+</app-filter-bar>
+
+<div class="table-card">
+  <table mat-table [dataSource]="data" matSort (matSortChange)="onSort($event)">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="name">Name</th>
+      <td mat-cell *matCellDef="let row">
+        <div class="name-cell">{{ row.name }}</div>
+        <div class="meta">{{ row.licenseNo }}</div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="gstin">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="gstin">GSTIN</th>
+      <td mat-cell *matCellDef="let row">{{ row.gstin }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="territory">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="territory">Territory</th>
+      <td mat-cell *matCellDef="let row">{{ row.territory }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="credit">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header="creditLimit">Credit Utilization</th>
+      <td mat-cell *matCellDef="let row">
+        <div class="credit-cell">
+          <span>
+            {{ row.creditUsed | currency:'INR':'code':'1.0-0' }} /
+            {{ row.creditLimit | currency:'INR':'code':'1.0-0' }}
+          </span>
+          <mat-progress-bar mode="determinate" [value]="creditUtilization(row)"></mat-progress-bar>
+        </div>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef>Status</th>
+      <td mat-cell *matCellDef="let row">
+        <app-status-pill [status]="row.status"></app-status-pill>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let row">
+        <a mat-button color="primary" [routerLink]="['/customers', row.id]">View</a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <app-skeleton-table *ngIf="loading"></app-skeleton-table>
+  <div class="empty-state" *ngIf="!loading && data.length === 0">
+    No customers match the current filters.
+  </div>
+
+  <mat-paginator
+    [length]="total"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+    [pageSizeOptions]="[10, 25, 50]"
+    (page)="onPage($event)">
+  </mat-paginator>
+</div>

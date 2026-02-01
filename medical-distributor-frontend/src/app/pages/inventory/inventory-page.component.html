@@ -1,0 +1,60 @@
+<app-page-header title="Inventory Batches" subtitle="FEFO view with batch-level availability"></app-page-header>
+
+<app-filter-bar>
+  <form [formGroup]="filterForm" class="filter-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Product</mat-label>
+      <mat-select formControlName="productId" (selectionChange)="loadBatches()">
+        <mat-option *ngFor="let product of products" [value]="product.id">
+          {{ product.name }} ({{ product.sku }})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</app-filter-bar>
+
+<div class="inventory-grid">
+  <section class="panel" *ngIf="selectedProduct">
+    <div class="panel-title">Product Detail</div>
+    <div class="detail-row"><span>SKU</span><strong>{{ selectedProduct.sku }}</strong></div>
+    <div class="detail-row"><span>HSN</span><strong>{{ selectedProduct.hsn }}</strong></div>
+    <div class="detail-row"><span>GST %</span><strong>{{ selectedProduct.gstRate }}</strong></div>
+    <div class="detail-row"><span>Manufacturer</span><strong>{{ selectedProduct.manufacturer }}</strong></div>
+  </section>
+
+  <section class="panel">
+    <div class="panel-title">Batch Availability</div>
+    <div class="batch-table">
+      <div class="batch-row header">
+        <div>Batch No</div>
+        <div>Expiry</div>
+        <div>MRP</div>
+        <div>Available</div>
+        <div>Reserved</div>
+        <div>Status</div>
+      </div>
+      <cdk-virtual-scroll-viewport itemSize="48" class="batch-viewport">
+        <div
+          class="batch-row"
+          *cdkVirtualFor="let batch of batches"
+          [class.near-expiry]="isNearExpiry(batch.expiryDate)"
+          [class.expired]="isExpired(batch.expiryDate)">
+          <div>{{ batch.batchNo }}</div>
+          <div>{{ batch.expiryDate | date:'mediumDate' }}</div>
+          <div>{{ batch.mrp | currency:'INR':'code':'1.0-0' }}</div>
+          <div>{{ batch.qtyAvailable }}</div>
+          <div>{{ batch.qtyReserved }}</div>
+          <div>
+            <span *ngIf="isExpired(batch.expiryDate)">Expired</span>
+            <span *ngIf="!isExpired(batch.expiryDate) && isNearExpiry(batch.expiryDate)">Near expiry</span>
+            <span *ngIf="!isNearExpiry(batch.expiryDate)">Active</span>
+          </div>
+        </div>
+      </cdk-virtual-scroll-viewport>
+    </div>
+    <app-skeleton-table *ngIf="loading"></app-skeleton-table>
+    <div class="empty-state" *ngIf="!loading && batches.length === 0">
+      No batches available for the selected product.
+    </div>
+  </section>
+</div>
