@@ -1,7 +1,8 @@
 ﻿import { Component, DestroyRef, OnInit, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { distinctUntilChanged } from 'rxjs';
+import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { distinctUntilChanged, filter } from 'rxjs';
 import { PharmaProduct } from '../../core/models/pharma-product.model';
 import { CartService } from '../../core/services/cart.service';
 import { CatalogSearchService } from '../../core/services/catalog-search.service';
@@ -19,6 +20,8 @@ export class ProductsPageComponent implements OnInit {
   private cartService = inject(CartService);
   private catalogSearch = inject(CatalogSearchService);
   private dialog = inject(MatDialog);
+  private router = inject(Router);
+  private activatedRoute = inject(ActivatedRoute);
   private destroyRef = inject(DestroyRef);
 
   products: PharmaProduct[] = [];
@@ -46,6 +49,15 @@ export class ProductsPageComponent implements OnInit {
   ngOnInit(): void {
     this.loadInitialData();
 
+    this.router.events
+      .pipe(
+        filter(event => event instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef)
+      )
+      .subscribe(() => this.scrollToRouteAnchor());
+
+    this.scrollToRouteAnchor();
+
     this.catalogSearch.search$
       .pipe(distinctUntilChanged(), takeUntilDestroyed(this.destroyRef))
       .subscribe(term => {
@@ -54,6 +66,30 @@ export class ProductsPageComponent implements OnInit {
           this.applyFilters();
         }
       });
+  }
+
+  private scrollToRouteAnchor(): void {
+    const anchorFromData = this.activatedRoute.snapshot.data['anchor'];
+    const fragment = this.activatedRoute.snapshot.fragment ?? this.activatedRoute.root.fragment;
+    const anchor = anchorFromData ?? fragment;
+
+    if (!anchor) {
+      return;
+    }
+
+    const element = document.getElementById(anchor);
+    if (!element) {
+      return;
+    }
+
+    const computedHeight = getComputedStyle(document.documentElement).getPropertyValue('--public-topbar-height');
+    const topBarHeight = parseInt(computedHeight, 10) || 128;
+    const hero = document.querySelector<HTMLElement>('.fixed-top-section');
+    const heroHeight = hero ? hero.offsetHeight : 0;
+    const offset = topBarHeight + heroHeight + 24;
+    const position = element.getBoundingClientRect().top + window.scrollY - offset;
+
+    window.scrollTo({ top: position, behavior: 'smooth' });
   }
 
   loadInitialData(): void {

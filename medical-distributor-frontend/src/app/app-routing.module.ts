@@ -15,14 +15,31 @@ import { CheckoutPageComponent } from './pages/checkout/checkout-page.component'
 import { PaymentsPageComponent } from './pages/payments/payments-page.component';
 import { ReturnsPageComponent } from './pages/returns/returns-page.component';
 import { ReportsPageComponent } from './pages/reports/reports-page.component';
+import { InvoiceFailureComponent } from './pages/invoice-failure/invoice-failure.component';
+import { InvoiceSuccessComponent } from './pages/invoice-success/invoice-success.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   {
+    path: 'invoices/success',
+    component: InvoiceSuccessComponent,
+  },
+  {
+    path: 'invoices/failure',
+    component: InvoiceFailureComponent,
+  },
+  {
     path: 'shop',
     component: PublicLayoutComponent,
     children: [
+      {path: 'invoices/success',component: InvoiceSuccessComponent,},
+      {path: 'invoices/failure',component: InvoiceFailureComponent,},
       { path: '', component: ProductsPageComponent },
+      { path: 'orders', component: ProductsPageComponent, data: { anchor: 'orders' } },
+      { path: 'returns', component: ProductsPageComponent, data: { anchor: 'returns' } },
+      { path: 'about', component: ProductsPageComponent, data: { anchor: 'about' } },
+      { path: 'support', component: ProductsPageComponent, data: { anchor: 'support' } },
+      { path: 'profile', component: ProductsPageComponent, data: { anchor: 'profile' } },
       { path: 'checkout', component: CheckoutPageComponent }
     ]
   },
@@ -75,6 +92,18 @@ const routes: Routes = [
         canActivate: [RoleGuard],
         data: { roles: ['SALES_MANAGER', 'FINANCE', 'AUDITOR'] }
       },
+      // {
+      //   path: 'invoices/success',
+      //   component: InvoiceSuccessComponent,
+      //   // canActivate: [RoleGuard],
+      //   // data: { roles: ['FINANCE', 'AUDITOR'] }
+      // },
+      // {
+      //   path: 'invoices/failure',
+      //   component: InvoiceFailureComponent,
+      //   // canActivate: [RoleGuard],
+      //   // data: { roles: ['FINANCE', 'AUDITOR'] }
+      // },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]
   },
@@ -85,4 +114,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

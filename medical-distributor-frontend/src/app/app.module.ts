@@ -23,6 +23,7 @@ import { CheckoutPageComponent } from './pages/checkout/checkout-page.component'
 import { PaymentsPageComponent } from './pages/payments/payments-page.component';
 import { PaymentAllocationDialogComponent } from './pages/payments/payment-allocation-dialog.component';
 import { ReturnsPageComponent } from './pages/returns/returns-page.component';
+import { ProfileDetailsComponent } from './pages/profile-details/profile-details.component';
 import { ReportsPageComponent } from './pages/reports/reports-page.component';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 
@@ -55,6 +56,7 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
     ReactiveFormsModule,
     FormsModule,
     SharedModule,
+    ProfileDetailsComponent,
     AppRoutingModule
   ],
   providers: [

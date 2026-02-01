@@ -4,36 +4,43 @@
       <div class="brand-title">MedDistributor ERP</div>
       <div class="brand-subtitle">Wholesale pharmaceutical storefront</div>
     </div>
-
     <div class="search">
       <mat-icon>search</mat-icon>
-      <input
-        matInput
-        [(ngModel)]="search"
-        (ngModelChange)="onSearchChange($event)"
-        placeholder="Search products, SKU, manufacturer"
-      />
+      <input matInput [(ngModel)]="search" (ngModelChange)="onSearchChange($event)"
+        placeholder="Search products, SKU, manufacturer" />
     </div>
-
     <div class="actions">
       <a mat-button routerLink="/shop">Products</a>
       <a mat-stroked-button routerLink="/shop/checkout">Checkout</a>
       <a mat-flat-button color="primary" routerLink="/login">Sign in</a>
-      <a
-        class="about-link"
-        mat-button
-        routerLink="/shop"
-        fragment="about"
-        (click)="$event.stopPropagation()"
-      >
+      <a class="about-link" mat-button routerLink="/shop" fragment="about" (click)="$event.stopPropagation()">
         About us
       </a>
-      <button mat-icon-button (click)="toggleTheme()" aria-label="Toggle theme">
-        <mat-icon>{{ isDark ? 'light_mode' : 'dark_mode' }}</mat-icon>
+      <button mat-icon-button (click)="toggleTheme()" [attr.aria-label]="themeTooltip" [matTooltip]="themeTooltip"
+        matTooltipPosition="below">
+        <mat-icon>{{ themeIcon }}</mat-icon>
       </button>
-      <button mat-button [matMenuTriggerFor]="profileMenu">
-        <mat-icon>account_circle</mat-icon>
-        Profile
+      <button
+        mat-icon-button
+        [matMenuTriggerFor]="themePicker"
+        aria-label="Choose palette"
+        matTooltip="Pick a palette"
+        matTooltipPosition="below"
+      >
+        <mat-icon>palette</mat-icon>
+      </button>
+      <a class="about-link" mat-button routerLink="/shop/invoices/success" fragment="about" (click)="$event.stopPropagation()">
+        Success
+      </a>
+      <a class="about-link" mat-button routerLink="/shop/invoices/failure" fragment="about" (click)="$event.stopPropagation()">
+       Failure
+      </a>
+      <button mat-button [matMenuTriggerFor]="profileMenu" class="profile-trigger">
+        <span class="profile-trigger__label">
+          <mat-icon>account_circle</mat-icon>
+          <span>Profile</span>
+        </span>
+        <mat-icon>arrow_drop_down</mat-icon>
       </button>
     </div>
     <mat-menu #profileMenu="matMenu">
@@ -45,7 +52,7 @@
         <mat-icon>keyboard_return</mat-icon>
         <span>Returns</span>
       </button>
-      <button mat-menu-item (click)="goToProfile('profile')">
+      <button mat-menu-item (click)="goToProfile()">
         <mat-icon>person</mat-icon>
         <span>Profile overview</span>
       </button>
@@ -53,19 +60,31 @@
         <mat-icon>settings</mat-icon>
         <span>Settings</span>
       </button>
-      <button mat-menu-item (click)="toggleTheme(!isDark)">
-        <mat-icon>{{ isDark ? 'light_mode' : 'dark_mode' }}</mat-icon>
-        <span>{{ isDark ? 'Switch to light' : 'Switch to dark' }}</span>
-      </button>
+    </mat-menu>
+    <mat-menu #themePicker="matMenu" class="theme-picker">
+      <ng-container *ngIf="currentTheme$ | async as currentTheme">
+        <button
+          mat-menu-item
+          *ngFor="let theme of themes"
+          (click)="selectTheme(theme.id)"
+          [disabled]="theme.id === currentTheme.id"
+        >
+          <span class="theme-swatch" [style.background]="theme.accent"></span>
+          <span>{{ theme.label }}</span>
+          <mat-icon *ngIf="theme.id === currentTheme.id">check</mat-icon>
+        </button>
+      </ng-container>
     </mat-menu>
   </div>
 
   <div class="nav-row">
     <nav>
-      <a routerLink="/shop" routerLinkActive="active">Home</a>
-      <a routerLink="/shop" routerLinkActive="active">Products</a>
-      <a routerLink="/shop" fragment="about">About</a>
-      <a routerLink="/shop" fragment="support">Support</a>
+      <a routerLink="/shop" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/shop/orders" routerLinkActive="active">Orders</a>
+      <a routerLink="/shop/returns" routerLinkActive="active">Returns</a>
+      <a routerLink="/shop/about" routerLinkActive="active">About</a>
+      <a routerLink="/shop/support" routerLinkActive="active">Support</a>
+      <a routerLink="/shop/profile" routerLinkActive="active">Profile</a>
     </nav>
     <div class="category-links">
       <button *ngFor="let category of categories" mat-stroked-button>
