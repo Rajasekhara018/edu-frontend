@@ -728,32 +728,63 @@ export class PharmaProductsService {
   }
 
   private buildImageUrl(category: string, seed: number): string {
-    const categoryImages: Record<string, string[]> = {
-      'Pain Relief': ['Aspirin_tablets.jpg', 'Pill_bottle.jpg', 'Tablets.jpg'],
-      'Respiratory & Allergy': ['Inhaler.jpg', 'Nasal_spray.jpg', 'Cough_syrup.jpg'],
-      'Gastro & Liver': ['Antacid_tablets.jpg', 'Medicine_bottle.jpg', 'Capsule.jpg'],
-      'Antibiotics': ['Capsule.jpg', 'Medicine_bottle.jpg', 'Pill_bottle.jpg'],
-      'Diabetes Care': ['Blood_glucose_meter.jpg', 'Insulin_syringe.jpg', 'Glucometer.jpg'],
-      'Cardio & BP': ['Heart_medication.jpg', 'Tablets.jpg', 'Pill_bottle.jpg'],
-      'Vitamins & Nutrition': ['Vitamin_C.jpg', 'Multivitamin.jpg', 'Capsule.jpg'],
-      'Dermatology': ['Skin_cream.jpg', 'Ointment.jpg', 'Tube_of_cream.jpg'],
-      "Women's Health": ['Pregnancy_test.jpg', 'Prenatal_vitamins.jpg', 'Hormone_pills.jpg'],
-      'Baby & Mother': ['Baby_formula.jpg', 'Baby_lotion.jpg', 'Baby_cream.jpg'],
-      'First Aid & Devices': ['Bandage.jpg', 'Thermometer.jpg', 'Medical_gloves.jpg'],
-      'OTC Essentials': ['Antiseptic.jpg', 'First_aid_kit.jpg', 'Pill_bottle.jpg']
-    };
+    const palette = this.categoryPalette[category] ?? this.defaultPalette;
+    const baseColor = palette[seed % palette.length];
+    const accentColor = palette[(seed + 1) % palette.length];
+    const text = category.split(' ').slice(0, 2).join(' ');
 
-    const images = categoryImages[category];
-    if (!images || images.length === 0) {
-      return this.toWikimediaFilePath('Pill_bottle.jpg');
-    }
+    const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="420" height="340" viewBox="0 0 420 340">
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="${baseColor}" />
+            <stop offset="100%" stop-color="${accentColor}" />
+          </linearGradient>
+        </defs>
+        <rect width="420" height="340" rx="28" ry="28" fill="url(#grad)" />
+        <g transform="translate(24, 220)">
+          <rect width="160" height="32" rx="16" fill="rgba(255,255,255,0.2)" />
+          <rect x="0" y="48" width="240" height="16" rx="8" fill="rgba(255,255,255,0.35)" />
+          <rect x="0" y="72" width="200" height="12" rx="6" fill="rgba(255,255,255,0.35)" />
+        </g>
+        <text x="30" y="120" font-family="IBM Plex Sans, system-ui, sans-serif" font-weight="700" font-size="32" fill="#fff">
+          ${this.escapeXml(text)}
+        </text>
+        <text x="30" y="160" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="16" fill="#f8fbff">
+          Batch-trace ready
+        </text>
+      </svg>`;
 
-    const index = Math.abs(seed) % images.length;
-    return this.toWikimediaFilePath(images[index]);
+    return `data:image/svg+xml,${encodeURIComponent(svg)}`;
   }
 
-  private toWikimediaFilePath(fileName: string): string {
-    return `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}?width=640`;
+  private escapeXml(value: string): string {
+    return value.replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  private get categoryPalette(): Record<string, string[]> {
+    return {
+      'Pain Relief': ['#1d4ed8', '#3b82f6', '#60a5fa'],
+      'Respiratory & Allergy': ['#047857', '#0d9488', '#14b8a6'],
+      'Gastro & Liver': ['#c026d3', '#a855f7', '#7c3aed'],
+      'Antibiotics': ['#dc2626', '#f87171', '#fca5a5'],
+      'Diabetes Care': ['#0ea5e9', '#38bdf8', '#7dd3fc'],
+      'Cardio & BP': ['#f97316', '#fb923c', '#fdba74'],
+      'Vitamins & Nutrition': ['#d97706', '#f59e0b', '#fbbf24'],
+      'Dermatology': ['#9333ea', '#a855f7', '#c084fc'],
+      "Women's Health": ['#ec4899', '#f472b6', '#fb7185'],
+      'Baby & Mother': ['#6366f1', '#818cf8', '#a5b4fc'],
+      'First Aid & Devices': ['#0f172a', '#1e293b', '#0ea5e9'],
+      'OTC Essentials': ['#059669', '#10b981', '#34d399']
+    };
+  }
+
+  private get defaultPalette(): string[] {
+    return ['#16a34a', '#22c55e', '#4ade80'];
   }
 
   private nextHsn(category: string): string {
