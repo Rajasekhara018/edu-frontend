@@ -1,0 +1,26 @@
+﻿<div class="app-shell">
+  <header class="app-header">
+    <div>
+      <h1>Goods Transportation Booking</h1>
+      <p>Offline-only flow with LocalStorage persistence</p>
+    </div>
+    <div class="header-actions">
+      <ng-container *ngIf="user; else guest">
+        <span class="chip">{{ user.name }} · {{ user.role }}</span>
+        <button type="button" (click)="logout()">Logout</button>
+      </ng-container>
+      <ng-template #guest>
+        <a routerLink="/auth">Login</a>
+      </ng-template>
+    </div>
+  </header>
+  <nav class="nav" *ngIf="user">
+    <a routerLink="/customer" *ngIf="user?.role === 'CUSTOMER'">Customer</a>
+    <a routerLink="/driver" *ngIf="user?.role === 'DRIVER'">Driver</a>
+    <a routerLink="/admin" *ngIf="user?.role === 'ADMIN'">Admin</a>
+  </nav>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+<app-toast-container></app-toast-container>

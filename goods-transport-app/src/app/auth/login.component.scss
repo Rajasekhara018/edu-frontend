@@ -1,0 +1,9 @@
+﻿.auth-shell { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #0f172a, #1d4ed8); padding: 2rem; }
+.card { background: white; padding: 2rem; border-radius: 1rem; width: 100%; max-width: 420px; box-shadow: 0 20px 60px rgba(15, 23, 42, 0.35); }
+.auth-form { display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem; }
+label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.85rem; }
+input, select { border: 1px solid #d1d5db; border-radius: 0.5rem; padding: 0.55rem 0.75rem; font-size: 1rem; }
+small { color: #dc2626; }
+button { padding: 0.75rem; border-radius: 0.75rem; border: none; background: #2563eb; color: white; font-weight: bold; cursor: pointer; }
+button:disabled { background: #94a3b8; cursor: not-allowed; }
+@media (max-width: 600px) { .auth-shell { padding: 1rem; } }

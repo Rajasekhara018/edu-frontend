@@ -1,0 +1,39 @@
+﻿<main class="auth-shell">
+  <section class="card">
+    <h1>Goods Transportation Portal</h1>
+    <p>Select your role and we will persist your session locally.</p>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="auth-form">
+      <label>
+        <span>Name</span>
+        <input formControlName="name" placeholder="Full name" />
+        <small *ngIf="form.controls.name.invalid && form.controls.name.touched">Name is required</small>
+      </label>
+      <label>
+        <span>Phone</span>
+        <input formControlName="phone" placeholder="Mobile number" />
+        <small *ngIf="form.controls.phone.invalid && form.controls.phone.touched">Phone is required</small>
+      </label>
+      <label>
+        <span>Role</span>
+        <select formControlName="role">
+          <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+        </select>
+      </label>
+      <label>
+        <span>Email</span>
+        <input formControlName="email" placeholder="Email" />
+      </label>
+      <div *ngIf="isDriver" class="driver-info">
+        <label>
+          <span>Vehicle Type</span>
+          <input formControlName="vehicleType" placeholder="Mini truck" />
+        </label>
+        <label>
+          <span>Vehicle Number</span>
+          <input formControlName="vehicleNumber" placeholder="MH12AX3456" />
+        </label>
+      </div>
+      <button type="submit" [disabled]="form.invalid && !isDriver">Enter</button>
+    </form>
+  </section>
+</main>
