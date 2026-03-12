@@ -1,6 +1,6 @@
 ﻿import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../core/auth.service';
 import { ToastService } from '../shared/toast.service';
@@ -15,21 +15,23 @@ import { Role } from '../core/models';
 })
 export class LoginComponent {
   readonly roles: Role[] = ['CUSTOMER', 'DRIVER', 'ADMIN'];
-  readonly form = this.fb.group({
-    name: ['', Validators.required],
-    phone: ['', Validators.required],
-    role: ['CUSTOMER', Validators.required],
-    email: [''],
-    vehicleType: [''],
-    vehicleNumber: ['']
-  });
+  readonly form: FormGroup;
 
   constructor(
     private readonly fb: FormBuilder,
     private readonly auth: AuthService,
     private readonly router: Router,
     private readonly toast: ToastService
-  ) {}
+  ) {
+    this.form = this.fb.group({
+      name: ['', Validators.required],
+      phone: ['', Validators.required],
+      role: ['CUSTOMER', Validators.required],
+      email: [''],
+      vehicleType: [''],
+      vehicleNumber: ['']
+    });
+  }
 
   get isDriver() {
     return this.form.controls.role.value === 'DRIVER';
