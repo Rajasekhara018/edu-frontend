@@ -10,6 +10,10 @@ export type BookingStatus =
   | 'DELIVERED'
   | 'CANCELLED';
 
+export type PaymentStatus = 'PENDING' | 'PAID';
+
+export type PaymentMethod = 'UPI' | 'CARD' | 'NET_BANKING' | 'COD';
+
 export interface User {
   id: string;
   role: Role;
@@ -72,6 +76,14 @@ export interface Booking {
     perKmRate: number;
     tax: number;
     total: number;
+  };
+  payment: {
+    status: PaymentStatus;
+    amount: number;
+    method: PaymentMethod;
+    paidAt?: number;
+    paidBy?: string;
+    transactionRef?: string;
   };
   status: BookingStatus;
   statusHistory: {

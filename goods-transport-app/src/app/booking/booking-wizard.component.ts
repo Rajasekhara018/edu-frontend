@@ -6,7 +6,7 @@ import { PricingService } from '../core/pricing.service';
 import { BookingService } from '../core/booking.service';
 import { AuthService } from '../core/auth.service';
 import { ToastService } from '../shared/toast.service';
-import { Booking, BookingStatus } from '../core/models';
+import { Booking, BookingStatus, PaymentMethod } from '../core/models';
 
 @Component({
   selector: 'app-booking-wizard',
@@ -14,13 +14,22 @@ import { Booking, BookingStatus } from '../core/models';
   imports: [CommonModule, ReactiveFormsModule],
   template: `
     <section class="wizard-shell">
-      <h2>Book Transport</h2>
-      <p>Four-step booking with LocalStorage persistence.</p>
+      <div class="wizard-head">
+        <div>
+          <p class="eyebrow">Freight booking studio</p>
+          <h2>Book Transport</h2>
+          <p>Four-step booking with a cleaner quote-to-confirm flow.</p>
+        </div>
+        <div class="wizard-summary" *ngIf="estimate">
+          <span>Estimated total</span>
+          <strong>₹{{ estimate.total | number: '1.0-0' }}</strong>
+        </div>
+      </div>
       <div class="steps">
         <span class="step" [class.active]="stepNumber === 1">1. Pickup & Drop</span>
         <span class="step" [class.active]="stepNumber === 2">2. Goods</span>
         <span class="step" [class.active]="stepNumber === 3">3. Vehicle</span>
-        <span class="step" [class.active]="stepNumber === 4">4. Confirm</span>
+        <span class="step" [class.active]="stepNumber === 4">4. Payment</span>
       </div>
       <form class="step-form" [formGroup]="currentForm" (ngSubmit)="next()">
         <ng-container [ngSwitch]="stepNumber">
@@ -109,28 +118,45 @@ import { Booking, BookingStatus } from '../core/models';
               <p><strong>Vehicle:</strong> {{ selectedVehicle?.name || '–' }}</p>
               <p><strong>Estimated total:</strong> ₹{{ estimate?.total | number: '1.0-0' }}</p>
             </div>
+            <label>
+              Payment method
+              <select formControlName="method">
+                <option *ngFor="let method of paymentMethods" [value]="method">{{ paymentLabel(method) }}</option>
+              </select>
+            </label>
+            <div class="estimate payment-box">
+              <p><strong>Payment status on booking:</strong> {{ selectedPaymentMethod === 'COD' ? 'Pending until collection' : 'Paid immediately' }}</p>
+              <p *ngIf="selectedPaymentMethod !== 'COD'">The order will be saved as paid and visible to driver and admin.</p>
+              <p *ngIf="selectedPaymentMethod === 'COD'">Customer can still pay later from booking details, or the order can remain cash on delivery.</p>
+            </div>
           </ng-container>
         </ng-container>
         <div class="actions">
           <button type="button" (click)="previous()" [disabled]="stepNumber === 1">Back</button>
-          <button type="submit">{{ stepNumber === 4 ? 'Confirm booking' : 'Next' }}</button>
+          <button type="submit">{{ stepNumber === 4 ? confirmLabel : 'Next' }}</button>
         </div>
       </form>
     </section>
   `,
   styles: [
-    ".wizard-shell { background: white; padding: 1.5rem; border-radius: 1rem; display: flex; flex-direction: column; gap: 1rem; }",
+    ".wizard-shell { background: rgba(255,255,255,0.92); padding: 1.5rem; border-radius: 1.25rem; display: flex; flex-direction: column; gap: 1rem; border: 1px solid rgba(20,32,24,0.1); box-shadow: 0 18px 40px rgba(28,39,32,0.08); }",
+    ".wizard-head { display: flex; justify-content: space-between; gap: 1rem; align-items: start; }",
+    ".wizard-head h2 { margin: 0.25rem 0 0.35rem; }",
+    ".eyebrow { margin: 0; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; color: #ea580c; font-weight: 700; }",
+    ".wizard-summary { background: linear-gradient(135deg, #fff7ed, #ffedd5); border: 1px solid rgba(234,88,12,0.14); padding: 0.9rem 1rem; border-radius: 1rem; min-width: 220px; }",
+    ".wizard-summary span { display: block; color: #526257; }",
+    ".wizard-summary strong { font-size: 1.45rem; }",
     ".steps { display: flex; gap: 0.6rem; flex-wrap: wrap; }",
-    ".step { padding: 0.45rem 0.9rem; border-radius: 0.5rem; background: #e0e7ff; font-size: 0.8rem; }",
-    ".step.active { background: #1d4ed8; color: white; }",
+    ".step { padding: 0.55rem 0.95rem; border-radius: 999px; background: #fff7ed; font-size: 0.82rem; color: #ea580c; }",
+    ".step.active { background: linear-gradient(135deg, #f97316, #ea580c); color: white; }",
     ".step-form { display: flex; flex-direction: column; gap: 0.9rem; }",
     "label { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.85rem; }",
-    "input, select, textarea { border: 1px solid #cbd5f5; border-radius: 0.5rem; padding: 0.55rem 0.75rem; font-size: 1rem; }",
-    ".estimate { background: #f1f5f9; padding: 0.75rem; border-radius: 0.65rem; }",
-    ".review { background: #f8fafc; padding: 0.9rem; border-radius: 0.65rem; }",
+    "input, select, textarea { border: 1px solid rgba(20,32,24,0.14); border-radius: 0.75rem; padding: 0.65rem 0.8rem; font-size: 1rem; }",
+    ".estimate, .review { background: #f8fbf9; padding: 0.95rem; border-radius: 1rem; border: 1px solid rgba(20,32,24,0.08); }",
     ".actions { display: flex; justify-content: flex-end; gap: 0.75rem; }",
-    "button { padding: 0.65rem 1.2rem; border: none; border-radius: 0.6rem; background: #2563eb; color: white; cursor: pointer; }",
-    "button:disabled { background: #cbd5f5; cursor: not-allowed; }"
+    "button { padding: 0.75rem 1.2rem; border: none; border-radius: 999px; background: linear-gradient(135deg, #f97316, #ea580c); color: white; cursor: pointer; }",
+    "button:disabled { background: #cbd5f5; cursor: not-allowed; }",
+    "@media (max-width: 720px) { .wizard-head { flex-direction: column; } .wizard-summary { min-width: unset; width: 100%; } }"
   ]
 })
 export class BookingWizardComponent {
@@ -156,6 +182,11 @@ export class BookingWizardComponent {
     packages: [1, [Validators.required, Validators.min(1)]],
     fragile: ['false'],
     notes: ['']
+  });
+
+  readonly paymentMethods: PaymentMethod[] = ['UPI', 'CARD', 'NET_BANKING', 'COD'];
+  readonly paymentForm = this.fb.group({
+    method: ['UPI', Validators.required]
   });
 
   constructor(
@@ -205,7 +236,7 @@ export class BookingWizardComponent {
   }
 
   get currentForm() {
-    const map = [this.pickupForm, this.goodsForm, this.vehicleForm];
+    const map = [this.pickupForm, this.goodsForm, this.vehicleForm, this.paymentForm];
     return map[this.stepNumber - 1] ?? this.pickupForm;
   }
 
@@ -215,6 +246,18 @@ export class BookingWizardComponent {
 
   get goodsData() {
     return this.goodsForm.value;
+  }
+
+  get selectedPaymentMethod() {
+    return (this.paymentForm.controls.method.value as PaymentMethod) || 'UPI';
+  }
+
+  get confirmLabel() {
+    return this.selectedPaymentMethod === 'COD' ? 'Confirm booking' : 'Pay and confirm booking';
+  }
+
+  paymentLabel(method: PaymentMethod) {
+    return method === 'NET_BANKING' ? 'Net banking' : method;
   }
 
   next() {
@@ -254,6 +297,8 @@ export class BookingWizardComponent {
     const dropPhone = this.pickupForm.controls.dropPhone.value?.trim() ?? '';
     const goodsCategory = this.goodsForm.controls.category.value?.trim() ?? '';
     const goodsNotes = this.goodsForm.controls.notes.value?.trim();
+    const paymentMethod = this.selectedPaymentMethod;
+    const paidAt = paymentMethod === 'COD' ? undefined : Date.now();
     const booking: Booking = {
       id: this.createId(),
       createdAt: Date.now(),
@@ -286,14 +331,23 @@ export class BookingWizardComponent {
         tax: this.estimate.tax,
         total: this.estimate.total
       },
+      payment: {
+        status: paymentMethod === 'COD' ? 'PENDING' : 'PAID',
+        amount: this.estimate.total,
+        method: paymentMethod,
+        paidAt,
+        paidBy: paidAt ? userId : undefined,
+        transactionRef: paidAt ? `pay-${Math.random().toString(36).slice(2, 10)}` : undefined
+      },
       status: 'CREATED',
       statusHistory: [{ status: 'CREATED' as BookingStatus, at: Date.now(), by: userId }]
     };
     this.bookingService.create(booking);
-    this.toast.show('Booking saved locally', 'success');
+    this.toast.show(paymentMethod === 'COD' ? 'Booking saved with payment pending' : 'Booking saved and payment received', 'success');
     this.step.set(1);
     this.pickupForm.reset();
     this.goodsForm.reset({ category: '', weightKg: 1, packages: 1, fragile: 'false', notes: '' });
+    this.paymentForm.reset({ method: 'UPI' });
     const firstVehicle = this.vehicles[0];
     const firstRule = this.pricingRules[0];
     this.vehicleForm.reset({ vehicleType: firstVehicle?.id ?? '', distanceKm: 20, pricingRuleId: firstRule?.id ?? '' });

@@ -1,0 +1,94 @@
+<main class="auth-shell">
+  <section class="auth-layout">
+    <article class="auth-intro">
+      <p class="eyebrow">Secure access</p>
+      <div class="intro-badges">
+        <span>Customer</span>
+        <span>Driver</span>
+        <span>Admin</span>
+      </div>
+      <h1>Login to open the right operations workspace.</h1>
+      <p class="intro-copy">
+        Customer, driver and admin areas are protected. Use this page to register or resume a locally persisted session
+        and continue into the correct workspace.
+      </p>
+      <div class="signal-row">
+        <div class="signal-card">
+          <strong>Instant onboarding</strong>
+          <span>First login creates a local workspace profile automatically.</span>
+        </div>
+        <div class="signal-card">
+          <strong>Role-aware access</strong>
+          <span>Only the matching dashboard opens after login.</span>
+        </div>
+      </div>
+      <div class="info-list">
+        <div class="info-card">
+          <strong>Customer</strong>
+          <span>Create shipments, review booking history and track movement.</span>
+        </div>
+        <div class="info-card">
+          <strong>Driver</strong>
+          <span>Open assigned jobs, update milestones and save proof notes.</span>
+        </div>
+        <div class="info-card">
+          <strong>Admin</strong>
+          <span>Manage fleet types, pricing rules and dispatch assignment decisions.</span>
+        </div>
+      </div>
+    </article>
+
+    <section class="card">
+      <div class="card-head">
+        <p class="eyebrow">Role login</p>
+        <div class="head-chip">Trusted local demo access</div>
+        <h2>Goods Transportation Portal</h2>
+        <p>Select your role and continue. New users are created locally on first login.</p>
+      </div>
+
+      <form [formGroup]="form" (ngSubmit)="submit()" class="auth-form">
+        <div class="field-grid">
+          <label>
+            <span>Name</span>
+            <input formControlName="name" placeholder="Full name" />
+            <small *ngIf="form.controls.name.invalid && form.controls.name.touched">Name is required</small>
+          </label>
+          <label>
+            <span>Phone</span>
+            <input formControlName="phone" placeholder="Mobile number" />
+            <small *ngIf="form.controls.phone.invalid && form.controls.phone.touched">Phone is required</small>
+          </label>
+        </div>
+
+        <div class="field-grid">
+          <label>
+            <span>Role</span>
+            <select formControlName="role">
+              <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+            </select>
+          </label>
+          <label>
+            <span>Email</span>
+            <input formControlName="email" placeholder="name@company.com" />
+          </label>
+        </div>
+
+        <div *ngIf="isDriver" class="driver-info">
+          <label>
+            <span>Vehicle Type</span>
+            <input formControlName="vehicleType" placeholder="Mini truck" />
+          </label>
+          <label>
+            <span>Vehicle Number</span>
+            <input formControlName="vehicleNumber" placeholder="MH12AX3456" />
+          </label>
+        </div>
+
+        <button type="submit" [disabled]="submitting">
+          {{ submitting ? 'Opening workspace...' : 'Continue' }}
+        </button>
+        <p class="form-note">Use the same phone number and role to resume an existing local session.</p>
+      </form>
+    </section>
+  </section>
+</main>

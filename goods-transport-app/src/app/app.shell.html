@@ -1,4 +1,4 @@
-﻿<div class="app-shell">
+<div class="app-shell" [class.auth-shell-mode]="isAuthPage">
   <header class="mega-header">
     <div class="top-bar">
       <a class="brand" routerLink="/" aria-label="GoodsGo home">
@@ -18,7 +18,7 @@
         </div>
       </div>
 
-      <div class="header-actions">
+      <div class="header-actions" *ngIf="user || !isAuthPage">
         <ng-container *ngIf="user; else guest">
           <div class="account-card">
             <span class="small">Signed in</span>
@@ -32,7 +32,7 @@
       </div>
     </div>
 
-    <div class="nav-bar">
+    <div class="nav-bar" *ngIf="!isAuthPage">
       <nav class="nav-links">
         <a routerLink="/" [class.active]="isHomePage">Home</a>
         <a routerLink="/auth" [class.active]="isActive('/auth')">Login</a>
@@ -48,7 +48,7 @@
     <router-outlet></router-outlet>
   </main>
 
-  <footer class="footer">
+  <footer class="footer" *ngIf="!isAuthPage">
     <div>
       <div class="footer-brand">
         <span class="logo-mark">GG</span>

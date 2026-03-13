@@ -10,12 +10,13 @@ import { Role } from '../core/models';
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  templateUrl: './login.page.html',
+  styleUrls: ['./login.page.scss']
 })
 export class LoginComponent {
   readonly roles: Role[] = ['CUSTOMER', 'DRIVER', 'ADMIN'];
   readonly form: FormGroup;
+  submitting = false;
 
   constructor(
     private readonly fb: FormBuilder,
@@ -37,7 +38,8 @@ export class LoginComponent {
     return this.form.controls.role.value === 'DRIVER';
   }
 
-  submit() {
+  async submit() {
+    this.form.markAllAsTouched();
     if (this.form.invalid) {
       this.toast.show('Please complete the form', 'warn');
       return;
@@ -59,9 +61,26 @@ export class LoginComponent {
           }
         : undefined
     };
+    this.submitting = true;
     this.auth.login(payload);
     this.toast.show('Welcome ' + payload.name, 'success');
-    const next = payload.role === 'CUSTOMER' ? '/customer' : payload.role === 'DRIVER' ? '/driver' : '/admin';
-    this.router.navigateByUrl(next);
+
+    const roleRoutes: Record<Role, string> = {
+      CUSTOMER: '/customer',
+      DRIVER: '/driver',
+      ADMIN: '/admin'
+    };
+    const next = roleRoutes[payload.role];
+
+    try {
+      const navigated = await this.router.navigateByUrl(next);
+      if (!navigated) {
+        this.toast.show('Login succeeded, but route navigation failed', 'error');
+      }
+    } catch {
+      this.toast.show('Unable to open the selected workspace', 'error');
+    } finally {
+      this.submitting = false;
+    }
   }
 }

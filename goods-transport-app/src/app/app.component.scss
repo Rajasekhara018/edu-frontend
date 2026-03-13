@@ -68,3 +68,50 @@ nav a {
     border-radius: 0.5rem;
     padding: 0.5rem 0.85rem;
 }
+
+.app-shell {
+  padding-top: 0;
+  background: transparent;
+  padding-bottom: 0;
+}
+
+.top-bar,
+.nav-bar,
+.hero-section,
+.showcase-grid,
+.quick-section,
+.support-section,
+.footer,
+.page-shell {
+  position: relative;
+  z-index: 1;
+}
+
+.mega-header .primary-btn,
+.hero-section .primary-btn,
+.quick-section .primary-btn {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: white;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+}
+
+.hero-section .ghost-btn {
+  background: white;
+  color: var(--ink);
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+}
+
+.nav-links a,
+.section-heading a,
+.footer-links a,
+.quick-card,
+.brand,
+.footer-brand {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
