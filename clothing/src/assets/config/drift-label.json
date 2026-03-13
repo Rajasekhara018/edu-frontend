@@ -1,0 +1,85 @@
+{
+    "branding": {
+        "name": "Drift Label",
+        "tagline": "Relaxed coastal dressing with easy motion",
+        "logoMark": "DL",
+        "logoText": "Drift Label",
+        "logoDot": ".life",
+        "pageTitle": "Drift Label",
+        "locationLabel": "Drift house: Goa studio",
+        "accountLabel": "Drift circle",
+        "footerTagline": "Easy resortwear, sun-washed fabrics, and laid-back pieces built for coastal pace.",
+        "footerCopyright": "© 2026 Drift Label. All rights reserved."
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #ecfeff 0%, #cffafe 42%, #a5f3fc 100%)",
+        "ink": "#10333c",
+        "muted": "#55747b",
+        "accent": "#0891b2",
+        "accentStrong": "#0e7490",
+        "neon": "#67e8f9",
+        "mint": "#cffafe",
+        "cream": "#f4fdff",
+        "headerGradient": "radial-gradient(circle at top left, #f0feff 0%, #d8fbff 46%, #a5f3fc 100%)",
+        "darkSurface": "#10333c",
+        "darkSurfaceAlt": "#18505b",
+        "onDark": "#f4fdff",
+        "onDarkMuted": "#d2ecf1"
+    },
+    "about": {
+        "eyebrow": "Drift Label",
+        "title": "Resort-ready essentials with a soft coastal drift.",
+        "description": "Drift Label focuses on breathable fabrics, easy silhouettes, and vacation-to-city crossover dressing."
+    },
+    "contact": {
+        "title": "Need help with a getaway wardrobe?",
+        "ctaLabel": "Plan with Drift"
+    },
+    "footer": {
+        "contactLines": [
+            "+91 (817) 260-1117",
+            "hello@driftlabel.life",
+            "Goa studio"
+        ],
+        "appCtaLabel": "Get Drift app"
+    },
+    "promoMessages": [
+        "Vacation capsule drops now live",
+        "Lightweight layers from Rs 799"
+    ],
+    "catalog": {
+        "generation": {
+            "minProductCount": 320,
+            "brands": [
+                "Drift",
+                "Cove",
+                "Tidal",
+                "PalmForm",
+                "Breeze",
+                "Lowtide"
+            ],
+            "categories": [
+                "Women",
+                "Men",
+                "Footwear",
+                "Accessories",
+                "Home",
+                "Beachwear"
+            ],
+            "categorySpecifications": {
+                "Beachwear": {
+                    "Fabric": "Quick dry",
+                    "Fit": "Relaxed",
+                    "Use": "Vacation",
+                    "Care": "Hand wash"
+                }
+            },
+            "basePriceStart": 740,
+            "priceStep": 45,
+            "priceModulo": 5600,
+            "categoryPriceFactor": 14,
+            "discountEvery": 3,
+            "discountRate": 0.16
+        }
+    }
+}

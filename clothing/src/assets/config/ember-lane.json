@@ -1,0 +1,86 @@
+{
+    "branding": {
+        "name": "Ember Lane",
+        "tagline": "Warm luxe fashion with refined edge",
+        "logoMark": "EL",
+        "logoText": "Ember Lane",
+        "logoDot": ".house",
+        "pageTitle": "Ember Lane",
+        "locationLabel": "Ember house: Gurugram",
+        "accountLabel": "Ember member",
+        "footerTagline": "Refined warm-toned fashion with polished layers, luxe textures, and contemporary silhouettes.",
+        "footerCopyright": "© 2026 Ember Lane. All rights reserved."
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #fff7ed 0%, #ffedd5 40%, #fdba74 100%)",
+        "ink": "#351b12",
+        "muted": "#735647",
+        "accent": "#c2410c",
+        "accentStrong": "#9a3412",
+        "neon": "#fb923c",
+        "mint": "#ffedd5",
+        "cream": "#fffaf5",
+        "headerGradient": "radial-gradient(circle at top left, #fff7ef 0%, #ffe4cf 48%, #fdba74 100%)",
+        "darkSurface": "#351b12",
+        "darkSurfaceAlt": "#542919",
+        "onDark": "#fffaf5",
+        "onDarkMuted": "#efdccd"
+    },
+    "about": {
+        "eyebrow": "Ember Lane",
+        "title": "Warm neutral dressing with elevated texture and depth.",
+        "description": "Ember Lane blends autumnal palettes, premium fabrics, and polished silhouettes into a versatile modern catalog."
+    },
+    "contact": {
+        "title": "Need a premium wardrobe recommendation?",
+        "ctaLabel": "Talk to Ember expert"
+    },
+    "footer": {
+        "contactLines": [
+            "+91 (820) 290-4440",
+            "care@emberlane.house",
+            "Gurugram"
+        ],
+        "appCtaLabel": "Download Ember app"
+    },
+    "promoMessages": [
+        "Premium edit starting at Rs 1290",
+        "Luxe layers and boots in stock"
+    ],
+    "catalog": {
+        "generation": {
+            "minProductCount": 320,
+            "brands": [
+                "Ember",
+                "LaneForm",
+                "Ashwood",
+                "Copper",
+                "Rowline",
+                "Muse Ember"
+            ],
+            "categories": [
+                "Women",
+                "Men",
+                "Footwear",
+                "Accessories",
+                "Luxe",
+                "Formalwear",
+                "Home"
+            ],
+            "categorySpecifications": {
+                "Formalwear": {
+                    "Fabric": "Premium suiting",
+                    "Fit": "Modern tailored",
+                    "Occasion": "Workwear",
+                    "Care": "Dry clean"
+                }
+            },
+            "basePriceStart": 1180,
+            "priceStep": 69,
+            "priceModulo": 7400,
+            "categoryPriceFactor": 23,
+            "discountEvery": 4,
+            "discountRate": 0.2
+        }
+    }
+}

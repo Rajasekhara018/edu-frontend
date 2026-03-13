@@ -1,0 +1,78 @@
+{
+    "branding": {
+        "name": "Prism Wardrobe",
+        "tagline": "Color-forward styling across every category",
+        "logoMark": "PW",
+        "logoText": "Prism Wardrobe",
+        "logoDot": ".mix",
+        "pageTitle": "Prism Wardrobe",
+        "locationLabel": "Prism hub: Pune",
+        "accountLabel": "Prism pass",
+        "footerTagline": "A color-rich fashion storefront with category-spanning edits for bold everyday expression.",
+        "footerCopyright": "© 2026 Prism Wardrobe. All rights reserved."
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #faf5ff 0%, #f3e8ff 40%, #e9d5ff 100%)",
+        "ink": "#311549",
+        "muted": "#6e5790",
+        "accent": "#9333ea",
+        "accentStrong": "#7e22ce",
+        "neon": "#c084fc",
+        "mint": "#f3e8ff",
+        "cream": "#fefaff",
+        "headerGradient": "radial-gradient(circle at top left, #fcf4ff 0%, #f1ddff 48%, #d8b4fe 100%)",
+        "darkSurface": "#311549",
+        "darkSurfaceAlt": "#4c2370",
+        "onDark": "#fefaff",
+        "onDarkMuted": "#eadcf8"
+    },
+    "about": {
+        "eyebrow": "Prism Wardrobe",
+        "title": "Multi-color fashion stories with high-rotation versatility.",
+        "description": "Prism Wardrobe is for shoppers who like seasonal color, flexible styling, and category-spanning combinations."
+    },
+    "contact": {
+        "title": "Need a color-matched wardrobe plan?",
+        "ctaLabel": "Ask Prism stylist"
+    },
+    "footer": {
+        "contactLines": [
+            "+91 (819) 280-3339",
+            "hello@prismwardrobe.com",
+            "Pune"
+        ],
+        "appCtaLabel": "Open Prism app"
+    },
+    "promoMessages": [
+        "Color capsule week is live",
+        "Mix-and-match offers on 3+ items"
+    ],
+    "catalog": {
+        "generation": {
+            "minProductCount": 320,
+            "brands": [
+                "Prism",
+                "HueLine",
+                "Tonic",
+                "Signal",
+                "BloomCode",
+                "ModeMix"
+            ],
+            "categories": [
+                "Women",
+                "Men",
+                "Kids",
+                "Accessories",
+                "Beauty",
+                "Home",
+                "Streetwear"
+            ],
+            "basePriceStart": 680,
+            "priceStep": 63,
+            "priceModulo": 6700,
+            "categoryPriceFactor": 16,
+            "discountEvery": 3,
+            "discountRate": 0.19
+        }
+    }
+}

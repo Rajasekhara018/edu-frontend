@@ -1,0 +1,86 @@
+{
+    "branding": {
+        "name": "Solstice Wear",
+        "tagline": "Sunlit seasonal fashion and bright essentials",
+        "logoMark": "SW",
+        "logoText": "Solstice Wear",
+        "logoDot": ".sun",
+        "pageTitle": "Solstice Wear",
+        "locationLabel": "Solstice bay: Chennai",
+        "accountLabel": "Solstice club",
+        "footerTagline": "Bright summer palettes, travel pieces, and mood-lifting wardrobe staples for every season.",
+        "footerCopyright": "© 2026 Solstice Wear. All rights reserved."
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #fff7ed 0%, #fed7aa 40%, #fdba74 100%)",
+        "ink": "#41210e",
+        "muted": "#7a5640",
+        "accent": "#f97316",
+        "accentStrong": "#ea580c",
+        "neon": "#fdba74",
+        "mint": "#fed7aa",
+        "cream": "#fff9f4",
+        "headerGradient": "radial-gradient(circle at top left, #fff8ef 0%, #ffe3cb 46%, #fdba74 100%)",
+        "darkSurface": "#41210e",
+        "darkSurfaceAlt": "#60311a",
+        "onDark": "#fff9f4",
+        "onDarkMuted": "#efd9ca"
+    },
+    "about": {
+        "eyebrow": "Solstice Wear",
+        "title": "Sun-washed fashion with bright seasonal energy.",
+        "description": "Solstice Wear brings warm-weather essentials, destination edits, and bold color stories into one high-rotation store."
+    },
+    "contact": {
+        "title": "Need holiday outfit help?",
+        "ctaLabel": "Chat with Solstice"
+    },
+    "footer": {
+        "contactLines": [
+            "+91 (818) 270-2228",
+            "support@solsticewear.com",
+            "Chennai"
+        ],
+        "appCtaLabel": "Install Solstice"
+    },
+    "promoMessages": [
+        "Sunny edit sale above Rs 999",
+        "Travel-ready sets shipping today"
+    ],
+    "catalog": {
+        "generation": {
+            "minProductCount": 320,
+            "brands": [
+                "Solstice",
+                "Rayform",
+                "Sunloop",
+                "Citrus",
+                "Glowline",
+                "Harbor"
+            ],
+            "categories": [
+                "Women",
+                "Men",
+                "Kids",
+                "Footwear",
+                "Accessories",
+                "Beachwear",
+                "Beauty"
+            ],
+            "categorySpecifications": {
+                "Beachwear": {
+                    "Fabric": "Quick dry",
+                    "Fit": "Easy fit",
+                    "Use": "Resort",
+                    "Care": "Hand wash"
+                }
+            },
+            "basePriceStart": 760,
+            "priceStep": 57,
+            "priceModulo": 6100,
+            "categoryPriceFactor": 15,
+            "discountEvery": 2,
+            "discountRate": 0.18
+        }
+    }
+}

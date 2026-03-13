@@ -1,0 +1,86 @@
+{
+    "branding": {
+        "name": "Maple Thread",
+        "tagline": "Warm palettes and cozy wardrobe staples",
+        "logoMark": "MT",
+        "logoText": "Maple Thread",
+        "logoDot": ".co",
+        "pageTitle": "Maple Thread",
+        "locationLabel": "Maple loft: Koramangala, Bengaluru",
+        "accountLabel": "Maple member",
+        "footerTagline": "Layered essentials, soft knits, and comfort-led classics for all-season wardrobes.",
+        "footerCopyright": "© 2026 Maple Thread. All rights reserved."
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #fffbeb 0%, #fef3c7 40%, #fde68a 100%)",
+        "ink": "#3a2610",
+        "muted": "#776346",
+        "accent": "#ca8a04",
+        "accentStrong": "#a16207",
+        "neon": "#fcd34d",
+        "mint": "#fef3c7",
+        "cream": "#fffdf5",
+        "headerGradient": "radial-gradient(circle at top left, #fffdf0 0%, #fff1c4 48%, #fde68a 100%)",
+        "darkSurface": "#3a2610",
+        "darkSurfaceAlt": "#5a3d15",
+        "onDark": "#fffdf5",
+        "onDarkMuted": "#efe4c6"
+    },
+    "about": {
+        "eyebrow": "Maple Thread",
+        "title": "Comfort-first layers with polished everyday warmth.",
+        "description": "Maple Thread curates relaxed staples, knitwear, lounge dressing, and all-day comfort for transitional wardrobes."
+    },
+    "contact": {
+        "title": "Need help finding your fit?",
+        "ctaLabel": "Talk to Maple care"
+    },
+    "footer": {
+        "contactLines": [
+            "+91 (815) 240-8805",
+            "care@maplethread.co",
+            "Koramangala, Bengaluru"
+        ],
+        "appCtaLabel": "Install Maple app"
+    },
+    "promoMessages": [
+        "Cozy edit sale this week",
+        "Free returns on knitwear"
+    ],
+    "catalog": {
+        "generation": {
+            "minProductCount": 320,
+            "brands": [
+                "Maple",
+                "Amber Knit",
+                "SoftGrain",
+                "Hearth",
+                "Northloom",
+                "EasyForm"
+            ],
+            "categories": [
+                "Women",
+                "Men",
+                "Kids",
+                "Home",
+                "Accessories",
+                "Lounge",
+                "Footwear"
+            ],
+            "categorySpecifications": {
+                "Lounge": {
+                    "Fabric": "French terry",
+                    "Fit": "Relaxed",
+                    "Set": "Co-ord",
+                    "Care": "Machine wash"
+                }
+            },
+            "basePriceStart": 690,
+            "priceStep": 49,
+            "priceModulo": 5800,
+            "categoryPriceFactor": 16,
+            "discountEvery": 3,
+            "discountRate": 0.17
+        }
+    }
+}

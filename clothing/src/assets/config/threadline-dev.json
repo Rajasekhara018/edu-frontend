@@ -1,0 +1,325 @@
+{
+  "branding": {
+    "name": "Threadline Studio",
+    "tagline": "Experimental fashion storefront profile",
+    "logoMark": "TS",
+    "logoText": "Threadline",
+    "logoDot": ".studio",
+    "favicon": "favicon.ico",
+    "pageTitle": "Threadline Studio",
+    "locationLabel": "Style hub: Banjara Hills, 500034",
+    "locationAction": "Switch profile",
+    "searchPlaceholder": "Search co-ords, sneakers, luxe drops...",
+    "accountGreeting": "Hello there",
+    "accountLabel": "Studio guest",
+    "ordersSmall": "Manage",
+    "ordersLabel": "Orders & exchanges",
+    "footerTagline": "A development profile that proves branding, catalog pricing, and theme tokens all come from JSON.",
+    "footerCopyright": "© 2026 Threadline Studio. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fdf2f8 0%, #fce7f3 45%, #fae8ff 100%)",
+    "ink": "#2d132c",
+    "muted": "#6f566d",
+    "accent": "#db2777",
+    "accentStrong": "#be185d",
+    "neon": "#f9a8d4",
+    "mint": "#fde2f3",
+    "cream": "#fff7fb",
+    "panel": "#ffffff",
+    "border": "rgba(45, 19, 44, 0.12)",
+    "shadow": "0 18px 40px rgba(45, 19, 44, 0.14)",
+    "headerGradient": "radial-gradient(circle at top left, #fff1f8 0%, #ffe0f1 48%, #fbcfe8 100%)",
+    "headerBorder": "rgba(190, 24, 93, 0.12)",
+    "darkSurface": "#2d132c",
+    "darkSurfaceAlt": "#4a1d46",
+    "onDark": "#fff7fb",
+    "onDarkMuted": "#ead2e6",
+    "focusRing": "rgba(219, 39, 119, 0.2)"
+  },
+  "about": {
+    "eyebrow": "Threadline Studio",
+    "title": "Statement silhouettes for experimental wardrobes.",
+    "description": "This profile swaps the brand voice, contact identity, and pricing model while keeping the same Angular components and flows.",
+    "primaryCta": "Explore drops",
+    "secondaryCta": "Talk to stylist",
+    "highlights": [
+      {
+        "icon": "bi-stars",
+        "title": "Studio Capsules",
+        "description": "Limited seasonal edits refreshed weekly."
+      },
+      {
+        "icon": "bi-handbag",
+        "title": "Wardrobe Pairings",
+        "description": "Looks grouped by occasion and mood."
+      },
+      {
+        "icon": "bi-arrow-repeat",
+        "title": "Smooth Exchanges",
+        "description": "Flexible return support from the style desk."
+      }
+    ],
+    "stats": [
+      {
+        "value": "84+",
+        "label": "Label Partners"
+      },
+      {
+        "value": "24 hr",
+        "label": "Dispatch Goal"
+      },
+      {
+        "value": "4.8",
+        "label": "Studio Rating"
+      },
+      {
+        "value": "500K+",
+        "label": "Looks Delivered"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Studio Support",
+    "title": "Need a styling second opinion?",
+    "description": "Use this development profile to validate that contact cards and footer contact lines change by configuration.",
+    "ctaLabel": "Open live chat",
+    "formTitle": "Request style help",
+    "formNote": "Average response time in this profile is 15 minutes.",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Studio Hotline",
+        "lines": [
+          "+91 (855) 700-9911",
+          "WhatsApp: +91 94444 22211"
+        ]
+      },
+      {
+        "icon": "bi-chat-dots",
+        "title": "Concierge",
+        "lines": [
+          "Live support, 8 AM - 10 PM",
+          "hello@threadline.studio"
+        ]
+      },
+      {
+        "icon": "bi-geo-alt",
+        "title": "Studio Loft",
+        "lines": [
+          "Rose Atelier",
+          "Banjara Hills, Hyderabad",
+          "India - 500034"
+        ]
+      },
+      {
+        "icon": "bi-clock",
+        "title": "Sessions",
+        "lines": [
+          "Mon - Sun: 8:00 AM - 10:00 PM",
+          "Virtual styling every hour"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "shopLinks": [
+      "New In",
+      "Women",
+      "Streetwear",
+      "Footwear"
+    ],
+    "supportLinks": [
+      "Track order",
+      "Return request",
+      "Size guide",
+      "Gift cards"
+    ],
+    "companyLinks": [
+      "Studio notes",
+      "Careers",
+      "Materials",
+      "Press"
+    ],
+    "socialLinks": [
+      {
+        "icon": "bi-facebook",
+        "label": "Facebook",
+        "href": "#"
+      },
+      {
+        "icon": "bi-twitter-x",
+        "label": "Twitter",
+        "href": "#"
+      },
+      {
+        "icon": "bi-instagram",
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "icon": "bi-pinterest",
+        "label": "Pinterest",
+        "href": "#"
+      }
+    ],
+    "contactLines": [
+      "+91 (855) 700-9911",
+      "hello@threadline.studio",
+      "Banjara Hills, Hyderabad"
+    ],
+    "appCtaLabel": "Download studio app"
+  },
+  "searchCategories": [
+    "All",
+    "Women",
+    "Men",
+    "Streetwear",
+    "Footwear",
+    "Accessories",
+    "Beauty",
+    "Luxe"
+  ],
+  "navLinks": [
+    "New In",
+    "Women",
+    "Men",
+    "Streetwear",
+    "Footwear",
+    "Beauty",
+    "Luxe",
+    "Sale",
+    "Studio notes",
+    "Help"
+  ],
+  "mobileLinks": [
+    "New In",
+    "Women",
+    "Men",
+    "Streetwear",
+    "Footwear",
+    "Beauty",
+    "Sale",
+    "Studio notes",
+    "Help",
+    "Bag"
+  ],
+  "promoMessages": [
+    "Free shipping above Rs 1499",
+    "Priority exchanges for studio members"
+  ],
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "Halo Satin Column Dress",
+        "description": "Bias-cut satin dress with a minimal open back.",
+        "price": 2590,
+        "originalPrice": 3190,
+        "image": "",
+        "category": "Women",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 980,
+        "sku": "HALO-WOMEN-0001",
+        "specifications": {
+          "Fabric": "Satin blend",
+          "Fit": "Slim",
+          "Length": "Maxi",
+          "Care": "Dry clean"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Index Relaxed Utility Shirt",
+        "description": "Relaxed overshirt with sharp utility pockets.",
+        "price": 2290,
+        "originalPrice": 2690,
+        "image": "",
+        "category": "Men",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 1230,
+        "sku": "INDEX-MEN-0002",
+        "specifications": {
+          "Fabric": "Cotton twill",
+          "Fit": "Relaxed",
+          "Occasion": "Smart casual",
+          "Care": "Machine wash"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Halo",
+        "Index",
+        "Mira",
+        "Pace",
+        "Nero",
+        "StudioForm",
+        "Orbit",
+        "Veloura"
+      ],
+      "categories": [
+        "Women",
+        "Men",
+        "Footwear",
+        "Accessories",
+        "Beauty",
+        "Luxe",
+        "Streetwear"
+      ],
+      "categorySpecifications": {
+        "Women": {
+          "Fabric": "Blend",
+          "Fit": "Tailored",
+          "Length": "Midi",
+          "Care": "Dry clean"
+        },
+        "Men": {
+          "Fabric": "Cotton",
+          "Fit": "Relaxed",
+          "Occasion": "Smart casual",
+          "Care": "Machine wash"
+        },
+        "Footwear": {
+          "Material": "Leather mix",
+          "Sole": "Rubber",
+          "Closure": "Lace-up",
+          "Care": "Wipe clean"
+        },
+        "Accessories": {
+          "Material": "Vegan leather",
+          "Type": "Accessory",
+          "Closure": "Zip",
+          "Warranty": "6 months"
+        },
+        "Beauty": {
+          "Type": "Beauty",
+          "Finish": "Radiant",
+          "Volume": "50 ml",
+          "Cruelty": "Yes"
+        },
+        "Luxe": {
+          "Fabric": "Premium blend",
+          "Craft": "Hand-finished",
+          "Lining": "Satin",
+          "Care": "Dry clean"
+        },
+        "Streetwear": {
+          "Fabric": "Cotton fleece",
+          "Fit": "Oversized",
+          "Drop": "Limited",
+          "Care": "Machine wash"
+        }
+      },
+      "basePriceStart": 790,
+      "priceStep": 53,
+      "priceModulo": 6200,
+      "categoryPriceFactor": 18,
+      "discountEvery": 2,
+      "discountRate": 0.22
+    }
+  }
+}

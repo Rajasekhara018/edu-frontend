@@ -1,0 +1,86 @@
+{
+    "branding": {
+        "name": "Cobalt Closet",
+        "tagline": "Sharp contemporary essentials in cool tones",
+        "logoMark": "CC",
+        "logoText": "Cobalt Closet",
+        "logoDot": ".style",
+        "pageTitle": "Cobalt Closet",
+        "locationLabel": "Cobalt block: Gachibowli, Hyderabad",
+        "accountLabel": "Closet pass",
+        "footerTagline": "Clean-lined tailoring, monochrome edits, and cool-toned wardrobe systems for modern professionals.",
+        "footerCopyright": "© 2026 Cobalt Closet. All rights reserved."
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #eff6ff 0%, #bfdbfe 40%, #93c5fd 100%)",
+        "ink": "#10233b",
+        "muted": "#51657c",
+        "accent": "#2563eb",
+        "accentStrong": "#1d4ed8",
+        "neon": "#60a5fa",
+        "mint": "#dbeafe",
+        "cream": "#f7fbff",
+        "headerGradient": "radial-gradient(circle at top left, #f0f7ff 0%, #d5e8ff 48%, #93c5fd 100%)",
+        "darkSurface": "#10233b",
+        "darkSurfaceAlt": "#1e3a5a",
+        "onDark": "#f7fbff",
+        "onDarkMuted": "#d9e6f4"
+    },
+    "about": {
+        "eyebrow": "Cobalt Closet",
+        "title": "Crisp tailoring and cool-toned wardrobe architecture.",
+        "description": "Cobalt Closet is built around modern officewear, city essentials, and structured seasonal pieces with a sharp finish."
+    },
+    "contact": {
+        "title": "Need corporate styling support?",
+        "ctaLabel": "Reach Cobalt desk"
+    },
+    "footer": {
+        "contactLines": [
+            "+91 (816) 250-9906",
+            "support@cobaltcloset.com",
+            "Gachibowli, Hyderabad"
+        ],
+        "appCtaLabel": "Open Closet app"
+    },
+    "promoMessages": [
+        "Office edit bundles live now",
+        "Free delivery above Rs 1599"
+    ],
+    "catalog": {
+        "generation": {
+            "minProductCount": 320,
+            "brands": [
+                "Cobalt",
+                "NorthBlock",
+                "Merit",
+                "SlateForm",
+                "TrueTailor",
+                "Axis Blue"
+            ],
+            "categories": [
+                "Men",
+                "Women",
+                "Footwear",
+                "Accessories",
+                "Luxe",
+                "Formalwear",
+                "Beauty"
+            ],
+            "categorySpecifications": {
+                "Formalwear": {
+                    "Fabric": "Suiting blend",
+                    "Fit": "Tailored",
+                    "Occasion": "Formal",
+                    "Care": "Dry clean"
+                }
+            },
+            "basePriceStart": 1090,
+            "priceStep": 61,
+            "priceModulo": 6900,
+            "categoryPriceFactor": 21,
+            "discountEvery": 4,
+            "discountRate": 0.19
+        }
+    }
+}

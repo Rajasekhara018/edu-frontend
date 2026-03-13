@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,6 +12,11 @@ import { MaterialModule } from './Services/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StoreConfigService } from './Services/store-config.service';
+
+function initializeStoreConfig(configService: StoreConfigService) {
+  return () => configService.loadConfig();
+}
 
 @NgModule({
   declarations: [ 
@@ -29,7 +34,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     MaterialModule,
   ],
-  providers: [DatePipe, CurrencyPipe],
+  providers: [
+    DatePipe,
+    CurrencyPipe,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeStoreConfig,
+      deps: [StoreConfigService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

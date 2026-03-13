@@ -40,6 +40,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -61,6 +67,96 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "velvet-vault": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.velvet-vault.ts"
+                }
+              ],
+              "baseHref": "/"
+            },
+            "urbanloom": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.urbanloom.ts"
+                }
+              ],
+              "baseHref": "/"
+            },
+            "aurora-attire": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.aurora-attire.ts"
+                }
+              ],
+              "baseHref": "/"
+            },
+            "house-of-nova": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.house-of-nova.ts"
+                }
+              ],
+              "baseHref": "/"
+            },
+            "maple-thread": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.maple-thread.ts"
+                }
+              ],
+              "baseHref": "/"
+            },
+            "cobalt-closet": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.cobalt-closet.ts"
+                }
+              ],
+              "baseHref": "/"
+            },
+            "drift-label": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.drift-label.ts"
+                }
+              ],
+              "baseHref": "/"
+            },
+            "solstice-wear": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.solstice-wear.ts"
+                }
+              ],
+              "baseHref": "/"
+            },
+            "prism-wardrobe": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prism-wardrobe.ts"
+                }
+              ],
+              "baseHref": "/"
+            },
+            "ember-lane": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ember-lane.ts"
+                }
+              ],
+              "baseHref": "/"
             }
           },
           "defaultConfiguration": "production"
@@ -76,6 +172,36 @@
             },
             "development": {
               "buildTarget": "clothing:build:development"
+            },
+            "velvet-vault": {
+              "buildTarget": "clothing:build:velvet-vault"
+            },
+            "urbanloom": {
+              "buildTarget": "clothing:build:urbanloom"
+            },
+            "aurora-attire": {
+              "buildTarget": "clothing:build:aurora-attire"
+            },
+            "house-of-nova": {
+              "buildTarget": "clothing:build:house-of-nova"
+            },
+            "maple-thread": {
+              "buildTarget": "clothing:build:maple-thread"
+            },
+            "cobalt-closet": {
+              "buildTarget": "clothing:build:cobalt-closet"
+            },
+            "drift-label": {
+              "buildTarget": "clothing:build:drift-label"
+            },
+            "solstice-wear": {
+              "buildTarget": "clothing:build:solstice-wear"
+            },
+            "prism-wardrobe": {
+              "buildTarget": "clothing:build:prism-wardrobe"
+            },
+            "ember-lane": {
+              "buildTarget": "clothing:build:ember-lane"
             }
           },
           "defaultConfiguration": "development"

@@ -1,0 +1,104 @@
+{
+    "branding": {
+        "name": "Velvet Vault",
+        "tagline": "Editorial fashion for after-dark wardrobes",
+        "logoMark": "VV",
+        "logoText": "Velvet Vault",
+        "logoDot": ".edit",
+        "pageTitle": "Velvet Vault",
+        "locationLabel": "Vault studio: Indiranagar, Bengaluru",
+        "accountLabel": "Vault member",
+        "footerTagline": "Evening edits, polished tailoring, and luxe accessories for statement wardrobes.",
+        "footerCopyright": "© 2026 Velvet Vault. All rights reserved."
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #fdf2f8 0%, #fce7f3 42%, #fae8ff 100%)",
+        "ink": "#2f132d",
+        "muted": "#6e546b",
+        "accent": "#c026d3",
+        "accentStrong": "#a21caf",
+        "neon": "#f0abfc",
+        "mint": "#f5d0fe",
+        "cream": "#fff7fe",
+        "headerGradient": "radial-gradient(circle at top left, #fff3fd 0%, #f8dfff 48%, #f0abfc 100%)",
+        "darkSurface": "#2f132d",
+        "darkSurfaceAlt": "#4a1d49",
+        "onDark": "#fff7fe",
+        "onDarkMuted": "#eed7ef"
+    },
+    "about": {
+        "eyebrow": "Velvet Vault",
+        "title": "Luxe edits with runway drama and modern tailoring.",
+        "description": "Velvet Vault curates elevated occasionwear, premium accessories, and evening-first silhouettes for bold wardrobes."
+    },
+    "contact": {
+        "title": "Need a polished fit check?",
+        "ctaLabel": "Message concierge",
+        "infoCards": [
+            {
+                "icon": "bi-telephone",
+                "title": "Concierge line",
+                "lines": [
+                    "+91 (811) 200-4401",
+                    "WhatsApp: +91 98880 44001"
+                ]
+            },
+            {
+                "icon": "bi-geo-alt",
+                "title": "Flagship",
+                "lines": [
+                    "Velvet Vault Studio",
+                    "Indiranagar, Bengaluru",
+                    "India - 560038"
+                ]
+            }
+        ]
+    },
+    "footer": {
+        "contactLines": [
+            "+91 (811) 200-4401",
+            "concierge@velvetvault.com",
+            "Indiranagar, Bengaluru"
+        ],
+        "appCtaLabel": "Install Velvet Vault"
+    },
+    "promoMessages": [
+        "Free express shipping above Rs 1999",
+        "Complimentary luxury packaging"
+    ],
+    "catalog": {
+        "generation": {
+            "minProductCount": 320,
+            "brands": [
+                "Velvet Vault",
+                "NoirLine",
+                "Astera",
+                "MuseForm",
+                "Sable",
+                "Opaline"
+            ],
+            "categories": [
+                "Women",
+                "Luxe",
+                "Accessories",
+                "Footwear",
+                "Occasionwear",
+                "Beauty"
+            ],
+            "categorySpecifications": {
+                "Occasionwear": {
+                    "Fabric": "Premium satin",
+                    "Fit": "Tailored",
+                    "Occasion": "Evening",
+                    "Care": "Dry clean"
+                }
+            },
+            "basePriceStart": 1490,
+            "priceStep": 81,
+            "priceModulo": 8200,
+            "categoryPriceFactor": 28,
+            "discountEvery": 2,
+            "discountRate": 0.24
+        }
+    }
+}

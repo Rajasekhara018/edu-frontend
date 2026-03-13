@@ -1,0 +1,86 @@
+{
+    "branding": {
+        "name": "UrbanLoom",
+        "tagline": "Street-led essentials for city routines",
+        "logoMark": "UL",
+        "logoText": "UrbanLoom",
+        "logoDot": ".store",
+        "pageTitle": "UrbanLoom",
+        "locationLabel": "City floor: HSR Layout, Bengaluru",
+        "accountLabel": "Urban member",
+        "footerTagline": "Everyday streetwear, sneakers, utility layers, and cross-category drops for urban wardrobes.",
+        "footerCopyright": "© 2026 UrbanLoom. All rights reserved."
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #f0fdf4 0%, #dcfce7 40%, #bbf7d0 100%)",
+        "ink": "#0e2014",
+        "muted": "#476152",
+        "accent": "#16a34a",
+        "accentStrong": "#15803d",
+        "neon": "#86efac",
+        "mint": "#dcfce7",
+        "cream": "#f7fff8",
+        "headerGradient": "radial-gradient(circle at top left, #f0fff3 0%, #d7fce2 48%, #86efac 100%)",
+        "darkSurface": "#0e2014",
+        "darkSurfaceAlt": "#173322",
+        "onDark": "#f7fff8",
+        "onDarkMuted": "#d9efdf"
+    },
+    "about": {
+        "eyebrow": "UrbanLoom",
+        "title": "Utility layers, easy sneakers, and all-day city fits.",
+        "description": "UrbanLoom focuses on streetwear, athleisure, and daily essentials built for movement, comfort, and repeat wear."
+    },
+    "contact": {
+        "title": "Need help with sizing or delivery?",
+        "ctaLabel": "Open support chat"
+    },
+    "footer": {
+        "contactLines": [
+            "+91 (812) 210-5502",
+            "support@urbanloom.store",
+            "HSR Layout, Bengaluru"
+        ],
+        "appCtaLabel": "Get UrbanLoom app"
+    },
+    "promoMessages": [
+        "Free shipping above Rs 1299",
+        "7-day instant exchanges"
+    ],
+    "catalog": {
+        "generation": {
+            "minProductCount": 320,
+            "brands": [
+                "UrbanLoom",
+                "StreetCode",
+                "Axis",
+                "Pace",
+                "MetroForm",
+                "Blockwear"
+            ],
+            "categories": [
+                "Men",
+                "Women",
+                "Streetwear",
+                "Sports",
+                "Footwear",
+                "Accessories",
+                "Denim"
+            ],
+            "categorySpecifications": {
+                "Denim": {
+                    "Fabric": "Denim",
+                    "Fit": "Relaxed",
+                    "Wash": "Stone wash",
+                    "Care": "Machine wash"
+                }
+            },
+            "basePriceStart": 790,
+            "priceStep": 59,
+            "priceModulo": 6400,
+            "categoryPriceFactor": 17,
+            "discountEvery": 3,
+            "discountRate": 0.18
+        }
+    }
+}

@@ -1,0 +1,77 @@
+{
+    "branding": {
+        "name": "Aurora Attire",
+        "tagline": "Soft luxe for polished everyday styling",
+        "logoMark": "AA",
+        "logoText": "Aurora Attire",
+        "logoDot": ".wear",
+        "pageTitle": "Aurora Attire",
+        "locationLabel": "Aurora house: Jubilee Hills, Hyderabad",
+        "accountLabel": "Aurora circle",
+        "footerTagline": "Refined textures, pastel tones, and premium wardrobe staples for modern everyday dressing.",
+        "footerCopyright": "© 2026 Aurora Attire. All rights reserved."
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #eff6ff 0%, #dbeafe 40%, #e0e7ff 100%)",
+        "ink": "#15233c",
+        "muted": "#56657f",
+        "accent": "#4f46e5",
+        "accentStrong": "#4338ca",
+        "neon": "#93c5fd",
+        "mint": "#dbeafe",
+        "cream": "#f8fbff",
+        "headerGradient": "radial-gradient(circle at top left, #f3f8ff 0%, #dbeafe 46%, #c7d2fe 100%)",
+        "darkSurface": "#15233c",
+        "darkSurfaceAlt": "#25345a",
+        "onDark": "#f8fbff",
+        "onDarkMuted": "#dbe5f7"
+    },
+    "about": {
+        "eyebrow": "Aurora Attire",
+        "title": "Quiet luxury silhouettes for everyday refinement.",
+        "description": "Aurora Attire brings elevated essentials, contemporary tailoring, and subtle statement pieces into one soft-luxe storefront."
+    },
+    "contact": {
+        "title": "Book a wardrobe consult",
+        "ctaLabel": "Talk to Aurora stylist"
+    },
+    "footer": {
+        "contactLines": [
+            "+91 (813) 220-6603",
+            "hello@auroraattire.com",
+            "Jubilee Hills, Hyderabad"
+        ],
+        "appCtaLabel": "Download Aurora app"
+    },
+    "promoMessages": [
+        "Premium delivery above Rs 1799",
+        "Handpicked edits refreshed weekly"
+    ],
+    "catalog": {
+        "generation": {
+            "minProductCount": 320,
+            "brands": [
+                "Aurora",
+                "Ivory Lane",
+                "Moonthread",
+                "Aveline",
+                "SoftForm",
+                "Celeste"
+            ],
+            "categories": [
+                "Women",
+                "Men",
+                "Accessories",
+                "Footwear",
+                "Luxe",
+                "Home"
+            ],
+            "basePriceStart": 1190,
+            "priceStep": 67,
+            "priceModulo": 7600,
+            "categoryPriceFactor": 22,
+            "discountEvery": 4,
+            "discountRate": 0.2
+        }
+    }
+}

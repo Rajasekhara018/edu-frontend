@@ -4,16 +4,16 @@
   flex-direction: column;
   padding-top: 78px;
   font-family: 'Outfit', 'Segoe UI', sans-serif;
-  --ink: #1b1a1f;
-  --muted: #5c5551;
-  --accent: #e4573b;
-  --accent-strong: #b54732;
-  --neon: #f4b860;
-  --mint: #fde6d8;
-  --cream: #fffaf6;
-  --panel: #ffffff;
-  --border: rgba(27, 26, 31, 0.12);
-  --shadow: 0 18px 40px rgba(23, 18, 20, 0.12);
+  --ink: var(--ink);
+  --muted: var(--muted);
+  --accent: var(--accent);
+  --accent-strong: var(--accent-strong);
+  --neon: var(--neon);
+  --mint: var(--mint);
+  --cream: var(--cream);
+  --panel: var(--panel);
+  --border: var(--border);
+  --shadow: var(--shadow);
 }
 
 @media (max-width: 820px) {
@@ -25,7 +25,7 @@
 /* About Section */
 .about-section {
   padding: 5.5rem 2rem 5rem;
-  background: radial-gradient(circle at top, #fff4ea 0%, #f8efe5 50%, #f2e8df 100%);
+  background: var(--body-bg);
 
   .about-container {
     max-width: 1200px;
@@ -199,7 +199,7 @@
 /* Contact Section */
 .contact-section {
   padding: 5rem 2rem 5.5rem;
-  background: linear-gradient(160deg, #1b1a1f 0%, #2a1e22 100%);
+  background: linear-gradient(160deg, var(--dark-surface) 0%, var(--dark-surface-alt) 100%);
 
   .contact-container {
     max-width: 1200px;

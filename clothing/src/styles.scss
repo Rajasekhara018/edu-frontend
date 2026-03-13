@@ -2,6 +2,24 @@
 
 :root {
   color-scheme: light;
+  --body-bg: radial-gradient(circle at top, #fff4ea 0%, #f7efe6 45%, #f2ebe2 100%);
+  --ink: #1b1a1f;
+  --muted: #5c5551;
+  --accent: #e4573b;
+  --accent-strong: #b54732;
+  --neon: #f4b860;
+  --mint: #fde6d8;
+  --cream: #fffaf6;
+  --panel: #ffffff;
+  --border: rgba(27, 26, 31, 0.12);
+  --shadow: 0 18px 40px rgba(23, 18, 20, 0.12);
+  --header-gradient: radial-gradient(circle at top left, #fff4ea 0%, #ffe2d2 45%, #ffd2b1 100%);
+  --header-border: rgba(20, 16, 18, 0.08);
+  --dark-surface: #1b1a1f;
+  --dark-surface-alt: #2a1e22;
+  --on-dark: #fef4ea;
+  --on-dark-muted: #d6c6bc;
+  --focus-ring: rgba(228, 87, 59, 0.18);
 }
 
 html, body {
@@ -11,8 +29,8 @@ html, body {
 body {
   margin: 0;
   font-family: 'Outfit', 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #fff4ea 0%, #f7efe6 45%, #f2ebe2 100%);
-  color: #1b1a1f;
+  background: var(--body-bg);
+  color: var(--ink);
   overflow-x: hidden;
 }
 

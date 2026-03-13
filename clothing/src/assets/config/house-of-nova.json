@@ -1,0 +1,86 @@
+{
+    "branding": {
+        "name": "House of Nova",
+        "tagline": "Trend-driven fashion with seasonal energy",
+        "logoMark": "HN",
+        "logoText": "House of Nova",
+        "logoDot": ".fashion",
+        "pageTitle": "House of Nova",
+        "locationLabel": "Nova district: Bandra, Mumbai",
+        "accountLabel": "Nova insider",
+        "footerTagline": "Bold trend cycles, color-heavy statements, and fast-moving seasonal edits for expressive wardrobes.",
+        "footerCopyright": "© 2026 House of Nova. All rights reserved."
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #fff7ed 0%, #ffedd5 38%, #fdba74 100%)",
+        "ink": "#3b1d0d",
+        "muted": "#77533f",
+        "accent": "#ea580c",
+        "accentStrong": "#c2410c",
+        "neon": "#fdba74",
+        "mint": "#ffedd5",
+        "cream": "#fffaf4",
+        "headerGradient": "radial-gradient(circle at top left, #fff6ef 0%, #ffe6cc 48%, #fdba74 100%)",
+        "darkSurface": "#3b1d0d",
+        "darkSurfaceAlt": "#5b2d14",
+        "onDark": "#fffaf4",
+        "onDarkMuted": "#f0ddcf"
+    },
+    "about": {
+        "eyebrow": "House of Nova",
+        "title": "High-energy trend drops for expressive wardrobes.",
+        "description": "House of Nova is built for fast trend updates, statement accessories, and occasion-led dressing with visual impact."
+    },
+    "contact": {
+        "title": "Need styling for an event?",
+        "ctaLabel": "Book Nova call"
+    },
+    "footer": {
+        "contactLines": [
+            "+91 (814) 230-7704",
+            "style@houseofnova.in",
+            "Bandra, Mumbai"
+        ],
+        "appCtaLabel": "Get Nova app"
+    },
+    "promoMessages": [
+        "Drop alerts every Friday",
+        "Buy 2 trend edits, save more"
+    ],
+    "catalog": {
+        "generation": {
+            "minProductCount": 320,
+            "brands": [
+                "Nova",
+                "Flashline",
+                "Astra Pop",
+                "GlowForm",
+                "TrendArc",
+                "VibeSet"
+            ],
+            "categories": [
+                "Women",
+                "Men",
+                "Accessories",
+                "Footwear",
+                "Beauty",
+                "Occasionwear",
+                "Kids"
+            ],
+            "categorySpecifications": {
+                "Occasionwear": {
+                    "Fabric": "Shimmer blend",
+                    "Fit": "Fashion fit",
+                    "Occasion": "Party",
+                    "Care": "Dry clean"
+                }
+            },
+            "basePriceStart": 990,
+            "priceStep": 73,
+            "priceModulo": 7100,
+            "categoryPriceFactor": 20,
+            "discountEvery": 2,
+            "discountRate": 0.21
+        }
+    }
+}

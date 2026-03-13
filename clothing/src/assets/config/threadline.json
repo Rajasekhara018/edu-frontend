@@ -1,0 +1,126 @@
+{
+  "branding": {
+    "name": "Threadline Fashion House",
+    "tagline": "Modern wardrobes, curated edits, and premium essentials tailored for every city mood.",
+    "logoMark": "TL",
+    "logoText": "Threadline",
+    "logoDot": ".co",
+    "favicon": "favicon.ico",
+    "pageTitle": "Threadline Fashion House",
+    "locationLabel": "Style hub: Jubilee Hills, 500033",
+    "locationAction": "Change store",
+    "searchPlaceholder": "Search dresses, sneakers, bags...",
+    "accountGreeting": "Welcome back",
+    "accountLabel": "Style member",
+    "ordersSmall": "Track",
+    "ordersLabel": "Orders & returns",
+    "footerTagline": "Modern wardrobes, curated edits, and premium essentials tailored for every city mood.",
+    "footerCopyright": "© 2026 Threadline. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff4ea 0%, #f7efe6 45%, #f2ebe2 100%)",
+    "ink": "#1b1a1f",
+    "muted": "#5c5551",
+    "accent": "#e4573b",
+    "accentStrong": "#b54732",
+    "neon": "#f4b860",
+    "mint": "#fde6d8",
+    "cream": "#fffaf6",
+    "panel": "#ffffff",
+    "border": "rgba(27, 26, 31, 0.12)",
+    "shadow": "0 18px 40px rgba(23, 18, 20, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #fff4ea 0%, #ffe2d2 45%, #ffd2b1 100%)",
+    "headerBorder": "rgba(20, 16, 18, 0.08)",
+    "darkSurface": "#1b1a1f",
+    "darkSurfaceAlt": "#2a1e22",
+    "onDark": "#fef4ea",
+    "onDarkMuted": "#d6c6bc",
+    "focusRing": "rgba(228, 87, 59, 0.18)"
+  },
+  "about": {
+    "eyebrow": "Threadline Fashion House",
+    "title": "Runway-ready looks curated for city wardrobes.",
+    "description": "We style seasonal drops, timeless staples, and premium edits from emerging designers. Build outfits with smart bundles, track your size history, and get personalized styling cues.",
+    "primaryCta": "Start shopping",
+    "secondaryCta": "Book a stylist call",
+    "highlights": [
+      { "icon": "bi-magic", "title": "Trend Edits", "description": "Daily capsules curated by in-house fashion scouts." },
+      { "icon": "bi-scissors", "title": "Tailored Fit", "description": "Size guidance, fit notes, and easy exchanges." },
+      { "icon": "bi-recycle", "title": "Conscious Materials", "description": "Certified blends and transparent supply chains." }
+    ],
+    "stats": [
+      { "value": "120+", "label": "Design Partners" },
+      { "value": "48 hr", "label": "Dispatch Promise" },
+      { "value": "4.9", "label": "Style Rating" },
+      { "value": "1M+", "label": "Looks Styled" }
+    ]
+  },
+  "contact": {
+    "eyebrow": "24x7 Style Desk",
+    "title": "Need help with a fit?",
+    "description": "Reach us for order updates, return pickups, or styling guidance. Our experts reply fast.",
+    "ctaLabel": "Chat with a stylist",
+    "formTitle": "Request a return or exchange",
+    "formNote": "We respond within 30 minutes on average.",
+    "infoCards": [
+      { "icon": "bi-telephone", "title": "Instant Support", "lines": ["+91 (800) 555-1110", "WhatsApp: +91 90000 12345"] },
+      { "icon": "bi-chat-dots", "title": "Live Chat", "lines": ["In-app support, 24x7", "support@threadline.co"] },
+      { "icon": "bi-geo-alt", "title": "Style Studio", "lines": ["Sunset Atelier", "Jubilee Hills, Hyderabad", "India - 500033"] },
+      { "icon": "bi-clock", "title": "Operating Hours", "lines": ["Mon - Sun: 9:00 AM - 11:00 PM", "Stylist sessions every 30 mins"] }
+    ]
+  },
+  "footer": {
+    "shopLinks": ["Women", "Men", "Kids", "Footwear"],
+    "supportLinks": ["Order status", "Returns & exchanges", "Size help", "Business"],
+    "companyLinks": ["Our process", "Careers", "Sustainability", "Press"],
+    "socialLinks": [
+      { "icon": "bi-facebook", "label": "Facebook", "href": "#" },
+      { "icon": "bi-twitter-x", "label": "Twitter", "href": "#" },
+      { "icon": "bi-instagram", "label": "Instagram", "href": "#" },
+      { "icon": "bi-youtube", "label": "YouTube", "href": "#" }
+    ],
+    "contactLines": ["+91 (800) 555-1110", "support@threadline.co", "Jubilee Hills, Hyderabad"],
+    "appCtaLabel": "Get the app"
+  },
+  "searchCategories": ["All", "Women", "Men", "Kids", "Footwear", "Accessories", "Beauty", "Home", "Sports"],
+  "navLinks": ["New In", "Women", "Men", "Kids", "Footwear", "Beauty", "Luxe", "Sale", "Style guide", "Help"],
+  "mobileLinks": ["New In", "Women", "Men", "Kids", "Footwear", "Beauty", "Sale", "Style guide", "Help", "Bag"],
+  "promoMessages": ["Free shipping above Rs 999", "Easy 30-day returns"],
+  "catalog": {
+    "seedProducts": [
+      { "id": 1, "name": "Aurum Satin Slip Dress", "description": "Fluid satin midi with a soft cowl neckline and adjustable straps.", "price": 2190, "originalPrice": 2790, "image": "", "category": "Women", "inStock": true, "rating": 4.7, "reviews": 1820, "sku": "AURUM-WOMEN-0001", "specifications": { "Fabric": "Satin blend", "Fit": "Regular", "Length": "Midi", "Care": "Dry clean" } },
+      { "id": 2, "name": "Nomad Straight Fit Jeans", "description": "Classic straight-leg denim with soft stretch comfort.", "price": 1990, "originalPrice": 2290, "image": "", "category": "Men", "inStock": true, "rating": 4.6, "reviews": 2100, "sku": "NOMAD-MEN-0005", "specifications": { "Fabric": "Cotton denim", "Fit": "Straight", "Rise": "Mid-rise", "Care": "Machine wash" } },
+      { "id": 3, "name": "Lune Kids Denim Dungaree", "description": "Play-ready dungaree with adjustable straps.", "price": 1290, "originalPrice": 1490, "image": "", "category": "Kids", "inStock": true, "rating": 4.6, "reviews": 620, "sku": "LUNE-KIDS-0009", "specifications": { "Fabric": "Cotton denim", "Age": "3-6 years", "Set": "Dungaree + tee", "Care": "Machine wash" } },
+      { "id": 4, "name": "Aurum Court Sneakers", "description": "Minimal leather sneakers with padded collars.", "price": 2790, "originalPrice": 3190, "image": "", "category": "Footwear", "inStock": true, "rating": 4.7, "reviews": 1680, "sku": "AURUM-FOOT-0011", "specifications": { "Material": "Leather upper", "Sole": "Rubber", "Closure": "Lace-up", "Care": "Wipe clean" } },
+      { "id": 5, "name": "Velvetry Structured Tote", "description": "Structured tote with dual compartments.", "price": 2390, "originalPrice": 2690, "image": "", "category": "Accessories", "inStock": true, "rating": 4.6, "reviews": 1110, "sku": "VELVET-ACC-0015", "specifications": { "Material": "Vegan leather", "Type": "Tote", "Closure": "Magnet", "Warranty": "6 months" } },
+      { "id": 6, "name": "Vera Matte Lip Kit", "description": "Long-wear matte lipstick with matching liner.", "price": 890, "originalPrice": 1090, "image": "", "category": "Beauty", "inStock": true, "rating": 4.6, "reviews": 1320, "sku": "VERA-BEAUTY-0020", "specifications": { "Type": "Lip kit", "Finish": "Matte", "Volume": "3.5 g", "Cruelty": "Yes" } },
+      { "id": 7, "name": "Civico Lounge Throw", "description": "Soft textured throw for modern living rooms.", "price": 1690, "originalPrice": 1990, "image": "", "category": "Home", "inStock": true, "rating": 4.4, "reviews": 520, "sku": "CIVICO-HOME-0022", "specifications": { "Material": "Cotton blend", "Size": "50 x 60 in", "Room": "Living", "Care": "Machine wash" } },
+      { "id": 8, "name": "StudioLine Performance Leggings", "description": "Stretch leggings with sculpting waistband.", "price": 1590, "originalPrice": 1890, "image": "", "category": "Sports", "inStock": true, "rating": 4.6, "reviews": 1180, "sku": "STUDIO-SPORT-0023", "specifications": { "Fabric": "Nylon blend", "Stretch": "4-way", "Use": "Training", "Care": "Machine wash" } },
+      { "id": 9, "name": "Atelier Luxe Wool Coat", "description": "Oversized wool coat with clean lapels.", "price": 5990, "originalPrice": 6990, "image": "", "category": "Luxe", "inStock": true, "rating": 4.8, "reviews": 640, "sku": "ATELIER-LUXE-0024", "specifications": { "Fabric": "Wool blend", "Fit": "Oversized", "Lining": "Satin", "Care": "Dry clean" } },
+      { "id": 10, "name": "Streetcraft Graphic Hoodie", "description": "Oversized hoodie with brushed fleece interior.", "price": 1790, "originalPrice": 2090, "image": "", "category": "Streetwear", "inStock": true, "rating": 4.5, "reviews": 920, "sku": "STREET-STREET-0025", "specifications": { "Fabric": "Cotton fleece", "Fit": "Oversized", "Drop": "Limited", "Care": "Machine wash" } }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "brands": ["Aurum", "Mora", "Civico", "Vera", "Pulse", "Nomad", "Lune", "Atelier", "StudioLine", "Streetcraft", "Velvetry", "Kora"],
+      "categories": ["Women", "Men", "Kids", "Footwear", "Accessories", "Beauty", "Home", "Sports", "Luxe", "Streetwear"],
+      "categorySpecifications": {
+        "Women": { "Fabric": "Blend", "Fit": "Regular", "Length": "Midi", "Care": "Dry clean" },
+        "Men": { "Fabric": "Cotton", "Fit": "Regular", "Occasion": "Smart casual", "Care": "Machine wash" },
+        "Kids": { "Fabric": "Cotton", "Age": "2-10 years", "Set": "2 pieces", "Care": "Machine wash" },
+        "Footwear": { "Material": "Mixed", "Sole": "Rubber", "Closure": "Lace-up", "Care": "Wipe clean" },
+        "Accessories": { "Material": "Vegan leather", "Type": "Accessory", "Closure": "Magnet", "Warranty": "6 months" },
+        "Beauty": { "Type": "Beauty", "Finish": "Matte", "Volume": "50 ml", "Cruelty": "Yes" },
+        "Home": { "Material": "Cotton blend", "Size": "Standard", "Room": "Living", "Care": "Machine wash" },
+        "Sports": { "Fabric": "Performance knit", "Stretch": "4-way", "Use": "Training", "Care": "Machine wash" },
+        "Luxe": { "Fabric": "Premium blend", "Craft": "Hand-finished", "Lining": "Satin", "Care": "Dry clean" },
+        "Streetwear": { "Fabric": "Cotton fleece", "Fit": "Oversized", "Drop": "Limited", "Care": "Machine wash" }
+      },
+      "basePriceStart": 590,
+      "priceStep": 37,
+      "priceModulo": 5200,
+      "categoryPriceFactor": 15,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}

@@ -1,32 +1,24 @@
 <header class="mega-header">
   <div class="top-bar">
-    <div class="brand" aria-label="Threadline home">
-      <div class="logo-mark">TL</div>
-      <div class="logo-text">Threadline<span class="logo-dot">.co</span></div>
+    <div class="brand" [attr.aria-label]="storeConfig.storeConfig.branding.name + ' home'">
+      <div class="logo-mark">{{ storeConfig.storeConfig.branding.logoMark }}</div>
+      <div class="logo-text">{{ storeConfig.storeConfig.branding.logoText }}<span class="logo-dot">{{ storeConfig.storeConfig.branding.logoDot }}</span></div>
     </div>
 
     <button class="location" type="button">
       <span class="loc-line">
         <span class="loc-dot"></span>
-        Style hub: Jubilee Hills, 500033
+        {{ storeConfig.storeConfig.branding.locationLabel }}
       </span>
-      <span class="loc-action">Change store</span>
+      <span class="loc-action">{{ storeConfig.storeConfig.branding.locationAction }}</span>
     </button>
 
     <div class="search">
       <label class="sr-only" for="product-search">Search fashion</label>
       <select aria-label="Search category">
-        <option>All</option>
-        <option>Women</option>
-        <option>Men</option>
-        <option>Kids</option>
-        <option>Footwear</option>
-        <option>Accessories</option>
-        <option>Beauty</option>
-        <option>Home</option>
-        <option>Sports</option>
+        <option *ngFor="let category of storeConfig.storeConfig.searchCategories">{{ category }}</option>
       </select>
-      <input id="product-search" type="text" placeholder="Search dresses, sneakers, bags..." />
+      <input id="product-search" type="text" [placeholder]="storeConfig.storeConfig.branding.searchPlaceholder" />
       <button class="search-btn" type="button" aria-label="Search">
         <span class="search-icon"></span>
       </button>
@@ -38,12 +30,12 @@
         EN
       </button>
       <button class="account" type="button">
-        <span class="small">Welcome back</span>
-        <span class="strong">Style member</span>
+        <span class="small">{{ storeConfig.storeConfig.branding.accountGreeting }}</span>
+        <span class="strong">{{ storeConfig.storeConfig.branding.accountLabel }}</span>
       </button>
       <button class="orders" type="button">
-        <span class="small">Track</span>
-        <span class="strong">Orders & returns</span>
+        <span class="small">{{ storeConfig.storeConfig.branding.ordersSmall }}</span>
+        <span class="strong">{{ storeConfig.storeConfig.branding.ordersLabel }}</span>
       </button>
       <button class="cart" type="button" (click)="goToCart()">
         <span class="cart-icon"></span>
@@ -70,40 +62,22 @@
       Shop
     </button>
     <nav class="nav-links">
-      <a href="#products">New In</a>
-      <a href="#products">Women</a>
-      <a href="#products">Men</a>
-      <a href="#products">Kids</a>
-      <a href="#products">Footwear</a>
-      <a href="#products">Beauty</a>
-      <a href="#products">Luxe</a>
-      <a href="#products">Sale</a>
-      <a href="#about">Style guide</a>
-      <a href="#contact">Help</a>
+      <a *ngFor="let link of storeConfig.storeConfig.navLinks" [href]="link === 'Help' ? '#contact' : (link === 'Style guide' || link === 'Studio notes' ? '#about' : '#products')">{{ link }}</a>
     </nav>
     <div class="promo">
-      <span>Free shipping above Rs 999</span>
+      <span>{{ storeConfig.storeConfig.promoMessages[0] }}</span>
       <span class="promo-sep">|</span>
-      <span>Easy 30-day returns</span>
+      <span>{{ storeConfig.storeConfig.promoMessages[1] }}</span>
     </div>
   </div>
 
   <div *ngIf="isMobileMenuOpen" class="mobile-panel">
     <div class="mobile-search">
-      <input type="text" placeholder="Search fashion" />
+      <input type="text" [placeholder]="storeConfig.storeConfig.branding.searchPlaceholder" />
       <button type="button">Search</button>
     </div>
     <div class="mobile-links">
-      <a href="#products" (click)="closeMenu()">New In</a>
-      <a href="#products" (click)="closeMenu()">Women</a>
-      <a href="#products" (click)="closeMenu()">Men</a>
-      <a href="#products" (click)="closeMenu()">Kids</a>
-      <a href="#products" (click)="closeMenu()">Footwear</a>
-      <a href="#products" (click)="closeMenu()">Beauty</a>
-      <a href="#products" (click)="closeMenu()">Sale</a>
-      <a href="#about" (click)="closeMenu()">Style guide</a>
-      <a href="#contact" (click)="closeMenu()">Help</a>
-      <a href="#" (click)="goToCart()">Bag</a>
+      <a *ngFor="let link of storeConfig.storeConfig.mobileLinks" [href]="link === 'Help' ? '#contact' : (link === 'Style guide' || link === 'Studio notes' ? '#about' : '#products')" (click)="link === 'Bag' ? goToCart() : closeMenu()">{{ link }}</a>
     </div>
   </div>
 </header>

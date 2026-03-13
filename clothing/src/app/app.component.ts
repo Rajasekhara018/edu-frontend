@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StoreConfigService } from './Services/store-config.service';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'electrical-sales';
+  constructor(public readonly storeConfig: StoreConfigService) {}
 }
