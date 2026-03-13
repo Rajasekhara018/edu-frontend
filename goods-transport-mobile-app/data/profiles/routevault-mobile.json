@@ -1,0 +1,296 @@
+{
+  "id": "routevault-mobile",
+  "branding": {
+    "name": "RouteVault Cargo",
+    "subtitle": "Freight booking, fleet support, dispatch visibility, and transport operations in one mobile app.",
+    "supportEmail": "support@routevault.app",
+    "supportPhone": "+91 800 300 2065",
+    "supportHours": "24x7 control room support",
+    "serviceArea": "Pan-India transport corridors and metro dispatch hubs",
+    "accountName": "RouteVault Cargo Customer",
+    "accountEmail": "hello@routevault.app",
+    "accountPhone": "+91 800 300 2065",
+    "memberSince": "Customer since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=routevault-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Live fleet visibility",
+    "badgeSecondary": "24x7 dispatch support",
+    "title": "Book route tracking, dispatch control, b2b dispatch with RouteVault Cargo.",
+    "subtitle": "Compare transport services, request quotes, and manage dispatch operations with profile-based pricing.",
+    "aboutTitle": "About us",
+    "aboutText": "RouteVault Cargo brings booking, dispatch, and tracking workflows together across Route Tracking, Dispatch Control, B2B Dispatch, Full Truck Load.",
+    "contactTitle": "Contact us",
+    "contactText": "Coverage: Pan-India corridors\nSupport: 24x7 control room\nEmail: support@routevault.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track shipment"
+      },
+      {
+        "icon": "undo",
+        "label": "Claim & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Pickup updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Vehicle availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Dispatch support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "ROU-82041",
+        "title": "Quote follow-up for RouteVault Cargo",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "ROU-81789",
+        "title": "Delivery proof shared",
+        "status": "resolved",
+        "updatedAt": "Resolved on 13 March 2026"
+      }
+    ],
+    "searchHint": "Popular searches: rate quote, vehicle availability, POD status",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call control room"
+  },
+  "theme": {
+    "light": {
+      "name": "RouteVault Cargo",
+      "text": "#365314",
+      "background": "#f7fee7",
+      "tint": "#65a30d",
+      "icon": "#64748b",
+      "tabIconDefault": "#64748b",
+      "tabIconSelected": "#65a30d",
+      "card": "#ffffff",
+      "cardAlt": "#ecfccb",
+      "border": "#dbe3eb",
+      "muted": "#64748b",
+      "mutedAlt": "#94a3b8",
+      "primary": "#65a30d",
+      "primaryDark": "#65a30d",
+      "primarySoft": "#ecfccb",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#2563eb",
+      "badgeText": "#ffffff",
+      "chip": "#edf2f7",
+      "chipText": "#334155",
+      "chipActive": "#65a30d",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "RouteVault Cargo Dark",
+      "text": "#eef2f7",
+      "background": "#10161c",
+      "tint": "#eef2f7",
+      "icon": "#9ba7b4",
+      "tabIconDefault": "#9ba7b4",
+      "tabIconSelected": "#eef2f7",
+      "card": "#192129",
+      "cardAlt": "#24303c",
+      "border": "#32414f",
+      "muted": "#c0cad4",
+      "mutedAlt": "#8b99a6",
+      "primary": "#65a30d",
+      "primaryDark": "#65a30d",
+      "primarySoft": "#1d2e3b",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#10161c",
+      "chip": "#24303c",
+      "chipText": "#e2e8f0",
+      "chipActive": "#65a30d",
+      "chipActiveText": "#10161c"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "RouteVault Route Tracking Priority",
+        "description": "Fast-moving route tracking service from RouteVault Cargo.",
+        "price": 3800,
+        "originalPrice": 4200,
+        "image": "",
+        "category": "Route Tracking",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "ROUTEVAULT-0001",
+        "specifications": {
+          "Coverage": "Pan-India",
+          "SLA": "As scheduled",
+          "Support": "24x7",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 2,
+        "name": "VaultMove Dispatch Control Select",
+        "description": "Popular dispatch control option with dispatch support.",
+        "price": 4100,
+        "originalPrice": 4500,
+        "image": "",
+        "category": "Dispatch Control",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "VAULTMOVE-0002",
+        "specifications": {
+          "Coverage": "Regional / national",
+          "SLA": "Fast lane",
+          "Support": "Dedicated ops",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 3,
+        "name": "TrackSafe B2B Dispatch Pro",
+        "description": "Reliable transport lane from RouteVault Cargo.",
+        "price": 3650,
+        "originalPrice": 3980,
+        "image": "",
+        "category": "B2B Dispatch",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "TRACKSAFE-0003",
+        "specifications": {
+          "Coverage": "Zone based",
+          "SLA": "Express",
+          "Support": "Tracking enabled",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 4,
+        "name": "CargoVault Full Truck Load Smart",
+        "description": "Value-oriented operational service for repeat loads.",
+        "price": 3720,
+        "originalPrice": 4050,
+        "image": "",
+        "category": "Full Truck Load",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "CARGOVAULT-0004",
+        "specifications": {
+          "Coverage": "Hub network",
+          "SLA": "Planned",
+          "Support": "Ops managed",
+          "Mode": "Road / storage"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Route Tracking",
+        "Dispatch Control",
+        "B2B Dispatch",
+        "Full Truck Load",
+        "Part Load",
+        "Warehousing",
+        "Container Moves",
+        "Analytics",
+        "Pickup Requests",
+        "Customer Support"
+      ],
+      "brands": [
+        "RouteVault",
+        "VaultMove",
+        "TrackSafe",
+        "CargoVault",
+        "GridTrack",
+        "FlowSafe"
+      ],
+      "categorySpecifications": {
+        "Route Tracking": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Dispatch Control": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "B2B Dispatch": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Full Truck Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Part Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Warehousing": {
+          "Coverage": "Regional / national",
+          "Mode": "Storage / yard",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Container Moves": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Analytics": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Pickup Requests": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Customer Support": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        }
+      },
+      "basePriceStart": 3000,
+      "priceStep": 295,
+      "priceModulo": 24000,
+      "categoryPriceFactor": 65,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

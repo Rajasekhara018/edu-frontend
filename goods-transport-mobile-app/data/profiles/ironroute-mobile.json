@@ -1,0 +1,296 @@
+{
+  "id": "ironroute-mobile",
+  "branding": {
+    "name": "IronRoute Carriers",
+    "subtitle": "Freight booking, fleet support, dispatch visibility, and transport operations in one mobile app.",
+    "supportEmail": "support@ironroute.app",
+    "supportPhone": "+91 800 610 3920",
+    "supportHours": "24x7 control room support",
+    "serviceArea": "Pan-India transport corridors and metro dispatch hubs",
+    "accountName": "IronRoute Carriers Customer",
+    "accountEmail": "hello@ironroute.app",
+    "accountPhone": "+91 800 610 3920",
+    "memberSince": "Customer since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=ironroute-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Live fleet visibility",
+    "badgeSecondary": "24x7 dispatch support",
+    "title": "Book heavy haul, project cargo, industrial loads with IronRoute Carriers.",
+    "subtitle": "Compare transport services, request quotes, and manage dispatch operations with profile-based pricing.",
+    "aboutTitle": "About us",
+    "aboutText": "IronRoute Carriers brings booking, dispatch, and tracking workflows together across Heavy Haul, Project Cargo, Industrial Loads, Escort Services.",
+    "contactTitle": "Contact us",
+    "contactText": "Coverage: Pan-India corridors\nSupport: 24x7 control room\nEmail: support@ironroute.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track shipment"
+      },
+      {
+        "icon": "undo",
+        "label": "Claim & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Pickup updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Vehicle availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Dispatch support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "IRO-82041",
+        "title": "Quote follow-up for IronRoute Carriers",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "IRO-81789",
+        "title": "Delivery proof shared",
+        "status": "resolved",
+        "updatedAt": "Resolved on 13 March 2026"
+      }
+    ],
+    "searchHint": "Popular searches: rate quote, vehicle availability, POD status",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call control room"
+  },
+  "theme": {
+    "light": {
+      "name": "IronRoute Carriers",
+      "text": "#1e293b",
+      "background": "#f8fafc",
+      "tint": "#475569",
+      "icon": "#64748b",
+      "tabIconDefault": "#64748b",
+      "tabIconSelected": "#475569",
+      "card": "#ffffff",
+      "cardAlt": "#e2e8f0",
+      "border": "#dbe3eb",
+      "muted": "#64748b",
+      "mutedAlt": "#94a3b8",
+      "primary": "#475569",
+      "primaryDark": "#475569",
+      "primarySoft": "#e2e8f0",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#f59e0b",
+      "badgeText": "#ffffff",
+      "chip": "#edf2f7",
+      "chipText": "#334155",
+      "chipActive": "#475569",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "IronRoute Carriers Dark",
+      "text": "#eef2f7",
+      "background": "#10161c",
+      "tint": "#eef2f7",
+      "icon": "#9ba7b4",
+      "tabIconDefault": "#9ba7b4",
+      "tabIconSelected": "#eef2f7",
+      "card": "#192129",
+      "cardAlt": "#24303c",
+      "border": "#32414f",
+      "muted": "#c0cad4",
+      "mutedAlt": "#8b99a6",
+      "primary": "#475569",
+      "primaryDark": "#475569",
+      "primarySoft": "#1d2e3b",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#10161c",
+      "chip": "#24303c",
+      "chipText": "#e2e8f0",
+      "chipActive": "#475569",
+      "chipActiveText": "#10161c"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "IronRoute Heavy Haul Priority",
+        "description": "Fast-moving heavy haul service from IronRoute Carriers.",
+        "price": 6900,
+        "originalPrice": 7300,
+        "image": "",
+        "category": "Heavy Haul",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "IRONROUTE-0001",
+        "specifications": {
+          "Coverage": "Pan-India",
+          "SLA": "As scheduled",
+          "Support": "24x7",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 2,
+        "name": "SteelLane Project Cargo Select",
+        "description": "Popular project cargo option with dispatch support.",
+        "price": 7200,
+        "originalPrice": 7600,
+        "image": "",
+        "category": "Project Cargo",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "STEELLANE-0002",
+        "specifications": {
+          "Coverage": "Regional / national",
+          "SLA": "Fast lane",
+          "Support": "Dedicated ops",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 3,
+        "name": "ForgeTransit Industrial Loads Pro",
+        "description": "Reliable transport lane from IronRoute Carriers.",
+        "price": 6750,
+        "originalPrice": 7080,
+        "image": "",
+        "category": "Industrial Loads",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "FORGETRANSIT-0003",
+        "specifications": {
+          "Coverage": "Zone based",
+          "SLA": "Express",
+          "Support": "Tracking enabled",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 4,
+        "name": "CarrierCore Escort Services Smart",
+        "description": "Value-oriented operational service for repeat loads.",
+        "price": 6820,
+        "originalPrice": 7150,
+        "image": "",
+        "category": "Escort Services",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "CARRIERCORE-0004",
+        "specifications": {
+          "Coverage": "Hub network",
+          "SLA": "Planned",
+          "Support": "Ops managed",
+          "Mode": "Road / storage"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Heavy Haul",
+        "Project Cargo",
+        "Industrial Loads",
+        "Escort Services",
+        "Permits",
+        "Full Truck Load",
+        "Container Moves",
+        "Route Tracking",
+        "Dedicated Vehicles",
+        "Driver Ops"
+      ],
+      "brands": [
+        "IronRoute",
+        "SteelLane",
+        "ForgeTransit",
+        "CarrierCore",
+        "HeavyOps",
+        "RoadSteel"
+      ],
+      "categorySpecifications": {
+        "Heavy Haul": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Project Cargo": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Industrial Loads": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Escort Services": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Permits": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Full Truck Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Container Moves": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Route Tracking": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Dedicated Vehicles": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Driver Ops": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        }
+      },
+      "basePriceStart": 6100,
+      "priceStep": 560,
+      "priceModulo": 24000,
+      "categoryPriceFactor": 65,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

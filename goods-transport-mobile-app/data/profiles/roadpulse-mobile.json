@@ -1,0 +1,296 @@
+{
+  "id": "roadpulse-mobile",
+  "branding": {
+    "name": "RoadPulse Freight",
+    "subtitle": "Freight booking, fleet support, dispatch visibility, and transport operations in one mobile app.",
+    "supportEmail": "support@roadpulse.app",
+    "supportPhone": "+91 800 580 3640",
+    "supportHours": "24x7 control room support",
+    "serviceArea": "Pan-India transport corridors and metro dispatch hubs",
+    "accountName": "RoadPulse Freight Customer",
+    "accountEmail": "hello@roadpulse.app",
+    "accountPhone": "+91 800 580 3640",
+    "memberSince": "Customer since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=roadpulse-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Live fleet visibility",
+    "badgeSecondary": "24x7 dispatch support",
+    "title": "Book full truck load, heavy haul, project cargo with RoadPulse Freight.",
+    "subtitle": "Compare transport services, request quotes, and manage dispatch operations with profile-based pricing.",
+    "aboutTitle": "About us",
+    "aboutText": "RoadPulse Freight brings booking, dispatch, and tracking workflows together across Full Truck Load, Heavy Haul, Project Cargo, Industrial Loads.",
+    "contactTitle": "Contact us",
+    "contactText": "Coverage: Pan-India corridors\nSupport: 24x7 control room\nEmail: support@roadpulse.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track shipment"
+      },
+      {
+        "icon": "undo",
+        "label": "Claim & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Pickup updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Vehicle availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Dispatch support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "ROA-82041",
+        "title": "Quote follow-up for RoadPulse Freight",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "ROA-81789",
+        "title": "Delivery proof shared",
+        "status": "resolved",
+        "updatedAt": "Resolved on 13 March 2026"
+      }
+    ],
+    "searchHint": "Popular searches: rate quote, vehicle availability, POD status",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call control room"
+  },
+  "theme": {
+    "light": {
+      "name": "RoadPulse Freight",
+      "text": "#9a3412",
+      "background": "#fff7ed",
+      "tint": "#ea580c",
+      "icon": "#64748b",
+      "tabIconDefault": "#64748b",
+      "tabIconSelected": "#ea580c",
+      "card": "#ffffff",
+      "cardAlt": "#fed7aa",
+      "border": "#dbe3eb",
+      "muted": "#64748b",
+      "mutedAlt": "#94a3b8",
+      "primary": "#ea580c",
+      "primaryDark": "#ea580c",
+      "primarySoft": "#fed7aa",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#2563eb",
+      "badgeText": "#ffffff",
+      "chip": "#edf2f7",
+      "chipText": "#334155",
+      "chipActive": "#ea580c",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "RoadPulse Freight Dark",
+      "text": "#eef2f7",
+      "background": "#10161c",
+      "tint": "#eef2f7",
+      "icon": "#9ba7b4",
+      "tabIconDefault": "#9ba7b4",
+      "tabIconSelected": "#eef2f7",
+      "card": "#192129",
+      "cardAlt": "#24303c",
+      "border": "#32414f",
+      "muted": "#c0cad4",
+      "mutedAlt": "#8b99a6",
+      "primary": "#ea580c",
+      "primaryDark": "#ea580c",
+      "primarySoft": "#1d2e3b",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#10161c",
+      "chip": "#24303c",
+      "chipText": "#e2e8f0",
+      "chipActive": "#ea580c",
+      "chipActiveText": "#10161c"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "RoadPulse Full Truck Load Priority",
+        "description": "Fast-moving full truck load service from RoadPulse Freight.",
+        "price": 6600,
+        "originalPrice": 7000,
+        "image": "",
+        "category": "Full Truck Load",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "ROADPULSE-0001",
+        "specifications": {
+          "Coverage": "Pan-India",
+          "SLA": "As scheduled",
+          "Support": "24x7",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 2,
+        "name": "IronWheel Heavy Haul Select",
+        "description": "Popular heavy haul option with dispatch support.",
+        "price": 6900,
+        "originalPrice": 7300,
+        "image": "",
+        "category": "Heavy Haul",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "IRONWHEEL-0002",
+        "specifications": {
+          "Coverage": "Regional / national",
+          "SLA": "Fast lane",
+          "Support": "Dedicated ops",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 3,
+        "name": "RouteCore Project Cargo Pro",
+        "description": "Reliable transport lane from RoadPulse Freight.",
+        "price": 6450,
+        "originalPrice": 6780,
+        "image": "",
+        "category": "Project Cargo",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "ROUTECORE-0003",
+        "specifications": {
+          "Coverage": "Zone based",
+          "SLA": "Express",
+          "Support": "Tracking enabled",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 4,
+        "name": "HeavyTrack Industrial Loads Smart",
+        "description": "Value-oriented operational service for repeat loads.",
+        "price": 6520,
+        "originalPrice": 6850,
+        "image": "",
+        "category": "Industrial Loads",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "HEAVYTRACK-0004",
+        "specifications": {
+          "Coverage": "Hub network",
+          "SLA": "Planned",
+          "Support": "Ops managed",
+          "Mode": "Road / storage"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Full Truck Load",
+        "Heavy Haul",
+        "Project Cargo",
+        "Industrial Loads",
+        "Container Moves",
+        "Route Tracking",
+        "Escort Services",
+        "Permits",
+        "Fleet Rentals",
+        "B2B Dispatch"
+      ],
+      "brands": [
+        "RoadPulse",
+        "IronWheel",
+        "RouteCore",
+        "HeavyTrack",
+        "PulseFleet",
+        "CargoBeam"
+      ],
+      "categorySpecifications": {
+        "Full Truck Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Heavy Haul": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Project Cargo": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Industrial Loads": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Container Moves": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Route Tracking": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Escort Services": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Permits": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Fleet Rentals": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "B2B Dispatch": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        }
+      },
+      "basePriceStart": 5800,
+      "priceStep": 520,
+      "priceModulo": 24000,
+      "categoryPriceFactor": 65,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

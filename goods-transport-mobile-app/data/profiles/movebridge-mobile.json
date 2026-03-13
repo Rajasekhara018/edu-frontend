@@ -1,0 +1,296 @@
+{
+  "id": "movebridge-mobile",
+  "branding": {
+    "name": "MoveBridge Network",
+    "subtitle": "Freight booking, fleet support, dispatch visibility, and transport operations in one mobile app.",
+    "supportEmail": "support@movebridge.app",
+    "supportPhone": "+91 800 330 2135",
+    "supportHours": "24x7 control room support",
+    "serviceArea": "Pan-India transport corridors and metro dispatch hubs",
+    "accountName": "MoveBridge Network Customer",
+    "accountEmail": "hello@movebridge.app",
+    "accountPhone": "+91 800 330 2135",
+    "memberSince": "Customer since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=movebridge-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Live fleet visibility",
+    "badgeSecondary": "24x7 dispatch support",
+    "title": "Book part load, warehousing, cross dock with MoveBridge Network.",
+    "subtitle": "Compare transport services, request quotes, and manage dispatch operations with profile-based pricing.",
+    "aboutTitle": "About us",
+    "aboutText": "MoveBridge Network brings booking, dispatch, and tracking workflows together across Part Load, Warehousing, Cross Dock, B2B Dispatch.",
+    "contactTitle": "Contact us",
+    "contactText": "Coverage: Pan-India corridors\nSupport: 24x7 control room\nEmail: support@movebridge.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track shipment"
+      },
+      {
+        "icon": "undo",
+        "label": "Claim & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Pickup updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Vehicle availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Dispatch support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "MOV-82041",
+        "title": "Quote follow-up for MoveBridge Network",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "MOV-81789",
+        "title": "Delivery proof shared",
+        "status": "resolved",
+        "updatedAt": "Resolved on 13 March 2026"
+      }
+    ],
+    "searchHint": "Popular searches: rate quote, vehicle availability, POD status",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call control room"
+  },
+  "theme": {
+    "light": {
+      "name": "MoveBridge Network",
+      "text": "#134e4a",
+      "background": "#f0fdfa",
+      "tint": "#0f766e",
+      "icon": "#64748b",
+      "tabIconDefault": "#64748b",
+      "tabIconSelected": "#0f766e",
+      "card": "#ffffff",
+      "cardAlt": "#ccfbf1",
+      "border": "#dbe3eb",
+      "muted": "#64748b",
+      "mutedAlt": "#94a3b8",
+      "primary": "#0f766e",
+      "primaryDark": "#0f766e",
+      "primarySoft": "#ccfbf1",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#ef4444",
+      "badgeText": "#ffffff",
+      "chip": "#edf2f7",
+      "chipText": "#334155",
+      "chipActive": "#0f766e",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "MoveBridge Network Dark",
+      "text": "#eef2f7",
+      "background": "#10161c",
+      "tint": "#eef2f7",
+      "icon": "#9ba7b4",
+      "tabIconDefault": "#9ba7b4",
+      "tabIconSelected": "#eef2f7",
+      "card": "#192129",
+      "cardAlt": "#24303c",
+      "border": "#32414f",
+      "muted": "#c0cad4",
+      "mutedAlt": "#8b99a6",
+      "primary": "#0f766e",
+      "primaryDark": "#0f766e",
+      "primarySoft": "#1d2e3b",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#10161c",
+      "chip": "#24303c",
+      "chipText": "#e2e8f0",
+      "chipActive": "#0f766e",
+      "chipActiveText": "#10161c"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "MoveBridge Part Load Priority",
+        "description": "Fast-moving part load service from MoveBridge Network.",
+        "price": 4100,
+        "originalPrice": 4500,
+        "image": "",
+        "category": "Part Load",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "MOVEBRIDGE-0001",
+        "specifications": {
+          "Coverage": "Pan-India",
+          "SLA": "As scheduled",
+          "Support": "24x7",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 2,
+        "name": "BridgeOps Warehousing Select",
+        "description": "Popular warehousing option with dispatch support.",
+        "price": 4400,
+        "originalPrice": 4800,
+        "image": "",
+        "category": "Warehousing",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "BRIDGEOPS-0002",
+        "specifications": {
+          "Coverage": "Regional / national",
+          "SLA": "Fast lane",
+          "Support": "Dedicated ops",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 3,
+        "name": "LaneMint Cross Dock Pro",
+        "description": "Reliable transport lane from MoveBridge Network.",
+        "price": 3950,
+        "originalPrice": 4280,
+        "image": "",
+        "category": "Cross Dock",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "LANEMINT-0003",
+        "specifications": {
+          "Coverage": "Zone based",
+          "SLA": "Express",
+          "Support": "Tracking enabled",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 4,
+        "name": "PortaMove B2B Dispatch Smart",
+        "description": "Value-oriented operational service for repeat loads.",
+        "price": 4020,
+        "originalPrice": 4350,
+        "image": "",
+        "category": "B2B Dispatch",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "PORTAMOVE-0004",
+        "specifications": {
+          "Coverage": "Hub network",
+          "SLA": "Planned",
+          "Support": "Ops managed",
+          "Mode": "Road / storage"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Part Load",
+        "Warehousing",
+        "Cross Dock",
+        "B2B Dispatch",
+        "Last Mile",
+        "Route Tracking",
+        "Reverse Logistics",
+        "Full Truck Load",
+        "Cold Chain",
+        "Courier Bulk"
+      ],
+      "brands": [
+        "MoveBridge",
+        "BridgeOps",
+        "LaneMint",
+        "PortaMove",
+        "CargoNet",
+        "FlowLine"
+      ],
+      "categorySpecifications": {
+        "Part Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Warehousing": {
+          "Coverage": "Regional / national",
+          "Mode": "Storage / yard",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Cross Dock": {
+          "Coverage": "Regional / national",
+          "Mode": "Storage / yard",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "B2B Dispatch": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Last Mile": {
+          "Coverage": "City / regional",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Route Tracking": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Reverse Logistics": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Full Truck Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Cold Chain": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Courier Bulk": {
+          "Coverage": "City / regional",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        }
+      },
+      "basePriceStart": 3300,
+      "priceStep": 305,
+      "priceModulo": 24000,
+      "categoryPriceFactor": 65,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

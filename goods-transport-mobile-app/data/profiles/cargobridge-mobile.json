@@ -1,0 +1,296 @@
+{
+  "id": "cargobridge-mobile",
+  "branding": {
+    "name": "CargoBridge Ops",
+    "subtitle": "Freight booking, fleet support, dispatch visibility, and transport operations in one mobile app.",
+    "supportEmail": "support@cargobridge.app",
+    "supportPhone": "+91 800 460 2940",
+    "supportHours": "24x7 control room support",
+    "serviceArea": "Pan-India transport corridors and metro dispatch hubs",
+    "accountName": "CargoBridge Ops Customer",
+    "accountEmail": "hello@cargobridge.app",
+    "accountPhone": "+91 800 460 2940",
+    "memberSince": "Customer since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=cargobridge-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Live fleet visibility",
+    "badgeSecondary": "24x7 dispatch support",
+    "title": "Book full truck load, container moves, port drayage with CargoBridge Ops.",
+    "subtitle": "Compare transport services, request quotes, and manage dispatch operations with profile-based pricing.",
+    "aboutTitle": "About us",
+    "aboutText": "CargoBridge Ops brings booking, dispatch, and tracking workflows together across Full Truck Load, Container Moves, Port Drayage, Warehousing.",
+    "contactTitle": "Contact us",
+    "contactText": "Coverage: Pan-India corridors\nSupport: 24x7 control room\nEmail: support@cargobridge.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track shipment"
+      },
+      {
+        "icon": "undo",
+        "label": "Claim & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Pickup updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Vehicle availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Dispatch support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "CAR-82041",
+        "title": "Quote follow-up for CargoBridge Ops",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "CAR-81789",
+        "title": "Delivery proof shared",
+        "status": "resolved",
+        "updatedAt": "Resolved on 13 March 2026"
+      }
+    ],
+    "searchHint": "Popular searches: rate quote, vehicle availability, POD status",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call control room"
+  },
+  "theme": {
+    "light": {
+      "name": "CargoBridge Ops",
+      "text": "#134e4a",
+      "background": "#f0fdfa",
+      "tint": "#0f766e",
+      "icon": "#64748b",
+      "tabIconDefault": "#64748b",
+      "tabIconSelected": "#0f766e",
+      "card": "#ffffff",
+      "cardAlt": "#ccfbf1",
+      "border": "#dbe3eb",
+      "muted": "#64748b",
+      "mutedAlt": "#94a3b8",
+      "primary": "#0f766e",
+      "primaryDark": "#0f766e",
+      "primarySoft": "#ccfbf1",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#ea580c",
+      "badgeText": "#ffffff",
+      "chip": "#edf2f7",
+      "chipText": "#334155",
+      "chipActive": "#0f766e",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "CargoBridge Ops Dark",
+      "text": "#eef2f7",
+      "background": "#10161c",
+      "tint": "#eef2f7",
+      "icon": "#9ba7b4",
+      "tabIconDefault": "#9ba7b4",
+      "tabIconSelected": "#eef2f7",
+      "card": "#192129",
+      "cardAlt": "#24303c",
+      "border": "#32414f",
+      "muted": "#c0cad4",
+      "mutedAlt": "#8b99a6",
+      "primary": "#0f766e",
+      "primaryDark": "#0f766e",
+      "primarySoft": "#1d2e3b",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#10161c",
+      "chip": "#24303c",
+      "chipText": "#e2e8f0",
+      "chipActive": "#0f766e",
+      "chipActiveText": "#10161c"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "CargoBridge Full Truck Load Priority",
+        "description": "Fast-moving full truck load service from CargoBridge Ops.",
+        "price": 5400,
+        "originalPrice": 5800,
+        "image": "",
+        "category": "Full Truck Load",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "CARGOBRIDGE-0001",
+        "specifications": {
+          "Coverage": "Pan-India",
+          "SLA": "As scheduled",
+          "Support": "24x7",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 2,
+        "name": "PortFlow Container Moves Select",
+        "description": "Popular container moves option with dispatch support.",
+        "price": 5700,
+        "originalPrice": 6100,
+        "image": "",
+        "category": "Container Moves",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "PORTFLOW-0002",
+        "specifications": {
+          "Coverage": "Regional / national",
+          "SLA": "Fast lane",
+          "Support": "Dedicated ops",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 3,
+        "name": "BridgeFleet Port Drayage Pro",
+        "description": "Reliable transport lane from CargoBridge Ops.",
+        "price": 5250,
+        "originalPrice": 5580,
+        "image": "",
+        "category": "Port Drayage",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "BRIDGEFLEET-0003",
+        "specifications": {
+          "Coverage": "Zone based",
+          "SLA": "Express",
+          "Support": "Tracking enabled",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 4,
+        "name": "DockGrid Warehousing Smart",
+        "description": "Value-oriented operational service for repeat loads.",
+        "price": 5320,
+        "originalPrice": 5650,
+        "image": "",
+        "category": "Warehousing",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "DOCKGRID-0004",
+        "specifications": {
+          "Coverage": "Hub network",
+          "SLA": "Planned",
+          "Support": "Ops managed",
+          "Mode": "Road / storage"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Full Truck Load",
+        "Container Moves",
+        "Port Drayage",
+        "Warehousing",
+        "Cross Dock",
+        "Route Tracking",
+        "Part Load",
+        "Cold Chain",
+        "Industrial Loads",
+        "B2B Dispatch"
+      ],
+      "brands": [
+        "CargoBridge",
+        "PortFlow",
+        "BridgeFleet",
+        "DockGrid",
+        "AxisRoute",
+        "HaulStack"
+      ],
+      "categorySpecifications": {
+        "Full Truck Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Container Moves": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Port Drayage": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Warehousing": {
+          "Coverage": "Regional / national",
+          "Mode": "Storage / yard",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Cross Dock": {
+          "Coverage": "Regional / national",
+          "Mode": "Storage / yard",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Route Tracking": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Part Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Cold Chain": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Industrial Loads": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "B2B Dispatch": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        }
+      },
+      "basePriceStart": 4600,
+      "priceStep": 420,
+      "priceModulo": 24000,
+      "categoryPriceFactor": 65,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

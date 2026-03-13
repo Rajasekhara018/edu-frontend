@@ -1,0 +1,296 @@
+{
+  "id": "haulsprint-mobile",
+  "branding": {
+    "name": "HaulSprint Network",
+    "subtitle": "Freight booking, fleet support, dispatch visibility, and transport operations in one mobile app.",
+    "supportEmail": "support@haulsprint.app",
+    "supportPhone": "+91 800 310 2100",
+    "supportHours": "24x7 control room support",
+    "serviceArea": "Pan-India transport corridors and metro dispatch hubs",
+    "accountName": "HaulSprint Network Customer",
+    "accountEmail": "hello@haulsprint.app",
+    "accountPhone": "+91 800 310 2100",
+    "memberSince": "Customer since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=haulsprint-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Live fleet visibility",
+    "badgeSecondary": "24x7 dispatch support",
+    "title": "Book express cargo, same day dispatch, part load with HaulSprint Network.",
+    "subtitle": "Compare transport services, request quotes, and manage dispatch operations with profile-based pricing.",
+    "aboutTitle": "About us",
+    "aboutText": "HaulSprint Network brings booking, dispatch, and tracking workflows together across Express Cargo, Same Day Dispatch, Part Load, Last Mile.",
+    "contactTitle": "Contact us",
+    "contactText": "Coverage: Pan-India corridors\nSupport: 24x7 control room\nEmail: support@haulsprint.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track shipment"
+      },
+      {
+        "icon": "undo",
+        "label": "Claim & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Pickup updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Vehicle availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Dispatch support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "HAU-82041",
+        "title": "Quote follow-up for HaulSprint Network",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "HAU-81789",
+        "title": "Delivery proof shared",
+        "status": "resolved",
+        "updatedAt": "Resolved on 13 March 2026"
+      }
+    ],
+    "searchHint": "Popular searches: rate quote, vehicle availability, POD status",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call control room"
+  },
+  "theme": {
+    "light": {
+      "name": "HaulSprint Network",
+      "text": "#4a1616",
+      "background": "#fff5f5",
+      "tint": "#dc2626",
+      "icon": "#64748b",
+      "tabIconDefault": "#64748b",
+      "tabIconSelected": "#dc2626",
+      "card": "#ffffff",
+      "cardAlt": "#fee2e2",
+      "border": "#dbe3eb",
+      "muted": "#64748b",
+      "mutedAlt": "#94a3b8",
+      "primary": "#dc2626",
+      "primaryDark": "#dc2626",
+      "primarySoft": "#fee2e2",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#f59e0b",
+      "badgeText": "#ffffff",
+      "chip": "#edf2f7",
+      "chipText": "#334155",
+      "chipActive": "#dc2626",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "HaulSprint Network Dark",
+      "text": "#eef2f7",
+      "background": "#10161c",
+      "tint": "#eef2f7",
+      "icon": "#9ba7b4",
+      "tabIconDefault": "#9ba7b4",
+      "tabIconSelected": "#eef2f7",
+      "card": "#192129",
+      "cardAlt": "#24303c",
+      "border": "#32414f",
+      "muted": "#c0cad4",
+      "mutedAlt": "#8b99a6",
+      "primary": "#dc2626",
+      "primaryDark": "#dc2626",
+      "primarySoft": "#1d2e3b",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#10161c",
+      "chip": "#24303c",
+      "chipText": "#e2e8f0",
+      "chipActive": "#dc2626",
+      "chipActiveText": "#10161c"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "HaulSprint Express Cargo Priority",
+        "description": "Fast-moving express cargo service from HaulSprint Network.",
+        "price": 3900,
+        "originalPrice": 4300,
+        "image": "",
+        "category": "Express Cargo",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "HAULSPRINT-0001",
+        "specifications": {
+          "Coverage": "Pan-India",
+          "SLA": "As scheduled",
+          "Support": "24x7",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 2,
+        "name": "SprintLine Same Day Dispatch Select",
+        "description": "Popular same day dispatch option with dispatch support.",
+        "price": 4200,
+        "originalPrice": 4600,
+        "image": "",
+        "category": "Same Day Dispatch",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "SPRINTLINE-0002",
+        "specifications": {
+          "Coverage": "Regional / national",
+          "SLA": "Fast lane",
+          "Support": "Dedicated ops",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 3,
+        "name": "QuickHaul Part Load Pro",
+        "description": "Reliable transport lane from HaulSprint Network.",
+        "price": 3750,
+        "originalPrice": 4080,
+        "image": "",
+        "category": "Part Load",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "QUICKHAUL-0003",
+        "specifications": {
+          "Coverage": "Zone based",
+          "SLA": "Express",
+          "Support": "Tracking enabled",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 4,
+        "name": "CityDash Last Mile Smart",
+        "description": "Value-oriented operational service for repeat loads.",
+        "price": 3820,
+        "originalPrice": 4150,
+        "image": "",
+        "category": "Last Mile",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "CITYDASH-0004",
+        "specifications": {
+          "Coverage": "Hub network",
+          "SLA": "Planned",
+          "Support": "Ops managed",
+          "Mode": "Road / storage"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Express Cargo",
+        "Same Day Dispatch",
+        "Part Load",
+        "Last Mile",
+        "B2B Dispatch",
+        "Route Tracking",
+        "Fleet Rentals",
+        "Courier Bulk",
+        "Document Runs",
+        "Ecommerce Loads"
+      ],
+      "brands": [
+        "HaulSprint",
+        "SprintLine",
+        "QuickHaul",
+        "CityDash",
+        "SwiftAxis",
+        "LaneGo"
+      ],
+      "categorySpecifications": {
+        "Express Cargo": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Priority",
+          "Support": "Dispatch + tracking"
+        },
+        "Same Day Dispatch": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Priority",
+          "Support": "Dispatch + tracking"
+        },
+        "Part Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Last Mile": {
+          "Coverage": "City / regional",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "B2B Dispatch": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Route Tracking": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Fleet Rentals": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Courier Bulk": {
+          "Coverage": "City / regional",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Document Runs": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Ecommerce Loads": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        }
+      },
+      "basePriceStart": 3100,
+      "priceStep": 300,
+      "priceModulo": 24000,
+      "categoryPriceFactor": 65,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

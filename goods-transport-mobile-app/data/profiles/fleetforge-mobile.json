@@ -1,0 +1,296 @@
+{
+  "id": "fleetforge-mobile",
+  "branding": {
+    "name": "FleetForge Transit",
+    "subtitle": "Freight booking, fleet support, dispatch visibility, and transport operations in one mobile app.",
+    "supportEmail": "support@fleetforge.app",
+    "supportPhone": "+91 800 390 2520",
+    "supportHours": "24x7 control room support",
+    "serviceArea": "Pan-India transport corridors and metro dispatch hubs",
+    "accountName": "FleetForge Transit Customer",
+    "accountEmail": "hello@fleetforge.app",
+    "accountPhone": "+91 800 390 2520",
+    "memberSince": "Customer since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=fleetforge-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Live fleet visibility",
+    "badgeSecondary": "24x7 dispatch support",
+    "title": "Book fleet rentals, dedicated vehicles, express cargo with FleetForge Transit.",
+    "subtitle": "Compare transport services, request quotes, and manage dispatch operations with profile-based pricing.",
+    "aboutTitle": "About us",
+    "aboutText": "FleetForge Transit brings booking, dispatch, and tracking workflows together across Fleet Rentals, Dedicated Vehicles, Express Cargo, Full Truck Load.",
+    "contactTitle": "Contact us",
+    "contactText": "Coverage: Pan-India corridors\nSupport: 24x7 control room\nEmail: support@fleetforge.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track shipment"
+      },
+      {
+        "icon": "undo",
+        "label": "Claim & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Pickup updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Vehicle availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Dispatch support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "FLE-82041",
+        "title": "Quote follow-up for FleetForge Transit",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "FLE-81789",
+        "title": "Delivery proof shared",
+        "status": "resolved",
+        "updatedAt": "Resolved on 13 March 2026"
+      }
+    ],
+    "searchHint": "Popular searches: rate quote, vehicle availability, POD status",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call control room"
+  },
+  "theme": {
+    "light": {
+      "name": "FleetForge Transit",
+      "text": "#2e1065",
+      "background": "#faf5ff",
+      "tint": "#7c3aed",
+      "icon": "#64748b",
+      "tabIconDefault": "#64748b",
+      "tabIconSelected": "#7c3aed",
+      "card": "#ffffff",
+      "cardAlt": "#ede9fe",
+      "border": "#dbe3eb",
+      "muted": "#64748b",
+      "mutedAlt": "#94a3b8",
+      "primary": "#7c3aed",
+      "primaryDark": "#7c3aed",
+      "primarySoft": "#ede9fe",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#ef4444",
+      "badgeText": "#ffffff",
+      "chip": "#edf2f7",
+      "chipText": "#334155",
+      "chipActive": "#7c3aed",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "FleetForge Transit Dark",
+      "text": "#eef2f7",
+      "background": "#10161c",
+      "tint": "#eef2f7",
+      "icon": "#9ba7b4",
+      "tabIconDefault": "#9ba7b4",
+      "tabIconSelected": "#eef2f7",
+      "card": "#192129",
+      "cardAlt": "#24303c",
+      "border": "#32414f",
+      "muted": "#c0cad4",
+      "mutedAlt": "#8b99a6",
+      "primary": "#7c3aed",
+      "primaryDark": "#7c3aed",
+      "primarySoft": "#1d2e3b",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#10161c",
+      "chip": "#24303c",
+      "chipText": "#e2e8f0",
+      "chipActive": "#7c3aed",
+      "chipActiveText": "#10161c"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "FleetForge Fleet Rentals Priority",
+        "description": "Fast-moving fleet rentals service from FleetForge Transit.",
+        "price": 4700,
+        "originalPrice": 5100,
+        "image": "",
+        "category": "Fleet Rentals",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "FLEETFORGE-0001",
+        "specifications": {
+          "Coverage": "Pan-India",
+          "SLA": "As scheduled",
+          "Support": "24x7",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 2,
+        "name": "TransitOps Dedicated Vehicles Select",
+        "description": "Popular dedicated vehicles option with dispatch support.",
+        "price": 5000,
+        "originalPrice": 5400,
+        "image": "",
+        "category": "Dedicated Vehicles",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "TRANSITOPS-0002",
+        "specifications": {
+          "Coverage": "Regional / national",
+          "SLA": "Fast lane",
+          "Support": "Dedicated ops",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 3,
+        "name": "RapidFleet Express Cargo Pro",
+        "description": "Reliable transport lane from FleetForge Transit.",
+        "price": 4550,
+        "originalPrice": 4880,
+        "image": "",
+        "category": "Express Cargo",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "RAPIDFLEET-0003",
+        "specifications": {
+          "Coverage": "Zone based",
+          "SLA": "Express",
+          "Support": "Tracking enabled",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 4,
+        "name": "ForgeHaul Full Truck Load Smart",
+        "description": "Value-oriented operational service for repeat loads.",
+        "price": 4620,
+        "originalPrice": 4950,
+        "image": "",
+        "category": "Full Truck Load",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "FORGEHAUL-0004",
+        "specifications": {
+          "Coverage": "Hub network",
+          "SLA": "Planned",
+          "Support": "Ops managed",
+          "Mode": "Road / storage"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Fleet Rentals",
+        "Dedicated Vehicles",
+        "Express Cargo",
+        "Full Truck Load",
+        "Part Load",
+        "Last Mile",
+        "Route Tracking",
+        "Driver Ops",
+        "Warehouse Support",
+        "Industrial Loads"
+      ],
+      "brands": [
+        "FleetForge",
+        "TransitOps",
+        "RapidFleet",
+        "ForgeHaul",
+        "LanePulse",
+        "DriveGrid"
+      ],
+      "categorySpecifications": {
+        "Fleet Rentals": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Dedicated Vehicles": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Express Cargo": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Priority",
+          "Support": "Dispatch + tracking"
+        },
+        "Full Truck Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Part Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Last Mile": {
+          "Coverage": "City / regional",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Route Tracking": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Driver Ops": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Warehouse Support": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Industrial Loads": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        }
+      },
+      "basePriceStart": 3900,
+      "priceStep": 360,
+      "priceModulo": 24000,
+      "categoryPriceFactor": 65,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

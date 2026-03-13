@@ -1,0 +1,296 @@
+{
+  "id": "urbanfreight-mobile",
+  "branding": {
+    "name": "UrbanFreight Stack",
+    "subtitle": "Freight booking, fleet support, dispatch visibility, and transport operations in one mobile app.",
+    "supportEmail": "support@urbanfreight.app",
+    "supportPhone": "+91 800 260 1960",
+    "supportHours": "24x7 control room support",
+    "serviceArea": "Pan-India transport corridors and metro dispatch hubs",
+    "accountName": "UrbanFreight Stack Customer",
+    "accountEmail": "hello@urbanfreight.app",
+    "accountPhone": "+91 800 260 1960",
+    "memberSince": "Customer since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=urbanfreight-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Live fleet visibility",
+    "badgeSecondary": "24x7 dispatch support",
+    "title": "Book last mile, express cargo, courier bulk with UrbanFreight Stack.",
+    "subtitle": "Compare transport services, request quotes, and manage dispatch operations with profile-based pricing.",
+    "aboutTitle": "About us",
+    "aboutText": "UrbanFreight Stack brings booking, dispatch, and tracking workflows together across Last Mile, Express Cargo, Courier Bulk, B2B Dispatch.",
+    "contactTitle": "Contact us",
+    "contactText": "Coverage: Pan-India corridors\nSupport: 24x7 control room\nEmail: support@urbanfreight.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track shipment"
+      },
+      {
+        "icon": "undo",
+        "label": "Claim & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Pickup updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Vehicle availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Dispatch support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "URB-82041",
+        "title": "Quote follow-up for UrbanFreight Stack",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "URB-81789",
+        "title": "Delivery proof shared",
+        "status": "resolved",
+        "updatedAt": "Resolved on 13 March 2026"
+      }
+    ],
+    "searchHint": "Popular searches: rate quote, vehicle availability, POD status",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call control room"
+  },
+  "theme": {
+    "light": {
+      "name": "UrbanFreight Stack",
+      "text": "#431407",
+      "background": "#fff7ed",
+      "tint": "#7c2d12",
+      "icon": "#64748b",
+      "tabIconDefault": "#64748b",
+      "tabIconSelected": "#7c2d12",
+      "card": "#ffffff",
+      "cardAlt": "#fed7aa",
+      "border": "#dbe3eb",
+      "muted": "#64748b",
+      "mutedAlt": "#94a3b8",
+      "primary": "#7c2d12",
+      "primaryDark": "#7c2d12",
+      "primarySoft": "#fed7aa",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#2563eb",
+      "badgeText": "#ffffff",
+      "chip": "#edf2f7",
+      "chipText": "#334155",
+      "chipActive": "#7c2d12",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "UrbanFreight Stack Dark",
+      "text": "#eef2f7",
+      "background": "#10161c",
+      "tint": "#eef2f7",
+      "icon": "#9ba7b4",
+      "tabIconDefault": "#9ba7b4",
+      "tabIconSelected": "#eef2f7",
+      "card": "#192129",
+      "cardAlt": "#24303c",
+      "border": "#32414f",
+      "muted": "#c0cad4",
+      "mutedAlt": "#8b99a6",
+      "primary": "#7c2d12",
+      "primaryDark": "#7c2d12",
+      "primarySoft": "#1d2e3b",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#10161c",
+      "chip": "#24303c",
+      "chipText": "#e2e8f0",
+      "chipActive": "#7c2d12",
+      "chipActiveText": "#10161c"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "UrbanFreight Last Mile Priority",
+        "description": "Fast-moving last mile service from UrbanFreight Stack.",
+        "price": 3400,
+        "originalPrice": 3800,
+        "image": "",
+        "category": "Last Mile",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "URBANFREIGHT-0001",
+        "specifications": {
+          "Coverage": "Pan-India",
+          "SLA": "As scheduled",
+          "Support": "24x7",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 2,
+        "name": "CityStack Express Cargo Select",
+        "description": "Popular express cargo option with dispatch support.",
+        "price": 3700,
+        "originalPrice": 4100,
+        "image": "",
+        "category": "Express Cargo",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "CITYSTACK-0002",
+        "specifications": {
+          "Coverage": "Regional / national",
+          "SLA": "Fast lane",
+          "Support": "Dedicated ops",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 3,
+        "name": "UrbanLane Courier Bulk Pro",
+        "description": "Reliable transport lane from UrbanFreight Stack.",
+        "price": 3250,
+        "originalPrice": 3580,
+        "image": "",
+        "category": "Courier Bulk",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "URBANLANE-0003",
+        "specifications": {
+          "Coverage": "Zone based",
+          "SLA": "Express",
+          "Support": "Tracking enabled",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 4,
+        "name": "QuickStack B2B Dispatch Smart",
+        "description": "Value-oriented operational service for repeat loads.",
+        "price": 3320,
+        "originalPrice": 3650,
+        "image": "",
+        "category": "B2B Dispatch",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "QUICKSTACK-0004",
+        "specifications": {
+          "Coverage": "Hub network",
+          "SLA": "Planned",
+          "Support": "Ops managed",
+          "Mode": "Road / storage"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Last Mile",
+        "Express Cargo",
+        "Courier Bulk",
+        "B2B Dispatch",
+        "Part Load",
+        "Warehouse Support",
+        "Pickup Requests",
+        "Reverse Logistics",
+        "Route Tracking",
+        "Fleet Rentals"
+      ],
+      "brands": [
+        "UrbanFreight",
+        "CityStack",
+        "UrbanLane",
+        "QuickStack",
+        "MetroCargo",
+        "DashDock"
+      ],
+      "categorySpecifications": {
+        "Last Mile": {
+          "Coverage": "City / regional",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Express Cargo": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Priority",
+          "Support": "Dispatch + tracking"
+        },
+        "Courier Bulk": {
+          "Coverage": "City / regional",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "B2B Dispatch": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Part Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Warehouse Support": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Pickup Requests": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Reverse Logistics": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Route Tracking": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Fleet Rentals": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        }
+      },
+      "basePriceStart": 2600,
+      "priceStep": 280,
+      "priceModulo": 24000,
+      "categoryPriceFactor": 65,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

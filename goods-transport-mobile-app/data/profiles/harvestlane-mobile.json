@@ -1,0 +1,282 @@
+{
+  "id": "harvestlane-mobile",
+  "branding": {
+    "name": "HarvestLane",
+    "subtitle": "Fast groceries, pantry essentials, and daily care delivered on your schedule.",
+    "supportEmail": "support@harvestlane.app",
+    "supportPhone": "+91 800 040 0070",
+    "supportHours": "6:00 AM - 11:00 PM",
+    "serviceArea": "Hyderabad metro and nearby hubs",
+    "accountName": "HarvestLane Member",
+    "accountEmail": "hello@harvestlane.app",
+    "accountPhone": "+91 800 040 0070",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=harvestlane-mobile"
+  },
+  "hero": {
+    "badgePrimary": "30 min delivery",
+    "badgeSecondary": "Freshness guaranteed",
+    "title": "Shop fresh produce, dairy & eggs, bakery and more with HarvestLane.",
+    "subtitle": "Daily offers on staples, snacks, beverages with secure payments and reliable slots.",
+    "aboutTitle": "About us",
+    "aboutText": "HarvestLane is a profile-driven grocery experience focused on fast delivery, dependable picks, and category depth across Fresh Produce, Dairy & Eggs, Bakery, Staples.",
+    "contactTitle": "Contact us",
+    "contactText": "Service area: Hyderabad\nSupport hours: 6:00 AM - 11:00 PM\nEmail: support@harvestlane.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Account help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "HAR-22041",
+        "title": "Refund for HarvestLane order #406-7749123",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "HAR-21789",
+        "title": "Unable to apply wallet balance on HarvestLane",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: refund status, change address, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "HarvestLane",
+      "text": "#2a241e",
+      "background": "#faf7f0",
+      "tint": "#8b6b3e",
+      "icon": "#66706b",
+      "tabIconDefault": "#66706b",
+      "tabIconSelected": "#8b6b3e",
+      "card": "#ffffff",
+      "cardAlt": "#f1e7d7",
+      "border": "#e2e7e3",
+      "muted": "#6c756f",
+      "mutedAlt": "#9aa39c",
+      "primary": "#8b6b3e",
+      "primaryDark": "#8b6b3e",
+      "primarySoft": "#f1e7d7",
+      "danger": "#cc4b33",
+      "warning": "#f4b740",
+      "success": "#8b6b3e",
+      "badge": "#c25440",
+      "badgeText": "#ffffff",
+      "chip": "#f5f1e7",
+      "chipText": "#4f4f4f",
+      "chipActive": "#8b6b3e",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "HarvestLane Dark",
+      "text": "#f4f2ee",
+      "background": "#141514",
+      "tint": "#f2f0ea",
+      "icon": "#a3a7a4",
+      "tabIconDefault": "#a3a7a4",
+      "tabIconSelected": "#f2f0ea",
+      "card": "#1f201f",
+      "cardAlt": "#2a2c2b",
+      "border": "#2f3331",
+      "muted": "#b1b7b3",
+      "mutedAlt": "#8f9591",
+      "primary": "#8b6b3e",
+      "primaryDark": "#8b6b3e",
+      "primarySoft": "#24342b",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#8b6b3e",
+      "badge": "#f07a62",
+      "badgeText": "#141514",
+      "chip": "#2a2c2b",
+      "chipText": "#d7dad7",
+      "chipActive": "#8b6b3e",
+      "chipActiveText": "#141514"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "HarvestLane Fresh Produce Select",
+        "description": "Popular fresh produce from HarvestLane.",
+        "price": 80,
+        "originalPrice": 100,
+        "image": "",
+        "category": "Fresh Produce",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "HARVESTLANE-0001",
+        "specifications": {
+          "Pack": "1 unit",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "FieldHouse Dairy & Eggs Value Pack",
+        "description": "Best-selling dairy & eggs pack.",
+        "price": 110,
+        "originalPrice": 135,
+        "image": "",
+        "category": "Dairy & Eggs",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "FIELDHOUSE-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Chilled / cool",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "BarnBasket Bakery Prime",
+        "description": "Daily favorite from HarvestLane.",
+        "price": 95,
+        "originalPrice": 119,
+        "image": "",
+        "category": "Bakery",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "BARNBASKET-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "DailyGround Staples Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 130,
+        "originalPrice": 158,
+        "image": "",
+        "category": "Staples",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "DAILYGROUND-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Fresh Produce",
+        "Dairy & Eggs",
+        "Bakery",
+        "Staples",
+        "Snacks",
+        "Beverages",
+        "Household",
+        "Health",
+        "Frozen",
+        "Ready Meals"
+      ],
+      "brands": [
+        "HarvestLane",
+        "FieldHouse",
+        "BarnBasket",
+        "DailyGround",
+        "PureHarvest",
+        "KitchenLane"
+      ],
+      "categorySpecifications": {
+        "Fresh Produce": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "2-5 days"
+        },
+        "Dairy & Eggs": {
+          "Pack": "Standard pack",
+          "Storage": "Keep refrigerated",
+          "ShelfLife": "As labelled"
+        },
+        "Bakery": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Staples": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Household": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Health": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Frozen": {
+          "Pack": "Standard pack",
+          "Storage": "Keep refrigerated",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Meals": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 40,
+      "priceStep": 10,
+      "priceModulo": 1200,
+      "categoryPriceFactor": 4,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

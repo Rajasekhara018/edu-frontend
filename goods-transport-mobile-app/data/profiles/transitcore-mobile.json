@@ -1,0 +1,296 @@
+{
+  "id": "transitcore-mobile",
+  "branding": {
+    "name": "TransitCore Dispatch",
+    "subtitle": "Freight booking, fleet support, dispatch visibility, and transport operations in one mobile app.",
+    "supportEmail": "support@transitcore.app",
+    "supportPhone": "+91 800 430 2730",
+    "supportHours": "24x7 control room support",
+    "serviceArea": "Pan-India transport corridors and metro dispatch hubs",
+    "accountName": "TransitCore Dispatch Customer",
+    "accountEmail": "hello@transitcore.app",
+    "accountPhone": "+91 800 430 2730",
+    "memberSince": "Customer since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=transitcore-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Live fleet visibility",
+    "badgeSecondary": "24x7 dispatch support",
+    "title": "Book dedicated vehicles, full truck load, part load with TransitCore Dispatch.",
+    "subtitle": "Compare transport services, request quotes, and manage dispatch operations with profile-based pricing.",
+    "aboutTitle": "About us",
+    "aboutText": "TransitCore Dispatch brings booking, dispatch, and tracking workflows together across Dedicated Vehicles, Full Truck Load, Part Load, Warehousing.",
+    "contactTitle": "Contact us",
+    "contactText": "Coverage: Pan-India corridors\nSupport: 24x7 control room\nEmail: support@transitcore.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track shipment"
+      },
+      {
+        "icon": "undo",
+        "label": "Claim & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Pickup updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Vehicle availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Dispatch support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "TRA-82041",
+        "title": "Quote follow-up for TransitCore Dispatch",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "TRA-81789",
+        "title": "Delivery proof shared",
+        "status": "resolved",
+        "updatedAt": "Resolved on 13 March 2026"
+      }
+    ],
+    "searchHint": "Popular searches: rate quote, vehicle availability, POD status",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call control room"
+  },
+  "theme": {
+    "light": {
+      "name": "TransitCore Dispatch",
+      "text": "#312e81",
+      "background": "#eef2ff",
+      "tint": "#4f46e5",
+      "icon": "#64748b",
+      "tabIconDefault": "#64748b",
+      "tabIconSelected": "#4f46e5",
+      "card": "#ffffff",
+      "cardAlt": "#e0e7ff",
+      "border": "#dbe3eb",
+      "muted": "#64748b",
+      "mutedAlt": "#94a3b8",
+      "primary": "#4f46e5",
+      "primaryDark": "#4f46e5",
+      "primarySoft": "#e0e7ff",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#f97316",
+      "badgeText": "#ffffff",
+      "chip": "#edf2f7",
+      "chipText": "#334155",
+      "chipActive": "#4f46e5",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "TransitCore Dispatch Dark",
+      "text": "#eef2f7",
+      "background": "#10161c",
+      "tint": "#eef2f7",
+      "icon": "#9ba7b4",
+      "tabIconDefault": "#9ba7b4",
+      "tabIconSelected": "#eef2f7",
+      "card": "#192129",
+      "cardAlt": "#24303c",
+      "border": "#32414f",
+      "muted": "#c0cad4",
+      "mutedAlt": "#8b99a6",
+      "primary": "#4f46e5",
+      "primaryDark": "#4f46e5",
+      "primarySoft": "#1d2e3b",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#10161c",
+      "chip": "#24303c",
+      "chipText": "#e2e8f0",
+      "chipActive": "#4f46e5",
+      "chipActiveText": "#10161c"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "TransitCore Dedicated Vehicles Priority",
+        "description": "Fast-moving dedicated vehicles service from TransitCore Dispatch.",
+        "price": 5100,
+        "originalPrice": 5500,
+        "image": "",
+        "category": "Dedicated Vehicles",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "TRANSITCORE-0001",
+        "specifications": {
+          "Coverage": "Pan-India",
+          "SLA": "As scheduled",
+          "Support": "24x7",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 2,
+        "name": "CoreLane Full Truck Load Select",
+        "description": "Popular full truck load option with dispatch support.",
+        "price": 5400,
+        "originalPrice": 5800,
+        "image": "",
+        "category": "Full Truck Load",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "CORELANE-0002",
+        "specifications": {
+          "Coverage": "Regional / national",
+          "SLA": "Fast lane",
+          "Support": "Dedicated ops",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 3,
+        "name": "DriveOps Part Load Pro",
+        "description": "Reliable transport lane from TransitCore Dispatch.",
+        "price": 4950,
+        "originalPrice": 5280,
+        "image": "",
+        "category": "Part Load",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "DRIVEOPS-0003",
+        "specifications": {
+          "Coverage": "Zone based",
+          "SLA": "Express",
+          "Support": "Tracking enabled",
+          "Mode": "Road"
+        }
+      },
+      {
+        "id": 4,
+        "name": "BlueHaul Warehousing Smart",
+        "description": "Value-oriented operational service for repeat loads.",
+        "price": 5020,
+        "originalPrice": 5350,
+        "image": "",
+        "category": "Warehousing",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "BLUEHAUL-0004",
+        "specifications": {
+          "Coverage": "Hub network",
+          "SLA": "Planned",
+          "Support": "Ops managed",
+          "Mode": "Road / storage"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Dedicated Vehicles",
+        "Full Truck Load",
+        "Part Load",
+        "Warehousing",
+        "Cross Dock",
+        "Route Tracking",
+        "Driver Ops",
+        "Dispatch Control",
+        "Project Cargo",
+        "Cold Chain"
+      ],
+      "brands": [
+        "TransitCore",
+        "CoreLane",
+        "DriveOps",
+        "BlueHaul",
+        "StackCore",
+        "MoveControl"
+      ],
+      "categorySpecifications": {
+        "Dedicated Vehicles": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Full Truck Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Part Load": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Warehousing": {
+          "Coverage": "Regional / national",
+          "Mode": "Storage / yard",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Cross Dock": {
+          "Coverage": "Regional / national",
+          "Mode": "Storage / yard",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Route Tracking": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Driver Ops": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Dispatch Control": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Project Cargo": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        },
+        "Cold Chain": {
+          "Coverage": "Regional / national",
+          "Mode": "Road freight",
+          "SLA": "Planned",
+          "Support": "Dispatch + tracking"
+        }
+      },
+      "basePriceStart": 4300,
+      "priceStep": 390,
+      "priceModulo": 24000,
+      "categoryPriceFactor": 65,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}
