@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './core/auth.service';
+import { AppProfileConfigService } from './core/app-profile-config.service';
 import { BookingService } from './core/booking.service';
 import { ToastContainerComponent } from './shared/toast.component';
 import { ToastService } from './shared/toast.service';
@@ -21,8 +22,13 @@ export class AppComponent {
     public auth: AuthService,
     private router: Router,
     private bookingService: BookingService,
-    private toast: ToastService
+    private toast: ToastService,
+    private profileConfig: AppProfileConfigService
   ) {}
+
+  get branding() {
+    return this.profileConfig.appConfig.branding;
+  }
 
   logout() {
     this.auth.logout();

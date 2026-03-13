@@ -1,5 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { Booking, PricingRule, User, VehicleType } from './models';
+import { AppProfileConfigService } from './app-profile-config.service';
 
 interface StoragePayload<T> {
   key: string;
@@ -9,60 +10,38 @@ interface StoragePayload<T> {
 @Injectable({ providedIn: 'root' })
 export class LocalStorageService {
   private readonly storage = window.localStorage;
-  private readonly seeds: StoragePayload<any>[] = [
-    {
-      key: 'app_users',
-      seed: [
-        { id: 'u-admin', role: 'ADMIN' as const, name: 'System Admin', phone: '555-0001', email: 'admin@goods.com' },
-        { id: 'u-customer', role: 'CUSTOMER' as const, name: 'Alice Patel', phone: '555-0101' },
-        {
-          id: 'u-driver',
-          role: 'DRIVER' as const,
-          name: 'Ravi Mehta',
-          phone: '555-0202',
-          vehicleInfo: { type: 'Mini Truck', number: 'MH12AX3456' }
-        }
-      ]
-    },
-    { key: 'app_session', seed: null },
-    {
-      key: 'app_vehicle_types',
-      seed: [
-        { id: 'vt-1', name: 'Mini Truck', capacityKg: 1200, baseFare: 700, perKmRate: 28, enabled: true },
-        { id: 'vt-2', name: 'Medium Truck', capacityKg: 2500, baseFare: 1100, perKmRate: 45, enabled: true }
-      ] as VehicleType[]
-    },
-    {
-      key: 'app_pricing_rules',
-      seed: [
-        { id: 'pr-default', name: 'Standard', taxPercent: 12, surgeMultiplier: 1 },
-        { id: 'pr-peak', name: 'Peak', taxPercent: 12, surgeMultiplier: 1.2 }
-      ] as PricingRule[]
-    },
-    {
-      key: 'app_addresses',
-      seed: [
-        { id: 'addr-1', label: 'Warehouse East', address: '101 East Park Lane' },
-        { id: 'addr-2', label: 'North Hub', address: '22 North Drive' },
-        { id: 'addr-3', label: 'South Depot', address: '7 South Boulevard' }
-      ]
-    },
-    {
-      key: 'app_bookings',
-      seed: [] as Booking[]
-    }
-  ];
+  private readonly profileKey: string;
+  private readonly seeds: StoragePayload<any>[];
 
-  constructor() {
+  constructor(private readonly configService: AppProfileConfigService) {
+    const profileData = this.configService.appConfig.data;
+    this.profileKey = this.configService.appConfig.branding.key;
+    this.seeds = [
+      { key: 'app_users', seed: profileData.users as User[] },
+      { key: 'app_session', seed: null },
+      { key: 'app_vehicle_types', seed: profileData.vehicleTypes as VehicleType[] },
+      { key: 'app_pricing_rules', seed: profileData.pricingRules as PricingRule[] },
+      { key: 'app_addresses', seed: profileData.addresses },
+      { key: 'app_bookings', seed: [] as Booking[] }
+    ];
     this.ensureDefaults();
   }
 
   private ensureDefaults() {
+    const previousProfile = this.storage.getItem('app_profile_key');
+    if (previousProfile !== this.profileKey) {
+      for (const { key } of this.seeds) {
+        this.storage.removeItem(key);
+      }
+    }
+
     for (const { key, seed } of this.seeds) {
       if (!this.storage.getItem(key)) {
         this.storage.setItem(key, JSON.stringify(seed));
       }
     }
+
+    this.storage.setItem('app_profile_key', this.profileKey);
   }
 
   read<T>(key: string, fallback: T): T {

@@ -75,19 +75,21 @@ import { ToastService } from '../shared/toast.service';
     </ng-template>
   `,
   styles: [
-    ".detail-shell { background: rgba(255,255,255,0.9); padding: 1.5rem; border-radius: 1.25rem; display: flex; flex-direction: column; gap: 1rem; border: 1px solid rgba(20,32,24,0.1); box-shadow: 0 18px 40px rgba(28,39,32,0.08); }",
+    ".detail-shell { background: var(--panel-bg); padding: 1.5rem; border-radius: 1.25rem; display: flex; flex-direction: column; gap: 1rem; border: 1px solid var(--border); box-shadow: var(--shadow); }",
     ".detail-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }",
     ".detail-head h2 { margin: 0.2rem 0 0; }",
-    ".eyebrow { margin: 0; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; color: #ea580c; font-weight: 700; }",
+    ".eyebrow { margin: 0; text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.72rem; color: var(--brand-strong); font-weight: 700; }",
     ".head-side { display: flex; flex-direction: column; align-items: end; gap: 0.5rem; }",
-    ".head-side strong { font-size: 1.25rem; }",
+    ".head-side strong { font-size: 1.25rem; color: var(--text); }",
     ".grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }",
-    ".panel, .pricing, .timeline-wrapper, .payment-panel { border: 1px solid rgba(20,32,24,0.08); padding: 1rem; border-radius: 1rem; background: white; }",
+    ".panel, .pricing, .timeline-wrapper, .payment-panel { border: 1px solid var(--border); padding: 1rem; border-radius: 1rem; background: var(--panel-muted-bg); }",
     ".payment-panel { display: flex; justify-content: space-between; gap: 1rem; align-items: center; }",
     ".timeline-wrapper { display: flex; flex-direction: column; gap: 0.75rem; }",
-    ".muted { color: #6b7280; }",
-    "button { padding: 0.7rem 1rem; border: none; border-radius: 999px; background: linear-gradient(135deg, #f97316, #ea580c); color: white; cursor: pointer; }",
-    ".empty { padding: 2rem; text-align: center; }",
+    ".panel h3, .pricing h3, .timeline-wrapper h3, .payment-panel h3 { color: var(--text); }",
+    ".panel p, .pricing p, .payment-panel p, .timeline-wrapper p { color: var(--muted); }",
+    ".muted { color: var(--muted); }",
+    "button { padding: 0.7rem 1rem; border: none; border-radius: 999px; background: linear-gradient(135deg, var(--brand), var(--brand-strong)); color: var(--inverse-text); cursor: pointer; box-shadow: 0 16px 30px color-mix(in srgb, var(--brand) 22%, transparent); }",
+    ".empty { padding: 2rem; text-align: center; color: var(--muted); background: var(--panel-bg); border: 1px solid var(--border); border-radius: 1rem; }",
     "@media (max-width: 720px) { .detail-head, .payment-panel { flex-direction: column; align-items: flex-start; } .head-side { align-items: flex-start; } }"
   ]
 })

@@ -1,0 +1,249 @@
+{
+    "branding":  {
+                     "key":  "fleetforge",
+                     "name":  "FleetForge Transit",
+                     "logoMark":  "FF",
+                     "logoText":  "FleetForge Transit",
+                     "logoDot":  ".transit",
+                     "pageTitle":  "FleetForge Transit",
+                     "footerSummary":  "FleetForge Transit runs booking, tracking, fleet readiness, and dispatch workspaces from one profile-driven Angular application.",
+                     "promo":  "Pune coverage | Industrial belts | Secure role-based access",
+                     "lookupLabel":  "Shipment lookup",
+                     "lookupPlaceholder":  "Search bookings, routes, contact numbers, or cargo type in Pune",
+                     "lookupMeta":  "Secure tracking across customer, driver, and admin workspaces for FleetForge Transit",
+                     "authTag":  "Secure login",
+                     "supportEmail":  "ops@fleetforge.local"
+                 },
+    "theme":  {
+                  "appBackground":  "linear-gradient(180deg, #f1fff5 0%, #f7fcf7 55%, #e9f7ee 100%)",
+                  "shellGlowTop":  "rgba(34, 197, 94, 0.16)",
+                  "shellGlowBottom":  "rgba(5, 46, 22, 0.12)",
+                  "headerGradient":  "linear-gradient(135deg, #052e16 0%, #14532d 55%, #166534 100%)",
+                  "headerBorder":  "rgba(255, 255, 255, 0.08)",
+                  "headerPromoBackground":  "rgba(255, 255, 255, 0.05)",
+                  "panelBackground":  "rgba(255, 255, 255, 0.96)",
+                  "panelMutedBackground":  "#fbfdff",
+                  "panelStrongBackground":  "#052e16",
+                  "border":  "rgba(15, 23, 42, 0.1)",
+                  "shadow":  "0 20px 48px rgba(15, 23, 42, 0.08)",
+                  "text":  "#111827",
+                  "muted":  "#667085",
+                  "inverseText":  "#ffffff",
+                  "inverseMuted":  "rgba(255, 255, 255, 0.72)",
+                  "accent":  "#22c55e",
+                  "accentStrong":  "#15803d",
+                  "accentSoft":  "color-mix(in srgb, #22c55e 14%, transparent)",
+                  "accentContrast":  "#dcfce7"
+              },
+    "home":  {
+                 "eyebrow":  "Pune logistics profile",
+                 "title":  "FleetForge Transit keeps booking, tracking, and dispatch control in one workspace.",
+                 "subtitle":  "FleetForge Transit is tuned for Pune operations across Industrial belts. Customers create loads, drivers execute assignments, and admins manage fleet and pricing from the same profile-driven app.",
+                 "primaryCta":  "Enter secure workspace",
+                 "secondaryCta":  "Review access roles",
+                 "heroPoints":  [
+                                    {
+                                        "label":  "Coverage model",
+                                        "value":  "Pune",
+                                        "note":  "Optimized for Industrial belts and planned route visibility."
+                                    },
+                                    {
+                                        "label":  "Pricing posture",
+                                        "value":  "Forge Rush",
+                                        "note":  "Profile-specific pricing rules and vehicle fares load from JSON."
+                                    },
+                                    {
+                                        "label":  "Service mode",
+                                        "value":  "Role based",
+                                        "note":  "Customer, driver, and admin workspaces stay protected after login."
+                                    }
+                                ],
+                 "assuranceNotes":  [
+                                        {
+                                            "title":  "Profile-aware branding",
+                                            "text":  "The homepage, shell branding, lookup text, and seeded rate cards all come from this profile JSON."
+                                        },
+                                        {
+                                            "title":  "Operational dataset",
+                                            "text":  "Vehicles, pricing rules, addresses, and starter users are reseeded when the selected profile changes."
+                                        },
+                                        {
+                                            "title":  "Track-first workflow",
+                                            "text":  "Search, booking creation, assignment, and delivery progression stay aligned in one application flow."
+                                        }
+                                    ],
+                 "capabilityCards":  [
+                                         {
+                                             "title":  "Shipment booking",
+                                             "text":  "Create freight requests with pickup, drop, goods, and vehicle selections in a guided workflow."
+                                         },
+                                         {
+                                             "title":  "Tracking and lookup",
+                                             "text":  "Locate bookings by shipment ID, route details, contact numbers, or goods type using the header lookup rail."
+                                         },
+                                         {
+                                             "title":  "Dispatch administration",
+                                             "text":  "Maintain fleet presets, pricing rules, and driver assignments for this brand profile without editing templates."
+                                         }
+                                     ],
+                 "roleCards":  [
+                                   {
+                                       "title":  "Customer workspace",
+                                       "text":  "Book loads, review history, and track active movement records."
+                                   },
+                                   {
+                                       "title":  "Driver workspace",
+                                       "text":  "Open assigned jobs, update milestones, and complete route progress updates."
+                                   },
+                                   {
+                                       "title":  "Admin workspace",
+                                       "text":  "Review demand, manage rates, and keep dispatch coverage aligned."
+                                   }
+                               ],
+                 "lifecycle":  [
+                                   {
+                                       "title":  "Created",
+                                       "text":  "The shipment request is captured and becomes visible for operational review."
+                                   },
+                                   {
+                                       "title":  "Driver assigned",
+                                       "text":  "Dispatch allocates a driver and aligns the correct vehicle preset for execution."
+                                   },
+                                   {
+                                       "title":  "In transit",
+                                       "text":  "The job moves through live status progression with profile-specific fleet pricing already applied."
+                                   },
+                                   {
+                                       "title":  "Delivered",
+                                       "text":  "Completion is recorded and remains visible in booking history and reporting."
+                                   }
+                               ],
+                 "governanceCards":  [
+                                         {
+                                             "title":  "Support desk discipline",
+                                             "text":  "Exceptions, clarifications, and route changes remain structured for operators."
+                                         },
+                                         {
+                                             "title":  "Pickup readiness",
+                                             "text":  "Pickup and drop contacts stay visible to reduce handoff ambiguity across the route."
+                                         },
+                                         {
+                                             "title":  "Pricing governance",
+                                             "text":  "3 pricing profiles and 3 vehicle presets seed automatically for this brand."
+                                         }
+                                     ]
+             },
+    "auth":  {
+                 "eyebrow":  "Secure access",
+                 "title":  "Login to open the FleetForge Transit workspace.",
+                 "subtitle":  "FleetForge Transit keeps customer, driver, and admin workspaces protected. Use this page to create or resume a locally stored session for the selected profile.",
+                 "portalTitle":  "FleetForge Transit Access Portal",
+                 "portalSubtitle":  "Select your role and continue. New users are created locally on first login for the active profile.",
+                 "roleCards":  [
+                                   {
+                                       "title":  "Customer",
+                                       "text":  "Create shipments, review booking history, and track movement."
+                                   },
+                                   {
+                                       "title":  "Driver",
+                                       "text":  "Open assigned jobs, update milestones, and confirm route progress."
+                                   },
+                                   {
+                                       "title":  "Admin",
+                                       "text":  "Manage fleet types, pricing rules, and dispatch assignments."
+                                   }
+                               ],
+                 "driverVehiclePlaceholder":  "Pickup Loader",
+                 "driverNumberPlaceholder":  "MH12AX3456"
+             },
+    "data":  {
+                 "users":  [
+                               {
+                                   "id":  "u-admin",
+                                   "role":  "ADMIN",
+                                   "name":  "System Admin",
+                                   "phone":  "555-0001",
+                                   "email":  "ops@fleetforge.local"
+                               },
+                               {
+                                   "id":  "u-customer",
+                                   "role":  "CUSTOMER",
+                                   "name":  "Aditi Rao",
+                                   "phone":  "555-0101"
+                               },
+                               {
+                                   "id":  "u-driver",
+                                   "role":  "DRIVER",
+                                   "name":  "Ravi Mehta",
+                                   "phone":  "555-0202",
+                                   "vehicleInfo":  {
+                                                       "type":  "Pickup Loader",
+                                                       "number":  "MH12AX3456"
+                                                   }
+                               }
+                           ],
+                 "vehicleTypes":  [
+                                      {
+                                          "id":  "vt-mini",
+                                          "name":  "Pickup Loader",
+                                          "capacityKg":  1000,
+                                          "baseFare":  690,
+                                          "perKmRate":  27,
+                                          "enabled":  true
+                                      },
+                                      {
+                                          "id":  "vt-flatbed",
+                                          "name":  "Flatbed 14 ft",
+                                          "capacityKg":  3200,
+                                          "baseFare":  1420,
+                                          "perKmRate":  49,
+                                          "enabled":  true
+                                      },
+                                      {
+                                          "id":  "vt-crane",
+                                          "name":  "Hiab Support Truck",
+                                          "capacityKg":  3500,
+                                          "baseFare":  2250,
+                                          "perKmRate":  64,
+                                          "enabled":  true
+                                      }
+                                  ],
+                 "pricingRules":  [
+                                      {
+                                          "id":  "pr-standard",
+                                          "name":  "Plant Standard",
+                                          "taxPercent":  11,
+                                          "surgeMultiplier":  1
+                                      },
+                                      {
+                                          "id":  "pr-rush",
+                                          "name":  "Forge Rush",
+                                          "taxPercent":  12,
+                                          "surgeMultiplier":  1.14
+                                      },
+                                      {
+                                          "id":  "pr-heavy",
+                                          "name":  "Heavy Metal Window",
+                                          "taxPercent":  13,
+                                          "surgeMultiplier":  1.25
+                                      }
+                                  ],
+                 "addresses":  [
+                                   {
+                                       "id":  "addr-1",
+                                       "label":  "Primary Hub",
+                                       "address":  "12 Central Hub Road, Pune"
+                                   },
+                                   {
+                                       "id":  "addr-2",
+                                       "label":  "North Depot",
+                                       "address":  "28 North Freight Lane, Pune"
+                                   },
+                                   {
+                                       "id":  "addr-3",
+                                       "label":  "South Yard",
+                                       "address":  "7 South Carrier Park, Pune"
+                                   }
+                               ]
+             }
+}

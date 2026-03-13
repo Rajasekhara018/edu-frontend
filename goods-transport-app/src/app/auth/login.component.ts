@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../core/auth.service';
+import { AppProfileConfigService } from '../core/app-profile-config.service';
 import { ToastService } from '../shared/toast.service';
 import { Role } from '../core/models';
 
@@ -22,7 +23,8 @@ export class LoginComponent {
     private readonly fb: FormBuilder,
     private readonly auth: AuthService,
     private readonly router: Router,
-    private readonly toast: ToastService
+    private readonly toast: ToastService,
+    private readonly profileConfig: AppProfileConfigService
   ) {
     this.form = this.fb.group({
       name: ['', Validators.required],
@@ -36,6 +38,10 @@ export class LoginComponent {
 
   get isDriver() {
     return this.form.controls.role.value === 'DRIVER';
+  }
+
+  get authContent() {
+    return this.profileConfig.appConfig.auth;
   }
 
   async submit() {
@@ -56,7 +62,7 @@ export class LoginComponent {
       email: this.form.controls.email.value?.trim() || undefined,
       vehicleInfo: this.isDriver
         ? {
-            type: this.form.controls.vehicleType.value?.trim() || 'Mini Truck',
+            type: this.form.controls.vehicleType.value?.trim() || this.authContent.driverVehiclePlaceholder,
             number: vehicleNumber
           }
         : undefined

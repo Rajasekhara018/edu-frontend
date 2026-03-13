@@ -1,4 +1,4 @@
-﻿{
+{
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "projects": {
@@ -19,13 +19,186 @@
             "assets": ["src/assets"],
             "styles": ["src/styles.css"],
             "scripts": []
-          }
+          },
+          "configurations": {
+            "goodsgo-dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.goodsgo-dev.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "cargobridge": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.cargobridge.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "fleetforge": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.fleetforge.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "haulsprint": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.haulsprint.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "movegrid": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.movegrid.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "roadpulse": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.roadpulse.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "swiftaxis": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.swiftaxis.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "transitcore": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.transitcore.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "urbanfreight": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.urbanfreight.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "loadlattice": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.loadlattice.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "nexahaul": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.nexahaul.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "ironroute": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ironroute.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "buildTarget": "goods-transport-app:build"
-          }
+          },
+          "configurations": {
+            "development": {
+              "buildTarget": "goods-transport-app:build:development"
+            },
+            "goodsgo-dev": {
+              "buildTarget": "goods-transport-app:build:goodsgo-dev"
+            },
+            "cargobridge": {
+              "buildTarget": "goods-transport-app:build:cargobridge"
+            },
+            "fleetforge": {
+              "buildTarget": "goods-transport-app:build:fleetforge"
+            },
+            "haulsprint": {
+              "buildTarget": "goods-transport-app:build:haulsprint"
+            },
+            "movegrid": {
+              "buildTarget": "goods-transport-app:build:movegrid"
+            },
+            "roadpulse": {
+              "buildTarget": "goods-transport-app:build:roadpulse"
+            },
+            "swiftaxis": {
+              "buildTarget": "goods-transport-app:build:swiftaxis"
+            },
+            "transitcore": {
+              "buildTarget": "goods-transport-app:build:transitcore"
+            },
+            "urbanfreight": {
+              "buildTarget": "goods-transport-app:build:urbanfreight"
+            },
+            "loadlattice": {
+              "buildTarget": "goods-transport-app:build:loadlattice"
+            },
+            "nexahaul": {
+              "buildTarget": "goods-transport-app:build:nexahaul"
+            },
+            "ironroute": {
+              "buildTarget": "goods-transport-app:build:ironroute"
+            }
+          },
+          "defaultConfiguration": "development"
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",

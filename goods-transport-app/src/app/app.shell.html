@@ -1,19 +1,19 @@
 <div class="app-shell" [class.auth-shell-mode]="isAuthPage">
   <header class="mega-header">
     <div class="top-bar">
-      <a class="brand" routerLink="/" aria-label="GoodsGo home">
-        <div class="logo-mark">GG</div>
-        <div class="logo-text">GoodsGo Control<span class="logo-dot">.</span></div>
+      <a class="brand" routerLink="/" [attr.aria-label]="branding.name + ' home'">
+        <div class="logo-mark">{{ branding.logoMark }}</div>
+        <div class="logo-text">{{ branding.logoText }}<span class="logo-dot">{{ branding.logoDot }}</span></div>
       </a>
 
       <div class="lookup-rail" *ngIf="!isAuthPage">
-        <div class="search-pill">Shipment lookup</div>
+        <div class="search-pill">{{ branding.lookupLabel }}</div>
         <div class="lookup-form">
-          <input [(ngModel)]="lookupQuery" placeholder="Search by booking ID, address, phone or goods type" />
+          <input [(ngModel)]="lookupQuery" [placeholder]="branding.lookupPlaceholder" />
           <button type="button" class="primary-btn" (click)="runLookup()">Track</button>
         </div>
         <div class="lookup-meta">
-          <span>Secure tracking across customer, driver and admin workspaces</span>
+          <span>{{ branding.lookupMeta }}</span>
           <span class="lookup-count" *ngIf="lookupQuery.trim()">Matches: {{ lookupResultsCount }}</span>
         </div>
       </div>
@@ -22,7 +22,7 @@
         <ng-container *ngIf="user; else guest">
           <div class="account-card">
             <span class="small">Signed in</span>
-            <span class="strong">{{ user.name }} · {{ user.role }}</span>
+            <span class="strong">{{ user.name }} | {{ user.role }}</span>
           </div>
           <button type="button" class="primary-btn" (click)="logout()">Logout</button>
         </ng-container>
@@ -40,7 +40,7 @@
         <a routerLink="/driver" [class.active]="isActive('/driver')">Driver</a>
         <a routerLink="/admin" [class.active]="isActive('/admin')">Admin</a>
       </nav>
-      <div class="promo">Public overview on home • Secure role-based access for operations</div>
+      <div class="promo">{{ branding.promo }}</div>
     </div>
   </header>
 
@@ -51,10 +51,10 @@
   <footer class="footer" *ngIf="!isAuthPage">
     <div>
       <div class="footer-brand">
-        <span class="logo-mark">GG</span>
-        <span class="logo-text">GoodsGo Control<span class="logo-dot">.</span></span>
+        <span class="logo-mark">{{ branding.logoMark }}</span>
+        <span class="logo-text">{{ branding.logoText }}<span class="logo-dot">{{ branding.logoDot }}</span></span>
       </div>
-      <p class="footer-copy">Public home for application overview. Login is required for customer, driver, admin and booking workflows.</p>
+      <p class="footer-copy">{{ branding.footerSummary }}</p>
     </div>
     <div class="footer-links">
       <a routerLink="/">Overview</a>
@@ -65,3 +65,4 @@
   </footer>
 </div>
 <app-toast-container></app-toast-container>
+
