@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HomeFoodsConfigService } from './Services/home-foods-config.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'electrical-sales';
+  title = 'home-foods';
+
+  constructor(public readonly homeFoodsConfig: HomeFoodsConfigService) {}
 }
+

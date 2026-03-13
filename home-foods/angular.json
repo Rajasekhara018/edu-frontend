@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "electrical-sales": {
+    "home-foods": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/electrical-sales",
+            "outputPath": "dist/home-foods",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -52,7 +52,13 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
             },
             "development": {
               "buildOptimizer": false,
@@ -61,18 +67,256 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "spicehearth": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.spicehearth.ts"
+                }
+              ]
+            },
+            "picklepantry": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.picklepantry.ts"
+                }
+              ]
+            },
+            "sweetkadai": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.sweetkadai.ts"
+                }
+              ]
+            },
+            "milletmama": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.milletmama.ts"
+                }
+              ]
+            },
+            "tiffintradition": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.tiffintradition.ts"
+                }
+              ]
+            },
+            "spicepetal": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.spicepetal.ts"
+                }
+              ]
+            },
+            "harvestladle": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.harvestladle.ts"
+                }
+              ]
+            },
+            "nativetable": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.nativetable.ts"
+                }
+              ]
+            },
+            "brassbowl": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.brassbowl.ts"
+                }
+              ]
+            },
+            "gingergrove": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.gingergrove.ts"
+                }
+              ]
+            },
+            "stonepot": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.stonepot.ts"
+                }
+              ]
+            },
+            "ammakitchen": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ammakitchen.ts"
+                }
+              ]
+            },
+            "festiveroots": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.festiveroots.ts"
+                }
+              ]
+            },
+            "ladleleaf": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.ladleleaf.ts"
+                }
+              ]
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "electrical-sales:build:production"
+              "browserTarget": "home-foods:build:production"
             },
             "development": {
-              "browserTarget": "electrical-sales:build:development"
+              "browserTarget": "home-foods:build:development"
+            },
+            "spicehearth": {
+              "browserTarget": "home-foods:build:spicehearth"
+            },
+            "picklepantry": {
+              "browserTarget": "home-foods:build:picklepantry"
+            },
+            "sweetkadai": {
+              "browserTarget": "home-foods:build:sweetkadai"
+            },
+            "milletmama": {
+              "browserTarget": "home-foods:build:milletmama"
+            },
+            "tiffintradition": {
+              "browserTarget": "home-foods:build:tiffintradition"
+            },
+            "spicepetal": {
+              "browserTarget": "home-foods:build:spicepetal"
+            },
+            "harvestladle": {
+              "browserTarget": "home-foods:build:harvestladle"
+            },
+            "nativetable": {
+              "browserTarget": "home-foods:build:nativetable"
+            },
+            "brassbowl": {
+              "browserTarget": "home-foods:build:brassbowl"
+            },
+            "gingergrove": {
+              "browserTarget": "home-foods:build:gingergrove"
+            },
+            "stonepot": {
+              "browserTarget": "home-foods:build:stonepot"
+            },
+            "ammakitchen": {
+              "browserTarget": "home-foods:build:ammakitchen"
+            },
+            "festiveroots": {
+              "browserTarget": "home-foods:build:festiveroots"
+            },
+            "ladleleaf": {
+              "browserTarget": "home-foods:build:ladleleaf"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +324,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "electrical-sales:build"
+            "browserTarget": "home-foods:build"
           }
         },
         "test": {

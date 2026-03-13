@@ -1,116 +1,61 @@
-﻿<div class="app-container">
+<div class="app-container">
   <app-header></app-header>
-
   <router-outlet></router-outlet>
 
-  <!-- About Section -->
   <section id="about" class="about-section">
     <div class="about-container">
       <div class="about-hero">
         <div class="about-copy">
-          <span class="eyebrow">Home Foods Collective</span>
-          <h2>Market-style pickles, sweets, and snacks crafted in small batches.</h2>
-          <p class="lead">We work with home kitchens and artisan makers to bring traditional recipes to your table. Every batch is cooked slowly, packed with care, and shipped fresh for everyday meals and festive gifting.</p>
+          <span class="eyebrow">{{ homeFoodsConfig.homeFoodsConfig.about.eyebrow }}</span>
+          <h2>{{ homeFoodsConfig.homeFoodsConfig.about.title }}</h2>
+          <p class="lead">{{ homeFoodsConfig.homeFoodsConfig.about.description }}</p>
           <div class="about-actions">
-            <a class="primary-btn" routerLink="/products">Browse Products</a>
-            <a class="ghost-btn" href="#contact">Plan a Pantry Order</a>
+            <a class="primary-btn" routerLink="/products">{{ homeFoodsConfig.homeFoodsConfig.about.primaryCta }}</a>
+            <a class="ghost-btn" href="#contact">{{ homeFoodsConfig.homeFoodsConfig.about.secondaryCta }}</a>
           </div>
         </div>
         <div class="about-highlights">
-          <div class="highlight-card">
-            <i class="bi bi-basket"></i>
+          <div class="highlight-card" *ngFor="let highlight of homeFoodsConfig.homeFoodsConfig.about.highlights">
+            <i class="bi" [ngClass]="highlight.icon"></i>
             <div>
-              <h3>Small-Batch Recipes</h3>
-              <p>Traditional methods and slow cooking for authentic flavor.</p>
-            </div>
-          </div>
-          <div class="highlight-card">
-            <i class="bi bi-geo-alt"></i>
-            <div>
-              <h3>Local Sourcing</h3>
-              <p>Ingredients selected from trusted farms and markets.</p>
-            </div>
-          </div>
-          <div class="highlight-card">
-            <i class="bi bi-box-seam"></i>
-            <div>
-              <h3>Careful Packing</h3>
-              <p>Freshly sealed packs for pantry storage and gifting.</p>
+              <h3>{{ highlight.title }}</h3>
+              <p>{{ highlight.description }}</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="about-stats">
-        <div class="stat-card">
-          <span class="stat-value">150+</span>
-          <span class="stat-label">Family Recipes</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-value">25+</span>
-          <span class="stat-label">Artisan Partners</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-value">10k+</span>
-          <span class="stat-label">Happy Homes</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-value">24h</span>
-          <span class="stat-label">Dispatch Window</span>
+        <div class="stat-card" *ngFor="let stat of homeFoodsConfig.homeFoodsConfig.about.stats">
+          <span class="stat-value">{{ stat.value }}</span>
+          <span class="stat-label">{{ stat.label }}</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact" class="contact-section">
     <div class="contact-container">
       <div class="contact-header">
         <div>
-          <span class="eyebrow">Connect With Us</span>
-          <h2>Contact Us</h2>
-          <p>Planning a pantry order, gifting box, or bulk pickup? Our team will help you curate the right mix.</p>
+          <span class="eyebrow">{{ homeFoodsConfig.homeFoodsConfig.contact.eyebrow }}</span>
+          <h2>{{ homeFoodsConfig.homeFoodsConfig.contact.title }}</h2>
+          <p>{{ homeFoodsConfig.homeFoodsConfig.contact.description }}</p>
         </div>
-        <button class="contact-cta">Request a Call Back</button>
+        <button class="contact-cta">{{ homeFoodsConfig.homeFoodsConfig.contact.ctaLabel }}</button>
       </div>
       <div class="contact-content">
         <div class="contact-info">
-          <div class="info-card">
-            <i class="bi bi-telephone"></i>
+          <div class="info-card" *ngFor="let card of homeFoodsConfig.homeFoodsConfig.contact.infoCards">
+            <i class="bi" [ngClass]="card.icon"></i>
             <div>
-              <h4>Phone</h4>
-              <p>+91 (800) 222-1010</p>
-              <p>+91 (800) 222-2020</p>
-            </div>
-          </div>
-          <div class="info-card">
-            <i class="bi bi-envelope"></i>
-            <div>
-              <h4>Email</h4>
-              <p>hello@homefoods.market</p>
-              <p>support@homefoods.market</p>
-            </div>
-          </div>
-          <div class="info-card">
-            <i class="bi bi-geo-alt"></i>
-            <div>
-              <h4>Address</h4>
-              <p>12 Market Lane</p>
-              <p>Jubilee Hills, Hyderabad</p>
-              <p>India - 500033</p>
-            </div>
-          </div>
-          <div class="info-card">
-            <i class="bi bi-clock"></i>
-            <div>
-              <h4>Business Hours</h4>
-              <p>Mon - Sat: 8:00 AM - 8:00 PM</p>
-              <p>Sunday: 9:00 AM - 2:00 PM</p>
+              <h4>{{ card.title }}</h4>
+              <p *ngFor="let line of card.lines">{{ line }}</p>
             </div>
           </div>
         </div>
         <div class="contact-form">
-          <h3>Send us a Message</h3>
+          <h3>{{ homeFoodsConfig.homeFoodsConfig.contact.formTitle }}</h3>
           <form>
             <div class="form-group">
               <label for="contact-name">Full Name</label>
@@ -121,73 +66,60 @@
               <input id="contact-email" type="email" placeholder="Enter your email" required>
             </div>
             <div class="form-group">
-              <label for="contact-phone">Phone Number</label>
-              <input id="contact-phone" type="tel" placeholder="Enter your phone" required>
+              <label for="contact-phone">Order ID</label>
+              <input id="contact-phone" type="text" placeholder="ZIP-04251" required>
             </div>
             <div class="form-group">
               <label for="contact-message">Message</label>
-              <textarea id="contact-message" placeholder="Tell us what you want (spice level, gift boxes, bulk orders)" rows="4" required></textarea>
+              <textarea id="contact-message" placeholder="Tell us what went wrong and we will fix it fast" rows="4" required></textarea>
             </div>
             <button type="submit" class="submit-btn">Send Message</button>
           </form>
-          <p class="form-note">By submitting, you agree to be contacted regarding your inquiry.</p>
+          <p class="form-note">{{ homeFoodsConfig.homeFoodsConfig.contact.formNote }}</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
       <div class="footer-brand">
         <div class="footer-logo">
-          <span class="logo-mark">HF</span>
-          <span class="logo-text">HomeFoods<span class="logo-dot">.market</span></span>
+          <span class="logo-mark">{{ homeFoodsConfig.homeFoodsConfig.branding.logoMark }}</span>
+          <span class="logo-text">{{ homeFoodsConfig.homeFoodsConfig.branding.logoText }}<span class="logo-dot">{{ homeFoodsConfig.homeFoodsConfig.branding.logoDot }}</span></span>
         </div>
-        <p class="footer-tagline">Market-style home foods crafted with fresh ingredients and traditional recipes.</p>
+        <p class="footer-tagline">{{ homeFoodsConfig.homeFoodsConfig.branding.footerTagline }}</p>
         <div class="footer-social">
-          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-          <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
-          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-          <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a *ngFor="let link of homeFoodsConfig.homeFoodsConfig.footer.socialLinks" [href]="link.href" [attr.aria-label]="link.label"><i class="bi" [ngClass]="link.icon"></i></a>
         </div>
       </div>
 
       <div class="footer-links">
         <div class="link-group">
           <h4>Shop</h4>
-          <a href="/products">Pickles</a>
-          <a href="/products">Sweets</a>
-          <a href="/products">Snacks</a>
-          <a href="/products">Ready Mixes</a>
+          <a href="/products" *ngFor="let link of homeFoodsConfig.homeFoodsConfig.footer.shopLinks">{{ link }}</a>
         </div>
         <div class="link-group">
           <h4>Support</h4>
-          <a href="#contact">Delivery Info</a>
-          <a href="#contact">Bulk Orders</a>
-          <a href="#contact">Gifting</a>
-          <a href="#contact">Returns</a>
+          <a href="#contact" *ngFor="let link of homeFoodsConfig.homeFoodsConfig.footer.supportLinks">{{ link }}</a>
         </div>
         <div class="link-group">
           <h4>Company</h4>
-          <a href="#about">Our Story</a>
-          <a href="#about">Farmers</a>
-          <a href="#about">Careers</a>
-          <a href="#about">Journal</a>
+          <a href="#about" *ngFor="let link of homeFoodsConfig.homeFoodsConfig.footer.companyLinks">{{ link }}</a>
         </div>
       </div>
 
       <div class="footer-contact">
         <h4>Contact</h4>
-        <p><i class="bi bi-telephone"></i> +91 (800) 222-1010</p>
-        <p><i class="bi bi-envelope"></i> hello@homefoods.market</p>
-        <p><i class="bi bi-geo-alt"></i> Jubilee Hills, Hyderabad</p>
-        <button class="footer-cta">Request Catalog</button>
+        <p><i class="bi bi-telephone"></i> {{ homeFoodsConfig.homeFoodsConfig.footer.contactLines[0] }}</p>
+        <p><i class="bi bi-envelope"></i> {{ homeFoodsConfig.homeFoodsConfig.footer.contactLines[1] }}</p>
+        <p><i class="bi bi-geo-alt"></i> {{ homeFoodsConfig.homeFoodsConfig.footer.contactLines[2] }}</p>
+        <button class="footer-cta">{{ homeFoodsConfig.homeFoodsConfig.footer.appCtaLabel }}</button>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2026 Home Foods Market. All rights reserved.</p>
+      <p>{{ homeFoodsConfig.homeFoodsConfig.branding.footerCopyright }}</p>
       <div class="footer-legal">
         <a href="#">Privacy Policy</a>
         <span>|</span>
@@ -198,3 +130,4 @@
     </div>
   </footer>
 </div>
+

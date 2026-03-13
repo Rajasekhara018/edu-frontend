@@ -1,0 +1,384 @@
+{
+  "branding": {
+    "name": "GingerGrove Foods",
+    "tagline": "Herbal blends and Comfort pantry from curated home-food brands.",
+    "logoMark": "GG",
+    "logoText": "GingerGrove",
+    "logoDot": ".foods",
+    "favicon": "favicon.ico",
+    "pageTitle": "GingerGrove Foods",
+    "locationLabel": "Serving premium pantry orders in Hyderabad",
+    "locationAction": "Change area",
+    "searchPlaceholder": "Search health & herbal, beverages, pantry packs...",
+    "accountGreeting": "Welcome back",
+    "accountLabel": "GingerGrove member",
+    "ordersSmall": "Track",
+    "ordersLabel": "Orders & gifting",
+    "footerTagline": "Herbal blends and Comfort pantry with dependable packing and dispatch.",
+    "footerCopyright": "(C) 2026 GingerGrove Foods. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff4ea 0%, #ffe5cd 43%, #f6d0ab 100%)",
+    "ink": "#2f1a12",
+    "muted": "#6f5a4d",
+    "accent": "#a85c2a",
+    "accentStrong": "#a85c2a",
+    "neon": "#f6d365",
+    "mint": "#ffe7d5",
+    "cream": "#fffaf4",
+    "panel": "#fffdf9",
+    "border": "color-mix(in srgb, #2f1a12 12%, transparent)",
+    "shadow": "0 18px 40px color-mix(in srgb, #2f1a12 14%, transparent)",
+    "headerGradient": "radial-gradient(circle at top, #fff4ea 0%, #ffe5cd 43%, #f6d0ab 100%)",
+    "headerBorder": "color-mix(in srgb, #2f1a12 10%, transparent)",
+    "darkSurface": "#2f1a12",
+    "darkSurfaceAlt": "#2f1a12",
+    "onDark": "#fff8f0",
+    "onDarkMuted": "#f0dcc8",
+    "focusRing": "color-mix(in srgb, #a85c2a 18%, transparent)"
+  },
+  "about": {
+    "eyebrow": "GingerGrove Foods",
+    "title": "Herbal blends, Comfort pantry, and pantry staples for modern homes.",
+    "description": "GingerGrove Foods curates health & herbal, beverages, pickles, snacks and more through trusted kitchen partners and gift-ready packing.",
+    "primaryCta": "Start shopping",
+    "secondaryCta": "Book a curated order",
+    "highlights": [
+      {
+        "icon": "bi-stars",
+        "title": "Curated batches",
+        "description": "Herbal blends across seasonal and daily staples."
+      },
+      {
+        "icon": "bi-gift",
+        "title": "Gift-ready",
+        "description": "Comfort pantry for families and teams."
+      },
+      {
+        "icon": "bi-box-seam",
+        "title": "Safe packing",
+        "description": "Leak-safe jars, crisp snack packs, and reliable dispatch."
+      }
+    ],
+    "stats": [
+      {
+        "value": "320+",
+        "label": "Products Listed"
+      },
+      {
+        "value": "48 hrs",
+        "label": "Dispatch Promise"
+      },
+      {
+        "value": "4.8",
+        "label": "Average Rating"
+      },
+      {
+        "value": "1M+",
+        "label": "Packs Delivered"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Need help?",
+    "title": "Talk to GingerGrove Foods about gifting, pantry planning, and bulk orders.",
+    "description": "We help with curated assortments, spice guidance, festival combos, and recurring pantry packs.",
+    "ctaLabel": "Talk to our team",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Call",
+        "lines": [
+          "+91 (800) 30115-1010",
+          "WhatsApp: +91 9011501010"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "hello@gingergrove.store",
+          "support@gingergrove.store"
+        ]
+      },
+      {
+        "icon": "bi-geo-alt",
+        "title": "Hub",
+        "lines": [
+          "Jubilee Hills Kitchen Hub",
+          "Hyderabad, India - 500033"
+        ]
+      },
+      {
+        "icon": "bi-clock",
+        "title": "Hours",
+        "lines": [
+          "Mon - Sat: 8:00 AM - 8:00 PM",
+          "Sunday: 9:00 AM - 2:00 PM"
+        ]
+      }
+    ],
+    "formTitle": "Send us a Message",
+    "formNote": "By submitting, you agree to be contacted regarding your inquiry."
+  },
+  "footer": {
+    "shopLinks": [
+      "Health & Herbal",
+      "Beverages",
+      "Pickles",
+      "Snacks"
+    ],
+    "supportLinks": [
+      "Delivery info",
+      "Bulk orders",
+      "Gifting",
+      "Returns"
+    ],
+    "companyLinks": [
+      "Our story",
+      "Kitchen partners",
+      "Careers",
+      "Journal"
+    ],
+    "socialLinks": [
+      {
+        "icon": "bi-facebook",
+        "label": "Facebook",
+        "href": "#"
+      },
+      {
+        "icon": "bi-instagram",
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "icon": "bi-youtube",
+        "label": "YouTube",
+        "href": "#"
+      },
+      {
+        "icon": "bi-linkedin",
+        "label": "LinkedIn",
+        "href": "#"
+      }
+    ],
+    "contactLines": [
+      "+91 (800) 30115-1010",
+      "hello@gingergrove.store",
+      "Jubilee Hills, Hyderabad"
+    ],
+    "appCtaLabel": "Request catalog"
+  },
+  "hero": {
+    "eyebrow": "GingerGrove Foods",
+    "title": "Herbal blends, Comfort pantry, and dependable pantry favorites.",
+    "subtitle": "Shop health & herbal, beverages, pickles, snacks, sweets with clear pricing and reliable 24-48 hour dispatch.",
+    "tags": [
+      "Herbal blends",
+      "Comfort pantry"
+    ],
+    "cardTitle": "Popular pantry picks",
+    "cardItems": [
+      "Health & Herbal bestsellers",
+      "Beverages bestsellers",
+      "Pickles bestsellers"
+    ],
+    "deliveryLine": "Dispatch in 24-48 hrs",
+    "detailDeliveryLine": "Dispatch in 24-48 hrs",
+    "relatedTitle": "More to explore"
+  },
+  "searchCategories": [
+    "All",
+    "Health & Herbal",
+    "Beverages",
+    "Pickles",
+    "Snacks",
+    "Sweets",
+    "Millet Mixes",
+    "Ready Mixes",
+    "Festival Boxes"
+  ],
+  "navLinks": [
+    "Health & Herbal",
+    "Beverages",
+    "Pickles",
+    "Snacks",
+    "Sweets",
+    "Millet Mixes",
+    "Ready Mixes",
+    "About",
+    "Contact"
+  ],
+  "mobileLinks": [
+    "All items",
+    "Health & Herbal",
+    "Beverages",
+    "Pickles",
+    "Snacks",
+    "Sweets",
+    "Millet Mixes",
+    "About",
+    "Contact"
+  ],
+  "promoMessages": [
+    "Herbal blends",
+    "Comfort pantry"
+  ],
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "GingerGrove Mango Pickle Reserve",
+        "description": "Signature mango pickle from GingerGrove Foods.",
+        "price": 255,
+        "originalPrice": 305,
+        "image": "",
+        "category": "Health & Herbal",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1840,
+        "sku": "GG-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Style": "Signature",
+          "ShelfLife": "6 months",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 2,
+        "name": "HerbalClay Festival Sweet Box",
+        "description": "Popular sweet assortment curated by GingerGrove Foods.",
+        "price": 375,
+        "originalPrice": 445,
+        "image": "",
+        "category": "Sweets",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1320,
+        "sku": "GG-0002",
+        "specifications": {
+          "Pack": "300 g",
+          "Finish": "Gift-ready",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        }
+      },
+      {
+        "id": 3,
+        "name": "ComfortPan Pantry Crunch Mix",
+        "description": "Best-selling crunchy snack from GingerGrove Foods.",
+        "price": 205,
+        "originalPrice": 235,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 940,
+        "sku": "GG-0003",
+        "specifications": {
+          "Pack": "200 g",
+          "Texture": "Crunchy",
+          "ShelfLife": "20 days",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 4,
+        "name": "RootPress Kitchen Mix",
+        "description": "Ready pantry mix from GingerGrove Foods.",
+        "price": 225,
+        "originalPrice": 265,
+        "image": "",
+        "category": "Millet Mixes",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 870,
+        "sku": "GG-0004",
+        "specifications": {
+          "Pack": "500 g",
+          "Use": "Quick prep",
+          "ShelfLife": "4 months",
+          "Storage": "Dry place"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "GingerGrove",
+        "HerbalClay",
+        "ComfortPan",
+        "RootPress",
+        "WarmCup",
+        "VillageBlend"
+      ],
+      "categories": [
+        "Health & Herbal",
+        "Beverages",
+        "Pickles",
+        "Snacks",
+        "Sweets",
+        "Millet Mixes",
+        "Ready Mixes",
+        "Festival Boxes"
+      ],
+      "categorySpecifications": {
+        "Health & Herbal": {
+          "Pack": "Standard pack",
+          "Style": "Health & Herbal",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Style": "Beverages",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Style": "Pickles",
+          "ShelfLife": "4 months",
+          "Storage": "Cool and dry"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Style": "Snacks",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Style": "Sweets",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        },
+        "Millet Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Millet Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Ready Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Style": "Festival Boxes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        }
+      },
+      "basePriceStart": 115,
+      "priceStep": 33,
+      "priceModulo": 2600,
+      "categoryPriceFactor": 24,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

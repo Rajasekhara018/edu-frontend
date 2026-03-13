@@ -1,32 +1,24 @@
 <header class="mega-header">
   <div class="top-bar">
-    <div class="brand" aria-label="Home Foods Market home">
-      <div class="logo-mark">HF</div>
-      <div class="logo-text">HomeFoods<span class="logo-dot">.market</span></div>
+    <div class="brand" [attr.aria-label]="homeFoodsConfig.homeFoodsConfig.branding.name + ' home'">
+      <div class="logo-mark">{{ homeFoodsConfig.homeFoodsConfig.branding.logoMark }}</div>
+      <div class="logo-text">{{ homeFoodsConfig.homeFoodsConfig.branding.logoText }}<span class="logo-dot">{{ homeFoodsConfig.homeFoodsConfig.branding.logoDot }}</span></div>
     </div>
 
     <button class="location" type="button">
       <span class="loc-line">
         <span class="loc-dot"></span>
-        Delivering to Hyderabad 500062
+        {{ homeFoodsConfig.homeFoodsConfig.branding.locationLabel }}
       </span>
-      <span class="loc-action">Update location</span>
+      <span class="loc-action">{{ homeFoodsConfig.homeFoodsConfig.branding.locationAction }}</span>
     </button>
 
     <div class="search">
-      <label class="sr-only" for="product-search">Search products</label>
+      <label class="sr-only" for="product-search">Search home foods</label>
       <select aria-label="Search category">
-        <option>All</option>
-        <option>Pickles</option>
-        <option>Sweets</option>
-        <option>Savories</option>
-        <option>Snacks</option>
-        <option>Spice Powders</option>
-        <option>Ready Mixes</option>
-        <option>Oils & Ghee</option>
-        <option>Beverages</option>
+        <option *ngFor="let category of homeFoodsConfig.homeFoodsConfig.searchCategories">{{ category }}</option>
       </select>
-      <input id="product-search" type="text" placeholder="Search Home Foods" />
+      <input id="product-search" type="text" [placeholder]="homeFoodsConfig.homeFoodsConfig.branding.searchPlaceholder" />
       <button class="search-btn" type="button" aria-label="Search">
         <span class="search-icon"></span>
       </button>
@@ -38,12 +30,12 @@
         EN
       </button>
       <button class="account" type="button">
-        <span class="small">Hello, sign in</span>
-        <span class="strong">Account & Lists</span>
+        <span class="small">{{ homeFoodsConfig.homeFoodsConfig.branding.accountGreeting }}</span>
+        <span class="strong">{{ homeFoodsConfig.homeFoodsConfig.branding.accountLabel }}</span>
       </button>
       <button class="orders" type="button">
-        <span class="small">Track</span>
-        <span class="strong">My Orders</span>
+        <span class="small">{{ homeFoodsConfig.homeFoodsConfig.branding.ordersSmall }}</span>
+        <span class="strong">{{ homeFoodsConfig.homeFoodsConfig.branding.ordersLabel }}</span>
       </button>
       <button class="cart" type="button" (click)="goToCart()">
         <span class="cart-icon"></span>
@@ -67,42 +59,27 @@
   <div class="nav-bar">
     <button class="menu-all" type="button">
       <span class="menu-icon"><span></span></span>
-      All
+      Shop
     </button>
     <nav class="nav-links">
-      <a href="#products">Pickles</a>
-      <a href="#products">Sweets</a>
-      <a href="#products">Savories</a>
-      <a href="#products">Snacks</a>
-      <a href="#products">Ready Mixes</a>
-      <a href="#products">Oils & Ghee</a>
-      <a href="#products">Beverages</a>
-      <a href="#about">Our Story</a>
-      <a href="#contact">Contact</a>
+      <a href="#products" *ngFor="let link of homeFoodsConfig.homeFoodsConfig.navLinks">{{ link }}</a>
     </nav>
     <div class="promo">
-      <span>Fresh batches every week</span>
+      <span>{{ homeFoodsConfig.homeFoodsConfig.promoMessages[0] }}</span>
       <span class="promo-sep">|</span>
-      <span>Free delivery over Rs 999</span>
+      <span>{{ homeFoodsConfig.homeFoodsConfig.promoMessages[1] }}</span>
     </div>
   </div>
 
   <div *ngIf="isMobileMenuOpen" class="mobile-panel">
     <div class="mobile-search">
-      <input type="text" placeholder="Search Home Foods" />
+      <input type="text" [placeholder]="homeFoodsConfig.homeFoodsConfig.branding.searchPlaceholder" />
       <button type="button">Search</button>
     </div>
     <div class="mobile-links">
-      <a href="#products" (click)="closeMenu()">All</a>
-      <a href="#products" (click)="closeMenu()">Pickles</a>
-      <a href="#products" (click)="closeMenu()">Sweets</a>
-      <a href="#products" (click)="closeMenu()">Savories</a>
-      <a href="#products" (click)="closeMenu()">Snacks</a>
-      <a href="#products" (click)="closeMenu()">Ready Mixes</a>
-      <a href="#products" (click)="closeMenu()">Oils & Ghee</a>
-      <a href="#about" (click)="closeMenu()">Our Story</a>
-      <a href="#contact" (click)="closeMenu()">Contact</a>
+      <a href="#products" (click)="closeMenu()" *ngFor="let link of homeFoodsConfig.homeFoodsConfig.mobileLinks">{{ link }}</a>
       <a href="#" (click)="goToCart()">Cart</a>
     </div>
   </div>
 </header>
+

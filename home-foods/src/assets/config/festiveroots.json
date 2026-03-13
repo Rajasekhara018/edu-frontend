@@ -1,0 +1,384 @@
+{
+  "branding": {
+    "name": "FestiveRoots Pantry",
+    "tagline": "Celebration packs and Corporate gifting from curated home-food brands.",
+    "logoMark": "FR",
+    "logoText": "FestiveRoots",
+    "logoDot": ".pantry",
+    "favicon": "favicon.ico",
+    "pageTitle": "FestiveRoots Pantry",
+    "locationLabel": "Serving premium pantry orders in Hyderabad",
+    "locationAction": "Change area",
+    "searchPlaceholder": "Search festival boxes, gift hampers, pantry packs...",
+    "accountGreeting": "Welcome back",
+    "accountLabel": "FestiveRoots member",
+    "ordersSmall": "Track",
+    "ordersLabel": "Orders & gifting",
+    "footerTagline": "Celebration packs and Corporate gifting with dependable packing and dispatch.",
+    "footerCopyright": "(C) 2026 FestiveRoots Pantry. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff0ee 0%, #ffdcd8 44%, #ffc7c0 100%)",
+    "ink": "#341817",
+    "muted": "#6f5a4d",
+    "accent": "#c24d3f",
+    "accentStrong": "#c24d3f",
+    "neon": "#f6d365",
+    "mint": "#ffe7d5",
+    "cream": "#fffaf4",
+    "panel": "#fffdf9",
+    "border": "color-mix(in srgb, #341817 12%, transparent)",
+    "shadow": "0 18px 40px color-mix(in srgb, #341817 14%, transparent)",
+    "headerGradient": "radial-gradient(circle at top, #fff0ee 0%, #ffdcd8 44%, #ffc7c0 100%)",
+    "headerBorder": "color-mix(in srgb, #341817 10%, transparent)",
+    "darkSurface": "#341817",
+    "darkSurfaceAlt": "#341817",
+    "onDark": "#fff8f0",
+    "onDarkMuted": "#f0dcc8",
+    "focusRing": "color-mix(in srgb, #c24d3f 18%, transparent)"
+  },
+  "about": {
+    "eyebrow": "FestiveRoots Pantry",
+    "title": "Celebration packs, Corporate gifting, and pantry staples for modern homes.",
+    "description": "FestiveRoots Pantry curates festival boxes, gift hampers, sweets, savories and more through trusted kitchen partners and gift-ready packing.",
+    "primaryCta": "Start shopping",
+    "secondaryCta": "Book a curated order",
+    "highlights": [
+      {
+        "icon": "bi-stars",
+        "title": "Curated batches",
+        "description": "Celebration packs across seasonal and daily staples."
+      },
+      {
+        "icon": "bi-gift",
+        "title": "Gift-ready",
+        "description": "Corporate gifting for families and teams."
+      },
+      {
+        "icon": "bi-box-seam",
+        "title": "Safe packing",
+        "description": "Leak-safe jars, crisp snack packs, and reliable dispatch."
+      }
+    ],
+    "stats": [
+      {
+        "value": "320+",
+        "label": "Products Listed"
+      },
+      {
+        "value": "48 hrs",
+        "label": "Dispatch Promise"
+      },
+      {
+        "value": "4.8",
+        "label": "Average Rating"
+      },
+      {
+        "value": "1M+",
+        "label": "Packs Delivered"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Need help?",
+    "title": "Talk to FestiveRoots Pantry about gifting, pantry planning, and bulk orders.",
+    "description": "We help with curated assortments, spice guidance, festival combos, and recurring pantry packs.",
+    "ctaLabel": "Talk to our team",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Call",
+        "lines": [
+          "+91 (800) 30210-1010",
+          "WhatsApp: +91 9021001010"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "hello@festiveroots.store",
+          "support@festiveroots.store"
+        ]
+      },
+      {
+        "icon": "bi-geo-alt",
+        "title": "Hub",
+        "lines": [
+          "Jubilee Hills Kitchen Hub",
+          "Hyderabad, India - 500033"
+        ]
+      },
+      {
+        "icon": "bi-clock",
+        "title": "Hours",
+        "lines": [
+          "Mon - Sat: 8:00 AM - 8:00 PM",
+          "Sunday: 9:00 AM - 2:00 PM"
+        ]
+      }
+    ],
+    "formTitle": "Send us a Message",
+    "formNote": "By submitting, you agree to be contacted regarding your inquiry."
+  },
+  "footer": {
+    "shopLinks": [
+      "Festival Boxes",
+      "Gift Hampers",
+      "Sweets",
+      "Savories"
+    ],
+    "supportLinks": [
+      "Delivery info",
+      "Bulk orders",
+      "Gifting",
+      "Returns"
+    ],
+    "companyLinks": [
+      "Our story",
+      "Kitchen partners",
+      "Careers",
+      "Journal"
+    ],
+    "socialLinks": [
+      {
+        "icon": "bi-facebook",
+        "label": "Facebook",
+        "href": "#"
+      },
+      {
+        "icon": "bi-instagram",
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "icon": "bi-youtube",
+        "label": "YouTube",
+        "href": "#"
+      },
+      {
+        "icon": "bi-linkedin",
+        "label": "LinkedIn",
+        "href": "#"
+      }
+    ],
+    "contactLines": [
+      "+91 (800) 30210-1010",
+      "hello@festiveroots.store",
+      "Jubilee Hills, Hyderabad"
+    ],
+    "appCtaLabel": "Request catalog"
+  },
+  "hero": {
+    "eyebrow": "FestiveRoots Pantry",
+    "title": "Celebration packs, Corporate gifting, and dependable pantry favorites.",
+    "subtitle": "Shop festival boxes, gift hampers, sweets, savories, snacks with clear pricing and reliable 24-48 hour dispatch.",
+    "tags": [
+      "Celebration packs",
+      "Corporate gifting"
+    ],
+    "cardTitle": "Popular pantry picks",
+    "cardItems": [
+      "Festival Boxes bestsellers",
+      "Gift Hampers bestsellers",
+      "Sweets bestsellers"
+    ],
+    "deliveryLine": "Dispatch in 24-48 hrs",
+    "detailDeliveryLine": "Dispatch in 24-48 hrs",
+    "relatedTitle": "More to explore"
+  },
+  "searchCategories": [
+    "All",
+    "Festival Boxes",
+    "Gift Hampers",
+    "Sweets",
+    "Savories",
+    "Snacks",
+    "Beverages",
+    "Dry Fruit Boxes",
+    "Seasonal Specials"
+  ],
+  "navLinks": [
+    "Festival Boxes",
+    "Gift Hampers",
+    "Sweets",
+    "Savories",
+    "Snacks",
+    "Beverages",
+    "Dry Fruit Boxes",
+    "About",
+    "Contact"
+  ],
+  "mobileLinks": [
+    "All items",
+    "Festival Boxes",
+    "Gift Hampers",
+    "Sweets",
+    "Savories",
+    "Snacks",
+    "Beverages",
+    "About",
+    "Contact"
+  ],
+  "promoMessages": [
+    "Celebration packs",
+    "Corporate gifting"
+  ],
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "FestiveRoots Mango Pickle Reserve",
+        "description": "Signature mango pickle from FestiveRoots Pantry.",
+        "price": 350,
+        "originalPrice": 400,
+        "image": "",
+        "category": "Festival Boxes",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1840,
+        "sku": "FR-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Style": "Signature",
+          "ShelfLife": "6 months",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 2,
+        "name": "CelebrationCrate Festival Sweet Box",
+        "description": "Popular sweet assortment curated by FestiveRoots Pantry.",
+        "price": 470,
+        "originalPrice": 540,
+        "image": "",
+        "category": "Sweets",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1320,
+        "sku": "FR-0002",
+        "specifications": {
+          "Pack": "300 g",
+          "Finish": "Gift-ready",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        }
+      },
+      {
+        "id": 3,
+        "name": "GiftLeaf Pantry Crunch Mix",
+        "description": "Best-selling crunchy snack from FestiveRoots Pantry.",
+        "price": 300,
+        "originalPrice": 330,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 940,
+        "sku": "FR-0003",
+        "specifications": {
+          "Pack": "200 g",
+          "Texture": "Crunchy",
+          "ShelfLife": "20 days",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 4,
+        "name": "WarmTray Kitchen Mix",
+        "description": "Ready pantry mix from FestiveRoots Pantry.",
+        "price": 320,
+        "originalPrice": 360,
+        "image": "",
+        "category": "Savories",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 870,
+        "sku": "FR-0004",
+        "specifications": {
+          "Pack": "500 g",
+          "Use": "Quick prep",
+          "ShelfLife": "4 months",
+          "Storage": "Dry place"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "FestiveRoots",
+        "CelebrationCrate",
+        "GiftLeaf",
+        "WarmTray",
+        "OccasionJar",
+        "RoyalRibbon"
+      ],
+      "categories": [
+        "Festival Boxes",
+        "Gift Hampers",
+        "Sweets",
+        "Savories",
+        "Snacks",
+        "Beverages",
+        "Dry Fruit Boxes",
+        "Seasonal Specials"
+      ],
+      "categorySpecifications": {
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Style": "Festival Boxes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Gift Hampers": {
+          "Pack": "Gift assortment",
+          "Style": "Gift Hampers",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Style": "Sweets",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        },
+        "Savories": {
+          "Pack": "Standard pack",
+          "Style": "Savories",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Style": "Snacks",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Style": "Beverages",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Dry Fruit Boxes": {
+          "Pack": "Gift assortment",
+          "Style": "Dry Fruit Boxes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Seasonal Specials": {
+          "Pack": "Standard pack",
+          "Style": "Seasonal Specials",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        }
+      },
+      "basePriceStart": 210,
+      "priceStep": 48,
+      "priceModulo": 2600,
+      "categoryPriceFactor": 24,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

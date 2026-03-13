@@ -1,0 +1,384 @@
+{
+  "branding": {
+    "name": "PicklePantry Co",
+    "tagline": "Jar favourites and Regional flavors from curated home-food brands.",
+    "logoMark": "PP",
+    "logoText": "PicklePantry",
+    "logoDot": ".co",
+    "favicon": "favicon.ico",
+    "pageTitle": "PicklePantry Co",
+    "locationLabel": "Serving premium pantry orders in Hyderabad",
+    "locationAction": "Change area",
+    "searchPlaceholder": "Search pickles, chutneys, pantry packs...",
+    "accountGreeting": "Welcome back",
+    "accountLabel": "PicklePantry member",
+    "ordersSmall": "Track",
+    "ordersLabel": "Orders & gifting",
+    "footerTagline": "Jar favourites and Regional flavors with dependable packing and dispatch.",
+    "footerCopyright": "(C) 2026 PicklePantry Co. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff5ea 0%, #ffe7cc 45%, #f9d7b1 100%)",
+    "ink": "#2f1b12",
+    "muted": "#6f5a4d",
+    "accent": "#9a4d24",
+    "accentStrong": "#9a4d24",
+    "neon": "#f6d365",
+    "mint": "#ffe7d5",
+    "cream": "#fffaf4",
+    "panel": "#fffdf9",
+    "border": "color-mix(in srgb, #2f1b12 12%, transparent)",
+    "shadow": "0 18px 40px color-mix(in srgb, #2f1b12 14%, transparent)",
+    "headerGradient": "radial-gradient(circle at top, #fff5ea 0%, #ffe7cc 45%, #f9d7b1 100%)",
+    "headerBorder": "color-mix(in srgb, #2f1b12 10%, transparent)",
+    "darkSurface": "#2f1b12",
+    "darkSurfaceAlt": "#2f1b12",
+    "onDark": "#fff8f0",
+    "onDarkMuted": "#f0dcc8",
+    "focusRing": "color-mix(in srgb, #9a4d24 18%, transparent)"
+  },
+  "about": {
+    "eyebrow": "PicklePantry Co",
+    "title": "Jar favourites, Regional flavors, and pantry staples for modern homes.",
+    "description": "PicklePantry Co curates pickles, chutneys, spice powders, rice mixes and more through trusted kitchen partners and gift-ready packing.",
+    "primaryCta": "Start shopping",
+    "secondaryCta": "Book a curated order",
+    "highlights": [
+      {
+        "icon": "bi-stars",
+        "title": "Curated batches",
+        "description": "Jar favourites across seasonal and daily staples."
+      },
+      {
+        "icon": "bi-gift",
+        "title": "Gift-ready",
+        "description": "Regional flavors for families and teams."
+      },
+      {
+        "icon": "bi-box-seam",
+        "title": "Safe packing",
+        "description": "Leak-safe jars, crisp snack packs, and reliable dispatch."
+      }
+    ],
+    "stats": [
+      {
+        "value": "320+",
+        "label": "Products Listed"
+      },
+      {
+        "value": "48 hrs",
+        "label": "Dispatch Promise"
+      },
+      {
+        "value": "4.8",
+        "label": "Average Rating"
+      },
+      {
+        "value": "1M+",
+        "label": "Packs Delivered"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Need help?",
+    "title": "Talk to PicklePantry Co about gifting, pantry planning, and bulk orders.",
+    "description": "We help with curated assortments, spice guidance, festival combos, and recurring pantry packs.",
+    "ctaLabel": "Talk to our team",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Call",
+        "lines": [
+          "+91 (800) 30140-1010",
+          "WhatsApp: +91 9014001010"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "hello@picklepantry.store",
+          "support@picklepantry.store"
+        ]
+      },
+      {
+        "icon": "bi-geo-alt",
+        "title": "Hub",
+        "lines": [
+          "Jubilee Hills Kitchen Hub",
+          "Hyderabad, India - 500033"
+        ]
+      },
+      {
+        "icon": "bi-clock",
+        "title": "Hours",
+        "lines": [
+          "Mon - Sat: 8:00 AM - 8:00 PM",
+          "Sunday: 9:00 AM - 2:00 PM"
+        ]
+      }
+    ],
+    "formTitle": "Send us a Message",
+    "formNote": "By submitting, you agree to be contacted regarding your inquiry."
+  },
+  "footer": {
+    "shopLinks": [
+      "Pickles",
+      "Chutneys",
+      "Spice Powders",
+      "Rice Mixes"
+    ],
+    "supportLinks": [
+      "Delivery info",
+      "Bulk orders",
+      "Gifting",
+      "Returns"
+    ],
+    "companyLinks": [
+      "Our story",
+      "Kitchen partners",
+      "Careers",
+      "Journal"
+    ],
+    "socialLinks": [
+      {
+        "icon": "bi-facebook",
+        "label": "Facebook",
+        "href": "#"
+      },
+      {
+        "icon": "bi-instagram",
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "icon": "bi-youtube",
+        "label": "YouTube",
+        "href": "#"
+      },
+      {
+        "icon": "bi-linkedin",
+        "label": "LinkedIn",
+        "href": "#"
+      }
+    ],
+    "contactLines": [
+      "+91 (800) 30140-1010",
+      "hello@picklepantry.store",
+      "Jubilee Hills, Hyderabad"
+    ],
+    "appCtaLabel": "Request catalog"
+  },
+  "hero": {
+    "eyebrow": "PicklePantry Co",
+    "title": "Jar favourites, Regional flavors, and dependable pantry favorites.",
+    "subtitle": "Shop pickles, chutneys, spice powders, rice mixes, papads & fryums with clear pricing and reliable 24-48 hour dispatch.",
+    "tags": [
+      "Jar favourites",
+      "Regional flavors"
+    ],
+    "cardTitle": "Popular pantry picks",
+    "cardItems": [
+      "Pickles bestsellers",
+      "Chutneys bestsellers",
+      "Spice Powders bestsellers"
+    ],
+    "deliveryLine": "Dispatch in 24-48 hrs",
+    "detailDeliveryLine": "Dispatch in 24-48 hrs",
+    "relatedTitle": "More to explore"
+  },
+  "searchCategories": [
+    "All",
+    "Pickles",
+    "Chutneys",
+    "Spice Powders",
+    "Rice Mixes",
+    "Papads & Fryums",
+    "Oils & Ghee",
+    "Snacks",
+    "Festive Gift Boxes"
+  ],
+  "navLinks": [
+    "Pickles",
+    "Chutneys",
+    "Spice Powders",
+    "Rice Mixes",
+    "Papads & Fryums",
+    "Oils & Ghee",
+    "Snacks",
+    "About",
+    "Contact"
+  ],
+  "mobileLinks": [
+    "All items",
+    "Pickles",
+    "Chutneys",
+    "Spice Powders",
+    "Rice Mixes",
+    "Papads & Fryums",
+    "Oils & Ghee",
+    "About",
+    "Contact"
+  ],
+  "promoMessages": [
+    "Jar favourites",
+    "Regional flavors"
+  ],
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "PicklePantry Mango Pickle Reserve",
+        "description": "Signature mango pickle from PicklePantry Co.",
+        "price": 280,
+        "originalPrice": 330,
+        "image": "",
+        "category": "Pickles",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1840,
+        "sku": "PP-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Style": "Signature",
+          "ShelfLife": "6 months",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 2,
+        "name": "JarHouse Festival Sweet Box",
+        "description": "Popular sweet assortment curated by PicklePantry Co.",
+        "price": 400,
+        "originalPrice": 470,
+        "image": "",
+        "category": "Chutneys",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1320,
+        "sku": "PP-0002",
+        "specifications": {
+          "Pack": "300 g",
+          "Finish": "Gift-ready",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        }
+      },
+      {
+        "id": 3,
+        "name": "MangoMint Pantry Crunch Mix",
+        "description": "Best-selling crunchy snack from PicklePantry Co.",
+        "price": 230,
+        "originalPrice": 260,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 940,
+        "sku": "PP-0003",
+        "specifications": {
+          "Pack": "200 g",
+          "Texture": "Crunchy",
+          "ShelfLife": "20 days",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 4,
+        "name": "SesameStone Kitchen Mix",
+        "description": "Ready pantry mix from PicklePantry Co.",
+        "price": 250,
+        "originalPrice": 290,
+        "image": "",
+        "category": "Rice Mixes",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 870,
+        "sku": "PP-0004",
+        "specifications": {
+          "Pack": "500 g",
+          "Use": "Quick prep",
+          "ShelfLife": "4 months",
+          "Storage": "Dry place"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "PicklePantry",
+        "JarHouse",
+        "MangoMint",
+        "SesameStone",
+        "TangyTradition",
+        "KitchenLeaf"
+      ],
+      "categories": [
+        "Pickles",
+        "Chutneys",
+        "Spice Powders",
+        "Rice Mixes",
+        "Papads & Fryums",
+        "Oils & Ghee",
+        "Snacks",
+        "Festive Gift Boxes"
+      ],
+      "categorySpecifications": {
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Style": "Pickles",
+          "ShelfLife": "4 months",
+          "Storage": "Cool and dry"
+        },
+        "Chutneys": {
+          "Pack": "Standard pack",
+          "Style": "Chutneys",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Style": "Spice Powders",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Rice Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Rice Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Papads & Fryums": {
+          "Pack": "Standard pack",
+          "Style": "Papads & Fryums",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Oils & Ghee": {
+          "Pack": "Standard pack",
+          "Style": "Oils & Ghee",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Style": "Snacks",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Festive Gift Boxes": {
+          "Pack": "Gift assortment",
+          "Style": "Festive Gift Boxes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        }
+      },
+      "basePriceStart": 140,
+      "priceStep": 28,
+      "priceModulo": 2600,
+      "categoryPriceFactor": 24,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}
