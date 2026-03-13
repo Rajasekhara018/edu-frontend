@@ -1,0 +1,118 @@
+{
+    "branding": {
+        "name": "IgniteVerse Learning",
+        "tagline": "Spark technical momentum",
+        "logo": "assets/edutech.png",
+        "favicon": "favicon.ico",
+        "pageTitle": "IgniteVerse Learning",
+        "footerSummary": "High-energy online cohorts for software and data learners.",
+        "footerCopyright": "COPYRIGHT (C) 2026 IGNITEVERSE LEARNING",
+        "heroEyebrow": "Momentum Programs",
+        "heroTitle": "Ignite your next technical leap with cohort-based learning",
+        "heroSubtitle": "IgniteVerse is designed for learners who want urgency, clarity, and implementation pressure with mentor support.",
+        "aboutTitle": "High-accountability cohorts for technical growth.",
+        "aboutDescription": "We mix live teaching, implementation reviews, and milestone-based pacing to keep learners engaged and progressing."
+    },
+    "contact": {
+        "phone": "+91 (818) 844-1199",
+        "hours": "Mon - Fri, 11:00 AM - 8:00 PM",
+        "primaryEmail": "join@igniteverse.io",
+        "secondaryEmail": "support@igniteverse.io"
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #fff7ed 0%, #fed7aa 40%, #fdba74 100%)",
+        "headerBackground": "rgba(255, 247, 237, 0.95)",
+        "headerBorder": "rgba(234, 88, 12, 0.16)",
+        "surface": "#fffaf5",
+        "surfaceAlt": "#fed7aa",
+        "textPrimary": "#431407",
+        "textMuted": "#7c4a1f",
+        "accent": "#ea580c",
+        "accentStrong": "#c2410c",
+        "accentSoft": "rgba(234, 88, 12, 0.15)",
+        "gold": "#fb923c",
+        "darkSurface": "#431407",
+        "darkSurfaceAlt": "rgba(67, 20, 7, 0.86)",
+        "onDark": "#fff7ed",
+        "onDarkMuted": "rgba(255, 247, 237, 0.76)",
+        "border": "rgba(234, 88, 12, 0.18)",
+        "focusRing": "rgba(234, 88, 12, 0.2)"
+    },
+    "courses": [
+        {
+            "slug": "python",
+            "name": "Python Programming",
+            "price": 32500,
+            "image": "assets/python.webp",
+            "level": "Beginner",
+            "duration": "10 weeks",
+            "summary": "Python with strong implementation cadence and exercises.",
+            "syllabus": [
+                "Syntax",
+                "Reusable code",
+                "APIs",
+                "Mini builds"
+            ]
+        },
+        {
+            "slug": "java",
+            "name": "Java Programming",
+            "price": 40250,
+            "image": "assets/java.webp",
+            "level": "Intermediate",
+            "duration": "12 weeks",
+            "summary": "Java engineering with hands-on review checkpoints.",
+            "syllabus": [
+                "Core Java",
+                "Objects",
+                "Collections",
+                "JDBC"
+            ]
+        },
+        {
+            "slug": "datascience",
+            "name": "Data Science",
+            "price": 80500,
+            "image": "assets/datascience.webp",
+            "level": "Advanced",
+            "duration": "15 weeks",
+            "summary": "Analytics and reporting with project-driven learning.",
+            "syllabus": [
+                "Prep",
+                "EDA",
+                "Visualization",
+                "Capstone"
+            ]
+        },
+        {
+            "slug": "fullstack",
+            "name": "Full Stack",
+            "price": 90000,
+            "image": "assets/fullstack.webp",
+            "level": "Career Track",
+            "duration": "18 weeks",
+            "summary": "Build, test, and ship complete web products.",
+            "syllabus": [
+                "Frontend",
+                "Backend",
+                "Data",
+                "Deployment"
+            ]
+        },
+        {
+            "slug": "nosql",
+            "name": "NoSQL",
+            "price": 46800,
+            "image": "assets/nosql.webp",
+            "level": "Specialization",
+            "duration": "8 weeks",
+            "summary": "Practical selection and use of NoSQL databases.",
+            "syllabus": [
+                "Documents",
+                "Key-value",
+                "Columns",
+                "Graphs"
+            ]
+        }
+    ]
+}

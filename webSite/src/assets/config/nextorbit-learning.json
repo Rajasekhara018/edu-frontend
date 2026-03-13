@@ -1,0 +1,118 @@
+{
+    "branding": {
+        "name": "NextOrbit Learning",
+        "tagline": "Launch disciplined digital careers",
+        "logo": "assets/edutech.png",
+        "favicon": "favicon.ico",
+        "pageTitle": "NextOrbit Learning",
+        "footerSummary": "A learning platform for next-step software and analytics careers.",
+        "footerCopyright": "COPYRIGHT (C) 2026 NEXTORBIT LEARNING",
+        "heroEyebrow": "Launch Programs",
+        "heroTitle": "Enter your next technical orbit with guided software training",
+        "heroSubtitle": "NextOrbit helps learners move from fragmented knowledge to organized, project-backed technical confidence.",
+        "aboutTitle": "A cleaner path into software execution.",
+        "aboutDescription": "We focus on relevant skills, consistent implementation, and clarity of thinking across each technical track."
+    },
+    "contact": {
+        "phone": "+91 (819) 955-1200",
+        "hours": "Mon - Sat, 8:30 AM - 7:00 PM",
+        "primaryEmail": "admit@nextorbitlearning.com",
+        "secondaryEmail": "support@nextorbitlearning.com"
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #eef2ff 0%, #c7d2fe 38%, #a5b4fc 100%)",
+        "headerBackground": "rgba(238, 242, 255, 0.95)",
+        "headerBorder": "rgba(79, 70, 229, 0.14)",
+        "surface": "#fdfdff",
+        "surfaceAlt": "#c7d2fe",
+        "textPrimary": "#1e1b4b",
+        "textMuted": "#5f5b8a",
+        "accent": "#4f46e5",
+        "accentStrong": "#4338ca",
+        "accentSoft": "rgba(79, 70, 229, 0.14)",
+        "gold": "#818cf8",
+        "darkSurface": "#1e1b4b",
+        "darkSurfaceAlt": "rgba(30, 27, 75, 0.86)",
+        "onDark": "#eef2ff",
+        "onDarkMuted": "rgba(238, 242, 255, 0.76)",
+        "border": "rgba(79, 70, 229, 0.16)",
+        "focusRing": "rgba(79, 70, 229, 0.2)"
+    },
+    "courses": [
+        {
+            "slug": "python",
+            "name": "Python Programming",
+            "price": 34250,
+            "image": "assets/python.webp",
+            "level": "Beginner",
+            "duration": "11 weeks",
+            "summary": "Python foundations for backend and automation pathways.",
+            "syllabus": [
+                "Syntax",
+                "Functions",
+                "Files and APIs",
+                "Use-case builds"
+            ]
+        },
+        {
+            "slug": "java",
+            "name": "Java Programming",
+            "price": 41800,
+            "image": "assets/java.webp",
+            "level": "Intermediate",
+            "duration": "13 weeks",
+            "summary": "Java essentials for application and backend development.",
+            "syllabus": [
+                "Language core",
+                "OOP",
+                "Collections",
+                "Persistence"
+            ]
+        },
+        {
+            "slug": "datascience",
+            "name": "Data Science",
+            "price": 82800,
+            "image": "assets/datascience.webp",
+            "level": "Advanced",
+            "duration": "16 weeks",
+            "summary": "Data workflows, visual analysis, and practical reporting.",
+            "syllabus": [
+                "Data prep",
+                "EDA",
+                "Visualization",
+                "Capstone"
+            ]
+        },
+        {
+            "slug": "fullstack",
+            "name": "Full Stack",
+            "price": 93500,
+            "image": "assets/fullstack.webp",
+            "level": "Career Track",
+            "duration": "20 weeks",
+            "summary": "A complete full-stack path with real release practices.",
+            "syllabus": [
+                "Frontend apps",
+                "API services",
+                "Databases",
+                "Deployment"
+            ]
+        },
+        {
+            "slug": "nosql",
+            "name": "NoSQL",
+            "price": 48900,
+            "image": "assets/nosql.webp",
+            "level": "Specialization",
+            "duration": "9 weeks",
+            "summary": "NoSQL architecture, selection, and implementation patterns.",
+            "syllabus": [
+                "Document",
+                "Key-value",
+                "Column",
+                "Graph"
+            ]
+        }
+    ]
+}

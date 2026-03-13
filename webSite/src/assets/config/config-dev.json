@@ -1,0 +1,118 @@
+{
+  "branding": {
+    "name": "EduSoft Sandbox",
+    "tagline": "Config-driven learning storefront",
+    "logo": "assets/edutech.png",
+    "favicon": "favicon.ico",
+    "pageTitle": "EduSoft Sandbox",
+    "footerSummary": "Development profile for validating profile-based branding, pricing, and theming.",
+    "footerCopyright": "COPYRIGHT (C) 2026 EDUSOFT SANDBOX",
+    "heroEyebrow": "Development Profile",
+    "heroTitle": "Validate dynamic branding, pricing, and theming from JSON config",
+    "heroSubtitle": "This profile demonstrates that course prices, admissions contacts, and theme colors can change without editing templates.",
+    "aboutTitle": "A profile-aware website configuration flow.",
+    "aboutDescription": "The development profile uses the same components as the base site, but all visible business details are supplied by a profile-specific JSON file."
+  },
+  "contact": {
+    "phone": "+91 (900) 111-2233",
+    "hours": "Mon - Fri, 10:00 AM - 6:00 PM",
+    "primaryEmail": "sandbox@edusoft.dev",
+    "secondaryEmail": "support-sandbox@edusoft.dev"
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff7ed 0%, #ffedd5 38%, #fde68a 100%)",
+    "headerBackground": "rgba(255, 251, 235, 0.94)",
+    "headerBorder": "rgba(146, 64, 14, 0.12)",
+    "surface": "#fffaf0",
+    "surfaceAlt": "#ffedd5",
+    "textPrimary": "#431407",
+    "textMuted": "#7c2d12",
+    "accent": "#c2410c",
+    "accentStrong": "#9a3412",
+    "accentSoft": "rgba(194, 65, 12, 0.14)",
+    "gold": "#ea580c",
+    "darkSurface": "#431407",
+    "darkSurfaceAlt": "rgba(67, 20, 7, 0.86)",
+    "onDark": "#fff7ed",
+    "onDarkMuted": "rgba(255, 247, 237, 0.76)",
+    "border": "rgba(124, 45, 18, 0.16)",
+    "focusRing": "rgba(194, 65, 12, 0.2)"
+  },
+  "courses": [
+    {
+      "slug": "python",
+      "name": "Python Programming",
+      "price": 32000,
+      "image": "assets/python.webp",
+      "level": "Beginner",
+      "duration": "10 weeks",
+      "summary": "Development profile pricing for the Python course.",
+      "syllabus": [
+        "Syntax and control flow",
+        "Functions and modules",
+        "File handling and APIs",
+        "Automation tasks"
+      ]
+    },
+    {
+      "slug": "java",
+      "name": "Java Programming",
+      "price": 39000,
+      "image": "assets/java.webp",
+      "level": "Intermediate",
+      "duration": "12 weeks",
+      "summary": "Development profile pricing for the Java course.",
+      "syllabus": [
+        "Core Java syntax",
+        "OOP and collections",
+        "JDBC and multithreading",
+        "Mini projects"
+      ]
+    },
+    {
+      "slug": "datascience",
+      "name": "Data Science",
+      "price": 78000,
+      "image": "assets/datascience.webp",
+      "level": "Advanced",
+      "duration": "16 weeks",
+      "summary": "Development profile pricing for the Data Science course.",
+      "syllabus": [
+        "Data analysis",
+        "Visualization",
+        "Statistics",
+        "Project work"
+      ]
+    },
+    {
+      "slug": "fullstack",
+      "name": "Full Stack",
+      "price": 88000,
+      "image": "assets/fullstack.webp",
+      "level": "Career Track",
+      "duration": "18 weeks",
+      "summary": "Development profile pricing for the Full Stack course.",
+      "syllabus": [
+        "Frontend basics",
+        "Backend services",
+        "Database integration",
+        "Deployment"
+      ]
+    },
+    {
+      "slug": "nosql",
+      "name": "NoSQL",
+      "price": 47000,
+      "image": "assets/nosql.webp",
+      "level": "Specialization",
+      "duration": "8 weeks",
+      "summary": "Development profile pricing for the NoSQL course.",
+      "syllabus": [
+        "Document stores",
+        "Key-value systems",
+        "Column-family models",
+        "Graph databases"
+      ]
+    }
+  ]
+}

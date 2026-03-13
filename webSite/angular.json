@@ -34,12 +34,26 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.scss",
-               "src/typography.scss"
+              "src/typography.scss"
             ],
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "edusoft": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.edusoft.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/",
+              "optimization": true,
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -54,6 +68,126 @@
               ],
               "outputHashing": "all"
             },
+            "aurora-tech": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.aurora-tech.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "bluecrest-learning": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.bluecrest-learning.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "catalyst-academy": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.catalyst-academy.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "codeharbor": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.codeharbor.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "datanova-institute": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.datanova-institute.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "elevate-labs": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.elevate-labs.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "futureforge": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.futureforge.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "growthgrid-academy": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.growthgrid-academy.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "igniteverse": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.igniteverse.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "nextorbit-learning": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.nextorbit-learning.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "quantum-skillhouse": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.quantum-skillhouse.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
+            "vertex-academy": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.vertex-academy.ts"
+                }
+              ],
+              "baseHref": "/",
+              "deployUrl": "/"
+            },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
@@ -63,7 +197,7 @@
               "namedChunks": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
@@ -73,6 +207,45 @@
             },
             "development": {
               "browserTarget": "webSite:build:development"
+            },
+            "edusoft": {
+              "browserTarget": "webSite:build:edusoft"
+            },
+            "aurora-tech": {
+              "browserTarget": "webSite:build:aurora-tech"
+            },
+            "bluecrest-learning": {
+              "browserTarget": "webSite:build:bluecrest-learning"
+            },
+            "catalyst-academy": {
+              "browserTarget": "webSite:build:catalyst-academy"
+            },
+            "codeharbor": {
+              "browserTarget": "webSite:build:codeharbor"
+            },
+            "datanova-institute": {
+              "browserTarget": "webSite:build:datanova-institute"
+            },
+            "elevate-labs": {
+              "browserTarget": "webSite:build:elevate-labs"
+            },
+            "futureforge": {
+              "browserTarget": "webSite:build:futureforge"
+            },
+            "growthgrid-academy": {
+              "browserTarget": "webSite:build:growthgrid-academy"
+            },
+            "igniteverse": {
+              "browserTarget": "webSite:build:igniteverse"
+            },
+            "nextorbit-learning": {
+              "browserTarget": "webSite:build:nextorbit-learning"
+            },
+            "quantum-skillhouse": {
+              "browserTarget": "webSite:build:quantum-skillhouse"
+            },
+            "vertex-academy": {
+              "browserTarget": "webSite:build:vertex-academy"
             }
           },
           "defaultConfiguration": "development"
@@ -101,7 +274,7 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.scss",
-               "src/typography.scss"
+              "src/typography.scss"
             ],
             "scripts": []
           }

@@ -2,38 +2,11 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MatDialog } from '@angular/material/dialog';
-
+import { WebsiteConfigService } from '../Services/website-config.service';
 export class TAmount {
   value!: any;
   code!: string;
 }
-export const COURSE_DATA: Record<string, { name: string; price: number; image: string }> = {
-  'fullstack': {
-    name: 'Full Stack',
-    price: 85000,
-    image: '../../../../assets/fullstack.webp'
-  },
-  'nosql': {
-    name: 'NoSQL',
-    price: 45000,
-    image: '../../../../assets/nosql.webp'
-  },
-  'python': {
-    name: 'Python Programming',
-    price: 30000,
-    image: '../../../../assets/python.webp'
-  },
-  'datascience': {
-    name: 'Data Science',
-    price: 75000,
-    image: '../../../../assets/datascience.webp'
-  },
-  'java': {
-    name: 'Java Programming',
-    price: 35000,
-    image: '../../../../assets/java.webp'
-  }
-};
 @Component({
   selector: 'app-checkout',
   templateUrl: './checkout.component.html',
@@ -48,7 +21,7 @@ export class CheckoutComponent implements OnInit {
   currencyCode!: string;
   redirectURL!: string;
   constructor(public router: Router, public cdr: ChangeDetectorRef, public http: HttpClient, public dialog: MatDialog,
-    public route: ActivatedRoute
+    public route: ActivatedRoute, public websiteConfig: WebsiteConfigService
   ) {
     this.currencyCode = localStorage.getItem('currencyCode')!;
     this.amtValue = new TAmount();
@@ -58,9 +31,24 @@ export class CheckoutComponent implements OnInit {
     this.amount = Number(this.route.snapshot.paramMap.get('amount'));
     // this.course = this.route.snapshot.paramMap.get('course')!;
     const courseKey = this.route.snapshot.paramMap.get('course');
-    if (courseKey) {
-      this.course = COURSE_DATA[courseKey];
+    const configCourse = this.websiteConfig.findCourseBySlug(courseKey);
+    if (configCourse) {
+      this.course = configCourse;
+      this.amount = configCourse.price;
+    } else {
+      this.course = {
+        name: 'Selected Course',
+        image: '../../../../assets/edutech.png'
+      };
     }
+  }
+
+  get siteName(): string {
+    return this.websiteConfig.branding.name;
+  }
+
+  get supportEmail(): string {
+    return this.websiteConfig.contact.primaryEmail;
   }
   generateRandomId() {
     return Math.random().toString(36).substring(2, 10);

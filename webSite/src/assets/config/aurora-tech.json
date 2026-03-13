@@ -1,0 +1,118 @@
+{
+    "branding": {
+        "name": "Aurora Tech Academy",
+        "tagline": "Future-ready engineering cohorts",
+        "logo": "assets/edutech.png",
+        "favicon": "favicon.ico",
+        "pageTitle": "Aurora Tech Academy",
+        "footerSummary": "Immersive software bootcamps for modern product teams.",
+        "footerCopyright": "COPYRIGHT (C) 2026 AURORA TECH ACADEMY",
+        "heroEyebrow": "Flagship Cohorts",
+        "heroTitle": "Build production-grade skills with Aurora mentors",
+        "heroSubtitle": "Structured paths for developers, analysts, and product-minded engineers who want practical outcomes.",
+        "aboutTitle": "Mentor-led programs for serious career transitions.",
+        "aboutDescription": "Aurora Tech Academy blends live instruction, projects, and review loops so learners graduate with demonstrable skills."
+    },
+    "contact": {
+        "phone": "+91 (810) 200-1101",
+        "hours": "Mon - Sat, 8:30 AM - 6:30 PM",
+        "primaryEmail": "admissions@auroratech.academy",
+        "secondaryEmail": "support@auroratech.academy"
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #f0f9ff 0%, #dbeafe 42%, #bfdbfe 100%)",
+        "headerBackground": "rgba(239, 246, 255, 0.94)",
+        "headerBorder": "rgba(37, 99, 235, 0.12)",
+        "surface": "#f8fbff",
+        "surfaceAlt": "#dbeafe",
+        "textPrimary": "#0b1f3a",
+        "textMuted": "#44617f",
+        "accent": "#2563eb",
+        "accentStrong": "#1d4ed8",
+        "accentSoft": "rgba(37, 99, 235, 0.14)",
+        "gold": "#38bdf8",
+        "darkSurface": "#0b1f3a",
+        "darkSurfaceAlt": "rgba(11, 31, 58, 0.84)",
+        "onDark": "#eff6ff",
+        "onDarkMuted": "rgba(239, 246, 255, 0.75)",
+        "border": "rgba(37, 99, 235, 0.16)",
+        "focusRing": "rgba(37, 99, 235, 0.18)"
+    },
+    "courses": [
+        {
+            "slug": "python",
+            "name": "Python Programming",
+            "price": 34000,
+            "image": "assets/python.webp",
+            "level": "Beginner",
+            "duration": "11 weeks",
+            "summary": "Python foundations with automation and API practice.",
+            "syllabus": [
+                "Syntax and flow control",
+                "Functions and modules",
+                "File handling and APIs",
+                "Automation mini projects"
+            ]
+        },
+        {
+            "slug": "java",
+            "name": "Java Programming",
+            "price": 41000,
+            "image": "assets/java.webp",
+            "level": "Intermediate",
+            "duration": "13 weeks",
+            "summary": "Core Java to enterprise-ready programming patterns.",
+            "syllabus": [
+                "Language fundamentals",
+                "OOP and collections",
+                "JDBC and multithreading",
+                "Applied coding labs"
+            ]
+        },
+        {
+            "slug": "datascience",
+            "name": "Data Science",
+            "price": 82000,
+            "image": "assets/datascience.webp",
+            "level": "Advanced",
+            "duration": "16 weeks",
+            "summary": "Applied analytics, dashboards, and model-ready datasets.",
+            "syllabus": [
+                "Data wrangling",
+                "Visualization",
+                "Statistics",
+                "Project capstone"
+            ]
+        },
+        {
+            "slug": "fullstack",
+            "name": "Full Stack",
+            "price": 92000,
+            "image": "assets/fullstack.webp",
+            "level": "Career Track",
+            "duration": "20 weeks",
+            "summary": "Frontend, backend, database, and deployment workflows.",
+            "syllabus": [
+                "UI engineering",
+                "API development",
+                "Database integration",
+                "Deployment and testing"
+            ]
+        },
+        {
+            "slug": "nosql",
+            "name": "NoSQL",
+            "price": 48000,
+            "image": "assets/nosql.webp",
+            "level": "Specialization",
+            "duration": "8 weeks",
+            "summary": "Modern data storage systems for product teams.",
+            "syllabus": [
+                "Document models",
+                "Key-value systems",
+                "Column-family stores",
+                "Graph databases"
+            ]
+        }
+    ]
+}

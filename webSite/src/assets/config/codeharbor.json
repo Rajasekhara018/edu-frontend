@@ -1,0 +1,118 @@
+{
+    "branding": {
+        "name": "CodeHarbor Institute",
+        "tagline": "Dock your career in practical tech skills",
+        "logo": "assets/edutech.png",
+        "favicon": "favicon.ico",
+        "pageTitle": "CodeHarbor Institute",
+        "footerSummary": "A practical institute for modern software craftsmanship.",
+        "footerCopyright": "COPYRIGHT (C) 2026 CODEHARBOR INSTITUTE",
+        "heroEyebrow": "Mentored Learning",
+        "heroTitle": "Sail from fundamentals to deployable software at CodeHarbor",
+        "heroSubtitle": "CodeHarbor focuses on practical systems, disciplined coding habits, and project delivery under guidance.",
+        "aboutTitle": "Programs anchored in software craftsmanship.",
+        "aboutDescription": "We help learners build confidence through implementation, technical communication, and repeatable engineering workflows."
+    },
+    "contact": {
+        "phone": "+91 (813) 215-1144",
+        "hours": "Mon - Sat, 8:00 AM - 6:00 PM",
+        "primaryEmail": "crew@codeharbor.in",
+        "secondaryEmail": "help@codeharbor.in"
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #f0fdfa 0%, #ccfbf1 38%, #99f6e4 100%)",
+        "headerBackground": "rgba(240, 253, 250, 0.95)",
+        "headerBorder": "rgba(13, 148, 136, 0.14)",
+        "surface": "#fafffe",
+        "surfaceAlt": "#ccfbf1",
+        "textPrimary": "#042f2e",
+        "textMuted": "#46606a",
+        "accent": "#0f766e",
+        "accentStrong": "#115e59",
+        "accentSoft": "rgba(15, 118, 110, 0.14)",
+        "gold": "#14b8a6",
+        "darkSurface": "#042f2e",
+        "darkSurfaceAlt": "rgba(4, 47, 46, 0.86)",
+        "onDark": "#f0fdfa",
+        "onDarkMuted": "rgba(240, 253, 250, 0.74)",
+        "border": "rgba(13, 148, 136, 0.17)",
+        "focusRing": "rgba(15, 118, 110, 0.18)"
+    },
+    "courses": [
+        {
+            "slug": "python",
+            "name": "Python Programming",
+            "price": 32500,
+            "image": "assets/python.webp",
+            "level": "Beginner",
+            "duration": "10 weeks",
+            "summary": "Python for scripting, APIs, and backend logic.",
+            "syllabus": [
+                "Syntax",
+                "Control flow",
+                "API work",
+                "Mini automation apps"
+            ]
+        },
+        {
+            "slug": "java",
+            "name": "Java Programming",
+            "price": 39500,
+            "image": "assets/java.webp",
+            "level": "Intermediate",
+            "duration": "12 weeks",
+            "summary": "Java program design with OOP and persistence.",
+            "syllabus": [
+                "Language basics",
+                "Objects",
+                "Collections and JDBC",
+                "Projects"
+            ]
+        },
+        {
+            "slug": "datascience",
+            "name": "Data Science",
+            "price": 78500,
+            "image": "assets/datascience.webp",
+            "level": "Advanced",
+            "duration": "15 weeks",
+            "summary": "Data science foundations with portfolio-ready case studies.",
+            "syllabus": [
+                "Wrangling",
+                "Analytics",
+                "Visualization",
+                "Capstone"
+            ]
+        },
+        {
+            "slug": "fullstack",
+            "name": "Full Stack",
+            "price": 89000,
+            "image": "assets/fullstack.webp",
+            "level": "Career Track",
+            "duration": "18 weeks",
+            "summary": "End-to-end web product development with deployment practice.",
+            "syllabus": [
+                "Frontend UX",
+                "Backend APIs",
+                "Data storage",
+                "Release workflows"
+            ]
+        },
+        {
+            "slug": "nosql",
+            "name": "NoSQL",
+            "price": 46250,
+            "image": "assets/nosql.webp",
+            "level": "Specialization",
+            "duration": "8 weeks",
+            "summary": "Choosing and operating NoSQL models effectively.",
+            "syllabus": [
+                "Documents",
+                "Key-value",
+                "Wide-column",
+                "Graph"
+            ]
+        }
+    ]
+}

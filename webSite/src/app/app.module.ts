@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,11 @@ import { RazorpayPgComponent } from './paymentGateways/razorpay-pg/razorpay-pg.c
 import { PaymentGatewayComponent } from './paymentGateways/payment-gateway/payment-gateway.component';
 import { PinelabsPgComponent } from './paymentGateways/pinelabs-pg/pinelabs-pg.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { WebsiteConfigService } from './Services/website-config.service';
+
+function initializeWebsiteConfig(configService: WebsiteConfigService) {
+  return () => configService.loadConfig();
+}
 
 @NgModule({
   declarations: [ 
@@ -37,7 +42,16 @@ import { CheckoutComponent } from './checkout/checkout.component';
     HttpClientModule,
     MaterialModule,
   ],
-  providers: [DatePipe,CurrencyPipe],
+  providers: [
+    DatePipe,
+    CurrencyPipe,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeWebsiteConfig,
+      deps: [WebsiteConfigService],
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

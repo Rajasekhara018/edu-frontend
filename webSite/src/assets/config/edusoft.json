@@ -1,0 +1,118 @@
+{
+  "branding": {
+    "name": "EduSoft Academy",
+    "tagline": "Industry-led learning pathways",
+    "logo": "assets/edutech.png",
+    "favicon": "favicon.ico",
+    "pageTitle": "EduSoft Academy",
+    "footerSummary": "Professional training pathways in software engineering, data, and full-stack development.",
+    "footerCopyright": "COPYRIGHT (C) 2026 EDUSOFT ACADEMY",
+    "heroEyebrow": "Career Track Programs",
+    "heroTitle": "Launch Your Career in Tech with Industry Experts",
+    "heroSubtitle": "Master real-world skills through hands-on projects, expert mentorship, and career-focused programs designed to make you job-ready.",
+    "aboutTitle": "Build career-ready skills with expert-led programs.",
+    "aboutDescription": "We are a team of software professionals and educators on a mission to simplify coding education. Whether you are preparing for a tech career or upskilling, we deliver hands-on, project-based training with mentorship that matters."
+  },
+  "contact": {
+    "phone": "+91 (800) 555-1212",
+    "hours": "Mon - Sat, 9:00 AM - 7:00 PM",
+    "primaryEmail": "admissions@edusoft.academy",
+    "secondaryEmail": "support@edusoft.academy"
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #f5f8ff 0%, #eef3fb 45%, #e9eff7 100%)",
+    "headerBackground": "rgba(255, 255, 255, 0.92)",
+    "headerBorder": "rgba(15, 23, 42, 0.08)",
+    "surface": "#ffffff",
+    "surfaceAlt": "#f1f5ff",
+    "textPrimary": "#0f172a",
+    "textMuted": "#5b677a",
+    "accent": "#1b4b8b",
+    "accentStrong": "#133864",
+    "accentSoft": "rgba(27, 75, 139, 0.12)",
+    "gold": "#f2a900",
+    "darkSurface": "#0f172a",
+    "darkSurfaceAlt": "rgba(15, 23, 42, 0.8)",
+    "onDark": "#f8fafc",
+    "onDarkMuted": "rgba(248, 250, 252, 0.72)",
+    "border": "rgba(15, 23, 42, 0.12)",
+    "focusRing": "rgba(27, 75, 139, 0.15)"
+  },
+  "courses": [
+    {
+      "slug": "python",
+      "name": "Python Programming",
+      "price": 30000,
+      "image": "assets/python.webp",
+      "level": "Beginner",
+      "duration": "12 weeks",
+      "summary": "Learn Python fundamentals and advance into real-world application development.",
+      "syllabus": [
+        "Programming fundamentals and syntax",
+        "Control structures, functions, and file handling",
+        "OOP, modules, and decorators",
+        "APIs, error handling, and automation"
+      ]
+    },
+    {
+      "slug": "java",
+      "name": "Java Programming",
+      "price": 35000,
+      "image": "assets/java.webp",
+      "level": "Intermediate",
+      "duration": "14 weeks",
+      "summary": "Build strong Java foundations and move into enterprise-ready concepts.",
+      "syllabus": [
+        "Core syntax, loops, and data types",
+        "Object-oriented programming",
+        "Collections, multithreading, and JDBC",
+        "Project-based practice"
+      ]
+    },
+    {
+      "slug": "datascience",
+      "name": "Data Science",
+      "price": 75000,
+      "image": "assets/datascience.webp",
+      "level": "Advanced",
+      "duration": "16 weeks",
+      "summary": "Learn applied data analysis, visualization, and project execution with Python.",
+      "syllabus": [
+        "Introduction to data science",
+        "Python for data analysis",
+        "Statistics and visualization",
+        "Pandas, NumPy, and Matplotlib"
+      ]
+    },
+    {
+      "slug": "fullstack",
+      "name": "Full Stack",
+      "price": 85000,
+      "image": "assets/fullstack.webp",
+      "level": "Career Track",
+      "duration": "20 weeks",
+      "summary": "A complete web engineering path covering frontend, backend, and integration.",
+      "syllabus": [
+        "Web fundamentals and UI development",
+        "Frontend frameworks and state management",
+        "Backend APIs and databases",
+        "End-to-end project integration"
+      ]
+    },
+    {
+      "slug": "nosql",
+      "name": "NoSQL",
+      "price": 45000,
+      "image": "assets/nosql.webp",
+      "level": "Specialization",
+      "duration": "8 weeks",
+      "summary": "Understand modern non-relational data systems and where they fit best.",
+      "syllabus": [
+        "Document databases",
+        "Key-value stores",
+        "Column-family databases",
+        "Graph and real-time databases"
+      ]
+    }
+  ]
+}

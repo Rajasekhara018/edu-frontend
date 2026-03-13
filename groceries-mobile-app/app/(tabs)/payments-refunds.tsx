@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import {
+  Alert,
   Modal,
   Pressable,
   ScrollView,
@@ -14,6 +15,8 @@ import { useTranslation } from 'react-i18next';
 
 import { ThemePalette } from '@/constants/theme';
 import { useTheme } from '@/context/ThemeContext';
+import ToucanPaymentModal from '@/components/toucan-payment-modal';
+import { ToucanPaymentPayload, buildToucanPaymentPayload, parseToucanResult } from '@/services/payment-sdk';
 
 type PaymentMethod = {
   id: string;
@@ -86,6 +89,64 @@ export default function PaymentsRefundsScreen() {
   const [showLearnMore, setShowLearnMore] = useState(false);
   const [showRefundDetails, setShowRefundDetails] = useState<RefundItem | null>(null);
   const [showSupport, setShowSupport] = useState(false);
+  const [walletBalance, setWalletBalance] = useState(580);
+  const [topUpAmount, setTopUpAmount] = useState(200);
+  const [isAddingMoney, setIsAddingMoney] = useState(false);
+  const [paymentPayload, setPaymentPayload] = useState<ToucanPaymentPayload | null>(null);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+
+  const selectedPaymentMethod =
+    paymentMethods.find((method) => method.id === selectedMethod) ?? paymentMethods[0];
+
+  const paymentMethod =
+    selectedPaymentMethod.type === 'card'
+      ? 'CARD'
+      : selectedPaymentMethod.type === 'upi'
+        ? 'UPI'
+        : 'WALLET';
+
+  const handleWalletTopUp = () => {
+    if (isAddingMoney) {
+      return;
+    }
+
+    setIsAddingMoney(true);
+    setPaymentPayload(
+      buildToucanPaymentPayload({
+        transactionAmount: topUpAmount,
+        paymentMethod,
+        walletName: paymentMethod === 'WALLET' ? selectedPaymentMethod.label : undefined,
+      })
+    );
+    setShowPaymentModal(true);
+  };
+
+  const handleToucanResult = (rawResult: { success: boolean; error?: string; response?: Record<string, unknown> }) => {
+    const result = parseToucanResult(rawResult);
+    setShowPaymentModal(false);
+    setPaymentPayload(null);
+    setIsAddingMoney(false);
+    if (result.status === 'success') {
+      setWalletBalance((prev) => prev + topUpAmount);
+      setShowAddMoney(false);
+      Alert.alert('Wallet updated', `Rs ${topUpAmount} added successfully.`);
+      return;
+    }
+
+    if (result.status === 'cancelled') {
+      Alert.alert('Top-up cancelled', result.reason ?? 'No amount was added.');
+      return;
+    }
+
+    Alert.alert('Top-up failed', result.message);
+  };
+
+  const handleCloseToucanModal = () => {
+    setShowPaymentModal(false);
+    setPaymentPayload(null);
+    setIsAddingMoney(false);
+    Alert.alert('Top-up cancelled', 'No amount was added.');
+  };
 
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safeArea}>
@@ -107,7 +168,7 @@ export default function PaymentsRefundsScreen() {
               <Text style={styles.balanceButtonText}>{t('add_money')}</Text>
             </Pressable>
           </View>
-          <Text style={styles.balanceAmount}>Rs 580</Text>
+          <Text style={styles.balanceAmount}>Rs {walletBalance}</Text>
           <Text style={styles.balanceHint}>Auto-applied to eligible orders.</Text>
         </View>
 
@@ -220,7 +281,10 @@ export default function PaymentsRefundsScreen() {
             <View style={styles.modalContent}>
               <View style={styles.amountRow}>
                 {[200, 500, 1000, 2000].map((amt) => (
-                  <Pressable key={amt} style={styles.amountChip}>
+                  <Pressable
+                    key={amt}
+                    style={[styles.amountChip, topUpAmount === amt && styles.amountChipActive]}
+                    onPress={() => setTopUpAmount(amt)}>
                     <Text style={styles.amountChipText}>Rs {amt}</Text>
                   </Pressable>
                 ))}
@@ -230,8 +294,13 @@ export default function PaymentsRefundsScreen() {
               </Text>
             </View>
             <View style={styles.modalFooter}>
-              <Pressable style={styles.modalPrimary} onPress={() => setShowAddMoney(false)}>
-                <Text style={styles.modalPrimaryText}>Proceed to pay</Text>
+              <Pressable
+                style={[styles.modalPrimary, isAddingMoney && styles.modalPrimaryDisabled]}
+                onPress={handleWalletTopUp}
+                disabled={isAddingMoney}>
+                <Text style={styles.modalPrimaryText}>
+                  {isAddingMoney ? 'Processing...' : 'Proceed to pay'}
+                </Text>
               </Pressable>
             </View>
           </View>
@@ -404,6 +473,12 @@ export default function PaymentsRefundsScreen() {
           </View>
         </View>
       </Modal>
+      <ToucanPaymentModal
+        visible={showPaymentModal}
+        payload={paymentPayload}
+        onResult={handleToucanResult}
+        onClose={handleCloseToucanModal}
+      />
     </SafeAreaView>
   );
 }
@@ -678,6 +753,9 @@ const createStyles = (palette: ThemePalette) =>
       fontWeight: '700',
       fontSize: 13,
     },
+    modalPrimaryDisabled: {
+      opacity: 0.65,
+    },
     amountRow: {
       flexDirection: 'row',
       flexWrap: 'wrap',
@@ -690,6 +768,10 @@ const createStyles = (palette: ThemePalette) =>
       borderWidth: 1,
       borderColor: palette.border,
       backgroundColor: palette.card,
+    },
+    amountChipActive: {
+      borderColor: palette.primary,
+      backgroundColor: palette.primarySoft,
     },
     amountChipText: {
       fontSize: 12,

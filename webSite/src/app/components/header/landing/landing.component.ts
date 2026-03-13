@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { APIPath } from 'src/app/Services/api-enum';
 import { Customer } from 'src/app/Services/model';
 import { PayeaseRestservice } from 'src/app/Services/payease-restservice';
+import { WebsiteConfigService } from 'src/app/Services/website-config.service';
 
 @Component({
   selector: 'app-landing',
@@ -13,11 +14,26 @@ export class LandingComponent {
   isLoading!: boolean;
   customerObj = new Customer();
   reqFS!: boolean;
-  courses = ['Full Stack', 'NoSQL', 'Python Programming', 'Data Science', 'Java Programming',];
-  constructor(private postService: PayeaseRestservice, public router: Router) {
+  constructor(
+    private readonly postService: PayeaseRestservice,
+    public readonly router: Router,
+    public readonly websiteConfig: WebsiteConfigService
+  ) {}
 
+  loading!: boolean;
+
+  get courses() {
+    return this.websiteConfig.courses;
   }
-  loading!:boolean;
+
+  get courseNames() {
+    return this.websiteConfig.courseNames;
+  }
+
+  getCourse(slug: string) {
+    return this.websiteConfig.findCourseBySlug(slug);
+  }
+
   register() {
     this.loading = true;
     const requestObj: any = {

@@ -1,10 +1,10 @@
 <header class="site-header">
   <div class="header-inner">
     <div class="brand">
-      <img src="../../../assets/edutech.png" alt="EduSoft Academy" class="brand-icon" />
+      <img [src]="websiteConfig.branding.logo" [alt]="websiteConfig.branding.name" class="brand-icon" />
       <div class="brand-text">
-        <span class="brand-title">EduSoft Academy</span>
-        <span class="brand-tagline">Industry-led learning pathways</span>
+        <span class="brand-title">{{ websiteConfig.branding.name }}</span>
+        <span class="brand-tagline">{{ websiteConfig.branding.tagline }}</span>
       </div>
     </div>
 

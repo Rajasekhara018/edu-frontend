@@ -1,0 +1,118 @@
+{
+    "branding": {
+        "name": "Elevate Labs Academy",
+        "tagline": "Upskill with live technical practice",
+        "logo": "assets/edutech.png",
+        "favicon": "favicon.ico",
+        "pageTitle": "Elevate Labs Academy",
+        "footerSummary": "Career-focused labs for ambitious software learners.",
+        "footerCopyright": "COPYRIGHT (C) 2026 ELEVATE LABS ACADEMY",
+        "heroEyebrow": "Live Lab Programs",
+        "heroTitle": "Elevate your engineering workflow with guided practice",
+        "heroSubtitle": "Build confidence through problem-solving labs, code reviews, and practical projects that reflect real engineering work.",
+        "aboutTitle": "Programs built around weekly implementation momentum.",
+        "aboutDescription": "Elevate Labs Academy uses mentor checkpoints, curated projects, and review loops to help learners stay consistent and technical."
+    },
+    "contact": {
+        "phone": "+91 (815) 555-1166",
+        "hours": "Mon - Sat, 10:00 AM - 8:00 PM",
+        "primaryEmail": "join@elevatelabs.academy",
+        "secondaryEmail": "care@elevatelabs.academy"
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #fefce8 0%, #fef3c7 42%, #fde68a 100%)",
+        "headerBackground": "rgba(254, 252, 232, 0.95)",
+        "headerBorder": "rgba(202, 138, 4, 0.16)",
+        "surface": "#fffdf4",
+        "surfaceAlt": "#fef3c7",
+        "textPrimary": "#422006",
+        "textMuted": "#6b5b31",
+        "accent": "#ca8a04",
+        "accentStrong": "#a16207",
+        "accentSoft": "rgba(202, 138, 4, 0.16)",
+        "gold": "#f59e0b",
+        "darkSurface": "#422006",
+        "darkSurfaceAlt": "rgba(66, 32, 6, 0.86)",
+        "onDark": "#fffbeb",
+        "onDarkMuted": "rgba(255, 251, 235, 0.76)",
+        "border": "rgba(202, 138, 4, 0.18)",
+        "focusRing": "rgba(202, 138, 4, 0.2)"
+    },
+    "courses": [
+        {
+            "slug": "python",
+            "name": "Python Programming",
+            "price": 31500,
+            "image": "assets/python.webp",
+            "level": "Beginner",
+            "duration": "10 weeks",
+            "summary": "Python for foundations, scripting, and practical automation.",
+            "syllabus": [
+                "Basics",
+                "Functions",
+                "APIs",
+                "Projects"
+            ]
+        },
+        {
+            "slug": "java",
+            "name": "Java Programming",
+            "price": 40000,
+            "image": "assets/java.webp",
+            "level": "Intermediate",
+            "duration": "12 weeks",
+            "summary": "Java problem-solving and application design.",
+            "syllabus": [
+                "Core language",
+                "Objects",
+                "Collections",
+                "Persistence"
+            ]
+        },
+        {
+            "slug": "datascience",
+            "name": "Data Science",
+            "price": 80000,
+            "image": "assets/datascience.webp",
+            "level": "Advanced",
+            "duration": "15 weeks",
+            "summary": "Portfolio-focused data science pathway.",
+            "syllabus": [
+                "Analysis",
+                "Visualization",
+                "Statistics",
+                "Capstone"
+            ]
+        },
+        {
+            "slug": "fullstack",
+            "name": "Full Stack",
+            "price": 89500,
+            "image": "assets/fullstack.webp",
+            "level": "Career Track",
+            "duration": "18 weeks",
+            "summary": "Frontend, backend, and release-ready app delivery.",
+            "syllabus": [
+                "Frontend stack",
+                "Backend stack",
+                "Databases",
+                "Deployment"
+            ]
+        },
+        {
+            "slug": "nosql",
+            "name": "NoSQL",
+            "price": 46000,
+            "image": "assets/nosql.webp",
+            "level": "Specialization",
+            "duration": "8 weeks",
+            "summary": "Evaluate and build with modern NoSQL stores.",
+            "syllabus": [
+                "Documents",
+                "Key-value",
+                "Columns",
+                "Graph"
+            ]
+        }
+    ]
+}

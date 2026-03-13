@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WebsiteConfigService } from 'src/app/Services/website-config.service';
 
 @Component({
   selector: 'app-header',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   isMobileMenuOpen = false;
+  constructor(public readonly websiteConfig: WebsiteConfigService) {}
 
   toggleMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;

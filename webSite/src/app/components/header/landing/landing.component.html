@@ -2,22 +2,14 @@
   <!-- Hero Section -->
   <section class="hero-section flex flex-col lg:flex-row items-center justify-center px-4 lg:px-0 reveal">
     <!-- Left Image -->
-    <div class="w-full lg:w-2/3 hero-media">
+    <!-- <div class="w-full lg:w-2/3 hero-media">
       <img src="../../../../assets/bg.webp" alt="E-Learning" class="w-full h-auto" />
-    </div>
-
+    </div> -->
     <!-- Right Text Box -->
-    <div class="w-full lg:w-1/3 bg-yellow-100 p-8 text-center hero-card">
-      <span class="eyebrow">Career Track Programs</span>
-      <h1 class="text-3xl font-semibold mb-4 leading-snug">
-        Empower <br />
-        Your <br />
-        Learning <br />
-        Journey
-      </h1>
-      <p class="text-gray-700 mb-6 hero-sub">
-        Unlock potential with expert-led courses, real projects, and career-ready mentoring.
-      </p>
+    <div class="bg-yellow-100 p-8 text-center hero-card" style="width: 1200px;">
+      <span class="eyebrow">{{ websiteConfig.branding.heroEyebrow }}</span>
+      <h1 class="text-3xl font-semibold mb-4 leading-snug">{{ websiteConfig.branding.heroTitle }}</h1>
+      <p class="text-gray-700 mb-6 hero-sub">{{ websiteConfig.branding.heroSubtitle }}</p>
       <div class="hero-actions">
         <a href="#register" class="hero-cta">Join now</a>
         <a href="#courses" class="hero-cta secondary">Explore courses</a>
@@ -28,16 +20,16 @@
   <section class="stats-band reveal">
     <div class="content-shell stats-grid">
       <div class="stat-card">
-        <span class="stat-value">25k+</span>
-        <span class="stat-label">Learners upskilled</span>
+        <span class="stat-value">{{ courses.length }}+</span>
+        <span class="stat-label">Career programs</span>
       </div>
       <div class="stat-card">
-        <span class="stat-value">180+</span>
-        <span class="stat-label">Hiring partners</span>
+        <span class="stat-value">{{ websiteConfig.contact.hours }}</span>
+        <span class="stat-label">Admissions support</span>
       </div>
       <div class="stat-card">
-        <span class="stat-value">92%</span>
-        <span class="stat-label">Placement support</span>
+        <span class="stat-value">{{ websiteConfig.contact.primaryEmail }}</span>
+        <span class="stat-label">Primary contact</span>
       </div>
     </div>
   </section>
@@ -48,17 +40,13 @@
       <div class="about-grid">
         <div class="about-copy">
           <span class="eyebrow">About Us</span>
-          <h2>Build career-ready skills with expert-led programs.</h2>
-          <p>
-            We are a team of software professionals and educators on a mission to simplify coding
-            education. Whether you are preparing for a tech career or upskilling, we deliver
-            hands-on, project-based training with mentorship that matters.
-          </p>
+          <h2>{{ websiteConfig.branding.aboutTitle }}</h2>
+          <p>{{ websiteConfig.branding.aboutDescription }}</p>
         </div>
         <div class="about-panels">
           <div class="about-card">
             <h4>Who we are</h4>
-            <p>Industry practitioners, mentors, and curriculum designers focused on outcomes.</p>
+            <p>{{ websiteConfig.branding.tagline }}</p>
           </div>
           <div class="about-card">
             <h4>Why choose us</h4>
@@ -81,33 +69,21 @@
         <!-- Python Programming Card -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="../../../../assets/python.webp" class="card-img-top" alt="Python Programming" />
+            <img [src]="getCourse('python')?.image" class="card-img-top" [alt]="getCourse('python')?.name" />
             <div class="card-body">
-              <h5 class="card-title fw-semibold">Python Programming</h5>
+              <h5 class="card-title fw-semibold">{{ getCourse('python')?.name }}</h5>
               <div class="course-meta">
-                <span class="badge">Beginner</span>
-                <span class="meta">12 weeks</span>
+                <span class="badge">{{ getCourse('python')?.level }}</span>
+                <span class="meta">{{ getCourse('python')?.duration }}</span>
               </div>
-              <p class="fw-semibold">Beginner Level</p>
+              <p>{{ getCourse('python')?.summary }}</p>
               <ul>
-                <li>
-                  Learn programming fundamentals, syntax, control structures,
-                  functions, and basic file operations in Python. Ideal for
-                  students and beginners.
-                </li>
-              </ul>
-              <p class="fw-semibold">Advanced Level</p>
-              <ul>
-                <li>
-                  Deep dive into OOP, modules, decorators, generators, error
-                  handling, advanced file handling, regular expressions, and
-                  working with APIs.
-                </li>
+                <li *ngFor="let item of getCourse('python')?.syllabus">{{ item }}</li>
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">Rs  30,000</span>
-              <button class="btn btn-primary btn-sm" (click)="paymentPage('python',30000)">Buy Now</button>
+              <span class="fw-bold text-success">{{ getCourse('python')?.price | currency:'INR':'symbol':'1.0-0' }}</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('python', getCourse('python')?.price || 0)">Buy Now</button>
             </div>
           </div>
         </div>
@@ -115,31 +91,21 @@
         <!-- Java Programming Card -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="../../../../assets/java.webp" class="card-img-top" alt="Java Programming" />
+            <img [src]="getCourse('java')?.image" class="card-img-top" [alt]="getCourse('java')?.name" />
             <div class="card-body">
-              <h5 class="card-title fw-semibold">Java Programming</h5>
+              <h5 class="card-title fw-semibold">{{ getCourse('java')?.name }}</h5>
               <div class="course-meta">
-                <span class="badge">Intermediate</span>
-                <span class="meta">14 weeks</span>
+                <span class="badge">{{ getCourse('java')?.level }}</span>
+                <span class="meta">{{ getCourse('java')?.duration }}</span>
               </div>
-              <p class="fw-semibold">Beginner Level</p>
+              <p>{{ getCourse('java')?.summary }}</p>
               <ul>
-                <li>
-                  Build a strong foundation in Java with basic syntax, data
-                  types, loops, conditional logic, and object-oriented concepts.
-                </li>
-              </ul>
-              <p class="fw-semibold">Advanced Level</p>
-              <ul>
-                <li>
-                  Explore multithreading, collections framework, JDBC, JavaFX,
-                  and project development.
-                </li>
+                <li *ngFor="let item of getCourse('java')?.syllabus">{{ item }}</li>
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">Rs  35,000</span>
-              <button class="btn btn-primary btn-sm" (click)="paymentPage('java',35000)">Buy Now</button>
+              <span class="fw-bold text-success">{{ getCourse('java')?.price | currency:'INR':'symbol':'1.0-0' }}</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('java', getCourse('java')?.price || 0)">Buy Now</button>
             </div>
           </div>
         </div>
@@ -147,25 +113,21 @@
         <!-- Data Science Card -->
         <div class="col-12 col-md-6 col-lg-4">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="../../../../assets/datascience.webp" class="card-img-top" alt="Data Science" />
+            <img [src]="getCourse('datascience')?.image" class="card-img-top" [alt]="getCourse('datascience')?.name" />
             <div class="card-body">
-              <h5 class="card-title fw-semibold">Data Science</h5>
+              <h5 class="card-title fw-semibold">{{ getCourse('datascience')?.name }}</h5>
               <div class="course-meta">
-                <span class="badge">Advanced</span>
-                <span class="meta">16 weeks</span>
+                <span class="badge">{{ getCourse('datascience')?.level }}</span>
+                <span class="meta">{{ getCourse('datascience')?.duration }}</span>
               </div>
-              <p>Understand the fundamentals of data science including:</p>
+              <p>{{ getCourse('datascience')?.summary }}</p>
               <ul>
-                <li>Introduction to Data Science</li>
-                <li>Python for Data Analysis</li>
-                <li>Basic statistics and visualization</li>
-                <li>Pandas, NumPy, Matplotlib</li>
-                <li>Real-world mini projects</li>
+                <li *ngFor="let item of getCourse('datascience')?.syllabus">{{ item }}</li>
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">Rs  75,000</span>
-              <button class="btn btn-primary btn-sm" (click)="paymentPage('datascience',75000)">Buy Now</button>
+              <span class="fw-bold text-success">{{ getCourse('datascience')?.price | currency:'INR':'symbol':'1.0-0' }}</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('datascience', getCourse('datascience')?.price || 0)">Buy Now</button>
             </div>
           </div>
         </div>
@@ -179,24 +141,21 @@
         <!-- Full Stack Course -->
         <div class="col-12 col-md-4">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="../../../../assets/fullstack.webp" class="card-img-top" alt="Full Stack" />
+            <img [src]="getCourse('fullstack')?.image" class="card-img-top" [alt]="getCourse('fullstack')?.name" />
             <div class="card-body">
-              <h5 class="card-title fw-semibold">Full Stack</h5>
+              <h5 class="card-title fw-semibold">{{ getCourse('fullstack')?.name }}</h5>
               <div class="course-meta">
-                <span class="badge">Career Track</span>
-                <span class="meta">20 weeks</span>
+                <span class="badge">{{ getCourse('fullstack')?.level }}</span>
+                <span class="meta">{{ getCourse('fullstack')?.duration }}</span>
               </div>
+              <p>{{ getCourse('fullstack')?.summary }}</p>
               <ul>
-                <li>Introduction to Full Stack development</li>
-                <li>Web basics</li>
-                <li>Front End development</li>
-                <li>Backend development</li>
-                <li>Full Stack integration</li>
+                <li *ngFor="let item of getCourse('fullstack')?.syllabus">{{ item }}</li>
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">Rs  85,000</span>
-              <button class="btn btn-primary btn-sm" (click)="paymentPage('fullstack',85000)">Buy Now</button>
+              <span class="fw-bold text-success">{{ getCourse('fullstack')?.price | currency:'INR':'symbol':'1.0-0' }}</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('fullstack', getCourse('fullstack')?.price || 0)">Buy Now</button>
             </div>
           </div>
         </div>
@@ -204,25 +163,21 @@
         <!-- NoSQL Course -->
         <div class="col-12 col-md-4">
           <div class="card h-100 border-0 shadow-sm">
-            <img src="../../../../assets/nosql.webp" class="card-img-top" alt="NoSQL" />
+            <img [src]="getCourse('nosql')?.image" class="card-img-top" [alt]="getCourse('nosql')?.name" />
             <div class="card-body">
-              <h5 class="card-title fw-semibold">NoSQL</h5>
+              <h5 class="card-title fw-semibold">{{ getCourse('nosql')?.name }}</h5>
               <div class="course-meta">
-                <span class="badge">Specialization</span>
-                <span class="meta">8 weeks</span>
+                <span class="badge">{{ getCourse('nosql')?.level }}</span>
+                <span class="meta">{{ getCourse('nosql')?.duration }}</span>
               </div>
+              <p>{{ getCourse('nosql')?.summary }}</p>
               <ul>
-                <li>Introduction</li>
-                <li>Document oriented databases</li>
-                <li>Key-value databases</li>
-                <li>Column-Family databases</li>
-                <li>Graph databases</li>
-                <li>Real-time database</li>
+                <li *ngFor="let item of getCourse('nosql')?.syllabus">{{ item }}</li>
               </ul>
             </div>
             <div class="card-footer bg-white border-0 d-flex justify-content-between align-items-center">
-              <span class="fw-bold text-success">Rs  45,000</span>
-              <button class="btn btn-primary btn-sm" (click)="paymentPage('nosql',45000)">Buy Now</button>
+              <span class="fw-bold text-success">{{ getCourse('nosql')?.price | currency:'INR':'symbol':'1.0-0' }}</span>
+              <button class="btn btn-primary btn-sm" (click)="paymentPage('nosql', getCourse('nosql')?.price || 0)">Buy Now</button>
             </div>
           </div>
         </div>
@@ -350,19 +305,19 @@
           <div class="contact-cards">
             <div class="info-card">
               <h4>Call us</h4>
-              <p>+91 (800) 555-1212</p>
-              <p>Mon - Sat, 9:00 AM - 7:00 PM</p>
+              <p>{{ websiteConfig.contact.phone }}</p>
+              <p>{{ websiteConfig.contact.hours }}</p>
             </div>
             <div class="info-card">
               <h4>Email</h4>
-              <p>admissions@edusoft.academy</p>
-              <p>support@edusoft.academy</p>
+              <p>{{ websiteConfig.contact.primaryEmail }}</p>
+              <p>{{ websiteConfig.contact.secondaryEmail }}</p>
             </div>
           </div>
         </div>
         <div class="contact-form">
-        <form #userobjForm="ngForm" (keydown.enter)="$event.preventDefault()" name="objForm" autocomplete="off">
-          <!-- <mat-form-field appearance="outline" class="col-md-12">
+          <form #userobjForm="ngForm" (keydown.enter)="$event.preventDefault()" name="objForm" autocomplete="off">
+            <!-- <mat-form-field appearance="outline" class="col-md-12">
             <mat-label>Full Name</mat-label>
             <input matInput name="fName" [(ngModel)]="customerObj.fullName" #fName="ngModel" required />
             <mat-error *ngIf="fName.errors?.['required']">
@@ -429,42 +384,42 @@
               <span>Logging in...</span>
             </div>
           </button> -->
-          <!-- </form> -->
-          <div class="form-grid">
-            <div class="col-12 mb-3">
-              <input type="text" class="form-control" placeholder="Your Name" name="fName"
-                [(ngModel)]="customerObj.fullName" #fName="ngModel" required />
-              <div *ngIf="fName.invalid && fName.touched" class="text-danger small mt-1">
-                Name is required.
+            <!-- </form> -->
+            <div class="form-grid">
+              <div class="col-12 mb-3">
+                <input type="text" class="form-control" placeholder="Your Name" name="fName"
+                  [(ngModel)]="customerObj.fullName" #fName="ngModel" required />
+                <div *ngIf="fName.invalid && fName.touched" class="text-danger small mt-1">
+                  Name is required.
+                </div>
               </div>
-            </div>
-            <div class="col-12 mb-3">
-              <input type="email" class="form-control" placeholder="Your Email" name="eml"
-                [(ngModel)]="customerObj.emailId" #eml="ngModel" required />
-              <div *ngIf="eml.invalid && eml.touched" class="text-danger small mt-1">
-                Email is required.
+              <div class="col-12 mb-3">
+                <input type="email" class="form-control" placeholder="Your Email" name="eml"
+                  [(ngModel)]="customerObj.emailId" #eml="ngModel" required />
+                <div *ngIf="eml.invalid && eml.touched" class="text-danger small mt-1">
+                  Email is required.
+                </div>
               </div>
-            </div>
-            <div class="col-12 mb-3">
-              <input type="tel" class="form-control" placeholder="Your Phone No" name="mblNum"
-                [(ngModel)]="customerObj.phNo" #mblNum="ngModel" required />
-              <div *ngIf="mblNum.invalid && mblNum.touched" class="text-danger small mt-1">
-                Phone No is required.
+              <div class="col-12 mb-3">
+                <input type="tel" class="form-control" placeholder="Your Phone No" name="mblNum"
+                  [(ngModel)]="customerObj.phNo" #mblNum="ngModel" required />
+                <div *ngIf="mblNum.invalid && mblNum.touched" class="text-danger small mt-1">
+                  Phone No is required.
+                </div>
               </div>
+              <mat-form-field class="col-12 mb-3">
+                <mat-label>Select Course</mat-label>
+                <mat-select [(ngModel)]="customerObj.courseName" #usrTyp="ngModel" name="usrTyp" required multiple>
+                  <mat-option *ngFor="let user of courseNames" [value]="user">
+                    {{ user }}
+                  </mat-option>
+                </mat-select>
+                <mat-error *ngIf="usrTyp.errors?.['required']">
+                  Course is required
+                </mat-error>
+              </mat-form-field>
             </div>
-            <mat-form-field class="col-12 mb-3">
-              <mat-label>Select Course</mat-label>
-              <mat-select [(ngModel)]="customerObj.courseName" #usrTyp="ngModel" name="usrTyp" required multiple>
-                <mat-option *ngFor="let user of courses" [value]="user">
-                  {{ user }}
-                </mat-option>
-              </mat-select>
-              <mat-error *ngIf="usrTyp.errors?.['required']">
-                Course is required
-              </mat-error>
-            </mat-form-field>
-          </div>
-          <!-- <div class="mb-3">
+            <!-- <div class="mb-3">
             <input type="text" class="form-control" placeholder="Distribute Id" name="dstId"
               [(ngModel)]="customerObj.distributeId" #dstId="ngModel" required />
             <div *ngIf="dstId.invalid && dstId.touched" class="text-danger small mt-1">
@@ -485,16 +440,16 @@
               Business Address is required.
             </div>
           </div> -->
-          <div class="d-grid">
-            <button type="submit" class="btn btn-primary btn-send d-flex align-items-center justify-content-center"
-              (click)="register()" [disabled]="!userobjForm.form.valid || loading">
-              <span *ngIf="!loading">Register</span>
-              <div *ngIf="loading" class="spinner-border spinner-border-sm text-light ms-2" role="status">
-                <span class="visually-hidden">Loading...</span>
-              </div>
-            </button>
-          </div>
-        </form>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-send d-flex align-items-center justify-content-center"
+                (click)="register()" [disabled]="!userobjForm.form.valid || loading">
+                <span *ngIf="!loading">Register</span>
+                <div *ngIf="loading" class="spinner-border spinner-border-sm text-light ms-2" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -504,8 +459,8 @@
     <div class="container footer-shell">
       <div class="footer-grid">
         <div class="footer-brand">
-          <span class="footer-title">EduSoft Academy</span>
-          <p>Professional training pathways in software engineering, data, and full-stack development.</p>
+          <span class="footer-title">{{ websiteConfig.branding.name }}</span>
+          <p>{{ websiteConfig.branding.footerSummary }}</p>
         </div>
         <div class="footer-links">
           <a href="#about">About</a>
@@ -514,13 +469,13 @@
           <a href="#">Privacy</a>
         </div>
         <div class="footer-meta">
-          <span>COPYRIGHT (C) 2025 EDUSOFT ACADEMY</span>
+          <span>{{ websiteConfig.branding.footerCopyright }}</span>
           <div class="footer-powered">
             <span>POWERED BY</span>
             <svg viewBox="0 0 163 34" xmlns="http://www.w3.org/2000/svg" width="100" height="24">
-            <path
-              d="M32.937 1.554c-3.968-2.48-9.193-1.89-13.852 1.039C14.44-.335 9.213-.925 5.25 1.553c-6.27 3.919-7.032 14.01-1.701 22.54 3.93 6.289 10.074 9.974 15.544 9.906 5.47.068 11.615-3.617 15.545-9.906 5.324-8.53 4.568-18.621-1.701-22.54zM6.43 22.292a20.436 20.436 0 0 1-2.46-5.632 16.104 16.104 0 0 1-.534-5.31c.238-3.153 1.521-5.608 3.612-6.914s4.855-1.385 7.8-.217c.441.177.878.38 1.312.606a24.092 24.092 0 0 0-4.228 5.08C8.697 15.086 7.71 20.849 8.84 25.444a20.912 20.912 0 0 1-2.408-3.151H6.43zM34.216 16.658a20.484 20.484 0 0 1-2.46 5.632 21.103 21.103 0 0 1-2.408 3.158c1.01-4.12.324-9.165-2.153-13.897a.624.624 0 0 0-.895-.243l-7.72 4.823a.629.629 0 0 0-.2.87l1.133 1.81a.632.632 0 0 0 .869.2l5.004-3.125c.162.486.324.97.445 1.457.472 1.725.653 3.518.536 5.303-.238 3.15-1.521 5.606-3.612 6.914a7.061 7.061 0 0 1-3.579 1.036h-.16a7.051 7.051 0 0 1-3.578-1.036c-2.093-1.308-3.376-3.763-3.614-6.914a16.143 16.143 0 0 1 .534-5.31 21.015 21.015 0 0 1 6.444-10.314 16.136 16.136 0 0 1 4.532-2.806c2.936-1.168 5.705-1.09 7.797.217 2.093 1.308 3.375 3.76 3.613 6.914a16.145 16.145 0 0 1-.528 5.31z" />
-          </svg>
+              <path
+                d="M32.937 1.554c-3.968-2.48-9.193-1.89-13.852 1.039C14.44-.335 9.213-.925 5.25 1.553c-6.27 3.919-7.032 14.01-1.701 22.54 3.93 6.289 10.074 9.974 15.544 9.906 5.47.068 11.615-3.617 15.545-9.906 5.324-8.53 4.568-18.621-1.701-22.54zM6.43 22.292a20.436 20.436 0 0 1-2.46-5.632 16.104 16.104 0 0 1-.534-5.31c.238-3.153 1.521-5.608 3.612-6.914s4.855-1.385 7.8-.217c.441.177.878.38 1.312.606a24.092 24.092 0 0 0-4.228 5.08C8.697 15.086 7.71 20.849 8.84 25.444a20.912 20.912 0 0 1-2.408-3.151H6.43zM34.216 16.658a20.484 20.484 0 0 1-2.46 5.632 21.103 21.103 0 0 1-2.408 3.158c1.01-4.12.324-9.165-2.153-13.897a.624.624 0 0 0-.895-.243l-7.72 4.823a.629.629 0 0 0-.2.87l1.133 1.81a.632.632 0 0 0 .869.2l5.004-3.125c.162.486.324.97.445 1.457.472 1.725.653 3.518.536 5.303-.238 3.15-1.521 5.606-3.612 6.914a7.061 7.061 0 0 1-3.579 1.036h-.16a7.051 7.051 0 0 1-3.578-1.036c-2.093-1.308-3.376-3.763-3.614-6.914a16.143 16.143 0 0 1 .534-5.31 21.015 21.015 0 0 1 6.444-10.314 16.136 16.136 0 0 1 4.532-2.806c2.936-1.168 5.705-1.09 7.797.217 2.093 1.308 3.375 3.76 3.613 6.914a16.145 16.145 0 0 1-.528 5.31z" />
+            </svg>
           </div>
         </div>
       </div>

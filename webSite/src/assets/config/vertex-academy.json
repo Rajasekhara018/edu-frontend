@@ -1,0 +1,118 @@
+{
+    "branding": {
+        "name": "Vertex Academy",
+        "tagline": "Climb toward stronger technical execution",
+        "logo": "assets/edutech.png",
+        "favicon": "favicon.ico",
+        "pageTitle": "Vertex Academy",
+        "footerSummary": "Technical learning tracks for people aiming higher in software careers.",
+        "footerCopyright": "COPYRIGHT (C) 2026 VERTEX ACADEMY",
+        "heroEyebrow": "Summit Programs",
+        "heroTitle": "Reach the next vertex in your software career",
+        "heroSubtitle": "Vertex Academy helps learners climb from fundamentals to confidence through structured mentorship and project execution.",
+        "aboutTitle": "A steeper but clearer path to technical confidence.",
+        "aboutDescription": "We focus on implementation depth, progress visibility, and engineering habits that transfer to real project work."
+    },
+    "contact": {
+        "phone": "+91 (821) 277-1222",
+        "hours": "Mon - Fri, 9:30 AM - 7:30 PM",
+        "primaryEmail": "admissions@vertexacademy.io",
+        "secondaryEmail": "support@vertexacademy.io"
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #f5f3ff 0%, #e9d5ff 42%, #d8b4fe 100%)",
+        "headerBackground": "rgba(250, 245, 255, 0.95)",
+        "headerBorder": "rgba(126, 34, 206, 0.15)",
+        "surface": "#fefcff",
+        "surfaceAlt": "#ede9fe",
+        "textPrimary": "#2e1065",
+        "textMuted": "#624d84",
+        "accent": "#7e22ce",
+        "accentStrong": "#6b21a8",
+        "accentSoft": "rgba(126, 34, 206, 0.15)",
+        "gold": "#a855f7",
+        "darkSurface": "#2e1065",
+        "darkSurfaceAlt": "rgba(46, 16, 101, 0.86)",
+        "onDark": "#faf5ff",
+        "onDarkMuted": "rgba(250, 245, 255, 0.76)",
+        "border": "rgba(126, 34, 206, 0.17)",
+        "focusRing": "rgba(126, 34, 206, 0.2)"
+    },
+    "courses": [
+        {
+            "slug": "python",
+            "name": "Python Programming",
+            "price": 33200,
+            "image": "assets/python.webp",
+            "level": "Beginner",
+            "duration": "11 weeks",
+            "summary": "Python for clean fundamentals and practical application.",
+            "syllabus": [
+                "Syntax",
+                "Functions",
+                "APIs",
+                "Mini projects"
+            ]
+        },
+        {
+            "slug": "java",
+            "name": "Java Programming",
+            "price": 40800,
+            "image": "assets/java.webp",
+            "level": "Intermediate",
+            "duration": "13 weeks",
+            "summary": "Java engineering practices for robust application work.",
+            "syllabus": [
+                "Core syntax",
+                "OOP",
+                "Collections",
+                "Persistence"
+            ]
+        },
+        {
+            "slug": "datascience",
+            "name": "Data Science",
+            "price": 80800,
+            "image": "assets/datascience.webp",
+            "level": "Advanced",
+            "duration": "15 weeks",
+            "summary": "Project-oriented data science and analysis delivery.",
+            "syllabus": [
+                "Wrangling",
+                "Analytics",
+                "Visualization",
+                "Capstone"
+            ]
+        },
+        {
+            "slug": "fullstack",
+            "name": "Full Stack",
+            "price": 90500,
+            "image": "assets/fullstack.webp",
+            "level": "Career Track",
+            "duration": "19 weeks",
+            "summary": "Full-stack program with product and release perspective.",
+            "syllabus": [
+                "Frontend",
+                "Backend",
+                "Database",
+                "Deployment"
+            ]
+        },
+        {
+            "slug": "nosql",
+            "name": "NoSQL",
+            "price": 47000,
+            "image": "assets/nosql.webp",
+            "level": "Specialization",
+            "duration": "8 weeks",
+            "summary": "NoSQL models and implementation tradeoffs in practice.",
+            "syllabus": [
+                "Documents",
+                "Key-value",
+                "Columns",
+                "Graph"
+            ]
+        }
+    ]
+}

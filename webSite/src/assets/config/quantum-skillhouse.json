@@ -1,0 +1,118 @@
+{
+    "branding": {
+        "name": "Quantum Skillhouse",
+        "tagline": "Precision upskilling for modern teams",
+        "logo": "assets/edutech.png",
+        "favicon": "favicon.ico",
+        "pageTitle": "Quantum Skillhouse",
+        "footerSummary": "Precision-led technical programs for software and data careers.",
+        "footerCopyright": "COPYRIGHT (C) 2026 QUANTUM SKILLHOUSE",
+        "heroEyebrow": "Precision Cohorts",
+        "heroTitle": "Sharpen technical judgment with Quantum Skillhouse",
+        "heroSubtitle": "A structured training environment for learners who want more precision, better review, and stronger execution habits.",
+        "aboutTitle": "Technical programs designed for sharper judgment.",
+        "aboutDescription": "Quantum Skillhouse emphasizes reasoning, implementation quality, and practical decision-making across software and analytics domains."
+    },
+    "contact": {
+        "phone": "+91 (820) 166-1211",
+        "hours": "Tue - Sun, 9:00 AM - 7:30 PM",
+        "primaryEmail": "hello@quantumskillhouse.com",
+        "secondaryEmail": "care@quantumskillhouse.com"
+    },
+    "theme": {
+        "bodyBackground": "radial-gradient(circle at top, #faf5ff 0%, #f3e8ff 40%, #e9d5ff 100%)",
+        "headerBackground": "rgba(250, 245, 255, 0.95)",
+        "headerBorder": "rgba(147, 51, 234, 0.14)",
+        "surface": "#fffbff",
+        "surfaceAlt": "#f3e8ff",
+        "textPrimary": "#3b0764",
+        "textMuted": "#6f4a8a",
+        "accent": "#9333ea",
+        "accentStrong": "#7e22ce",
+        "accentSoft": "rgba(147, 51, 234, 0.14)",
+        "gold": "#c084fc",
+        "darkSurface": "#3b0764",
+        "darkSurfaceAlt": "rgba(59, 7, 100, 0.86)",
+        "onDark": "#faf5ff",
+        "onDarkMuted": "rgba(250, 245, 255, 0.76)",
+        "border": "rgba(147, 51, 234, 0.16)",
+        "focusRing": "rgba(147, 51, 234, 0.2)"
+    },
+    "courses": [
+        {
+            "slug": "python",
+            "name": "Python Programming",
+            "price": 33800,
+            "image": "assets/python.webp",
+            "level": "Beginner",
+            "duration": "11 weeks",
+            "summary": "Python fundamentals with precision-oriented practice.",
+            "syllabus": [
+                "Core syntax",
+                "Reusable modules",
+                "API handling",
+                "Implementation review"
+            ]
+        },
+        {
+            "slug": "java",
+            "name": "Java Programming",
+            "price": 41200,
+            "image": "assets/java.webp",
+            "level": "Intermediate",
+            "duration": "13 weeks",
+            "summary": "Java development for structured software systems.",
+            "syllabus": [
+                "Language core",
+                "OOP",
+                "Collections",
+                "JDBC"
+            ]
+        },
+        {
+            "slug": "datascience",
+            "name": "Data Science",
+            "price": 81200,
+            "image": "assets/datascience.webp",
+            "level": "Advanced",
+            "duration": "16 weeks",
+            "summary": "Applied data science with strong analytical discipline.",
+            "syllabus": [
+                "Cleaning",
+                "Analysis",
+                "Visualization",
+                "Project"
+            ]
+        },
+        {
+            "slug": "fullstack",
+            "name": "Full Stack",
+            "price": 91500,
+            "image": "assets/fullstack.webp",
+            "level": "Career Track",
+            "duration": "19 weeks",
+            "summary": "Complete product engineering path with delivery habits.",
+            "syllabus": [
+                "Frontend",
+                "Backend",
+                "Storage",
+                "Release"
+            ]
+        },
+        {
+            "slug": "nosql",
+            "name": "NoSQL",
+            "price": 47600,
+            "image": "assets/nosql.webp",
+            "level": "Specialization",
+            "duration": "8 weeks",
+            "summary": "Modern non-relational databases and their tradeoffs.",
+            "syllabus": [
+                "Documents",
+                "Key-value",
+                "Columns",
+                "Graphs"
+            ]
+        }
+    ]
+}

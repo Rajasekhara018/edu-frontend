@@ -1,5 +1,6 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import {
+  Alert,
   FlatList,
   Pressable,
   StyleSheet,
@@ -15,15 +16,59 @@ import { useTranslation } from 'react-i18next';
 import { useCart } from '@/context/CartContext';
 import { useTheme } from '@/context/ThemeContext';
 import { ThemePalette } from '@/constants/theme';
+import ToucanPaymentModal from '@/components/toucan-payment-modal';
+import { ToucanPaymentPayload, buildToucanPaymentPayload, parseToucanResult } from '@/services/payment-sdk';
 
 const formatPrice = (value: number) => `₹${value.toFixed(0)}`;
 
 export default function CartScreen() {
   const router = useRouter();
   const { t } = useTranslation();
-  const { items, totalItems, totalPrice, updateQuantity, removeItem } = useCart();
+  const { items, totalItems, totalPrice, updateQuantity, removeItem, clearCart } = useCart();
   const { palette } = useTheme();
   const styles = useMemo(() => createStyles(palette), [palette]);
+  const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const [paymentPayload, setPaymentPayload] = useState<ToucanPaymentPayload | null>(null);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+
+  const handleCheckout = () => {
+    if (isCheckingOut || totalPrice <= 0) {
+      return;
+    }
+
+    setIsCheckingOut(true);
+    setPaymentPayload(
+      buildToucanPaymentPayload({
+        transactionAmount: totalPrice,
+        paymentMethod: 'UPI',
+      })
+    );
+    setShowPaymentModal(true);
+  };
+
+  const handlePaymentResult = (rawResult: { success: boolean; error?: string; response?: Record<string, unknown> }) => {
+    const result = parseToucanResult(rawResult);
+    setShowPaymentModal(false);
+    setPaymentPayload(null);
+    setIsCheckingOut(false);
+    if (result.status === 'success') {
+      clearCart();
+      Alert.alert('Payment successful', `Transaction: ${result.transactionId}`);
+      return;
+    }
+    if (result.status === 'cancelled') {
+      Alert.alert('Payment cancelled', result.reason ?? 'Try again when ready.');
+      return;
+    }
+    Alert.alert('Payment failed', result.message);
+  };
+
+  const handleClosePaymentModal = () => {
+    setShowPaymentModal(false);
+    setPaymentPayload(null);
+    setIsCheckingOut(false);
+    Alert.alert('Payment cancelled', 'Checkout was cancelled.');
+  };
 
   return (
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safeArea}>
@@ -109,13 +154,24 @@ export default function CartScreen() {
                   {formatPrice(totalPrice)}
                 </Text>
               </View>
-              <Pressable style={styles.checkoutButton}>
-                <Text style={styles.checkoutText}>{t('cart_checkout')}</Text>
+              <Pressable
+                style={[styles.checkoutButton, isCheckingOut && styles.checkoutButtonDisabled]}
+                onPress={handleCheckout}
+                disabled={isCheckingOut}>
+                <Text style={styles.checkoutText}>
+                  {isCheckingOut ? 'Processing...' : t('cart_checkout')}
+                </Text>
               </Pressable>
             </View>
           }
         />
       )}
+      <ToucanPaymentModal
+        visible={showPaymentModal}
+        payload={paymentPayload}
+        onResult={handlePaymentResult}
+        onClose={handleClosePaymentModal}
+      />
     </SafeAreaView>
   );
 }
@@ -245,6 +301,9 @@ const createStyles = (palette: ThemePalette) =>
     paddingVertical: 12,
     borderRadius: 16,
     alignItems: 'center',
+  },
+  checkoutButtonDisabled: {
+    opacity: 0.65,
   },
   checkoutText: {
     color: '#fff',
