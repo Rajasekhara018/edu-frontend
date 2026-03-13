@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480">
-  <rect width="640" height="480" fill="#f4f6f9"/>
-  <rect x="120" y="100" width="400" height="280" rx="24" fill="#e5e9f0" stroke="#c7d0dc" stroke-width="2"/>
-  <text x="320" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#6b7280">Pharma</text>
-  <text x="320" y="270" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#9aa4b2">Product Image</text>
-</svg>
