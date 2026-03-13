@@ -1,0 +1,282 @@
+{
+  "id": "brassbowl-mobile",
+  "branding": {
+    "name": "BrassBowl Pantry",
+    "subtitle": "Traditional home foods, festive assortments, and pantry staples delivered across the city.",
+    "supportEmail": "care@brassbowl.app",
+    "supportPhone": "+91 800 105 0261",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad and nearby delivery zones",
+    "accountName": "BrassBowl Pantry Member",
+    "accountEmail": "hello@brassbowl.app",
+    "accountPhone": "+91 800 105 0261",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=brassbowl-mobile"
+  },
+  "hero": {
+    "badgePrimary": "24-48 hr dispatch",
+    "badgeSecondary": "Fresh batches weekly",
+    "title": "Shop savories, snacks, spice powders and pantry specials from BrassBowl Pantry.",
+    "subtitle": "Curated home-food brands, gifting packs, and regional staples with clear prices and reliable delivery.",
+    "aboutTitle": "About us",
+    "aboutText": "BrassBowl Pantry curates regional home foods across Savories, Snacks, Spice Powders, Ready Mixes with trusted kitchen partners and careful packing.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: care@brassbowl.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Bulk order help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "BRA-42041",
+        "title": "Bulk order assistance for BrassBowl Pantry",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "BRA-41789",
+        "title": "Festival hamper delivery update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: bulk orders, gifting boxes, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "BrassBowl Pantry",
+      "text": "#311f12",
+      "background": "#fff7ed",
+      "tint": "#b97332",
+      "icon": "#7a5c4f",
+      "tabIconDefault": "#7a5c4f",
+      "tabIconSelected": "#b97332",
+      "card": "#ffffff",
+      "cardAlt": "#ffead1",
+      "border": "#f0d7c9",
+      "muted": "#7a5c4f",
+      "mutedAlt": "#a48a7e",
+      "primary": "#b97332",
+      "primaryDark": "#b97332",
+      "primarySoft": "#ffead1",
+      "danger": "#c83f2d",
+      "warning": "#f2a243",
+      "success": "#2d9a63",
+      "badge": "#d68d4a",
+      "badgeText": "#ffffff",
+      "chip": "#fff0e6",
+      "chipText": "#6a4a3d",
+      "chipActive": "#b97332",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "BrassBowl Pantry Dark",
+      "text": "#f8efe8",
+      "background": "#191412",
+      "tint": "#f8efe8",
+      "icon": "#b7a59a",
+      "tabIconDefault": "#b7a59a",
+      "tabIconSelected": "#f8efe8",
+      "card": "#241d1a",
+      "cardAlt": "#312723",
+      "border": "#3c312c",
+      "muted": "#c2b0a4",
+      "mutedAlt": "#9d8d82",
+      "primary": "#b97332",
+      "primaryDark": "#b97332",
+      "primarySoft": "#3a2e27",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#8ac98a",
+      "badge": "#f07a62",
+      "badgeText": "#191412",
+      "chip": "#312723",
+      "chipText": "#f2e5dc",
+      "chipActive": "#b97332",
+      "chipActiveText": "#191412"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "BrassBowl Savories Reserve",
+        "description": "Signature savories from BrassBowl Pantry.",
+        "price": 185,
+        "originalPrice": 215,
+        "image": "",
+        "category": "Savories",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "BRASSBOWL-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "SnackSmith Snacks Classic",
+        "description": "Popular snacks assortment.",
+        "price": 235,
+        "originalPrice": 270,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "SNACKSMITH-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "GoldenTin Spice Powders Prime",
+        "description": "Daily favorite from BrassBowl Pantry.",
+        "price": 175,
+        "originalPrice": 200,
+        "image": "",
+        "category": "Spice Powders",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "GOLDENTIN-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "PantryWire Ready Mixes Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 195,
+        "originalPrice": 223,
+        "image": "",
+        "category": "Ready Mixes",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "PANTRYWIRE-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Savories",
+        "Snacks",
+        "Spice Powders",
+        "Ready Mixes",
+        "Papads & Fryums",
+        "Beverages",
+        "Health & Herbal",
+        "Gift Packs",
+        "Sweets",
+        "Pickles"
+      ],
+      "brands": [
+        "BrassBowl",
+        "SnackSmith",
+        "GoldenTin",
+        "PantryWire",
+        "SpiceLoop",
+        "CrunchKiln"
+      ],
+      "categorySpecifications": {
+        "Savories": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Papads & Fryums": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Health & Herbal": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Gift Packs": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "7-10 days"
+        },
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 105,
+      "priceStep": 29,
+      "priceModulo": 2200,
+      "categoryPriceFactor": 14,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

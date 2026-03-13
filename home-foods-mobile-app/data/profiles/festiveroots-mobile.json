@@ -1,0 +1,282 @@
+{
+  "id": "festiveroots-mobile",
+  "branding": {
+    "name": "FestiveRoots Pantry",
+    "subtitle": "Traditional home foods, festive assortments, and pantry staples delivered across the city.",
+    "supportEmail": "care@festiveroots.app",
+    "supportPhone": "+91 800 210 0432",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad and nearby delivery zones",
+    "accountName": "FestiveRoots Pantry Member",
+    "accountEmail": "hello@festiveroots.app",
+    "accountPhone": "+91 800 210 0432",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=festiveroots-mobile"
+  },
+  "hero": {
+    "badgePrimary": "24-48 hr dispatch",
+    "badgeSecondary": "Fresh batches weekly",
+    "title": "Shop festival boxes, gift hampers, sweets and pantry specials from FestiveRoots Pantry.",
+    "subtitle": "Curated home-food brands, gifting packs, and regional staples with clear prices and reliable delivery.",
+    "aboutTitle": "About us",
+    "aboutText": "FestiveRoots Pantry curates regional home foods across Festival Boxes, Gift Hampers, Sweets, Savories with trusted kitchen partners and careful packing.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: care@festiveroots.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Bulk order help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "FES-42041",
+        "title": "Bulk order assistance for FestiveRoots Pantry",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "FES-41789",
+        "title": "Festival hamper delivery update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: bulk orders, gifting boxes, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "FestiveRoots Pantry",
+      "text": "#341817",
+      "background": "#fff0ee",
+      "tint": "#c24d3f",
+      "icon": "#7a5c4f",
+      "tabIconDefault": "#7a5c4f",
+      "tabIconSelected": "#c24d3f",
+      "card": "#ffffff",
+      "cardAlt": "#ffdcd8",
+      "border": "#f0d7c9",
+      "muted": "#7a5c4f",
+      "mutedAlt": "#a48a7e",
+      "primary": "#c24d3f",
+      "primaryDark": "#c24d3f",
+      "primarySoft": "#ffdcd8",
+      "danger": "#c83f2d",
+      "warning": "#f2a243",
+      "success": "#2d9a63",
+      "badge": "#da7266",
+      "badgeText": "#ffffff",
+      "chip": "#fff0e6",
+      "chipText": "#6a4a3d",
+      "chipActive": "#c24d3f",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "FestiveRoots Pantry Dark",
+      "text": "#f8efe8",
+      "background": "#191412",
+      "tint": "#f8efe8",
+      "icon": "#b7a59a",
+      "tabIconDefault": "#b7a59a",
+      "tabIconSelected": "#f8efe8",
+      "card": "#241d1a",
+      "cardAlt": "#312723",
+      "border": "#3c312c",
+      "muted": "#c2b0a4",
+      "mutedAlt": "#9d8d82",
+      "primary": "#c24d3f",
+      "primaryDark": "#c24d3f",
+      "primarySoft": "#3a2e27",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#8ac98a",
+      "badge": "#f07a62",
+      "badgeText": "#191412",
+      "chip": "#312723",
+      "chipText": "#f2e5dc",
+      "chipActive": "#c24d3f",
+      "chipActiveText": "#191412"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "FestiveRoots Festival Boxes Reserve",
+        "description": "Signature festival boxes from FestiveRoots Pantry.",
+        "price": 290,
+        "originalPrice": 320,
+        "image": "",
+        "category": "Festival Boxes",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "FESTIVEROOTS-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "CelebrationCrate Gift Hampers Classic",
+        "description": "Popular gift hampers assortment.",
+        "price": 340,
+        "originalPrice": 375,
+        "image": "",
+        "category": "Gift Hampers",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "CELEBRATIONCRATE-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "GiftLeaf Sweets Prime",
+        "description": "Daily favorite from FestiveRoots Pantry.",
+        "price": 280,
+        "originalPrice": 305,
+        "image": "",
+        "category": "Sweets",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "GIFTLEAF-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "WarmTray Savories Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 300,
+        "originalPrice": 328,
+        "image": "",
+        "category": "Savories",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "WARMTRAY-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Festival Boxes",
+        "Gift Hampers",
+        "Sweets",
+        "Savories",
+        "Snacks",
+        "Beverages",
+        "Dry Fruit Boxes",
+        "Seasonal Specials",
+        "Pickles",
+        "Ready Mixes"
+      ],
+      "brands": [
+        "FestiveRoots",
+        "CelebrationCrate",
+        "GiftLeaf",
+        "WarmTray",
+        "OccasionJar",
+        "RoyalRibbon"
+      ],
+      "categorySpecifications": {
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Gift Hampers": {
+          "Pack": "Gift assortment",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "7-10 days"
+        },
+        "Savories": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Dry Fruit Boxes": {
+          "Pack": "Gift assortment",
+          "Storage": "Room temperature",
+          "ShelfLife": "7-10 days"
+        },
+        "Seasonal Specials": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 210,
+      "priceStep": 48,
+      "priceModulo": 2200,
+      "categoryPriceFactor": 14,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

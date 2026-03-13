@@ -1,0 +1,282 @@
+{
+  "id": "gingergrove-mobile",
+  "branding": {
+    "name": "GingerGrove Foods",
+    "subtitle": "Traditional home foods, festive assortments, and pantry staples delivered across the city.",
+    "supportEmail": "care@gingergrove.app",
+    "supportPhone": "+91 800 115 0297",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad and nearby delivery zones",
+    "accountName": "GingerGrove Foods Member",
+    "accountEmail": "hello@gingergrove.app",
+    "accountPhone": "+91 800 115 0297",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=gingergrove-mobile"
+  },
+  "hero": {
+    "badgePrimary": "24-48 hr dispatch",
+    "badgeSecondary": "Fresh batches weekly",
+    "title": "Shop health & herbal, beverages, pickles and pantry specials from GingerGrove Foods.",
+    "subtitle": "Curated home-food brands, gifting packs, and regional staples with clear prices and reliable delivery.",
+    "aboutTitle": "About us",
+    "aboutText": "GingerGrove Foods curates regional home foods across Health & Herbal, Beverages, Pickles, Snacks with trusted kitchen partners and careful packing.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: care@gingergrove.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Bulk order help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "GIN-42041",
+        "title": "Bulk order assistance for GingerGrove Foods",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "GIN-41789",
+        "title": "Festival hamper delivery update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: bulk orders, gifting boxes, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "GingerGrove Foods",
+      "text": "#2f1a12",
+      "background": "#fff4ea",
+      "tint": "#a85c2a",
+      "icon": "#7a5c4f",
+      "tabIconDefault": "#7a5c4f",
+      "tabIconSelected": "#a85c2a",
+      "card": "#ffffff",
+      "cardAlt": "#ffe5cd",
+      "border": "#f0d7c9",
+      "muted": "#7a5c4f",
+      "mutedAlt": "#a48a7e",
+      "primary": "#a85c2a",
+      "primaryDark": "#a85c2a",
+      "primarySoft": "#ffe5cd",
+      "danger": "#c83f2d",
+      "warning": "#f2a243",
+      "success": "#2d9a63",
+      "badge": "#c77944",
+      "badgeText": "#ffffff",
+      "chip": "#fff0e6",
+      "chipText": "#6a4a3d",
+      "chipActive": "#a85c2a",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "GingerGrove Foods Dark",
+      "text": "#f8efe8",
+      "background": "#191412",
+      "tint": "#f8efe8",
+      "icon": "#b7a59a",
+      "tabIconDefault": "#b7a59a",
+      "tabIconSelected": "#f8efe8",
+      "card": "#241d1a",
+      "cardAlt": "#312723",
+      "border": "#3c312c",
+      "muted": "#c2b0a4",
+      "mutedAlt": "#9d8d82",
+      "primary": "#a85c2a",
+      "primaryDark": "#a85c2a",
+      "primarySoft": "#3a2e27",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#8ac98a",
+      "badge": "#f07a62",
+      "badgeText": "#191412",
+      "chip": "#312723",
+      "chipText": "#f2e5dc",
+      "chipActive": "#a85c2a",
+      "chipActiveText": "#191412"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "GingerGrove Health & Herbal Reserve",
+        "description": "Signature health & herbal from GingerGrove Foods.",
+        "price": 195,
+        "originalPrice": 225,
+        "image": "",
+        "category": "Health & Herbal",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "GINGERGROVE-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "HerbalClay Beverages Classic",
+        "description": "Popular beverages assortment.",
+        "price": 245,
+        "originalPrice": 280,
+        "image": "",
+        "category": "Beverages",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "HERBALCLAY-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "ComfortPan Pickles Prime",
+        "description": "Daily favorite from GingerGrove Foods.",
+        "price": 185,
+        "originalPrice": 210,
+        "image": "",
+        "category": "Pickles",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "COMFORTPAN-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "RootPress Snacks Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 205,
+        "originalPrice": 233,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "ROOTPRESS-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Health & Herbal",
+        "Beverages",
+        "Pickles",
+        "Snacks",
+        "Sweets",
+        "Millet Mixes",
+        "Ready Mixes",
+        "Festival Boxes",
+        "Spice Powders",
+        "Savories"
+      ],
+      "brands": [
+        "GingerGrove",
+        "HerbalClay",
+        "ComfortPan",
+        "RootPress",
+        "WarmCup",
+        "VillageBlend"
+      ],
+      "categorySpecifications": {
+        "Health & Herbal": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "7-10 days"
+        },
+        "Millet Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Savories": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 115,
+      "priceStep": 33,
+      "priceModulo": 2200,
+      "categoryPriceFactor": 14,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

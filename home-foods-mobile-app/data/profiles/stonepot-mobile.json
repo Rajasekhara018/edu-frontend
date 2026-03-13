@@ -1,0 +1,282 @@
+{
+  "id": "stonepot-mobile",
+  "branding": {
+    "name": "StonePot Kitchen",
+    "subtitle": "Traditional home foods, festive assortments, and pantry staples delivered across the city.",
+    "supportEmail": "care@stonepot.app",
+    "supportPhone": "+91 800 150 0324",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad and nearby delivery zones",
+    "accountName": "StonePot Kitchen Member",
+    "accountEmail": "hello@stonepot.app",
+    "accountPhone": "+91 800 150 0324",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=stonepot-mobile"
+  },
+  "hero": {
+    "badgePrimary": "24-48 hr dispatch",
+    "badgeSecondary": "Fresh batches weekly",
+    "title": "Shop pickles, ready mixes, spice powders and pantry specials from StonePot Kitchen.",
+    "subtitle": "Curated home-food brands, gifting packs, and regional staples with clear prices and reliable delivery.",
+    "aboutTitle": "About us",
+    "aboutText": "StonePot Kitchen curates regional home foods across Pickles, Ready Mixes, Spice Powders, Chutney Powders with trusted kitchen partners and careful packing.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: care@stonepot.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Bulk order help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "STO-42041",
+        "title": "Bulk order assistance for StonePot Kitchen",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "STO-41789",
+        "title": "Festival hamper delivery update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: bulk orders, gifting boxes, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "StonePot Kitchen",
+      "text": "#291814",
+      "background": "#fdf2ec",
+      "tint": "#8a5131",
+      "icon": "#7a5c4f",
+      "tabIconDefault": "#7a5c4f",
+      "tabIconSelected": "#8a5131",
+      "card": "#ffffff",
+      "cardAlt": "#f5e0d7",
+      "border": "#f0d7c9",
+      "muted": "#7a5c4f",
+      "mutedAlt": "#a48a7e",
+      "primary": "#8a5131",
+      "primaryDark": "#8a5131",
+      "primarySoft": "#f5e0d7",
+      "danger": "#c83f2d",
+      "warning": "#f2a243",
+      "success": "#2d9a63",
+      "badge": "#aa7255",
+      "badgeText": "#ffffff",
+      "chip": "#fff0e6",
+      "chipText": "#6a4a3d",
+      "chipActive": "#8a5131",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "StonePot Kitchen Dark",
+      "text": "#f8efe8",
+      "background": "#191412",
+      "tint": "#f8efe8",
+      "icon": "#b7a59a",
+      "tabIconDefault": "#b7a59a",
+      "tabIconSelected": "#f8efe8",
+      "card": "#241d1a",
+      "cardAlt": "#312723",
+      "border": "#3c312c",
+      "muted": "#c2b0a4",
+      "mutedAlt": "#9d8d82",
+      "primary": "#8a5131",
+      "primaryDark": "#8a5131",
+      "primarySoft": "#3a2e27",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#8ac98a",
+      "badge": "#f07a62",
+      "badgeText": "#191412",
+      "chip": "#312723",
+      "chipText": "#f2e5dc",
+      "chipActive": "#8a5131",
+      "chipActiveText": "#191412"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "StonePot Pickles Reserve",
+        "description": "Signature pickles from StonePot Kitchen.",
+        "price": 230,
+        "originalPrice": 260,
+        "image": "",
+        "category": "Pickles",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "STONEPOT-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "ClayCook Ready Mixes Classic",
+        "description": "Popular ready mixes assortment.",
+        "price": 280,
+        "originalPrice": 315,
+        "image": "",
+        "category": "Ready Mixes",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "CLAYCOOK-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "SesameLadle Spice Powders Prime",
+        "description": "Daily favorite from StonePot Kitchen.",
+        "price": 220,
+        "originalPrice": 245,
+        "image": "",
+        "category": "Spice Powders",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "SESAMELADLE-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "KadaiNote Chutney Powders Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 240,
+        "originalPrice": 268,
+        "image": "",
+        "category": "Chutney Powders",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "KADAINOTE-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Pickles",
+        "Ready Mixes",
+        "Spice Powders",
+        "Chutney Powders",
+        "Savories",
+        "Snacks",
+        "Oils & Ghee",
+        "Festival Boxes",
+        "Beverages",
+        "Health & Herbal"
+      ],
+      "brands": [
+        "StonePot",
+        "ClayCook",
+        "SesameLadle",
+        "KadaiNote",
+        "RoastRoot",
+        "HearthJar"
+      ],
+      "categorySpecifications": {
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Chutney Powders": {
+          "Pack": "Standard pack",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        },
+        "Savories": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Oils & Ghee": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Health & Herbal": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 150,
+      "priceStep": 36,
+      "priceModulo": 2200,
+      "categoryPriceFactor": 14,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

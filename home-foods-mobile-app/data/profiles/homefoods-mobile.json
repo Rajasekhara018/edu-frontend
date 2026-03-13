@@ -1,0 +1,282 @@
+{
+  "id": "homefoods-mobile",
+  "branding": {
+    "name": "HomeFoods Market",
+    "subtitle": "Traditional home foods, festive assortments, and pantry staples delivered across the city.",
+    "supportEmail": "care@homefoods.app",
+    "supportPhone": "+91 800 120 0315",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad and nearby delivery zones",
+    "accountName": "HomeFoods Market Member",
+    "accountEmail": "hello@homefoods.app",
+    "accountPhone": "+91 800 120 0315",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=homefoods-mobile"
+  },
+  "hero": {
+    "badgePrimary": "24-48 hr dispatch",
+    "badgeSecondary": "Fresh batches weekly",
+    "title": "Shop pickles, sweets, savories and pantry specials from HomeFoods Market.",
+    "subtitle": "Curated home-food brands, gifting packs, and regional staples with clear prices and reliable delivery.",
+    "aboutTitle": "About us",
+    "aboutText": "HomeFoods Market curates regional home foods across Pickles, Sweets, Savories, Snacks with trusted kitchen partners and careful packing.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: care@homefoods.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Bulk order help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "HOM-42041",
+        "title": "Bulk order assistance for HomeFoods Market",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "HOM-41789",
+        "title": "Festival hamper delivery update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: bulk orders, gifting boxes, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "HomeFoods Market",
+      "text": "#2f1d12",
+      "background": "#fff6e8",
+      "tint": "#c86b2a",
+      "icon": "#7a5c4f",
+      "tabIconDefault": "#7a5c4f",
+      "tabIconSelected": "#c86b2a",
+      "card": "#ffffff",
+      "cardAlt": "#ffe8d2",
+      "border": "#f0d7c9",
+      "muted": "#7a5c4f",
+      "mutedAlt": "#a48a7e",
+      "primary": "#c86b2a",
+      "primaryDark": "#c86b2a",
+      "primarySoft": "#ffe8d2",
+      "danger": "#c83f2d",
+      "warning": "#f2a243",
+      "success": "#2d9a63",
+      "badge": "#d96b43",
+      "badgeText": "#ffffff",
+      "chip": "#fff0e6",
+      "chipText": "#6a4a3d",
+      "chipActive": "#c86b2a",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "HomeFoods Market Dark",
+      "text": "#f8efe8",
+      "background": "#191412",
+      "tint": "#f8efe8",
+      "icon": "#b7a59a",
+      "tabIconDefault": "#b7a59a",
+      "tabIconSelected": "#f8efe8",
+      "card": "#241d1a",
+      "cardAlt": "#312723",
+      "border": "#3c312c",
+      "muted": "#c2b0a4",
+      "mutedAlt": "#9d8d82",
+      "primary": "#c86b2a",
+      "primaryDark": "#c86b2a",
+      "primarySoft": "#3a2e27",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#8ac98a",
+      "badge": "#f07a62",
+      "badgeText": "#191412",
+      "chip": "#312723",
+      "chipText": "#f2e5dc",
+      "chipActive": "#c86b2a",
+      "chipActiveText": "#191412"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "Ammamma Pickles Reserve",
+        "description": "Signature pickles from HomeFoods Market.",
+        "price": 200,
+        "originalPrice": 230,
+        "image": "",
+        "category": "Pickles",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "AMMAMMA-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "StonePot Sweets Classic",
+        "description": "Popular sweets assortment.",
+        "price": 250,
+        "originalPrice": 285,
+        "image": "",
+        "category": "Sweets",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "STONEPOT-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "TeluguTaste Savories Prime",
+        "description": "Daily favorite from HomeFoods Market.",
+        "price": 190,
+        "originalPrice": 215,
+        "image": "",
+        "category": "Savories",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "TELUGUTASTE-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "VillageJar Snacks Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 210,
+        "originalPrice": 238,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "VILLAGEJAR-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Pickles",
+        "Sweets",
+        "Savories",
+        "Snacks",
+        "Ready Mixes",
+        "Spice Powders",
+        "Papads & Fryums",
+        "Oils & Ghee",
+        "Beverages",
+        "Health & Herbal"
+      ],
+      "brands": [
+        "Ammamma",
+        "StonePot",
+        "TeluguTaste",
+        "VillageJar",
+        "FestiveLeaf",
+        "SpiceTrail"
+      ],
+      "categorySpecifications": {
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        },
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "7-10 days"
+        },
+        "Savories": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Papads & Fryums": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Oils & Ghee": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Health & Herbal": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 120,
+      "priceStep": 35,
+      "priceModulo": 2200,
+      "categoryPriceFactor": 14,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

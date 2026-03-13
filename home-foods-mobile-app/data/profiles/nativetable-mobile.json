@@ -1,0 +1,282 @@
+{
+  "id": "nativetable-mobile",
+  "branding": {
+    "name": "NativeTable Foods",
+    "subtitle": "Traditional home foods, festive assortments, and pantry staples delivered across the city.",
+    "supportEmail": "care@nativetable.app",
+    "supportPhone": "+91 800 145 0306",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad and nearby delivery zones",
+    "accountName": "NativeTable Foods Member",
+    "accountEmail": "hello@nativetable.app",
+    "accountPhone": "+91 800 145 0306",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=nativetable-mobile"
+  },
+  "hero": {
+    "badgePrimary": "24-48 hr dispatch",
+    "badgeSecondary": "Fresh batches weekly",
+    "title": "Shop pickles, sweets, savories and pantry specials from NativeTable Foods.",
+    "subtitle": "Curated home-food brands, gifting packs, and regional staples with clear prices and reliable delivery.",
+    "aboutTitle": "About us",
+    "aboutText": "NativeTable Foods curates regional home foods across Pickles, Sweets, Savories, Ready Mixes with trusted kitchen partners and careful packing.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: care@nativetable.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Bulk order help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "NAT-42041",
+        "title": "Bulk order assistance for NativeTable Foods",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "NAT-41789",
+        "title": "Festival hamper delivery update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: bulk orders, gifting boxes, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "NativeTable Foods",
+      "text": "#2d1c14",
+      "background": "#fff5ee",
+      "tint": "#9c5f38",
+      "icon": "#7a5c4f",
+      "tabIconDefault": "#7a5c4f",
+      "tabIconSelected": "#9c5f38",
+      "card": "#ffffff",
+      "cardAlt": "#f8e6da",
+      "border": "#f0d7c9",
+      "muted": "#7a5c4f",
+      "mutedAlt": "#a48a7e",
+      "primary": "#9c5f38",
+      "primaryDark": "#9c5f38",
+      "primarySoft": "#f8e6da",
+      "danger": "#c83f2d",
+      "warning": "#f2a243",
+      "success": "#2d9a63",
+      "badge": "#be7b54",
+      "badgeText": "#ffffff",
+      "chip": "#fff0e6",
+      "chipText": "#6a4a3d",
+      "chipActive": "#9c5f38",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "NativeTable Foods Dark",
+      "text": "#f8efe8",
+      "background": "#191412",
+      "tint": "#f8efe8",
+      "icon": "#b7a59a",
+      "tabIconDefault": "#b7a59a",
+      "tabIconSelected": "#f8efe8",
+      "card": "#241d1a",
+      "cardAlt": "#312723",
+      "border": "#3c312c",
+      "muted": "#c2b0a4",
+      "mutedAlt": "#9d8d82",
+      "primary": "#9c5f38",
+      "primaryDark": "#9c5f38",
+      "primarySoft": "#3a2e27",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#8ac98a",
+      "badge": "#f07a62",
+      "badgeText": "#191412",
+      "chip": "#312723",
+      "chipText": "#f2e5dc",
+      "chipActive": "#9c5f38",
+      "chipActiveText": "#191412"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "NativeTable Pickles Reserve",
+        "description": "Signature pickles from NativeTable Foods.",
+        "price": 225,
+        "originalPrice": 255,
+        "image": "",
+        "category": "Pickles",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "NATIVETABLE-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "RegionRoot Sweets Classic",
+        "description": "Popular sweets assortment.",
+        "price": 275,
+        "originalPrice": 310,
+        "image": "",
+        "category": "Sweets",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "REGIONROOT-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "ClayDining Savories Prime",
+        "description": "Daily favorite from NativeTable Foods.",
+        "price": 215,
+        "originalPrice": 240,
+        "image": "",
+        "category": "Savories",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "CLAYDINING-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "VillageMeal Ready Mixes Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 235,
+        "originalPrice": 263,
+        "image": "",
+        "category": "Ready Mixes",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "VILLAGEMEAL-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Pickles",
+        "Sweets",
+        "Savories",
+        "Ready Mixes",
+        "Rice Mixes",
+        "Spice Powders",
+        "Papads & Fryums",
+        "Festival Boxes",
+        "Beverages",
+        "Health & Herbal"
+      ],
+      "brands": [
+        "NativeTable",
+        "RegionRoot",
+        "ClayDining",
+        "VillageMeal",
+        "TraditionTray",
+        "FolkPantry"
+      ],
+      "categorySpecifications": {
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        },
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "7-10 days"
+        },
+        "Savories": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Rice Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Papads & Fryums": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Health & Herbal": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 145,
+      "priceStep": 34,
+      "priceModulo": 2200,
+      "categoryPriceFactor": 14,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

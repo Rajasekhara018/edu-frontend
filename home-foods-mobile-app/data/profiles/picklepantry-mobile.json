@@ -1,0 +1,282 @@
+{
+  "id": "picklepantry-mobile",
+  "branding": {
+    "name": "PicklePantry Co",
+    "subtitle": "Traditional home foods, festive assortments, and pantry staples delivered across the city.",
+    "supportEmail": "care@picklepantry.app",
+    "supportPhone": "+91 800 140 0252",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad and nearby delivery zones",
+    "accountName": "PicklePantry Co Member",
+    "accountEmail": "hello@picklepantry.app",
+    "accountPhone": "+91 800 140 0252",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=picklepantry-mobile"
+  },
+  "hero": {
+    "badgePrimary": "24-48 hr dispatch",
+    "badgeSecondary": "Fresh batches weekly",
+    "title": "Shop pickles, chutneys, spice powders and pantry specials from PicklePantry Co.",
+    "subtitle": "Curated home-food brands, gifting packs, and regional staples with clear prices and reliable delivery.",
+    "aboutTitle": "About us",
+    "aboutText": "PicklePantry Co curates regional home foods across Pickles, Chutneys, Spice Powders, Rice Mixes with trusted kitchen partners and careful packing.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: care@picklepantry.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Bulk order help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "PIC-42041",
+        "title": "Bulk order assistance for PicklePantry Co",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "PIC-41789",
+        "title": "Festival hamper delivery update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: bulk orders, gifting boxes, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "PicklePantry Co",
+      "text": "#2f1b12",
+      "background": "#fff5ea",
+      "tint": "#9a4d24",
+      "icon": "#7a5c4f",
+      "tabIconDefault": "#7a5c4f",
+      "tabIconSelected": "#9a4d24",
+      "card": "#ffffff",
+      "cardAlt": "#ffe7cc",
+      "border": "#f0d7c9",
+      "muted": "#7a5c4f",
+      "mutedAlt": "#a48a7e",
+      "primary": "#9a4d24",
+      "primaryDark": "#9a4d24",
+      "primarySoft": "#ffe7cc",
+      "danger": "#c83f2d",
+      "warning": "#f2a243",
+      "success": "#2d9a63",
+      "badge": "#bf6a3a",
+      "badgeText": "#ffffff",
+      "chip": "#fff0e6",
+      "chipText": "#6a4a3d",
+      "chipActive": "#9a4d24",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "PicklePantry Co Dark",
+      "text": "#f8efe8",
+      "background": "#191412",
+      "tint": "#f8efe8",
+      "icon": "#b7a59a",
+      "tabIconDefault": "#b7a59a",
+      "tabIconSelected": "#f8efe8",
+      "card": "#241d1a",
+      "cardAlt": "#312723",
+      "border": "#3c312c",
+      "muted": "#c2b0a4",
+      "mutedAlt": "#9d8d82",
+      "primary": "#9a4d24",
+      "primaryDark": "#9a4d24",
+      "primarySoft": "#3a2e27",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#8ac98a",
+      "badge": "#f07a62",
+      "badgeText": "#191412",
+      "chip": "#312723",
+      "chipText": "#f2e5dc",
+      "chipActive": "#9a4d24",
+      "chipActiveText": "#191412"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "PicklePantry Pickles Reserve",
+        "description": "Signature pickles from PicklePantry Co.",
+        "price": 220,
+        "originalPrice": 250,
+        "image": "",
+        "category": "Pickles",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "PICKLEPANTRY-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "JarHouse Chutneys Classic",
+        "description": "Popular chutneys assortment.",
+        "price": 270,
+        "originalPrice": 305,
+        "image": "",
+        "category": "Chutneys",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "JARHOUSE-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "MangoMint Spice Powders Prime",
+        "description": "Daily favorite from PicklePantry Co.",
+        "price": 210,
+        "originalPrice": 235,
+        "image": "",
+        "category": "Spice Powders",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "MANGOMINT-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "SesameStone Rice Mixes Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 230,
+        "originalPrice": 258,
+        "image": "",
+        "category": "Rice Mixes",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "SESAMESTONE-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Pickles",
+        "Chutneys",
+        "Spice Powders",
+        "Rice Mixes",
+        "Papads & Fryums",
+        "Oils & Ghee",
+        "Snacks",
+        "Festive Gift Boxes",
+        "Ready Mixes",
+        "Beverages"
+      ],
+      "brands": [
+        "PicklePantry",
+        "JarHouse",
+        "MangoMint",
+        "SesameStone",
+        "TangyTradition",
+        "KitchenLeaf"
+      ],
+      "categorySpecifications": {
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        },
+        "Chutneys": {
+          "Pack": "Standard pack",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Rice Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Papads & Fryums": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Oils & Ghee": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Festive Gift Boxes": {
+          "Pack": "Gift assortment",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 140,
+      "priceStep": 28,
+      "priceModulo": 2200,
+      "categoryPriceFactor": 14,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "id": "milletmama-mobile",
+  "branding": {
+    "name": "MilletMama Foods",
+    "subtitle": "Traditional home foods, festive assortments, and pantry staples delivered across the city.",
+    "supportEmail": "care@milletmama.app",
+    "supportPhone": "+91 800 130 0270",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad and nearby delivery zones",
+    "accountName": "MilletMama Foods Member",
+    "accountEmail": "hello@milletmama.app",
+    "accountPhone": "+91 800 130 0270",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=milletmama-mobile"
+  },
+  "hero": {
+    "badgePrimary": "24-48 hr dispatch",
+    "badgeSecondary": "Fresh batches weekly",
+    "title": "Shop millet mixes, health & herbal, ready mixes and pantry specials from MilletMama Foods.",
+    "subtitle": "Curated home-food brands, gifting packs, and regional staples with clear prices and reliable delivery.",
+    "aboutTitle": "About us",
+    "aboutText": "MilletMama Foods curates regional home foods across Millet Mixes, Health & Herbal, Ready Mixes, Beverages with trusted kitchen partners and careful packing.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: care@milletmama.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Bulk order help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "MIL-42041",
+        "title": "Bulk order assistance for MilletMama Foods",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "MIL-41789",
+        "title": "Festival hamper delivery update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: bulk orders, gifting boxes, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "MilletMama Foods",
+      "text": "#263114",
+      "background": "#f7f8e7",
+      "tint": "#7b8f3d",
+      "icon": "#7a5c4f",
+      "tabIconDefault": "#7a5c4f",
+      "tabIconSelected": "#7b8f3d",
+      "card": "#ffffff",
+      "cardAlt": "#edf0cf",
+      "border": "#f0d7c9",
+      "muted": "#7a5c4f",
+      "mutedAlt": "#a48a7e",
+      "primary": "#7b8f3d",
+      "primaryDark": "#7b8f3d",
+      "primarySoft": "#edf0cf",
+      "danger": "#c83f2d",
+      "warning": "#f2a243",
+      "success": "#2d9a63",
+      "badge": "#96a953",
+      "badgeText": "#ffffff",
+      "chip": "#fff0e6",
+      "chipText": "#6a4a3d",
+      "chipActive": "#7b8f3d",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "MilletMama Foods Dark",
+      "text": "#f8efe8",
+      "background": "#191412",
+      "tint": "#f8efe8",
+      "icon": "#b7a59a",
+      "tabIconDefault": "#b7a59a",
+      "tabIconSelected": "#f8efe8",
+      "card": "#241d1a",
+      "cardAlt": "#312723",
+      "border": "#3c312c",
+      "muted": "#c2b0a4",
+      "mutedAlt": "#9d8d82",
+      "primary": "#7b8f3d",
+      "primaryDark": "#7b8f3d",
+      "primarySoft": "#3a2e27",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#8ac98a",
+      "badge": "#f07a62",
+      "badgeText": "#191412",
+      "chip": "#312723",
+      "chipText": "#f2e5dc",
+      "chipActive": "#7b8f3d",
+      "chipActiveText": "#191412"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "MilletMama Millet Mixes Reserve",
+        "description": "Signature millet mixes from MilletMama Foods.",
+        "price": 210,
+        "originalPrice": 240,
+        "image": "",
+        "category": "Millet Mixes",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "MILLETMAMA-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "GrainGlow Health & Herbal Classic",
+        "description": "Popular health & herbal assortment.",
+        "price": 260,
+        "originalPrice": 295,
+        "image": "",
+        "category": "Health & Herbal",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "GRAINGLOW-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "RagiNest Ready Mixes Prime",
+        "description": "Daily favorite from MilletMama Foods.",
+        "price": 200,
+        "originalPrice": 225,
+        "image": "",
+        "category": "Ready Mixes",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "RAGINEST-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "DailyMillet Beverages Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 220,
+        "originalPrice": 248,
+        "image": "",
+        "category": "Beverages",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "DAILYMILLET-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Millet Mixes",
+        "Health & Herbal",
+        "Ready Mixes",
+        "Beverages",
+        "Snacks",
+        "Sweets",
+        "Breakfast Mixes",
+        "Pickles",
+        "Spice Powders",
+        "Festival Boxes"
+      ],
+      "brands": [
+        "MilletMama",
+        "GrainGlow",
+        "RagiNest",
+        "DailyMillet",
+        "RootsJar",
+        "WellnessPantry"
+      ],
+      "categorySpecifications": {
+        "Millet Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Health & Herbal": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "7-10 days"
+        },
+        "Breakfast Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 130,
+      "priceStep": 30,
+      "priceModulo": 2200,
+      "categoryPriceFactor": 14,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "id": "sweetkadai-mobile",
+  "branding": {
+    "name": "SweetKadai House",
+    "subtitle": "Traditional home foods, festive assortments, and pantry staples delivered across the city.",
+    "supportEmail": "care@sweetkadai.app",
+    "supportPhone": "+91 800 180 0378",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad and nearby delivery zones",
+    "accountName": "SweetKadai House Member",
+    "accountEmail": "hello@sweetkadai.app",
+    "accountPhone": "+91 800 180 0378",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=sweetkadai-mobile"
+  },
+  "hero": {
+    "badgePrimary": "24-48 hr dispatch",
+    "badgeSecondary": "Fresh batches weekly",
+    "title": "Shop sweets, festival boxes, snacks and pantry specials from SweetKadai House.",
+    "subtitle": "Curated home-food brands, gifting packs, and regional staples with clear prices and reliable delivery.",
+    "aboutTitle": "About us",
+    "aboutText": "SweetKadai House curates regional home foods across Sweets, Festival Boxes, Snacks, Beverages with trusted kitchen partners and careful packing.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: care@sweetkadai.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Bulk order help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "SWE-42041",
+        "title": "Bulk order assistance for SweetKadai House",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "SWE-41789",
+        "title": "Festival hamper delivery update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: bulk orders, gifting boxes, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "SweetKadai House",
+      "text": "#3d1f17",
+      "background": "#fff2ec",
+      "tint": "#cc5e3f",
+      "icon": "#7a5c4f",
+      "tabIconDefault": "#7a5c4f",
+      "tabIconSelected": "#cc5e3f",
+      "card": "#ffffff",
+      "cardAlt": "#ffe4d8",
+      "border": "#f0d7c9",
+      "muted": "#7a5c4f",
+      "mutedAlt": "#a48a7e",
+      "primary": "#cc5e3f",
+      "primaryDark": "#cc5e3f",
+      "primarySoft": "#ffe4d8",
+      "danger": "#c83f2d",
+      "warning": "#f2a243",
+      "success": "#2d9a63",
+      "badge": "#d76d51",
+      "badgeText": "#ffffff",
+      "chip": "#fff0e6",
+      "chipText": "#6a4a3d",
+      "chipActive": "#cc5e3f",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "SweetKadai House Dark",
+      "text": "#f8efe8",
+      "background": "#191412",
+      "tint": "#f8efe8",
+      "icon": "#b7a59a",
+      "tabIconDefault": "#b7a59a",
+      "tabIconSelected": "#f8efe8",
+      "card": "#241d1a",
+      "cardAlt": "#312723",
+      "border": "#3c312c",
+      "muted": "#c2b0a4",
+      "mutedAlt": "#9d8d82",
+      "primary": "#cc5e3f",
+      "primaryDark": "#cc5e3f",
+      "primarySoft": "#3a2e27",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#8ac98a",
+      "badge": "#f07a62",
+      "badgeText": "#191412",
+      "chip": "#312723",
+      "chipText": "#f2e5dc",
+      "chipActive": "#cc5e3f",
+      "chipActiveText": "#191412"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "SweetKadai Sweets Reserve",
+        "description": "Signature sweets from SweetKadai House.",
+        "price": 260,
+        "originalPrice": 290,
+        "image": "",
+        "category": "Sweets",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "SWEETKADAI-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "GheeCraft Festival Boxes Classic",
+        "description": "Popular festival boxes assortment.",
+        "price": 310,
+        "originalPrice": 345,
+        "image": "",
+        "category": "Festival Boxes",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "GHEECRAFT-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Cool and dry",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "RoyalLaddu Snacks Prime",
+        "description": "Daily favorite from SweetKadai House.",
+        "price": 250,
+        "originalPrice": 275,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "ROYALLADDU-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "KajuRoom Beverages Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 270,
+        "originalPrice": 298,
+        "image": "",
+        "category": "Beverages",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "KAJUROOM-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Sweets",
+        "Festival Boxes",
+        "Snacks",
+        "Beverages",
+        "Dry Fruit Boxes",
+        "Savories",
+        "Millet Sweets",
+        "Gift Hampers",
+        "Ready Mixes",
+        "Health & Herbal"
+      ],
+      "brands": [
+        "SweetKadai",
+        "GheeCraft",
+        "RoyalLaddu",
+        "KajuRoom",
+        "FestivalLeaf",
+        "SugarBrass"
+      ],
+      "categorySpecifications": {
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "7-10 days"
+        },
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Dry Fruit Boxes": {
+          "Pack": "Gift assortment",
+          "Storage": "Room temperature",
+          "ShelfLife": "7-10 days"
+        },
+        "Savories": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Millet Sweets": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "7-10 days"
+        },
+        "Gift Hampers": {
+          "Pack": "Gift assortment",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Health & Herbal": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 180,
+      "priceStep": 42,
+      "priceModulo": 2200,
+      "categoryPriceFactor": 14,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

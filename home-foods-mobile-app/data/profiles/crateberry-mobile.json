@@ -1,0 +1,282 @@
+{
+  "id": "crateberry-mobile",
+  "branding": {
+    "name": "CrateBerry",
+    "subtitle": "Fast groceries, pantry essentials, and daily care delivered on your schedule.",
+    "supportEmail": "support@crateberry.app",
+    "supportPhone": "+91 800 048 0098",
+    "supportHours": "6:00 AM - 11:00 PM",
+    "serviceArea": "Hyderabad metro and nearby hubs",
+    "accountName": "CrateBerry Member",
+    "accountEmail": "hello@crateberry.app",
+    "accountPhone": "+91 800 048 0098",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=crateberry-mobile"
+  },
+  "hero": {
+    "badgePrimary": "30 min delivery",
+    "badgeSecondary": "Freshness guaranteed",
+    "title": "Shop fresh produce, gourmet dairy, bakery and more with CrateBerry.",
+    "subtitle": "Daily offers on pantry picks, snacks, beverages with secure payments and reliable slots.",
+    "aboutTitle": "About us",
+    "aboutText": "CrateBerry is a profile-driven grocery experience focused on fast delivery, dependable picks, and category depth across Fresh Produce, Gourmet Dairy, Bakery, Pantry Picks.",
+    "contactTitle": "Contact us",
+    "contactText": "Service area: Hyderabad\nSupport hours: 6:00 AM - 11:00 PM\nEmail: support@crateberry.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Account help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "CRA-22041",
+        "title": "Refund for CrateBerry order #406-7749123",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "CRA-21789",
+        "title": "Unable to apply wallet balance on CrateBerry",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: refund status, change address, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "CrateBerry",
+      "text": "#3d1f17",
+      "background": "#fff5ef",
+      "tint": "#d95d39",
+      "icon": "#66706b",
+      "tabIconDefault": "#66706b",
+      "tabIconSelected": "#d95d39",
+      "card": "#ffffff",
+      "cardAlt": "#ffe7dc",
+      "border": "#e2e7e3",
+      "muted": "#6c756f",
+      "mutedAlt": "#9aa39c",
+      "primary": "#d95d39",
+      "primaryDark": "#d95d39",
+      "primarySoft": "#ffe7dc",
+      "danger": "#cc4b33",
+      "warning": "#f4b740",
+      "success": "#d95d39",
+      "badge": "#d95d39",
+      "badgeText": "#ffffff",
+      "chip": "#f5f1e7",
+      "chipText": "#4f4f4f",
+      "chipActive": "#d95d39",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "CrateBerry Dark",
+      "text": "#f4f2ee",
+      "background": "#141514",
+      "tint": "#f2f0ea",
+      "icon": "#a3a7a4",
+      "tabIconDefault": "#a3a7a4",
+      "tabIconSelected": "#f2f0ea",
+      "card": "#1f201f",
+      "cardAlt": "#2a2c2b",
+      "border": "#2f3331",
+      "muted": "#b1b7b3",
+      "mutedAlt": "#8f9591",
+      "primary": "#d95d39",
+      "primaryDark": "#d95d39",
+      "primarySoft": "#24342b",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#d95d39",
+      "badge": "#f07a62",
+      "badgeText": "#141514",
+      "chip": "#2a2c2b",
+      "chipText": "#d7dad7",
+      "chipActive": "#d95d39",
+      "chipActiveText": "#141514"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "CrateBerry Fresh Produce Select",
+        "description": "Popular fresh produce from CrateBerry.",
+        "price": 88,
+        "originalPrice": 108,
+        "image": "",
+        "category": "Fresh Produce",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "CRATEBERRY-0001",
+        "specifications": {
+          "Pack": "1 unit",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "BerryDrop Gourmet Dairy Value Pack",
+        "description": "Best-selling gourmet dairy pack.",
+        "price": 118,
+        "originalPrice": 143,
+        "image": "",
+        "category": "Gourmet Dairy",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "BERRYDROP-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Chilled / cool",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "UrbanHarvest Bakery Prime",
+        "description": "Daily favorite from CrateBerry.",
+        "price": 103,
+        "originalPrice": 127,
+        "image": "",
+        "category": "Bakery",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "URBANHARVEST-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "BakeClub Pantry Picks Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 138,
+        "originalPrice": 166,
+        "image": "",
+        "category": "Pantry Picks",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "BAKECLUB-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Fresh Produce",
+        "Gourmet Dairy",
+        "Bakery",
+        "Pantry Picks",
+        "Snacks",
+        "Beverages",
+        "Home Care",
+        "Frozen Treats",
+        "Ready Meals",
+        "Breakfast"
+      ],
+      "brands": [
+        "CrateBerry",
+        "BerryDrop",
+        "UrbanHarvest",
+        "BakeClub",
+        "KitchenQuick",
+        "NestCare"
+      ],
+      "categorySpecifications": {
+        "Fresh Produce": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "2-5 days"
+        },
+        "Gourmet Dairy": {
+          "Pack": "Standard pack",
+          "Storage": "Keep refrigerated",
+          "ShelfLife": "As labelled"
+        },
+        "Bakery": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Pantry Picks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Home Care": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Frozen Treats": {
+          "Pack": "Standard pack",
+          "Storage": "Keep refrigerated",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Meals": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Breakfast": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 48,
+      "priceStep": 14,
+      "priceModulo": 1200,
+      "categoryPriceFactor": 4,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}
