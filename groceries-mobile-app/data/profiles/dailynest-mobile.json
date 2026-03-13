@@ -1,0 +1,282 @@
+{
+  "id": "dailynest-mobile",
+  "branding": {
+    "name": "DailyNest",
+    "subtitle": "Fast groceries, pantry essentials, and daily care delivered on your schedule.",
+    "supportEmail": "support@dailynest.app",
+    "supportPhone": "+91 800 038 0063",
+    "supportHours": "6:00 AM - 11:00 PM",
+    "serviceArea": "Hyderabad metro and nearby hubs",
+    "accountName": "DailyNest Member",
+    "accountEmail": "hello@dailynest.app",
+    "accountPhone": "+91 800 038 0063",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=dailynest-mobile"
+  },
+  "hero": {
+    "badgePrimary": "30 min delivery",
+    "badgeSecondary": "Freshness guaranteed",
+    "title": "Shop fresh produce, dairy & eggs, bakery and more with DailyNest.",
+    "subtitle": "Daily offers on staples, breakfast, snacks with secure payments and reliable slots.",
+    "aboutTitle": "About us",
+    "aboutText": "DailyNest is a profile-driven grocery experience focused on fast delivery, dependable picks, and category depth across Fresh Produce, Dairy & Eggs, Bakery, Staples.",
+    "contactTitle": "Contact us",
+    "contactText": "Service area: Hyderabad\nSupport hours: 6:00 AM - 11:00 PM\nEmail: support@dailynest.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Account help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "DAI-22041",
+        "title": "Refund for DailyNest order #406-7749123",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "DAI-21789",
+        "title": "Unable to apply wallet balance on DailyNest",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: refund status, change address, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "DailyNest",
+      "text": "#3d2119",
+      "background": "#fff5f1",
+      "tint": "#ff7a59",
+      "icon": "#66706b",
+      "tabIconDefault": "#66706b",
+      "tabIconSelected": "#ff7a59",
+      "card": "#ffffff",
+      "cardAlt": "#ffe9df",
+      "border": "#e2e7e3",
+      "muted": "#6c756f",
+      "mutedAlt": "#9aa39c",
+      "primary": "#ff7a59",
+      "primaryDark": "#ff7a59",
+      "primarySoft": "#ffe9df",
+      "danger": "#cc4b33",
+      "warning": "#f4b740",
+      "success": "#ff7a59",
+      "badge": "#ff7a59",
+      "badgeText": "#ffffff",
+      "chip": "#f5f1e7",
+      "chipText": "#4f4f4f",
+      "chipActive": "#ff7a59",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "DailyNest Dark",
+      "text": "#f4f2ee",
+      "background": "#141514",
+      "tint": "#f2f0ea",
+      "icon": "#a3a7a4",
+      "tabIconDefault": "#a3a7a4",
+      "tabIconSelected": "#f2f0ea",
+      "card": "#1f201f",
+      "cardAlt": "#2a2c2b",
+      "border": "#2f3331",
+      "muted": "#b1b7b3",
+      "mutedAlt": "#8f9591",
+      "primary": "#ff7a59",
+      "primaryDark": "#ff7a59",
+      "primarySoft": "#24342b",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#ff7a59",
+      "badge": "#f07a62",
+      "badgeText": "#141514",
+      "chip": "#2a2c2b",
+      "chipText": "#d7dad7",
+      "chipActive": "#ff7a59",
+      "chipActiveText": "#141514"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "DailyNest Fresh Produce Select",
+        "description": "Popular fresh produce from DailyNest.",
+        "price": 78,
+        "originalPrice": 98,
+        "image": "",
+        "category": "Fresh Produce",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "DAILYNEST-0001",
+        "specifications": {
+          "Pack": "1 unit",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "MorningMart Dairy & Eggs Value Pack",
+        "description": "Best-selling dairy & eggs pack.",
+        "price": 108,
+        "originalPrice": 133,
+        "image": "",
+        "category": "Dairy & Eggs",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "MORNINGMART-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Chilled / cool",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "FreshNest Bakery Prime",
+        "description": "Daily favorite from DailyNest.",
+        "price": 93,
+        "originalPrice": 117,
+        "image": "",
+        "category": "Bakery",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "FRESHNEST-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "BakeNest Staples Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 128,
+        "originalPrice": 156,
+        "image": "",
+        "category": "Staples",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "BAKENEST-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Fresh Produce",
+        "Dairy & Eggs",
+        "Bakery",
+        "Staples",
+        "Breakfast",
+        "Snacks",
+        "Beverages",
+        "Baby Care",
+        "Home Care",
+        "Frozen"
+      ],
+      "brands": [
+        "DailyNest",
+        "MorningMart",
+        "FreshNest",
+        "BakeNest",
+        "ComfortDaily",
+        "BabyNest"
+      ],
+      "categorySpecifications": {
+        "Fresh Produce": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "2-5 days"
+        },
+        "Dairy & Eggs": {
+          "Pack": "Standard pack",
+          "Storage": "Keep refrigerated",
+          "ShelfLife": "As labelled"
+        },
+        "Bakery": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Staples": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Breakfast": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Baby Care": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Home Care": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Frozen": {
+          "Pack": "Standard pack",
+          "Storage": "Keep refrigerated",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 38,
+      "priceStep": 9,
+      "priceModulo": 1200,
+      "categoryPriceFactor": 4,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

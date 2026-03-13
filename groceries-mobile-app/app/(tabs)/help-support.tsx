@@ -14,41 +14,12 @@ import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 
 import { ThemePalette } from '@/constants/theme';
+import { useProfile } from '@/context/ProfileContext';
 import { useTheme } from '@/context/ThemeContext';
-
-type SupportTicket = {
-  id: string;
-  title: string;
-  status: 'open' | 'resolved';
-  updatedAt: string;
-};
-
-const quickTopics = [
-  { icon: 'local-shipping', label: 'Track order' },
-  { icon: 'undo', label: 'Return & refund' },
-  { icon: 'payments', label: 'Payment issues' },
-  { icon: 'location-on', label: 'Address updates' },
-  { icon: 'inventory-2', label: 'Missing item' },
-  { icon: 'support-agent', label: 'Account help' },
-];
-
-const tickets: SupportTicket[] = [
-  {
-    id: 'TCK-22041',
-    title: 'Refund for order #406-7749123-1098871',
-    status: 'open',
-    updatedAt: 'Updated 2 hours ago',
-  },
-  {
-    id: 'TCK-21789',
-    title: 'Unable to apply wallet balance',
-    status: 'resolved',
-    updatedAt: 'Resolved on 12 January 2026',
-  },
-];
 
 export default function HelpSupportScreen() {
   const { palette } = useTheme();
+  const { profile } = useProfile();
   const styles = useMemo(() => createStyles(palette), [palette]);
   const router = useRouter();
   const { t } = useTranslation();
@@ -83,15 +54,15 @@ export default function HelpSupportScreen() {
               style={styles.searchInput}
             />
           </View>
-          <Text style={styles.searchHint}>
-            Popular searches: refund status, change address, late delivery
+            <Text style={styles.searchHint}>
+            {profile.support.searchHint}
           </Text>
         </View>
 
         <View style={styles.card}>
           <Text style={styles.cardTitle}>{t('quick_help')}</Text>
           <View style={styles.topicGrid}>
-            {quickTopics.map((topic) => (
+            {profile.support.quickTopics.map((topic) => (
               <Pressable
                 key={topic.label}
                 style={styles.topicTile}
@@ -116,7 +87,7 @@ export default function HelpSupportScreen() {
               <Text style={styles.inlineButtonText}>{t('view_all')}</Text>
             </Pressable>
           </View>
-          {tickets.map((ticket) => (
+          {profile.support.tickets.map((ticket) => (
             <View key={ticket.id} style={styles.ticketRow}>
               <View style={styles.ticketStatus}>
                 <MaterialIcons
@@ -140,25 +111,25 @@ export default function HelpSupportScreen() {
         <View style={styles.card}>
           <Text style={styles.cardTitle}>{t('contact_us')}</Text>
           <Text style={styles.cardSubtitle}>
-            We are available 24/7 to help with orders and account issues.
+            {profile.branding.supportHours}
           </Text>
           <View style={styles.contactRow}>
             <Pressable
               style={styles.contactButtonPrimary}
               onPress={() => setShowChat(true)}>
               <MaterialIcons name="chat" size={16} color="#fff" />
-              <Text style={styles.contactButtonPrimaryText}>{t('chat_now')}</Text>
+              <Text style={styles.contactButtonPrimaryText}>{profile.support.contactCta}</Text>
             </Pressable>
             <Pressable
               style={styles.contactButtonSecondary}
               onPress={() => setShowCall(true)}>
               <MaterialIcons name="call" size={16} color={palette.primary} />
-              <Text style={styles.contactButtonSecondaryText}>{t('call_support')}</Text>
+              <Text style={styles.contactButtonSecondaryText}>{profile.support.contactSecondary}</Text>
             </Pressable>
           </View>
           <View style={styles.emailRow}>
             <MaterialIcons name="mail" size={16} color={palette.mutedAlt} />
-            <Text style={styles.emailText}>support@grocerease.com</Text>
+            <Text style={styles.emailText}>{profile.branding.supportEmail}</Text>
           </View>
         </View>
       </ScrollView>
@@ -277,7 +248,7 @@ export default function HelpSupportScreen() {
               </Pressable>
             </View>
             <View style={styles.modalContent}>
-              {tickets.map((ticket) => (
+              {profile.support.tickets.map((ticket) => (
                 <View key={ticket.id} style={styles.ticketRow}>
                   <View style={styles.ticketStatus}>
                     <MaterialIcons

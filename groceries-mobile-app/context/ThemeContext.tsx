@@ -2,6 +2,7 @@ import React, { createContext, useContext, useMemo, useState } from 'react';
 import { useColorScheme } from 'react-native';
 
 import { ThemeLabels, ThemeName, ThemePalette, ThemePresets } from '@/constants/theme';
+import { useProfile } from '@/context/ProfileContext';
 
 type ThemeContextValue = {
   theme: ThemeName;
@@ -16,11 +17,20 @@ const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 export function ThemeSettingsProvider({ children }: { children: React.ReactNode }) {
   const systemScheme = useColorScheme() ?? 'light';
   const [theme, setTheme] = useState<ThemeName>('system');
+  const { profile } = useProfile();
 
   const resolvedTheme =
     theme === 'system' ? (systemScheme === 'dark' ? 'dark' : 'light') : theme;
 
-  const palette = useMemo(() => ThemePresets[resolvedTheme], [resolvedTheme]);
+  const palette = useMemo(() => {
+    if (resolvedTheme === 'light') {
+      return profile.theme.light;
+    }
+    if (resolvedTheme === 'dark') {
+      return profile.theme.dark;
+    }
+    return ThemePresets[resolvedTheme];
+  }, [profile.theme.dark, profile.theme.light, resolvedTheme]);
   const value = useMemo(
     () => ({
       theme,

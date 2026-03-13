@@ -13,380 +13,152 @@ export type Product = {
   specifications?: Record<string, string>;
 };
 
-const categoryImages: Record<string, string[]> = {
-  'Fresh Produce': ['Apple.jpg', 'Banana.jpg', 'Tomato.jpg', 'Cucumber.jpg', 'Spinach.jpg'],
-  'Dairy & Eggs': ['Milk.jpg', 'Eggs.jpg', 'Yogurt.jpg'],
-  Bakery: ['Bread.jpg', 'Croissant.jpg', 'Muffin.jpg'],
-  Staples: ['Rice.jpg', 'Lentils.jpg', 'Flour.jpg'],
-  Snacks: ['Potato_chips.jpg', 'Almonds.jpg', 'Cookies.jpg'],
-  Beverages: ['Orange_juice.jpg', 'Coffee.jpg', 'Sparkling_water.jpg'],
-  Household: ['Laundry_detergent.jpg', 'Dishwashing_liquid.jpg', 'Paper_towels.jpg'],
-  'Personal Care': ['Shampoo.jpg', 'Body_wash.jpg', 'Toothpaste.jpg'],
-  Frozen: ['Frozen_peas.jpg', 'Frozen_pizza.jpg', 'Ice_cream.jpg'],
-  'Ready Meals': ['Ready_meal.jpg', 'Meal_prep.jpg', 'Lunch_box.jpg'],
+export type MobileThemePalette = {
+  name: string;
+  text: string;
+  background: string;
+  tint: string;
+  icon: string;
+  tabIconDefault: string;
+  tabIconSelected: string;
+  card: string;
+  cardAlt: string;
+  border: string;
+  muted: string;
+  mutedAlt: string;
+  primary: string;
+  primaryDark: string;
+  primarySoft: string;
+  danger: string;
+  warning: string;
+  success: string;
+  badge: string;
+  badgeText: string;
+  chip: string;
+  chipText: string;
+  chipActive: string;
+  chipActiveText: string;
 };
 
-const filePath = (fileName: string) =>
-  `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(fileName)}?width=640`;
+export type MobileProfileConfig = {
+  id: string;
+  branding: {
+    name: string;
+    subtitle: string;
+    supportEmail: string;
+    supportPhone: string;
+    supportHours: string;
+    serviceArea: string;
+    accountName: string;
+    accountEmail: string;
+    accountPhone: string;
+    memberSince: string;
+    avatar: string;
+  };
+  hero: {
+    badgePrimary: string;
+    badgeSecondary: string;
+    title: string;
+    subtitle: string;
+    aboutTitle: string;
+    aboutText: string;
+    contactTitle: string;
+    contactText: string;
+  };
+  support: {
+    quickTopics: { icon: string; label: string }[];
+    tickets: { id: string; title: string; status: 'open' | 'resolved'; updatedAt: string }[];
+    searchHint: string;
+    contactCta: string;
+    contactSecondary: string;
+  };
+  theme: {
+    light: MobileThemePalette;
+    dark: MobileThemePalette;
+  };
+  catalog: {
+    seedProducts: Product[];
+    generation: {
+      minProductCount: number;
+      categories: string[];
+      brands: string[];
+      categorySpecifications: Record<string, Record<string, string>>;
+      basePriceStart: number;
+      priceStep: number;
+      priceModulo: number;
+      categoryPriceFactor: number;
+      discountEvery: number;
+      discountRate: number;
+    };
+  };
+};
 
-const imageFor = (category: string, seed: number) => {
-  const images = categoryImages[category];
-  if (!images || images.length === 0) {
-    return filePath('Grocery_bag.jpg');
+const imagePalette = ['#f2a65a', '#7bb661', '#4aa3df', '#e76f51', '#f4d35e', '#8ab17d', '#a56cc1'];
+
+export function buildImageDataUrl(category: string, seed: number, brand = 'Grocer') {
+  const accent = imagePalette[seed % imagePalette.length];
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640"><rect width="640" height="640" rx="48" fill="#f8faf6"/><rect x="72" y="72" width="496" height="496" rx="36" fill="#ffffff" stroke="#dbe7d8"/><circle cx="476" cy="170" r="64" fill="${accent}" opacity="0.8"/><circle cx="188" cy="470" r="74" fill="${accent}" opacity="0.4"/><text x="96" y="166" fill="#173223" font-family="Arial, sans-serif" font-size="40">${category.toUpperCase()}</text><text x="96" y="224" fill="#173223" font-family="Georgia, serif" font-size="58">${brand}</text><text x="96" y="548" fill="#5d7466" font-family="Arial, sans-serif" font-size="28">Item ${String(seed).padStart(4, '0')}</text></svg>`;
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+export function buildProducts(profile: MobileProfileConfig): Product[] {
+  const seeds = (profile.catalog.seedProducts || []).map((product, index) => ({
+    ...product,
+    id: product.id || index + 1,
+    image: product.image || buildImageDataUrl(product.category, product.id || index + 1, profile.branding.name),
+    inStock: product.inStock !== false,
+    rating: product.rating ?? getRating(index),
+    reviews: product.reviews ?? getReviews(index),
+    specifications: product.specifications ?? profile.catalog.generation.categorySpecifications[product.category],
+  }));
+
+  const products = [...seeds];
+  const generation = profile.catalog.generation;
+  const suffixes = ['Classic', 'Daily Pick', 'Value Pack', 'Prime', 'Fresh Cut', 'Smart Buy', 'Signature', 'Express', 'Reserve', 'Family Pack'];
+  const descriptors = ['Freshly packed', 'Daily essential', 'Fast-moving', 'Premium quality', 'Kitchen-ready', 'Popular basket', 'Weekly favorite', 'Top value'];
+  let nextId = products.length + 1;
+  let index = 0;
+
+  while (products.length < generation.minProductCount) {
+    const category = generation.categories[index % generation.categories.length];
+    const brand = generation.brands[index % generation.brands.length];
+    const suffix = suffixes[index % suffixes.length];
+    const basePrice = generation.basePriceStart + ((index * generation.priceStep) % generation.priceModulo);
+    const price = Math.round(basePrice + category.length * generation.categoryPriceFactor);
+    const discounted = generation.discountEvery > 0 && nextId % generation.discountEvery === 0;
+    const originalPrice = discounted ? Math.round(price * (1 + generation.discountRate)) : undefined;
+    const name = `${brand} ${category} ${suffix} ${String(nextId).padStart(4, '0')}`;
+
+    products.push({
+      id: nextId,
+      name,
+      description: `${descriptors[index % descriptors.length]} ${category.toLowerCase()} from ${brand}.`,
+      price,
+      originalPrice,
+      image: buildImageDataUrl(category, nextId, profile.branding.name),
+      category,
+      inStock: nextId % 11 !== 0,
+      rating: getRating(index + 5),
+      reviews: getReviews(index + 11),
+      sku: `${brand.toUpperCase().replace(/[^A-Z0-9]/g, '')}-${category.toUpperCase().replace(/[^A-Z0-9]/g, '')}-${String(nextId).padStart(4, '0')}`,
+      specifications: generation.categorySpecifications[category] ?? { Pack: 'Standard', Storage: 'Room temperature' },
+    });
+
+    nextId += 1;
+    index += 1;
   }
-  return filePath(images[Math.abs(seed) % images.length]);
-};
 
-export const products: Product[] = [
-  {
-    id: 1,
-    name: 'Crisp Gala Apples (1 kg)',
-    description: 'Sweet and crunchy apples for snacking and salads.',
-    price: 160,
-    originalPrice: 195,
-    image: imageFor('Fresh Produce', 1),
-    category: 'Fresh Produce',
-    inStock: true,
-    rating: 4.7,
-    reviews: 1840,
-    sku: 'FRESH-APPLE-1KG',
-    specifications: {
-      'Net Weight': '1 kg',
-      Origin: 'Himachal',
-      Storage: 'Cool and dry',
-      'Best For': 'Snacking, salads',
-    },
-  },
-  {
-    id: 2,
-    name: 'Bananas (Robusta, 6 pcs)',
-    description: 'Everyday bananas with smooth texture and natural sweetness.',
-    price: 48,
-    originalPrice: 60,
-    image: imageFor('Fresh Produce', 2),
-    category: 'Fresh Produce',
-    inStock: true,
-    rating: 4.6,
-    reviews: 2120,
-    sku: 'FRESH-BANANA-6PK',
-    specifications: {
-      Count: '6 pcs',
-      Ripeness: 'Ready to eat',
-      Origin: 'Andhra Pradesh',
-      Storage: 'Room temperature',
-    },
-  },
-  {
-    id: 3,
-    name: 'Vine Tomatoes (500 g)',
-    description: 'Juicy tomatoes for curries, salads, and sauces.',
-    price: 62,
-    originalPrice: 75,
-    image: imageFor('Fresh Produce', 3),
-    category: 'Fresh Produce',
-    inStock: true,
-    rating: 4.5,
-    reviews: 1480,
-    sku: 'FRESH-TOMATO-500G',
-    specifications: {
-      'Net Weight': '500 g',
-      Origin: 'Karnataka',
-      Storage: 'Cool and dry',
-      'Best For': 'Cooking, salads',
-    },
-  },
-  {
-    id: 4,
-    name: 'English Cucumber (2 pcs)',
-    description: 'Fresh cucumbers with mild flavor and crunch.',
-    price: 55,
-    originalPrice: 70,
-    image: imageFor('Fresh Produce', 4),
-    category: 'Fresh Produce',
-    inStock: true,
-    rating: 4.4,
-    reviews: 980,
-    sku: 'FRESH-CUKE-2PK',
-    specifications: {
-      Count: '2 pcs',
-      Origin: 'Telangana',
-      Storage: 'Refrigerate',
-      'Best For': 'Salads, raita',
-    },
-  },
-  {
-    id: 5,
-    name: 'Toned Milk (1 L)',
-    description: 'Daily dairy essential with balanced fat content.',
-    price: 64,
-    originalPrice: 72,
-    image: imageFor('Dairy & Eggs', 5),
-    category: 'Dairy & Eggs',
-    inStock: true,
-    rating: 4.8,
-    reviews: 3520,
-    sku: 'DAIRY-MILK-1L',
-  },
-  {
-    id: 6,
-    name: 'Farm Eggs (12 pcs)',
-    description: 'Farm-fresh eggs for breakfast and baking.',
-    price: 84,
-    originalPrice: 98,
-    image: imageFor('Dairy & Eggs', 6),
-    category: 'Dairy & Eggs',
-    inStock: true,
-    rating: 4.7,
-    reviews: 2670,
-    sku: 'DAIRY-EGGS-12PK',
-  },
-  {
-    id: 7,
-    name: 'Greek Yogurt (400 g)',
-    description: 'Thick, creamy yogurt with high protein.',
-    price: 110,
-    originalPrice: 130,
-    image: imageFor('Dairy & Eggs', 7),
-    category: 'Dairy & Eggs',
-    inStock: true,
-    rating: 4.6,
-    reviews: 1190,
-    sku: 'DAIRY-YOGURT-400G',
-  },
-  {
-    id: 8,
-    name: 'Whole Wheat Bread (400 g)',
-    description: 'Soft slices with whole grain goodness.',
-    price: 55,
-    originalPrice: 70,
-    image: imageFor('Bakery', 8),
-    category: 'Bakery',
-    inStock: true,
-    rating: 4.5,
-    reviews: 860,
-    sku: 'BAKERY-WHEAT-400G',
-  },
-  {
-    id: 9,
-    name: 'Butter Croissants (4 pcs)',
-    description: 'Flaky croissants baked daily.',
-    price: 120,
-    originalPrice: 150,
-    image: imageFor('Bakery', 9),
-    category: 'Bakery',
-    inStock: true,
-    rating: 4.6,
-    reviews: 740,
-    sku: 'BAKERY-CROISS-4PK',
-  },
-  {
-    id: 10,
-    name: 'Classic Muffins (6 pcs)',
-    description: 'Soft muffins with a vanilla finish.',
-    price: 135,
-    originalPrice: 160,
-    image: imageFor('Bakery', 10),
-    category: 'Bakery',
-    inStock: true,
-    rating: 4.4,
-    reviews: 610,
-    sku: 'BAKERY-MUFF-6PK',
-  },
-  {
-    id: 11,
-    name: 'Basmati Rice (5 kg)',
-    description: 'Long-grain rice with aromatic flavor.',
-    price: 540,
-    originalPrice: 620,
-    image: imageFor('Staples', 11),
-    category: 'Staples',
-    inStock: true,
-    rating: 4.8,
-    reviews: 1990,
-    sku: 'STAPLE-RICE-5KG',
-  },
-  {
-    id: 12,
-    name: 'Toor Dal (1 kg)',
-    description: 'Protein-rich lentils for daily meals.',
-    price: 165,
-    originalPrice: 195,
-    image: imageFor('Staples', 12),
-    category: 'Staples',
-    inStock: true,
-    rating: 4.6,
-    reviews: 1420,
-    sku: 'STAPLE-DAL-1KG',
-  },
-  {
-    id: 13,
-    name: 'All Purpose Flour (1 kg)',
-    description: 'Finely milled flour for baking and cooking.',
-    price: 58,
-    originalPrice: 70,
-    image: imageFor('Staples', 13),
-    category: 'Staples',
-    inStock: true,
-    rating: 4.5,
-    reviews: 1020,
-    sku: 'STAPLE-FLOUR-1KG',
-  },
-  {
-    id: 14,
-    name: 'Sea Salt Potato Chips (150 g)',
-    description: 'Crunchy chips with a clean sea salt finish.',
-    price: 65,
-    originalPrice: 80,
-    image: imageFor('Snacks', 14),
-    category: 'Snacks',
-    inStock: true,
-    rating: 4.4,
-    reviews: 860,
-    sku: 'SNACK-CHIPS-150G',
-  },
-  {
-    id: 15,
-    name: 'Roasted Almonds (200 g)',
-    description: 'Lightly roasted almonds for healthy snacking.',
-    price: 220,
-    originalPrice: 260,
-    image: imageFor('Snacks', 15),
-    category: 'Snacks',
-    inStock: true,
-    rating: 4.7,
-    reviews: 1260,
-    sku: 'SNACK-ALMOND-200G',
-  },
-  {
-    id: 16,
-    name: 'Sparkling Water (6 x 330 ml)',
-    description: 'Refreshing sparkling water with zero sugar.',
-    price: 180,
-    originalPrice: 210,
-    image: imageFor('Beverages', 16),
-    category: 'Beverages',
-    inStock: true,
-    rating: 4.5,
-    reviews: 690,
-    sku: 'BEV-SPARK-6PK',
-  },
-  {
-    id: 17,
-    name: 'Orange Juice (1 L)',
-    description: 'Cold pressed juice with no added sugar.',
-    price: 140,
-    originalPrice: 165,
-    image: imageFor('Beverages', 17),
-    category: 'Beverages',
-    inStock: true,
-    rating: 4.6,
-    reviews: 740,
-    sku: 'BEV-OJ-1L',
-  },
-  {
-    id: 18,
-    name: 'Fresh Brew Coffee (500 ml)',
-    description: 'Chilled coffee for quick energy.',
-    price: 110,
-    originalPrice: 130,
-    image: imageFor('Beverages', 18),
-    category: 'Beverages',
-    inStock: true,
-    rating: 4.4,
-    reviews: 540,
-    sku: 'BEV-COFFEE-500ML',
-  },
-  {
-    id: 19,
-    name: 'Laundry Detergent (2 L)',
-    description: 'Concentrated liquid detergent for bright washes.',
-    price: 320,
-    originalPrice: 360,
-    image: imageFor('Household', 19),
-    category: 'Household',
-    inStock: true,
-    rating: 4.6,
-    reviews: 810,
-    sku: 'HOME-DETER-2L',
-  },
-  {
-    id: 20,
-    name: 'Dish Wash Liquid (1 L)',
-    description: 'Cut grease fast with lemon freshness.',
-    price: 110,
-    originalPrice: 135,
-    image: imageFor('Household', 20),
-    category: 'Household',
-    inStock: true,
-    rating: 4.5,
-    reviews: 640,
-    sku: 'HOME-DISH-1L',
-  },
-  {
-    id: 21,
-    name: 'Aloe Shower Gel (500 ml)',
-    description: 'Gentle body wash with aloe freshness.',
-    price: 180,
-    originalPrice: 210,
-    image: imageFor('Personal Care', 21),
-    category: 'Personal Care',
-    inStock: true,
-    rating: 4.5,
-    reviews: 530,
-    sku: 'CARE-GEL-500ML',
-  },
-  {
-    id: 22,
-    name: 'Herbal Shampoo (340 ml)',
-    description: 'Daily shampoo with herbal extracts.',
-    price: 220,
-    originalPrice: 250,
-    image: imageFor('Personal Care', 22),
-    category: 'Personal Care',
-    inStock: true,
-    rating: 4.4,
-    reviews: 710,
-    sku: 'CARE-SHAM-340ML',
-  },
-  {
-    id: 23,
-    name: 'Frozen Green Peas (500 g)',
-    description: 'Quick frozen peas for curries and pulao.',
-    price: 110,
-    originalPrice: 130,
-    image: imageFor('Frozen', 23),
-    category: 'Frozen',
-    inStock: true,
-    rating: 4.5,
-    reviews: 680,
-    sku: 'FROZEN-PEAS-500G',
-  },
-  {
-    id: 24,
-    name: 'Margherita Frozen Pizza (300 g)',
-    description: 'Stone baked base with mozzarella topping.',
-    price: 190,
-    originalPrice: 225,
-    image: imageFor('Frozen', 24),
-    category: 'Frozen',
-    inStock: true,
-    rating: 4.3,
-    reviews: 460,
-    sku: 'FROZEN-PIZZA-300G',
-  },
-  {
-    id: 25,
-    name: 'Ready Veggie Bowl (350 g)',
-    description: 'Ready meal with grains, veggies, and sauce.',
-    price: 160,
-    originalPrice: 190,
-    image: imageFor('Ready Meals', 25),
-    category: 'Ready Meals',
-    inStock: true,
-    rating: 4.2,
-    reviews: 390,
-    sku: 'READY-BOWL-350G',
-  },
-];
+  return products;
+}
 
-export const categories = Array.from(new Set(products.map((p) => p.category)));
+export function buildCategories(products: Product[]) {
+  return Array.from(new Set(products.map((product) => product.category)));
+}
+
+function getRating(seed: number) {
+  return Number((4.1 + (seed % 8) * 0.1).toFixed(1));
+}
+
+function getReviews(seed: number) {
+  return 240 + ((seed * 173) % 4200);
+}

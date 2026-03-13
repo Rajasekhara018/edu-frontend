@@ -7,17 +7,18 @@ import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 
 import { useCart } from '@/context/CartContext';
+import { useProfile } from '@/context/ProfileContext';
 import { useTheme } from '@/context/ThemeContext';
-import { products } from '@/data/products';
 import { ThemePalette } from '@/constants/theme';
 
-const formatPrice = (value: number) => `â‚¹${value.toFixed(0)}`;
+const formatPrice = (value: number) => `Rs ${value.toFixed(0)}`;
 
 export default function ProductDetailsScreen() {
   const { id } = useLocalSearchParams<{ id?: string }>();
   const router = useRouter();
   const { t } = useTranslation();
   const { addItem, totalItems } = useCart();
+  const { products, profile } = useProfile();
   const { palette } = useTheme();
   const styles = useMemo(() => createStyles(palette), [palette]);
 
@@ -87,7 +88,7 @@ export default function ProductDetailsScreen() {
 
         {product.specifications ? (
           <View style={styles.specCard}>
-            <Text style={styles.specTitle}>Product details</Text>
+            <Text style={styles.specTitle}>{profile.branding.name} details</Text>
             {Object.entries(product.specifications).map(([key, value]) => (
               <View key={key} style={styles.specRow}>
                 <Text style={styles.specKey}>{key}</Text>
@@ -353,3 +354,4 @@ const createStyles = (palette: ThemePalette) =>
       color: palette.text,
     },
   });
+

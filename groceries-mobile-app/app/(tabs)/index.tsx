@@ -17,8 +17,8 @@ import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 
 import { useCart } from '@/context/CartContext';
+import { useProfile } from '@/context/ProfileContext';
 import { useTheme } from '@/context/ThemeContext';
-import { categories, products } from '@/data/products';
 import { ThemePalette } from '@/constants/theme';
 
 const ratingOptions = [4.5, 4.0, 3.5];
@@ -30,6 +30,7 @@ export default function HomeScreen() {
   const { t } = useTranslation();
   const { width } = useWindowDimensions();
   const { addItem, totalItems } = useCart();
+  const { profile, products, categories } = useProfile();
   const { palette } = useTheme();
   const styles = useMemo(() => createStyles(palette), [palette]);
 
@@ -74,7 +75,7 @@ export default function HomeScreen() {
         matchesRating
       );
     });
-  }, [maxPriceInput, minPriceInput, minRating, search, selectedCategory]);
+  }, [maxPriceInput, minPriceInput, minRating, products, search, selectedCategory]);
 
   const handleApplyFilters = () => {
     if (width < 1280) {
@@ -97,8 +98,8 @@ export default function HomeScreen() {
     <SafeAreaView edges={['top', 'left', 'right']} style={styles.safeArea}>
       <View style={styles.header}>
         <View>
-          <Text style={styles.brandTitle}>{t('home_title')}</Text>
-          <Text style={styles.brandSubtitle}>{t('home_subtitle')}</Text>
+          <Text style={styles.brandTitle}>{profile.branding.name}</Text>
+          <Text style={styles.brandSubtitle}>{profile.branding.subtitle}</Text>
         </View>
         <View style={styles.headerActions}>
           <Pressable
@@ -136,39 +137,25 @@ export default function HomeScreen() {
               <View style={styles.heroBadgeRow}>
                 <View style={styles.heroBadge}>
                   <MaterialIcons name="bolt" size={16} color="#fff" />
-                  <Text style={styles.heroBadgeText}>30 min delivery</Text>
+                  <Text style={styles.heroBadgeText}>{profile.hero.badgePrimary}</Text>
                 </View>
                 <View style={styles.heroBadgeAlt}>
                   <MaterialIcons name="verified" size={16} color={palette.primary} />
-                  <Text style={styles.heroBadgeAltText}>Freshness guaranteed</Text>
+                  <Text style={styles.heroBadgeAltText}>{profile.hero.badgeSecondary}</Text>
                 </View>
               </View>
-              <Text style={styles.heroTitle}>
-                Build your weekly basket with farm-fresh produce and pantry
-                staples.
-              </Text>
-              <Text style={styles.heroSubtitle}>
-                Daily offers on dairy, snacks, and household essentials with
-                secure payments.
-              </Text>
+              <Text style={styles.heroTitle}>{profile.hero.title}</Text>
+              <Text style={styles.heroSubtitle}>{profile.hero.subtitle}</Text>
             </View>
 
             <View style={styles.infoSection}>
               <View style={styles.infoCard}>
-                <Text style={styles.infoTitle}>About us</Text>
-                <Text style={styles.infoText}>
-                  Zepto is a Hyderabad-first grocery app focused on fast,
-                  reliable daily essentials delivered from nearby partner
-                  stores.
-                </Text>
+                <Text style={styles.infoTitle}>{profile.hero.aboutTitle}</Text>
+                <Text style={styles.infoText}>{profile.hero.aboutText}</Text>
               </View>
               <View style={styles.infoCard}>
-                <Text style={styles.infoTitle}>Contact us</Text>
-                <Text style={styles.infoText}>
-                  City: Hyderabad{'\n'}
-                  Support hours: 6:00 AM - 12:00 PM, daily{'\n'}
-                  Reach us via in-app support
-                </Text>
+                <Text style={styles.infoTitle}>{profile.hero.contactTitle}</Text>
+                <Text style={styles.infoText}>{profile.hero.contactText}</Text>
               </View>
             </View>
 

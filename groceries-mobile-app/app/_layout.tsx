@@ -6,10 +6,9 @@ import React, { useEffect, useMemo } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { CartProvider } from '@/context/CartContext';
+import { ProfileProvider } from '@/context/ProfileContext';
 import { ThemeSettingsProvider, useTheme } from '@/context/ThemeContext';
 import { loadSavedLanguage } from '@/i18n';
-
-import '@/i18n';
 
 export const unstable_settings = {
   anchor: '(tabs)',
@@ -55,9 +54,11 @@ export default function RootLayout() {
 
   return (
     <SafeAreaProvider>
-      <ThemeSettingsProvider>
-        <AppShell />
-      </ThemeSettingsProvider>
+      <ProfileProvider>
+        <ThemeSettingsProvider>
+          <AppShell />
+        </ThemeSettingsProvider>
+      </ProfileProvider>
     </SafeAreaProvider>
   );
 }

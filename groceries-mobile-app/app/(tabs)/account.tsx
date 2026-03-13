@@ -17,21 +17,22 @@ import * as ImagePicker from 'expo-image-picker';
 import * as ImageManipulator from 'expo-image-manipulator';
 
 import { ThemePalette } from '@/constants/theme';
+import { useProfile } from '@/context/ProfileContext';
 import { useTheme } from '@/context/ThemeContext';
-
-const userProfile = {
-  name: 'Sai Durga Reddy',
-  email: 'saired..@mail.com',
-  phone: '+91 98765 43210',
-  memberSince: 'Member since 2023',
-  avatar: 'https://i.pravatar.cc/160?img=32',
-};
 
 export default function AccountScreen() {
   const { palette } = useTheme();
+  const { profile: appProfile } = useProfile();
   const styles = useMemo(() => createStyles(palette), [palette]);
   const router = useRouter();
   const { t } = useTranslation();
+  const userProfile = useMemo(() => ({
+    name: appProfile.branding.accountName,
+    email: appProfile.branding.accountEmail,
+    phone: appProfile.branding.accountPhone,
+    memberSince: appProfile.branding.memberSince,
+    avatar: appProfile.branding.avatar,
+  }), [appProfile.branding]);
   const [profile, setProfile] = useState(userProfile);
   const [showEdit, setShowEdit] = useState(false);
   const [draft, setDraft] = useState(userProfile);
@@ -76,7 +77,7 @@ export default function AccountScreen() {
 
       setDraft({ ...draft, avatar: manipulated.uri });
       setImageNote('Photo updated. Save changes to apply.');
-    } catch (error) {
+    } catch {
       setImageNote('Unable to update photo.');
     }
   };
