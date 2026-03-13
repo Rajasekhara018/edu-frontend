@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "TerraVolt Systems",
+    "tagline": "TerraVolt Systems powers homes, projects, and trade counters with verified electrical inventory.",
+    "logoMark": "TV",
+    "logoText": "TerraVolt",
+    "logoDot": ".sys",
+    "pageTitle": "TerraVolt Systems",
+    "locationLabel": "Energy yard: Ahmedabad",
+    "accountLabel": "Trade account",
+    "footerTagline": "TerraVolt Systems supplies dependable electrical products for retail, contractors, and project teams.",
+    "footerCopyright": "? 2026 TerraVolt Systems. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #ecfdf5 0%, #d1fae5 42%, #6ee7b7 100%)",
+    "ink": "#08241c",
+    "muted": "#3e6b5d",
+    "accent": "#059669",
+    "accentStrong": "#047857",
+    "neon": "#6ee7b7",
+    "mint": "#d1fae5",
+    "cream": "#f4fffb",
+    "panel": "#ffffff",
+    "border": "rgba(8, 36, 28, 0.12)",
+    "shadow": "0 18px 40px rgba(8, 36, 28, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #effff7 0%, #d8fbe9 48%, #6ee7b7 100%)",
+    "headerBorder": "rgba(8, 36, 28, 0.08)",
+    "darkSurface": "#08241c",
+    "darkSurfaceAlt": "#12382d",
+    "onDark": "#f4fffb",
+    "onDarkMuted": "#d1efe2",
+    "focusRing": "rgba(5, 150, 105, 0.18)"
+  },
+  "about": {
+    "eyebrow": "TerraVolt Systems",
+    "title": "TerraVolt Systems keeps every site, room, and panel powered with dependable inventory.",
+    "description": "TerraVolt Systems curates fast-moving electrical products across solar, power solutions, batteries, panels and project essentials with responsive trade support."
+  },
+  "contact": {
+    "title": "Need pricing from TerraVolt Systems?",
+    "ctaLabel": "Request trade callback",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Sales desk",
+        "lines": [
+          "+91 (810) 200-4411",
+          "+91 (810) 200-4412"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "sales@terravoltsystems.in",
+          "support@terravoltsystems.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 200-4411",
+      "support@terravoltsystems.in",
+      "Energy yard: Ahmedabad"
+    ],
+    "appCtaLabel": "Get bulk quote"
+  },
+  "hero": {
+    "eyebrow": "TerraVolt Systems",
+    "title": "TerraVolt Systems delivers electrical stock that is ready for counters, contractors, and projects.",
+    "subtitle": "Shop solar, power solutions, batteries and more with transparent pricing, verified brands, and reliable dispatch.",
+    "tags": [
+      "Verified brands",
+      "Dispatch in 72 hrs",
+      "Trade pricing"
+    ],
+    "cardTitle": "This week's focus",
+    "cardItems": [
+      "Solar essentials",
+      "Power Solutions best sellers",
+      "Batteries project picks"
+    ],
+    "deliveryLine": "Dispatch in 72 hrs",
+    "detailDeliveryLine": "Dispatch in 72 hrs",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Solar",
+    "Power Solutions",
+    "Batteries",
+    "Panels",
+    "Cables",
+    "Switches",
+    "Lighting",
+    "Meters"
+  ],
+  "navLinks": [
+    "Solar",
+    "Power Solutions",
+    "Batteries",
+    "Panels",
+    "Cables",
+    "Switches",
+    "Trade desk",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Solar",
+    "Power Solutions",
+    "Batteries",
+    "Panels",
+    "Cables",
+    "Deals",
+    "Trade desk",
+    "Account",
+    "Orders"
+  ],
+  "promoMessages": [
+    "Solar quotations prioritised",
+    "Site packages available this month"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Luminous",
+        "Exide",
+        "Microtek",
+        "Polycab",
+        "Waaree",
+        "Schneider"
+      ],
+      "categories": [
+        "Solar",
+        "Power Solutions",
+        "Batteries",
+        "Panels",
+        "Cables",
+        "Switches",
+        "Lighting",
+        "Meters",
+        "Safety",
+        "Tools"
+      ],
+      "categorySpecifications": {
+        "Tools": {
+          "Power": "Project grade",
+          "Finish": "Durable",
+          "Usage": "Trade use",
+          "Warranty": "1 year"
+        }
+      },
+      "basePriceStart": 999,
+      "priceStep": 73,
+      "priceModulo": 85000,
+      "categoryPriceFactor": 29,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}

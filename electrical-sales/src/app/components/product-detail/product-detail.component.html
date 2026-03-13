@@ -55,7 +55,7 @@
           <i [ngClass]="{'bi bi-check-circle': product.inStock, 'bi bi-x-circle': !product.inStock}"></i>
           {{ product.inStock ? 'In Stock' : 'Out of Stock' }}
         </span>
-        <span class="delivery">FREE delivery Tomorrow</span>
+        <span class="delivery">{{ salesConfig.salesConfig.hero.detailDeliveryLine }}</span>
       </div>
 
       <div class="description-section">
@@ -106,7 +106,7 @@
 
   <!-- Related Products Section -->
   <div *ngIf="relatedProducts.length > 0" class="related-products-section">
-    <h2>Related Products</h2>
+    <h2>{{ salesConfig.salesConfig.hero.relatedTitle }}</h2>
     <div class="related-products-grid">
       <div *ngFor="let relProduct of relatedProducts" class="related-product-card" (click)="viewRelatedProduct(relProduct.id)">
         <div class="related-product-image">

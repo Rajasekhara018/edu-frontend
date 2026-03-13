@@ -1,21 +1,17 @@
 <div class="products-page">
   <section class="market-hero">
     <div class="hero-content">
-      <p class="eyebrow">Electrical Sales</p>
-      <h1>Power-ready supplies for homes, projects, and businesses.</h1>
-      <p class="subtext">Shop certified lighting, wiring, safety gear, and power solutions with dependable dispatch and transparent pricing.</p>
+      <p class="eyebrow">{{ salesConfig.salesConfig.hero.eyebrow }}</p>
+      <h1>{{ salesConfig.salesConfig.hero.title }}</h1>
+      <p class="subtext">{{ salesConfig.salesConfig.hero.subtitle }}</p>
       <div class="hero-tags">
-        <span>Verified brands</span>
-        <span>Bulk pricing</span>
-        <span>Fast dispatch</span>
+        <span *ngFor="let tag of salesConfig.salesConfig.hero.tags">{{ tag }}</span>
       </div>
     </div>
     <div class="hero-card">
-      <p class="card-title">This week's focus</p>
+      <p class="card-title">{{ salesConfig.salesConfig.hero.cardTitle }}</p>
       <ul>
-        <li>LED panels and smart lighting</li>
-        <li>Industrial-grade switches</li>
-        <li>Inverters and surge protection</li>
+        <li *ngFor="let item of salesConfig.salesConfig.hero.cardItems">{{ item }}</li>
       </ul>
     </div>
   </section>
@@ -225,7 +221,7 @@
               </span>
             </div>
 
-            <div class="delivery-line">FREE delivery <strong>Tomorrow</strong></div>
+            <div class="delivery-line">{{ salesConfig.salesConfig.hero.deliveryLine }}</div>
             <div class="popularity" *ngIf="getPopularityText(product)">{{ getPopularityText(product) }}</div>
 
             <!-- Stock Status -->

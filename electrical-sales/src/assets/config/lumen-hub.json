@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "LumenHub Electric",
+    "tagline": "LumenHub Electric powers homes, projects, and trade counters with verified electrical inventory.",
+    "logoMark": "LH",
+    "logoText": "LumenHub",
+    "logoDot": ".light",
+    "pageTitle": "LumenHub Electric",
+    "locationLabel": "Lighting desk: Secunderabad",
+    "accountLabel": "Trade account",
+    "footerTagline": "LumenHub Electric supplies dependable electrical products for retail, contractors, and project teams.",
+    "footerCopyright": "? 2026 LumenHub Electric. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff7ed 0%, #ffedd5 40%, #fde68a 100%)",
+    "ink": "#2b1806",
+    "muted": "#6c5437",
+    "accent": "#d97706",
+    "accentStrong": "#b45309",
+    "neon": "#fde68a",
+    "mint": "#fef3c7",
+    "cream": "#fffbeb",
+    "panel": "#ffffff",
+    "border": "rgba(43, 24, 6, 0.12)",
+    "shadow": "0 18px 40px rgba(43, 24, 6, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #fff7e8 0%, #ffe7bf 48%, #fde68a 100%)",
+    "headerBorder": "rgba(43, 24, 6, 0.08)",
+    "darkSurface": "#2b1806",
+    "darkSurfaceAlt": "#47260a",
+    "onDark": "#fffaf0",
+    "onDarkMuted": "#f4e1b6",
+    "focusRing": "rgba(217, 119, 6, 0.18)"
+  },
+  "about": {
+    "eyebrow": "LumenHub Electric",
+    "title": "LumenHub Electric keeps every site, room, and panel powered with dependable inventory.",
+    "description": "LumenHub Electric curates fast-moving electrical products across lighting, smart lighting, decor lights, emergency lights and project essentials with responsive trade support."
+  },
+  "contact": {
+    "title": "Need pricing from LumenHub Electric?",
+    "ctaLabel": "Request trade callback",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Sales desk",
+        "lines": [
+          "+91 (810) 200-4411",
+          "+91 (810) 200-4412"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "sales@lumenhubelectric.in",
+          "support@lumenhubelectric.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 200-4411",
+      "support@lumenhubelectric.in",
+      "Lighting desk: Secunderabad"
+    ],
+    "appCtaLabel": "Get bulk quote"
+  },
+  "hero": {
+    "eyebrow": "LumenHub Electric",
+    "title": "LumenHub Electric delivers electrical stock that is ready for counters, contractors, and projects.",
+    "subtitle": "Shop lighting, smart lighting, decor lights and more with transparent pricing, verified brands, and reliable dispatch.",
+    "tags": [
+      "Verified brands",
+      "Dispatch in 24 hrs",
+      "Trade pricing"
+    ],
+    "cardTitle": "This week's focus",
+    "cardItems": [
+      "Lighting essentials",
+      "Smart Lighting best sellers",
+      "Decor Lights project picks"
+    ],
+    "deliveryLine": "Dispatch in 24 hrs",
+    "detailDeliveryLine": "Dispatch in 24 hrs",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Lighting",
+    "Smart Lighting",
+    "Decor Lights",
+    "Emergency Lights",
+    "Street Lights",
+    "Drivers",
+    "Sensors",
+    "Switches"
+  ],
+  "navLinks": [
+    "Lighting",
+    "Smart Lighting",
+    "Decor Lights",
+    "Emergency Lights",
+    "Street Lights",
+    "Drivers",
+    "Trade desk",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Lighting",
+    "Smart Lighting",
+    "Decor Lights",
+    "Emergency Lights",
+    "Street Lights",
+    "Deals",
+    "Trade desk",
+    "Account",
+    "Orders"
+  ],
+  "promoMessages": [
+    "Free lighting consultation",
+    "Panel and project bundles available"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Philips",
+        "Syska",
+        "Wipro",
+        "Halonix",
+        "Havells",
+        "Panasonic"
+      ],
+      "categories": [
+        "Lighting",
+        "Smart Lighting",
+        "Decor Lights",
+        "Emergency Lights",
+        "Street Lights",
+        "Drivers",
+        "Sensors",
+        "Switches",
+        "Cables",
+        "Safety"
+      ],
+      "categorySpecifications": {
+        "Safety": {
+          "Power": "Project grade",
+          "Finish": "Durable",
+          "Usage": "Trade use",
+          "Warranty": "1 year"
+        }
+      },
+      "basePriceStart": 199,
+      "priceStep": 29,
+      "priceModulo": 18000,
+      "categoryPriceFactor": 12,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}

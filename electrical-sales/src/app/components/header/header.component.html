@@ -1,29 +1,24 @@
 <header class="mega-header">
   <div class="top-bar">
-    <div class="brand" aria-label="Electrical Sales home">
-      <div class="logo-mark">ES</div>
-      <div class="logo-text">Electro<span class="logo-dot">.in</span></div>
+    <div class="brand" [attr.aria-label]="salesConfig.salesConfig.branding.name + ' home'">
+      <div class="logo-mark">{{ salesConfig.salesConfig.branding.logoMark }}</div>
+      <div class="logo-text">{{ salesConfig.salesConfig.branding.logoText }}<span class="logo-dot">{{ salesConfig.salesConfig.branding.logoDot }}</span></div>
     </div>
 
     <button class="location" type="button">
       <span class="loc-line">
         <span class="loc-dot"></span>
-        Delivering to Hyderabad 500062
+        {{ salesConfig.salesConfig.branding.locationLabel }}
       </span>
-      <span class="loc-action">Update location</span>
+      <span class="loc-action">{{ salesConfig.salesConfig.branding.locationAction }}</span>
     </button>
 
     <div class="search">
       <label class="sr-only" for="product-search">Search products</label>
       <select aria-label="Search category">
-        <option>All</option>
-        <option>Lighting</option>
-        <option>Fans & Coolers</option>
-        <option>Power Solutions</option>
-        <option>Kitchen</option>
-        <option>Appliances</option>
+        <option *ngFor="let category of salesConfig.salesConfig.searchCategories">{{ category }}</option>
       </select>
-      <input id="product-search" type="text" placeholder="Search Electrical Sales" />
+      <input id="product-search" type="text" [placeholder]="salesConfig.salesConfig.branding.searchPlaceholder" />
       <button class="search-btn" type="button" aria-label="Search">
         <span class="search-icon"></span>
       </button>
@@ -35,12 +30,12 @@
         EN
       </button>
       <button class="account" type="button">
-        <span class="small">Hello, sign in</span>
-        <span class="strong">Account & Lists</span>
+        <span class="small">{{ salesConfig.salesConfig.branding.accountGreeting }}</span>
+        <span class="strong">{{ salesConfig.salesConfig.branding.accountLabel }}</span>
       </button>
       <button class="orders" type="button">
-        <span class="small">Returns</span>
-        <span class="strong">& Orders</span>
+        <span class="small">{{ salesConfig.salesConfig.branding.ordersSmall }}</span>
+        <span class="strong">{{ salesConfig.salesConfig.branding.ordersLabel }}</span>
       </button>
       <button class="cart" type="button" (click)="goToCart()">
         <span class="cart-icon"></span>
@@ -67,37 +62,22 @@
       All
     </button>
     <nav class="nav-links">
-      <a href="#products">Fresh</a>
-      <a href="#products">Best Sellers</a>
-      <a href="#products">Deals</a>
-      <a href="#products">Mobiles</a>
-      <a href="#products">Customer Service</a>
-      <a href="#products">New Releases</a>
-      <a href="#products">Amazon Pay</a>
-      <a href="#products">Fashion</a>
-      <a href="#products">Electronics</a>
+      <a href="#products" *ngFor="let link of salesConfig.salesConfig.navLinks">{{ link }}</a>
     </nav>
     <div class="promo">
-      <span>Great Republic Day Sale</span>
+      <span>{{ salesConfig.salesConfig.promoMessages[0] }}</span>
       <span class="promo-sep">|</span>
-      <span>Live Now</span>
+      <span>{{ salesConfig.salesConfig.promoMessages[1] }}</span>
     </div>
   </div>
 
   <div *ngIf="isMobileMenuOpen" class="mobile-panel">
     <div class="mobile-search">
-      <input type="text" placeholder="Search Electrical Sales" />
+      <input type="text" [placeholder]="salesConfig.salesConfig.branding.searchPlaceholder" />
       <button type="button">Search</button>
     </div>
     <div class="mobile-links">
-      <a href="#products" (click)="closeMenu()">All</a>
-      <a href="#products" (click)="closeMenu()">Deals</a>
-      <a href="#products" (click)="closeMenu()">Mobiles</a>
-      <a href="#products" (click)="closeMenu()">Customer Service</a>
-      <a href="#products" (click)="closeMenu()">New Releases</a>
-      <a href="#products" (click)="closeMenu()">Electronics</a>
-      <a href="#products" (click)="closeMenu()">Account & Lists</a>
-      <a href="#products" (click)="closeMenu()">Returns & Orders</a>
+      <a href="#products" (click)="closeMenu()" *ngFor="let link of salesConfig.salesConfig.mobileLinks">{{ link }}</a>
       <a href="#" (click)="goToCart()">Cart</a>
     </div>
   </div>

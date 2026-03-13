@@ -1,10 +1,4 @@
 .product-detail-container {
-  --ink: #1b1a1f;
-  --muted: #5c5551;
-  --neon: #f4b860;
-  --mint: #fde6d8;
-  --border: rgba(27, 26, 31, 0.14);
-
   padding: 2.8rem 1.5rem 4rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -16,8 +10,8 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 20% 10%, rgba(244, 184, 96, 0.25), transparent 45%),
-      radial-gradient(circle at 85% 15%, rgba(253, 230, 216, 0.35), transparent 45%);
+    background: radial-gradient(circle at 20% 10%, color-mix(in srgb, var(--neon) 25%, transparent), transparent 45%),
+      radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--mint) 35%, transparent), transparent 45%);
     opacity: 0.7;
     pointer-events: none;
   }

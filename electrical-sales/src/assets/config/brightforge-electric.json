@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "BrightForge Electric",
+    "tagline": "BrightForge Electric powers homes, projects, and trade counters with verified electrical inventory.",
+    "logoMark": "BF",
+    "logoText": "BrightForge",
+    "logoDot": ".hub",
+    "pageTitle": "BrightForge Electric",
+    "locationLabel": "Showroom: Jaipur",
+    "accountLabel": "Trade account",
+    "footerTagline": "BrightForge Electric supplies dependable electrical products for retail, contractors, and project teams.",
+    "footerCopyright": "? 2026 BrightForge Electric. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fefce8 0%, #fef9c3 42%, #fde047 100%)",
+    "ink": "#2d2404",
+    "muted": "#6a5a1e",
+    "accent": "#ca8a04",
+    "accentStrong": "#a16207",
+    "neon": "#fde047",
+    "mint": "#fef9c3",
+    "cream": "#fffef1",
+    "panel": "#ffffff",
+    "border": "rgba(45, 36, 4, 0.12)",
+    "shadow": "0 18px 40px rgba(45, 36, 4, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #fffde8 0%, #fff9b8 48%, #fde047 100%)",
+    "headerBorder": "rgba(45, 36, 4, 0.08)",
+    "darkSurface": "#2d2404",
+    "darkSurfaceAlt": "#4a3c08",
+    "onDark": "#fffef1",
+    "onDarkMuted": "#efe6af",
+    "focusRing": "rgba(202, 138, 4, 0.18)"
+  },
+  "about": {
+    "eyebrow": "BrightForge Electric",
+    "title": "BrightForge Electric keeps every site, room, and panel powered with dependable inventory.",
+    "description": "BrightForge Electric curates fast-moving electrical products across lighting, decor lights, cables, switches and project essentials with responsive trade support."
+  },
+  "contact": {
+    "title": "Need pricing from BrightForge Electric?",
+    "ctaLabel": "Request trade callback",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Sales desk",
+        "lines": [
+          "+91 (810) 200-4411",
+          "+91 (810) 200-4412"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "sales@brightforgeelectric.in",
+          "support@brightforgeelectric.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 200-4411",
+      "support@brightforgeelectric.in",
+      "Showroom: Jaipur"
+    ],
+    "appCtaLabel": "Get bulk quote"
+  },
+  "hero": {
+    "eyebrow": "BrightForge Electric",
+    "title": "BrightForge Electric delivers electrical stock that is ready for counters, contractors, and projects.",
+    "subtitle": "Shop lighting, decor lights, cables and more with transparent pricing, verified brands, and reliable dispatch.",
+    "tags": [
+      "Verified brands",
+      "Dispatch in 24 hrs",
+      "Trade pricing"
+    ],
+    "cardTitle": "This week's focus",
+    "cardItems": [
+      "Lighting essentials",
+      "Decor Lights best sellers",
+      "Cables project picks"
+    ],
+    "deliveryLine": "Dispatch in 24 hrs",
+    "detailDeliveryLine": "Dispatch in 24 hrs",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Lighting",
+    "Decor Lights",
+    "Cables",
+    "Switches",
+    "Fans",
+    "Appliances",
+    "Power Solutions",
+    "Tools"
+  ],
+  "navLinks": [
+    "Lighting",
+    "Decor Lights",
+    "Cables",
+    "Switches",
+    "Fans",
+    "Appliances",
+    "Trade desk",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Lighting",
+    "Decor Lights",
+    "Cables",
+    "Switches",
+    "Fans",
+    "Deals",
+    "Trade desk",
+    "Account",
+    "Orders"
+  ],
+  "promoMessages": [
+    "Festive lighting bundles running",
+    "Installer packs at trade rates"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Wipro",
+        "Philips",
+        "Havells",
+        "Syska",
+        "Orient",
+        "Anchor"
+      ],
+      "categories": [
+        "Lighting",
+        "Decor Lights",
+        "Cables",
+        "Switches",
+        "Fans",
+        "Appliances",
+        "Power Solutions",
+        "Tools",
+        "Safety",
+        "Accessories"
+      ],
+      "categorySpecifications": {
+        "Accessories": {
+          "Power": "Project grade",
+          "Finish": "Durable",
+          "Usage": "Trade use",
+          "Warranty": "1 year"
+        }
+      },
+      "basePriceStart": 249,
+      "priceStep": 27,
+      "priceModulo": 20000,
+      "categoryPriceFactor": 13,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}

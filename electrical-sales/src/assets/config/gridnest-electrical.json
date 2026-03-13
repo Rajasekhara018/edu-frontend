@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "GridNest Electrical",
+    "tagline": "GridNest Electrical powers homes, projects, and trade counters with verified electrical inventory.",
+    "logoMark": "GN",
+    "logoText": "GridNest",
+    "logoDot": ".net",
+    "pageTitle": "GridNest Electrical",
+    "locationLabel": "Control centre: Faridabad",
+    "accountLabel": "Trade account",
+    "footerTagline": "GridNest Electrical supplies dependable electrical products for retail, contractors, and project teams.",
+    "footerCopyright": "? 2026 GridNest Electrical. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #f0f9ff 0%, #e0f2fe 42%, #bae6fd 100%)",
+    "ink": "#0a2233",
+    "muted": "#47687c",
+    "accent": "#0284c7",
+    "accentStrong": "#0369a1",
+    "neon": "#7dd3fc",
+    "mint": "#e0f2fe",
+    "cream": "#f7fcff",
+    "panel": "#ffffff",
+    "border": "rgba(10, 34, 51, 0.12)",
+    "shadow": "0 18px 40px rgba(10, 34, 51, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #edf9ff 0%, #d6f1ff 48%, #7dd3fc 100%)",
+    "headerBorder": "rgba(10, 34, 51, 0.08)",
+    "darkSurface": "#0a2233",
+    "darkSurfaceAlt": "#14364d",
+    "onDark": "#f7fcff",
+    "onDarkMuted": "#d8edf7",
+    "focusRing": "rgba(2, 132, 199, 0.18)"
+  },
+  "about": {
+    "eyebrow": "GridNest Electrical",
+    "title": "GridNest Electrical keeps every site, room, and panel powered with dependable inventory.",
+    "description": "GridNest Electrical curates fast-moving electrical products across panels, enclosures, meters, switches and project essentials with responsive trade support."
+  },
+  "contact": {
+    "title": "Need pricing from GridNest Electrical?",
+    "ctaLabel": "Request trade callback",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Sales desk",
+        "lines": [
+          "+91 (810) 200-4411",
+          "+91 (810) 200-4412"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "sales@gridnestelectrical.in",
+          "support@gridnestelectrical.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 200-4411",
+      "support@gridnestelectrical.in",
+      "Control centre: Faridabad"
+    ],
+    "appCtaLabel": "Get bulk quote"
+  },
+  "hero": {
+    "eyebrow": "GridNest Electrical",
+    "title": "GridNest Electrical delivers electrical stock that is ready for counters, contractors, and projects.",
+    "subtitle": "Shop panels, enclosures, meters and more with transparent pricing, verified brands, and reliable dispatch.",
+    "tags": [
+      "Verified brands",
+      "Dispatch in 48 hrs",
+      "Trade pricing"
+    ],
+    "cardTitle": "This week's focus",
+    "cardItems": [
+      "Panels essentials",
+      "Enclosures best sellers",
+      "Meters project picks"
+    ],
+    "deliveryLine": "Dispatch in 48 hrs",
+    "detailDeliveryLine": "Dispatch in 48 hrs",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Panels",
+    "Enclosures",
+    "Meters",
+    "Switches",
+    "Cables",
+    "Lighting",
+    "Safety",
+    "Industrial Controls"
+  ],
+  "navLinks": [
+    "Panels",
+    "Enclosures",
+    "Meters",
+    "Switches",
+    "Cables",
+    "Lighting",
+    "Trade desk",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Panels",
+    "Enclosures",
+    "Meters",
+    "Switches",
+    "Cables",
+    "Deals",
+    "Trade desk",
+    "Account",
+    "Orders"
+  ],
+  "promoMessages": [
+    "Panel boards ready to ship",
+    "Factory support desk available"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Hager",
+        "HPL",
+        "Schneider",
+        "Legrand",
+        "ABB",
+        "Polycab"
+      ],
+      "categories": [
+        "Panels",
+        "Enclosures",
+        "Meters",
+        "Switches",
+        "Cables",
+        "Lighting",
+        "Safety",
+        "Industrial Controls",
+        "Tools",
+        "Appliances"
+      ],
+      "categorySpecifications": {
+        "Appliances": {
+          "Power": "Project grade",
+          "Finish": "Durable",
+          "Usage": "Trade use",
+          "Warranty": "1 year"
+        }
+      },
+      "basePriceStart": 549,
+      "priceStep": 47,
+      "priceModulo": 42000,
+      "categoryPriceFactor": 19,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "branding": {
+    "name": "ElectraMart Supply",
+    "tagline": "ElectraMart Supply powers homes, projects, and trade counters with verified electrical inventory.",
+    "logoMark": "EM",
+    "logoText": "ElectraMart",
+    "logoDot": ".pro",
+    "pageTitle": "ElectraMart Supply",
+    "locationLabel": "Warehouse hub: Jeedimetla, Hyderabad",
+    "accountLabel": "Trade account",
+    "footerTagline": "ElectraMart Supply supplies dependable electrical products for retail, contractors, and project teams.",
+    "footerCopyright": "? 2026 ElectraMart Supply. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff4ea 0%, #f7efe6 45%, #f2ebe2 100%)",
+    "ink": "#1b1a1f",
+    "muted": "#5c5551",
+    "accent": "#e4573b",
+    "accentStrong": "#b54732",
+    "neon": "#f4b860",
+    "mint": "#fde6d8",
+    "cream": "#fffaf6",
+    "panel": "#ffffff",
+    "border": "rgba(27, 26, 31, 0.12)",
+    "shadow": "0 18px 40px rgba(27, 26, 31, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #fff4ea 0%, #ffe2d2 45%, #ffd2b1 100%)",
+    "headerBorder": "rgba(27, 26, 31, 0.08)",
+    "darkSurface": "#1b1a1f",
+    "darkSurfaceAlt": "#2a1e22",
+    "onDark": "#fef4ea",
+    "onDarkMuted": "#d6c6bc",
+    "focusRing": "rgba(228, 87, 59, 0.18)"
+  },
+  "about": {
+    "eyebrow": "ElectraMart Supply",
+    "title": "ElectraMart Supply keeps every site, room, and panel powered with dependable inventory.",
+    "description": "ElectraMart Supply curates fast-moving electrical products across lighting, cables, switches, power solutions and project essentials with responsive trade support."
+  },
+  "contact": {
+    "title": "Need pricing from ElectraMart Supply?",
+    "ctaLabel": "Request trade callback",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Sales desk",
+        "lines": [
+          "+91 (810) 200-4411",
+          "+91 (810) 200-4412"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "sales@electramartsupply.in",
+          "support@electramartsupply.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 200-4411",
+      "support@electramartsupply.in",
+      "Warehouse hub: Jeedimetla, Hyderabad"
+    ],
+    "appCtaLabel": "Get bulk quote"
+  },
+  "hero": {
+    "eyebrow": "ElectraMart Supply",
+    "title": "ElectraMart Supply delivers electrical stock that is ready for counters, contractors, and projects.",
+    "subtitle": "Shop lighting, cables, switches and more with transparent pricing, verified brands, and reliable dispatch.",
+    "tags": [
+      "Verified brands",
+      "Dispatch in 24-48 hrs",
+      "Trade pricing"
+    ],
+    "cardTitle": "This week's focus",
+    "cardItems": [
+      "Lighting essentials",
+      "Cables best sellers",
+      "Switches project picks"
+    ],
+    "deliveryLine": "Dispatch in 24-48 hrs",
+    "detailDeliveryLine": "Dispatch in 24-48 hrs",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Lighting",
+    "Cables",
+    "Switches",
+    "Power Solutions",
+    "Fans",
+    "Safety",
+    "Tools",
+    "Appliances"
+  ],
+  "navLinks": [
+    "Lighting",
+    "Cables",
+    "Switches",
+    "Power Solutions",
+    "Fans",
+    "Safety",
+    "Trade desk",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Lighting",
+    "Cables",
+    "Switches",
+    "Power Solutions",
+    "Fans",
+    "Deals",
+    "Trade desk",
+    "Account",
+    "Orders"
+  ],
+  "promoMessages": [
+    "Free delivery above Rs 1499",
+    "Trade quotations in under 30 minutes"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Havells",
+        "Philips",
+        "Polycab",
+        "Luminous",
+        "Schneider",
+        "Finolex",
+        "Anchor",
+        "Crompton"
+      ],
+      "categories": [
+        "Lighting",
+        "Cables",
+        "Switches",
+        "Power Solutions",
+        "Fans",
+        "Safety",
+        "Tools",
+        "Appliances",
+        "Panels",
+        "Batteries"
+      ],
+      "categorySpecifications": {
+        "Batteries": {
+          "Power": "Project grade",
+          "Finish": "Durable",
+          "Usage": "Trade use",
+          "Warranty": "1 year"
+        }
+      },
+      "basePriceStart": 349,
+      "priceStep": 43,
+      "priceModulo": 48000,
+      "categoryPriceFactor": 18,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}

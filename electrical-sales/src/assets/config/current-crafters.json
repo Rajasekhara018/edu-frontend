@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "Current Crafters",
+    "tagline": "Current Crafters powers homes, projects, and trade counters with verified electrical inventory.",
+    "logoMark": "CU",
+    "logoText": "Current",
+    "logoDot": ".works",
+    "pageTitle": "Current Crafters",
+    "locationLabel": "Industrial desk: Chennai Ambattur",
+    "accountLabel": "Trade account",
+    "footerTagline": "Current Crafters supplies dependable electrical products for retail, contractors, and project teams.",
+    "footerCopyright": "? 2026 Current Crafters. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #f0fdfa 0%, #ccfbf1 40%, #99f6e4 100%)",
+    "ink": "#0d2524",
+    "muted": "#426a67",
+    "accent": "#0f766e",
+    "accentStrong": "#0f5f59",
+    "neon": "#99f6e4",
+    "mint": "#ccfbf1",
+    "cream": "#f3fffd",
+    "panel": "#ffffff",
+    "border": "rgba(13, 37, 36, 0.12)",
+    "shadow": "0 18px 40px rgba(13, 37, 36, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #effefb 0%, #cffcf4 48%, #99f6e4 100%)",
+    "headerBorder": "rgba(13, 37, 36, 0.08)",
+    "darkSurface": "#0d2524",
+    "darkSurfaceAlt": "#153d39",
+    "onDark": "#f3fffd",
+    "onDarkMuted": "#d3efeb",
+    "focusRing": "rgba(15, 118, 110, 0.18)"
+  },
+  "about": {
+    "eyebrow": "Current Crafters",
+    "title": "Current Crafters keeps every site, room, and panel powered with dependable inventory.",
+    "description": "Current Crafters curates fast-moving electrical products across tools, safety, meters, testing equipment and project essentials with responsive trade support."
+  },
+  "contact": {
+    "title": "Need pricing from Current Crafters?",
+    "ctaLabel": "Request trade callback",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Sales desk",
+        "lines": [
+          "+91 (810) 200-4411",
+          "+91 (810) 200-4412"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "sales@currentcrafters.in",
+          "support@currentcrafters.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 200-4411",
+      "support@currentcrafters.in",
+      "Industrial desk: Chennai Ambattur"
+    ],
+    "appCtaLabel": "Get bulk quote"
+  },
+  "hero": {
+    "eyebrow": "Current Crafters",
+    "title": "Current Crafters delivers electrical stock that is ready for counters, contractors, and projects.",
+    "subtitle": "Shop tools, safety, meters and more with transparent pricing, verified brands, and reliable dispatch.",
+    "tags": [
+      "Verified brands",
+      "Project dispatch in 48 hrs",
+      "Trade pricing"
+    ],
+    "cardTitle": "This week's focus",
+    "cardItems": [
+      "Tools essentials",
+      "Safety best sellers",
+      "Meters project picks"
+    ],
+    "deliveryLine": "Project dispatch in 48 hrs",
+    "detailDeliveryLine": "Project dispatch in 48 hrs",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Tools",
+    "Safety",
+    "Meters",
+    "Testing Equipment",
+    "Cables",
+    "Switches",
+    "Panels",
+    "Lighting"
+  ],
+  "navLinks": [
+    "Tools",
+    "Safety",
+    "Meters",
+    "Testing Equipment",
+    "Cables",
+    "Switches",
+    "Trade desk",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Tools",
+    "Safety",
+    "Meters",
+    "Testing Equipment",
+    "Cables",
+    "Deals",
+    "Trade desk",
+    "Account",
+    "Orders"
+  ],
+  "promoMessages": [
+    "Testing tools back in stock",
+    "Trade kits priced this week"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Fluke",
+        "Bosch",
+        "Schneider",
+        "Legrand",
+        "HPL",
+        "Polycab"
+      ],
+      "categories": [
+        "Tools",
+        "Safety",
+        "Meters",
+        "Testing Equipment",
+        "Cables",
+        "Switches",
+        "Panels",
+        "Lighting",
+        "Industrial Controls",
+        "Appliances"
+      ],
+      "categorySpecifications": {
+        "Appliances": {
+          "Power": "Project grade",
+          "Finish": "Durable",
+          "Usage": "Trade use",
+          "Warranty": "1 year"
+        }
+      },
+      "basePriceStart": 899,
+      "priceStep": 67,
+      "priceModulo": 76000,
+      "categoryPriceFactor": 26,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}

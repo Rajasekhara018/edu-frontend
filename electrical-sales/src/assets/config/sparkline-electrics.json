@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "Sparkline Electrics",
+    "tagline": "Sparkline Electrics powers homes, projects, and trade counters with verified electrical inventory.",
+    "logoMark": "SE",
+    "logoText": "Sparkline",
+    "logoDot": ".io",
+    "pageTitle": "Sparkline Electrics",
+    "locationLabel": "Smart store: Whitefield, Bengaluru",
+    "accountLabel": "Trade account",
+    "footerTagline": "Sparkline Electrics supplies dependable electrical products for retail, contractors, and project teams.",
+    "footerCopyright": "? 2026 Sparkline Electrics. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fdf2f8 0%, #fce7f3 42%, #fbcfe8 100%)",
+    "ink": "#3a1028",
+    "muted": "#7b4865",
+    "accent": "#db2777",
+    "accentStrong": "#be185d",
+    "neon": "#f9a8d4",
+    "mint": "#fce7f3",
+    "cream": "#fff7fb",
+    "panel": "#ffffff",
+    "border": "rgba(58, 16, 40, 0.12)",
+    "shadow": "0 18px 40px rgba(58, 16, 40, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #fff2f8 0%, #ffd8ea 48%, #f9a8d4 100%)",
+    "headerBorder": "rgba(58, 16, 40, 0.08)",
+    "darkSurface": "#3a1028",
+    "darkSurfaceAlt": "#5c1c42",
+    "onDark": "#fff7fb",
+    "onDarkMuted": "#f3d5e5",
+    "focusRing": "rgba(219, 39, 119, 0.18)"
+  },
+  "about": {
+    "eyebrow": "Sparkline Electrics",
+    "title": "Sparkline Electrics keeps every site, room, and panel powered with dependable inventory.",
+    "description": "Sparkline Electrics curates fast-moving electrical products across smart lighting, lighting, sensors, security and project essentials with responsive trade support."
+  },
+  "contact": {
+    "title": "Need pricing from Sparkline Electrics?",
+    "ctaLabel": "Request trade callback",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Sales desk",
+        "lines": [
+          "+91 (810) 200-4411",
+          "+91 (810) 200-4412"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "sales@sparklineelectrics.in",
+          "support@sparklineelectrics.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 200-4411",
+      "support@sparklineelectrics.in",
+      "Smart store: Whitefield, Bengaluru"
+    ],
+    "appCtaLabel": "Get bulk quote"
+  },
+  "hero": {
+    "eyebrow": "Sparkline Electrics",
+    "title": "Sparkline Electrics delivers electrical stock that is ready for counters, contractors, and projects.",
+    "subtitle": "Shop smart lighting, lighting, sensors and more with transparent pricing, verified brands, and reliable dispatch.",
+    "tags": [
+      "Verified brands",
+      "Express dispatch available",
+      "Trade pricing"
+    ],
+    "cardTitle": "This week's focus",
+    "cardItems": [
+      "Smart Lighting essentials",
+      "Lighting best sellers",
+      "Sensors project picks"
+    ],
+    "deliveryLine": "Express dispatch available",
+    "detailDeliveryLine": "Express dispatch available",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Smart Lighting",
+    "Lighting",
+    "Sensors",
+    "Security",
+    "Cameras",
+    "Switches",
+    "Power Solutions",
+    "Batteries"
+  ],
+  "navLinks": [
+    "Smart Lighting",
+    "Lighting",
+    "Sensors",
+    "Security",
+    "Cameras",
+    "Switches",
+    "Trade desk",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Smart Lighting",
+    "Lighting",
+    "Sensors",
+    "Security",
+    "Cameras",
+    "Deals",
+    "Trade desk",
+    "Account",
+    "Orders"
+  ],
+  "promoMessages": [
+    "Smart-home bundles from Rs 2999",
+    "Security and lighting combos live"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Syska",
+        "CP Plus",
+        "Panasonic",
+        "Philips",
+        "Luminous",
+        "Anchor"
+      ],
+      "categories": [
+        "Smart Lighting",
+        "Lighting",
+        "Sensors",
+        "Security",
+        "Cameras",
+        "Switches",
+        "Power Solutions",
+        "Batteries",
+        "Cables",
+        "Accessories"
+      ],
+      "categorySpecifications": {
+        "Accessories": {
+          "Power": "Project grade",
+          "Finish": "Durable",
+          "Usage": "Trade use",
+          "Warranty": "1 year"
+        }
+      },
+      "basePriceStart": 299,
+      "priceStep": 35,
+      "priceModulo": 22000,
+      "categoryPriceFactor": 14,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}

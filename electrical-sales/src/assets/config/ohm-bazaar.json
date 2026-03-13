@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "Ohm Bazaar",
+    "tagline": "Ohm Bazaar powers homes, projects, and trade counters with verified electrical inventory.",
+    "logoMark": "OB",
+    "logoText": "Ohm",
+    "logoDot": ".shop",
+    "pageTitle": "Ohm Bazaar",
+    "locationLabel": "Retail floor: Visakhapatnam",
+    "accountLabel": "Trade account",
+    "footerTagline": "Ohm Bazaar supplies dependable electrical products for retail, contractors, and project teams.",
+    "footerCopyright": "? 2026 Ohm Bazaar. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff7ed 0%, #fed7aa 42%, #fdba74 100%)",
+    "ink": "#331407",
+    "muted": "#7c5136",
+    "accent": "#c2410c",
+    "accentStrong": "#9a3412",
+    "neon": "#fdba74",
+    "mint": "#ffedd5",
+    "cream": "#fff7f1",
+    "panel": "#ffffff",
+    "border": "rgba(51, 20, 7, 0.12)",
+    "shadow": "0 18px 40px rgba(51, 20, 7, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #fff4ea 0%, #ffe0c5 48%, #fdba74 100%)",
+    "headerBorder": "rgba(51, 20, 7, 0.08)",
+    "darkSurface": "#331407",
+    "darkSurfaceAlt": "#52240d",
+    "onDark": "#fff7f1",
+    "onDarkMuted": "#f3dac7",
+    "focusRing": "rgba(194, 65, 12, 0.18)"
+  },
+  "about": {
+    "eyebrow": "Ohm Bazaar",
+    "title": "Ohm Bazaar keeps every site, room, and panel powered with dependable inventory.",
+    "description": "Ohm Bazaar curates fast-moving electrical products across lighting, fans, appliances, cables and project essentials with responsive trade support."
+  },
+  "contact": {
+    "title": "Need pricing from Ohm Bazaar?",
+    "ctaLabel": "Request trade callback",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Sales desk",
+        "lines": [
+          "+91 (810) 200-4411",
+          "+91 (810) 200-4412"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "sales@ohmbazaar.in",
+          "support@ohmbazaar.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 200-4411",
+      "support@ohmbazaar.in",
+      "Retail floor: Visakhapatnam"
+    ],
+    "appCtaLabel": "Get bulk quote"
+  },
+  "hero": {
+    "eyebrow": "Ohm Bazaar",
+    "title": "Ohm Bazaar delivers electrical stock that is ready for counters, contractors, and projects.",
+    "subtitle": "Shop lighting, fans, appliances and more with transparent pricing, verified brands, and reliable dispatch.",
+    "tags": [
+      "Verified brands",
+      "Dispatch in 24 hrs",
+      "Trade pricing"
+    ],
+    "cardTitle": "This week's focus",
+    "cardItems": [
+      "Lighting essentials",
+      "Fans best sellers",
+      "Appliances project picks"
+    ],
+    "deliveryLine": "Dispatch in 24 hrs",
+    "detailDeliveryLine": "Dispatch in 24 hrs",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Lighting",
+    "Fans",
+    "Appliances",
+    "Cables",
+    "Switches",
+    "Power Solutions",
+    "Batteries",
+    "Safety"
+  ],
+  "navLinks": [
+    "Lighting",
+    "Fans",
+    "Appliances",
+    "Cables",
+    "Switches",
+    "Power Solutions",
+    "Trade desk",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Lighting",
+    "Fans",
+    "Appliances",
+    "Cables",
+    "Switches",
+    "Deals",
+    "Trade desk",
+    "Account",
+    "Orders"
+  ],
+  "promoMessages": [
+    "Retail offers refreshed daily",
+    "Counter pickup available now"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Bajaj",
+        "Crompton",
+        "Havells",
+        "Philips",
+        "Anchor",
+        "Polycab"
+      ],
+      "categories": [
+        "Lighting",
+        "Fans",
+        "Appliances",
+        "Cables",
+        "Switches",
+        "Power Solutions",
+        "Batteries",
+        "Safety",
+        "Tools",
+        "Accessories"
+      ],
+      "categorySpecifications": {
+        "Accessories": {
+          "Power": "Project grade",
+          "Finish": "Durable",
+          "Usage": "Trade use",
+          "Warranty": "1 year"
+        }
+      },
+      "basePriceStart": 189,
+      "priceStep": 25,
+      "priceModulo": 16000,
+      "categoryPriceFactor": 11,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}

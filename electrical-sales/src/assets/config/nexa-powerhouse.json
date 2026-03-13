@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "Nexa Powerhouse",
+    "tagline": "Nexa Powerhouse powers homes, projects, and trade counters with verified electrical inventory.",
+    "logoMark": "NP",
+    "logoText": "Nexa",
+    "logoDot": ".max",
+    "pageTitle": "Nexa Powerhouse",
+    "locationLabel": "Retail desk: Nagpur",
+    "accountLabel": "Trade account",
+    "footerTagline": "Nexa Powerhouse supplies dependable electrical products for retail, contractors, and project teams.",
+    "footerCopyright": "? 2026 Nexa Powerhouse. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff7ed 0%, #fed7aa 42%, #fdba74 100%)",
+    "ink": "#341407",
+    "muted": "#7a4b34",
+    "accent": "#ea580c",
+    "accentStrong": "#c2410c",
+    "neon": "#fdba74",
+    "mint": "#ffedd5",
+    "cream": "#fff8f1",
+    "panel": "#ffffff",
+    "border": "rgba(52, 20, 7, 0.12)",
+    "shadow": "0 18px 40px rgba(52, 20, 7, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #fff4ea 0%, #ffd8b8 48%, #fdba74 100%)",
+    "headerBorder": "rgba(52, 20, 7, 0.08)",
+    "darkSurface": "#341407",
+    "darkSurfaceAlt": "#52230d",
+    "onDark": "#fff8f1",
+    "onDarkMuted": "#f1d6c4",
+    "focusRing": "rgba(234, 88, 12, 0.18)"
+  },
+  "about": {
+    "eyebrow": "Nexa Powerhouse",
+    "title": "Nexa Powerhouse keeps every site, room, and panel powered with dependable inventory.",
+    "description": "Nexa Powerhouse curates fast-moving electrical products across appliances, fans, geysers, lighting and project essentials with responsive trade support."
+  },
+  "contact": {
+    "title": "Need pricing from Nexa Powerhouse?",
+    "ctaLabel": "Request trade callback",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Sales desk",
+        "lines": [
+          "+91 (810) 200-4411",
+          "+91 (810) 200-4412"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "sales@nexapowerhouse.in",
+          "support@nexapowerhouse.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 200-4411",
+      "support@nexapowerhouse.in",
+      "Retail desk: Nagpur"
+    ],
+    "appCtaLabel": "Get bulk quote"
+  },
+  "hero": {
+    "eyebrow": "Nexa Powerhouse",
+    "title": "Nexa Powerhouse delivers electrical stock that is ready for counters, contractors, and projects.",
+    "subtitle": "Shop appliances, fans, geysers and more with transparent pricing, verified brands, and reliable dispatch.",
+    "tags": [
+      "Verified brands",
+      "Dispatch in 24 hrs",
+      "Trade pricing"
+    ],
+    "cardTitle": "This week's focus",
+    "cardItems": [
+      "Appliances essentials",
+      "Fans best sellers",
+      "Geysers project picks"
+    ],
+    "deliveryLine": "Dispatch in 24 hrs",
+    "detailDeliveryLine": "Dispatch in 24 hrs",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Appliances",
+    "Fans",
+    "Geysers",
+    "Lighting",
+    "Switches",
+    "Cables",
+    "Power Solutions",
+    "Batteries"
+  ],
+  "navLinks": [
+    "Appliances",
+    "Fans",
+    "Geysers",
+    "Lighting",
+    "Switches",
+    "Cables",
+    "Trade desk",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Appliances",
+    "Fans",
+    "Geysers",
+    "Lighting",
+    "Switches",
+    "Deals",
+    "Trade desk",
+    "Account",
+    "Orders"
+  ],
+  "promoMessages": [
+    "Home-electrical combos live",
+    "Seasonal appliance offers now on"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Bajaj",
+        "Crompton",
+        "Havells",
+        "Orient",
+        "V-Guard",
+        "Philips"
+      ],
+      "categories": [
+        "Appliances",
+        "Fans",
+        "Geysers",
+        "Lighting",
+        "Switches",
+        "Cables",
+        "Power Solutions",
+        "Batteries",
+        "Safety",
+        "Tools"
+      ],
+      "categorySpecifications": {
+        "Tools": {
+          "Power": "Project grade",
+          "Finish": "Durable",
+          "Usage": "Trade use",
+          "Warranty": "1 year"
+        }
+      },
+      "basePriceStart": 449,
+      "priceStep": 41,
+      "priceModulo": 36000,
+      "categoryPriceFactor": 17,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}

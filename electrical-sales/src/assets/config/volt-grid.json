@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "VoltGrid Supply",
+    "tagline": "VoltGrid Supply powers homes, projects, and trade counters with verified electrical inventory.",
+    "logoMark": "VG",
+    "logoText": "VoltGrid",
+    "logoDot": ".grid",
+    "pageTitle": "VoltGrid Supply",
+    "locationLabel": "Distribution bay: Pune MIDC",
+    "accountLabel": "Trade account",
+    "footerTagline": "VoltGrid Supply supplies dependable electrical products for retail, contractors, and project teams.",
+    "footerCopyright": "? 2026 VoltGrid Supply. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #f0f9ff 0%, #dbeafe 42%, #bfdbfe 100%)",
+    "ink": "#0b1f3a",
+    "muted": "#44617f",
+    "accent": "#2563eb",
+    "accentStrong": "#1d4ed8",
+    "neon": "#7dd3fc",
+    "mint": "#dbeafe",
+    "cream": "#f8fbff",
+    "panel": "#ffffff",
+    "border": "rgba(11, 31, 58, 0.12)",
+    "shadow": "0 18px 40px rgba(11, 31, 58, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #eef6ff 0%, #dbeafe 48%, #7dd3fc 100%)",
+    "headerBorder": "rgba(11, 31, 58, 0.08)",
+    "darkSurface": "#0b1f3a",
+    "darkSurfaceAlt": "#16325f",
+    "onDark": "#eff6ff",
+    "onDarkMuted": "#dce8fb",
+    "focusRing": "rgba(37, 99, 235, 0.18)"
+  },
+  "about": {
+    "eyebrow": "VoltGrid Supply",
+    "title": "VoltGrid Supply keeps every site, room, and panel powered with dependable inventory.",
+    "description": "VoltGrid Supply curates fast-moving electrical products across panels, switches, cables, lighting and project essentials with responsive trade support."
+  },
+  "contact": {
+    "title": "Need pricing from VoltGrid Supply?",
+    "ctaLabel": "Request trade callback",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Sales desk",
+        "lines": [
+          "+91 (810) 200-4411",
+          "+91 (810) 200-4412"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "sales@voltgridsupply.in",
+          "support@voltgridsupply.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 200-4411",
+      "support@voltgridsupply.in",
+      "Distribution bay: Pune MIDC"
+    ],
+    "appCtaLabel": "Get bulk quote"
+  },
+  "hero": {
+    "eyebrow": "VoltGrid Supply",
+    "title": "VoltGrid Supply delivers electrical stock that is ready for counters, contractors, and projects.",
+    "subtitle": "Shop panels, switches, cables and more with transparent pricing, verified brands, and reliable dispatch.",
+    "tags": [
+      "Verified brands",
+      "Dispatch in 48 hrs",
+      "Trade pricing"
+    ],
+    "cardTitle": "This week's focus",
+    "cardItems": [
+      "Panels essentials",
+      "Switches best sellers",
+      "Cables project picks"
+    ],
+    "deliveryLine": "Dispatch in 48 hrs",
+    "detailDeliveryLine": "Dispatch in 48 hrs",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Panels",
+    "Switches",
+    "Cables",
+    "Lighting",
+    "Safety",
+    "Power Solutions",
+    "Meters",
+    "Enclosures"
+  ],
+  "navLinks": [
+    "Panels",
+    "Switches",
+    "Cables",
+    "Lighting",
+    "Safety",
+    "Power Solutions",
+    "Trade desk",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Panels",
+    "Switches",
+    "Cables",
+    "Lighting",
+    "Safety",
+    "Deals",
+    "Trade desk",
+    "Account",
+    "Orders"
+  ],
+  "promoMessages": [
+    "Free site-delivery above Rs 2499",
+    "Industrial quotations same day"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Legrand",
+        "Schneider",
+        "ABB",
+        "Hager",
+        "Polycab",
+        "Finolex"
+      ],
+      "categories": [
+        "Panels",
+        "Switches",
+        "Cables",
+        "Lighting",
+        "Safety",
+        "Power Solutions",
+        "Meters",
+        "Enclosures",
+        "Industrial Controls",
+        "Tools"
+      ],
+      "categorySpecifications": {
+        "Tools": {
+          "Power": "Project grade",
+          "Finish": "Durable",
+          "Usage": "Trade use",
+          "Warranty": "1 year"
+        }
+      },
+      "basePriceStart": 699,
+      "priceStep": 57,
+      "priceModulo": 62000,
+      "categoryPriceFactor": 24,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}

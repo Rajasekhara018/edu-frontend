@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Product } from '../../Services/product.model';
 import { ProductsService } from '../../Services/products.service';
 import { CartService } from '../../Services/cart.service';
+import { SalesConfigService } from '../../Services/sales-config.service';
 
 @Component({
   selector: 'app-products-list',
@@ -39,7 +40,8 @@ export class ProductsListComponent implements OnInit {
   constructor(
     private productsService: ProductsService,
     private router: Router,
-    private cartService: CartService
+    private cartService: CartService,
+    public readonly salesConfig: SalesConfigService
   ) { }
 
   ngOnInit(): void {

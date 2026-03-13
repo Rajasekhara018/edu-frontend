@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "Ampere Depot",
+    "tagline": "Ampere Depot powers homes, projects, and trade counters with verified electrical inventory.",
+    "logoMark": "AD",
+    "logoText": "Ampere",
+    "logoDot": ".supply",
+    "pageTitle": "Ampere Depot",
+    "locationLabel": "Depot line: Coimbatore",
+    "accountLabel": "Trade account",
+    "footerTagline": "Ampere Depot supplies dependable electrical products for retail, contractors, and project teams.",
+    "footerCopyright": "? 2026 Ampere Depot. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #f5f3ff 0%, #ede9fe 42%, #ddd6fe 100%)",
+    "ink": "#25134a",
+    "muted": "#62517e",
+    "accent": "#7c3aed",
+    "accentStrong": "#6d28d9",
+    "neon": "#c4b5fd",
+    "mint": "#ede9fe",
+    "cream": "#faf8ff",
+    "panel": "#ffffff",
+    "border": "rgba(37, 19, 74, 0.12)",
+    "shadow": "0 18px 40px rgba(37, 19, 74, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #f8f6ff 0%, #e8dfff 48%, #c4b5fd 100%)",
+    "headerBorder": "rgba(37, 19, 74, 0.08)",
+    "darkSurface": "#25134a",
+    "darkSurfaceAlt": "#3c2270",
+    "onDark": "#faf8ff",
+    "onDarkMuted": "#ddd5f6",
+    "focusRing": "rgba(124, 58, 237, 0.18)"
+  },
+  "about": {
+    "eyebrow": "Ampere Depot",
+    "title": "Ampere Depot keeps every site, room, and panel powered with dependable inventory.",
+    "description": "Ampere Depot curates fast-moving electrical products across power solutions, batteries, solar, inverters and project essentials with responsive trade support."
+  },
+  "contact": {
+    "title": "Need pricing from Ampere Depot?",
+    "ctaLabel": "Request trade callback",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Sales desk",
+        "lines": [
+          "+91 (810) 200-4411",
+          "+91 (810) 200-4412"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "sales@amperedepot.in",
+          "support@amperedepot.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 200-4411",
+      "support@amperedepot.in",
+      "Depot line: Coimbatore"
+    ],
+    "appCtaLabel": "Get bulk quote"
+  },
+  "hero": {
+    "eyebrow": "Ampere Depot",
+    "title": "Ampere Depot delivers electrical stock that is ready for counters, contractors, and projects.",
+    "subtitle": "Shop power solutions, batteries, solar and more with transparent pricing, verified brands, and reliable dispatch.",
+    "tags": [
+      "Verified brands",
+      "Dispatch in 48 hrs",
+      "Trade pricing"
+    ],
+    "cardTitle": "This week's focus",
+    "cardItems": [
+      "Power Solutions essentials",
+      "Batteries best sellers",
+      "Solar project picks"
+    ],
+    "deliveryLine": "Dispatch in 48 hrs",
+    "detailDeliveryLine": "Dispatch in 48 hrs",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Power Solutions",
+    "Batteries",
+    "Solar",
+    "Inverters",
+    "Cables",
+    "Panels",
+    "Switches",
+    "Lighting"
+  ],
+  "navLinks": [
+    "Power Solutions",
+    "Batteries",
+    "Solar",
+    "Inverters",
+    "Cables",
+    "Panels",
+    "Trade desk",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Power Solutions",
+    "Batteries",
+    "Solar",
+    "Inverters",
+    "Cables",
+    "Deals",
+    "Trade desk",
+    "Account",
+    "Orders"
+  ],
+  "promoMessages": [
+    "Backup systems above Rs 4999",
+    "Solar and inverter quotes in 1 hour"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "Luminous",
+        "Exide",
+        "Amaron",
+        "Microtek",
+        "V-Guard",
+        "Polycab"
+      ],
+      "categories": [
+        "Power Solutions",
+        "Batteries",
+        "Solar",
+        "Inverters",
+        "Cables",
+        "Panels",
+        "Switches",
+        "Lighting",
+        "Fans",
+        "Safety"
+      ],
+      "categorySpecifications": {
+        "Safety": {
+          "Power": "Project grade",
+          "Finish": "Durable",
+          "Usage": "Trade use",
+          "Warranty": "1 year"
+        }
+      },
+      "basePriceStart": 599,
+      "priceStep": 61,
+      "priceModulo": 54000,
+      "categoryPriceFactor": 21,
+      "discountEvery": 3,
+      "discountRate": 0.2
+    }
+  }
+}
