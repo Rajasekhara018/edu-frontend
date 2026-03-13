@@ -110,8 +110,8 @@
   background: var(--surface);
   border-radius: 16px;
   padding: 1.25rem;
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.1);
+  border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--ink) 10%, transparent);
   display: grid;
   gap: 0.4rem;
 }
@@ -154,7 +154,7 @@
   font-family: 'Playfair Display', 'Georgia', serif;
   font-size: 2.1rem;
   margin: 0.6rem 0 0.8rem;
-  color: #0f172a;
+  color: var(--ink);
 }
 
 .about-panels {
@@ -166,8 +166,8 @@
   background: var(--surface);
   border-radius: 18px;
   padding: 1.25rem 1.4rem;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.12);
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
+  box-shadow: 0 14px 26px color-mix(in srgb, var(--ink) 12%, transparent);
 }
 
 .about-card h4 {
@@ -192,7 +192,7 @@
   gap: 0.6rem;
   margin-top: 1rem;
   font-weight: 600;
-  color: #24324b;
+  color: color-mix(in srgb, var(--ink) 88%, transparent);
 }
 
 .about-section .eyebrow {
@@ -232,14 +232,14 @@
 
 .courses-section .card {
   border-radius: 18px;
-  box-shadow: 0 18px 32px rgba(15, 23, 42, 0.14);
-  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 18px 32px color-mix(in srgb, var(--ink) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink) 12%, transparent);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .courses-section .card-body {
-  color: #4a5a70;
+  color: var(--muted);
 }
 
 .courses-section .card:hover {
@@ -250,13 +250,13 @@
 .courses-section .card-title {
   font-family: 'Playfair Display', 'Georgia', serif;
   font-size: 1.15rem;
-  color: #0f172a;
+  color: var(--ink);
 }
 
 .courses-section .card-body ul {
   padding-left: 1.1rem;
   margin: 0.5rem 0 1rem;
-  color: #5b677a;
+  color: var(--muted);
   line-height: 1.6;
 }
 
@@ -270,7 +270,7 @@
   justify-content: space-between;
   gap: 0.75rem;
   background: var(--surface-alt) !important;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-top: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
 }
 
 .courses-section .card-footer .fw-bold {
@@ -307,16 +307,16 @@
 }
 
 .register-section {
-  background: linear-gradient(135deg, #0f2a4a 0%, #1b4b8b 55%, #2563eb 100%);
+  background: linear-gradient(135deg, var(--dark-surface) 0%, color-mix(in srgb, var(--accent) 55%, var(--dark-surface-alt)) 55%, var(--accent) 100%);
   border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
-  border: 1px solid rgba(27, 75, 139, 0.35);
-  color: #f8fafc;
+  box-shadow: 0 20px 40px color-mix(in srgb, var(--dark-surface) 26%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--on-dark);
 }
 
 .register-section h3 {
   font-family: 'Playfair Display', 'Georgia', serif;
-  color: #f8fafc;
+  color: var(--on-dark);
 }
 
 .register-section .form-control,
@@ -325,15 +325,15 @@
 }
 
 .register-section .btn-send {
-  background: #f59e0b;
+  background: var(--gold);
   border: none;
   border-radius: 999px;
-  color: #ffffff;
+  color: var(--ink);
 }
 
 .register-section label,
 .register-section .text-secondary {
-  color: rgba(248, 250, 252, 0.78) !important;
+  color: var(--on-dark-muted) !important;
 }
 
 .register-section .form-control {
@@ -411,8 +411,8 @@
   color: var(--on-dark);
   border-radius: 28px;
   padding: 2.5rem;
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.35);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 20px 40px color-mix(in srgb, var(--dark-surface) 34%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
 }
 
 .contact-grid {
@@ -451,7 +451,7 @@
 
 .info-card {
   background: var(--dark-surface-alt);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
   border-radius: 16px;
   padding: 1rem 1.25rem;
 }
@@ -491,7 +491,7 @@
 
 .contact-form .form-control {
   border-radius: 12px;
-  border: 1px solid rgba(15, 23, 42, 0.16);
+  border: 1px solid color-mix(in srgb, var(--ink) 16%, transparent);
   height: 48px;
 }
 
