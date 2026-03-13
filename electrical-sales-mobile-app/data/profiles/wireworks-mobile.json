@@ -1,0 +1,292 @@
+{
+  "id": "wireworks-mobile",
+  "branding": {
+    "name": "WireWorks Direct",
+    "subtitle": "Electrical products, lighting, cables, and project supplies delivered with dependable dispatch.",
+    "supportEmail": "support@wireworks.app",
+    "supportPhone": "+91 800 225 0344",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad, project sites, and nearby zones",
+    "accountName": "WireWorks Direct Member",
+    "accountEmail": "hello@wireworks.app",
+    "accountPhone": "+91 800 225 0344",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=wireworks-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Same-day dispatch",
+    "badgeSecondary": "Project-ready stock",
+    "title": "Shop cables, conduits, switches and site supplies from WireWorks Direct.",
+    "subtitle": "Browse electrical essentials, project materials, and fast-moving SKUs with clear pricing and support.",
+    "aboutTitle": "About us",
+    "aboutText": "WireWorks Direct supplies electricians, contractors, and households across Cables, Conduits, Switches, Lighting with dependable stock and delivery.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: support@wireworks.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & warranty"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Delivery address"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Stock check"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Project support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "WIR-52041",
+        "title": "Project quotation request for WireWorks Direct",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "WIR-51789",
+        "title": "Warranty claim status update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: quotation, cable stock, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "WireWorks Direct",
+      "text": "#13332f",
+      "background": "#f0fdfa",
+      "tint": "#0f766e",
+      "icon": "#5a6472",
+      "tabIconDefault": "#5a6472",
+      "tabIconSelected": "#0f766e",
+      "card": "#ffffff",
+      "cardAlt": "#ccfbf1",
+      "border": "#dde4ea",
+      "muted": "#5a6472",
+      "mutedAlt": "#8ea0b1",
+      "primary": "#0f766e",
+      "primaryDark": "#0f766e",
+      "primarySoft": "#ccfbf1",
+      "danger": "#d14f3f",
+      "warning": "#e9b44c",
+      "success": "#2e8b57",
+      "badge": "#ea580c",
+      "badgeText": "#ffffff",
+      "chip": "#eef3f8",
+      "chipText": "#41576a",
+      "chipActive": "#0f766e",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "WireWorks Direct Dark",
+      "text": "#eef2f6",
+      "background": "#12161a",
+      "tint": "#eef2f6",
+      "icon": "#9ba8b5",
+      "tabIconDefault": "#9ba8b5",
+      "tabIconSelected": "#eef2f6",
+      "card": "#1b2228",
+      "cardAlt": "#263039",
+      "border": "#33404b",
+      "muted": "#b7c1cb",
+      "mutedAlt": "#8a98a5",
+      "primary": "#0f766e",
+      "primaryDark": "#0f766e",
+      "primarySoft": "#20303c",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#78c498",
+      "badge": "#f07a62",
+      "badgeText": "#12161a",
+      "chip": "#25303a",
+      "chipText": "#dfe7ee",
+      "chipActive": "#0f766e",
+      "chipActiveText": "#12161a"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "WireWorks Cables Prime",
+        "description": "Popular cables SKU from WireWorks Direct.",
+        "price": 345,
+        "originalPrice": 390,
+        "image": "",
+        "category": "Cables",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "WIREWORKS-0001",
+        "specifications": {
+          "Pack": "1 unit",
+          "Warranty": "As applicable",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "CableAxis Conduits Select",
+        "description": "Best-selling conduits item.",
+        "price": 395,
+        "originalPrice": 450,
+        "image": "",
+        "category": "Conduits",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "CABLEAXIS-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Voltage": "As labelled",
+          "Use": "General / project"
+        }
+      },
+      {
+        "id": 3,
+        "name": "ConduitCore Switches Pro",
+        "description": "Daily moving electrical product from WireWorks Direct.",
+        "price": 375,
+        "originalPrice": 423,
+        "image": "",
+        "category": "Switches",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "CONDUITCORE-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Rating": "Commercial",
+          "Use": "Electrical installation"
+        }
+      },
+      {
+        "id": 4,
+        "name": "FuseGrid Lighting Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 365,
+        "originalPrice": 413,
+        "image": "",
+        "category": "Lighting",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "FUSEGRID-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Safety": "Certified",
+          "Use": "Routine supply"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Cables",
+        "Conduits",
+        "Switches",
+        "Lighting",
+        "Circuit Protection",
+        "Meters",
+        "Power Backup",
+        "Industrial Supplies",
+        "Fans",
+        "Tools"
+      ],
+      "brands": [
+        "WireWorks",
+        "CableAxis",
+        "ConduitCore",
+        "FuseGrid",
+        "MeterVolt",
+        "ToolLine"
+      ],
+      "categorySpecifications": {
+        "Cables": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Conduits": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Switches": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Lighting": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Circuit Protection": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Meters": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "Brand warranty",
+          "Safety": "Certified as labelled"
+        },
+        "Power Backup": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "Brand warranty",
+          "Safety": "Certified as labelled"
+        },
+        "Industrial Supplies": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Fans": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Tools": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "Brand warranty",
+          "Safety": "Certified as labelled"
+        }
+      },
+      "basePriceStart": 225,
+      "priceStep": 43,
+      "priceModulo": 3600,
+      "categoryPriceFactor": 18,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

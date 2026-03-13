@@ -1,0 +1,282 @@
+{
+  "id": "rootedcart-mobile",
+  "branding": {
+    "name": "RootedCart",
+    "subtitle": "Fast groceries, pantry essentials, and daily care delivered on your schedule.",
+    "supportEmail": "support@rootedcart.app",
+    "supportPhone": "+91 800 047 0084",
+    "supportHours": "6:00 AM - 11:00 PM",
+    "serviceArea": "Hyderabad metro and nearby hubs",
+    "accountName": "RootedCart Member",
+    "accountEmail": "hello@rootedcart.app",
+    "accountPhone": "+91 800 047 0084",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=rootedcart-mobile"
+  },
+  "hero": {
+    "badgePrimary": "30 min delivery",
+    "badgeSecondary": "Freshness guaranteed",
+    "title": "Shop organic veggies, fresh produce, dairy & eggs and more with RootedCart.",
+    "subtitle": "Daily offers on staples, snacks, beverages with secure payments and reliable slots.",
+    "aboutTitle": "About us",
+    "aboutText": "RootedCart is a profile-driven grocery experience focused on fast delivery, dependable picks, and category depth across Organic Veggies, Fresh Produce, Dairy & Eggs, Staples.",
+    "contactTitle": "Contact us",
+    "contactText": "Service area: Hyderabad\nSupport hours: 6:00 AM - 11:00 PM\nEmail: support@rootedcart.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Account help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "ROO-22041",
+        "title": "Refund for RootedCart order #406-7749123",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "ROO-21789",
+        "title": "Unable to apply wallet balance on RootedCart",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: refund status, change address, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "RootedCart",
+      "text": "#253017",
+      "background": "#f7f8ee",
+      "tint": "#556b2f",
+      "icon": "#66706b",
+      "tabIconDefault": "#66706b",
+      "tabIconSelected": "#556b2f",
+      "card": "#ffffff",
+      "cardAlt": "#e6e8d5",
+      "border": "#e2e7e3",
+      "muted": "#6c756f",
+      "mutedAlt": "#9aa39c",
+      "primary": "#556b2f",
+      "primaryDark": "#556b2f",
+      "primarySoft": "#e6e8d5",
+      "danger": "#cc4b33",
+      "warning": "#f4b740",
+      "success": "#556b2f",
+      "badge": "#d2693c",
+      "badgeText": "#ffffff",
+      "chip": "#f5f1e7",
+      "chipText": "#4f4f4f",
+      "chipActive": "#556b2f",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "RootedCart Dark",
+      "text": "#f4f2ee",
+      "background": "#141514",
+      "tint": "#f2f0ea",
+      "icon": "#a3a7a4",
+      "tabIconDefault": "#a3a7a4",
+      "tabIconSelected": "#f2f0ea",
+      "card": "#1f201f",
+      "cardAlt": "#2a2c2b",
+      "border": "#2f3331",
+      "muted": "#b1b7b3",
+      "mutedAlt": "#8f9591",
+      "primary": "#556b2f",
+      "primaryDark": "#556b2f",
+      "primarySoft": "#24342b",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#556b2f",
+      "badge": "#f07a62",
+      "badgeText": "#141514",
+      "chip": "#2a2c2b",
+      "chipText": "#d7dad7",
+      "chipActive": "#556b2f",
+      "chipActiveText": "#141514"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "RootedCart Organic Veggies Select",
+        "description": "Popular organic veggies from RootedCart.",
+        "price": 87,
+        "originalPrice": 107,
+        "image": "",
+        "category": "Organic Veggies",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "ROOTEDCART-0001",
+        "specifications": {
+          "Pack": "1 unit",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "EarthDaily Fresh Produce Value Pack",
+        "description": "Best-selling fresh produce pack.",
+        "price": 117,
+        "originalPrice": 142,
+        "image": "",
+        "category": "Fresh Produce",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "EARTHDAILY-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Chilled / cool",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "GreenRoot Dairy & Eggs Prime",
+        "description": "Daily favorite from RootedCart.",
+        "price": 102,
+        "originalPrice": 126,
+        "image": "",
+        "category": "Dairy & Eggs",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "GREENROOT-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "FarmKeeper Staples Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 137,
+        "originalPrice": 165,
+        "image": "",
+        "category": "Staples",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "FARMKEEPER-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Organic Veggies",
+        "Fresh Produce",
+        "Dairy & Eggs",
+        "Staples",
+        "Snacks",
+        "Beverages",
+        "Health",
+        "Household",
+        "Frozen",
+        "Ready Meals"
+      ],
+      "brands": [
+        "RootedCart",
+        "EarthDaily",
+        "GreenRoot",
+        "FarmKeeper",
+        "NaturalNest",
+        "PureCrate"
+      ],
+      "categorySpecifications": {
+        "Organic Veggies": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Fresh Produce": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "2-5 days"
+        },
+        "Dairy & Eggs": {
+          "Pack": "Standard pack",
+          "Storage": "Keep refrigerated",
+          "ShelfLife": "As labelled"
+        },
+        "Staples": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Health": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Household": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Frozen": {
+          "Pack": "Standard pack",
+          "Storage": "Keep refrigerated",
+          "ShelfLife": "As labelled"
+        },
+        "Ready Meals": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 47,
+      "priceStep": 12,
+      "priceModulo": 1200,
+      "categoryPriceFactor": 4,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

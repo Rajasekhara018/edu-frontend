@@ -1,0 +1,292 @@
+{
+  "id": "current-crafters-mobile",
+  "branding": {
+    "name": "Current Crafters",
+    "subtitle": "Electrical products, lighting, cables, and project supplies delivered with dependable dispatch.",
+    "supportEmail": "support@current-crafters.app",
+    "supportPhone": "+91 800 255 0400",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad, project sites, and nearby zones",
+    "accountName": "Current Crafters Member",
+    "accountEmail": "hello@current-crafters.app",
+    "accountPhone": "+91 800 255 0400",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=current-crafters-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Same-day dispatch",
+    "badgeSecondary": "Project-ready stock",
+    "title": "Shop tools, power tools, cables and site supplies from Current Crafters.",
+    "subtitle": "Browse electrical essentials, project materials, and fast-moving SKUs with clear pricing and support.",
+    "aboutTitle": "About us",
+    "aboutText": "Current Crafters supplies electricians, contractors, and households across Tools, Power Tools, Cables, Switches with dependable stock and delivery.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: support@current-crafters.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & warranty"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Delivery address"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Stock check"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Project support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "CUR-52041",
+        "title": "Project quotation request for Current Crafters",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "CUR-51789",
+        "title": "Warranty claim status update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: quotation, cable stock, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "Current Crafters",
+      "text": "#153445",
+      "background": "#f0f9ff",
+      "tint": "#0284c7",
+      "icon": "#5a6472",
+      "tabIconDefault": "#5a6472",
+      "tabIconSelected": "#0284c7",
+      "card": "#ffffff",
+      "cardAlt": "#dceffd",
+      "border": "#dde4ea",
+      "muted": "#5a6472",
+      "mutedAlt": "#8ea0b1",
+      "primary": "#0284c7",
+      "primaryDark": "#0284c7",
+      "primarySoft": "#dceffd",
+      "danger": "#d14f3f",
+      "warning": "#e9b44c",
+      "success": "#2e8b57",
+      "badge": "#f97316",
+      "badgeText": "#ffffff",
+      "chip": "#eef3f8",
+      "chipText": "#41576a",
+      "chipActive": "#0284c7",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "Current Crafters Dark",
+      "text": "#eef2f6",
+      "background": "#12161a",
+      "tint": "#eef2f6",
+      "icon": "#9ba8b5",
+      "tabIconDefault": "#9ba8b5",
+      "tabIconSelected": "#eef2f6",
+      "card": "#1b2228",
+      "cardAlt": "#263039",
+      "border": "#33404b",
+      "muted": "#b7c1cb",
+      "mutedAlt": "#8a98a5",
+      "primary": "#0284c7",
+      "primaryDark": "#0284c7",
+      "primarySoft": "#20303c",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#78c498",
+      "badge": "#f07a62",
+      "badgeText": "#12161a",
+      "chip": "#25303a",
+      "chipText": "#dfe7ee",
+      "chipActive": "#0284c7",
+      "chipActiveText": "#12161a"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "CurrentCrafters Tools Prime",
+        "description": "Popular tools SKU from Current Crafters.",
+        "price": 375,
+        "originalPrice": 420,
+        "image": "",
+        "category": "Tools",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "CURRENTCRAFTERS-0001",
+        "specifications": {
+          "Pack": "1 unit",
+          "Warranty": "As applicable",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "CraftVolt Power Tools Select",
+        "description": "Best-selling power tools item.",
+        "price": 425,
+        "originalPrice": 480,
+        "image": "",
+        "category": "Power Tools",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "CRAFTVOLT-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Voltage": "As labelled",
+          "Use": "General / project"
+        }
+      },
+      {
+        "id": 3,
+        "name": "ToolCircuit Cables Pro",
+        "description": "Daily moving electrical product from Current Crafters.",
+        "price": 405,
+        "originalPrice": 453,
+        "image": "",
+        "category": "Cables",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "TOOLCIRCUIT-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Rating": "Commercial",
+          "Use": "Electrical installation"
+        }
+      },
+      {
+        "id": 4,
+        "name": "TestWave Switches Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 395,
+        "originalPrice": 443,
+        "image": "",
+        "category": "Switches",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "TESTWAVE-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Safety": "Certified",
+          "Use": "Routine supply"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Tools",
+        "Power Tools",
+        "Cables",
+        "Switches",
+        "Lighting",
+        "Meters",
+        "Test Instruments",
+        "Safety Gear",
+        "Conduits",
+        "Circuit Protection"
+      ],
+      "brands": [
+        "CurrentCrafters",
+        "CraftVolt",
+        "ToolCircuit",
+        "TestWave",
+        "SafetyAmp",
+        "BlueCurrent"
+      ],
+      "categorySpecifications": {
+        "Tools": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "Brand warranty",
+          "Safety": "Certified as labelled"
+        },
+        "Power Tools": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "Brand warranty",
+          "Safety": "Certified as labelled"
+        },
+        "Cables": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Switches": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Lighting": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Meters": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "Brand warranty",
+          "Safety": "Certified as labelled"
+        },
+        "Test Instruments": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Safety Gear": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Conduits": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Circuit Protection": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        }
+      },
+      "basePriceStart": 255,
+      "priceStep": 50,
+      "priceModulo": 3600,
+      "categoryPriceFactor": 18,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

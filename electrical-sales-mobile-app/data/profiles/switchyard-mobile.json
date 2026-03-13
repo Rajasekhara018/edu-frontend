@@ -1,0 +1,292 @@
+{
+  "id": "switchyard-mobile",
+  "branding": {
+    "name": "SwitchYard Pro",
+    "subtitle": "Electrical products, lighting, cables, and project supplies delivered with dependable dispatch.",
+    "supportEmail": "support@switchyard.app",
+    "supportPhone": "+91 800 205 0320",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad, project sites, and nearby zones",
+    "accountName": "SwitchYard Pro Member",
+    "accountEmail": "hello@switchyard.app",
+    "accountPhone": "+91 800 205 0320",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=switchyard-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Same-day dispatch",
+    "badgeSecondary": "Project-ready stock",
+    "title": "Shop switches, sockets, cables and site supplies from SwitchYard Pro.",
+    "subtitle": "Browse electrical essentials, project materials, and fast-moving SKUs with clear pricing and support.",
+    "aboutTitle": "About us",
+    "aboutText": "SwitchYard Pro supplies electricians, contractors, and households across Switches, Sockets, Cables, Lighting with dependable stock and delivery.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: support@switchyard.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & warranty"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Delivery address"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Stock check"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Project support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "SWI-52041",
+        "title": "Project quotation request for SwitchYard Pro",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "SWI-51789",
+        "title": "Warranty claim status update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: quotation, cable stock, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "SwitchYard Pro",
+      "text": "#1e293b",
+      "background": "#f8fafc",
+      "tint": "#475569",
+      "icon": "#5a6472",
+      "tabIconDefault": "#5a6472",
+      "tabIconSelected": "#475569",
+      "card": "#ffffff",
+      "cardAlt": "#e2e8f0",
+      "border": "#dde4ea",
+      "muted": "#5a6472",
+      "mutedAlt": "#8ea0b1",
+      "primary": "#475569",
+      "primaryDark": "#475569",
+      "primarySoft": "#e2e8f0",
+      "danger": "#d14f3f",
+      "warning": "#e9b44c",
+      "success": "#2e8b57",
+      "badge": "#f59e0b",
+      "badgeText": "#ffffff",
+      "chip": "#eef3f8",
+      "chipText": "#41576a",
+      "chipActive": "#475569",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "SwitchYard Pro Dark",
+      "text": "#eef2f6",
+      "background": "#12161a",
+      "tint": "#eef2f6",
+      "icon": "#9ba8b5",
+      "tabIconDefault": "#9ba8b5",
+      "tabIconSelected": "#eef2f6",
+      "card": "#1b2228",
+      "cardAlt": "#263039",
+      "border": "#33404b",
+      "muted": "#b7c1cb",
+      "mutedAlt": "#8a98a5",
+      "primary": "#475569",
+      "primaryDark": "#475569",
+      "primarySoft": "#20303c",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#78c498",
+      "badge": "#f07a62",
+      "badgeText": "#12161a",
+      "chip": "#25303a",
+      "chipText": "#dfe7ee",
+      "chipActive": "#475569",
+      "chipActiveText": "#12161a"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "SwitchYard Switches Prime",
+        "description": "Popular switches SKU from SwitchYard Pro.",
+        "price": 325,
+        "originalPrice": 370,
+        "image": "",
+        "category": "Switches",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "SWITCHYARD-0001",
+        "specifications": {
+          "Pack": "1 unit",
+          "Warranty": "As applicable",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "SocketForge Sockets Select",
+        "description": "Best-selling sockets item.",
+        "price": 375,
+        "originalPrice": 430,
+        "image": "",
+        "category": "Sockets",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "SOCKETFORGE-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Voltage": "As labelled",
+          "Use": "General / project"
+        }
+      },
+      {
+        "id": 3,
+        "name": "WireField Cables Pro",
+        "description": "Daily moving electrical product from SwitchYard Pro.",
+        "price": 355,
+        "originalPrice": 403,
+        "image": "",
+        "category": "Cables",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "WIREFIELD-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Rating": "Commercial",
+          "Use": "Electrical installation"
+        }
+      },
+      {
+        "id": 4,
+        "name": "YardGrid Lighting Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 345,
+        "originalPrice": 393,
+        "image": "",
+        "category": "Lighting",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "YARDGRID-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Safety": "Certified",
+          "Use": "Routine supply"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Switches",
+        "Sockets",
+        "Cables",
+        "Lighting",
+        "Fans",
+        "Conduits",
+        "Distribution Boards",
+        "Chargers",
+        "Sensors",
+        "Industrial Supplies"
+      ],
+      "brands": [
+        "SwitchYard",
+        "SocketForge",
+        "WireField",
+        "YardGrid",
+        "LumaSocket",
+        "ProSwitch"
+      ],
+      "categorySpecifications": {
+        "Switches": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Sockets": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Cables": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Lighting": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Fans": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Conduits": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Distribution Boards": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Chargers": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Sensors": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Industrial Supplies": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        }
+      },
+      "basePriceStart": 205,
+      "priceStep": 40,
+      "priceModulo": 3600,
+      "categoryPriceFactor": 18,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

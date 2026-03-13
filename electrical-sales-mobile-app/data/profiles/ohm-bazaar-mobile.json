@@ -1,0 +1,292 @@
+{
+  "id": "ohm-bazaar-mobile",
+  "branding": {
+    "name": "Ohm Bazaar",
+    "subtitle": "Electrical products, lighting, cables, and project supplies delivered with dependable dispatch.",
+    "supportEmail": "support@ohm-bazaar.app",
+    "supportPhone": "+91 800 175 0296",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad, project sites, and nearby zones",
+    "accountName": "Ohm Bazaar Member",
+    "accountEmail": "hello@ohm-bazaar.app",
+    "accountPhone": "+91 800 175 0296",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=ohm-bazaar-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Same-day dispatch",
+    "badgeSecondary": "Project-ready stock",
+    "title": "Shop lighting, switches, cables and site supplies from Ohm Bazaar.",
+    "subtitle": "Browse electrical essentials, project materials, and fast-moving SKUs with clear pricing and support.",
+    "aboutTitle": "About us",
+    "aboutText": "Ohm Bazaar supplies electricians, contractors, and households across Lighting, Switches, Cables, Fans with dependable stock and delivery.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: support@ohm-bazaar.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & warranty"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Delivery address"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Stock check"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Project support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "OHM-52041",
+        "title": "Project quotation request for Ohm Bazaar",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "OHM-51789",
+        "title": "Warranty claim status update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: quotation, cable stock, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "Ohm Bazaar",
+      "text": "#2d1840",
+      "background": "#faf5ff",
+      "tint": "#9333ea",
+      "icon": "#5a6472",
+      "tabIconDefault": "#5a6472",
+      "tabIconSelected": "#9333ea",
+      "card": "#ffffff",
+      "cardAlt": "#f3e6ff",
+      "border": "#dde4ea",
+      "muted": "#5a6472",
+      "mutedAlt": "#8ea0b1",
+      "primary": "#9333ea",
+      "primaryDark": "#9333ea",
+      "primarySoft": "#f3e6ff",
+      "danger": "#d14f3f",
+      "warning": "#e9b44c",
+      "success": "#2e8b57",
+      "badge": "#ef4444",
+      "badgeText": "#ffffff",
+      "chip": "#eef3f8",
+      "chipText": "#41576a",
+      "chipActive": "#9333ea",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "Ohm Bazaar Dark",
+      "text": "#eef2f6",
+      "background": "#12161a",
+      "tint": "#eef2f6",
+      "icon": "#9ba8b5",
+      "tabIconDefault": "#9ba8b5",
+      "tabIconSelected": "#eef2f6",
+      "card": "#1b2228",
+      "cardAlt": "#263039",
+      "border": "#33404b",
+      "muted": "#b7c1cb",
+      "mutedAlt": "#8a98a5",
+      "primary": "#9333ea",
+      "primaryDark": "#9333ea",
+      "primarySoft": "#20303c",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#78c498",
+      "badge": "#f07a62",
+      "badgeText": "#12161a",
+      "chip": "#25303a",
+      "chipText": "#dfe7ee",
+      "chipActive": "#9333ea",
+      "chipActiveText": "#12161a"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "OhmBazaar Lighting Prime",
+        "description": "Popular lighting SKU from Ohm Bazaar.",
+        "price": 295,
+        "originalPrice": 340,
+        "image": "",
+        "category": "Lighting",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "OHMBAZAAR-0001",
+        "specifications": {
+          "Pack": "1 unit",
+          "Warranty": "As applicable",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "PurpleVolt Switches Select",
+        "description": "Best-selling switches item.",
+        "price": 345,
+        "originalPrice": 400,
+        "image": "",
+        "category": "Switches",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "PURPLEVOLT-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Voltage": "As labelled",
+          "Use": "General / project"
+        }
+      },
+      {
+        "id": 3,
+        "name": "LiteMart Cables Pro",
+        "description": "Daily moving electrical product from Ohm Bazaar.",
+        "price": 325,
+        "originalPrice": 373,
+        "image": "",
+        "category": "Cables",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "LITEMART-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Rating": "Commercial",
+          "Use": "Electrical installation"
+        }
+      },
+      {
+        "id": 4,
+        "name": "OhmLine Fans Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 315,
+        "originalPrice": 363,
+        "image": "",
+        "category": "Fans",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "OHMLINE-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Safety": "Certified",
+          "Use": "Routine supply"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Lighting",
+        "Switches",
+        "Cables",
+        "Fans",
+        "Chargers",
+        "Adapters",
+        "Smart Home",
+        "Sensors",
+        "Security",
+        "Accessories"
+      ],
+      "brands": [
+        "OhmBazaar",
+        "PurpleVolt",
+        "LiteMart",
+        "OhmLine",
+        "SenseWave",
+        "HomeSpark"
+      ],
+      "categorySpecifications": {
+        "Lighting": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Switches": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Cables": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Fans": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Chargers": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Adapters": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Smart Home": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Sensors": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Security": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Accessories": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        }
+      },
+      "basePriceStart": 175,
+      "priceStep": 37,
+      "priceModulo": 3600,
+      "categoryPriceFactor": 18,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

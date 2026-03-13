@@ -1,0 +1,292 @@
+{
+  "id": "circuitcity-mobile",
+  "branding": {
+    "name": "CircuitCity Supply",
+    "subtitle": "Electrical products, lighting, cables, and project supplies delivered with dependable dispatch.",
+    "supportEmail": "support@circuitcity.app",
+    "supportPhone": "+91 800 240 0384",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad, project sites, and nearby zones",
+    "accountName": "CircuitCity Supply Member",
+    "accountEmail": "hello@circuitcity.app",
+    "accountPhone": "+91 800 240 0384",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=circuitcity-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Same-day dispatch",
+    "badgeSecondary": "Project-ready stock",
+    "title": "Shop circuit protection, distribution boards, cables and site supplies from CircuitCity Supply.",
+    "subtitle": "Browse electrical essentials, project materials, and fast-moving SKUs with clear pricing and support.",
+    "aboutTitle": "About us",
+    "aboutText": "CircuitCity Supply supplies electricians, contractors, and households across Circuit Protection, Distribution Boards, Cables, Switches with dependable stock and delivery.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: support@circuitcity.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & warranty"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Delivery address"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Stock check"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Project support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "CIR-52041",
+        "title": "Project quotation request for CircuitCity Supply",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "CIR-51789",
+        "title": "Warranty claim status update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: quotation, cable stock, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "CircuitCity Supply",
+      "text": "#3d1818",
+      "background": "#fff4f4",
+      "tint": "#dc2626",
+      "icon": "#5a6472",
+      "tabIconDefault": "#5a6472",
+      "tabIconSelected": "#dc2626",
+      "card": "#ffffff",
+      "cardAlt": "#ffe0e0",
+      "border": "#dde4ea",
+      "muted": "#5a6472",
+      "mutedAlt": "#8ea0b1",
+      "primary": "#dc2626",
+      "primaryDark": "#dc2626",
+      "primarySoft": "#ffe0e0",
+      "danger": "#d14f3f",
+      "warning": "#e9b44c",
+      "success": "#2e8b57",
+      "badge": "#d97706",
+      "badgeText": "#ffffff",
+      "chip": "#eef3f8",
+      "chipText": "#41576a",
+      "chipActive": "#dc2626",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "CircuitCity Supply Dark",
+      "text": "#eef2f6",
+      "background": "#12161a",
+      "tint": "#eef2f6",
+      "icon": "#9ba8b5",
+      "tabIconDefault": "#9ba8b5",
+      "tabIconSelected": "#eef2f6",
+      "card": "#1b2228",
+      "cardAlt": "#263039",
+      "border": "#33404b",
+      "muted": "#b7c1cb",
+      "mutedAlt": "#8a98a5",
+      "primary": "#dc2626",
+      "primaryDark": "#dc2626",
+      "primarySoft": "#20303c",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#78c498",
+      "badge": "#f07a62",
+      "badgeText": "#12161a",
+      "chip": "#25303a",
+      "chipText": "#dfe7ee",
+      "chipActive": "#dc2626",
+      "chipActiveText": "#12161a"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "CircuitCity Circuit Protection Prime",
+        "description": "Popular circuit protection SKU from CircuitCity Supply.",
+        "price": 360,
+        "originalPrice": 405,
+        "image": "",
+        "category": "Circuit Protection",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "CIRCUITCITY-0001",
+        "specifications": {
+          "Pack": "1 unit",
+          "Warranty": "As applicable",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "RelayNation Distribution Boards Select",
+        "description": "Best-selling distribution boards item.",
+        "price": 410,
+        "originalPrice": 465,
+        "image": "",
+        "category": "Distribution Boards",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "RELAYNATION-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Voltage": "As labelled",
+          "Use": "General / project"
+        }
+      },
+      {
+        "id": 3,
+        "name": "BreakerPro Cables Pro",
+        "description": "Daily moving electrical product from CircuitCity Supply.",
+        "price": 390,
+        "originalPrice": 438,
+        "image": "",
+        "category": "Cables",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "BREAKERPRO-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Rating": "Commercial",
+          "Use": "Electrical installation"
+        }
+      },
+      {
+        "id": 4,
+        "name": "PanelGrid Switches Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 380,
+        "originalPrice": 428,
+        "image": "",
+        "category": "Switches",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "PANELGRID-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Safety": "Certified",
+          "Use": "Routine supply"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Circuit Protection",
+        "Distribution Boards",
+        "Cables",
+        "Switches",
+        "Industrial Supplies",
+        "Conduits",
+        "Relays",
+        "Meters",
+        "Tools",
+        "Control Panels"
+      ],
+      "brands": [
+        "CircuitCity",
+        "RelayNation",
+        "BreakerPro",
+        "PanelGrid",
+        "RedVolt",
+        "AmpFrame"
+      ],
+      "categorySpecifications": {
+        "Circuit Protection": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Distribution Boards": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Cables": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Switches": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Industrial Supplies": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Conduits": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Relays": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Meters": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "Brand warranty",
+          "Safety": "Certified as labelled"
+        },
+        "Tools": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "Brand warranty",
+          "Safety": "Certified as labelled"
+        },
+        "Control Panels": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        }
+      },
+      "basePriceStart": 240,
+      "priceStep": 48,
+      "priceModulo": 3600,
+      "categoryPriceFactor": 18,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

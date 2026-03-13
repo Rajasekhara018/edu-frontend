@@ -1,0 +1,292 @@
+{
+  "id": "nexa-powerhouse-mobile",
+  "branding": {
+    "name": "Nexa PowerHouse",
+    "subtitle": "Electrical products, lighting, cables, and project supplies delivered with dependable dispatch.",
+    "supportEmail": "support@nexa-powerhouse.app",
+    "supportPhone": "+91 800 280 0440",
+    "supportHours": "8:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Hyderabad, project sites, and nearby zones",
+    "accountName": "Nexa PowerHouse Member",
+    "accountEmail": "hello@nexa-powerhouse.app",
+    "accountPhone": "+91 800 280 0440",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=nexa-powerhouse-mobile"
+  },
+  "hero": {
+    "badgePrimary": "Same-day dispatch",
+    "badgeSecondary": "Project-ready stock",
+    "title": "Shop power backup, chargers, battery packs and site supplies from Nexa PowerHouse.",
+    "subtitle": "Browse electrical essentials, project materials, and fast-moving SKUs with clear pricing and support.",
+    "aboutTitle": "About us",
+    "aboutText": "Nexa PowerHouse supplies electricians, contractors, and households across Power Backup, Chargers, Battery Packs, Inverters with dependable stock and delivery.",
+    "contactTitle": "Contact us",
+    "contactText": "City: Hyderabad\nSupport hours: 8:00 AM - 8:00 PM\nEmail: support@nexa-powerhouse.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & warranty"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Delivery address"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Stock check"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Project support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "NEX-52041",
+        "title": "Project quotation request for Nexa PowerHouse",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "NEX-51789",
+        "title": "Warranty claim status update",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: quotation, cable stock, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "Nexa PowerHouse",
+      "text": "#1f1e3d",
+      "background": "#f4f5ff",
+      "tint": "#4f46e5",
+      "icon": "#5a6472",
+      "tabIconDefault": "#5a6472",
+      "tabIconSelected": "#4f46e5",
+      "card": "#ffffff",
+      "cardAlt": "#e5e7ff",
+      "border": "#dde4ea",
+      "muted": "#5a6472",
+      "mutedAlt": "#8ea0b1",
+      "primary": "#4f46e5",
+      "primaryDark": "#4f46e5",
+      "primarySoft": "#e5e7ff",
+      "danger": "#d14f3f",
+      "warning": "#e9b44c",
+      "success": "#2e8b57",
+      "badge": "#ef4444",
+      "badgeText": "#ffffff",
+      "chip": "#eef3f8",
+      "chipText": "#41576a",
+      "chipActive": "#4f46e5",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "Nexa PowerHouse Dark",
+      "text": "#eef2f6",
+      "background": "#12161a",
+      "tint": "#eef2f6",
+      "icon": "#9ba8b5",
+      "tabIconDefault": "#9ba8b5",
+      "tabIconSelected": "#eef2f6",
+      "card": "#1b2228",
+      "cardAlt": "#263039",
+      "border": "#33404b",
+      "muted": "#b7c1cb",
+      "mutedAlt": "#8a98a5",
+      "primary": "#4f46e5",
+      "primaryDark": "#4f46e5",
+      "primarySoft": "#20303c",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#78c498",
+      "badge": "#f07a62",
+      "badgeText": "#12161a",
+      "chip": "#25303a",
+      "chipText": "#dfe7ee",
+      "chipActive": "#4f46e5",
+      "chipActiveText": "#12161a"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "NexaPower Power Backup Prime",
+        "description": "Popular power backup SKU from Nexa PowerHouse.",
+        "price": 400,
+        "originalPrice": 445,
+        "image": "",
+        "category": "Power Backup",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "NEXAPOWER-0001",
+        "specifications": {
+          "Pack": "1 unit",
+          "Warranty": "As applicable",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "ChargeNest Chargers Select",
+        "description": "Best-selling chargers item.",
+        "price": 450,
+        "originalPrice": 505,
+        "image": "",
+        "category": "Chargers",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "CHARGENEST-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Voltage": "As labelled",
+          "Use": "General / project"
+        }
+      },
+      {
+        "id": 3,
+        "name": "BatteryGrid Battery Packs Pro",
+        "description": "Daily moving electrical product from Nexa PowerHouse.",
+        "price": 430,
+        "originalPrice": 478,
+        "image": "",
+        "category": "Battery Packs",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "BATTERYGRID-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Rating": "Commercial",
+          "Use": "Electrical installation"
+        }
+      },
+      {
+        "id": 4,
+        "name": "PowerHouse Inverters Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 420,
+        "originalPrice": 468,
+        "image": "",
+        "category": "Inverters",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "POWERHOUSE-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Safety": "Certified",
+          "Use": "Routine supply"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Power Backup",
+        "Chargers",
+        "Battery Packs",
+        "Inverters",
+        "Cables",
+        "Switches",
+        "Lighting",
+        "Smart Home",
+        "Power Strips",
+        "UPS"
+      ],
+      "brands": [
+        "NexaPower",
+        "ChargeNest",
+        "BatteryGrid",
+        "PowerHouse",
+        "BackupCore",
+        "VoltDock"
+      ],
+      "categorySpecifications": {
+        "Power Backup": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "Brand warranty",
+          "Safety": "Certified as labelled"
+        },
+        "Chargers": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Battery Packs": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Inverters": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "Brand warranty",
+          "Safety": "Certified as labelled"
+        },
+        "Cables": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Switches": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Lighting": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Smart Home": {
+          "Pack": "Standard unit",
+          "Use": "Residential / commercial",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "Power Strips": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "As applicable",
+          "Safety": "Certified as labelled"
+        },
+        "UPS": {
+          "Pack": "Standard unit",
+          "Use": "Project / trade",
+          "Warranty": "Brand warranty",
+          "Safety": "Certified as labelled"
+        }
+      },
+      "basePriceStart": 280,
+      "priceStep": 55,
+      "priceModulo": 3600,
+      "categoryPriceFactor": 18,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}
