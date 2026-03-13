@@ -4,6 +4,13 @@
     "outDir": "./out-tsc/app",
     "types": []
   },
-  "files": ["src/main.ts", "src/polyfills.ts"],
-  "include": ["src/**/*.d.ts"]
+  "files": ["src/polyfills.ts"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts"],
+  "exclude": [
+    "src/test.ts",
+    "src/main.ts",
+    "src/app/app-routing.module.ts",
+    "src/app/app.module.ts",
+    "src/app/material.module.ts"
+  ]
 }

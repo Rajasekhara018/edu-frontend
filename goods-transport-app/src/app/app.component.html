@@ -15,9 +15,9 @@
     </div>
   </header>
   <nav class="nav" *ngIf="user">
-    <a routerLink="/customer" *ngIf="user?.role === 'CUSTOMER'">Customer</a>
-    <a routerLink="/driver" *ngIf="user?.role === 'DRIVER'">Driver</a>
-    <a routerLink="/admin" *ngIf="user?.role === 'ADMIN'">Admin</a>
+    <a routerLink="/customer" *ngIf="user.role === 'CUSTOMER'">Customer</a>
+    <a routerLink="/driver" *ngIf="user.role === 'DRIVER'">Driver</a>
+    <a routerLink="/admin" *ngIf="user.role === 'ADMIN'">Admin</a>
   </nav>
   <main>
     <router-outlet></router-outlet>
