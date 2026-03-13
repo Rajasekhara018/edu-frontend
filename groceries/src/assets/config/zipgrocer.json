@@ -1,0 +1,165 @@
+{
+  "branding": {
+    "name": "ZipGrocer Now",
+    "tagline": "ZipGrocer Now delivers fresh groceries, pantry staples, and home essentials across neighborhood routes.",
+    "logoMark": "ZG",
+    "logoText": "ZipGrocer",
+    "logoDot": ".now",
+    "pageTitle": "ZipGrocer Now",
+    "locationLabel": "Delivering to Madhapur, Hyderabad",
+    "accountLabel": "Family account",
+    "footerTagline": "ZipGrocer Now brings groceries, snacks, dairy, and household picks together with reliable slots and smart savings.",
+    "footerCopyright": "(C) 2026 ZipGrocer Now. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #f4fff1 0%, #edf9e8 45%, #e7f3e1 100%)",
+    "ink": "#19311d",
+    "muted": "#546a57",
+    "accent": "#2f9e44",
+    "accentStrong": "#247a34",
+    "neon": "#f4d35e",
+    "mint": "#dff4d8",
+    "cream": "#fbfff8",
+    "panel": "#ffffff",
+    "border": "rgba(25, 49, 29, 0.12)",
+    "shadow": "0 18px 40px rgba(25, 49, 29, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #f5fff2 0%, #e2f7d8 45%, #c5ebb7 100%)",
+    "headerBorder": "rgba(25, 49, 29, 0.08)",
+    "darkSurface": "#19311d",
+    "darkSurfaceAlt": "#24482a",
+    "onDark": "#f8fff6",
+    "onDarkMuted": "#d2e4d0",
+    "focusRing": "rgba(47, 158, 68, 0.18)"
+  },
+  "about": {
+    "eyebrow": "ZipGrocer Now",
+    "title": "ZipGrocer Now keeps kitchens, pantries, and daily baskets stocked without last-minute store runs.",
+    "description": "ZipGrocer Now curates fast-moving grocery categories across fresh produce, dairy & eggs, bakery, staples with dependable delivery slots and quick support."
+  },
+  "contact": {
+    "title": "Need help from ZipGrocer Now?",
+    "ctaLabel": "Chat with support",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Support line",
+        "lines": [
+          "+91 (810) 220-5511",
+          "+91 (810) 220-5512"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "care@zipgrocernow.in",
+          "support@zipgrocernow.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 220-5511",
+      "support@zipgrocernow.in",
+      "Delivering to Madhapur, Hyderabad"
+    ],
+    "appCtaLabel": "Get the app"
+  },
+  "hero": {
+    "eyebrow": "ZipGrocer Now",
+    "title": "ZipGrocer Now delivers fresh groceries and daily essentials around your schedule.",
+    "subtitle": "Shop fresh produce, dairy & eggs, bakery and more with transparent pricing and dependable delivery windows.",
+    "tags": [
+      "Fresh today",
+      "Delivery in 30-60 mins",
+      "Smart savings"
+    ],
+    "cardTitle": "This week's basket",
+    "cardItems": [
+      "Fresh Produce picks",
+      "Dairy & Eggs staples",
+      "Bakery family picks"
+    ],
+    "deliveryLine": "Delivery in 30-60 mins",
+    "detailDeliveryLine": "Delivery in 30-60 mins",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Fresh Produce",
+    "Dairy & Eggs",
+    "Bakery",
+    "Staples",
+    "Snacks",
+    "Beverages",
+    "Frozen Foods",
+    "Personal Care"
+  ],
+  "navLinks": [
+    "Fresh Produce",
+    "Dairy & Eggs",
+    "Bakery",
+    "Staples",
+    "Snacks",
+    "Beverages",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Fresh Produce",
+    "Dairy & Eggs",
+    "Bakery",
+    "Staples",
+    "Snacks",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "promoMessages": [
+    "Free delivery above Rs 599",
+    "Fresh picks restocked every morning"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "FreshFarm",
+        "DailyDairy",
+        "CrunchCo",
+        "PantryPro",
+        "UrbanHarvest",
+        "PureSip",
+        "HomeNest",
+        "QuickMeal"
+      ],
+      "categories": [
+        "Fresh Produce",
+        "Dairy & Eggs",
+        "Bakery",
+        "Staples",
+        "Snacks",
+        "Beverages",
+        "Frozen Foods",
+        "Personal Care",
+        "Cleaning",
+        "Baby Care"
+      ],
+      "categorySpecifications": {
+        "Baby Care": {
+          "Pack": "1 unit",
+          "Storage": "Cool and dry",
+          "ShelfLife": "6 months",
+          "Type": "Daily essentials"
+        }
+      },
+      "basePriceStart": 29,
+      "priceStep": 9,
+      "priceModulo": 900,
+      "categoryPriceFactor": 4,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "electrical-sales": {
+    "groceries": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/electrical-sales",
+            "outputPath": "dist/groceries",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -52,7 +52,13 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
             },
             "development": {
               "buildOptimizer": false,
@@ -61,18 +67,239 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
+            },
+            "greenbasket": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.greenbasket.ts"
+                }
+              ]
+            },
+            "urbancart": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.urbancart.ts"
+                }
+              ]
+            },
+            "harvestlane": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.harvestlane.ts"
+                }
+              ]
+            },
+            "berrydrop": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.berrydrop.ts"
+                }
+              ]
+            },
+            "pantrypal": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.pantrypal.ts"
+                }
+              ]
+            },
+            "dailynest": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dailynest.ts"
+                }
+              ]
+            },
+            "marketmint": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.marketmint.ts"
+                }
+              ]
+            },
+            "crateberry": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.crateberry.ts"
+                }
+              ]
+            },
+            "sunbasket-now": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.sunbasket-now.ts"
+                }
+              ]
+            },
+            "farmrush": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.farmrush.ts"
+                }
+              ]
+            },
+            "kitchenlane": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.kitchenlane.ts"
+                }
+              ]
+            },
+            "freshfleet": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.freshfleet.ts"
+                }
+              ]
+            },
+            "rootedcart": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.rootedcart.ts"
+                }
+              ]
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "electrical-sales:build:production"
+              "browserTarget": "groceries:build:production"
             },
             "development": {
-              "browserTarget": "electrical-sales:build:development"
+              "browserTarget": "groceries:build:development"
+            },
+            "greenbasket": {
+              "browserTarget": "groceries:build:greenbasket"
+            },
+            "urbancart": {
+              "browserTarget": "groceries:build:urbancart"
+            },
+            "harvestlane": {
+              "browserTarget": "groceries:build:harvestlane"
+            },
+            "berrydrop": {
+              "browserTarget": "groceries:build:berrydrop"
+            },
+            "pantrypal": {
+              "browserTarget": "groceries:build:pantrypal"
+            },
+            "dailynest": {
+              "browserTarget": "groceries:build:dailynest"
+            },
+            "marketmint": {
+              "browserTarget": "groceries:build:marketmint"
+            },
+            "crateberry": {
+              "browserTarget": "groceries:build:crateberry"
+            },
+            "sunbasket-now": {
+              "browserTarget": "groceries:build:sunbasket-now"
+            },
+            "farmrush": {
+              "browserTarget": "groceries:build:farmrush"
+            },
+            "kitchenlane": {
+              "browserTarget": "groceries:build:kitchenlane"
+            },
+            "freshfleet": {
+              "browserTarget": "groceries:build:freshfleet"
+            },
+            "rootedcart": {
+              "browserTarget": "groceries:build:rootedcart"
             }
           },
           "defaultConfiguration": "development"
@@ -80,7 +307,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "electrical-sales:build"
+            "browserTarget": "groceries:build"
           }
         },
         "test": {

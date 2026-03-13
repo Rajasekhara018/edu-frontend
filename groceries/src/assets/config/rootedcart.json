@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "RootedCart",
+    "tagline": "RootedCart delivers fresh groceries, pantry staples, and home essentials across neighborhood routes.",
+    "logoMark": "RC",
+    "logoText": "RootedCart",
+    "logoDot": ".store",
+    "pageTitle": "RootedCart",
+    "locationLabel": "Delivering to Noida Sector 62",
+    "accountLabel": "Family account",
+    "footerTagline": "RootedCart brings groceries, snacks, dairy, and household picks together with reliable slots and smart savings.",
+    "footerCopyright": "(C) 2026 RootedCart. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #f0fdf4 0%, #dcfce7 42%, #bbf7d0 100%)",
+    "ink": "#16311c",
+    "muted": "#4c6652",
+    "accent": "#15803d",
+    "accentStrong": "#166534",
+    "neon": "#86efac",
+    "mint": "#dcfce7",
+    "cream": "#f7fff8",
+    "panel": "#ffffff",
+    "border": "rgba(22, 49, 28, 0.12)",
+    "shadow": "0 18px 40px rgba(22, 49, 28, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #f1fff4 0%, #d7fce3 48%, #86efac 100%)",
+    "headerBorder": "rgba(22, 49, 28, 0.08)",
+    "darkSurface": "#16311c",
+    "darkSurfaceAlt": "#21492b",
+    "onDark": "#f7fff8",
+    "onDarkMuted": "#ddefe1",
+    "focusRing": "rgba(21, 128, 61, 0.18)"
+  },
+  "about": {
+    "eyebrow": "RootedCart",
+    "title": "RootedCart keeps kitchens, pantries, and daily baskets stocked without last-minute store runs.",
+    "description": "RootedCart curates fast-moving grocery categories across fresh produce, organic, staples, dairy & eggs with dependable delivery slots and quick support."
+  },
+  "contact": {
+    "title": "Need help from RootedCart?",
+    "ctaLabel": "Chat with support",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Support line",
+        "lines": [
+          "+91 (810) 220-5511",
+          "+91 (810) 220-5512"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "care@rootedcart.in",
+          "support@rootedcart.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 220-5511",
+      "support@rootedcart.in",
+      "Delivering to Noida Sector 62"
+    ],
+    "appCtaLabel": "Get the app"
+  },
+  "hero": {
+    "eyebrow": "RootedCart",
+    "title": "RootedCart delivers fresh groceries and daily essentials around your schedule.",
+    "subtitle": "Shop fresh produce, organic, staples and more with transparent pricing and dependable delivery windows.",
+    "tags": [
+      "Fresh today",
+      "Delivery in 45 mins",
+      "Smart savings"
+    ],
+    "cardTitle": "This week's basket",
+    "cardItems": [
+      "Fresh Produce picks",
+      "Organic staples",
+      "Staples family picks"
+    ],
+    "deliveryLine": "Delivery in 45 mins",
+    "detailDeliveryLine": "Delivery in 45 mins",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Fresh Produce",
+    "Organic",
+    "Staples",
+    "Dairy & Eggs",
+    "Bakery",
+    "Snacks",
+    "Beverages",
+    "Cleaning"
+  ],
+  "navLinks": [
+    "Fresh Produce",
+    "Organic",
+    "Staples",
+    "Dairy & Eggs",
+    "Bakery",
+    "Snacks",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Fresh Produce",
+    "Organic",
+    "Staples",
+    "Dairy & Eggs",
+    "Bakery",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "promoMessages": [
+    "Organic basket from Rs 249",
+    "Fresh staples restocked daily"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "RootedCart",
+        "GreenRoot",
+        "PantryPro",
+        "PureMoo",
+        "BakeHouse",
+        "CleanCo"
+      ],
+      "categories": [
+        "Fresh Produce",
+        "Organic",
+        "Staples",
+        "Dairy & Eggs",
+        "Bakery",
+        "Snacks",
+        "Beverages",
+        "Cleaning",
+        "Baby Care",
+        "Household"
+      ],
+      "categorySpecifications": {
+        "Household": {
+          "Pack": "1 unit",
+          "Storage": "Cool and dry",
+          "ShelfLife": "6 months",
+          "Type": "Daily essentials"
+        }
+      },
+      "basePriceStart": 33,
+      "priceStep": 9,
+      "priceModulo": 930,
+      "categoryPriceFactor": 4,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

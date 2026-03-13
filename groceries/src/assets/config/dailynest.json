@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "DailyNest Grocery",
+    "tagline": "DailyNest Grocery delivers fresh groceries, pantry staples, and home essentials across neighborhood routes.",
+    "logoMark": "DN",
+    "logoText": "DailyNest",
+    "logoDot": ".in",
+    "pageTitle": "DailyNest Grocery",
+    "locationLabel": "Delivering to Kothaguda, Hyderabad",
+    "accountLabel": "Family account",
+    "footerTagline": "DailyNest Grocery brings groceries, snacks, dairy, and household picks together with reliable slots and smart savings.",
+    "footerCopyright": "(C) 2026 DailyNest Grocery. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #f0fdfa 0%, #ccfbf1 40%, #99f6e4 100%)",
+    "ink": "#102825",
+    "muted": "#426a67",
+    "accent": "#0f766e",
+    "accentStrong": "#0f5f59",
+    "neon": "#99f6e4",
+    "mint": "#ccfbf1",
+    "cream": "#f4fffd",
+    "panel": "#ffffff",
+    "border": "rgba(16, 40, 37, 0.12)",
+    "shadow": "0 18px 40px rgba(16, 40, 37, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #effefb 0%, #cffcf4 48%, #99f6e4 100%)",
+    "headerBorder": "rgba(16, 40, 37, 0.08)",
+    "darkSurface": "#102825",
+    "darkSurfaceAlt": "#173d39",
+    "onDark": "#f4fffd",
+    "onDarkMuted": "#d6efeb",
+    "focusRing": "rgba(15, 118, 110, 0.18)"
+  },
+  "about": {
+    "eyebrow": "DailyNest Grocery",
+    "title": "DailyNest Grocery keeps kitchens, pantries, and daily baskets stocked without last-minute store runs.",
+    "description": "DailyNest Grocery curates fast-moving grocery categories across fresh produce, dairy & eggs, bakery, staples with dependable delivery slots and quick support."
+  },
+  "contact": {
+    "title": "Need help from DailyNest Grocery?",
+    "ctaLabel": "Chat with support",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Support line",
+        "lines": [
+          "+91 (810) 220-5511",
+          "+91 (810) 220-5512"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "care@dailynestgrocery.in",
+          "support@dailynestgrocery.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 220-5511",
+      "support@dailynestgrocery.in",
+      "Delivering to Kothaguda, Hyderabad"
+    ],
+    "appCtaLabel": "Get the app"
+  },
+  "hero": {
+    "eyebrow": "DailyNest Grocery",
+    "title": "DailyNest Grocery delivers fresh groceries and daily essentials around your schedule.",
+    "subtitle": "Shop fresh produce, dairy & eggs, bakery and more with transparent pricing and dependable delivery windows.",
+    "tags": [
+      "Fresh today",
+      "Delivery in 35 mins",
+      "Smart savings"
+    ],
+    "cardTitle": "This week's basket",
+    "cardItems": [
+      "Fresh Produce picks",
+      "Dairy & Eggs staples",
+      "Bakery family picks"
+    ],
+    "deliveryLine": "Delivery in 35 mins",
+    "detailDeliveryLine": "Delivery in 35 mins",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Fresh Produce",
+    "Dairy & Eggs",
+    "Bakery",
+    "Staples",
+    "Snacks",
+    "Beverages",
+    "Cleaning",
+    "Pet Care"
+  ],
+  "navLinks": [
+    "Fresh Produce",
+    "Dairy & Eggs",
+    "Bakery",
+    "Staples",
+    "Snacks",
+    "Beverages",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Fresh Produce",
+    "Dairy & Eggs",
+    "Bakery",
+    "Staples",
+    "Snacks",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "promoMessages": [
+    "Pet and baby essentials available",
+    "Breakfast basket offers today"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "DailyNest",
+        "PureMoo",
+        "BakeHouse",
+        "PantryPro",
+        "CrunchCo",
+        "CleanCo"
+      ],
+      "categories": [
+        "Fresh Produce",
+        "Dairy & Eggs",
+        "Bakery",
+        "Staples",
+        "Snacks",
+        "Beverages",
+        "Cleaning",
+        "Pet Care",
+        "Baby Care",
+        "Ready Meals"
+      ],
+      "categorySpecifications": {
+        "Ready Meals": {
+          "Pack": "1 unit",
+          "Storage": "Cool and dry",
+          "ShelfLife": "6 months",
+          "Type": "Daily essentials"
+        }
+      },
+      "basePriceStart": 33,
+      "priceStep": 9,
+      "priceModulo": 920,
+      "categoryPriceFactor": 4,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

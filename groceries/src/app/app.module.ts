@@ -1,6 +1,5 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -12,24 +11,25 @@ import { MaterialModule } from './Services/material.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GroceryConfigService } from './Services/grocery-config.service';
+
+function initializeGroceryConfig(configService: GroceryConfigService): () => Promise<void> {
+  return () => configService.loadConfig();
+}
 
 @NgModule({
-  declarations: [ 
-    AppComponent,
-    HeaderComponent,
-    ProductsListComponent,
-    ProductDetailComponent,
-    CartComponent
+  declarations: [AppComponent, HeaderComponent, ProductsListComponent, ProductDetailComponent, CartComponent],
+  imports: [BrowserAnimationsModule, BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, MaterialModule],
+  providers: [
+    DatePipe,
+    CurrencyPipe,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeGroceryConfig,
+      deps: [GroceryConfigService],
+      multi: true
+    }
   ],
-  imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    MaterialModule,
-  ],
-  providers: [DatePipe, CurrencyPipe],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

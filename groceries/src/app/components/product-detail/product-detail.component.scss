@@ -1,14 +1,8 @@
 .product-detail-container {
-  --ink: #101311;
-  --muted: #3b4a40;
-  --neon: #d8ff4f;
-  --mint: #b6f7d3;
-  --border: rgba(16, 19, 17, 0.14);
-
   padding: 2.8rem 1.5rem 4rem;
   max-width: 1400px;
   margin: 0 auto;
-  font-family: 'Space Grotesk', 'Segoe UI', sans-serif;
+  font-family: 'Outfit', 'Segoe UI', sans-serif;
   color: var(--ink);
   position: relative;
 
@@ -16,8 +10,8 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at 20% 10%, rgba(216, 255, 79, 0.25), transparent 45%),
-      radial-gradient(circle at 85% 15%, rgba(182, 247, 211, 0.2), transparent 45%);
+    background: radial-gradient(circle at 20% 10%, color-mix(in srgb, var(--neon) 25%, transparent), transparent 45%),
+      radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--mint) 35%, transparent), transparent 45%);
     opacity: 0.7;
     pointer-events: none;
   }
@@ -31,7 +25,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background-color: #101311;
+    background-color: #1b1a1f;
     color: var(--neon);
     border: none;
     padding: 0.6rem 1.2rem;
@@ -44,7 +38,7 @@
 
     &:hover {
       transform: translateY(-1px);
-      box-shadow: 0 10px 20px rgba(16, 19, 17, 0.25);
+      box-shadow: 0 10px 20px rgba(27, 26, 31, 0.25);
     }
   }
 
@@ -61,13 +55,13 @@
     border: 1px solid var(--border);
 
     p {
-      color: #5b6a60;
+      color: #6b605a;
       font-size: 1.05rem;
     }
 
     button {
       padding: 0.7rem 1.4rem;
-      background-color: #101311;
+      background-color: #1b1a1f;
       color: var(--neon);
       border: none;
       border-radius: 999px;
@@ -78,7 +72,7 @@
 
       &:hover {
         transform: translateY(-1px);
-        box-shadow: 0 8px 18px rgba(16, 19, 17, 0.3);
+        box-shadow: 0 8px 18px rgba(27, 26, 31, 0.3);
       }
     }
   }
@@ -107,9 +101,9 @@
         max-width: 520px;
         border-radius: 22px;
         overflow: hidden;
-        background: linear-gradient(160deg, #f5f8ea 0%, #e6f3dd 100%);
-        border: 1px solid rgba(16, 19, 17, 0.16);
-        box-shadow: 0 18px 32px rgba(12, 18, 12, 0.15);
+        background: linear-gradient(160deg, #fff4ea 0%, #f6e4d9 100%);
+        border: 1px solid rgba(27, 26, 31, 0.16);
+        box-shadow: 0 18px 32px rgba(23, 18, 20, 0.15);
 
         img {
           width: 100%;
@@ -121,14 +115,14 @@
           position: absolute;
           top: 18px;
           right: 18px;
-          background-color: #101311;
+          background-color: #1b1a1f;
           color: var(--neon);
           padding: 0.5rem 0.9rem;
           border-radius: 999px;
           font-weight: 700;
           font-size: 0.82rem;
           letter-spacing: 0.3px;
-          box-shadow: 0 10px 22px rgba(16, 19, 17, 0.3);
+          box-shadow: 0 10px 22px rgba(27, 26, 31, 0.3);
         }
       }
 
@@ -141,7 +135,7 @@
         width: 62px;
         height: 62px;
         border-radius: 12px;
-        border: 1px solid rgba(16, 19, 17, 0.2);
+        border: 1px solid rgba(27, 26, 31, 0.2);
         background: #ffffff;
         display: grid;
         place-items: center;
@@ -157,8 +151,8 @@
       }
 
       .thumb.active {
-        border-color: #101311;
-        box-shadow: 0 8px 18px rgba(16, 19, 17, 0.25);
+        border-color: #1b1a1f;
+        box-shadow: 0 8px 18px rgba(27, 26, 31, 0.25);
       }
     }
 
@@ -169,7 +163,7 @@
 
       .product-header {
         .category {
-          color: #0f7f4d;
+          color: #b54732;
           font-size: 0.85rem;
           font-weight: 700;
           text-transform: uppercase;
@@ -177,9 +171,9 @@
         }
 
         h1 {
-          font-family: 'Unbounded', 'Space Grotesk', sans-serif;
+          font-family: 'Bodoni Moda', 'Outfit', serif;
           font-size: 2.2rem;
-          color: #101311;
+          color: #1b1a1f;
           margin: 0.35rem 0 0.5rem 0;
         }
       }
@@ -189,14 +183,14 @@
         align-items: center;
         gap: 1rem;
         padding-bottom: 1rem;
-        border-bottom: 1px dashed rgba(16, 19, 17, 0.2);
+        border-bottom: 1px dashed rgba(27, 26, 31, 0.2);
 
         .rating {
           display: flex;
           align-items: center;
           gap: 0.5rem;
           font-weight: 600;
-          color: #101311;
+          color: #1b1a1f;
           font-size: 0.95rem;
 
           i {
@@ -206,7 +200,7 @@
         }
 
         .reviews {
-          color: #7a8a80;
+          color: #857971;
           font-size: 0.9rem;
         }
       }
@@ -217,25 +211,25 @@
         align-items: baseline;
         gap: 0.6rem;
         padding-bottom: 1rem;
-        border-bottom: 1px solid rgba(16, 19, 17, 0.12);
+        border-bottom: 1px solid rgba(27, 26, 31, 0.12);
 
         .current-price {
           font-size: 2rem;
           font-weight: 800;
-          color: #101311;
+          color: #1b1a1f;
         }
 
         .original-price {
           font-size: 1rem;
-          color: #97a598;
+          color: #a9988c;
           text-decoration: line-through;
         }
 
         .savings {
-          color: #0f7f4d;
+          color: #b54732;
           font-weight: 700;
           font-size: 0.85rem;
-          background: rgba(30, 169, 107, 0.12);
+          background: rgba(228, 87, 59, 0.12);
           padding: 0.25rem 0.6rem;
           border-radius: 999px;
         }
@@ -257,33 +251,33 @@
           font-size: 0.82rem;
 
           &.in-stock {
-            background-color: rgba(30, 169, 107, 0.15);
-            color: #0f7f4d;
+            background-color: rgba(228, 87, 59, 0.15);
+            color: #b54732;
           }
 
           &.out-of-stock {
-            background-color: rgba(16, 19, 17, 0.12);
-            color: #6b776c;
+            background-color: rgba(27, 26, 31, 0.12);
+            color: #7d6f66;
           }
         }
 
         .delivery {
           font-size: 0.85rem;
-          color: #2c3a2f;
+          color: #5c5551;
           font-weight: 600;
         }
       }
 
       .description-section {
         h3 {
-          font-family: 'Unbounded', 'Space Grotesk', sans-serif;
+          font-family: 'Bodoni Moda', 'Outfit', serif;
           font-size: 1.2rem;
-          color: #101311;
+          color: #1b1a1f;
           margin: 0 0 0.7rem 0;
         }
 
         p {
-          color: #5b6a60;
+          color: #6b605a;
           line-height: 1.6;
           margin: 0;
         }
@@ -291,9 +285,9 @@
 
       .specifications-section {
         h3 {
-          font-family: 'Unbounded', 'Space Grotesk', sans-serif;
+          font-family: 'Bodoni Moda', 'Outfit', serif;
           font-size: 1.2rem;
-          color: #101311;
+          color: #1b1a1f;
           margin: 0 0 1rem 0;
         }
 
@@ -302,7 +296,7 @@
           border-collapse: collapse;
 
           tr {
-            border-bottom: 1px solid rgba(16, 19, 17, 0.12);
+            border-bottom: 1px solid rgba(27, 26, 31, 0.12);
 
             &:last-child {
               border-bottom: none;
@@ -314,12 +308,12 @@
 
             &.spec-key {
               font-weight: 600;
-              color: #101311;
+              color: #1b1a1f;
               width: 40%;
             }
 
             &.spec-value {
-              color: #5b6a60;
+              color: #6b605a;
             }
           }
         }
@@ -330,7 +324,7 @@
         flex-direction: column;
         gap: 1.3rem;
         padding-top: 1rem;
-        border-top: 1px solid rgba(16, 19, 17, 0.12);
+        border-top: 1px solid rgba(27, 26, 31, 0.12);
 
         .quantity-section {
           display: flex;
@@ -339,19 +333,19 @@
 
           label {
             font-weight: 600;
-            color: #2c3a2f;
+            color: #5c5551;
             min-width: 80px;
           }
 
           .quantity-control {
             display: flex;
-            border: 1px solid rgba(16, 19, 17, 0.2);
+            border: 1px solid rgba(27, 26, 31, 0.2);
             border-radius: 999px;
             overflow: hidden;
             background: #ffffff;
 
             button {
-              background-color: #f1f5e6;
+              background-color: #fbf2ea;
               border: none;
               width: 36px;
               height: 36px;
@@ -360,11 +354,11 @@
               transition: all 0.3s ease;
 
               &:hover:not(:disabled) {
-                background-color: #e2f2d4;
+                background-color: #f2dfd3;
               }
 
               &:disabled {
-                color: #b0bdb3;
+                color: #b9a8a0;
                 cursor: not-allowed;
               }
             }
@@ -409,22 +403,22 @@
           }
 
           .add-to-cart-btn {
-            background-color: #101311;
+            background-color: #1b1a1f;
             color: var(--neon);
 
             &:hover:not(:disabled) {
               transform: translateY(-1px);
-              box-shadow: 0 10px 20px rgba(16, 19, 17, 0.35);
+              box-shadow: 0 10px 20px rgba(27, 26, 31, 0.35);
             }
           }
 
           .buy-now-btn {
-            background-color: #1ea96b;
+            background-color: #e4573b;
             color: #ffffff;
 
             &:hover:not(:disabled) {
               transform: translateY(-1px);
-              box-shadow: 0 8px 18px rgba(30, 169, 107, 0.3);
+              box-shadow: 0 8px 18px rgba(228, 87, 59, 0.3);
             }
           }
         }
@@ -432,10 +426,10 @@
 
       .sku-section {
         padding-top: 1rem;
-        border-top: 1px solid rgba(16, 19, 17, 0.12);
+        border-top: 1px solid rgba(27, 26, 31, 0.12);
 
         p {
-          color: #6b776c;
+          color: #7d6f66;
           margin: 0;
           font-size: 0.92rem;
         }
@@ -447,9 +441,9 @@
     margin-top: 3rem;
 
     h2 {
-      font-family: 'Unbounded', 'Space Grotesk', sans-serif;
+      font-family: 'Bodoni Moda', 'Outfit', serif;
       font-size: 1.7rem;
-      color: #101311;
+      color: #1b1a1f;
       margin-bottom: 1.6rem;
     }
 
@@ -464,7 +458,7 @@
 
       .related-product-card {
         background: #ffffff;
-        border: 1px solid rgba(16, 19, 17, 0.16);
+        border: 1px solid rgba(27, 26, 31, 0.16);
         border-radius: 16px;
         padding: 1rem;
         cursor: pointer;
@@ -472,14 +466,14 @@
         animation: cardRise 0.55s ease both;
 
         &:hover {
-          box-shadow: 0 12px 22px rgba(16, 19, 17, 0.18);
+          box-shadow: 0 12px 22px rgba(27, 26, 31, 0.18);
           transform: translateY(-3px);
         }
 
         .related-product-image {
           width: 100%;
           height: 170px;
-          background-color: #f3f7ea;
+          background-color: #fff4ea;
           border-radius: 10px;
           overflow: hidden;
           margin-bottom: 0.75rem;
@@ -493,7 +487,7 @@
 
         h4 {
           font-size: 0.95rem;
-          color: #101311;
+          color: #1b1a1f;
           margin: 0 0 0.5rem 0;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -507,12 +501,12 @@
 
           .price {
             font-weight: 700;
-            color: #101311;
+            color: #1b1a1f;
             font-size: 0.95rem;
           }
 
           .original {
-            color: #97a598;
+            color: #a9988c;
             text-decoration: line-through;
             font-size: 0.85rem;
           }
@@ -521,9 +515,9 @@
         .view-btn {
           width: 100%;
           padding: 0.55rem;
-          background-color: #f1f5e6;
-          color: #101311;
-          border: 1px solid rgba(16, 19, 17, 0.2);
+          background-color: #fbf2ea;
+          color: #1b1a1f;
+          border: 1px solid rgba(27, 26, 31, 0.2);
           border-radius: 999px;
           font-size: 0.85rem;
           font-weight: 700;
@@ -531,13 +525,40 @@
           transition: all 0.3s ease;
 
           &:hover {
-            background-color: #101311;
+            background-color: #1b1a1f;
             color: var(--neon);
-            border-color: #101311;
+            border-color: #1b1a1f;
           }
         }
       }
     }
+  }
+}
+
+@media (max-width: 640px) {
+  .product-detail-container {
+    padding: 2.2rem 1.1rem 3rem;
+  }
+
+  .product-detail-container .product-detail {
+    margin-bottom: 3rem;
+  }
+
+  .product-detail-container .product-info-section .product-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .product-detail-container .product-image-section .thumb-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .product-detail-container .product-info-section .pricing-section .current-price {
+    font-size: 1.6rem;
+  }
+
+  .product-detail-container .specifications-section .specs-table td.spec-key {
+    width: 45%;
   }
 }
 
@@ -562,3 +583,5 @@
     transform: translateY(0);
   }
 }
+
+

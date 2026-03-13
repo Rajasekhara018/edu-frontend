@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "MarketMint",
+    "tagline": "MarketMint delivers fresh groceries, pantry staples, and home essentials across neighborhood routes.",
+    "logoMark": "MM",
+    "logoText": "MarketMint",
+    "logoDot": ".mart",
+    "pageTitle": "MarketMint",
+    "locationLabel": "Delivering to HSR Layout, Bengaluru",
+    "accountLabel": "Family account",
+    "footerTagline": "MarketMint brings groceries, snacks, dairy, and household picks together with reliable slots and smart savings.",
+    "footerCopyright": "(C) 2026 MarketMint. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #ecfdf5 0%, #d1fae5 42%, #a7f3d0 100%)",
+    "ink": "#11281d",
+    "muted": "#4b6e5a",
+    "accent": "#059669",
+    "accentStrong": "#047857",
+    "neon": "#6ee7b7",
+    "mint": "#d1fae5",
+    "cream": "#f5fffb",
+    "panel": "#ffffff",
+    "border": "rgba(17, 40, 29, 0.12)",
+    "shadow": "0 18px 40px rgba(17, 40, 29, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #effff7 0%, #d8fbe9 48%, #6ee7b7 100%)",
+    "headerBorder": "rgba(17, 40, 29, 0.08)",
+    "darkSurface": "#11281d",
+    "darkSurfaceAlt": "#183a2b",
+    "onDark": "#f5fffb",
+    "onDarkMuted": "#d5efe2",
+    "focusRing": "rgba(5, 150, 105, 0.18)"
+  },
+  "about": {
+    "eyebrow": "MarketMint",
+    "title": "MarketMint keeps kitchens, pantries, and daily baskets stocked without last-minute store runs.",
+    "description": "MarketMint curates fast-moving grocery categories across fresh produce, organic, dairy & eggs, staples with dependable delivery slots and quick support."
+  },
+  "contact": {
+    "title": "Need help from MarketMint?",
+    "ctaLabel": "Chat with support",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Support line",
+        "lines": [
+          "+91 (810) 220-5511",
+          "+91 (810) 220-5512"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "care@marketmint.in",
+          "support@marketmint.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 220-5511",
+      "support@marketmint.in",
+      "Delivering to HSR Layout, Bengaluru"
+    ],
+    "appCtaLabel": "Get the app"
+  },
+  "hero": {
+    "eyebrow": "MarketMint",
+    "title": "MarketMint delivers fresh groceries and daily essentials around your schedule.",
+    "subtitle": "Shop fresh produce, organic, dairy & eggs and more with transparent pricing and dependable delivery windows.",
+    "tags": [
+      "Fresh today",
+      "Delivery by evening",
+      "Smart savings"
+    ],
+    "cardTitle": "This week's basket",
+    "cardItems": [
+      "Fresh Produce picks",
+      "Organic staples",
+      "Dairy & Eggs family picks"
+    ],
+    "deliveryLine": "Delivery by evening",
+    "detailDeliveryLine": "Delivery by evening",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Fresh Produce",
+    "Organic",
+    "Dairy & Eggs",
+    "Staples",
+    "Beverages",
+    "Snacks",
+    "Personal Care",
+    "Cleaning"
+  ],
+  "navLinks": [
+    "Fresh Produce",
+    "Organic",
+    "Dairy & Eggs",
+    "Staples",
+    "Beverages",
+    "Snacks",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Fresh Produce",
+    "Organic",
+    "Dairy & Eggs",
+    "Staples",
+    "Beverages",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "promoMessages": [
+    "Organic greens restocked daily",
+    "Household top-ups from Rs 149"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "MarketMint",
+        "GreenRoot",
+        "PureMoo",
+        "PantryPro",
+        "SipLab",
+        "HomeNest"
+      ],
+      "categories": [
+        "Fresh Produce",
+        "Organic",
+        "Dairy & Eggs",
+        "Staples",
+        "Beverages",
+        "Snacks",
+        "Personal Care",
+        "Cleaning",
+        "Household",
+        "Pet Care"
+      ],
+      "categorySpecifications": {
+        "Pet Care": {
+          "Pack": "1 unit",
+          "Storage": "Cool and dry",
+          "ShelfLife": "6 months",
+          "Type": "Daily essentials"
+        }
+      },
+      "basePriceStart": 36,
+      "priceStep": 10,
+      "priceModulo": 990,
+      "categoryPriceFactor": 5,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

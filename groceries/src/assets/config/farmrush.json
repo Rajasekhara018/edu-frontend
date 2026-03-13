@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "FarmRush",
+    "tagline": "FarmRush delivers fresh groceries, pantry staples, and home essentials across neighborhood routes.",
+    "logoMark": "FR",
+    "logoText": "FarmRush",
+    "logoDot": ".rush",
+    "pageTitle": "FarmRush",
+    "locationLabel": "Delivering to Coimbatore RS Puram",
+    "accountLabel": "Family account",
+    "footerTagline": "FarmRush brings groceries, snacks, dairy, and household picks together with reliable slots and smart savings.",
+    "footerCopyright": "(C) 2026 FarmRush. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #f7fee7 0%, #ecfccb 42%, #d9f99d 100%)",
+    "ink": "#22310d",
+    "muted": "#68754a",
+    "accent": "#65a30d",
+    "accentStrong": "#4d7c0f",
+    "neon": "#d9f99d",
+    "mint": "#ecfccb",
+    "cream": "#fbfff2",
+    "panel": "#ffffff",
+    "border": "rgba(34, 49, 13, 0.12)",
+    "shadow": "0 18px 40px rgba(34, 49, 13, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #fbffef 0%, #eff9cf 48%, #d9f99d 100%)",
+    "headerBorder": "rgba(34, 49, 13, 0.08)",
+    "darkSurface": "#22310d",
+    "darkSurfaceAlt": "#33491a",
+    "onDark": "#fbfff2",
+    "onDarkMuted": "#e2edc9",
+    "focusRing": "rgba(101, 163, 13, 0.18)"
+  },
+  "about": {
+    "eyebrow": "FarmRush",
+    "title": "FarmRush keeps kitchens, pantries, and daily baskets stocked without last-minute store runs.",
+    "description": "FarmRush curates fast-moving grocery categories across fresh produce, organic, dairy & eggs, staples with dependable delivery slots and quick support."
+  },
+  "contact": {
+    "title": "Need help from FarmRush?",
+    "ctaLabel": "Chat with support",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Support line",
+        "lines": [
+          "+91 (810) 220-5511",
+          "+91 (810) 220-5512"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "care@farmrush.in",
+          "support@farmrush.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 220-5511",
+      "support@farmrush.in",
+      "Delivering to Coimbatore RS Puram"
+    ],
+    "appCtaLabel": "Get the app"
+  },
+  "hero": {
+    "eyebrow": "FarmRush",
+    "title": "FarmRush delivers fresh groceries and daily essentials around your schedule.",
+    "subtitle": "Shop fresh produce, organic, dairy & eggs and more with transparent pricing and dependable delivery windows.",
+    "tags": [
+      "Fresh today",
+      "Delivery in 60 mins",
+      "Smart savings"
+    ],
+    "cardTitle": "This week's basket",
+    "cardItems": [
+      "Fresh Produce picks",
+      "Organic staples",
+      "Dairy & Eggs family picks"
+    ],
+    "deliveryLine": "Delivery in 60 mins",
+    "detailDeliveryLine": "Delivery in 60 mins",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Fresh Produce",
+    "Organic",
+    "Dairy & Eggs",
+    "Staples",
+    "Bakery",
+    "Snacks",
+    "Beverages",
+    "Baby Care"
+  ],
+  "navLinks": [
+    "Fresh Produce",
+    "Organic",
+    "Dairy & Eggs",
+    "Staples",
+    "Bakery",
+    "Snacks",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Fresh Produce",
+    "Organic",
+    "Dairy & Eggs",
+    "Staples",
+    "Bakery",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "promoMessages": [
+    "Farm produce loaded at dawn",
+    "Local milk and greens available"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "FarmRush",
+        "GreenRoot",
+        "PureMoo",
+        "PantryPro",
+        "BakeHouse",
+        "SnackNest"
+      ],
+      "categories": [
+        "Fresh Produce",
+        "Organic",
+        "Dairy & Eggs",
+        "Staples",
+        "Bakery",
+        "Snacks",
+        "Beverages",
+        "Baby Care",
+        "Cleaning",
+        "Pet Care"
+      ],
+      "categorySpecifications": {
+        "Pet Care": {
+          "Pack": "1 unit",
+          "Storage": "Cool and dry",
+          "ShelfLife": "6 months",
+          "Type": "Daily essentials"
+        }
+      },
+      "basePriceStart": 30,
+      "priceStep": 9,
+      "priceModulo": 910,
+      "categoryPriceFactor": 4,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

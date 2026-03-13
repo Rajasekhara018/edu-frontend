@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "HarvestLane Market",
+    "tagline": "HarvestLane Market delivers fresh groceries, pantry staples, and home essentials across neighborhood routes.",
+    "logoMark": "HL",
+    "logoText": "HarvestLane",
+    "logoDot": ".market",
+    "pageTitle": "HarvestLane Market",
+    "locationLabel": "Delivering to Jubilee Hills, Hyderabad",
+    "accountLabel": "Family account",
+    "footerTagline": "HarvestLane Market brings groceries, snacks, dairy, and household picks together with reliable slots and smart savings.",
+    "footerCopyright": "(C) 2026 HarvestLane Market. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff7ed 0%, #ffedd5 42%, #fed7aa 100%)",
+    "ink": "#382107",
+    "muted": "#795b36",
+    "accent": "#d97706",
+    "accentStrong": "#b45309",
+    "neon": "#fde68a",
+    "mint": "#ffedd5",
+    "cream": "#fffaf2",
+    "panel": "#ffffff",
+    "border": "rgba(56, 33, 7, 0.12)",
+    "shadow": "0 18px 40px rgba(56, 33, 7, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #fff8ef 0%, #ffe8cb 48%, #fde68a 100%)",
+    "headerBorder": "rgba(56, 33, 7, 0.08)",
+    "darkSurface": "#382107",
+    "darkSurfaceAlt": "#57340b",
+    "onDark": "#fffaf2",
+    "onDarkMuted": "#f4e1c2",
+    "focusRing": "rgba(217, 119, 6, 0.18)"
+  },
+  "about": {
+    "eyebrow": "HarvestLane Market",
+    "title": "HarvestLane Market keeps kitchens, pantries, and daily baskets stocked without last-minute store runs.",
+    "description": "HarvestLane Market curates fast-moving grocery categories across fresh produce, bakery, dairy & eggs, staples with dependable delivery slots and quick support."
+  },
+  "contact": {
+    "title": "Need help from HarvestLane Market?",
+    "ctaLabel": "Chat with support",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Support line",
+        "lines": [
+          "+91 (810) 220-5511",
+          "+91 (810) 220-5512"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "care@harvestlanemarket.in",
+          "support@harvestlanemarket.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 220-5511",
+      "support@harvestlanemarket.in",
+      "Delivering to Jubilee Hills, Hyderabad"
+    ],
+    "appCtaLabel": "Get the app"
+  },
+  "hero": {
+    "eyebrow": "HarvestLane Market",
+    "title": "HarvestLane Market delivers fresh groceries and daily essentials around your schedule.",
+    "subtitle": "Shop fresh produce, bakery, dairy & eggs and more with transparent pricing and dependable delivery windows.",
+    "tags": [
+      "Fresh today",
+      "Delivery today",
+      "Smart savings"
+    ],
+    "cardTitle": "This week's basket",
+    "cardItems": [
+      "Fresh Produce picks",
+      "Bakery staples",
+      "Dairy & Eggs family picks"
+    ],
+    "deliveryLine": "Delivery today",
+    "detailDeliveryLine": "Delivery today",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Fresh Produce",
+    "Bakery",
+    "Dairy & Eggs",
+    "Staples",
+    "Snacks",
+    "Beverages",
+    "Dry Fruits",
+    "Frozen Foods"
+  ],
+  "navLinks": [
+    "Fresh Produce",
+    "Bakery",
+    "Dairy & Eggs",
+    "Staples",
+    "Snacks",
+    "Beverages",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Fresh Produce",
+    "Bakery",
+    "Dairy & Eggs",
+    "Staples",
+    "Snacks",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "promoMessages": [
+    "Seasonal fruit offers this week",
+    "Bakery and dairy bundles live"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "HarvestLane",
+        "BakeHouse",
+        "DailyDairy",
+        "PantryPro",
+        "NutBite",
+        "PureSip"
+      ],
+      "categories": [
+        "Fresh Produce",
+        "Bakery",
+        "Dairy & Eggs",
+        "Staples",
+        "Snacks",
+        "Beverages",
+        "Dry Fruits",
+        "Frozen Foods",
+        "Cleaning",
+        "Baby Care"
+      ],
+      "categorySpecifications": {
+        "Baby Care": {
+          "Pack": "1 unit",
+          "Storage": "Cool and dry",
+          "ShelfLife": "6 months",
+          "Type": "Daily essentials"
+        }
+      },
+      "basePriceStart": 32,
+      "priceStep": 10,
+      "priceModulo": 980,
+      "categoryPriceFactor": 5,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

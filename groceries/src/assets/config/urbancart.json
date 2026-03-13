@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "UrbanCart Fresh",
+    "tagline": "UrbanCart Fresh delivers fresh groceries, pantry staples, and home essentials across neighborhood routes.",
+    "logoMark": "UC",
+    "logoText": "UrbanCart",
+    "logoDot": ".fresh",
+    "pageTitle": "UrbanCart Fresh",
+    "locationLabel": "Delivering to Indiranagar, Bengaluru",
+    "accountLabel": "Family account",
+    "footerTagline": "UrbanCart Fresh brings groceries, snacks, dairy, and household picks together with reliable slots and smart savings.",
+    "footerCopyright": "(C) 2026 UrbanCart Fresh. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #eff6ff 0%, #dbeafe 42%, #bfdbfe 100%)",
+    "ink": "#12233f",
+    "muted": "#48617a",
+    "accent": "#2563eb",
+    "accentStrong": "#1d4ed8",
+    "neon": "#93c5fd",
+    "mint": "#dbeafe",
+    "cream": "#f8fbff",
+    "panel": "#ffffff",
+    "border": "rgba(18, 35, 63, 0.12)",
+    "shadow": "0 18px 40px rgba(18, 35, 63, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #f3f8ff 0%, #dceafe 48%, #93c5fd 100%)",
+    "headerBorder": "rgba(18, 35, 63, 0.08)",
+    "darkSurface": "#12233f",
+    "darkSurfaceAlt": "#1f3661",
+    "onDark": "#f8fbff",
+    "onDarkMuted": "#dce8fb",
+    "focusRing": "rgba(37, 99, 235, 0.18)"
+  },
+  "about": {
+    "eyebrow": "UrbanCart Fresh",
+    "title": "UrbanCart Fresh keeps kitchens, pantries, and daily baskets stocked without last-minute store runs.",
+    "description": "UrbanCart Fresh curates fast-moving grocery categories across fresh produce, dairy & eggs, ready meals, beverages with dependable delivery slots and quick support."
+  },
+  "contact": {
+    "title": "Need help from UrbanCart Fresh?",
+    "ctaLabel": "Chat with support",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Support line",
+        "lines": [
+          "+91 (810) 220-5511",
+          "+91 (810) 220-5512"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "care@urbancartfresh.in",
+          "support@urbancartfresh.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 220-5511",
+      "support@urbancartfresh.in",
+      "Delivering to Indiranagar, Bengaluru"
+    ],
+    "appCtaLabel": "Get the app"
+  },
+  "hero": {
+    "eyebrow": "UrbanCart Fresh",
+    "title": "UrbanCart Fresh delivers fresh groceries and daily essentials around your schedule.",
+    "subtitle": "Shop fresh produce, dairy & eggs, ready meals and more with transparent pricing and dependable delivery windows.",
+    "tags": [
+      "Fresh today",
+      "Delivery in 20-40 mins",
+      "Smart savings"
+    ],
+    "cardTitle": "This week's basket",
+    "cardItems": [
+      "Fresh Produce picks",
+      "Dairy & Eggs staples",
+      "Ready Meals family picks"
+    ],
+    "deliveryLine": "Delivery in 20-40 mins",
+    "detailDeliveryLine": "Delivery in 20-40 mins",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Fresh Produce",
+    "Dairy & Eggs",
+    "Ready Meals",
+    "Beverages",
+    "Snacks",
+    "Frozen Foods",
+    "Personal Care",
+    "Cleaning"
+  ],
+  "navLinks": [
+    "Fresh Produce",
+    "Dairy & Eggs",
+    "Ready Meals",
+    "Beverages",
+    "Snacks",
+    "Frozen Foods",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Fresh Produce",
+    "Dairy & Eggs",
+    "Ready Meals",
+    "Beverages",
+    "Snacks",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "promoMessages": [
+    "Night delivery slots now open",
+    "Ready meals from Rs 79"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "UrbanCart",
+        "BlueDairy",
+        "SipLab",
+        "HomeNest",
+        "CrunchCo",
+        "QuickMeal"
+      ],
+      "categories": [
+        "Fresh Produce",
+        "Dairy & Eggs",
+        "Ready Meals",
+        "Beverages",
+        "Snacks",
+        "Frozen Foods",
+        "Personal Care",
+        "Cleaning",
+        "Pet Care",
+        "Household"
+      ],
+      "categorySpecifications": {
+        "Household": {
+          "Pack": "1 unit",
+          "Storage": "Cool and dry",
+          "ShelfLife": "6 months",
+          "Type": "Daily essentials"
+        }
+      },
+      "basePriceStart": 39,
+      "priceStep": 13,
+      "priceModulo": 1100,
+      "categoryPriceFactor": 6,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

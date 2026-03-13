@@ -1,0 +1,163 @@
+{
+  "branding": {
+    "name": "CrateBerry",
+    "tagline": "CrateBerry delivers fresh groceries, pantry staples, and home essentials across neighborhood routes.",
+    "logoMark": "CB",
+    "logoText": "CrateBerry",
+    "logoDot": ".app",
+    "pageTitle": "CrateBerry",
+    "locationLabel": "Delivering to Whitefield, Bengaluru",
+    "accountLabel": "Family account",
+    "footerTagline": "CrateBerry brings groceries, snacks, dairy, and household picks together with reliable slots and smart savings.",
+    "footerCopyright": "(C) 2026 CrateBerry. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fef2f2 0%, #fee2e2 42%, #fecaca 100%)",
+    "ink": "#311212",
+    "muted": "#744444",
+    "accent": "#dc2626",
+    "accentStrong": "#b91c1c",
+    "neon": "#fca5a5",
+    "mint": "#fee2e2",
+    "cream": "#fff7f7",
+    "panel": "#ffffff",
+    "border": "rgba(49, 18, 18, 0.12)",
+    "shadow": "0 18px 40px rgba(49, 18, 18, 0.12)",
+    "headerGradient": "radial-gradient(circle at top left, #fff4f4 0%, #ffd9d9 48%, #fca5a5 100%)",
+    "headerBorder": "rgba(49, 18, 18, 0.08)",
+    "darkSurface": "#311212",
+    "darkSurfaceAlt": "#4b1818",
+    "onDark": "#fff7f7",
+    "onDarkMuted": "#f4d5d5",
+    "focusRing": "rgba(220, 38, 38, 0.18)"
+  },
+  "about": {
+    "eyebrow": "CrateBerry",
+    "title": "CrateBerry keeps kitchens, pantries, and daily baskets stocked without last-minute store runs.",
+    "description": "CrateBerry curates fast-moving grocery categories across fruits, vegetables, dairy & eggs, snacks with dependable delivery slots and quick support."
+  },
+  "contact": {
+    "title": "Need help from CrateBerry?",
+    "ctaLabel": "Chat with support",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Support line",
+        "lines": [
+          "+91 (810) 220-5511",
+          "+91 (810) 220-5512"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "care@crateberry.in",
+          "support@crateberry.in"
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "contactLines": [
+      "+91 (810) 220-5511",
+      "support@crateberry.in",
+      "Delivering to Whitefield, Bengaluru"
+    ],
+    "appCtaLabel": "Get the app"
+  },
+  "hero": {
+    "eyebrow": "CrateBerry",
+    "title": "CrateBerry delivers fresh groceries and daily essentials around your schedule.",
+    "subtitle": "Shop fruits, vegetables, dairy & eggs and more with transparent pricing and dependable delivery windows.",
+    "tags": [
+      "Fresh today",
+      "Delivery in 25-50 mins",
+      "Smart savings"
+    ],
+    "cardTitle": "This week's basket",
+    "cardItems": [
+      "Fruits picks",
+      "Vegetables staples",
+      "Dairy & Eggs family picks"
+    ],
+    "deliveryLine": "Delivery in 25-50 mins",
+    "detailDeliveryLine": "Delivery in 25-50 mins",
+    "relatedTitle": "Related Products"
+  },
+  "searchCategories": [
+    "All",
+    "Fruits",
+    "Vegetables",
+    "Dairy & Eggs",
+    "Snacks",
+    "Beverages",
+    "Frozen Foods",
+    "Bakery",
+    "Staples"
+  ],
+  "navLinks": [
+    "Fruits",
+    "Vegetables",
+    "Dairy & Eggs",
+    "Snacks",
+    "Beverages",
+    "Frozen Foods",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "mobileLinks": [
+    "Fruits",
+    "Vegetables",
+    "Dairy & Eggs",
+    "Snacks",
+    "Beverages",
+    "Offers",
+    "Household",
+    "Help"
+  ],
+  "promoMessages": [
+    "Fresh fruit deals all day",
+    "Frozen snack packs refreshed"
+  ],
+  "catalog": {
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "CrateBerry",
+        "FreshFarm",
+        "DailyDairy",
+        "CrunchCo",
+        "PureSip",
+        "QuickMeal"
+      ],
+      "categories": [
+        "Fruits",
+        "Vegetables",
+        "Dairy & Eggs",
+        "Snacks",
+        "Beverages",
+        "Frozen Foods",
+        "Bakery",
+        "Staples",
+        "Cleaning",
+        "Baby Care"
+      ],
+      "categorySpecifications": {
+        "Baby Care": {
+          "Pack": "1 unit",
+          "Storage": "Cool and dry",
+          "ShelfLife": "6 months",
+          "Type": "Daily essentials"
+        }
+      },
+      "basePriceStart": 27,
+      "priceStep": 8,
+      "priceModulo": 860,
+      "categoryPriceFactor": 4,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}
