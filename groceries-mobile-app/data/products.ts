@@ -162,3 +162,7 @@ function getRating(seed: number) {
 function getReviews(seed: number) {
   return 240 + ((seed * 173) % 4200);
 }
+
+
+// $env:EXPO_PUBLIC_APP_PROFILE='marketmint-mobile'
+// npm run android
