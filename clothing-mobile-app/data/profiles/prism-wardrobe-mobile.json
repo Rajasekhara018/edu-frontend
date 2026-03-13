@@ -1,0 +1,296 @@
+{
+  "id": "prism-wardrobe-mobile",
+  "branding": {
+    "name": "Prism Wardrobe",
+    "subtitle": "Fashion edits, wardrobe staples, and seasonal drops with fast dispatch.",
+    "supportEmail": "support@prism-wardrobe.app",
+    "supportPhone": "+91 800 159 1190",
+    "supportHours": "10:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Pan-India shipping and metro express zones",
+    "accountName": "Prism Wardrobe Member",
+    "accountEmail": "hello@prism-wardrobe.app",
+    "accountPhone": "+91 800 159 1190",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=prism-wardrobe-mobile"
+  },
+  "hero": {
+    "badgePrimary": "New drop weekly",
+    "badgeSecondary": "Easy exchanges",
+    "title": "Shop women, men, luxe and style edits from Prism Wardrobe.",
+    "subtitle": "Browse curated fashion, trend-led collections, and wardrobe staples with profile-based pricing and themes.",
+    "aboutTitle": "About us",
+    "aboutText": "Prism Wardrobe curates fashion across Women, Men, Luxe, Accessories with fast-moving styles, strong theming, and repeat-buy essentials.",
+    "contactTitle": "Contact us",
+    "contactText": "Service: Pan-India shipping\nSupport hours: 10:00 AM - 8:00 PM\nEmail: support@prism-wardrobe.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & exchange"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Size availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Styling support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "PRI-62041",
+        "title": "Exchange request for Prism Wardrobe",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "PRI-61789",
+        "title": "Refund processed for returned item",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: exchange status, size chart, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "Prism Wardrobe",
+      "text": "#431407",
+      "background": "#fff7ed",
+      "tint": "#7c2d12",
+      "icon": "#6b7280",
+      "tabIconDefault": "#6b7280",
+      "tabIconSelected": "#7c2d12",
+      "card": "#ffffff",
+      "cardAlt": "#fed7aa",
+      "border": "#e5e7eb",
+      "muted": "#6b7280",
+      "mutedAlt": "#9ca3af",
+      "primary": "#7c2d12",
+      "primaryDark": "#7c2d12",
+      "primarySoft": "#fed7aa",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#2563eb",
+      "badgeText": "#ffffff",
+      "chip": "#f3f4f6",
+      "chipText": "#374151",
+      "chipActive": "#7c2d12",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "Prism Wardrobe Dark",
+      "text": "#f5f5f4",
+      "background": "#161616",
+      "tint": "#f5f5f4",
+      "icon": "#a1a1aa",
+      "tabIconDefault": "#a1a1aa",
+      "tabIconSelected": "#f5f5f4",
+      "card": "#202020",
+      "cardAlt": "#2b2b2b",
+      "border": "#3a3a3a",
+      "muted": "#c4c4c7",
+      "mutedAlt": "#8f8f93",
+      "primary": "#7c2d12",
+      "primaryDark": "#7c2d12",
+      "primarySoft": "#2a2420",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#161616",
+      "chip": "#2f2f2f",
+      "chipText": "#e5e7eb",
+      "chipActive": "#7c2d12",
+      "chipActiveText": "#161616"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "PrismWardrobe Women Signature",
+        "description": "Best-selling women style from Prism Wardrobe.",
+        "price": 1849,
+        "originalPrice": 2019,
+        "image": "",
+        "category": "Women",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "PRISMWARDROBE-0001",
+        "specifications": {
+          "Size": "S-XL",
+          "Fabric": "Premium blend",
+          "Fit": "Regular",
+          "Care": "Machine wash"
+        }
+      },
+      {
+        "id": 2,
+        "name": "ColorEdit Men Edit",
+        "description": "Popular men drop with premium finishing.",
+        "price": 1919,
+        "originalPrice": 2089,
+        "image": "",
+        "category": "Men",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "COLOREDIT-0002",
+        "specifications": {
+          "Size": "S-XL",
+          "Fabric": "Soft cotton blend",
+          "Fit": "Relaxed",
+          "Care": "Machine wash"
+        }
+      },
+      {
+        "id": 3,
+        "name": "FacetLine Luxe Core",
+        "description": "Daily wardrobe essential from Prism Wardrobe.",
+        "price": 1779,
+        "originalPrice": 1879,
+        "image": "",
+        "category": "Luxe",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "FACETLINE-0003",
+        "specifications": {
+          "Size": "Free / standard",
+          "Material": "Mixed",
+          "Style": "Seasonal",
+          "Care": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "MirrorMuse Accessories Smart Buy",
+        "description": "Value style pick for repeat shoppers.",
+        "price": 1809,
+        "originalPrice": 1909,
+        "image": "",
+        "category": "Accessories",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "MIRRORMUSE-0004",
+        "specifications": {
+          "Size": "Standard",
+          "Material": "Fashion grade",
+          "Style": "Trend-led",
+          "Care": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Women",
+        "Men",
+        "Luxe",
+        "Accessories",
+        "Partywear",
+        "Footwear",
+        "Outerwear",
+        "Streetwear",
+        "Denim",
+        "Beauty"
+      ],
+      "brands": [
+        "PrismWardrobe",
+        "ColorEdit",
+        "FacetLine",
+        "MirrorMuse",
+        "ShineLab",
+        "CutTheory"
+      ],
+      "categorySpecifications": {
+        "Women": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Men": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Luxe": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Accessories": {
+          "Size": "S-XL",
+          "Material": "Mixed materials",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Partywear": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Footwear": {
+          "Size": "UK 6-10",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Outerwear": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Relaxed",
+          "Care": "As labelled"
+        },
+        "Streetwear": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Relaxed",
+          "Care": "As labelled"
+        },
+        "Denim": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Beauty": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        }
+      },
+      "basePriceStart": 1599,
+      "priceStep": 170,
+      "priceModulo": 4200,
+      "categoryPriceFactor": 22,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "id": "aurora-attire-mobile",
+  "branding": {
+    "name": "Aurora Attire",
+    "subtitle": "Fashion edits, wardrobe staples, and seasonal drops with fast dispatch.",
+    "supportEmail": "support@aurora-attire.app",
+    "supportPhone": "+91 800 149 1155",
+    "supportHours": "10:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Pan-India shipping and metro express zones",
+    "accountName": "Aurora Attire Member",
+    "accountEmail": "hello@aurora-attire.app",
+    "accountPhone": "+91 800 149 1155",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=aurora-attire-mobile"
+  },
+  "hero": {
+    "badgePrimary": "New drop weekly",
+    "badgeSecondary": "Easy exchanges",
+    "title": "Shop women, partywear, accessories and style edits from Aurora Attire.",
+    "subtitle": "Browse curated fashion, trend-led collections, and wardrobe staples with profile-based pricing and themes.",
+    "aboutTitle": "About us",
+    "aboutText": "Aurora Attire curates fashion across Women, Partywear, Accessories, Footwear with fast-moving styles, strong theming, and repeat-buy essentials.",
+    "contactTitle": "Contact us",
+    "contactText": "Service: Pan-India shipping\nSupport hours: 10:00 AM - 8:00 PM\nEmail: support@aurora-attire.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & exchange"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Size availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Styling support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "AUR-62041",
+        "title": "Exchange request for Aurora Attire",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "AUR-61789",
+        "title": "Refund processed for returned item",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: exchange status, size chart, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "Aurora Attire",
+      "text": "#831843",
+      "background": "#fdf2f8",
+      "tint": "#db2777",
+      "icon": "#6b7280",
+      "tabIconDefault": "#6b7280",
+      "tabIconSelected": "#db2777",
+      "card": "#ffffff",
+      "cardAlt": "#fce7f3",
+      "border": "#e5e7eb",
+      "muted": "#6b7280",
+      "mutedAlt": "#9ca3af",
+      "primary": "#db2777",
+      "primaryDark": "#db2777",
+      "primarySoft": "#fce7f3",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#f97316",
+      "badgeText": "#ffffff",
+      "chip": "#f3f4f6",
+      "chipText": "#374151",
+      "chipActive": "#db2777",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "Aurora Attire Dark",
+      "text": "#f5f5f4",
+      "background": "#161616",
+      "tint": "#f5f5f4",
+      "icon": "#a1a1aa",
+      "tabIconDefault": "#a1a1aa",
+      "tabIconSelected": "#f5f5f4",
+      "card": "#202020",
+      "cardAlt": "#2b2b2b",
+      "border": "#3a3a3a",
+      "muted": "#c4c4c7",
+      "mutedAlt": "#8f8f93",
+      "primary": "#db2777",
+      "primaryDark": "#db2777",
+      "primarySoft": "#2a2420",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#161616",
+      "chip": "#2f2f2f",
+      "chipText": "#e5e7eb",
+      "chipActive": "#db2777",
+      "chipActiveText": "#161616"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "AuroraAttire Women Signature",
+        "description": "Best-selling women style from Aurora Attire.",
+        "price": 1749,
+        "originalPrice": 1919,
+        "image": "",
+        "category": "Women",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "AURORAATTIRE-0001",
+        "specifications": {
+          "Size": "S-XL",
+          "Fabric": "Premium blend",
+          "Fit": "Regular",
+          "Care": "Machine wash"
+        }
+      },
+      {
+        "id": 2,
+        "name": "PinkTheory Partywear Edit",
+        "description": "Popular partywear drop with premium finishing.",
+        "price": 1819,
+        "originalPrice": 1989,
+        "image": "",
+        "category": "Partywear",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "PINKTHEORY-0002",
+        "specifications": {
+          "Size": "S-XL",
+          "Fabric": "Soft cotton blend",
+          "Fit": "Relaxed",
+          "Care": "Machine wash"
+        }
+      },
+      {
+        "id": 3,
+        "name": "GlowMuse Accessories Core",
+        "description": "Daily wardrobe essential from Aurora Attire.",
+        "price": 1679,
+        "originalPrice": 1779,
+        "image": "",
+        "category": "Accessories",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "GLOWMUSE-0003",
+        "specifications": {
+          "Size": "Free / standard",
+          "Material": "Mixed",
+          "Style": "Seasonal",
+          "Care": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "VelourLab Footwear Smart Buy",
+        "description": "Value style pick for repeat shoppers.",
+        "price": 1709,
+        "originalPrice": 1809,
+        "image": "",
+        "category": "Footwear",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "VELOURLAB-0004",
+        "specifications": {
+          "Size": "Standard",
+          "Material": "Fashion grade",
+          "Style": "Trend-led",
+          "Care": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Women",
+        "Partywear",
+        "Accessories",
+        "Footwear",
+        "Luxe",
+        "Bags",
+        "Beauty",
+        "Ethnic",
+        "Outerwear",
+        "Denim"
+      ],
+      "brands": [
+        "AuroraAttire",
+        "PinkTheory",
+        "GlowMuse",
+        "VelourLab",
+        "MoonEdit",
+        "SilkRush"
+      ],
+      "categorySpecifications": {
+        "Women": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Partywear": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Accessories": {
+          "Size": "S-XL",
+          "Material": "Mixed materials",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Footwear": {
+          "Size": "UK 6-10",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Luxe": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Bags": {
+          "Size": "S-XL",
+          "Material": "Mixed materials",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Beauty": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Ethnic": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        },
+        "Outerwear": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Relaxed",
+          "Care": "As labelled"
+        },
+        "Denim": {
+          "Size": "S-XL",
+          "Material": "Premium blend",
+          "Fit": "Regular",
+          "Care": "As labelled"
+        }
+      },
+      "basePriceStart": 1499,
+      "priceStep": 165,
+      "priceModulo": 4200,
+      "categoryPriceFactor": 22,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

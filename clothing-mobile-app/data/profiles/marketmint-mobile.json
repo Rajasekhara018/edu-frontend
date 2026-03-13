@@ -1,0 +1,282 @@
+{
+  "id": "marketmint-mobile",
+  "branding": {
+    "name": "MarketMint",
+    "subtitle": "Fast groceries, pantry essentials, and daily care delivered on your schedule.",
+    "supportEmail": "support@marketmint.app",
+    "supportPhone": "+91 800 046 0084",
+    "supportHours": "6:00 AM - 11:00 PM",
+    "serviceArea": "Hyderabad metro and nearby hubs",
+    "accountName": "MarketMint Member",
+    "accountEmail": "hello@marketmint.app",
+    "accountPhone": "+91 800 046 0084",
+    "memberSince": "Member since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=marketmint-mobile"
+  },
+  "hero": {
+    "badgePrimary": "30 min delivery",
+    "badgeSecondary": "Freshness guaranteed",
+    "title": "Shop fresh produce, dairy & eggs, seafood and more with MarketMint.",
+    "subtitle": "Daily offers on bakery, staples, snacks with secure payments and reliable slots.",
+    "aboutTitle": "About us",
+    "aboutText": "MarketMint is a profile-driven grocery experience focused on fast delivery, dependable picks, and category depth across Fresh Produce, Dairy & Eggs, Seafood, Bakery.",
+    "contactTitle": "Contact us",
+    "contactText": "Service area: Hyderabad\nSupport hours: 6:00 AM - 11:00 PM\nEmail: support@marketmint.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track order"
+      },
+      {
+        "icon": "undo",
+        "label": "Return & refund"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Address updates"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Missing item"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Account help"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "MAR-22041",
+        "title": "Refund for MarketMint order #406-7749123",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "MAR-21789",
+        "title": "Unable to apply wallet balance on MarketMint",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: refund status, change address, late delivery",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "MarketMint",
+      "text": "#0f2433",
+      "background": "#f2f8fb",
+      "tint": "#1d5e91",
+      "icon": "#66706b",
+      "tabIconDefault": "#66706b",
+      "tabIconSelected": "#1d5e91",
+      "card": "#ffffff",
+      "cardAlt": "#e6f1f7",
+      "border": "#e2e7e3",
+      "muted": "#6c756f",
+      "mutedAlt": "#9aa39c",
+      "primary": "#1d5e91",
+      "primaryDark": "#1d5e91",
+      "primarySoft": "#e6f1f7",
+      "danger": "#cc4b33",
+      "warning": "#f4b740",
+      "success": "#1d5e91",
+      "badge": "#f27b4a",
+      "badgeText": "#ffffff",
+      "chip": "#f5f1e7",
+      "chipText": "#4f4f4f",
+      "chipActive": "#1d5e91",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "MarketMint Dark",
+      "text": "#f4f2ee",
+      "background": "#141514",
+      "tint": "#f2f0ea",
+      "icon": "#a3a7a4",
+      "tabIconDefault": "#a3a7a4",
+      "tabIconSelected": "#f2f0ea",
+      "card": "#1f201f",
+      "cardAlt": "#2a2c2b",
+      "border": "#2f3331",
+      "muted": "#b1b7b3",
+      "mutedAlt": "#8f9591",
+      "primary": "#1d5e91",
+      "primaryDark": "#1d5e91",
+      "primarySoft": "#24342b",
+      "danger": "#f07a62",
+      "warning": "#f7c35f",
+      "success": "#1d5e91",
+      "badge": "#f07a62",
+      "badgeText": "#141514",
+      "chip": "#2a2c2b",
+      "chipText": "#d7dad7",
+      "chipActive": "#1d5e91",
+      "chipActiveText": "#141514"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "MarketMint Fresh Produce Select",
+        "description": "Popular fresh produce from MarketMint.",
+        "price": 86,
+        "originalPrice": 106,
+        "image": "",
+        "category": "Fresh Produce",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "MARKETMINT-0001",
+        "specifications": {
+          "Pack": "1 unit",
+          "Storage": "As labelled",
+          "Origin": "India"
+        }
+      },
+      {
+        "id": 2,
+        "name": "BlueHarbor Dairy & Eggs Value Pack",
+        "description": "Best-selling dairy & eggs pack.",
+        "price": 116,
+        "originalPrice": 141,
+        "image": "",
+        "category": "Dairy & Eggs",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "BLUEHARBOR-0002",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Chilled / cool",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 3,
+        "name": "FreshPier Seafood Prime",
+        "description": "Daily favorite from MarketMint.",
+        "price": 101,
+        "originalPrice": 125,
+        "image": "",
+        "category": "Seafood",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "FRESHPIER-0003",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      {
+        "id": 4,
+        "name": "MintBasket Bakery Smart Buy",
+        "description": "Value choice for repeat orders.",
+        "price": 136,
+        "originalPrice": 164,
+        "image": "",
+        "category": "Bakery",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "MINTBASKET-0004",
+        "specifications": {
+          "Pack": "Standard",
+          "Storage": "Dry place",
+          "ShelfLife": "As labelled"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Fresh Produce",
+        "Dairy & Eggs",
+        "Seafood",
+        "Bakery",
+        "Staples",
+        "Snacks",
+        "Beverages",
+        "Household",
+        "Frozen",
+        "Pet Care"
+      ],
+      "brands": [
+        "MarketMint",
+        "BlueHarbor",
+        "FreshPier",
+        "MintBasket",
+        "QuickCatch",
+        "HomeHarbor"
+      ],
+      "categorySpecifications": {
+        "Fresh Produce": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "2-5 days"
+        },
+        "Dairy & Eggs": {
+          "Pack": "Standard pack",
+          "Storage": "Keep refrigerated",
+          "ShelfLife": "As labelled"
+        },
+        "Seafood": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Bakery": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Staples": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Household": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        },
+        "Frozen": {
+          "Pack": "Standard pack",
+          "Storage": "Keep refrigerated",
+          "ShelfLife": "As labelled"
+        },
+        "Pet Care": {
+          "Pack": "Standard pack",
+          "Storage": "Room temperature",
+          "ShelfLife": "As labelled"
+        }
+      },
+      "basePriceStart": 46,
+      "priceStep": 12,
+      "priceModulo": 1200,
+      "categoryPriceFactor": 4,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}
