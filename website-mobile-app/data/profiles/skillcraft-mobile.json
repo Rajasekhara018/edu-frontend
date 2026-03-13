@@ -1,0 +1,296 @@
+{
+  "id": "skillcraft-mobile",
+  "branding": {
+    "name": "SkillCraft Hub",
+    "subtitle": "Job-focused training programs, mentor support, and career-oriented course tracks.",
+    "supportEmail": "support@skillcraft.app",
+    "supportPhone": "+91 800 164 5940",
+    "supportHours": "9:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Online and hybrid learning across India",
+    "accountName": "SkillCraft Hub Learner",
+    "accountEmail": "hello@skillcraft.app",
+    "accountPhone": "+91 800 164 5940",
+    "memberSince": "Learner since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=skillcraft-mobile"
+  },
+  "hero": {
+    "badgePrimary": "New batches open",
+    "badgeSecondary": "Career mentor support",
+    "title": "Explore business analytics, full stack, cloud programs from SkillCraft Hub.",
+    "subtitle": "Browse course tracks, compare fees, and discover profile-themed learning experiences across high-demand skills.",
+    "aboutTitle": "About us",
+    "aboutText": "SkillCraft Hub offers practical learning paths across Business Analytics, Full Stack, Cloud, Testing with career support and flexible delivery modes.",
+    "contactTitle": "Contact us",
+    "contactText": "Mode: Online / hybrid\nSupport hours: 9:00 AM - 8:00 PM\nEmail: support@skillcraft.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track enrollment"
+      },
+      {
+        "icon": "undo",
+        "label": "Refund & deferment"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Batch selection"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Seat availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Career support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "SKI-72041",
+        "title": "Batch counseling request for SkillCraft Hub",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "SKI-71789",
+        "title": "Refund request processed",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: fees, batch timing, refund policy",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "SkillCraft Hub",
+      "text": "#581c87",
+      "background": "#faf5ff",
+      "tint": "#9333ea",
+      "icon": "#5b6472",
+      "tabIconDefault": "#5b6472",
+      "tabIconSelected": "#9333ea",
+      "card": "#ffffff",
+      "cardAlt": "#f3e8ff",
+      "border": "#dde4ec",
+      "muted": "#5b6472",
+      "mutedAlt": "#93a0af",
+      "primary": "#9333ea",
+      "primaryDark": "#9333ea",
+      "primarySoft": "#f3e8ff",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#ef4444",
+      "badgeText": "#ffffff",
+      "chip": "#eef3f8",
+      "chipText": "#3f5568",
+      "chipActive": "#9333ea",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "SkillCraft Hub Dark",
+      "text": "#eef2f7",
+      "background": "#111827",
+      "tint": "#eef2f7",
+      "icon": "#9ca3af",
+      "tabIconDefault": "#9ca3af",
+      "tabIconSelected": "#eef2f7",
+      "card": "#1f2937",
+      "cardAlt": "#263244",
+      "border": "#334155",
+      "muted": "#cbd5e1",
+      "mutedAlt": "#94a3b8",
+      "primary": "#9333ea",
+      "primaryDark": "#9333ea",
+      "primarySoft": "#213047",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#111827",
+      "chip": "#263244",
+      "chipText": "#e2e8f0",
+      "chipActive": "#9333ea",
+      "chipActiveText": "#111827"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "SkillCraft Business Analytics Career Track",
+        "description": "Job-focused business analytics course from SkillCraft Hub.",
+        "price": 18999,
+        "originalPrice": 20699,
+        "image": "",
+        "category": "Business Analytics",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "SKILLCRAFT-0001",
+        "specifications": {
+          "Mode": "Online live",
+          "Duration": "16 weeks",
+          "Level": "Beginner to advanced",
+          "Support": "Mentor guidance"
+        }
+      },
+      {
+        "id": 2,
+        "name": "HubLearn Full Stack Pro Program",
+        "description": "Popular full stack cohort with projects.",
+        "price": 19699,
+        "originalPrice": 21599,
+        "image": "",
+        "category": "Full Stack",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "HUBLEARN-0002",
+        "specifications": {
+          "Mode": "Hybrid",
+          "Duration": "20 weeks",
+          "Level": "Intermediate",
+          "Support": "Projects + mentorship"
+        }
+      },
+      {
+        "id": 3,
+        "name": "CareerMint Cloud Bootcamp",
+        "description": "Intensive cloud learning path from SkillCraft Hub.",
+        "price": 18299,
+        "originalPrice": 19499,
+        "image": "",
+        "category": "Cloud",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "CAREERMINT-0003",
+        "specifications": {
+          "Mode": "Weekend live",
+          "Duration": "12 weeks",
+          "Level": "All levels",
+          "Support": "Assignments"
+        }
+      },
+      {
+        "id": 4,
+        "name": "PrepWorks Testing Fast Track",
+        "description": "Value-oriented learning path for skill upgrades.",
+        "price": 18599,
+        "originalPrice": 19899,
+        "image": "",
+        "category": "Testing",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "PREPWORKS-0004",
+        "specifications": {
+          "Mode": "Recorded + live",
+          "Duration": "10 weeks",
+          "Level": "Foundation",
+          "Support": "Doubt support"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Business Analytics",
+        "Full Stack",
+        "Cloud",
+        "Testing",
+        "Python",
+        "Java",
+        "Data Science",
+        "Cybersecurity",
+        "UI/UX",
+        "No-Code"
+      ],
+      "brands": [
+        "SkillCraft",
+        "HubLearn",
+        "CareerMint",
+        "PrepWorks",
+        "BuildBridge",
+        "GrowthForge"
+      ],
+      "categorySpecifications": {
+        "Business Analytics": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Beginner to intermediate",
+          "Support": "Mentor + assignments"
+        },
+        "Full Stack": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Cloud": {
+          "Mode": "Project-led",
+          "Duration": "14-20 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Testing": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Python": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Java": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Data Science": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Cybersecurity": {
+          "Mode": "Project-led",
+          "Duration": "14-20 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "UI/UX": {
+          "Mode": "Portfolio-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "No-Code": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        }
+      },
+      "basePriceStart": 16499,
+      "priceStep": 990,
+      "priceModulo": 26000,
+      "categoryPriceFactor": 75,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

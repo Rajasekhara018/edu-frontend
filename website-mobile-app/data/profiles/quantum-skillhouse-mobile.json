@@ -1,0 +1,296 @@
+{
+  "id": "quantum-skillhouse-mobile",
+  "branding": {
+    "name": "Quantum Skillhouse",
+    "subtitle": "Job-focused training programs, mentor support, and career-oriented course tracks.",
+    "supportEmail": "support@quantum-skillhouse.app",
+    "supportPhone": "+91 800 219 7920",
+    "supportHours": "9:00 AM - 8:00 PM, Mon-Sat",
+    "serviceArea": "Online and hybrid learning across India",
+    "accountName": "Quantum Skillhouse Learner",
+    "accountEmail": "hello@quantum-skillhouse.app",
+    "accountPhone": "+91 800 219 7920",
+    "memberSince": "Learner since 2024",
+    "avatar": "https://i.pravatar.cc/160?u=quantum-skillhouse-mobile"
+  },
+  "hero": {
+    "badgePrimary": "New batches open",
+    "badgeSecondary": "Career mentor support",
+    "title": "Explore data science, ai & ml, quantum basics programs from Quantum Skillhouse.",
+    "subtitle": "Browse course tracks, compare fees, and discover profile-themed learning experiences across high-demand skills.",
+    "aboutTitle": "About us",
+    "aboutText": "Quantum Skillhouse offers practical learning paths across Data Science, AI & ML, Quantum Basics, Python with career support and flexible delivery modes.",
+    "contactTitle": "Contact us",
+    "contactText": "Mode: Online / hybrid\nSupport hours: 9:00 AM - 8:00 PM\nEmail: support@quantum-skillhouse.app"
+  },
+  "support": {
+    "quickTopics": [
+      {
+        "icon": "local-shipping",
+        "label": "Track enrollment"
+      },
+      {
+        "icon": "undo",
+        "label": "Refund & deferment"
+      },
+      {
+        "icon": "payments",
+        "label": "Payment issues"
+      },
+      {
+        "icon": "location-on",
+        "label": "Batch selection"
+      },
+      {
+        "icon": "inventory-2",
+        "label": "Seat availability"
+      },
+      {
+        "icon": "support-agent",
+        "label": "Career support"
+      }
+    ],
+    "tickets": [
+      {
+        "id": "QUA-72041",
+        "title": "Batch counseling request for Quantum Skillhouse",
+        "status": "open",
+        "updatedAt": "Updated 2 hours ago"
+      },
+      {
+        "id": "QUA-71789",
+        "title": "Refund request processed",
+        "status": "resolved",
+        "updatedAt": "Resolved on 12 January 2026"
+      }
+    ],
+    "searchHint": "Popular searches: fees, batch timing, refund policy",
+    "contactCta": "Chat now",
+    "contactSecondary": "Call support"
+  },
+  "theme": {
+    "light": {
+      "name": "Quantum Skillhouse",
+      "text": "#431407",
+      "background": "#fff7ed",
+      "tint": "#7c2d12",
+      "icon": "#5b6472",
+      "tabIconDefault": "#5b6472",
+      "tabIconSelected": "#7c2d12",
+      "card": "#ffffff",
+      "cardAlt": "#fed7aa",
+      "border": "#dde4ec",
+      "muted": "#5b6472",
+      "mutedAlt": "#93a0af",
+      "primary": "#7c2d12",
+      "primaryDark": "#7c2d12",
+      "primarySoft": "#fed7aa",
+      "danger": "#dc2626",
+      "warning": "#f59e0b",
+      "success": "#16a34a",
+      "badge": "#2563eb",
+      "badgeText": "#ffffff",
+      "chip": "#eef3f8",
+      "chipText": "#3f5568",
+      "chipActive": "#7c2d12",
+      "chipActiveText": "#ffffff"
+    },
+    "dark": {
+      "name": "Quantum Skillhouse Dark",
+      "text": "#eef2f7",
+      "background": "#111827",
+      "tint": "#eef2f7",
+      "icon": "#9ca3af",
+      "tabIconDefault": "#9ca3af",
+      "tabIconSelected": "#eef2f7",
+      "card": "#1f2937",
+      "cardAlt": "#263244",
+      "border": "#334155",
+      "muted": "#cbd5e1",
+      "mutedAlt": "#94a3b8",
+      "primary": "#7c2d12",
+      "primaryDark": "#7c2d12",
+      "primarySoft": "#213047",
+      "danger": "#f87171",
+      "warning": "#fbbf24",
+      "success": "#4ade80",
+      "badge": "#f97316",
+      "badgeText": "#111827",
+      "chip": "#263244",
+      "chipText": "#e2e8f0",
+      "chipActive": "#7c2d12",
+      "chipActiveText": "#111827"
+    }
+  },
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "QuantumSkillhouse Data Science Career Track",
+        "description": "Job-focused data science course from Quantum Skillhouse.",
+        "price": 24499,
+        "originalPrice": 26199,
+        "image": "",
+        "category": "Data Science",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1820,
+        "sku": "QUANTUMSKILLHOUSE-0001",
+        "specifications": {
+          "Mode": "Online live",
+          "Duration": "16 weeks",
+          "Level": "Beginner to advanced",
+          "Support": "Mentor guidance"
+        }
+      },
+      {
+        "id": 2,
+        "name": "QubeCampus AI & ML Pro Program",
+        "description": "Popular ai & ml cohort with projects.",
+        "price": 25199,
+        "originalPrice": 27099,
+        "image": "",
+        "category": "AI & ML",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1430,
+        "sku": "QUBECAMPUS-0002",
+        "specifications": {
+          "Mode": "Hybrid",
+          "Duration": "20 weeks",
+          "Level": "Intermediate",
+          "Support": "Projects + mentorship"
+        }
+      },
+      {
+        "id": 3,
+        "name": "DeepPath Quantum Basics Bootcamp",
+        "description": "Intensive quantum basics learning path from Quantum Skillhouse.",
+        "price": 23799,
+        "originalPrice": 24999,
+        "image": "",
+        "category": "Quantum Basics",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 980,
+        "sku": "DEEPPATH-0003",
+        "specifications": {
+          "Mode": "Weekend live",
+          "Duration": "12 weeks",
+          "Level": "All levels",
+          "Support": "Assignments"
+        }
+      },
+      {
+        "id": 4,
+        "name": "SignalLearn Python Fast Track",
+        "description": "Value-oriented learning path for skill upgrades.",
+        "price": 24099,
+        "originalPrice": 25399,
+        "image": "",
+        "category": "Python",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 860,
+        "sku": "SIGNALLEARN-0004",
+        "specifications": {
+          "Mode": "Recorded + live",
+          "Duration": "10 weeks",
+          "Level": "Foundation",
+          "Support": "Doubt support"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "categories": [
+        "Data Science",
+        "AI & ML",
+        "Quantum Basics",
+        "Python",
+        "Analytics",
+        "Research Methods",
+        "Math Foundations",
+        "Cloud",
+        "Security",
+        "Prompt Engineering"
+      ],
+      "brands": [
+        "QuantumSkillhouse",
+        "QubeCampus",
+        "DeepPath",
+        "SignalLearn",
+        "InsightQ",
+        "LearnCore"
+      ],
+      "categorySpecifications": {
+        "Data Science": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "AI & ML": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Quantum Basics": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Python": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Analytics": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Beginner to intermediate",
+          "Support": "Mentor + assignments"
+        },
+        "Research Methods": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Math Foundations": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Cloud": {
+          "Mode": "Project-led",
+          "Duration": "14-20 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Security": {
+          "Mode": "Project-led",
+          "Duration": "14-20 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        },
+        "Prompt Engineering": {
+          "Mode": "Project-led",
+          "Duration": "10-16 weeks",
+          "Level": "Intermediate to advanced",
+          "Support": "Mentor + assignments"
+        }
+      },
+      "basePriceStart": 21999,
+      "priceStep": 1320,
+      "priceModulo": 26000,
+      "categoryPriceFactor": 75,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}
