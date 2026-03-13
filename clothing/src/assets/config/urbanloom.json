@@ -20,11 +20,16 @@
         "neon": "#86efac",
         "mint": "#dcfce7",
         "cream": "#f7fff8",
+        "panel": "#fcfffd",
+        "border": "rgba(14, 32, 20, 0.12)",
+        "shadow": "0 18px 40px rgba(14, 32, 20, 0.12)",
         "headerGradient": "radial-gradient(circle at top left, #f0fff3 0%, #d7fce2 48%, #86efac 100%)",
+        "headerBorder": "rgba(14, 32, 20, 0.1)",
         "darkSurface": "#0e2014",
         "darkSurfaceAlt": "#173322",
         "onDark": "#f7fff8",
-        "onDarkMuted": "#d9efdf"
+        "onDarkMuted": "#d9efdf",
+        "focusRing": "rgba(22, 163, 74, 0.18)"
     },
     "about": {
         "eyebrow": "UrbanLoom",

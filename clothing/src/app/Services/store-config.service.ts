@@ -160,10 +160,7 @@ export class StoreConfigService {
         ...DEFAULT_CONFIG.branding,
         ...(remote?.branding ?? {})
       },
-      theme: {
-        ...DEFAULT_THEME,
-        ...(remote?.theme ?? {})
-      },
+      theme: this.buildTheme(remote?.theme),
       about: {
         ...DEFAULT_CONFIG.about,
         ...(remote?.about ?? {}),
@@ -201,6 +198,22 @@ export class StoreConfigService {
           }
         }
       }
+    };
+  }
+
+  private buildTheme(remote?: Partial<StoreConfig['theme']>): StoreConfig['theme'] {
+    const base = {
+      ...DEFAULT_THEME,
+      ...(remote ?? {})
+    };
+
+    return {
+      ...base,
+      panel: remote?.panel ?? `color-mix(in srgb, ${base.cream} 82%, white)`,
+      border: remote?.border ?? `color-mix(in srgb, ${base.ink} 12%, transparent)`,
+      shadow: remote?.shadow ?? `0 18px 40px color-mix(in srgb, ${base.ink} 12%, transparent)`,
+      headerBorder: remote?.headerBorder ?? `color-mix(in srgb, ${base.ink} 10%, transparent)`,
+      focusRing: remote?.focusRing ?? `color-mix(in srgb, ${base.accent} 18%, transparent)`
     };
   }
 
