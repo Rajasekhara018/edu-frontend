@@ -4,10 +4,17 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 
 import com.payease.app.IDao.IGenericDao;
 import com.payease.app.constants.EnumHelper.UserStatus;
@@ -19,6 +26,8 @@ import com.payease.app.model.User;
 @Service("userService")
 public class UserService {
 
+	private static final Logger LOGGER = LoggerFactory.getLogger(UserService.class);
+
 	@Autowired
 	IGenericDao<User> genericDao;
 
@@ -27,27 +36,45 @@ public class UserService {
 	@Autowired
 	EmailService emailService;
 
+	@Value("${app.frontend.base-url}")
+	private String frontendBaseUrl;
+
+	private static final long RESET_TOKEN_VALIDITY_MILLIS = 30 * 60 * 1000L;
+
 	public User create(User user) {
+		String randomPass;
 		try {
-			String randomPass = this.getAlphaNumericString(9);
+			randomPass = this.getAlphaNumericString(9);
 			System.out.println("-----" + randomPass);
+			user.setPlainPassword(randomPass);
 			user.setPassword(this.computeSHA512(randomPass));
+			user.setForcePasswordChange(true);
 			user.setUserName(this.getAlphaNumericString(12));
 			user.setId(user.getUserName());
-			user.setStatus(UserStatus.PENDING);
+			user.setStatus(UserStatus.ACTIVE);
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
-		return genericDao.create(user);
+		User result = genericDao.create(user);
+		if (result != null) {
+			try {
+				emailService.sendRegistrationCredentialsEmail(
+						user.getEmailId(),
+						user.getFullName(),
+						user.getUserName(),
+						randomPass);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 
 	public User findOne(String id) {
 		return genericDao.fineOne(id);
 	}
 
-//	public List<User> getAll() {
-//		return genericDao.getAll();
-//	}
 	public Page<User> getAll(RequestObject requestObj) {
 		return genericDao.getAll(requestObj);
 	}
@@ -64,7 +91,6 @@ public class UserService {
 		String alphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvwxyz";
 		StringBuilder sb = new StringBuilder(n);
 		SecureRandom random = new SecureRandom();
-
 		for (int i = 0; i < n; i++) {
 			int index = random.nextInt(alphaNumericString.length());
 			sb.append(alphaNumericString.charAt(index));
@@ -87,34 +113,37 @@ public class UserService {
 		if (Boolean.TRUE.equals(user.getDistributeUser())) {
 //			user.setDistributeId(this.getAlphaNumericString(8));
 		}
-
+		String randomPass;
 		try {
-			String randomPass = this.getAlphaNumericString(9);
+			randomPass = this.getAlphaNumericString(9);
 			System.out.println("randompass :" + randomPass);
 			user.setPlainPassword(randomPass);
 			user.setUserName(this.getAlphaNumericString(12));
 			user.setPassword(this.computeSHA512(randomPass));
+			user.setForcePasswordChange(true);
 			user.setDistributeUser(true);
 			user.setId(user.getUserName());
-			String body = "User Name : " + user.getUserName() + "\n" + "Password : " + randomPass;
-			emailService.sendSimpleEmail(user.getEmailId(), "Distribute User Credintials", body);
+			user.setStatus(UserStatus.PENDING);
 		} catch (Exception e) {
 			responseObject.setStatus(false);
 			responseObject.setErrorMsg("Password encryption failed.");
 			return responseObject;
 		}
 		User result = userDao.create(user);
-
-		if (result != null) {
-			responseObject.setObject(result);
-			responseObject.setStatus(true);
-			responseObject.setErrorMsg("User registration completed successfully.");
-		} else {
+		if (result == null) {
 			responseObject.setObject(null);
 			responseObject.setStatus(false);
 			responseObject.setErrorMsg("User creation failed in database.");
+			return responseObject;
 		}
-
+		try {
+			emailService.sendPendingApprovalEmail(user.getEmailId(), user.getFullName());
+			responseObject.setErrorMsg("User registration completed successfully. Your account is pending admin approval.");
+		} catch (Exception e) {
+			responseObject.setErrorMsg("User registration completed, but the pending approval email could not be sent.");
+		}
+		responseObject.setObject(result);
+		responseObject.setStatus(true);
 		return responseObject;
 	}
 
@@ -135,9 +164,125 @@ public class UserService {
 		} catch (Exception e) {
 			return buildErrorResponse("Password processing failed");
 		}
+		if (existingUser.getStatus() == UserStatus.PENDING) {
+			return buildErrorResponse("Your account is pending admin approval.");
+		}
+		if (existingUser.getStatus() == UserStatus.INACTIVE || existingUser.getStatus() == UserStatus.SUSPENDED) {
+			return buildErrorResponse("Your account is not active. Please contact the administrator.");
+		}
 		response.setStatus(true);
 		response.setObject(existingUser);
 		response.setErrorMsg("Welcome! You have logged in successfully.");
+		return response;
+	}
+
+	public ResponseObject changePassword(User user) {
+		if (user == null || user.getUserName() == null || user.getOldPassword() == null || user.getPassword() == null) {
+			return buildErrorResponse("Username, current password, and new password must not be empty");
+		}
+
+		User existingUser = userDao.findByUserName(user.getUserName());
+		if (existingUser == null) {
+			return buildErrorResponse("User not found with the provided username");
+		}
+
+		if (!existingUser.getPassword().equals(user.getOldPassword())) {
+			return buildErrorResponse("Current password is incorrect");
+		}
+
+		if (existingUser.getPassword().equals(user.getPassword())) {
+			return buildErrorResponse("New password must be different from the current password");
+		}
+
+		existingUser.setPassword(user.getPassword());
+		existingUser.setOldPassword(null);
+		existingUser.setPlainPassword(null);
+		existingUser.setForcePasswordChange(false);
+
+		User updatedUser = userDao.update(existingUser);
+		if (updatedUser == null) {
+			return buildErrorResponse("Password update failed");
+		}
+
+		ResponseObject response = new ResponseObject();
+		response.setStatus(true);
+		response.setObject(updatedUser);
+		response.setErrorMsg("Password changed successfully.");
+		return response;
+	}
+
+	public ResponseObject forgotPassword(User user) {
+		ResponseObject response = new ResponseObject();
+		if (user == null || (!StringUtils.hasText(user.getEmailId()) && !StringUtils.hasText(user.getUserName()))) {
+			LOGGER.info("Forgot-password request received without a usable emailId or userName.");
+			return response;
+		}
+
+		String normalizedEmail = normalizeIdentifier(user.getEmailId());
+		String normalizedUserName = normalizeIdentifier(user.getUserName());
+		User existingUser = null;
+		if (StringUtils.hasText(normalizedEmail)) {
+			existingUser = userDao.findByEmailIdIgnoreCase(normalizedEmail);
+		}
+		if (existingUser == null && StringUtils.hasText(normalizedUserName)) {
+			existingUser = userDao.findByUserName(normalizedUserName);
+		}
+		if (existingUser == null) {
+			LOGGER.info("Forgot-password request did not match any user. emailId='{}', userName='{}'",
+					normalizedEmail, normalizedUserName);
+			return response;
+		}
+		LOGGER.info("Forgot-password request matched userId='{}' for emailId='{}', userName='{}'",
+				existingUser.getId(), normalizedEmail, normalizedUserName);
+		existingUser.setResetPasswordToken(UUID.randomUUID().toString());
+		existingUser.setResetPasswordTokenExpiry(System.currentTimeMillis() + RESET_TOKEN_VALIDITY_MILLIS);
+		userDao.update(existingUser);
+		try {
+			emailService.sendPasswordResetEmail(
+					existingUser.getEmailId(),
+					existingUser.getFullName(),
+					buildPasswordResetLink(existingUser.getResetPasswordToken()));
+		} catch (Exception e) {
+			return buildErrorResponse("Password reset email could not be sent.");
+		}
+		return response;
+	}
+
+	public ResponseObject resetPassword(User user) {
+		if (user == null || !StringUtils.hasText(user.getResetPasswordToken()) || !StringUtils.hasText(user.getPassword())) {
+			return buildErrorResponse("Reset token and new password are required.");
+		}
+
+		User existingUser = userDao.findByResetPasswordToken(user.getResetPasswordToken().trim());
+		if (existingUser == null) {
+			return buildErrorResponse("This password reset link is invalid.");
+		}
+
+		if (existingUser.getResetPasswordTokenExpiry() == null
+				|| existingUser.getResetPasswordTokenExpiry() < System.currentTimeMillis()) {
+			return buildErrorResponse("This password reset link has expired.");
+		}
+
+		if (user.getPassword().equals(existingUser.getPassword())) {
+			return buildErrorResponse("New password must be different from the current password.");
+		}
+
+		existingUser.setPassword(user.getPassword());
+		existingUser.setPlainPassword(null);
+		existingUser.setOldPassword(null);
+		existingUser.setForcePasswordChange(false);
+		existingUser.setResetPasswordToken(null);
+		existingUser.setResetPasswordTokenExpiry(null);
+
+		User updatedUser = userDao.update(existingUser);
+		if (updatedUser == null) {
+			return buildErrorResponse("Password reset failed.");
+		}
+
+		ResponseObject response = new ResponseObject();
+		response.setStatus(true);
+		response.setObject(updatedUser);
+		response.setErrorMsg("Password has been reset successfully.");
 		return response;
 	}
 
@@ -148,18 +293,63 @@ public class UserService {
 		response.setObject(null);
 		return response;
 	}
+
+	private String buildPasswordResetLink(String token) {
+		String normalizedBaseUrl = frontendBaseUrl.endsWith("/") ? frontendBaseUrl.substring(0, frontendBaseUrl.length() - 1)
+				: frontendBaseUrl;
+		return normalizedBaseUrl + "/auth/reset-password?token=" + token;
+	}
+
+	private String normalizeIdentifier(String value) {
+		if (!StringUtils.hasText(value)) {
+			return null;
+		}
+		return value.trim().toLowerCase();
+	}
+
+	public ResponseObject approveUser(String userId) {
+		if (userId == null || userId.isBlank()) {
+			return buildErrorResponse("User id must not be empty");
+		}
+
+		User existingUser = userDao.fineOne(userId);
+		if (existingUser == null) {
+			return buildErrorResponse("User not found");
+		}
+
+		existingUser.setStatus(UserStatus.ACTIVE);
+		existingUser.setForcePasswordChange(true);
+		User updatedUser = userDao.update(existingUser);
+		if (updatedUser == null) {
+			return buildErrorResponse("User approval failed");
+		}
+		ResponseObject response = new ResponseObject();
+		response.setStatus(true);
+		response.setObject(updatedUser);
+		try {
+			emailService.sendRegistrationCredentialsEmail(
+					updatedUser.getEmailId(),
+					updatedUser.getFullName(),
+					updatedUser.getUserName(),
+					updatedUser.getPlainPassword());
+			response.setErrorMsg("User approved successfully. Credentials email sent.");
+		} catch (Exception e) {
+			response.setErrorMsg("User approved successfully, but the credentials email could not be sent.");
+		}
+		return response;
+	}
 	public ResponseObject courseSignupUser(User user) {
 		ResponseObject responseObject = new ResponseObject();
 		if (Boolean.TRUE.equals(user.getDistributeUser())) {
 //			user.setDistributeId(this.getAlphaNumericString(8));
 		}
-
 		try {
 			String randomPass = this.getAlphaNumericString(9);
 			System.out.println("randompass :" + randomPass);
 			user.setPlainPassword(randomPass);
 			user.setUserName(this.getAlphaNumericString(12));
 			user.setPassword(this.computeSHA512(randomPass));
+			user.setForcePasswordChange(true);
 			user.setDistributeUser(true);
 			user.setId(user.getUserName());
 //			StringBuilder body = new StringBuilder();

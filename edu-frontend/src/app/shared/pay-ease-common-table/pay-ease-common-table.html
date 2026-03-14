@@ -26,6 +26,9 @@
                 <ng-container [ngSwitch]="column">
                   <ng-container *ngSwitchCase="'action'">
                     <div class="row-actions">
+                      <button *ngIf="canApproveCustomer(element)" class="row-action-btn approve" (click)="approveCustomer(element)" title="Approve customer">
+                        <i class="bi bi-check2-circle"></i>
+                      </button>
                       <button class="row-action-btn" (click)="tableService.goToInq(tableID, element.id)" title="Edit record">
                         <i class="bi bi-pencil"></i>
                       </button>

@@ -19,16 +19,48 @@
     </div>
   </ng-template>
 </div>
-<div class="position-fixed end-0 p-3" style="z-index: 1100; top: 80px;">
-  <div *ngFor="let toast of this.postService.toastMessages;trackBy: trackById"
-    class="toast bg-white border shadow-sm show mb-2" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="d-flex align-items-center"
-      [ngClass]="{'toast-success shadow-sm':toast.type === 'success','toast-error shadow-sm':toast.type === 'error'}">
-      <i class="bi" [ngClass]="{
-           'bi-check-circle-fill text-success': toast.type === 'success',
-           'bi-exclamation-triangle-fill text-danger': toast.type === 'error'
-         }" class="fs-5 me-2"></i>
-      <span class="fw-medium text-dark">{{ toast.text }}</span>
+<div class="toast-stack" aria-live="polite" aria-atomic="true">
+  <div
+    *ngFor="let toast of this.postService.toastMessages; trackBy: trackById"
+    class="app-toast"
+    [ngClass]="{
+      'app-toast--success': toast.type === 'success',
+      'app-toast--error': toast.type === 'error',
+      'app-toast--warn': toast.type === 'warn',
+      'app-toast--info': toast.type === 'info'
+    }"
+    role="alert">
+    <div class="app-toast__icon">
+      <i
+        class="bi"
+        [ngClass]="{
+          'bi-check2-circle': toast.type === 'success',
+          'bi-x-octagon': toast.type === 'error',
+          'bi-exclamation-diamond': toast.type === 'warn',
+          'bi-info-circle': toast.type === 'info'
+        }"></i>
     </div>
+
+    <div class="app-toast__body">
+      <div class="app-toast__meta">
+        <div class="app-toast__title">
+          {{ toast.type === 'success' ? 'Success' : toast.type === 'warn' ? 'Attention' : toast.type === 'info' ? 'Update' : 'Action needed' }}
+        </div>
+        <span class="app-toast__badge">
+          {{ toast.type === 'success' ? 'Completed' : toast.type === 'warn' ? 'Review' : toast.type === 'info' ? 'Notice' : 'Attention' }}
+        </span>
+      </div>
+      <p>{{ toast.text }}</p>
+    </div>
+
+    <button
+      type="button"
+      class="app-toast__close"
+      aria-label="Dismiss notification"
+      (click)="postService.removeToast(toast.id)">
+      <i class="bi bi-x-lg"></i>
+    </button>
+
+    <span class="app-toast__progress"></span>
   </div>
 </div>

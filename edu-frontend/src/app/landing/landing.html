@@ -29,10 +29,16 @@
                     <i class="bi bi-arrow-up-right-circle"></i>
                     Start with Add Money
                 </a>
-                <a class="hero-action secondary" routerLink="/csearch/GET_CUSTOMERS">
+                <a *ngIf="canViewCustomers; else commissionShortcut" class="hero-action secondary" routerLink="/csearch/GET_CUSTOMERS">
                     <i class="bi bi-search"></i>
                     Review Customers
                 </a>
+                <ng-template #commissionShortcut>
+                    <a *ngIf="hasCommissionSettingsAccess" class="hero-action secondary" routerLink="/dashboard/commission-settings">
+                        <i class="bi bi-cash-coin"></i>
+                        Open Commission Settings
+                    </a>
+                </ng-template>
             </div>
         </div>
 
@@ -68,7 +74,7 @@
             </div>
 
             <div class="services-grid">
-                <a *ngFor="let service of services" class="service-card" [routerLink]="service.route" [attr.data-accent]="service.accent">
+                <a *ngFor="let service of visibleServices" class="service-card" [routerLink]="service.route" [attr.data-accent]="service.accent">
                     <div class="service-icon">
                         <i [class]="service.icon"></i>
                     </div>

@@ -257,6 +257,13 @@
   font-weight: 600;
 }
 
+.field-hint {
+  margin-top: 0.45rem;
+  color: color-mix(in srgb, var(--field-text) 72%, white);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
 @media (max-width: 1100px) {
   .customer-hero,
   .customer-layout {

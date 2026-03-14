@@ -17,10 +17,13 @@ declare var bootstrap: any;
   styleUrl: './register.scss'
 })
 export class Register {
-  // settingsObj = new UserSettings();
   userEmail!: string;
   userPassword: string = '';
   inProgressBar = false;
+  readonly fullNamePattern = "^[A-Za-z]+(?:[A-Za-z .'-]*[A-Za-z])?$";
+  readonly businessNamePattern = "^[A-Za-z0-9&(),.' -]{3,100}$";
+  readonly phonePattern = "^[6-9][0-9]{9}$";
+  readonly addressPattern = "^[A-Za-z0-9#,/(). -]{10,200}$";
   readonly onboardingSteps = [
     'Create your distributor profile with personal and business details.',
     'Enable faster review by completing accurate contact and address information.',
@@ -40,6 +43,10 @@ export class Register {
   disabledMode!: boolean;
   customerObj = new Customer();
   isLoading!: boolean;
+  registrationSubmitted = false;
+  registrationMessage = '';
+  submittedEmail = '';
+  readonly maxDob = this.getAdultDateLimit();
   constructor(public auth: PayeaseAuthService, public router: Router, public aesService: AesSecurityProviderService,
     public themeService: PayeaseThemeService, public postService: PayeaseRestservice, private http: HttpClient,
     private idleTimeoutService: PayeaseIdleTimeoutService) {
@@ -53,6 +60,7 @@ export class Register {
     // this.Inq();
   }
   register() {
+    this.isLoading = true;
     const requestObj: any = {
       ...this.customerObj,
       adminUser: false,
@@ -61,23 +69,39 @@ export class Register {
     };
     this.postService.doPost(APIPath.AUTH_REGISTER, requestObj, "SIGNUP").subscribe({
       next: (response: any) => {
+        this.isLoading = false;
         if (response.status) {
-          this.customerObj = response.status;
-          this.postService.showToast('success', response?.message?.toString());
+          this.registrationSubmitted = true;
+          this.registrationMessage = response?.errorMsg?.toString() || 'Registration submitted successfully.';
+          this.submittedEmail = this.customerObj.emailId;
+          this.customerObj = new Customer();
+          this.setDistributorDefaults();
+          this.postService.showToast('success', this.registrationMessage);
         } else {
-          this.postService.showToast('error', response?.message?.toString());
+          this.postService.showToast('error', response?.errorMsg?.toString());
         }
       },
       error: (err: any) => {
-        this.postService.showToast('error', err?.message?.toString());
+        this.isLoading = false;
+        this.postService.showToast('error', err?.errorMessage?.toString() || err?.message?.toString());
       }
     });
+  }
+
+  goToLogin() {
+    this.router.navigate(['/auth/login']);
   }
 
   private setDistributorDefaults() {
     this.customerObj.adminUser = false;
     this.customerObj.distributeUser = true;
     this.customerObj.retailUser = false;
+  }
+
+  private getAdultDateLimit(): string {
+    const today = new Date();
+    today.setFullYear(today.getFullYear() - 18);
+    return today.toISOString().split('T')[0];
   }
 }
 

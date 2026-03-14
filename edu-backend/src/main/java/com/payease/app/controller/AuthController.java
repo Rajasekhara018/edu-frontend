@@ -48,6 +48,7 @@ public class AuthController {
 			return response;
 		});
 	}
+
 	@PostMapping("/courseSignup")
 	public ResponseObject CouseRegister(@RequestBody RequestObject request) {
 		return Optional.ofNullable(request).filter(req -> "SIGNUP".equalsIgnoreCase(req.getReqType())).map(data -> {
@@ -59,5 +60,53 @@ public class AuthController {
 			response.setErrorMsg("Invalid request type. Expected 'SIGNUP'.");
 			return response;
 		});
+	}
+
+	@PostMapping("/change-password")
+	public ResponseObject changePassword(@RequestBody RequestObject request) {
+		return Optional.ofNullable(request)
+				.filter(req -> "CHANGE_PASSWORD".equalsIgnoreCase(req.getReqType()))
+				.map(data -> {
+					User user = MapperUtility.buildMapperForIgnoreAnnotation().convertValue(data.getObject(),
+							User.class);
+					return userService.changePassword(user);
+				}).orElseGet(() -> {
+					ResponseObject response = new ResponseObject();
+					response.setStatus(false);
+					response.setErrorMsg("Invalid request type. Expected 'CHANGE_PASSWORD'.");
+					return response;
+				});
+	}
+
+	@PostMapping("/forgot-password")
+	public ResponseObject forgotPassword(@RequestBody RequestObject request) {
+		return Optional.ofNullable(request)
+				.filter(req -> "FORGOT_PASSWORD".equalsIgnoreCase(req.getReqType()))
+				.map(data -> {
+					User user = MapperUtility.buildMapperForIgnoreAnnotation().convertValue(data.getObject(),
+							User.class);
+					return userService.forgotPassword(user);
+				}).orElseGet(() -> {
+					ResponseObject response = new ResponseObject();
+					response.setStatus(false);
+					response.setErrorMsg("Invalid request type. Expected 'FORGOT_PASSWORD'.");
+					return response;
+				});
+	}
+
+	@PostMapping("/reset-password")
+	public ResponseObject resetPassword(@RequestBody RequestObject request) {
+		return Optional.ofNullable(request)
+				.filter(req -> "RESET_PASSWORD".equalsIgnoreCase(req.getReqType()))
+				.map(data -> {
+					User user = MapperUtility.buildMapperForIgnoreAnnotation().convertValue(data.getObject(),
+							User.class);
+					return userService.resetPassword(user);
+				}).orElseGet(() -> {
+					ResponseObject response = new ResponseObject();
+					response.setStatus(false);
+					response.setErrorMsg("Invalid request type. Expected 'RESET_PASSWORD'.");
+					return response;
+				});
 	}
 }

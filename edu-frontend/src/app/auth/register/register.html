@@ -23,7 +23,7 @@
             </div>
         </section>
         <section class="col-lg-6 register-panel-wrap">
-        <div class="login-card">
+        <div class="login-card" *ngIf="!registrationSubmitted; else pendingApprovalCard">
             <div class="brand d-flex align-items-center mb-3">
                 <img src="../../../assets/edutech.png" alt="App Logo" class="brand-icon" />
                 <div>
@@ -39,57 +39,82 @@
                     <div class="col-12">
                         <label class="form-label" for="register-full-name">Full Name <span class="required-mark">*</span></label>
                         <input id="register-full-name" type="text" class="form-control" name="fName"
-                            [(ngModel)]="customerObj.fullName" #fName="ngModel" [disabled]="disabledMode" required
+                            [(ngModel)]="customerObj.fullName" #fName="ngModel" [disabled]="disabledMode" required minlength="3" maxlength="60" [pattern]="fullNamePattern"
                             [ngClass]="{ 'is-invalid': fName.invalid && fName.touched }" placeholder="Enter full name" />
-                        <div class="invalid-feedback" *ngIf="fName.invalid && fName.touched">Full Name is required.</div>
+                        <div class="invalid-feedback" *ngIf="fName.invalid && fName.touched">
+                            <span *ngIf="fName.errors?.['required']">Full Name is required.</span>
+                            <span *ngIf="fName.errors?.['minlength']">Enter at least 3 characters.</span>
+                            <span *ngIf="fName.errors?.['pattern']">Use letters and standard name separators only.</span>
+                        </div>
                     </div>
 
                     <div class="col-12">
                         <label class="form-label" for="register-mobile">Mobile Number <span class="required-mark">*</span></label>
                         <input id="register-mobile" type="tel" class="form-control" name="mblNum"
-                            [(ngModel)]="customerObj.phNo" #mblNum="ngModel" [disabled]="disabledMode" required
+                            [(ngModel)]="customerObj.phNo" #mblNum="ngModel" [disabled]="disabledMode" required maxlength="10" [pattern]="phonePattern"
                             [ngClass]="{ 'is-invalid': mblNum.invalid && mblNum.touched }" placeholder="Enter mobile number" />
-                        <div class="invalid-feedback" *ngIf="mblNum.invalid && mblNum.touched">Mobile Number is required.</div>
+                        <div class="invalid-feedback" *ngIf="mblNum.invalid && mblNum.touched">
+                            <span *ngIf="mblNum.errors?.['required']">Mobile Number is required.</span>
+                            <span *ngIf="mblNum.errors?.['pattern']">Enter a valid 10-digit mobile number.</span>
+                        </div>
                     </div>
 
                     <div class="col-12">
                         <label class="form-label" for="register-email">Email <span class="required-mark">*</span></label>
                         <input id="register-email" type="email" class="form-control" name="eml"
-                            [(ngModel)]="customerObj.emailId" #eml="ngModel" [disabled]="disabledMode" required
+                            [(ngModel)]="customerObj.emailId" #eml="ngModel" [disabled]="disabledMode" required email maxlength="100"
                             [ngClass]="{ 'is-invalid': eml.invalid && eml.touched }" placeholder="Enter email address" />
-                        <div class="invalid-feedback" *ngIf="eml.invalid && eml.touched">Email is required.</div>
+                        <div class="invalid-feedback" *ngIf="eml.invalid && eml.touched">
+                            <span *ngIf="eml.errors?.['required']">Email is required.</span>
+                            <span *ngIf="eml.errors?.['email']">Enter a valid email address.</span>
+                        </div>
                     </div>
 
                     <div class="col-12">
                         <label class="form-label" for="register-address">Address <span class="required-mark">*</span></label>
                         <input id="register-address" type="text" class="form-control" name="add"
-                            [(ngModel)]="customerObj.address" #add="ngModel" [disabled]="disabledMode" required
+                            [(ngModel)]="customerObj.address" #add="ngModel" [disabled]="disabledMode" required minlength="10" maxlength="200" [pattern]="addressPattern"
                             [ngClass]="{ 'is-invalid': add.invalid && add.touched }" placeholder="Enter address" />
-                        <div class="invalid-feedback" *ngIf="add.invalid && add.touched">Address is required.</div>
+                        <div class="invalid-feedback" *ngIf="add.invalid && add.touched">
+                            <span *ngIf="add.errors?.['required']">Address is required.</span>
+                            <span *ngIf="add.errors?.['minlength']">Enter at least 10 characters.</span>
+                            <span *ngIf="add.errors?.['pattern']">Use a valid address format.</span>
+                        </div>
                     </div>
 
                     <div class="col-12">
                         <label class="form-label" for="register-dob">Date of Birth <span class="required-mark">*</span></label>
                         <input id="register-dob" type="date" class="form-control" name="dbth"
-                            [(ngModel)]="customerObj.dateOfBirth" #dbth="ngModel" [disabled]="disabledMode" required
+                            [(ngModel)]="customerObj.dateOfBirth" #dbth="ngModel" [disabled]="disabledMode" required [max]="maxDob"
                             [ngClass]="{ 'is-invalid': dbth.invalid && dbth.touched }" />
-                        <div class="invalid-feedback" *ngIf="dbth.invalid && dbth.touched">Date of Birth is required.</div>
+                        <div class="invalid-feedback" *ngIf="dbth.invalid && dbth.touched">
+                            <span *ngIf="dbth.errors?.['required']">Date of Birth is required.</span>
+                            <span *ngIf="dbth.errors?.['max']">User must be at least 18 years old.</span>
+                        </div>
                     </div>
 
                     <div class="col-12">
                         <label class="form-label" for="register-business-name">Business Name <span class="required-mark">*</span></label>
                         <input id="register-business-name" type="text" class="form-control" name="bnam"
-                            [(ngModel)]="customerObj.businessName" #bnam="ngModel" [disabled]="disabledMode" required
+                            [(ngModel)]="customerObj.businessName" #bnam="ngModel" [disabled]="disabledMode" required minlength="3" maxlength="100" [pattern]="businessNamePattern"
                             [ngClass]="{ 'is-invalid': bnam.invalid && bnam.touched }" placeholder="Enter business name" />
-                        <div class="invalid-feedback" *ngIf="bnam.invalid && bnam.touched">Business Name is required.</div>
+                        <div class="invalid-feedback" *ngIf="bnam.invalid && bnam.touched">
+                            <span *ngIf="bnam.errors?.['required']">Business Name is required.</span>
+                            <span *ngIf="bnam.errors?.['minlength']">Enter at least 3 characters.</span>
+                            <span *ngIf="bnam.errors?.['pattern']">Use letters, numbers, and standard business characters only.</span>
+                        </div>
                     </div>
 
                     <div class="col-12">
                         <label class="form-label" for="register-business-address">Business Address <span class="required-mark">*</span></label>
                         <input id="register-business-address" type="text" class="form-control" name="bAdd"
-                            [(ngModel)]="customerObj.businessAddress" #bAdd="ngModel" [disabled]="disabledMode" required
+                            [(ngModel)]="customerObj.businessAddress" #bAdd="ngModel" [disabled]="disabledMode" required minlength="10" maxlength="200" [pattern]="addressPattern"
                             [ngClass]="{ 'is-invalid': bAdd.invalid && bAdd.touched }" placeholder="Enter business address" />
-                        <div class="invalid-feedback" *ngIf="bAdd.invalid && bAdd.touched">Business Address is required.</div>
+                        <div class="invalid-feedback" *ngIf="bAdd.invalid && bAdd.touched">
+                            <span *ngIf="bAdd.errors?.['required']">Business Address is required.</span>
+                            <span *ngIf="bAdd.errors?.['minlength']">Enter at least 10 characters.</span>
+                            <span *ngIf="bAdd.errors?.['pattern']">Use a valid business address format.</span>
+                        </div>
                     </div>
                 </div>
                 <button
@@ -110,6 +135,38 @@
                 🔐 SSL Secured &nbsp; | &nbsp; ✅ SOC 2 Compliant &nbsp; | &nbsp; 🔄 99.9% Uptime
             </div>
         </div>
+        <ng-template #pendingApprovalCard>
+            <div class="login-card registration-success-card">
+                <div class="success-mark">
+                    <i class="bi bi-hourglass-split"></i>
+                </div>
+                <div class="brand d-flex align-items-center mb-3">
+                    <img src="../../../assets/edutech.png" alt="App Logo" class="brand-icon" />
+                    <div>
+                        <div class="brand-title">Edu Payments</div>
+                        <div class="brand-subtitle">Approval in progress</div>
+                    </div>
+                </div>
+                <mat-divider></mat-divider>
+                <h2 class="welcome-text">Registration submitted</h2>
+                <p class="subtext">{{ registrationMessage }}</p>
+                <div class="pending-summary">
+                    <div>
+                        <span class="summary-label">Submitted email</span>
+                        <strong>{{ submittedEmail || 'Not available' }}</strong>
+                    </div>
+                    <div>
+                        <span class="summary-label">Current status</span>
+                        <strong>PENDING</strong>
+                    </div>
+                </div>
+                <div class="pending-notes">
+                    <p>Your account will stay pending until an administrator reviews and approves it.</p>
+                    <p>You will receive your login credentials by email after approval.</p>
+                </div>
+                <button class="btn btn-primary w-100 mt-3 rounded-pill" (click)="goToLogin()">Back to sign in</button>
+            </div>
+        </ng-template>
         </section>
         <div class="col-md-6 d-none d-md-block info-box legacy-info-box">
             <h5>Yugma  Provides best solutions for our customers</h5>

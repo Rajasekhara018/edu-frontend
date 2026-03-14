@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from '../shared/material.module';
 import { provideClientHydration } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { FirstLoginChangePassword } from './first-login-change-password/first-login-change-password';
 import { ResetPassword } from './reset-password/reset-password';
 import { Register } from './register/register';
 
 
 @NgModule({
   declarations: [
+    FirstLoginChangePassword,
     Login,
     ResetPassword,
     Register

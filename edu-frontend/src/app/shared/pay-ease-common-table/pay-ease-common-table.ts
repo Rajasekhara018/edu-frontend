@@ -224,6 +224,7 @@ export class PayEaseCommonTable implements OnInit {
     switch (status) {
       case 'ACTIVE': return 'Active';
       case 'INACTIVE': return 'Inactive';
+      case 'PENDING': return 'Pending';
       case 'PENDING_VERIFICATION': return 'Pending';
       case 'BLOCKED': return 'Blocked';
       case 'SUSPENDED': return 'Suspended';
@@ -241,6 +242,7 @@ export class PayEaseCommonTable implements OnInit {
     switch (status) {
       case 'ACTIVE': return 'bg-success';
       case 'INACTIVE': return 'bg-secondary';
+      case 'PENDING': return 'bg-warning text-dark';
       case 'PENDING_VERIFICATION': return 'bg-warning text-dark';
       case 'BLOCKED': return 'bg-danger';
       case 'SUSPENDED': return 'bg-dark';
@@ -258,6 +260,7 @@ export class PayEaseCommonTable implements OnInit {
     switch (status) {
       case 'ACTIVE': return 'status-active';
       case 'INACTIVE': return 'status-inactive';
+      case 'PENDING': return 'status-pending';
       case 'PENDING_VERIFICATION': return 'status-pending';
       case 'BLOCKED': return 'status-blocked';
       case 'SUSPENDED': return 'status-suspended';
@@ -268,6 +271,31 @@ export class PayEaseCommonTable implements OnInit {
       case 'ARCHIVED': return 'status-archived';
       default: return 'status-unknown';
     }
+  }
+
+  canApproveCustomer(element: any): boolean {
+    return this.tableID === 'GET_CUSTOMERS' && element?.status === 'PENDING';
+  }
+
+  approveCustomer(element: any) {
+    if (!element?.id) {
+      this.postService.showToast('error', 'User id is missing.');
+      return;
+    }
+
+    this.postService.doPostWithKey(APIPath.CUSTOMER_APPROVE, 'APPROVE', element.id).subscribe({
+      next: (data: any) => {
+        if (data.status) {
+          this.postService.showToast('success', data.errorMsg);
+          this.commonGetallCall(this.currentPage - 1, this.pageSize);
+        } else {
+          this.postService.showToast('error', data.errorMsg);
+        }
+      },
+      error: (error: any) => {
+        this.postService.showToast('error', error?.errorMessage?.toString() || 'Approval failed.');
+      }
+    });
   }
 }
 

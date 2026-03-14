@@ -2,18 +2,17 @@ package com.payease.app.runner;
 
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
-import java.security.SecureRandom;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 
 import com.payease.app.IDao.IGenericDao;
-import com.payease.app.constants.EnumHelper.UserRole;
 import com.payease.app.constants.EnumHelper.UserStatus;
+import com.payease.app.dao.UserDao;
 import com.payease.app.model.User;
-import com.payease.app.service.UserService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,42 +24,43 @@ public class ConfigurationRunner implements ApplicationRunner {
 	IGenericDao<User> genericDao;
 
 	@Autowired
-	UserService userService;
+	UserDao userDao;
+
+	@Autowired
+	Environment environment;
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
-		User adminUser = userService.findOne("adminuser");
+		final String activeProfile = resolveActiveProfile();
+		final String defaultAdminUserName = environment.getRequiredProperty("app.bootstrap.admin.username");
+		final String defaultAdminEmail = environment.getRequiredProperty("app.bootstrap.admin.email");
+		User adminUser = userDao.findByUserName(defaultAdminUserName);
 		if (adminUser == null) {
 			adminUser = new User();
-			adminUser.setId("adminuser");
-			adminUser.setBusinessName("adminbusiness");
-			adminUser.setFullName("Srikanth Reddy");
-			adminUser.setEmailId("srikanthreddyj8179@gmail.com");
-			adminUser.setPhNo("8179110896");
-			adminUser.setUserName("adminuser");
-			adminUser.setPassword(this.computeSHA512("Srikanth@123"));
+			adminUser.setId(defaultAdminUserName);
+			adminUser.setBusinessName("Edu Payments Platform");
+			adminUser.setFullName("System Administrator");
+			adminUser.setEmailId(defaultAdminEmail);
+			adminUser.setUserName(defaultAdminUserName);
+			adminUser.setPassword(this.computeSHA512("ChangeMe@123"));
+			adminUser.setForcePasswordChange(true);
 			adminUser.setStatus(UserStatus.ACTIVE);
-			log.info("password...................{}", this.computeSHA512("Srikanth@123"));
 			adminUser.setAdminUser(true);
-			log.info("adminUser...................{}", adminUser);
-//			User user =   userService.create(adminUser);
-			adminUser.setUserName(this.getAlphaNumericString(12));
-			adminUser.setId(adminUser.getUserName());
+			adminUser.setDistributeUser(false);
+			adminUser.setRetailUser(false);
 			genericDao.create(adminUser);
-			log.info("adminUser 2 ...................{}", adminUser);
+			log.info("Default admin user created with username {}", defaultAdminUserName);
+		} else {
+			log.info("Default admin user already exists with username {}", defaultAdminUserName);
 		}
 	}
 
-	private String getAlphaNumericString(int n) {
-		String alphaNumericString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ" + "0123456789" + "abcdefghijklmnopqrstuvwxyz";
-		StringBuilder sb = new StringBuilder(n);
-		SecureRandom random = new SecureRandom();
-
-		for (int i = 0; i < n; i++) {
-			int index = random.nextInt(alphaNumericString.length());
-			sb.append(alphaNumericString.charAt(index));
+	private String resolveActiveProfile() {
+		String[] activeProfiles = environment.getActiveProfiles();
+		if (activeProfiles.length > 0) {
+			return activeProfiles[0].toLowerCase();
 		}
-		return sb.toString();
+		return "dev";
 	}
 
 	private String computeSHA512(String data) throws Exception {

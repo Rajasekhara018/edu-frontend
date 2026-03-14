@@ -1,6 +1,7 @@
 package com.payease.app.dao;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -33,6 +34,24 @@ public class UserDao extends GenericDao<User> {
 	public User findByUserName(String userName) {
 		Query query = new Query();
 		query.addCriteria(Criteria.where("userName").is(userName));
+		return mongoTemplate.findOne(query, getEntityClass());
+	}
+
+	public User findByEmailId(String emailId) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("emailId").is(emailId));
+		return mongoTemplate.findOne(query, getEntityClass());
+	}
+
+	public User findByEmailIdIgnoreCase(String emailId) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("emailId").regex("^" + Pattern.quote(emailId) + "$", "i"));
+		return mongoTemplate.findOne(query, getEntityClass());
+	}
+
+	public User findByResetPasswordToken(String token) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("resetPasswordToken").is(token));
 		return mongoTemplate.findOne(query, getEntityClass());
 	}
 }

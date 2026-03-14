@@ -344,6 +344,59 @@ button .spinner-border {
   }
 }
 
+.registration-success-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.success-mark {
+  width: 72px;
+  height: 72px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  font-size: 1.8rem;
+  color: var(--button-accent-start);
+  background: color-mix(in srgb, var(--button-accent-start) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--button-accent-start) 20%, transparent);
+  position: relative;
+  z-index: 1;
+}
+
+.pending-summary {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--theme-soft-surface) 92%, transparent);
+  border: 1px solid var(--theme-soft-border);
+}
+
+.summary-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--edu-muted);
+}
+
+.pending-notes {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 0.65rem;
+  color: var(--edu-muted);
+  line-height: 1.6;
+}
+
+.pending-notes p {
+  margin: 0;
+}
+
 @media (max-width: 992px) {
   .login-container {
     padding: 16px;

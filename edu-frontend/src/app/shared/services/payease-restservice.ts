@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { CommonInqReqObject, CommonReqObject, CommonReqObjectVo, DetailErrorModule, ErrorMessageModule, RequestObject, ResObjectModule, ResponseObject, ToastMessage } from '../model';
 import { HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { BehaviorSubject, catchError, Observable, Subject, throwError } from 'rxjs';
-import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { APIPath } from '../api-enum';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class PayeaseRestservice {
   public isMobile = false;
   isCollapsed = true;
   fileType: any
-  constructor(public http: HttpClient, public router: Router, public snackBar: MatSnackBar, public datepipe: DatePipe,
+  constructor(public http: HttpClient, public router: Router, public datepipe: DatePipe,
     private currencyPipe: CurrencyPipe
   ) {
   }
@@ -68,8 +68,7 @@ export class PayeaseRestservice {
     const jwtToken = 'Bearer ' + token;
     const httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', Authorization: jwtToken });
     let apiUrl = '';
-    // apiUrl = "http://localhost:8080" + messageID;
-    apiUrl = "http://43.205.217.26:8070" + messageID;
+    apiUrl = environment.backendUrl + messageID;
 
     if (reqData.object) {
       let obj = this.modifyReqResp(reqData.object);
@@ -113,6 +112,16 @@ export class PayeaseRestservice {
     if (reqObj) {
       reqData.object = reqObj;
       reqData.reqType = reqType
+    }
+    return this.postObservable(reqData, messageId);
+  }
+
+  public doPostWithKey(messageId: APIPath, reqType: string, key: string, reqObj?: any) {
+    const reqData = new RequestObject();
+    reqData.reqType = reqType;
+    reqData.key = key;
+    if (reqObj) {
+      reqData.object = reqObj;
     }
     return this.postObservable(reqData, messageId);
   }
@@ -246,7 +255,7 @@ export class PayeaseRestservice {
     if (baseUrl.includes('localhost')) {
       if (baseUrl.endsWith('4200')) {
         // Core
-        localUrl = 'http://localhost:8080';
+        localUrl = environment.backendUrl;
         // IAM
         // localUrl = "http://65.0.86.93:8070";
       }
@@ -407,28 +416,12 @@ export class PayeaseRestservice {
   }
   /* Method to open a snackbar */
   public openSnackBar(message: string, type: string, duration?: number, vPosition?: any, hPosition?: any) {
-    const config = new MatSnackBarConfig();// Create a snackbar configuration
-    config.politeness = 'assertive';
-    config.duration = 2500;
-    if (duration == 0) {
-      config.duration = duration;
-    }
-    if (vPosition) {
-      config.horizontalPosition = hPosition;
-      config.verticalPosition = vPosition;
-    }
-    if (type === 'SUCCESS') {
-      config.panelClass = ['snackBar-success'];
-    } else if (type === 'ERROR') {
-      config.panelClass = ['snackBar-error'];
-    }
-    else if (type === 'WARN') {
-      config.panelClass = ['snackBar-warn'];
-    }
-    else if (type === 'INFO') {
-      config.panelClass = ['snackBar-info'];
-    }
-    this.snackBar.open(message, 'x', config);
+    const normalizedType = (type || '').toUpperCase();
+    const toastType =
+      normalizedType === 'SUCCESS' ? 'success' :
+        normalizedType === 'WARN' ? 'warn' :
+          normalizedType === 'INFO' ? 'info' : 'error';
+    this.showToast(toastType, message, duration === 0 ? 0 : (duration || 3600));
   }
   public doGetFile(messageId: any): Observable<HttpResponse<Blob>> {
     let token = localStorage.getItem('token');
@@ -445,16 +438,31 @@ export class PayeaseRestservice {
     });
   }
   toastMessages: ToastMessage[] = [];
-  showToast(type: 'success' | 'error', text: string): void {
+  showToast(type: 'success' | 'error' | 'warn' | 'info', text: string, duration = 3600): void {
+    const normalizedText = text?.trim();
+    if (!normalizedText) {
+      return;
+    }
+
+    const existingToast = this.toastMessages.find((toast) => toast.text === normalizedText && toast.type === type);
+    if (existingToast) {
+      this.removeToast(existingToast.id);
+    }
+
     const toast: ToastMessage = {
       id: Date.now() + Math.random(),
       type,
-      text
+      text: normalizedText
     };
     this.toastMessages.push(toast);
-    setTimeout(() => {
-      this.toastMessages = this.toastMessages.filter(t => t.id !== toast.id);
-    }, 1000);
+    if (duration !== 0) {
+      setTimeout(() => {
+        this.removeToast(toast.id);
+      }, duration);
+    }
+  }
+  removeToast(id: number): void {
+    this.toastMessages = this.toastMessages.filter((toast) => toast.id !== id);
   }
   private navMenuSubject = new BehaviorSubject<string>(localStorage.getItem('navMenu') || '');
   navMenu$ = this.navMenuSubject.asObservable();

@@ -66,6 +66,10 @@ public class User {
 
 	private String applicationId;
 
+	private String resetPasswordToken;
+
+	private Long resetPasswordTokenExpiry;
+
 	private UserStatus status;
 	private String retailerAccountDetails;
 	private String distributorAccountDetails;

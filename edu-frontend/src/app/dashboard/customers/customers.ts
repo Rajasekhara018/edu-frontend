@@ -3,12 +3,17 @@ import { MatDialog } from '@angular/material/dialog';
 import { APIPath } from '../../shared/api-enum';
 import { PayeaseRestservice } from '../../shared/services/payease-restservice';
 import { ActivatedRoute, Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
 import { ImageCropDialog } from '../image-crop-dialog/image-crop-dialog';
 // import { Role, user } from '../../shared/model';
 import { HttpClient } from '@angular/common/http';
 import { Customer } from '../../shared/model';
+
+interface DistributorOption {
+  id: string;
+  label: string;
+  status?: string;
+}
 
 @Component({
   selector: 'app-customers',
@@ -28,7 +33,7 @@ export class Customers {
   disabledMode!: boolean;
   constructor(public location: Location,
     public postService: PayeaseRestservice, public router: Router, private cdr: ChangeDetectorRef,
-    private snackbar: MatSnackBar, private route: ActivatedRoute, private dialog: MatDialog,
+    private route: ActivatedRoute, private dialog: MatDialog,
     public http: HttpClient
   ) {
   }
@@ -43,9 +48,18 @@ export class Customers {
   canCreateUsers = true;
   availableUserTypes: string[] = [];
   currentDistributorId = '';
+  distributorOptions: DistributorOption[] = [];
+  isLoadingDistributors = false;
   ngOnInit(): void {
     this.initializeRoleContext();
     this.modelkey = this.route.snapshot.paramMap.get('id')!;
+
+    if (this.isAgentUser && !this.modelkey) {
+      this.postService.showToast('error', 'Agent users do not have permission to create customers.');
+      this.router.navigate(['/dashboard/commission-dashboard']);
+      return;
+    }
+
     if (this.modelkey) {
       this.isEditMode = false;
       this.disabledMode = true;
@@ -57,9 +71,18 @@ export class Customers {
       this.isCreateMode = true;
       this.applyCreateDefaults();
     }
+
+    if (this.isAdminUser) {
+      this.loadDistributorOptions();
+    }
   }
   userType!: string;
   submitCustomerDetails(): void {
+    if (!this.canCreateUsers) {
+      this.postService.showToast('error', 'Agent users do not have permission to create customers.');
+      return;
+    }
+
     this.prepareRolePayload();
     const apiPath = this.isCreateMode ? APIPath.CUSTOMER_CRE : APIPath.CUSTOMER_UPD;
     const requestObj: any = {
@@ -119,23 +142,36 @@ export class Customers {
     this.customerObj.distributeId = '';
     this.customerObj.distributorAccountDetails = '';
     this.customerObj.retailerAccountDetails = '';
-
     if (this.userType === 'AGENT' && this.isDistributorUser) {
       this.customerObj.distributeId = this.currentDistributorId;
     }
   }
 
+  get distributorSelectionRequired(): boolean {
+    return this.userType === 'AGENT' && this.isDistributorUser && !this.isAdminUser;
+  }
+
+  get showDistributorDropdown(): boolean {
+    return this.userType === 'AGENT' && this.isAdminUser;
+  }
+
   private initializeRoleContext() {
     const rolesRaw = localStorage.getItem('LoggedInUserroles');
-    const roles: string[] = rolesRaw && rolesRaw !== 'undefined' ? JSON.parse(rolesRaw) : [];
+    let roles: string[] = [];
+    if (rolesRaw && rolesRaw !== 'undefined') {
+      try {
+        const parsed = JSON.parse(rolesRaw);
+        roles = Array.isArray(parsed) ? parsed : [parsed];
+      } catch {
+        roles = [rolesRaw];
+      }
+    }
     const normalizedRoles = roles.map((role) => role?.toUpperCase?.() || '');
-
     this.isAdminUser = normalizedRoles.some((role) => role.includes('ADMIN'));
     this.isDistributorUser = normalizedRoles.some((role) => role.includes('DISTRIBUTOR'));
     this.isAgentUser = normalizedRoles.some((role) => role.includes('AGENT') || role.includes('RETAIL'));
     this.canCreateUsers = !this.isAgentUser;
     this.currentDistributorId = localStorage.getItem('userId') || '';
-
     if (this.isAdminUser) {
       this.availableUserTypes = ['DISTRIBUTOR', 'AGENT'];
     } else if (this.isDistributorUser) {
@@ -172,6 +208,8 @@ export class Customers {
       this.customerObj.distributorAccountDetails = '';
       if (this.isDistributorUser && !this.isAdminUser) {
         this.customerObj.distributeId = this.currentDistributorId;
+      } else if (this.isAdminUser && !this.customerObj.distributeId) {
+        this.customerObj.distributeId = '';
       }
     }
   }
@@ -188,5 +226,65 @@ export class Customers {
     }
 
     this.userType = '';
+  }
+
+  private loadDistributorOptions() {
+    this.isLoadingDistributors = true;
+    this.postService.doPostFindAll(APIPath.CUSTOMER_GETALL).subscribe({
+      next: (response: any) => {
+        const items = this.extractCustomerList(response);
+        this.distributorOptions = items
+          .filter((item: any) => item?.distributeUser)
+          .map((item: any) => ({
+            id: item?.id || item?.userName || '',
+            label: this.buildDistributorLabel(item),
+            status: item?.status
+          }))
+          .filter((item) => !!item.id)
+          .sort((left, right) => left.label.localeCompare(right.label));
+        this.isLoadingDistributors = false;
+      },
+      error: () => {
+        this.isLoadingDistributors = false;
+        this.distributorOptions = [];
+        this.postService.showToast('warn', 'Distributor list could not be loaded. You can still create an agent and assign the distributor later.');
+      }
+    });
+  }
+
+  private extractCustomerList(response: any): any[] {
+    if (Array.isArray(response)) {
+      return response;
+    }
+
+    if (Array.isArray(response?.object)) {
+      return response.object;
+    }
+
+    if (Array.isArray(response?.responseObject)) {
+      return response.responseObject;
+    }
+
+    if (Array.isArray(response?.responseObject?.content)) {
+      return response.responseObject.content;
+    }
+
+    return [];
+  }
+
+  private buildDistributorLabel(item: any): string {
+    const fullName = item?.fullName?.trim?.() || '';
+    const businessName = item?.businessName?.trim?.() || '';
+    const userName = item?.userName?.trim?.() || item?.id?.trim?.() || '';
+
+    if (fullName && businessName) {
+      return `${fullName} - ${businessName}`;
+    }
+
+    if (businessName && userName) {
+      return `${businessName} (${userName})`;
+    }
+
+    return fullName || businessName || userName || 'Unnamed distributor';
   }
 }

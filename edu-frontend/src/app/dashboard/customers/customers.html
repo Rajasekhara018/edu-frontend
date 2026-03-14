@@ -64,6 +64,10 @@
                 Distributor flow is limited to creating agent users. The parent distributor is assigned automatically.
             </div>
 
+            <div class="alert alert-info" *ngIf="isCreateMode && isAdminUser && userType === 'AGENT'">
+                Select a distributor when available. If no distributor is assigned, the agent can still be created and mapped later.
+            </div>
+
             <div class="customer-grid">
                 <div class="field-span-4">
                     <label class="form-label" for="customer-full-name">Full Name <span class="required-mark">*</span></label>
@@ -111,10 +115,36 @@
                     <div class="field-error" *ngIf="usrTyp.errors?.['required'] && usrTyp.touched">User Type is required</div>
                 </div>
 
-                <div class="field-span-4" *ngIf="userType === 'AGENT'">
-                    <label class="form-label" for="customer-distributor-id">Distributor Id <span class="required-mark">*</span></label>
-                    <input id="customer-distributor-id" class="form-control" name="dstId" [(ngModel)]="customerObj.distributeId" #dstId="ngModel" [disabled]="disabledMode || (isDistributorUser && !isAdminUser)" required />
-                    <div class="field-error" *ngIf="dstId.errors?.['required'] && dstId.touched">Distribute Id is required</div>
+                <div class="field-span-4" *ngIf="showDistributorDropdown">
+                    <label class="form-label" for="customer-distributor-id">Distributor</label>
+                    <select
+                        id="customer-distributor-id"
+                        class="form-select"
+                        name="dstId"
+                        [(ngModel)]="customerObj.distributeId"
+                        #dstId="ngModel"
+                        [disabled]="disabledMode || isLoadingDistributors">
+                        <option value="">No distributor selected</option>
+                        <option *ngFor="let distributor of distributorOptions" [value]="distributor.id">
+                            {{ distributor.label }}
+                        </option>
+                    </select>
+                    <div class="field-hint" *ngIf="isLoadingDistributors">Loading distributors...</div>
+                    <div class="field-hint" *ngIf="!isLoadingDistributors && !distributorOptions.length">
+                        No distributors are available right now. You can create the agent without assigning one.
+                    </div>
+                </div>
+                <div class="field-span-4" *ngIf="userType === 'AGENT' && isDistributorUser && !isAdminUser">
+                    <label class="form-label" for="customer-distributor-id-readonly">Distributor Id <span class="required-mark">*</span></label>
+                    <input
+                        id="customer-distributor-id-readonly"
+                        class="form-control"
+                        name="dstIdReadonly"
+                        [(ngModel)]="customerObj.distributeId"
+                        #dstIdReadonly="ngModel"
+                        [disabled]="true"
+                        [required]="distributorSelectionRequired" />
+                    <div class="field-hint">This agent will be mapped to your distributor profile automatically.</div>
                 </div>
                 <div class="field-span-4" *ngIf="userType === 'AGENT'">
                     <label class="form-label" for="customer-retailer-account">Agent Account Details <span class="required-mark">*</span></label>

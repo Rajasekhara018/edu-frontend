@@ -101,4 +101,17 @@ public class UserController {
 		});
 
 	}
+
+	@PostMapping("/approve")
+	public ResponseObject approve(@RequestBody RequestObject request) {
+		ResponseObject response = new ResponseObject();
+		return Optional.ofNullable(request)
+				.filter(req -> "APPROVE".equalsIgnoreCase(req.getReqType()) && req.getKey() != null)
+				.map(data -> userService.approveUser(data.getKey()))
+				.orElseGet(() -> {
+					response.setStatus(false);
+					response.setErrorMsg("Invalid request type. Expected 'APPROVE' with user id in key.");
+					return response;
+				});
+	}
 }

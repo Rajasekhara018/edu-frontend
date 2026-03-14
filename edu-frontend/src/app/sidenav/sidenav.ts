@@ -25,15 +25,29 @@ export class Sidenav {
   filteredNavItems: NavItem[] = [];
   ngOnInit() {
     this.checkScreenSize();
-    let loggedInUser = sessionStorage.getItem('loggedInUser')!
-    let lu: any = loggedInUser;
-    if (lu) {
+    const storedName = localStorage.getItem('name');
+    const storedEmail = localStorage.getItem('email');
+    if (storedName) {
+      this.userName = storedName;
+    } else if (storedEmail) {
+      let lu: any = storedEmail;
       lu = lu.split('@');
       lu = lu[0].replace('.', ' ');
       this.userName = lu;
     }
+
     const rolesRaw = localStorage.getItem('LoggedInUserroles');
-    this.userRole = rolesRaw && rolesRaw !== 'undefined' ? JSON.parse(rolesRaw) : [];
+    if (rolesRaw && rolesRaw !== 'undefined') {
+      try {
+        const parsed = JSON.parse(rolesRaw);
+        this.userRole = Array.isArray(parsed) ? parsed : [parsed];
+      } catch {
+        this.userRole = [rolesRaw];
+      }
+    } else {
+      this.userRole = [];
+    }
+
     this.filterNavItems();
   }
   filterNavItems(): void {
@@ -97,7 +111,7 @@ export class Sidenav {
     { label: 'Add Money', route: '/dashboard/add-money', icon: 'file-text', iconType: 'lucide', tooltip: 'Add Money' },
     { label: 'Make Payment', route: '/dashboard/make-payment', icon: 'credit-card', iconType: 'lucide', tooltip: 'Make Payment' },
     { label: 'Commission Dashboard', route: '/dashboard/commission-dashboard', icon: 'bar-chart-3', iconType: 'lucide', tooltip: 'Commission Dashboard', rolesAllowed: ['ADMIN', 'DISTRIBUTOR', 'AGENT'] },
-    { label: 'Commission Settings', route: '/dashboard/commission-settings', icon: 'settings', iconType: 'lucide', tooltip: 'Commission Settings', rolesAllowed: ['ADMIN', 'DISTRIBUTOR'] },
+    { label: 'Commission Settings', route: '/dashboard/commission-settings', icon: 'bi-cash-coin', iconType: 'bootstrap', tooltip: 'Commission Settings', rolesAllowed: ['ADMIN', 'DISTRIBUTOR'] },
     // { label: 'Bill Transafer', route: '/dashboard/bill-transfer', icon: 'check-circle', iconType: 'lucide', tooltip: 'Bill Transafer' },
     { label: 'History', route: '/dashboard/history', icon: 'folder-open', iconType: 'lucide', tooltip: 'History' },
     { label: 'Customer', route: '/csearch/GET_CUSTOMERS', icon: 'users', iconType: 'lucide', tooltip: 'Customers', rolesAllowed: ['ADMIN', 'DISTRIBUTOR'] },

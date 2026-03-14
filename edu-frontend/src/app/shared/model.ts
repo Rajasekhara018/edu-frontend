@@ -11,7 +11,7 @@ export class DetailErrorModule {
 
 export class ToastMessage {
     id!: number;
-    type!: 'success' | 'error';
+    type!: 'success' | 'error' | 'warn' | 'info';
     text!: string;
 }
 

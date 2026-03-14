@@ -6,6 +6,7 @@ import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { APIPath } from './api-enum';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -68,9 +69,7 @@ export class PayeaseRestservice {
     const jwtToken = 'Bearer ' + token;
     const httpOptions = new HttpHeaders({ 'Content-Type': 'application/json; charset=utf-8', Authorization: jwtToken });
     let apiUrl = '';
-    // apiUrl = "http://localhost:8080" + messageID;
-    apiUrl = "http://43.205.217.26:8070" + messageID;
-
+    apiUrl = environment.backendUrl + messageID;
     if (reqData.object) {
       let obj = this.modifyReqResp(reqData.object);
       reqData.object = obj;

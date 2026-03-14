@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PayeaseAuthService } from '../../shared/services/payease-auth-service';
 import { AesSecurityProviderService } from '../../shared/services/aes-security-provider-service';
 import { PayeaseThemeService } from '../../shared/services/payease-theme-service';
@@ -8,7 +8,7 @@ import { PayeaseRestservice } from '../../shared/services/payease-restservice';
 import { PayeaseIdleTimeoutService } from '../../shared/services/payease-idle-timeout-service';
 import { APIPath } from '../../shared/api-enum';
 import * as sha512 from 'js-sha512';
-declare var bootstrap: any;
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +17,6 @@ declare var bootstrap: any;
   styleUrl: './login.scss'
 })
 export class Login {
-  // settingsObj = new UserSettings();
   userEmail!: string;
   userPassword!: string;
   inProgressBar = false;
@@ -37,17 +36,34 @@ export class Login {
   errMsg: string = "Please Enter Valid Credentials";
   loginObj = new LoginObj();
   hide = true;
+  loginFeedback = '';
+  loginFeedbackTone: 'warn' | 'error' | '' = '';
+  changePasswordFeedback = '';
+  changePasswordFeedbackTone: 'warn' | 'error' | 'success' | '' = '';
 
   constructor(public auth: PayeaseAuthService, public router: Router, public aesService: AesSecurityProviderService,
     public themeService: PayeaseThemeService, public postService: PayeaseRestservice, private http: HttpClient,
-    private idleTimeoutService: PayeaseIdleTimeoutService) {
+    private idleTimeoutService: PayeaseIdleTimeoutService, private route: ActivatedRoute) {
     this.themeService.setInitialTheme();
   }
 
   ngOnInit() {
+    const isChangePasswordRoute = this.router.url.includes('/auth/change-password');
+    this.isChangePassword = isChangePasswordRoute;
+    this.islogin = !isChangePasswordRoute;
+    this.screen1 = false;
+    this.screen2 = false;
+
+    if (isChangePasswordRoute) {
+      this.userEmail = localStorage.getItem('userName') || '';
+      if (!this.userEmail) {
+        this.router.navigate(['/auth/login']);
+      }
+      return;
+    }
+
     localStorage.clear();
     sessionStorage.clear();
-    // this.Inq();
   }
   onKeyPress(event: KeyboardEvent) {
     if (event.key === 'Enter') {
@@ -79,57 +95,77 @@ export class Login {
   screen1!: boolean;
   screen2!: boolean;
   login() {
+    this.isLoading = true;
+    this.loginFeedback = '';
+    this.loginFeedbackTone = '';
     const loginPayload = {
       object: {
         userName: this.userEmail,
         password: sha512.sha512(this.userPassword)
       }
     };
-    // let apiUrl = "http://localhost:8080" + APIPath.AUTH_LOGIN;
-    let apiUrl = "http://43.205.217.26::8070" + APIPath.AUTH_LOGIN;;
+    let apiUrl = environment.backendUrl + APIPath.AUTH_LOGIN;
     this.http.post(apiUrl, loginPayload, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }).subscribe({
       next: (res: any) => {
         this.inProgressBar = false;
-        const response = res?.Object;
+        this.isLoading = false;
+        const response = res?.object;
         if (response?.mfarequired) {
           localStorage.setItem('email', this.loginObj.email);
           this.router.navigate(['./auth/otp-screen']);
           return;
         }
         if (response?.token || res?.status) {
-          // localStorage.setItem('userId', response.id)!;
-          sessionStorage.setItem('token', "EDUTECH234156");
-          // localStorage.setItem('token', response.token);
-          // localStorage.setItem('name', response.fullName);
-          // localStorage.setItem('email', response.email);
-          // localStorage.setItem('lastActive', Date.now().toString());
-          // localStorage.setItem('id', response.id);
-          // localStorage.setItem('userStatus', response.status);
-          // localStorage.setItem('currentFailedLoginCount', response.currentFailedLoginCount);
-          // localStorage.setItem('LoggedInUserroles', JSON.stringify(response.roles));
-          // // sessionStorage.setItem('LoggedInUserroles', JSON.stringify(response.roles));
-          // localStorage.setItem('LoggedInUserImage', JSON.stringify(response?.image?.name));
-          // localStorage.setItem('LoggedInUserDepartment', JSON.stringify(response?.department));
-          // localStorage.setItem('p', response.privilege);
+          const roles: string[] = [];
+          if (response?.adminUser) {
+            roles.push('ADMIN');
+          }
+          if (response?.distributeUser) {
+            roles.push('DISTRIBUTOR');
+          }
+          if (response?.retailUser) {
+            roles.push('AGENT');
+          }
+          sessionStorage.setItem('token', 'EDUTECH234156');
+          if (response?.fullName) {
+            localStorage.setItem('name', response.fullName);
+          }
+          if (response?.emailId) {
+            localStorage.setItem('email', response.emailId);
+          }
+          localStorage.setItem('lastActive', Date.now().toString());
+          if (response?.id) {
+            localStorage.setItem('userId', response.id);
+          }
+          if (response?.status) {
+            localStorage.setItem('userStatus', response.status);
+          }
+          if (response?.userName) {
+            localStorage.setItem('userName', response.userName);
+          }
+          if (roles.length > 0) {
+            localStorage.setItem('LoggedInUserroles', JSON.stringify(roles));
+          } else {
+            localStorage.removeItem('LoggedInUserroles');
+          }
           if (response?.forcePasswordChange) {
             this.router.navigate(['./auth/change-password']);
             this.postService.showToast('success', "Change Password is Required");
           } else {
-            // this.idleTimeoutService.enableIdleDetection();
-            // this.idleTimeoutService.ping();
             this.router.navigate(['/home']);
             this.postService.showToast('success', res.errorMsg);
           }
         } else {
-          this.postService.showToast('error', res.errorMsg);
+          this.setLoginFeedback(res?.errorMsg?.toString() || 'Login failed. Please try again.');
         }
       },
       error: (err) => {
         this.inProgressBar = false;
+        this.isLoading = false;
         console.error('Login error:', err);
-        this.postService.openSnackBar('Login failed. Please try again.', 'ERROR');
+        this.setLoginFeedback(err?.errorMessage?.toString() || 'Login failed. Please try again.');
       }
     });
   }
@@ -143,9 +179,7 @@ export class Login {
         localStorage.setItem('token', 'tou123');
         this.router.navigate(['/home']);
         // this.snackBar.open('Logged In Successfully', '', { duration: 2000, panelClass: "snackbar-btn" });
-        const toastEl = document.getElementById('toastMessage');
-        const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
-        toast.show(); // Trigger the toast like a snackbar
+        this.postService.showToast('success', 'Logged in successfully.');
       }, 5000);
       this.reqFS = true;
     } else {
@@ -154,9 +188,7 @@ export class Login {
         this.isLoading = false;
         this.reqFS = false;
         // this.snackBar.open('Authentication required – please enter your valid username and password.', '', { duration: 2000, panelClass: "snackbar-btn" });
-        const toastEl = document.getElementById('toastMessage');
-        const toast = new bootstrap.Toast(toastEl, { delay: 3000 });
-        toast.show(); // Trigger the toast like a snackbar
+        this.postService.showToast('error', 'Authentication required. Please enter a valid username and password.');
       }, 5000);
     }
   }
@@ -396,22 +428,89 @@ export class Login {
     this.screen1 = true;
     this.isChangePassword = false;
     this.islogin = false;
+    this.changePasswordFeedback = '';
+    this.changePasswordFeedbackTone = '';
   }
   backbtn() {
+    if (this.router.url.includes('/auth/change-password')) {
+      this.router.navigate(['/auth/login']);
+      return;
+    }
     this.islogin = true;
+    this.isChangePassword = false;
+    this.screen1 = false;
   }
   changePassword(curntPwd: any, newPwd: any, cnfrmPwd: any) {
+    this.changePasswordFeedback = '';
+    this.changePasswordFeedbackTone = '';
 
+    if (!this.userEmail) {
+      this.setChangePasswordFeedback('User session not found. Please sign in again.', 'error');
+      return;
+    }
+
+    if (!curntPwd || !newPwd || !cnfrmPwd) {
+      this.setChangePasswordFeedback('All password fields are required.', 'error');
+      return;
+    }
+
+    if (newPwd !== cnfrmPwd) {
+      this.setChangePasswordFeedback('New password and confirm password do not match.', 'error');
+      return;
+    }
+
+    if (newPwd.length < 8) {
+      this.setChangePasswordFeedback('New password must be at least 8 characters long.', 'error');
+      return;
+    }
+
+    this.isLoading = true;
+    const requestPayload = {
+      userName: this.userEmail,
+      oldPassword: sha512.sha512(curntPwd),
+      password: sha512.sha512(newPwd)
+    };
+
+    this.postService.doPost(APIPath.AUTH_CHANGE_PASSWORD, requestPayload, 'CHANGE_PASSWORD').subscribe({
+      next: (response: any) => {
+        this.isLoading = false;
+        if (response?.status) {
+          localStorage.setItem('userStatus', response?.object?.status || 'ACTIVE');
+          this.setChangePasswordFeedback(response?.errorMsg?.toString() || 'Password changed successfully.', 'success');
+          this.screen1 = false;
+          this.screen2 = true;
+        } else {
+          this.setChangePasswordFeedback(response?.errorMsg?.toString() || 'Password change failed.', 'error');
+        }
+      },
+      error: (err: any) => {
+        this.isLoading = false;
+        this.setChangePasswordFeedback(err?.errorMessage?.toString() || 'Password change failed.', 'error');
+      }
+    });
   }
   cancelChangePassword() {
-
+    this.backbtn();
   }
   pwdSuccess() {
-
+    this.router.navigate(['/home']);
   }
 
   forgetPassword() {
-    this.router.navigate(['auth/forget-password']);
+    this.router.navigate(['/auth/forget-password']);
+  }
+
+  private setLoginFeedback(message: string) {
+    this.loginFeedback = message;
+    const isPending = message.toLowerCase().includes('pending');
+    this.loginFeedbackTone = isPending ? 'warn' : 'error';
+    this.postService.showToast(isPending ? 'warn' : 'error', message);
+  }
+
+  private setChangePasswordFeedback(message: string, tone: 'warn' | 'error' | 'success') {
+    this.changePasswordFeedback = message;
+    this.changePasswordFeedbackTone = tone;
+    this.postService.showToast(tone, message);
   }
 }
 

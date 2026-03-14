@@ -254,6 +254,12 @@
   color: var(--danger-text);
 }
 
+.row-action-btn.approve {
+  color: var(--theme-success-pill-text);
+  border-color: color-mix(in srgb, var(--theme-success-pill-text) 28%, transparent);
+  background: color-mix(in srgb, var(--theme-success-pill-bg) 86%, transparent);
+}
+
 .table-footer {
   display: flex;
   justify-content: space-between;

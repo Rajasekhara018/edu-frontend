@@ -42,7 +42,6 @@ export class Header implements OnInit {
     //   this.notificationService.connect(this.currentUserId, (data) => {
     //     this.notifications.unshift(data); // Push new notification
     //     // Play sound for new notification
-    //     debugger
     //     const audio = new Audio('assets/ringtone.mp3');
     //     audio.play().catch(err => console.error('Audio play error:', err));
     //   });
@@ -53,11 +52,11 @@ export class Header implements OnInit {
     // this.image = JSON?.parse(localStorage.getItem('LoggedInUserImage')!);
     // this.department = JSON.parse(localStorage.getItem('LoggedInUserDepartment')!);
     const roles = localStorage.getItem('LoggedInUserroles');
-    this.userRole = roles && roles !== 'undefined' ? JSON.parse(roles) : [];
-    const imageData = localStorage.getItem('LoggedInUserImage');
-    this.image = imageData && imageData !== 'undefined' ? JSON.parse(imageData) : null;
-    const departmentData = localStorage.getItem('LoggedInUserDepartment');
-    this.department = departmentData && departmentData !== 'undefined' ? JSON.parse(departmentData) : null;
+    // this.userRole = roles && roles !== 'undefined' ? JSON.parse(roles) : [];
+    // const imageData = localStorage.getItem('LoggedInUserImage');
+    // this.image = imageData && imageData !== 'undefined' ? JSON.parse(imageData) : null;
+    // const departmentData = localStorage.getItem('LoggedInUserDepartment');
+    // this.department = departmentData && departmentData !== 'undefined' ? JSON.parse(departmentData) : null;
   }
   ngOnDestroy(): void {
     // this.notificationService.disconnect();
