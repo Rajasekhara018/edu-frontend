@@ -2,11 +2,11 @@
     <div class="row login-box w-100">
         <section class="col-lg-6 info-box d-none d-lg-flex">
             <div class="info-content">
-                <div class="eyebrow">Operator onboarding</div>
-                <h1>Register your account with a clean, secure onboarding flow.</h1>
+                <div class="eyebrow">Distributor onboarding</div>
+                <h1>Register your distributor account with a clean, secure onboarding flow.</h1>
                 <p class="info-intro">
-                    Set up your profile, contact details, and business information to access the Edu payments
-                    workspace with the right operational context from day one.
+                    This public signup is reserved for distributor accounts. Agent users are created later by a
+                    distributor or an admin through the managed onboarding workflow.
                 </p>
                 <div class="feature-list">
                     <article class="feature-item" *ngFor="let item of onboardingSteps; let i = index">
@@ -28,12 +28,12 @@
                 <img src="../../../assets/edutech.png" alt="App Logo" class="brand-icon" />
                 <div>
                     <div class="brand-title">Edu Payments</div>
-                    <div class="brand-subtitle">Create operator account</div>
+                    <div class="brand-subtitle">Create distributor account</div>
                 </div>
             </div>
             <mat-divider></mat-divider>
-            <h2 class="welcome-text">Create your account</h2>
-            <p class="subtext">Complete the registration form to begin using the payments operations workspace.</p>
+            <h2 class="welcome-text">Create your distributor account</h2>
+            <p class="subtext">Complete this distributor registration form to begin using the payments operations workspace.</p>
             <form #userobjForm="ngForm" (keydown.enter)="$event.preventDefault()" name="objForm" autocomplete="off">
                 <div class="row g-3 register-form-grid">
                     <div class="col-12">

@@ -22,13 +22,13 @@ export class Register {
   userPassword: string = '';
   inProgressBar = false;
   readonly onboardingSteps = [
-    'Create your operator profile with personal and business details.',
+    'Create your distributor profile with personal and business details.',
     'Enable faster review by completing accurate contact and address information.',
-    'Move into the payments workspace after registration and approval.'
+    'Move into the payments workspace after distributor approval.'
   ];
   readonly trustMetrics = [
+    { value: 'Distributor', label: 'Signup route' },
     { value: 'Secure', label: 'Application flow' },
-    { value: 'Fast', label: 'Operator onboarding' },
     { value: 'Ready', label: 'Payments workspace' }
   ];
 
@@ -49,11 +49,15 @@ export class Register {
   ngOnInit() {
     localStorage.clear();
     sessionStorage.clear();
+    this.setDistributorDefaults();
     // this.Inq();
   }
   register() {
     const requestObj: any = {
       ...this.customerObj,
+      adminUser: false,
+      distributeUser: true,
+      retailUser: false
     };
     this.postService.doPost(APIPath.AUTH_REGISTER, requestObj, "SIGNUP").subscribe({
       next: (response: any) => {
@@ -68,6 +72,12 @@ export class Register {
         this.postService.showToast('error', err?.message?.toString());
       }
     });
+  }
+
+  private setDistributorDefaults() {
+    this.customerObj.adminUser = false;
+    this.customerObj.distributeUser = true;
+    this.customerObj.retailUser = false;
   }
 }
 

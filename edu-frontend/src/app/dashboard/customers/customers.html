@@ -5,7 +5,7 @@
             <h1>{{ isCreateMode ? 'Create a new operator customer profile' : 'Review and update customer account details' }}</h1>
             <p>
                 Capture business identity, contact details, and verification information in one structured workspace.
-                Use this screen to onboard distributors and retailers with cleaner data quality from the start.
+                Use this screen to onboard distributors and agents with cleaner data quality from the start.
             </p>
             <div class="customer-hero__chips">
                 <span>Identity-ready</span>
@@ -23,7 +23,7 @@
             <article class="hero-metric-card">
                 <span class="hero-metric-label">Target user</span>
                 <strong>{{ userType || 'Select type' }}</strong>
-                <p>Choose distributor or retailer to reveal the relevant account fields.</p>
+                <p>Choose distributor or agent to reveal the relevant account fields.</p>
             </article>
         </div>
     </div>
@@ -38,7 +38,7 @@
             <button *ngIf="!isEditMode" class="toolbar-btn secondary" (click)="onEditClick()">Edit</button>
             <ng-container *ngIf="isEditMode">
                 <button class="toolbar-btn secondary" (click)="onCancelEdit()">Cancel</button>
-                <button class="toolbar-btn primary" (click)="submitCustomerDetails()" [disabled]="customerForm.invalid">
+                <button class="toolbar-btn primary" (click)="submitCustomerDetails()" [disabled]="customerForm.invalid || !canCreateUsers">
                     {{ isCreateMode ? 'Create User' : 'Update User' }}
                 </button>
             </ng-container>
@@ -51,6 +51,14 @@
                 <span class="section-kicker">Profile details</span>
                 <h2>Customer registration</h2>
                 <p>Collect primary identity, contact, and business information in a consistent format.</p>
+            </div>
+
+            <div class="alert alert-warning" *ngIf="isCreateMode && !canCreateUsers">
+                Agent users cannot create other users. Use this page from an admin or distributor account.
+            </div>
+
+            <div class="alert alert-info" *ngIf="isCreateMode && isDistributorUser && canCreateUsers">
+                Distributor flow is limited to creating agent users. The parent distributor is assigned automatically.
             </div>
 
             <div class="customer-grid">
@@ -93,22 +101,22 @@
                 </div>
                 <div class="field-span-4">
                     <label class="form-label" for="customer-user-type">User Type <span class="required-mark">*</span></label>
-                    <select id="customer-user-type" class="form-select" [(ngModel)]="userType" #usrTyp="ngModel" name="usrTyp" required [disabled]="disabledMode">
+                    <select id="customer-user-type" class="form-select" [(ngModel)]="userType" #usrTyp="ngModel" name="usrTyp" required [disabled]="disabledMode || (isDistributorUser && !isAdminUser) || !canCreateUsers" (ngModelChange)="onUserTypeChange()">
                         <option value="" disabled selected>Select user type</option>
-                        <option *ngFor="let user of userTypes" [value]="user">{{ user }}</option>
+                        <option *ngFor="let user of availableUserTypes" [value]="user">{{ user }}</option>
                     </select>
                     <div class="field-error" *ngIf="usrTyp.errors?.['required'] && usrTyp.touched">User Type is required</div>
                 </div>
 
-                <div class="field-span-4" *ngIf="userType === 'RETAILOR'">
-                    <label class="form-label" for="customer-distributor-id">Distribute Id <span class="required-mark">*</span></label>
-                    <input id="customer-distributor-id" class="form-control" name="dstId" [(ngModel)]="customerObj.distributeId" #dstId="ngModel" [disabled]="disabledMode" required />
+                <div class="field-span-4" *ngIf="userType === 'AGENT'">
+                    <label class="form-label" for="customer-distributor-id">Distributor Id <span class="required-mark">*</span></label>
+                    <input id="customer-distributor-id" class="form-control" name="dstId" [(ngModel)]="customerObj.distributeId" #dstId="ngModel" [disabled]="disabledMode || (isDistributorUser && !isAdminUser)" required />
                     <div class="field-error" *ngIf="dstId.errors?.['required'] && dstId.touched">Distribute Id is required</div>
                 </div>
-                <div class="field-span-4" *ngIf="userType === 'RETAILOR'">
-                    <label class="form-label" for="customer-retailer-account">Retailer Account Details <span class="required-mark">*</span></label>
+                <div class="field-span-4" *ngIf="userType === 'AGENT'">
+                    <label class="form-label" for="customer-retailer-account">Agent Account Details <span class="required-mark">*</span></label>
                     <input id="customer-retailer-account" class="form-control" name="reAcc" [(ngModel)]="customerObj.retailerAccountDetails" #reAcc="ngModel" [disabled]="disabledMode" required />
-                    <div class="field-error" *ngIf="reAcc.errors?.['required'] && reAcc.touched">Retailer Account Details is required</div>
+                    <div class="field-error" *ngIf="reAcc.errors?.['required'] && reAcc.touched">Agent Account Details is required</div>
                 </div>
                 <div class="field-span-4" *ngIf="userType === 'DISTRIBUTOR'">
                     <label class="form-label" for="customer-distributor-account">Distributor Account Details <span class="required-mark">*</span></label>
@@ -145,6 +153,7 @@
                 <h3>Onboarding quality guidance</h3>
                 <ul>
                     <li>Match mobile number and email to the active operator contact.</li>
+                    <li>Public signup is distributor-only; agent users should be created from managed onboarding.</li>
                     <li>Use distributor type only when settlement account details are ready.</li>
                     <li>Review PAN and Aadhar before submitting to reduce verification loops.</li>
                 </ul>

@@ -37,7 +37,14 @@ export class Customers {
   isSuperAdmin!: boolean;
   isEditMode!: boolean;
   isCreateMode!: boolean;
+  isAdminUser = false;
+  isDistributorUser = false;
+  isAgentUser = false;
+  canCreateUsers = true;
+  availableUserTypes: string[] = [];
+  currentDistributorId = '';
   ngOnInit(): void {
+    this.initializeRoleContext();
     this.modelkey = this.route.snapshot.paramMap.get('id')!;
     if (this.modelkey) {
       this.isEditMode = false;
@@ -48,11 +55,12 @@ export class Customers {
       this.isEditMode = true;
       this.disabledMode = false;
       this.isCreateMode = true;
+      this.applyCreateDefaults();
     }
   }
-  userType!:string;
-  userTypes =["DISTRIBUTOR","RETAILOR"];
+  userType!: string;
   submitCustomerDetails(): void {
+    this.prepareRolePayload();
     const apiPath = this.isCreateMode ? APIPath.CUSTOMER_CRE : APIPath.CUSTOMER_UPD;
     const requestObj: any = {
       ...this.customerObj,
@@ -63,6 +71,7 @@ export class Customers {
       next: (response: any) => {
         if (response.status) {
           this.customerObj = response.status;
+          this.syncUserTypeFromCustomer();
           this.location.back();
           this.postService.showToast('success', response?.errorMsg?.toString());
         } else {
@@ -79,6 +88,7 @@ export class Customers {
       next: (response: any) => {
         if (response.status) {
           this.customerObj = response.object;
+          this.syncUserTypeFromCustomer();
           this.postService.showToast('success', response?.errorMsg?.toString());
         } else {
           this.postService.showToast('error', response?.errorMsg?.toString());
@@ -103,5 +113,80 @@ export class Customers {
       this.isEditMode = false;
       this.disabledMode = true;
     }
+  }
+
+  onUserTypeChange() {
+    this.customerObj.distributeId = '';
+    this.customerObj.distributorAccountDetails = '';
+    this.customerObj.retailerAccountDetails = '';
+
+    if (this.userType === 'AGENT' && this.isDistributorUser) {
+      this.customerObj.distributeId = this.currentDistributorId;
+    }
+  }
+
+  private initializeRoleContext() {
+    const rolesRaw = localStorage.getItem('LoggedInUserroles');
+    const roles: string[] = rolesRaw && rolesRaw !== 'undefined' ? JSON.parse(rolesRaw) : [];
+    const normalizedRoles = roles.map((role) => role?.toUpperCase?.() || '');
+
+    this.isAdminUser = normalizedRoles.some((role) => role.includes('ADMIN'));
+    this.isDistributorUser = normalizedRoles.some((role) => role.includes('DISTRIBUTOR'));
+    this.isAgentUser = normalizedRoles.some((role) => role.includes('AGENT') || role.includes('RETAIL'));
+    this.canCreateUsers = !this.isAgentUser;
+    this.currentDistributorId = localStorage.getItem('userId') || '';
+
+    if (this.isAdminUser) {
+      this.availableUserTypes = ['DISTRIBUTOR', 'AGENT'];
+    } else if (this.isDistributorUser) {
+      this.availableUserTypes = ['AGENT'];
+    } else {
+      this.availableUserTypes = [];
+    }
+  }
+
+  private applyCreateDefaults() {
+    if (!this.canCreateUsers) {
+      this.disabledMode = true;
+      this.isEditMode = false;
+      return;
+    }
+
+    if (this.isDistributorUser && !this.isAdminUser) {
+      this.userType = 'AGENT';
+      this.customerObj.distributeId = this.currentDistributorId;
+    }
+  }
+
+  private prepareRolePayload() {
+    this.customerObj.adminUser = false;
+    this.customerObj.distributeUser = this.userType === 'DISTRIBUTOR';
+    this.customerObj.retailUser = this.userType === 'AGENT';
+
+    if (this.userType === 'DISTRIBUTOR') {
+      this.customerObj.distributeId = '';
+      this.customerObj.retailerAccountDetails = '';
+    }
+
+    if (this.userType === 'AGENT') {
+      this.customerObj.distributorAccountDetails = '';
+      if (this.isDistributorUser && !this.isAdminUser) {
+        this.customerObj.distributeId = this.currentDistributorId;
+      }
+    }
+  }
+
+  private syncUserTypeFromCustomer() {
+    if (this.customerObj.distributeUser) {
+      this.userType = 'DISTRIBUTOR';
+      return;
+    }
+
+    if (this.customerObj.retailUser) {
+      this.userType = 'AGENT';
+      return;
+    }
+
+    this.userType = '';
   }
 }
