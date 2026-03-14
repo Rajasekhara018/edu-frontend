@@ -78,7 +78,7 @@ export class PayEaseCommonTable implements OnInit {
   }
   searchField!: any;
   getTable() {
-    this.clearFields();
+    // this.clearFields();
     this.headTitle = this.tableService.getHeadTitle(this.tableID);
     this.subTitle = this.tableService.getSubDescription(this.tableID);
     const columnsData = this.tableService.getColumnName(this.tableID);
@@ -93,8 +93,8 @@ export class PayEaseCommonTable implements OnInit {
         this.dataSource = result;
         this.postService.showToast('success', data.errorMsg);
         this.totalElements = data?.object?.totalElements;
-        this.pageSize = data.pageable.pageSize;
-        this.currentPage = data.pageable.pageNumber + 1;
+        this.pageSize = data?.pageable?.pageSize;
+        this.currentPage = data?.pageable?.pageNumber + 1;
         this.isLoading = true;
       } else {
         this.postService.showToast('error', data.errorMsg);

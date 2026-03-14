@@ -17,6 +17,17 @@ public class UserDao extends GenericDao<User> {
 	public Class<User> getEntityClass() {
 		return User.class;
 	}
+	@Override
+	public List<User> findByField(String fieldName, Object value) {
+		Query query = new Query();
+		query.addCriteria(Criteria.where(fieldName).is(value));
+		return mongoTemplate.find(query, getEntityClass());
+	}
+
+	@Override
+	public List<User> find(Query query) {
+		return mongoTemplate.find(query, getEntityClass());
+	}
 
 	public List<User> findByData(RequestObject request) {
 		Query query = new Query();

@@ -47,7 +47,7 @@ export class Landing {
       title: 'Commission Settings',
       copy: 'Maintain distributor defaults and agent-level commission rules with settlement visibility.',
       route: '/dashboard/commission-settings',
-      icon: 'bi bi-cash-coin',
+      icon: 'bi bi-clock-history',
       accent: 'indigo',
       rolesAllowed: ['ADMIN', 'DISTRIBUTOR']
     },

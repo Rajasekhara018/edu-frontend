@@ -31,6 +31,7 @@ public abstract class GenericDao<T> implements IGenericDao<T> {
 	public List<T> getAll() {
 		return mongoTemplate.findAll(getEntityClass());
 	}
+
 	public Page<T> getAll(RequestObject requestObj) {
     int page = requestObj.getPage() != null ? requestObj.getPage() : 0;
     int size = requestObj.getSize() != null ? requestObj.getSize() : 10;

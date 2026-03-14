@@ -71,7 +71,6 @@ export class Customers {
       this.isCreateMode = true;
       this.applyCreateDefaults();
     }
-
     if (this.isAdminUser) {
       this.loadDistributorOptions();
     }
@@ -230,7 +229,7 @@ export class Customers {
 
   private loadDistributorOptions() {
     this.isLoadingDistributors = true;
-    this.postService.doPostFindAll(APIPath.CUSTOMER_GETALL).subscribe({
+    this.postService.doPostFindAll(APIPath.DISTRIBUTOR_GETALL).subscribe({
       next: (response: any) => {
         const items = this.extractCustomerList(response);
         this.distributorOptions = items

@@ -80,6 +80,12 @@ public class UserService {
 		return genericDao.fineOne(id);
 	}
 
+	public List<User> getAll() {
+		Query query = new Query();
+		query.addCriteria(Criteria.where("distributeUser").is(true));
+		return genericDao.find(query);
+	}
+
 	public Page<User> getAll(RequestObject requestObj) {
 		return genericDao.getAll(requestObj);
 	}
