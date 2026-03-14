@@ -23,6 +23,7 @@ import { ComplaintStatus } from './complaint-status/complaint-status';
 import { MakePayment } from './make-payment/make-payment';
 import { PaymentInvoice } from './payment-invoice/payment-invoice';
 import { CommissionSettings } from './commission-settings/commission-settings';
+import { CommissionDashboard } from './commission-dashboard/commission-dashboard';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CommissionSettings } from './commission-settings/commission-settings';
     ComplaintStatus,
     MakePayment,
     PaymentInvoice,
-    CommissionSettings
+    CommissionSettings,
+    CommissionDashboard
   ],
   imports: [
     CommonModule,

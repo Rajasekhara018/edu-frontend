@@ -14,7 +14,9 @@ import { PayeaseThemeService } from './shared/services/payease-theme-service';
 })
 export class App {
   protected readonly title = signal('pay-ease-web');
-  showWorkspaceShell = true;
+  showWorkspaceShell = false;
+  private readonly publicRoutePrefixes = ['/auth'];
+  private readonly publicRoutes = new Set(['', '/', '/login', '/register', '/reset-password']);
 
   constructor(
     public postService: PayeaseRestservice,
@@ -36,6 +38,17 @@ export class App {
   }
 
   private syncShellMode(url: string): void {
-    this.showWorkspaceShell = !url.startsWith('/auth');
+    const normalizedUrl = this.normalizeUrl(url);
+    const isPublicRoute = this.publicRoutes.has(normalizedUrl)
+      || this.publicRoutePrefixes.some((prefix) => normalizedUrl.startsWith(prefix));
+
+    this.showWorkspaceShell = this.authService.isloggedin() && !isPublicRoute;
+  }
+
+  private normalizeUrl(url: string): string {
+    const withoutQuery = url.split('?')[0]?.split('#')[0] ?? '';
+    return withoutQuery.endsWith('/') && withoutQuery.length > 1
+      ? withoutQuery.slice(0, -1)
+      : withoutQuery;
   }
 }

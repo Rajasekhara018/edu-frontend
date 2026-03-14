@@ -96,6 +96,7 @@ export class Sidenav {
     { label: 'Dashboard', route: '/home', icon: 'home', iconType: 'lucide', tooltip: 'Dashboard' },
     { label: 'Add Money', route: '/dashboard/add-money', icon: 'file-text', iconType: 'lucide', tooltip: 'Add Money' },
     { label: 'Make Payment', route: '/dashboard/make-payment', icon: 'credit-card', iconType: 'lucide', tooltip: 'Make Payment' },
+    { label: 'Commission Dashboard', route: '/dashboard/commission-dashboard', icon: 'bar-chart-3', iconType: 'lucide', tooltip: 'Commission Dashboard', rolesAllowed: ['ADMIN', 'DISTRIBUTOR', 'AGENT'] },
     { label: 'Commission Settings', route: '/dashboard/commission-settings', icon: 'settings', iconType: 'lucide', tooltip: 'Commission Settings', rolesAllowed: ['ADMIN', 'DISTRIBUTOR'] },
     // { label: 'Bill Transafer', route: '/dashboard/bill-transfer', icon: 'check-circle', iconType: 'lucide', tooltip: 'Bill Transafer' },
     { label: 'History', route: '/dashboard/history', icon: 'folder-open', iconType: 'lucide', tooltip: 'History' },

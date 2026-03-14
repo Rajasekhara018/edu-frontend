@@ -1,0 +1,221 @@
+<section class="commission-dashboard">
+  <header class="dashboard-hero">
+    <div class="dashboard-hero__copy">
+      <span class="section-kicker">Commission dashboard</span>
+      <h1>{{ pageTitle }}</h1>
+      <p>{{ pageDescription }}</p>
+    </div>
+
+    <div class="dashboard-hero__meta">
+      <div class="hero-chip">
+        <span>Active scope</span>
+        <strong>{{ userContext }}</strong>
+      </div>
+      <div class="hero-chip">
+        <span>Range</span>
+        <strong>{{ selectedRange | titlecase }}</strong>
+      </div>
+      <div class="hero-chip">
+        <span>Records</span>
+        <strong>{{ filteredEntries.length }}</strong>
+      </div>
+    </div>
+  </header>
+
+  <section class="panel toolbar-panel">
+    <div class="range-toggle" role="tablist" aria-label="Commission dashboard range">
+      <button
+        *ngFor="let range of ranges"
+        type="button"
+        class="range-btn"
+        [class.active]="selectedRange === range.key"
+        (click)="onRangeChange(range.key)">
+        <span>{{ range.label }}</span>
+        <small>{{ range.note }}</small>
+      </button>
+    </div>
+
+    <div class="toolbar-grid">
+      <label class="field">
+        <span>Distributor</span>
+        <select
+          class="form-select"
+          [(ngModel)]="selectedDistributorId"
+          (ngModelChange)="onDistributorChange()"
+          [disabled]="!canFilterDistributor">
+          <option value="ALL">All distributors</option>
+          <option *ngFor="let distributor of visibleDistributors" [value]="distributor.id">
+            {{ distributor.name }}
+          </option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span>Agent</span>
+        <select class="form-select" [(ngModel)]="selectedAgentId" [disabled]="!canFilterAgent">
+          <option value="ALL">All agents</option>
+          <option *ngFor="let agent of visibleAgents" [value]="agent.id">
+            {{ agent.name }}
+          </option>
+        </select>
+      </label>
+
+      <div class="toolbar-note">
+        <span class="toolbar-note__label">Current visibility</span>
+        <strong>
+          {{
+            userContext === 'ADMIN'
+              ? 'Platform-wide commission performance'
+              : userContext === 'DISTRIBUTOR'
+                ? 'Distributor share and agent contribution'
+                : 'Personal earning visibility'
+          }}
+        </strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="summary-grid">
+    <article class="summary-card" *ngFor="let card of summaryCards" [ngClass]="card.tone">
+      <span>{{ card.label }}</span>
+      <strong>{{ card.value }}</strong>
+      <p>{{ card.note }}</p>
+    </article>
+  </section>
+
+  <section class="dashboard-grid">
+    <article class="panel trend-panel">
+      <div class="panel-heading">
+        <div>
+          <span class="section-kicker">Earning trend</span>
+          <h2>Commission progression</h2>
+        </div>
+        <p>Quick visual read of how earnings are moving across the selected range.</p>
+      </div>
+
+      <div class="trend-bars">
+        <div class="trend-bar" *ngFor="let point of trendPoints">
+          <div class="trend-bar__track">
+            <div
+              class="trend-bar__fill"
+              [style.height.%]="(point.amount / (trendPoints[0].amount || 1)) * 100 || 8">
+            </div>
+          </div>
+          <strong>{{ formatCurrency(point.amount) }}</strong>
+          <span>{{ point.label }}</span>
+        </div>
+      </div>
+    </article>
+
+    <article class="panel insight-panel">
+      <div class="panel-heading">
+        <div>
+          <span class="section-kicker">Role insights</span>
+          <h2>What this dashboard means</h2>
+        </div>
+      </div>
+
+      <ul class="insight-list">
+        <li *ngIf="userContext === 'ADMIN'">Compare total partner earnings against platform share before payout release.</li>
+        <li *ngIf="userContext === 'DISTRIBUTOR'">Validate your distributor income against agent contribution and pending settlements.</li>
+        <li *ngIf="userContext === 'AGENT'">Track your own commissions without exposure to other distributors or agents.</li>
+        <li>Use the time range buttons to move from live visibility to weekly and monthly payout review.</li>
+        <li>Cross-check settlement status before marking payout cycles as complete.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="panel breakdown-panel">
+    <div class="panel-heading">
+      <div>
+        <span class="section-kicker">Breakdown</span>
+        <h2>
+          {{
+            userContext === 'ADMIN'
+              ? 'Distributor-wise earnings'
+              : userContext === 'DISTRIBUTOR'
+                ? 'Agent contribution under your network'
+                : 'Payment-type earning mix'
+          }}
+        </h2>
+      </div>
+      <p>See which contributors are driving the commission performance in the selected range.</p>
+    </div>
+
+    <div class="table-shell">
+      <table class="table earnings-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Scope</th>
+            <th>Transactions</th>
+            <th>Gross amount</th>
+            <th>Earnings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of breakdownRows">
+            <td>{{ row.name }}</td>
+            <td>{{ row.scope }}</td>
+            <td>{{ row.txnCount }}</td>
+            <td>{{ formatCurrency(row.grossAmount) }}</td>
+            <td>{{ formatCurrency(row.earnings) }}</td>
+          </tr>
+          <tr *ngIf="!breakdownRows.length">
+            <td colspan="5" class="empty-cell">No commission breakdown is available for the selected scope.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="panel ledger-panel">
+    <div class="panel-heading">
+      <div>
+        <span class="section-kicker">Settlement ledger</span>
+        <h2>Commission earning records</h2>
+      </div>
+      <p>Detailed entries that can be used for payout review, reconciliation, and audit verification.</p>
+    </div>
+
+    <div class="table-shell">
+      <table class="table earnings-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Distributor</th>
+            <th>Agent</th>
+            <th>Payment type</th>
+            <th>Txn count</th>
+            <th>Gross amount</th>
+            <th>Distributor commission</th>
+            <th>Agent commission</th>
+            <th>Platform commission</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let entry of filteredEntries">
+            <td>{{ entry.date }}</td>
+            <td>{{ entry.distributorName }}</td>
+            <td>{{ entry.agentName }}</td>
+            <td>{{ entry.paymentType }}</td>
+            <td>{{ entry.txnCount }}</td>
+            <td>{{ formatCurrency(entry.grossAmount) }}</td>
+            <td>{{ formatCurrency(entry.distributorCommission) }}</td>
+            <td>{{ formatCurrency(entry.agentCommission) }}</td>
+            <td>{{ formatCurrency(entry.platformCommission) }}</td>
+            <td>
+              <span class="status-pill" [ngClass]="settlementTone(entry.status)">
+                {{ entry.status }}
+              </span>
+            </td>
+          </tr>
+          <tr *ngIf="!filteredEntries.length">
+            <td colspan="10" class="empty-cell">No ledger rows matched the current role and selected time range.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</section>

@@ -15,21 +15,24 @@ import { ComplaintStatus } from './complaint-status/complaint-status';
 import { MakePayment } from './make-payment/make-payment';
 import { PaymentInvoice } from './payment-invoice/payment-invoice';
 import { CommissionSettings } from './commission-settings/commission-settings';
+import { CommissionDashboard } from './commission-dashboard/commission-dashboard';
+import { authGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
-  { path: 'add-money', component: AddMoney },
-  { path: 'bill-payments', component: BillPayments },
-  { path: 'bill-transfer', component: BillTransfer },
-  { path: 'cc-payments', component: CcPayments },
-  { path: 'customers', component: Customers },
-  { path: 'customers/cre', component: Customers },
-  { path: 'customers/:id', component: Customers },
-  { path: 'history', component: History },
-  { path: 'internal-transfer', component: InternalTransfer },
-  { path: 'make-payment', component: MakePayment },
-  { path: 'commission-settings', component: CommissionSettings },
-  { path: 'payment-invoice/:status', component: PaymentInvoice },
-  { path: 'payment-link', component: PaymentLink },
+  { path: 'add-money', component: AddMoney, canActivate: [authGuard] },
+  { path: 'bill-payments', component: BillPayments, canActivate: [authGuard] },
+  { path: 'bill-transfer', component: BillTransfer, canActivate: [authGuard] },
+  { path: 'cc-payments', component: CcPayments, canActivate: [authGuard] },
+  { path: 'customers', component: Customers, canActivate: [authGuard] },
+  { path: 'customers/cre', component: Customers, canActivate: [authGuard] },
+  { path: 'customers/:id', component: Customers, canActivate: [authGuard] },
+  { path: 'history', component: History, canActivate: [authGuard] },
+  { path: 'internal-transfer', component: InternalTransfer, canActivate: [authGuard] },
+  { path: 'make-payment', component: MakePayment, canActivate: [authGuard] },
+  { path: 'commission-dashboard', component: CommissionDashboard, canActivate: [authGuard] },
+  { path: 'commission-settings', component: CommissionSettings, canActivate: [authGuard] },
+  { path: 'payment-invoice/:status', component: PaymentInvoice, canActivate: [authGuard] },
+  { path: 'payment-link', component: PaymentLink, canActivate: [authGuard] },
 ];
 
 @NgModule({

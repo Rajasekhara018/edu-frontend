@@ -6,24 +6,20 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class PayeaseAuthService {
-redirectUrl!: string;
+  redirectUrl!: string;
 
   constructor(private router: Router, public http: HttpClient, @Inject(PLATFORM_ID) public platformId: object) {
 
   }
 
-  isloggedin() {
-    if (sessionStorage.getItem('token') || localStorage.getItem('token')) {
-      return true;
-    } else {
-      return false;
-    }
+  isloggedin(): boolean {
+    return !!(sessionStorage.getItem('token') || localStorage.getItem('token'));
   }
 
-  canActivate(url: any) {
+  canActivate(url: string): boolean {
     if (this.isloggedin()) { return true; }
     this.redirectUrl = url;
-    this.router.navigate(['/']);
+    this.router.navigate(['/auth/login']);
     return false;
   }
 
