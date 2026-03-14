@@ -3,7 +3,9 @@ package com.payease.app.service;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.SecureRandom;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +40,9 @@ public class UserService {
 
 	@Value("${app.frontend.base-url}")
 	private String frontendBaseUrl;
+
+	@Value("${spring.profiles.active:}")
+	private String activeProfile;
 
 	private static final long RESET_TOKEN_VALIDITY_MILLIS = 30 * 60 * 1000L;
 
@@ -213,11 +218,16 @@ public class UserService {
 
 	public ResponseObject forgotPassword(User user) {
 		ResponseObject response = new ResponseObject();
+		response.setStatus(true);
+		response.setObject(null);
+		response.setErrorMsg("If an account exists for that email address, password reset instructions have been sent.");
+		boolean matched = false;
+		boolean emailSent = false;
 		if (user == null || (!StringUtils.hasText(user.getEmailId()) && !StringUtils.hasText(user.getUserName()))) {
 			LOGGER.info("Forgot-password request received without a usable emailId or userName.");
+			attachForgotPasswordDebug(response, null, null, matched, emailSent, null);
 			return response;
 		}
-
 		String normalizedEmail = normalizeIdentifier(user.getEmailId());
 		String normalizedUserName = normalizeIdentifier(user.getUserName());
 		User existingUser = null;
@@ -230,8 +240,10 @@ public class UserService {
 		if (existingUser == null) {
 			LOGGER.info("Forgot-password request did not match any user. emailId='{}', userName='{}'",
 					normalizedEmail, normalizedUserName);
+			attachForgotPasswordDebug(response, normalizedEmail, normalizedUserName, matched, emailSent, null);
 			return response;
 		}
+		matched = true;
 		LOGGER.info("Forgot-password request matched userId='{}' for emailId='{}', userName='{}'",
 				existingUser.getId(), normalizedEmail, normalizedUserName);
 		existingUser.setResetPasswordToken(UUID.randomUUID().toString());
@@ -242,29 +254,48 @@ public class UserService {
 					existingUser.getEmailId(),
 					existingUser.getFullName(),
 					buildPasswordResetLink(existingUser.getResetPasswordToken()));
+			emailSent = true;
 		} catch (Exception e) {
 			return buildErrorResponse("Password reset email could not be sent.");
 		}
+		attachForgotPasswordDebug(response, normalizedEmail, normalizedUserName, matched, emailSent, existingUser.getId());
 		return response;
 	}
 
 	public ResponseObject resetPassword(User user) {
+		ResponseObject response = new ResponseObject();
+		boolean tokenMatched = false;
+		boolean tokenExpired = false;
+		boolean passwordUpdated = false;
+		String normalizedToken = user != null ? normalizeToken(user.getResetPasswordToken()) : null;
+
 		if (user == null || !StringUtils.hasText(user.getResetPasswordToken()) || !StringUtils.hasText(user.getPassword())) {
-			return buildErrorResponse("Reset token and new password are required.");
+			response = buildErrorResponse("Reset token and new password are required.");
+			attachResetPasswordDebug(response, normalizedToken, tokenMatched, tokenExpired, passwordUpdated, null);
+			return response;
 		}
 
-		User existingUser = userDao.findByResetPasswordToken(user.getResetPasswordToken().trim());
+		User existingUser = userDao.findByResetPasswordToken(normalizedToken);
 		if (existingUser == null) {
-			return buildErrorResponse("This password reset link is invalid.");
+			response = buildErrorResponse("This password reset link is invalid.");
+			attachResetPasswordDebug(response, normalizedToken, tokenMatched, tokenExpired, passwordUpdated, null);
+			return response;
 		}
+
+		tokenMatched = true;
 
 		if (existingUser.getResetPasswordTokenExpiry() == null
 				|| existingUser.getResetPasswordTokenExpiry() < System.currentTimeMillis()) {
-			return buildErrorResponse("This password reset link has expired.");
+			tokenExpired = true;
+			response = buildErrorResponse("This password reset link has expired.");
+			attachResetPasswordDebug(response, normalizedToken, tokenMatched, tokenExpired, passwordUpdated, existingUser.getId());
+			return response;
 		}
 
 		if (user.getPassword().equals(existingUser.getPassword())) {
-			return buildErrorResponse("New password must be different from the current password.");
+			response = buildErrorResponse("New password must be different from the current password.");
+			attachResetPasswordDebug(response, normalizedToken, tokenMatched, tokenExpired, passwordUpdated, existingUser.getId());
+			return response;
 		}
 
 		existingUser.setPassword(user.getPassword());
@@ -276,13 +307,16 @@ public class UserService {
 
 		User updatedUser = userDao.update(existingUser);
 		if (updatedUser == null) {
-			return buildErrorResponse("Password reset failed.");
+			response = buildErrorResponse("Password reset failed.");
+			attachResetPasswordDebug(response, normalizedToken, tokenMatched, tokenExpired, passwordUpdated, existingUser.getId());
+			return response;
 		}
 
-		ResponseObject response = new ResponseObject();
+		passwordUpdated = true;
 		response.setStatus(true);
 		response.setObject(updatedUser);
 		response.setErrorMsg("Password has been reset successfully.");
+		attachResetPasswordDebug(response, normalizedToken, tokenMatched, tokenExpired, passwordUpdated, updatedUser.getId());
 		return response;
 	}
 
@@ -305,6 +339,46 @@ public class UserService {
 			return null;
 		}
 		return value.trim().toLowerCase();
+	}
+
+	private String normalizeToken(String token) {
+		if (!StringUtils.hasText(token)) {
+			return null;
+		}
+		return token.trim();
+	}
+
+	private void attachForgotPasswordDebug(ResponseObject response, String normalizedEmail, String normalizedUserName,
+			boolean matched, boolean emailSent, String userId) {
+		if (!isDevProfile()) {
+			return;
+		}
+		Map<String, Object> debug = new LinkedHashMap<>();
+		debug.put("matched", matched);
+		debug.put("emailSent", emailSent);
+		debug.put("normalizedEmailId", normalizedEmail);
+		debug.put("normalizedUserName", normalizedUserName);
+		debug.put("userId", userId);
+		response.setObject(debug);
+	}
+
+	private boolean isDevProfile() {
+		return "dev".equalsIgnoreCase(activeProfile);
+	}
+
+	private void attachResetPasswordDebug(ResponseObject response, String normalizedToken, boolean tokenMatched,
+			boolean tokenExpired, boolean passwordUpdated, String userId) {
+		if (!isDevProfile()) {
+			return;
+		}
+
+		Map<String, Object> debug = new LinkedHashMap<>();
+		debug.put("tokenMatched", tokenMatched);
+		debug.put("tokenExpired", tokenExpired);
+		debug.put("passwordUpdated", passwordUpdated);
+		debug.put("normalizedToken", normalizedToken);
+		debug.put("userId", userId);
+		response.setObject(debug);
 	}
 
 	public ResponseObject approveUser(String userId) {

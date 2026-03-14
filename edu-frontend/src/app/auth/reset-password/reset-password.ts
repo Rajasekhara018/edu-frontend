@@ -28,6 +28,8 @@ export class ResetPassword {
   showConfirmPassword = false;
   feedback = '';
   feedbackTone: 'error' | 'success' | '' = '';
+  requestFeedback = '';
+  requestFeedbackTone: 'error' | 'success' | '' = '';
   readonly securityPoints = [
     'Recovery requests are sent only to registered operator email addresses.',
     'Use the latest email from support if your organization recently changed domains.',
@@ -82,34 +84,32 @@ export class ResetPassword {
   }
 
   submitResetRequest() {
+    this.requestFeedback = '';
+    this.requestFeedbackTone = '';
     if (!this.userEmail?.trim() || !this.isValidEmail(this.userEmail)) {
-      this.postService.showToast('error', 'Enter a valid work email to continue.');
+      this.setRequestFeedback('Enter a valid work email to continue.', 'error');
       return;
     }
-
     const requestBody = {
       emailId: this.userEmail.trim(),
     };
-
     this.isSubmitting = true;
     localStorage.setItem('email', this.userEmail.trim());
-
     const apiUrl = this.postService.getBaseUrl() + APIPath.FORGOT_PASSWORD;
     this.http.post(apiUrl, { reqType: 'FORGOT_PASSWORD', object: requestBody }).subscribe({
       next: (res: any) => {
         this.isSubmitting = false;
-        if (res?.success) {
+        if (res?.status) {
           this.submittedEmail = this.userEmail.trim();
           this.isCheckMail = true;
-          this.postService.showToast('success', 'Reset instructions have been sent to your email.');
+          this.setRequestFeedback(res?.errorMsg?.toString() || 'Reset instructions have been sent to your email.', 'success');
           return;
         }
-
-        this.postService.showToast('error', res?.message?.toString() || 'We could not start the password reset flow.');
+        this.setRequestFeedback(res?.errorMsg?.toString() || 'We could not start the password reset flow.', 'error');
       },
       error: (err) => {
         this.isSubmitting = false;
-        this.postService.showToast('error', err?.error?.message?.toString() || 'Password reset request failed.');
+        this.setRequestFeedback(err?.errorMessage?.toString() || err?.error?.message?.toString() || 'Password reset request failed.', 'error');
       }
     });
   }
@@ -121,7 +121,6 @@ export class ResetPassword {
   submitPasswordReset() {
     this.feedback = '';
     this.feedbackTone = '';
-
     if (!this.resetToken) {
       this.setFeedback('This reset link is invalid or missing.', 'error');
       return;
@@ -141,12 +140,10 @@ export class ResetPassword {
       this.setFeedback('New password must be at least 8 characters long.', 'error');
       return;
     }
-
     if (this.strengthScore < 5) {
       this.setFeedback('Password must include uppercase, lowercase, number, and special character.', 'error');
       return;
     }
-
     this.isSubmitting = true;
     this.postService.doPost(APIPath.AUTH_RESET_PASSWORD, {
       resetPasswordToken: this.resetToken,
@@ -213,5 +210,13 @@ export class ResetPassword {
     this.feedback = message;
     this.feedbackTone = tone;
     this.postService.showToast(tone, message);
+  }
+
+  private setRequestFeedback(message: string, tone: 'error' | 'success') {
+    this.requestFeedback = message;
+    this.requestFeedbackTone = tone;
+    if (tone === 'error') {
+      this.postService.showToast(tone, message);
+    }
   }
 }
