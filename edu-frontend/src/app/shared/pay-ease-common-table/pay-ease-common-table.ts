@@ -217,7 +217,7 @@ export class PayEaseCommonTable implements OnInit {
     const roles: string[] = [];
     if (user.adminUser) roles.push('Admin');
     if (user.distributeUser) roles.push('Distributor');
-    if (user.retailUser) roles.push('Retailer');
+    if (user.retailUser) roles.push('Agent');
     return roles;
   }
   getUserStatusLabel(status: string): string {

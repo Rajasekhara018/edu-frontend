@@ -207,6 +207,20 @@
   gap: 0.7rem;
 }
 
+.tip-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  color: var(--button-accent-start);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tip-link:hover {
+  color: var(--button-accent-end);
+}
+
 .form-label {
   display: block;
   margin-bottom: 0.5rem;

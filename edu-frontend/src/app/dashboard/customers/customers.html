@@ -37,6 +37,9 @@
         <div class="customer-toolbar__actions">
             <button *ngIf="!isEditMode" class="toolbar-btn secondary" (click)="onEditClick()">Edit</button>
             <ng-container *ngIf="isEditMode">
+                <a *ngIf="canCreateUsers" routerLink="/dashboard/commission-settings" class="toolbar-btn secondary">
+                    Commission Settings
+                </a>
                 <button class="toolbar-btn secondary" (click)="onCancelEdit()">Cancel</button>
                 <button class="toolbar-btn primary" (click)="submitCustomerDetails()" [disabled]="customerForm.invalid || !canCreateUsers">
                     {{ isCreateMode ? 'Create User' : 'Update User' }}
@@ -157,6 +160,10 @@
                     <li>Use distributor type only when settlement account details are ready.</li>
                     <li>Review PAN and Aadhar before submitting to reduce verification loops.</li>
                 </ul>
+                <a *ngIf="canCreateUsers" routerLink="/dashboard/commission-settings" class="tip-link">
+                    Continue to commission setup
+                    <i class="bi bi-arrow-right"></i>
+                </a>
             </section>
         </aside>
     </form>

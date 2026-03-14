@@ -11,7 +11,7 @@ export class History {
     { id: 'cards', label: 'Cards Transactions', subtitle: 'Card gateway collections and wallet funding history' },
     { id: 'bank', label: 'Bank Transactions', subtitle: 'NEFT, RTGS, and IMPS settlement tracking' },
     { id: 'statements', label: 'Statements', subtitle: 'Audit-ready ledger and payout statement lines' },
-    { id: 'commission', label: 'Commission Report', subtitle: 'Distributor, retailer, and platform commission view' }
+    { id: 'commission', label: 'Commission Report', subtitle: 'Distributor, agent, and platform commission view' }
   ];
 
   readonly cardsTransactions: Transaction[] = [

@@ -14,6 +14,7 @@ import { RaiseCompliant } from './raise-compliant/raise-compliant';
 import { ComplaintStatus } from './complaint-status/complaint-status';
 import { MakePayment } from './make-payment/make-payment';
 import { PaymentInvoice } from './payment-invoice/payment-invoice';
+import { CommissionSettings } from './commission-settings/commission-settings';
 
 const routes: Routes = [
   { path: 'add-money', component: AddMoney },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'history', component: History },
   { path: 'internal-transfer', component: InternalTransfer },
   { path: 'make-payment', component: MakePayment },
+  { path: 'commission-settings', component: CommissionSettings },
   { path: 'payment-invoice/:status', component: PaymentInvoice },
   { path: 'payment-link', component: PaymentLink },
 ];

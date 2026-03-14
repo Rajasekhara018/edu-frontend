@@ -24,10 +24,17 @@ export class Landing {
     },
     {
       title: 'Customers',
-      copy: 'Search merchants, review account states, and open customer records from the shared master table.',
+      copy: 'Create distributors, onboard agents, and review account states from the shared master table.',
       route: '/csearch/GET_CUSTOMERS',
       icon: 'bi bi-people',
       accent: 'blue'
+    },
+    {
+      title: 'Commission Settings',
+      copy: 'Maintain distributor defaults and agent-level commission rules with settlement visibility.',
+      route: '/dashboard/commission-settings',
+      icon: 'bi bi-percent',
+      accent: 'indigo'
     },
     {
       title: 'History',
@@ -53,9 +60,9 @@ export class Landing {
 
   readonly workflow = [
     { step: '01', title: 'Fund the wallet', copy: 'Start with Add Money to ensure the operator balance is ready before collections begin.' },
-    { step: '02', title: 'Validate customers', copy: 'Use Customers to verify account details and reduce avoidable errors during payment execution.' },
+    { step: '02', title: 'Set hierarchy and commissions', copy: 'Use Customers and Commission Settings to map agents under distributors and define payout rules.' },
     { step: '03', title: 'Execute collections', copy: 'Process bill payments with visibility into debit, credit, and final settlement.' },
-    { step: '04', title: 'Review the ledger', copy: 'Close the loop through History and daily summaries for fast reconciliation.' },
+    { step: '04', title: 'Review the ledger', copy: 'Close the loop through History and daily summaries for fast reconciliation and commission review.' },
   ];
 
   readonly announcements = [

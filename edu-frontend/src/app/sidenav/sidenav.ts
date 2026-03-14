@@ -21,7 +21,8 @@ export class Sidenav {
   @ViewChild('sideMenu', { static: true }) private sideMenu!: MatSelectionList;
   sidenav!: MatSidenav;
   isMobile = true;
-  userRole!: string[];
+  userRole: string[] = [];
+  filteredNavItems: NavItem[] = [];
   ngOnInit() {
     this.checkScreenSize();
     let loggedInUser = sessionStorage.getItem('loggedInUser')!
@@ -31,15 +32,21 @@ export class Sidenav {
       lu = lu[0].replace('.', ' ');
       this.userName = lu;
     }
-    this.userRole = JSON.parse(localStorage.getItem('LoggedInUserroles')!);
+    const rolesRaw = localStorage.getItem('LoggedInUserroles');
+    this.userRole = rolesRaw && rolesRaw !== 'undefined' ? JSON.parse(rolesRaw) : [];
     this.filterNavItems();
   }
   filterNavItems(): void {
-    console.log(this.userRole)
-    // this.navItems = this.navItems.filter(item => {
-      // if (!item.rolesAllowed) return true;
-      // return this.userRole.some(role => item.rolesAllowed.includes(role));
-    // });
+    const normalizedRoles = this.userRole.map((role) => role?.toUpperCase?.() || '');
+    this.filteredNavItems = this.navItems.filter((item) => {
+      if (!item.rolesAllowed?.length) {
+        return true;
+      }
+
+      return item.rolesAllowed.some((allowedRole) =>
+        normalizedRoles.some((role) => role.includes(allowedRole))
+      );
+    });
   }
   @HostListener('window:resize', [])
   onResize() {
@@ -77,7 +84,7 @@ export class Sidenav {
     this.router.navigate(['/']);
   }
   isCollapsed = false;
-  navItems = [
+  navItems: NavItem[] = [
     // { label: 'Dashboard', route: '/home', icon: 'home', iconType: 'lucide', tooltip: 'Dashboard' },
     // { label: 'Documents', route: 'csearch/GET_DOCUMENTS', icon: 'file-text', iconType: 'lucide', tooltip: 'Documents' },
     // { label: 'Approvals', route: 'csearch/GET_APPROVAL_QUEUE', icon: 'check-circle', iconType: 'lucide', tooltip: 'Approvals' },
@@ -89,9 +96,10 @@ export class Sidenav {
     { label: 'Dashboard', route: '/home', icon: 'home', iconType: 'lucide', tooltip: 'Dashboard' },
     { label: 'Add Money', route: '/dashboard/add-money', icon: 'file-text', iconType: 'lucide', tooltip: 'Add Money' },
     { label: 'Make Payment', route: '/dashboard/make-payment', icon: 'credit-card', iconType: 'lucide', tooltip: 'Make Payment' },
+    { label: 'Commission Settings', route: '/dashboard/commission-settings', icon: 'settings', iconType: 'lucide', tooltip: 'Commission Settings', rolesAllowed: ['ADMIN', 'DISTRIBUTOR'] },
     // { label: 'Bill Transafer', route: '/dashboard/bill-transfer', icon: 'check-circle', iconType: 'lucide', tooltip: 'Bill Transafer' },
-    { label: 'History', route: '/dashboard/history', icon: 'folder-open', iconType: 'lucide', tooltip: 'History', rolesAllowed: ['SUPER_ADMIN', 'HOD'] },
-    { label: 'Customer', route: '/csearch/GET_CUSTOMERS', icon: 'users', iconType: 'lucide', tooltip: 'Customers' },
+    { label: 'History', route: '/dashboard/history', icon: 'folder-open', iconType: 'lucide', tooltip: 'History' },
+    { label: 'Customer', route: '/csearch/GET_CUSTOMERS', icon: 'users', iconType: 'lucide', tooltip: 'Customers', rolesAllowed: ['ADMIN', 'DISTRIBUTOR'] },
     { label: 'Bill Payments', route: '/dashboard/bill-payments', icon: 'check-circle', iconType: 'lucide', tooltip: 'Bill Payments' },
     // { label: 'Internal Transfer', route: '/dashboard/internal-transfer', icon: 'bar-chart-3', iconType: 'lucide', tooltip: 'Internal Transfer' },
     // { label: 'Payment Link', route: '/dashboard/payment-link', icon: 'settings', iconType: 'lucide', tooltip: 'Payment Link' }
@@ -117,8 +125,10 @@ export class Sidenav {
 export interface NavItem {
   label: string;
   icon: string;
+  iconType: 'lucide' | 'bootstrap';
   route: string;
   tooltip: string;
   privilegeId?: number;
+  rolesAllowed?: string[];
 }
 

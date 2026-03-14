@@ -22,6 +22,7 @@ import { RaiseCompliant } from './raise-compliant/raise-compliant';
 import { ComplaintStatus } from './complaint-status/complaint-status';
 import { MakePayment } from './make-payment/make-payment';
 import { PaymentInvoice } from './payment-invoice/payment-invoice';
+import { CommissionSettings } from './commission-settings/commission-settings';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { PaymentInvoice } from './payment-invoice/payment-invoice';
     RaiseCompliant,
     ComplaintStatus,
     MakePayment,
-    PaymentInvoice
+    PaymentInvoice,
+    CommissionSettings
   ],
   imports: [
     CommonModule,
