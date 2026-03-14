@@ -1,3 +1,69 @@
+.nav-shell {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: calc(100vh - 112px);
+    padding: 1rem;
+    border-radius: 28px;
+    background: linear-gradient(180deg, var(--sidebar-bg-start) 0%, var(--sidebar-bg-end) 100%);
+    box-shadow: 0 28px 60px rgba(15, 23, 42, 0.2);
+    color: var(--sidebar-text);
+}
+
+.nav-head {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.brand-mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    display: grid;
+    place-items: center;
+    background: var(--brand-chip);
+    color: #fff7ed;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.brand-copy {
+    display: grid;
+}
+
+.brand-eyebrow,
+.nav-context-label,
+.nav-section-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--sidebar-muted);
+}
+
+.brand-copy strong,
+.nav-context strong,
+.foot-card strong {
+    font-size: 1rem;
+    color: var(--sidebar-text);
+}
+
+.nav-context,
+.foot-card {
+    padding: 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-context p,
+.foot-card p {
+    margin: 0.45rem 0 0;
+    color: var(--sidebar-muted);
+    line-height: 1.55;
+    font-size: 0.9rem;
+}
+
 .brand-logo {
     min-height: 64px;
     padding: 0 16px 0 20px;
@@ -24,8 +90,9 @@
     will-change: width;
     transition: width 0.3s ease, padding 0.3s ease;
     overflow-y: auto;
-    padding: 0 16px;
+    padding: 0;
     border-radius: 5px;
+    flex: 1;
 
 
     .mat-mdc-subheader {
@@ -37,8 +104,8 @@
         // width: fit-content;
         .mdc-list-item {
             cursor: pointer;
-            border-radius: 7px;
-            margin-bottom: 5px;
+            border-radius: 16px;
+            margin-bottom: 8px;
             padding: 0;
             // width: fit-content;
         }
@@ -56,15 +123,14 @@
 
         .mdc-list-item:hover {
             cursor: pointer;
-            color: #0D47A1;
-            background: #EEF3FF;
-            // background-color: #FCE4EC;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.08);
 
         }
 
         .mdc-list-item.link-active {
-            // background: #680844;
-            background: #0D47A1;
+            background: linear-gradient(135deg, var(--button-accent-start), var(--button-accent-end));
+            box-shadow: 0 16px 30px var(--theme-highlight-soft);
 
         }
 
@@ -198,18 +264,6 @@
     width: 240px;
 }
 
-.nav-body {
-    height: 100vh;
-    /* full viewport height */
-    background-color: transparent !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-
-
-
 ///////////////////////////////////
 // .sidenav-container {
 //     height: 100vh;
@@ -251,16 +305,21 @@
 
 
 .nav-expanded {
-    width: 220px;
+    width: 100%;
     transition: all 0.3s ease-in-out;
 }
 
 .nav-collapsed {
-    width: 64px;
+    width: 100%;
     transition: all 0.3s ease-in-out;
+    padding: 0.8rem;
 
     .font-medium {
         display: none;
+    }
+
+    .nav-head {
+        justify-content: center;
     }
 }
 
@@ -269,4 +328,29 @@
     height: 20px;
     stroke: currentColor;
     fill: none;
+}
+
+.menu-item {
+    gap: 0.7rem;
+    color: var(--sidebar-text);
+    font-weight: 500;
+}
+
+.nav-section-label {
+    margin: 0 0 0.75rem 0.25rem;
+}
+
+.foot-card span {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #fbbf24;
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .nav-shell {
+        height: auto;
+        border-radius: 22px;
+    }
 }

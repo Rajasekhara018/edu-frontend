@@ -1,143 +1,125 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src="https://i.imgur.com/1V0j6WB.png" alt="Payease" height="40">
-        </a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Bill Payments</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item">Pay Electricity</a></li>
-                        <li><a class="dropdown-item">Pay Water</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Statements</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Download</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Complaints</a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Raise Ticket</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <div class="d-flex align-items-center">
-                <img src="https://via.placeholder.com/40" class="rounded-circle" alt="user" />
+<section class="landing-page">
+    <div class="announcement-ribbon">
+        <div class="announcement-viewport">
+            <div class="announcement-track">
+                <span *ngFor="let note of announcements">
+                    <i class="bi bi-stars"></i>
+                    {{ note }}
+                </span>
+            </div>
+            <div class="announcement-track" aria-hidden="true">
+                <span *ngFor="let note of announcements">
+                    <i class="bi bi-stars"></i>
+                    {{ note }}
+                </span>
             </div>
         </div>
     </div>
-</nav> -->
 
-<div class="ticker-wrapper">
-    <div class="ticker">
-        <span class="font-lg">Hello Yugma  User! MASTER CARD % HAS BEEN DECREASED..! FOR VISA CARD USE PG 6..! </span>
-    </div>
-</div>
-<h5 class="text-center font-2xl">Hi, <strong>Badam Rajasekhara Reddy</strong>, Happy to see you again!</h5>
-<mat-card class="m-5">
-    <div class="row container-fluid m-3">
-        <div class="row mt-3 col-lg-6">
-            <h6 class="text-primary fw-bold font-xl text-center">YOUR SERVICES ARE HERE</h6>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="service-card" [routerLink]="['/dashboard/add-money']">
-                    <img src="../../../assets/add-money.jpg" height="50" width="50"><br />
-                    <p class="font-lg">Add Money</p>
-                </div>
-            </div>
-            <!-- <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="service-card" [routerLink]="['/dashboard/bill-transfer']">
-                    <img src="../../../assets/bill-transfer.jpg" height="50" width="50"><br />
-                    <p class="font-lg">Bill Transfer</p>
-                </div>
-            </div> -->
-            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                 <!-- [routerLink]="['/dashboard/customers']" -->
-                <div class="service-card" [routerLink]="['/csearch/GET_CUSTOMERS']">
-                    <img src="../../../assets/payment-cutomers.webp" height="50" width="50"><br />
-                    <p class="font-lg">Customers</p>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="service-card" [routerLink]="['/dashboard/history']">
-                    <img src="../../../assets/payment-history.avif" height="50" width="50"><br />
-                    <p class="font-lg">History</p>
-                </div>
-            </div>
-            <!-- <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="service-card" [routerLink]="['/dashboard/payment-link']">
-                    <img src="../../../assets/payment-link.jpg" height="50" width="50"><br />
-                    Payment Link
-                </div>
-            </div> -->
-            <!-- <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="service-card" [routerLink]="['/dashboard/internal-transfer']">
-                    <img src="../../../assets/internal-transfer.jpg" height="50" width="50"><br />
-                    <p class="font-lg">Internal Transfer</p>
-                </div>
-            </div> -->
-            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="service-card" [routerLink]="['/dashboard/bill-payments']">
-                    <img src="../../../assets/bill-payments.jpg" height="50" width="50"><br />
-                    <p class="font-lg">Bill Payments</p>
-                </div>
-            </div>
-            <!-- <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="service-card" [routerLink]="['/dashboard/cc-payments']">
-                    <img src="../../../assets/credit-card-payment.jpg" height="50" width="50"><br />
-                    <p class="font-lg">CC Payments</p>
-                </div>
-            </div> -->
-        </div>
-        <div class="row mt-3 col-lg-6">
-            <h6 class="text-primary fw-bold font-xl text-center">TODAY REPORT</h6>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
-                <div class="report-card bg-primary">
-                    <p class="font-xl text-white">OPENING</p>
-                    <p class="font-xl text-white">2663.53</p>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
-                <div class="report-card bg-warning">
-                    <p class="font-xl text-white">CREDIT</p>
-                    <p class="font-xl text-white">1019.50</p>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
-                <div class="report-card bg-info">
-                    <p class="font-xl text-white">DEBIT</p>
-                    <p class="font-xl text-white">1010.00</p>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
-                <div class="report-card bg-secondary">
-                    <p class="font-xl text-white">CLOSING</p>
-                    <p class="font-xl text-white">2666.23</p>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
-                <div class="report-card bg-success">
-                    <p class="font-xl text-white">SUCCESS</p>
-                    <p class="font-xl text-white">109385.06</p>
-                </div>
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-4">
-                <div class="report-card bg-danger">
-                    <p class="font-xl text-white">FAILED</p>
-                    <p class="font-xl text-white">0</p>
-                </div>
+    <section class="hero-panel">
+        <div class="hero-copy">
+            <div class="eyebrow">Education finance operations</div>
+            <h1>Run collections, balances, and support workflows from one operator console.</h1>
+            <p>
+                The Edu frontend now presents the available payment features as a clean command center:
+                wallet funding, customer lookup, bill collection, history review, and end-of-day visibility.
+            </p>
+            <div class="hero-actions">
+                <a class="hero-action primary" routerLink="/dashboard/add-money">
+                    <i class="bi bi-arrow-up-right-circle"></i>
+                    Start with Add Money
+                </a>
+                <a class="hero-action secondary" routerLink="/csearch/GET_CUSTOMERS">
+                    <i class="bi bi-search"></i>
+                    Review Customers
+                </a>
             </div>
         </div>
-    </div>
-</mat-card>
 
-<mat-card class="m-5">
-    <div class="note-box m-3">
-        <strong>Note:</strong> 1. Hello Yugma  User! MASTER CARD % HAS BEEN DECREASED..! FOR VISA CARD USE PG 6..!
-        Thank you.
-    </div>
-</mat-card>
+        <div class="hero-spotlight">
+            <div class="spotlight-card">
+                <span class="spotlight-label">Today at a glance</span>
+                <div class="spotlight-metric">₹109,385.06</div>
+                <p>Successful processed value with zero failed transactions reported in the current run.</p>
+                <div class="spotlight-footer">
+                    <span>Live operations</span>
+                    <span>Stable settlement posture</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-grid">
+        <article *ngFor="let stat of quickStats" class="stat-card" [attr.data-tone]="stat.tone">
+            <div class="stat-label">{{ stat.label }}</div>
+            <div class="stat-value">{{ stat.value }}</div>
+            <div class="stat-delta">{{ stat.delta }}</div>
+        </article>
+    </section>
+
+    <section class="content-grid">
+        <div class="primary-column">
+            <div class="section-header">
+                <div>
+                    <span class="section-kicker">Available features</span>
+                    <h2>Core service actions</h2>
+                </div>
+                <p>These are the operator flows already wired into the application and promoted as first-class actions.</p>
+            </div>
+
+            <div class="services-grid">
+                <a *ngFor="let service of services" class="service-card" [routerLink]="service.route" [attr.data-accent]="service.accent">
+                    <div class="service-icon">
+                        <i [class]="service.icon"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>{{ service.title }}</h3>
+                        <p>{{ service.copy }}</p>
+                    </div>
+                    <i class="bi bi-arrow-right service-arrow"></i>
+                </a>
+            </div>
+
+            <div class="workflow-panel">
+                <div class="section-header compact">
+                    <div>
+                        <span class="section-kicker">Operator flow</span>
+                        <h2>Recommended daily sequence</h2>
+                    </div>
+                </div>
+                <div class="workflow-list">
+                    <article *ngFor="let item of workflow" class="workflow-item">
+                        <div class="workflow-step">{{ item.step }}</div>
+                        <div>
+                            <h3>{{ item.title }}</h3>
+                            <p>{{ item.copy }}</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+
+        <aside class="secondary-column">
+            <div class="insight-panel">
+                <span class="section-kicker">Daily report</span>
+                <h2>Operational confidence</h2>
+                <div class="metric-stack">
+                    <article *ngFor="let metric of metrics" class="metric-card">
+                        <div class="metric-value">{{ metric.value }}</div>
+                        <div class="metric-label">{{ metric.label }}</div>
+                        <p>{{ metric.description }}</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="note-panel">
+                <span class="section-kicker">Control note</span>
+                <h2>Routing guidance</h2>
+                <p>
+                    MasterCard percentages were updated. For Visa flows, use PG 6 where your transaction policy requires it.
+                    Keep customer validation and history review in the same operator cycle to reduce reversals.
+                </p>
+            </div>
+        </aside>
+    </section>
+</section>

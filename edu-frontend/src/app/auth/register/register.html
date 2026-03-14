@@ -1,150 +1,97 @@
 <div class="login-container">
-    <div class="row login-box w-100" style="max-width: 850px;">
+    <div class="row login-box w-100">
+        <section class="col-lg-6 info-box d-none d-lg-flex">
+            <div class="info-content">
+                <div class="eyebrow">Operator onboarding</div>
+                <h1>Register your account with a clean, secure onboarding flow.</h1>
+                <p class="info-intro">
+                    Set up your profile, contact details, and business information to access the Edu payments
+                    workspace with the right operational context from day one.
+                </p>
+                <div class="feature-list">
+                    <article class="feature-item" *ngFor="let item of onboardingSteps; let i = index">
+                        <span class="feature-index">0{{ i + 1 }}</span>
+                        <p>{{ item }}</p>
+                    </article>
+                </div>
+                <div class="trust-row">
+                    <div class="trust-chip" *ngFor="let metric of trustMetrics">
+                        <strong>{{ metric.value }}</strong>
+                        <span>{{ metric.label }}</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="col-lg-6 register-panel-wrap">
         <div class="login-card">
             <div class="brand d-flex align-items-center mb-3">
-                <img src="../../../assets/payease-logo.png" alt="App Logo" class="brand-icon" />
-                <img src="../../../assets/logopayease.jpeg" alt="App Logo" class="brand-icon" />
+                <img src="../../../assets/edutech.png" alt="App Logo" class="brand-icon" />
+                <div>
+                    <div class="brand-title">Edu Payments</div>
+                    <div class="brand-subtitle">Create operator account</div>
+                </div>
             </div>
             <mat-divider></mat-divider>
-            <h2 class="welcome-text">Hey there, Welcome back!</h2>
+            <h2 class="welcome-text">Create your account</h2>
+            <p class="subtext">Complete the registration form to begin using the payments operations workspace.</p>
             <form #userobjForm="ngForm" (keydown.enter)="$event.preventDefault()" name="objForm" autocomplete="off">
-                <!-- <div class="mb-3 col-12">
-                    <label for="email" class="form-label">Full Name <span class="text-danger">*</span></label>
-                    <input class="form-control" id="email" name="email" [(ngModel)]="userEmail" required
-                        #emailInput="ngModel" [disabled]="isDisabled"
-                        [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
-                    <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger"
-                        placeholder="work@example.com">
-                        <small *ngIf="emailInput.errors?.['required']">Email is required.</small>
-                        <small *ngIf="emailInput.errors?.['email']">Invalid email format.</small>
+                <div class="row g-3 register-form-grid">
+                    <div class="col-12">
+                        <label class="form-label" for="register-full-name">Full Name <span class="required-mark">*</span></label>
+                        <input id="register-full-name" type="text" class="form-control" name="fName"
+                            [(ngModel)]="customerObj.fullName" #fName="ngModel" [disabled]="disabledMode" required
+                            [ngClass]="{ 'is-invalid': fName.invalid && fName.touched }" placeholder="Enter full name" />
+                        <div class="invalid-feedback" *ngIf="fName.invalid && fName.touched">Full Name is required.</div>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label" for="register-mobile">Mobile Number <span class="required-mark">*</span></label>
+                        <input id="register-mobile" type="tel" class="form-control" name="mblNum"
+                            [(ngModel)]="customerObj.phNo" #mblNum="ngModel" [disabled]="disabledMode" required
+                            [ngClass]="{ 'is-invalid': mblNum.invalid && mblNum.touched }" placeholder="Enter mobile number" />
+                        <div class="invalid-feedback" *ngIf="mblNum.invalid && mblNum.touched">Mobile Number is required.</div>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label" for="register-email">Email <span class="required-mark">*</span></label>
+                        <input id="register-email" type="email" class="form-control" name="eml"
+                            [(ngModel)]="customerObj.emailId" #eml="ngModel" [disabled]="disabledMode" required
+                            [ngClass]="{ 'is-invalid': eml.invalid && eml.touched }" placeholder="Enter email address" />
+                        <div class="invalid-feedback" *ngIf="eml.invalid && eml.touched">Email is required.</div>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label" for="register-address">Address <span class="required-mark">*</span></label>
+                        <input id="register-address" type="text" class="form-control" name="add"
+                            [(ngModel)]="customerObj.address" #add="ngModel" [disabled]="disabledMode" required
+                            [ngClass]="{ 'is-invalid': add.invalid && add.touched }" placeholder="Enter address" />
+                        <div class="invalid-feedback" *ngIf="add.invalid && add.touched">Address is required.</div>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label" for="register-dob">Date of Birth <span class="required-mark">*</span></label>
+                        <input id="register-dob" type="date" class="form-control" name="dbth"
+                            [(ngModel)]="customerObj.dateOfBirth" #dbth="ngModel" [disabled]="disabledMode" required
+                            [ngClass]="{ 'is-invalid': dbth.invalid && dbth.touched }" />
+                        <div class="invalid-feedback" *ngIf="dbth.invalid && dbth.touched">Date of Birth is required.</div>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label" for="register-business-name">Business Name <span class="required-mark">*</span></label>
+                        <input id="register-business-name" type="text" class="form-control" name="bnam"
+                            [(ngModel)]="customerObj.businessName" #bnam="ngModel" [disabled]="disabledMode" required
+                            [ngClass]="{ 'is-invalid': bnam.invalid && bnam.touched }" placeholder="Enter business name" />
+                        <div class="invalid-feedback" *ngIf="bnam.invalid && bnam.touched">Business Name is required.</div>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="form-label" for="register-business-address">Business Address <span class="required-mark">*</span></label>
+                        <input id="register-business-address" type="text" class="form-control" name="bAdd"
+                            [(ngModel)]="customerObj.businessAddress" #bAdd="ngModel" [disabled]="disabledMode" required
+                            [ngClass]="{ 'is-invalid': bAdd.invalid && bAdd.touched }" placeholder="Enter business address" />
+                        <div class="invalid-feedback" *ngIf="bAdd.invalid && bAdd.touched">Business Address is required.</div>
                     </div>
                 </div>
-                <div class="mb-3 col-12">
-                    <label for="email" class="form-label">Business Name <span class="text-danger">*</span></label>
-                    <input class="form-control" id="email" name="email" [(ngModel)]="userEmail" required
-                        #emailInput="ngModel" [disabled]="isDisabled"
-                        [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
-                    <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger"
-                        placeholder="work@example.com">
-                        <small *ngIf="emailInput.errors?.['required']">Email is required.</small>
-                        <small *ngIf="emailInput.errors?.['email']">Invalid email format.</small>
-                    </div>
-                </div>
-                <div class="mb-3 col-12">
-                    <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
-                    <input class="form-control" id="email" name="email" [(ngModel)]="userEmail" required
-                        #emailInput="ngModel" [disabled]="isDisabled"
-                        [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
-                    <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger"
-                        placeholder="work@example.com">
-                        <small *ngIf="emailInput.errors?.['required']">Email is required.</small>
-                        <small *ngIf="emailInput.errors?.['email']">Invalid email format.</small>
-                    </div>
-                </div>
-                <div class="mb-3 col-12">
-                    <label for="email" class="form-label">Mobile Number <span class="text-danger">*</span></label>
-                    <input class="form-control" id="email" name="email" [(ngModel)]="userEmail" required
-                        #emailInput="ngModel" [disabled]="isDisabled"
-                        [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
-                    <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger"
-                        placeholder="work@example.com">
-                        <small *ngIf="emailInput.errors?.['required']">Mobile Number is required.</small>
-                    </div>
-                </div>
-                <div class="mb-3 col-12">
-                    <label for="email" class="form-label">Enter Aadhar <span class="text-danger">*</span></label>
-                    <input class="form-control" id="email" name="email" [(ngModel)]="userEmail" required
-                        #emailInput="ngModel" [disabled]="isDisabled"
-                        [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
-                    <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger"
-                        placeholder="work@example.com">
-                        <small *ngIf="emailInput.errors?.['required']">Aadhar is required.</small>
-                    </div>
-                </div>
-                <div class="mb-3 col-12">
-                    <label for="email" class="form-label">Enter PAN <span class="text-danger">*</span></label>
-                    <input class="form-control" id="pan" name="pan" [(ngModel)]="userEmail" required
-                        #emailInput="ngModel" [disabled]="isDisabled"
-                        [ngClass]="{ 'is-invalid': emailInput.invalid && emailInput.touched }" />
-                    <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger"
-                        placeholder="work@example.com">
-                        <small *ngIf="emailInput.errors?.['required']">PAN is required.</small>
-                    </div>
-                </div> -->
-                <mat-form-field appearance="outline" class="col-md-12">
-                    <mat-label>Full Name</mat-label>
-                    <input matInput name="fName" [(ngModel)]="customerObj.fullName" #fName="ngModel"
-                        [disabled]="disabledMode" required />
-                    <mat-error *ngIf="fName.errors?.['required']">
-                        Full Name is
-                        required
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" class="col-md-12">
-                    <mat-label>Mobile Number</mat-label>
-                    <input matInput name="mblNum" [(ngModel)]="customerObj.phNo" #mblNum="ngModel"
-                        [disabled]="disabledMode" required />
-                    <mat-error *ngIf="mblNum.errors?.['required']">
-                        Mobile Number is
-                        required
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" class="col-md-12">
-                    <mat-label>Email</mat-label>
-                    <input matInput name="eml" [(ngModel)]="customerObj.emailId" #eml="ngModel"
-                        [disabled]="disabledMode" required />
-                    <mat-error *ngIf="eml.errors?.['required']">
-                        Email is
-                        required
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" class="col-md-12">
-                    <mat-label>Address</mat-label>
-                    <input matInput name="add" [(ngModel)]="customerObj.address" #add="ngModel"
-                        [disabled]="disabledMode" required />
-                    <mat-error *ngIf="add.errors?.['required']">
-                        Address is
-                        required
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" class="col-md-12">
-                    <mat-label>Date of Birth</mat-label>
-                    <input matInput name="dbth" [(ngModel)]="customerObj.dateOfBirth" #dbth="ngModel"
-                        [disabled]="disabledMode" required [matDatepicker]="datepicker" />
-                    <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
-                    <mat-datepicker #datepicker></mat-datepicker>
-                    <mat-error *ngIf="dbth.errors?.['required']">
-                        Date of Birth is
-                        required
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" class="col-md-12">
-                    <mat-label>Business Name</mat-label>
-                    <input matInput name="bnam" [(ngModel)]="customerObj.businessName" #bnam="ngModel"
-                        [disabled]="disabledMode" required />
-                    <mat-error *ngIf="bnam.errors?.['required']">
-                        Business Name is
-                        required
-                    </mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" class="col-md-12">
-                    <mat-label>Business Address</mat-label>
-                    <input matInput name="bAdd" [(ngModel)]="customerObj.businessAddress" #bAdd="ngModel"
-                        [disabled]="disabledMode" required />
-                    <mat-error *ngIf="bAdd.errors?.['required']">
-                        Business Address is
-                        required
-                    </mat-error>
-                </mat-form-field>
-                <!-- <mat-form-field appearance="outline" class="col-md-12">
-                    <mat-label>Distribute Id</mat-label>
-                    <input matInput name="dstId" [(ngModel)]="customerObj.distributeId" #dstId="ngModel"
-                        [disabled]="disabledMode" required />
-                    <mat-error *ngIf="dstId.errors?.['required']">
-                        Distribute Id is
-                        required
-                    </mat-error>
-                </mat-form-field> -->
                 <button
                     class="btn btn-primary w-100 mb-3 mt-3 rounded-pill d-flex align-items-center justify-content-center"
                     [disabled]="!userobjForm.form.valid || isLoading" (click)="register()">
@@ -152,18 +99,19 @@
                     <div *ngIf="isLoading" class="d-flex align-items-center gap-2">
                         <span class="spinner-border spinner-border-sm text-light" role="status"
                             aria-hidden="true"></span>
-                        <span>Logging in...</span>
+                        <span>Submitting...</span>
                     </div>
                 </button>
             </form>
             <div class="footer">
-                Are you existing user? <a [routerLink]="['/login']">SIGN IN</a>
+                Already have an account? <a [routerLink]="['/login']">Sign in</a>
             </div>
             <div class="security-info">
                 🔐 SSL Secured &nbsp; | &nbsp; ✅ SOC 2 Compliant &nbsp; | &nbsp; 🔄 99.9% Uptime
             </div>
         </div>
-        <div class="col-md-6 d-none d-md-block info-box">
+        </section>
+        <div class="col-md-6 d-none d-md-block info-box legacy-info-box">
             <h5>Yugma  Provides best solutions for our customers</h5>
             <ul class="mt-3">
                 <li class="font-xl">We will provide robust security measures, including two-factor authentication, to

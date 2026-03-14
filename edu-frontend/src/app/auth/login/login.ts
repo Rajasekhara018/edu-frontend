@@ -21,6 +21,16 @@ export class Login {
   userEmail!: string;
   userPassword!: string;
   inProgressBar = false;
+  readonly loginHighlights = [
+    'Single workspace for collections, customer lookup, and transaction review',
+    'Structured operator flow with wallet funding before payment execution',
+    'High-visibility reconciliation with history and daily reporting access'
+  ];
+  readonly trustMetrics = [
+    { value: '99.9%', label: 'Uptime target' },
+    { value: '24/7', label: 'Operator access' },
+    { value: 'Secure', label: 'Protected sign-in' }
+  ];
 
   hidePwd = true;
   reqFS!: boolean;

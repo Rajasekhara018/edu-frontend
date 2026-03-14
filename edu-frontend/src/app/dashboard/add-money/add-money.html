@@ -1,50 +1,116 @@
-<div class="container py-4">
-    <div class="row g-4">
-
-        <!-- Left Column - Add Money Form -->
-        <div class="col-lg-6">
-            <div class="card p-4 h-100">
-                <div class="card-header text-primary">
-                    Add Money to Wallet
-                </div>
-                <form>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <label class="form-label">Mobile #</label>
-                            <input type="text" class="form-control" placeholder="Enter mobile number">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Full Name</label>
-                            <input type="text" class="form-control" placeholder="Enter full name">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Amount</label>
-                            <input type="number" class="form-control" placeholder="Enter amount">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="form-label">Select Payment Method</label>
-                            <select class="form-select">
-                                <option selected disabled>Choose method</option>
-                                <!-- <option disabled>Net Banking</option>
-                                <option disabled>Debit Card</option> -->
-                                <option>Credit Card</option>
-                            </select>
-                        </div>
-                        <div class="col-md-12">
-                            <label class="form-label">Wallet Type</label>
-                            <!-- <input type="text" class="form-control" value="Instant" readonly> -->
-                             <input type="text" class="form-control" value="Next Day" readonly>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary">PROCEED TO PAYMENT</button>
-                        </div>
-                    </div>
-                </form>
+<section class="add-money-page">
+    <div class="page-hero">
+        <div>
+            <span class="eyebrow">Wallet funding</span>
+            <h1>Add money with the right route, limits, and settlement timing.</h1>
+            <p>
+                Use this screen to prepare operator balance before collections begin. Verify the account holder,
+                select the payment route, and review gateway limits before submitting the funding action.
+            </p>
+        </div>
+        <div class="hero-summary">
+            <div class="summary-card">
+                <span>Wallet type</span>
+                <strong>Next Day</strong>
+                <p>Standard settlement flow for the current funding route.</p>
+            </div>
+            <div class="summary-card">
+                <span>Highest gateway limit</span>
+                <strong>Rs. 2,00,000.00</strong>
+                <p>Available on primary and fallback routes shown below.</p>
             </div>
         </div>
+    </div>
 
-        <!-- Right Column - Gateway Limit Info -->
-        <div class="col-lg-6">
+    <div class="content-grid">
+        <section class="panel form-panel">
+            <div class="panel-head">
+                <div>
+                    <span class="section-kicker">Funding form</span>
+                    <h2>Add money to wallet</h2>
+                </div>
+                <p>Enter the beneficiary information and choose the payment route before continuing.</p>
+            </div>
+
+            <form class="funding-form">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Mobile number</label>
+                        <input type="text" class="form-control" placeholder="Enter mobile number">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Full name</label>
+                        <input type="text" class="form-control" placeholder="Enter full name">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Amount</label>
+                        <input type="number" class="form-control" placeholder="Enter amount">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Payment method</label>
+                        <select class="form-select">
+                            <option selected disabled>Choose method</option>
+                            <option>Credit Card</option>
+                        </select>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Wallet type</label>
+                        <input type="text" class="form-control readonly-field" value="Next Day" readonly>
+                    </div>
+                    <div class="col-12">
+                        <div class="inline-note">
+                            Review mobile number, funding amount, and payment route before continuing to the gateway.
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">Proceed to payment</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel limits-panel">
+            <div class="panel-head">
+                <div>
+                    <span class="section-kicker">Gateway limits</span>
+                    <h2>Choose the best funding route</h2>
+                </div>
+                <p>Compare the current transaction cap for each gateway before routing the payment.</p>
+            </div>
+
+            <div class="limit-cards">
+                <article class="limit-card" *ngFor="let item of gatewayLimits">
+                    <div class="limit-meta">
+                        <h3>{{ item.gateway }}</h3>
+                        <span>{{ item.status }}</span>
+                    </div>
+                    <div class="limit-value">{{ item.amount }}</div>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel guidance-panel">
+            <div class="panel-head">
+                <div>
+                    <span class="section-kicker">Funding guidance</span>
+                    <h2>Use the right source for each wallet load</h2>
+                </div>
+                <p>Select a funding path based on account ownership, team operations, and gateway availability.</p>
+            </div>
+
+            <div class="guidance-grid">
+                <article class="guidance-card" *ngFor="let path of fundingPaths; let i = index">
+                    <div class="guidance-index">0{{ i + 1 }}</div>
+                    <div>
+                        <h3>{{ path.title }}</h3>
+                        <p>{{ path.copy }}</p>
+                        <span class="guidance-note">{{ path.note }}</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <div class="col-lg-6 legacy-limits">
             <div class="card p-4 h-100">
                 <div class="card-header text-primary">
                     Gateways Limit per Transaction
@@ -75,7 +141,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-12 legacy-guidance">
             <div class="card p-4 h-100">
                 <div class="info-text mt-3">
                     <p>To fund your wallet, you can use any of the following methods:</p>
@@ -90,4 +156,4 @@
             </div>
         </div>
     </div>
-</div>
+</section>

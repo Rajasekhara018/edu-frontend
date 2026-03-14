@@ -1,334 +1,154 @@
-<div class="m-5">
-    <div class="d-flex mb-2">
-        <button class="btn btn-primary" (click)="switchToCancel()"> <i class="bi bi-chevron-left"></i>Back</button>
+<section class="customer-page">
+    <div class="customer-hero">
+        <div class="customer-hero__copy">
+            <span class="customer-kicker">Customer onboarding</span>
+            <h1>{{ isCreateMode ? 'Create a new operator customer profile' : 'Review and update customer account details' }}</h1>
+            <p>
+                Capture business identity, contact details, and verification information in one structured workspace.
+                Use this screen to onboard distributors and retailers with cleaner data quality from the start.
+            </p>
+            <div class="customer-hero__chips">
+                <span>Identity-ready</span>
+                <span>Theme-aware</span>
+                <span>Operations aligned</span>
+            </div>
+        </div>
+
+        <div class="customer-hero__aside">
+            <article class="hero-metric-card">
+                <span class="hero-metric-label">Flow type</span>
+                <strong>{{ isCreateMode ? 'New onboarding' : 'Existing account' }}</strong>
+                <p>{{ isEditMode ? 'Editable fields are open for changes.' : 'Profile is currently in review mode.' }}</p>
+            </article>
+            <article class="hero-metric-card">
+                <span class="hero-metric-label">Target user</span>
+                <strong>{{ userType || 'Select type' }}</strong>
+                <p>Choose distributor or retailer to reveal the relevant account fields.</p>
+            </article>
+        </div>
     </div>
-    <div class="d-flex mb-3">
-        <h4 class="mt-2 text-primary">{{ isCreateMode ? 'Create New User' : 'Customer Update' }}</h4>
-        <div class="ms-auto">
-            <button *ngIf="!isEditMode" class="btn btn-primary" (click)="onEditClick()">Edit</button>
+
+    <div class="customer-toolbar">
+        <button class="customer-nav-btn" (click)="switchToCancel()">
+            <i class="bi bi-chevron-left"></i>
+            <span>Back</span>
+        </button>
+
+        <div class="customer-toolbar__actions">
+            <button *ngIf="!isEditMode" class="toolbar-btn secondary" (click)="onEditClick()">Edit</button>
             <ng-container *ngIf="isEditMode">
-                <button class="btn btn-outline-secondary me-2" (click)="onCancelEdit()">Cancel</button>
-                <button class="btn btn-primary" (click)="submitCustomerDetails()" [disabled]="customerForm.invalid">
+                <button class="toolbar-btn secondary" (click)="onCancelEdit()">Cancel</button>
+                <button class="toolbar-btn primary" (click)="submitCustomerDetails()" [disabled]="customerForm.invalid">
                     {{ isCreateMode ? 'Create User' : 'Update User' }}
                 </button>
             </ng-container>
         </div>
     </div>
-    <div class="card p-5">
-        <h5 class="mb-3 fw-semibold">Customer Registration</h5>
-        <div class="mt-4">
-            <form class="row g-4 align-items-start" #customerForm="ngForm" (keydown.enter)="$event.preventDefault()"
-                name="customerForm" autocomplete="off">
-                <!-- <div class="col-md-2 text-center">
-                    <div class="position-relative d-inline-block">
-                        <label for="imageUpload" class="cursor-pointer">
-                            <img *ngIf="croppedImage" [src]="croppedImage" alt="Profile"
-                                class="img-thumbnail rounded-circle shadow"
-                                style="width: 140px; height: 140px; object-fit: cover;" />
-                            <img *ngIf="!croppedImage" src="assets/images/picture-icon.svg"
-                                class="img-thumbnail rounded-circle bg-light p-3" alt="Default Avatar"
-                                style="width: 140px; height: 140px;" />
-                        </label>
-                        <input type="file" id="imageUpload" (change)="fileChangeEvent($event)" hidden />
-                        <span
-                            class="position-absolute bottom-0 end-0 translate-middle p-1 bg-primary border border-light rounded-circle">
-                            <i class="bi bi-camera text-white"></i>
-                        </span>
-                    </div>
-                    <div class="mt-2 small text-muted">Click to upload</div>
-                    <div *ngIf="checkType">
-                        <span style="color: red;">{{invalidTypeMessage}}</span>
-                    </div>
-                </div> -->
-                <div class="col-md-12">
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Full Name</mat-label>
-                                <input matInput name="fName" [(ngModel)]="customerObj.fullName" #fName="ngModel"
-                                    [disabled]="disabledMode" required />
-                                <mat-error *ngIf="fName.errors?.['required']">
-                                    Full Name is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-4">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Mobile Number</mat-label>
-                                <input matInput name="mblNum" [(ngModel)]="customerObj.phNo" #mblNum="ngModel"
-                                    [disabled]="disabledMode" required />
-                                <mat-error *ngIf="mblNum.errors?.['required']">
-                                    Mobile Number is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-4">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Email</mat-label>
-                                <input matInput name="eml" [(ngModel)]="customerObj.emailId" #eml="ngModel"
-                                    [disabled]="disabledMode" required />
-                                <mat-error *ngIf="eml.errors?.['required']">
-                                    Email is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-4">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Address</mat-label>
-                                <input matInput name="add" [(ngModel)]="customerObj.address" #add="ngModel"
-                                    [disabled]="disabledMode" required />
-                                <mat-error *ngIf="add.errors?.['required']">
-                                    Address is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-4">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Date of Birth</mat-label>
-                                <input matInput name="dbth" [(ngModel)]="customerObj.dateOfBirth" #dbth="ngModel"
-                                    [disabled]="disabledMode" required [matDatepicker]="datepicker" />
-                                <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
-                                <mat-datepicker #datepicker></mat-datepicker>
-                                <mat-error *ngIf="dbth.errors?.['required']">
-                                    Date of Birth is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-4">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Business Name</mat-label>
-                                <input matInput name="bnam" [(ngModel)]="customerObj.businessName" #bnam="ngModel"
-                                    [disabled]="disabledMode" required />
-                                <mat-error *ngIf="bnam.errors?.['required']">
-                                    Business Name is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-4">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Business Address</mat-label>
-                                <input matInput name="bAdd" [(ngModel)]="customerObj.businessAddress" #bAdd="ngModel"
-                                    [disabled]="disabledMode" required />
-                                <mat-error *ngIf="bAdd.errors?.['required']">
-                                    Business Address is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <mat-form-field appearance="outline" class="col-md-4">
-                            <mat-label>User Type</mat-label>
-                            <mat-select [(ngModel)]="userType" #usrTyp="ngModel" name="usrTyp" required
-                                [disabled]="disabledMode">
-                                <mat-option *ngFor="let user of userTypes" [value]="user">
-                                    {{ user }}
-                                </mat-option>
-                            </mat-select>
-                            <mat-error *ngIf="usrTyp.errors?.['required']">
-                                User Type is required
-                            </mat-error>
-                        </mat-form-field>
-                        <div class="col-md-4" *ngIf="userType === 'RETAILOR'">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Distribute Id</mat-label>
-                                <input matInput name="dstId" [(ngModel)]="customerObj.distributeId" #dstId="ngModel"
-                                    [disabled]="disabledMode" required />
-                                <mat-error *ngIf="dstId.errors?.['required']">
-                                    Distribute Id is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-4" *ngIf="userType === 'RETAILOR'">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Retailer Account Details</mat-label>
-                                <input matInput name="reAcc" [(ngModel)]="customerObj.retailerAccountDetails"
-                                    #reAcc="ngModel" [disabled]="disabledMode" required />
-                                <mat-error *ngIf="reAcc.errors?.['required']">
-                                    Retailer Account Details is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-4" *ngIf="userType === 'DISTRIBUTOR'">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Distributor Account Details</mat-label>
-                                <input matInput name="dAcc" [(ngModel)]="customerObj.distributorAccountDetails"
-                                    #dAcc="ngModel" [disabled]="disabledMode" required />
-                                <mat-error *ngIf="dAcc.errors?.['required']">
-                                    Distributor Account Details is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="row g-3">
-                        <p class="font-xl weight-bold">Verification Details</p>
-                        <div class="col-md-4">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>Aadhar</mat-label>
-                                <input matInput name="adh" [(ngModel)]="customerObj.aadharNo" #adh="ngModel"
-                                    [disabled]="disabledMode" required />
-                                <mat-error *ngIf="adh.errors?.['required']">
-                                    Aadhar is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                        <div class="col-md-4">
-                            <mat-form-field appearance="outline" class="col-md-12">
-                                <mat-label>PAN</mat-label>
-                                <input matInput name="pn" [(ngModel)]="customerObj.panNo" #pn="ngModel"
-                                    [disabled]="disabledMode" required />
-                                <mat-error *ngIf="pn.errors?.['required']">
-                                    PAN is
-                                    required
-                                </mat-error>
-                            </mat-form-field>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <mat-divider class="mt-4"></mat-divider>
-        <!-- <div class="row">
-            <div class="col-md-4 pe-4 border-end">
-                <label class="fw-medium mb-2 mt-4">Assign Role</label>
-                <table class="table table-bordered table-sm me-2">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Role</th>
-                            <th>Functions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let role of userRoles">
-                            <td>
-                                <input type="checkbox" [(ngModel)]="role.selected" (change)="onRoleToggle(role)"
-                                    [disabled]="disabledMode" />
-                                {{ role.roleName }}
-                            </td>
-                            <td>{{ role.description }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="mt-2 small">Didn’t find a relevant role? <a href="#" class="text-primary fw-semibold">Create
-                        New Role</a></p>
+
+    <form class="customer-layout" #customerForm="ngForm" (keydown.enter)="$event.preventDefault()" name="customerForm" autocomplete="off">
+        <section class="customer-form-card">
+            <div class="card-header-block">
+                <span class="section-kicker">Profile details</span>
+                <h2>Customer registration</h2>
+                <p>Collect primary identity, contact, and business information in a consistent format.</p>
             </div>
-            <div class="border-0 mt-4 col-md-8">
-                <div class="fw-semibold">Permissions</div>
-                <div class="card-body p-0">
-                    <div class="table-responsive">
-                        <table class="table table-bordered align-middle mb-0">
-                            <thead class="table-primary text-center">
-                                <tr>
-                                    <th>Function</th>
-                                    <th>Create</th>
-                                    <th>View</th>
-                                    <th>Update</th>
-                                    <th>Delete</th>
-                                    <th>Getall</th>
-                                    <th>Search</th>
-                                    <th>Upload</th>
-                                    <th>Export</th>
-                                    <th>Approve</th>
-                                    <th>Reject</th>
-                                    <th>All</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let element of permissiondataSource; let i = index">
-                                    <td class="fw-medium text-dark">{{ element.function }}</td>
-                                    <td class="text-center">
-                                        <div class="form-check form-switch d-inline-block"
-                                            *ngIf="element.action.includes('CREATE')">
-                                            <input class="form-check-input" type="checkbox"
-                                                [(ngModel)]="element.isCreate" [disabled]="true">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-switch d-inline-block"
-                                            *ngIf="element.action.includes('VIEW')">
-                                            <input class="form-check-input" type="checkbox" [(ngModel)]="element.isView"
-                                                [disabled]="true">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-switch d-inline-block"
-                                            *ngIf="element.action.includes('UPDATE')">
-                                            <input class="form-check-input" type="checkbox"
-                                                [(ngModel)]="element.isUpdate" [disabled]="true">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-switch d-inline-block"
-                                            *ngIf="element.action.includes('DELETE')">
-                                            <input class="form-check-input" type="checkbox"
-                                                [(ngModel)]="element.isDelete" [disabled]="true">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-switch d-inline-block"
-                                            *ngIf="element.action.includes('GETALL')">
-                                            <input class="form-check-input" type="checkbox"
-                                                [(ngModel)]="element.isGetAll" [disabled]="true">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-switch d-inline-block"
-                                            *ngIf="element.action.includes('SEARCH')">
-                                            <input class="form-check-input" type="checkbox"
-                                                [(ngModel)]="element.isSearch" [disabled]="true">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-switch d-inline-block"
-                                            *ngIf="element.action.includes('UPLOAD')">
-                                            <input class="form-check-input" type="checkbox"
-                                                [(ngModel)]="element.isUpload" [disabled]="true">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-switch d-inline-block"
-                                            *ngIf="element.action.includes('EXPORT')">
-                                            <input class="form-check-input" type="checkbox"
-                                                [(ngModel)]="element.isExport" [disabled]="true">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-switch d-inline-block"
-                                            *ngIf="element.action.includes('APPROVE')">
-                                            <input class="form-check-input" type="checkbox"
-                                                [(ngModel)]="element.isApprove" [disabled]="true">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-switch d-inline-block"
-                                            *ngIf="element.action.includes('REJECT')">
-                                            <input class="form-check-input" type="checkbox"
-                                                [(ngModel)]="element.isReject" [disabled]="true">
-                                        </div>
-                                    </td>
-                                    <td class="text-center">
-                                        <div class="form-check form-switch d-inline-block">
-                                            <mat-slide-toggle class="bootstrap-toggle" [disabled]="true"
-                                                [(ngModel)]="element.isAll" [disabled]="true">
-                                            </mat-slide-toggle>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+
+            <div class="customer-grid">
+                <div class="field-span-4">
+                    <label class="form-label" for="customer-full-name">Full Name <span class="required-mark">*</span></label>
+                    <input id="customer-full-name" class="form-control" name="fName" [(ngModel)]="customerObj.fullName" #fName="ngModel" [disabled]="disabledMode" required />
+                    <div class="field-error" *ngIf="fName.errors?.['required'] && fName.touched">Full Name is required</div>
+                </div>
+                <div class="field-span-4">
+                    <label class="form-label" for="customer-mobile">Mobile Number <span class="required-mark">*</span></label>
+                    <input id="customer-mobile" class="form-control" name="mblNum" [(ngModel)]="customerObj.phNo" #mblNum="ngModel" [disabled]="disabledMode" required />
+                    <div class="field-error" *ngIf="mblNum.errors?.['required'] && mblNum.touched">Mobile Number is required</div>
+                </div>
+                <div class="field-span-4">
+                    <label class="form-label" for="customer-email">Email <span class="required-mark">*</span></label>
+                    <input id="customer-email" class="form-control" name="eml" [(ngModel)]="customerObj.emailId" #eml="ngModel" [disabled]="disabledMode" required />
+                    <div class="field-error" *ngIf="eml.errors?.['required'] && eml.touched">Email is required</div>
+                </div>
+
+                <div class="field-span-4">
+                    <label class="form-label" for="customer-address">Address <span class="required-mark">*</span></label>
+                    <input id="customer-address" class="form-control" name="add" [(ngModel)]="customerObj.address" #add="ngModel" [disabled]="disabledMode" required />
+                    <div class="field-error" *ngIf="add.errors?.['required'] && add.touched">Address is required</div>
+                </div>
+                <div class="field-span-4">
+                    <label class="form-label" for="customer-dob">Date of Birth <span class="required-mark">*</span></label>
+                    <input id="customer-dob" type="date" class="form-control" name="dbth" [(ngModel)]="customerObj.dateOfBirth" #dbth="ngModel" [disabled]="disabledMode" required />
+                    <div class="field-error" *ngIf="dbth.errors?.['required'] && dbth.touched">Date of Birth is required</div>
+                </div>
+                <div class="field-span-4">
+                    <label class="form-label" for="customer-business-name">Business Name <span class="required-mark">*</span></label>
+                    <input id="customer-business-name" class="form-control" name="bnam" [(ngModel)]="customerObj.businessName" #bnam="ngModel" [disabled]="disabledMode" required />
+                    <div class="field-error" *ngIf="bnam.errors?.['required'] && bnam.touched">Business Name is required</div>
+                </div>
+
+                <div class="field-span-4">
+                    <label class="form-label" for="customer-business-address">Business Address <span class="required-mark">*</span></label>
+                    <input id="customer-business-address" class="form-control" name="bAdd" [(ngModel)]="customerObj.businessAddress" #bAdd="ngModel" [disabled]="disabledMode" required />
+                    <div class="field-error" *ngIf="bAdd.errors?.['required'] && bAdd.touched">Business Address is required</div>
+                </div>
+                <div class="field-span-4">
+                    <label class="form-label" for="customer-user-type">User Type <span class="required-mark">*</span></label>
+                    <select id="customer-user-type" class="form-select" [(ngModel)]="userType" #usrTyp="ngModel" name="usrTyp" required [disabled]="disabledMode">
+                        <option value="" disabled selected>Select user type</option>
+                        <option *ngFor="let user of userTypes" [value]="user">{{ user }}</option>
+                    </select>
+                    <div class="field-error" *ngIf="usrTyp.errors?.['required'] && usrTyp.touched">User Type is required</div>
+                </div>
+
+                <div class="field-span-4" *ngIf="userType === 'RETAILOR'">
+                    <label class="form-label" for="customer-distributor-id">Distribute Id <span class="required-mark">*</span></label>
+                    <input id="customer-distributor-id" class="form-control" name="dstId" [(ngModel)]="customerObj.distributeId" #dstId="ngModel" [disabled]="disabledMode" required />
+                    <div class="field-error" *ngIf="dstId.errors?.['required'] && dstId.touched">Distribute Id is required</div>
+                </div>
+                <div class="field-span-4" *ngIf="userType === 'RETAILOR'">
+                    <label class="form-label" for="customer-retailer-account">Retailer Account Details <span class="required-mark">*</span></label>
+                    <input id="customer-retailer-account" class="form-control" name="reAcc" [(ngModel)]="customerObj.retailerAccountDetails" #reAcc="ngModel" [disabled]="disabledMode" required />
+                    <div class="field-error" *ngIf="reAcc.errors?.['required'] && reAcc.touched">Retailer Account Details is required</div>
+                </div>
+                <div class="field-span-4" *ngIf="userType === 'DISTRIBUTOR'">
+                    <label class="form-label" for="customer-distributor-account">Distributor Account Details <span class="required-mark">*</span></label>
+                    <input id="customer-distributor-account" class="form-control" name="dAcc" [(ngModel)]="customerObj.distributorAccountDetails" #dAcc="ngModel" [disabled]="disabledMode" required />
+                    <div class="field-error" *ngIf="dAcc.errors?.['required'] && dAcc.touched">Distributor Account Details is required</div>
                 </div>
             </div>
-        </div> -->
-    </div>
-</div>
+        </section>
+
+        <aside class="customer-side-panel">
+            <section class="customer-form-card compact">
+                <div class="card-header-block">
+                    <span class="section-kicker">Verification</span>
+                    <h2>Identity checks</h2>
+                    <p>Complete the compliance fields required for onboarding approval.</p>
+                </div>
+
+                <div class="customer-grid customer-grid--stacked">
+                    <div class="field-span-12">
+                        <label class="form-label" for="customer-aadhar">Aadhar <span class="required-mark">*</span></label>
+                        <input id="customer-aadhar" class="form-control" name="adh" [(ngModel)]="customerObj.aadharNo" #adh="ngModel" [disabled]="disabledMode" required />
+                        <div class="field-error" *ngIf="adh.errors?.['required'] && adh.touched">Aadhar is required</div>
+                    </div>
+                    <div class="field-span-12">
+                        <label class="form-label" for="customer-pan">PAN <span class="required-mark">*</span></label>
+                        <input id="customer-pan" class="form-control" name="pn" [(ngModel)]="customerObj.panNo" #pn="ngModel" [disabled]="disabledMode" required />
+                        <div class="field-error" *ngIf="pn.errors?.['required'] && pn.touched">PAN is required</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="customer-tip-card">
+                <span class="section-kicker">Operator note</span>
+                <h3>Onboarding quality guidance</h3>
+                <ul>
+                    <li>Match mobile number and email to the active operator contact.</li>
+                    <li>Use distributor type only when settlement account details are ready.</li>
+                    <li>Review PAN and Aadhar before submitting to reduce verification loops.</li>
+                </ul>
+            </section>
+        </aside>
+    </form>
+</section>

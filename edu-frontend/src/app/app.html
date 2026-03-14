@@ -1,20 +1,23 @@
-<!-- <router-outlet /> -->
-<!-- [dir]="textDirection" -->
-<div>
-  <div class="row">
-    <!-- *ngIf="authService.isloggedin() " -->
-    <app-header *ngIf="authService.isloggedin()"></app-header>
-    <router-outlet />
-  </div>
-  <mat-sidenav-container autosize mode="side" opened>
-      <mat-sidenav #sidenav class="primarySideNav" [opened]="true" mode="side" *ngIf="authService.isloggedin()">
+<div class="app-shell" [class.dark-theme]="themeService.themeType === 'dark_mode'">
+  <ng-container *ngIf="showWorkspaceShell; else publicView">
+    <div class="workspace-shell">
+      <app-header></app-header>
+      <div class="workspace-frame">
+        <aside class="workspace-sidebar">
           <app-sidenav></app-sidenav>
-      </mat-sidenav>
-      <mat-sidenav-content
-          [ngStyle]="themeService.themeType =='dark_mode' ? {  'background-color': '#424242','height':'100vh'}:{'background-color': '#FBFCFC','height':'100vh'}">
-          <router-outlet />
-      </mat-sidenav-content>
-  </mat-sidenav-container>
+        </aside>
+        <main class="workspace-content">
+          <router-outlet></router-outlet>
+        </main>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #publicView>
+    <div class="public-shell">
+      <router-outlet></router-outlet>
+    </div>
+  </ng-template>
 </div>
 <div class="position-fixed end-0 p-3" style="z-index: 1100; top: 80px;">
   <div *ngFor="let toast of this.postService.toastMessages;trackBy: trackById"

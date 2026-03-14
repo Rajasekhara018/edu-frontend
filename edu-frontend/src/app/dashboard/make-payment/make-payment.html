@@ -1,0 +1,102 @@
+<section class="make-payment-page">
+    <div class="page-hero">
+        <div>
+            <span class="eyebrow">Direct collection</span>
+            <h1>Create a clean payment request with the right payer details.</h1>
+            <p>
+                Use this screen to capture a simple payment request with customer identity and amount details.
+                Keep the checkout path lightweight while still giving operators clear review points before submission.
+            </p>
+        </div>
+        <div class="hero-summary">
+            <div class="summary-card">
+                <span>Preferred route</span>
+                <strong>Instant collection</strong>
+                <p>Optimized for quick payment capture with customer-facing confirmation.</p>
+            </div>
+            <div class="summary-card">
+                <span>Receipt delivery</span>
+                <strong>Email + SMS</strong>
+                <p>Use payer contact details to share confirmations immediately after success.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-grid">
+        <section class="panel form-panel">
+            <div class="panel-head">
+                <div>
+                    <span class="section-kicker">Payment form</span>
+                    <h2>Make a payment</h2>
+                </div>
+                <p>Enter the payer details and requested amount before creating the payment request.</p>
+            </div>
+
+            <form class="payment-form">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label" for="payment-name">Full name <span class="required-mark">*</span></label>
+                        <input id="payment-name" type="text" class="form-control" placeholder="Enter full name" [(ngModel)]="form.name" name="paymentName">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="payment-phone">Phone number <span class="required-mark">*</span></label>
+                        <input id="payment-phone" type="tel" class="form-control" placeholder="Enter phone number" [(ngModel)]="form.phone" name="paymentPhone">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="payment-email">Email <span class="required-mark">*</span></label>
+                        <input id="payment-email" type="email" class="form-control" placeholder="Enter email address" [(ngModel)]="form.email" name="paymentEmail">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label" for="payment-amount">Amount <span class="required-mark">*</span></label>
+                        <input id="payment-amount" type="number" class="form-control" placeholder="Enter amount" [(ngModel)]="form.amount" name="paymentAmount">
+                    </div>
+                    <div class="col-12">
+                        <div class="inline-note">
+                            Review the payer name, contact details, and amount before sending the request to checkout.
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="action-row">
+                            <button type="button" class="btn btn-primary" (click)="openInvoice('success')">Create payment request</button>
+                            <button type="button" class="btn btn-outline-primary" (click)="openInvoice('failure')">Preview failed invoice</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <section class="panel route-panel">
+            <div class="panel-head">
+                <div>
+                    <span class="section-kicker">Collection modes</span>
+                    <h2>Choose the right collection pattern</h2>
+                </div>
+                <p>Use the payment type that best matches how the customer is expected to complete checkout.</p>
+            </div>
+
+            <div class="channel-cards">
+                <article class="channel-card" *ngFor="let item of paymentChannels">
+                    <h3>{{ item.label }}</h3>
+                    <p>{{ item.note }}</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="panel checklist-panel">
+            <div class="panel-head">
+                <div>
+                    <span class="section-kicker">Operator checklist</span>
+                    <h2>Before you submit</h2>
+                </div>
+                <p>Use these quick checks to keep customer communication and payment accuracy aligned.</p>
+            </div>
+
+            <div class="checklist">
+                <article class="check-item" *ngFor="let item of checkpoints; let i = index">
+                    <div class="check-index">0{{ i + 1 }}</div>
+                    <p>{{ item }}</p>
+                </article>
+            </div>
+        </section>
+    </div>
+</section>

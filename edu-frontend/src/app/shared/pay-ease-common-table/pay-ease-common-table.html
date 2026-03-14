@@ -1,35 +1,21 @@
-<div class="m-4">
-  <div class="card mb-3" *ngIf="tableID !== 'GET_USERS' && tableID !== 'GET_ROLES'">
-    <div class="card-body">
-      <!-- <h6 class="font-2xl weight-bold">{{headTitle}}</h6> -->
-      <div class="d-flex justify-content-between align-items-end mb-3">
-        <div class="d-flex">
-                <h6 class="font-2xl weight-bold">{{headTitle}}</h6>
-          <!-- <div class="me-3">
-            <label class="form-label fw-semibold">{{headTitle}}</label>
-            <select class="form-select">
-              <option value="one">First option</option>
-              <option value="two">Second option</option>
-            </select>
-          </div>
-          <div class="me-3">
-            <label class="form-label fw-semibold invisible">.</label>
-            <input type="text" class="form-control" placeholder="Input">
-          </div>
-          <div class="d-flex align-items-end">
-            <button class="btn btn-outline-primary me-2">Search</button>
-            <button class="btn btn-secondary">Clear</button>
-          </div> -->
-        </div>
-        <div>
-          <button class="btn btn-primary" (click)="tableService.goToCreate(tableID)">
-            <i class="bi bi-plus-lg"></i> Add {{headTitle}}
-          </button>
-        </div>
+<div class="common-table-shell">
+  <div class="table-surface" *ngIf="tableID !== 'GET_USERS' && tableID !== 'GET_ROLES'">
+    <div class="table-surface__header">
+      <div class="table-heading">
+        <span class="table-kicker">Shared data view</span>
+        <h2>{{ headTitle }}</h2>
+        <p>{{ subTitle || 'Review, inspect, and manage records from one consistent operational table.' }}</p>
       </div>
-      <div>
-        <table class="table table-bordered table-hover">
-          <thead class="table-primary">
+      <button class="table-create-btn" (click)="tableService.goToCreate(tableID)">
+        <i class="bi bi-plus-lg"></i>
+        <span>Add {{ headTitle }}</span>
+      </button>
+    </div>
+
+    <div class="table-surface__body">
+      <div class="table-frame" *ngIf="dataSource?.length; else emptyState">
+        <table class="table common-table">
+          <thead>
             <tr>
               <th *ngFor="let column of displayedColumns">{{ columnName[column] }}</th>
             </tr>
@@ -39,68 +25,62 @@
               <td *ngFor="let column of displayedColumns">
                 <ng-container [ngSwitch]="column">
                   <ng-container *ngSwitchCase="'action'">
-                    <button class="btn btn-sm btn-outline-primary me-1" (click)="tableService.goToInq(tableID, element.id)">
-                      <i class="bi bi-pencil"></i>
-                    </button>
-                    <!-- <button class="btn btn-sm btn-outline-info me-1">
-                  <i class="bi bi-box-arrow-up-right"></i>
-                </button> -->
-                    <button class="btn btn-sm btn-outline-danger me-1" (click)="deleteRecord(element)">
-                      <i class="bi bi-trash"></i>
-                    </button>
-                    <!-- <button class="btn btn-sm btn-outline-success" *ngIf="tableID === 'GET_DAILY_SWITCH_REPORTS' ||  tableID === 'GET_SWITCH_SUMMARY_REPORTS'" (click)="downloadReport(element)">
-                  <i class="bi bi-download"></i>
-                </button> -->
+                    <div class="row-actions">
+                      <button class="row-action-btn" (click)="tableService.goToInq(tableID, element.id)" title="Edit record">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button class="row-action-btn danger" (click)="deleteRecord(element)" title="Delete record">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </div>
                   </ng-container>
-                  <!-- <ng-container *ngSwitchCase="'image'" class="image-cell">
-                <div class="image-wrapper">
-                  <img *ngIf="element.image?.name"
-                    [src]="'http://localhost:9000/api/v1/uam/files/profile-image?filename=' + element.image.name"
-                    alt="Profile Image" width="100" height="100" class="profile-image text-center" />
-                </div>
-              </ng-container> -->
-                  <ng-container *ngSwitchCase="'image'">
-                    <div class="d-flex align-items-center gap-2">
-                      <!-- Profile Image -->
-                      <img [src]="element.image?.name
-        ? 'http://localhost:9000/api/v1/uam/files/profile-image?filename=' + element.image.name
-        : 'https://i.pravatar.cc/40?u=' + element.fullName" alt="Profile Image" class="rounded-circle" width="40"
-                        height="40" />
 
-                      <!-- Name and Email -->
+                  <ng-container *ngSwitchCase="'image'">
+                    <div class="user-cell">
+                      <img
+                        [src]="element.image?.name ? 'http://localhost:9000/api/v1/uam/files/profile-image?filename=' + element.image.name : 'https://i.pravatar.cc/40?u=' + element.fullName"
+                        alt="Profile Image"
+                        class="profile-image"
+                      />
                       <div>
-                        <div class="fw-bold">{{ element.fullName }}</div>
-                        <div class="text-muted small">{{ element.email }}</div>
+                        <div class="user-name">{{ element.fullName }}</div>
+                        <div class="user-meta">{{ element.email }}</div>
                       </div>
                     </div>
                   </ng-container>
+
                   <ng-container *ngSwitchCase="'roles'">
-                    <div class="d-flex align-items-center h-100">
-                      {{ getRoles(element) }}
+                    <div class="role-stack">
+                      <span class="role-chip" *ngFor="let role of getRoles(element)">{{ role }}</span>
                     </div>
                   </ng-container>
+
                   <ng-container *ngSwitchCase="'amount'">
                     {{ element[column] | currency:'INR' }}
                   </ng-container>
+
                   <ng-container *ngSwitchCase="'transactionAmount'">
                     {{ element[column] | currency:'INR' }}
                   </ng-container>
+
                   <ng-container *ngSwitchCase="'status'">
-                    <div class="d-flex justify-content-center align-items-center">
-                      <span class="badge rounded-pill text-center" [ngClass]="getUserStatusBadgeClass(element.status)">
-                        {{ getUserStatusLabel(element.status) }}
-                      </span>
-                    </div>
+                    <span class="status-pill" [ngClass]="getUserStatusClass(element.status)">
+                      {{ getUserStatusLabel(element.status) }}
+                    </span>
                   </ng-container>
+
                   <ng-container *ngSwitchCase="'sno'">
                     {{ i + 1 }}
                   </ng-container>
+
                   <ng-container *ngSwitchCase="'active'">
                     {{ element[column] ? 'Active' : 'Inactive' }}
                   </ng-container>
+
                   <ng-container *ngSwitchCase="'dateAndTime'">
                     {{ element[column] | date:'short' }}
                   </ng-container>
+
                   <ng-container *ngSwitchDefault>
                     {{ element[column] }}
                   </ng-container>
@@ -109,37 +89,49 @@
             </tr>
           </tbody>
         </table>
+      </div>
 
-        <div class="d-flex justify-content-between align-items-center flex-wrap">
-          <div class="me-3">
-            Showing {{ startIndex + 1 }} to {{ endIndex }} of {{ totalElements }} entries
+      <ng-template #emptyState>
+        <div class="empty-state">
+          <div>
+            <div class="empty-state__icon">
+              <i class="bi bi-table"></i>
+            </div>
+            <h3>No records available</h3>
+            <p>This view will populate once records are created or loaded from the selected service.</p>
           </div>
-          <div class="d-flex align-items-center">
-            <nav>
-              <ul class="pagination mb-0">
-                <li class="page-item" [class.disabled]="currentPage === 1">
-                  <a class="page-link" (click)="goToPage(1)">&laquo;</a>
-                </li>
-                <li class="page-item" [class.disabled]="currentPage === 1">
-                  <a class="page-link" (click)="previousPage()">&lsaquo;</a>
-                </li>
+        </div>
+      </ng-template>
 
-                <li *ngFor="let page of visiblePages" class="page-item" [class.active]="page === currentPage">
-                  <a class="page-link" (click)="goToPage(page)">{{ page }}</a>
-                </li>
+      <div class="table-footer">
+        <div class="table-summary">
+          Showing {{ totalElements ? (startIndex + 1) : 0 }} to {{ endIndex }} of {{ totalElements }} entries
+        </div>
+        <div class="table-controls">
+          <nav>
+            <ul class="pagination mb-0">
+              <li class="page-item" [class.disabled]="currentPage === 1">
+                <a class="page-link" (click)="goToPage(1)">&laquo;</a>
+              </li>
+              <li class="page-item" [class.disabled]="currentPage === 1">
+                <a class="page-link" (click)="previousPage()">&lsaquo;</a>
+              </li>
 
-                <li class="page-item" [class.disabled]="currentPage === totalPages">
-                  <a class="page-link" (click)="nextPage()">&rsaquo;</a>
-                </li>
-                <li class="page-item" [class.disabled]="currentPage === totalPages">
-                  <a class="page-link" (click)="goToPage(totalPages)">&raquo;</a>
-                </li>
-              </ul>
-            </nav>
-            <select class="form-select ms-2" [(ngModel)]="pageSize" (change)="onPageSizeChange()" style="width: auto">
-              <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
-            </select>
-          </div>
+              <li *ngFor="let page of visiblePages" class="page-item" [class.active]="page === currentPage">
+                <a class="page-link" (click)="goToPage(page)">{{ page }}</a>
+              </li>
+
+              <li class="page-item" [class.disabled]="currentPage === totalPages || totalPages === 0">
+                <a class="page-link" (click)="nextPage()">&rsaquo;</a>
+              </li>
+              <li class="page-item" [class.disabled]="currentPage === totalPages || totalPages === 0">
+                <a class="page-link" (click)="goToPage(totalPages)">&raquo;</a>
+              </li>
+            </ul>
+          </nav>
+          <select class="form-select page-size-select" [(ngModel)]="pageSize" (change)="onPageSizeChange()">
+            <option *ngFor="let size of pageSizeOptions" [value]="size">{{ size }}</option>
+          </select>
         </div>
       </div>
     </div>

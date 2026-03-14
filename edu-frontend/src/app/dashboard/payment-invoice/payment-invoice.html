@@ -1,0 +1,145 @@
+<section class="payment-invoice-page" [ngClass]="isSuccess ? 'invoice-success' : 'invoice-failure'">
+    <div class="invoice-hero">
+        <div class="hero-copy">
+            <div class="outcome-row">
+                <div class="outcome-symbol">
+                    <i class="bi" [ngClass]="isSuccess ? 'bi-patch-check-fill' : 'bi-x-octagon-fill'"></i>
+                </div>
+                <div class="outcome-copy">
+                    <span class="invoice-badge">{{ invoice.badge }}</span>
+                    <h1>{{ invoice.title }}</h1>
+                </div>
+            </div>
+            <p>{{ invoice.headline }}</p>
+            <div class="hero-note">{{ invoice.note }}</div>
+
+            <div class="status-legend">
+                <article class="legend-card">
+                    <span class="legend-label">Processor status</span>
+                    <strong>{{ invoice.statusText }}</strong>
+                </article>
+                <article class="legend-card">
+                    <span class="legend-label">Gateway</span>
+                    <strong>{{ invoice.gateway }}</strong>
+                </article>
+                <article class="legend-card">
+                    <span class="legend-label">Reference</span>
+                    <strong>{{ invoice.processorRef }}</strong>
+                </article>
+            </div>
+        </div>
+
+        <div class="hero-summary">
+            <div class="summary-card amount-card">
+                <span>Processed amount</span>
+                <strong>Rs. {{ invoice.amount }}</strong>
+                <p>{{ invoice.statusDetail }}</p>
+            </div>
+
+            <div class="summary-card">
+                <span>Processor reference</span>
+                <strong>{{ invoice.processorRef }}</strong>
+                <p>{{ invoice.gateway }} · {{ invoice.paymentMode }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="invoice-layout">
+        <section class="panel invoice-sheet">
+            <div class="sheet-head">
+                <div>
+                    <span class="section-kicker">Payment invoice</span>
+                    <h2>Transaction receipt</h2>
+                </div>
+                <span class="status-pill">{{ invoice.statusText }}</span>
+            </div>
+
+            <div class="receipt-banner" [ngClass]="isSuccess ? 'banner-success' : 'banner-failure'">
+                <div class="receipt-banner-icon">
+                    <i class="bi" [ngClass]="isSuccess ? 'bi-check-circle-fill' : 'bi-exclamation-triangle-fill'"></i>
+                </div>
+                <div>
+                    <strong>{{ isSuccess ? 'Settlement-ready receipt' : 'Attention required before retry' }}</strong>
+                    <p>
+                        {{ isSuccess
+                        ? 'This payment can now be shared with the customer and matched during reconciliation.'
+                        : 'The processor returned a failed response. Review the failure note and confirm payer details before another attempt.' }}
+                    </p>
+                </div>
+            </div>
+
+            <div class="invoice-grid">
+                <article class="detail-card">
+                    <span>Customer name</span>
+                    <strong>{{ invoice.customerName }}</strong>
+                </article>
+                <article class="detail-card">
+                    <span>Email</span>
+                    <strong>{{ invoice.email }}</strong>
+                </article>
+                <article class="detail-card">
+                    <span>Phone</span>
+                    <strong>{{ invoice.phone }}</strong>
+                </article>
+                <article class="detail-card">
+                    <span>Processed at</span>
+                    <strong>{{ invoice.paidAt }}</strong>
+                </article>
+                <article class="detail-card">
+                    <span>Order ID</span>
+                    <strong>{{ invoice.orderId }}</strong>
+                </article>
+                <article class="detail-card">
+                    <span>Payment ID</span>
+                    <strong>{{ invoice.paymentId }}</strong>
+                </article>
+                <article class="detail-card">
+                    <span>Gateway</span>
+                    <strong>{{ invoice.gateway }}</strong>
+                </article>
+                <article class="detail-card">
+                    <span>Collection mode</span>
+                    <strong>{{ invoice.paymentMode }}</strong>
+                </article>
+            </div>
+
+            <div class="reason-box" *ngIf="!isSuccess">
+                <span>Failure reason</span>
+                <strong>{{ invoice.failureReason }}</strong>
+            </div>
+
+            <div class="sheet-actions">
+                <a routerLink="/dashboard/make-payment" class="btn btn-primary">Create another payment</a>
+                <a routerLink="/dashboard/history" class="btn btn-outline-primary">View transaction history</a>
+            </div>
+        </section>
+
+        <aside class="panel support-panel">
+            <div class="panel-head">
+                <div>
+                    <span class="section-kicker">Processor trail</span>
+                    <h2>Response timeline</h2>
+                </div>
+                <p>Capture-ready milestones from request submission to final processor response.</p>
+            </div>
+
+            <div class="timeline">
+                <article class="timeline-item" *ngFor="let item of timeline; let i = index">
+                    <div class="timeline-index">0{{ i + 1 }}</div>
+                    <div>
+                        <strong>{{ item.label }}</strong>
+                        <span>{{ item.time }}</span>
+                        <p>{{ item.detail }}</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="next-steps">
+                <span>{{ invoice.nextStepTitle }}</span>
+                <ul>
+                    <li *ngFor="let step of invoice.nextSteps">{{ step }}</li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</section>

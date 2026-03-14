@@ -11,14 +11,16 @@ import { CurrencyPipe, DatePipe } from '@angular/common';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { Landing } from './landing/landing';
 import { Profile } from './profile/profile';
+import { Settings } from './settings/settings';
 import { Sidenav } from './sidenav/sidenav';
-import { LucideAngularModule, Home, FileText, CheckCircle, Clock, FolderOpen, Users, BarChart3, Settings, Trash } from 'lucide-angular';
+import { LucideAngularModule, Home, FileText, CheckCircle, Clock, FolderOpen, Users, BarChart3, Settings as SettingsIcon, Trash, CreditCard } from 'lucide-angular';
 @NgModule({
   declarations: [
     App,
     Header,
     Landing,
     Profile,
+    Settings,
     Sidenav
   ],
   imports: [
@@ -35,8 +37,9 @@ import { LucideAngularModule, Home, FileText, CheckCircle, Clock, FolderOpen, Us
       FolderOpen,
       Users,
       BarChart3,
-      Settings,
-      Trash
+      SettingsIcon,
+      Trash,
+      CreditCard
     }),
   ],
   providers: [

@@ -1,0 +1,88 @@
+<section class="settings-page">
+    <div class="settings-hero">
+        <div>
+            <span class="eyebrow">Application settings</span>
+            <h1>Configure the workspace, alerts, and operator safeguards.</h1>
+            <p>
+                Use this page to review the controls that shape day-to-day operations, communication, and security
+                behaviour across the console.
+            </p>
+        </div>
+
+        <div class="hero-metrics">
+            <article class="hero-metric" *ngFor="let metric of topMetrics">
+                <span>{{ metric.label }}</span>
+                <strong>{{ metric.value }}</strong>
+                <p>{{ metric.note }}</p>
+            </article>
+        </div>
+    </div>
+
+    <div class="settings-grid">
+        <section class="settings-panel preferences-panel">
+            <div class="panel-head">
+                <div>
+                    <span class="section-kicker">Control centre</span>
+                    <h2>Workspace preferences</h2>
+                </div>
+                <p>Review the main operator-facing settings that define how the console behaves.</p>
+            </div>
+
+            <div class="preferences-grid">
+                <article class="preference-card" *ngFor="let section of preferences">
+                    <h3>{{ section.title }}</h3>
+                    <p>{{ section.description }}</p>
+                    <div class="preference-row" *ngFor="let item of section.items">
+                        <span>{{ item.label }}</span>
+                        <strong>{{ item.value }}</strong>
+                    </div>
+                </article>
+            </div>
+
+            <div class="theme-panel">
+                <div class="panel-head">
+                    <div>
+                        <span class="section-kicker">Theme studio</span>
+                        <h2>Choose your workspace theme</h2>
+                    </div>
+                    <p>Switch between light and dark visual systems with 12 curated themes.</p>
+                </div>
+
+                <div class="theme-grid">
+                    <button type="button" class="theme-card" *ngFor="let theme of themes"
+                        [class.theme-card-active]="isActiveTheme(theme.id)" (click)="selectTheme(theme.id)">
+                        <div class="theme-swatches">
+                            <span class="theme-swatch" [style.background]="theme.surface"></span>
+                            <span class="theme-swatch" [style.background]="theme.accent"></span>
+                            <span class="theme-swatch" [style.background]="theme.sidebar"></span>
+                        </div>
+                        <div class="theme-copy">
+                            <strong>{{ theme.name }}</strong>
+                            <span>{{ theme.mode | titlecase }} theme</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <aside class="settings-panel integrations-panel">
+            <div class="panel-head">
+                <div>
+                    <span class="section-kicker">System status</span>
+                    <h2>Connected services</h2>
+                </div>
+                <p>Track the current readiness of major application dependencies and supporting systems.</p>
+            </div>
+
+            <div class="integration-list">
+                <article class="integration-card" *ngFor="let item of integrations">
+                    <div class="integration-head">
+                        <h3>{{ item.name }}</h3>
+                        <span class="integration-status">{{ item.status }}</span>
+                    </div>
+                    <p>{{ item.note }}</p>
+                </article>
+            </div>
+        </aside>
+    </div>
+</section>

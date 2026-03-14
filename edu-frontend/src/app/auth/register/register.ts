@@ -21,6 +21,16 @@ export class Register {
   userEmail!: string;
   userPassword: string = '';
   inProgressBar = false;
+  readonly onboardingSteps = [
+    'Create your operator profile with personal and business details.',
+    'Enable faster review by completing accurate contact and address information.',
+    'Move into the payments workspace after registration and approval.'
+  ];
+  readonly trustMetrics = [
+    { value: 'Secure', label: 'Application flow' },
+    { value: 'Fast', label: 'Operator onboarding' },
+    { value: 'Ready', label: 'Payments workspace' }
+  ];
 
   hidePwd = true;
   reqFS!: boolean;

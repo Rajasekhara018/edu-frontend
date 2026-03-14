@@ -20,6 +20,8 @@ import { TransactionStatus } from './transaction-status/transaction-status';
 import { TransactionHistory } from './transaction-history/transaction-history';
 import { RaiseCompliant } from './raise-compliant/raise-compliant';
 import { ComplaintStatus } from './complaint-status/complaint-status';
+import { MakePayment } from './make-payment/make-payment';
+import { PaymentInvoice } from './payment-invoice/payment-invoice';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { ComplaintStatus } from './complaint-status/complaint-status';
     TransactionStatus,
     TransactionHistory,
     RaiseCompliant,
-    ComplaintStatus
+    ComplaintStatus,
+    MakePayment,
+    PaymentInvoice
   ],
   imports: [
     CommonModule,

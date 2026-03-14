@@ -1516,11 +1516,502 @@ body {
   --edu-panel: #ffffff;
   --edu-border: rgba(27, 26, 31, 0.12);
   --edu-shadow: 0 18px 40px rgba(23, 18, 20, 0.12);
+  --app-bg-start: #fff4ea;
+  --app-bg-mid: #f7efe6;
+  --app-bg-end: #f2ebe2;
+  --workspace-panel: rgba(255, 255, 255, 0.78);
+  --workspace-border: rgba(27, 26, 31, 0.08);
+  --header-bg: rgba(255, 248, 242, 0.82);
+  --header-border: rgba(20, 16, 18, 0.08);
+  --header-shadow: 0 18px 42px rgba(23, 18, 20, 0.08);
+  --sidebar-bg-start: rgba(15, 23, 42, 0.96);
+  --sidebar-bg-end: rgba(30, 41, 59, 0.96);
+  --sidebar-text: #f8fafc;
+  --sidebar-muted: rgba(226, 232, 240, 0.72);
+  --brand-chip: linear-gradient(135deg, #fb923c, #ea580c);
+  --button-accent-start: #2563eb;
+  --button-accent-end: #0ea5e9;
+  --surface-soft: #f8fafc;
+  --theme-hero-start: #12264c;
+  --theme-hero-mid: #2563eb;
+  --theme-hero-end: #0ea5e9;
+  --theme-soft-surface: #f8fafc;
+  --theme-soft-border: rgba(15, 23, 42, 0.08);
+  --theme-soft-shadow: 0 22px 48px rgba(15, 23, 42, 0.08);
+  --theme-table-head: #f8fafc;
+  --theme-row-hover: #f8fbff;
+  --theme-highlight-soft: rgba(37, 99, 235, 0.12);
+  --hero-chip-bg: rgba(255, 255, 255, 0.14);
+  --hero-chip-text: #bfdbfe;
+  --hero-copy-muted: rgba(248, 250, 252, 0.82);
+  --hero-card-bg: rgba(255, 255, 255, 0.12);
+  --hero-card-border: rgba(255, 255, 255, 0.14);
+  --hero-card-muted: rgba(248, 250, 252, 0.78);
+  --avatar-ring: rgba(255, 255, 255, 0.92);
+  --danger-soft: rgba(220, 38, 38, 0.12);
+  --danger-text: #dc2626;
+  --theme-total-start: #fff7cc;
+  --theme-total-end: #fef08a;
+  --theme-success-start: #dcfce7;
+  --theme-success-end: #86efac;
+  --theme-failed-start: #fee2e2;
+  --theme-failed-end: #fca5a5;
+  --theme-pending-start: #dbeafe;
+  --theme-pending-end: #7dd3fc;
+  --theme-success-pill-bg: #dcfce7;
+  --theme-success-pill-text: #15803d;
+  --theme-failed-pill-bg: #fee2e2;
+  --theme-failed-pill-text: #b91c1c;
+  --theme-pending-pill-bg: #fef3c7;
+  --theme-pending-pill-text: #b45309;
+  --field-bg: rgba(255, 255, 255, 0.92);
+  --field-text: #1b1a1f;
+  --field-border: rgba(27, 26, 31, 0.14);
+  --field-placeholder: rgba(92, 85, 81, 0.78);
+  --field-focus-ring: rgba(37, 99, 235, 0.18);
+}
+
+body.theme-sunrise {
+  --app-bg-start: #fff4ea;
+  --app-bg-mid: #f7efe6;
+  --app-bg-end: #eef2f8;
+  --workspace-panel: rgba(255, 255, 255, 0.78);
+  --header-bg: rgba(255, 248, 242, 0.82);
+  --sidebar-bg-start: rgba(15, 23, 42, 0.96);
+  --sidebar-bg-end: rgba(30, 41, 59, 0.96);
+  --button-accent-start: #2563eb;
+  --button-accent-end: #0ea5e9;
+}
+
+body.theme-midnight {
+  --edu-ink: #f8fafc;
+  --edu-muted: #cbd5e1;
+  --app-bg-start: #020617;
+  --app-bg-mid: #0f172a;
+  --app-bg-end: #111827;
+  --workspace-panel: rgba(15, 23, 42, 0.88);
+  --workspace-border: rgba(148, 163, 184, 0.18);
+  --header-bg: rgba(15, 23, 42, 0.9);
+  --header-border: rgba(148, 163, 184, 0.18);
+  --sidebar-bg-start: #020617;
+  --sidebar-bg-end: #111827;
+  --sidebar-text: #e2e8f0;
+  --sidebar-muted: rgba(148, 163, 184, 0.88);
+  --brand-chip: linear-gradient(135deg, #60a5fa, #2563eb);
+  --button-accent-start: #1d4ed8;
+  --button-accent-end: #38bdf8;
+  --surface-soft: rgba(30, 41, 59, 0.8);
+  --theme-hero-start: #020617;
+  --theme-hero-mid: #1d4ed8;
+  --theme-hero-end: #38bdf8;
+  --theme-soft-surface: rgba(30, 41, 59, 0.72);
+  --theme-soft-border: rgba(148, 163, 184, 0.16);
+  --theme-table-head: rgba(30, 41, 59, 0.88);
+  --theme-row-hover: rgba(30, 41, 59, 0.6);
+  --theme-highlight-soft: rgba(96, 165, 250, 0.16);
+  --hero-chip-text: #bfdbfe;
+  --hero-copy-muted: rgba(226, 232, 240, 0.82);
+  --hero-card-bg: rgba(30, 41, 59, 0.36);
+  --hero-card-border: rgba(148, 163, 184, 0.22);
+  --hero-card-muted: rgba(226, 232, 240, 0.76);
+  --avatar-ring: rgba(30, 41, 59, 0.92);
+  --danger-soft: rgba(239, 68, 68, 0.14);
+  --danger-text: #fca5a5;
+  --theme-total-start: rgba(59, 130, 246, 0.18);
+  --theme-total-end: rgba(56, 189, 248, 0.26);
+  --theme-success-start: rgba(34, 197, 94, 0.18);
+  --theme-success-end: rgba(74, 222, 128, 0.28);
+  --theme-failed-start: rgba(239, 68, 68, 0.18);
+  --theme-failed-end: rgba(248, 113, 113, 0.26);
+  --theme-pending-start: rgba(245, 158, 11, 0.18);
+  --theme-pending-end: rgba(250, 204, 21, 0.26);
+  --theme-success-pill-bg: rgba(34, 197, 94, 0.18);
+  --theme-success-pill-text: #86efac;
+  --theme-failed-pill-bg: rgba(239, 68, 68, 0.18);
+  --theme-failed-pill-text: #fca5a5;
+  --theme-pending-pill-bg: rgba(245, 158, 11, 0.18);
+  --theme-pending-pill-text: #fde68a;
+  --field-bg: rgba(30, 41, 59, 0.92);
+  --field-text: #f8fafc;
+  --field-border: rgba(148, 163, 184, 0.28);
+  --field-placeholder: rgba(203, 213, 225, 0.72);
+  --field-focus-ring: rgba(96, 165, 250, 0.2);
+}
+
+body.theme-emerald {
+  --app-bg-start: #effcf7;
+  --app-bg-mid: #eef7f2;
+  --app-bg-end: #e8f5ee;
+  --header-bg: rgba(243, 253, 247, 0.86);
+  --sidebar-bg-start: #163b35;
+  --sidebar-bg-end: #1f5b4d;
+  --brand-chip: linear-gradient(135deg, #10b981, #059669);
+  --button-accent-start: #059669;
+  --button-accent-end: #34d399;
+  --theme-hero-start: #163b35;
+  --theme-hero-mid: #059669;
+  --theme-hero-end: #34d399;
+  --theme-highlight-soft: rgba(16, 185, 129, 0.14);
+  --theme-total-start: #fef3c7;
+  --theme-total-end: #fde68a;
+  --theme-pending-start: #d1fae5;
+  --theme-pending-end: #99f6e4;
+}
+
+body.theme-royal {
+  --edu-ink: #f8fafc;
+  --edu-muted: #d8d4ff;
+  --app-bg-start: #120f24;
+  --app-bg-mid: #1b1534;
+  --app-bg-end: #221a45;
+  --workspace-panel: rgba(30, 27, 75, 0.84);
+  --workspace-border: rgba(196, 181, 253, 0.18);
+  --header-bg: rgba(27, 21, 52, 0.9);
+  --header-border: rgba(196, 181, 253, 0.14);
+  --sidebar-bg-start: #120f24;
+  --sidebar-bg-end: #1d1638;
+  --sidebar-text: #ede9fe;
+  --sidebar-muted: rgba(221, 214, 254, 0.8);
+  --brand-chip: linear-gradient(135deg, #8b5cf6, #6366f1);
+  --button-accent-start: #7c3aed;
+  --button-accent-end: #a855f7;
+  --surface-soft: rgba(49, 46, 129, 0.6);
+  --theme-hero-start: #120f24;
+  --theme-hero-mid: #7c3aed;
+  --theme-hero-end: #a855f7;
+  --theme-soft-surface: rgba(49, 46, 129, 0.52);
+  --theme-soft-border: rgba(196, 181, 253, 0.14);
+  --theme-table-head: rgba(49, 46, 129, 0.74);
+  --theme-row-hover: rgba(49, 46, 129, 0.4);
+  --theme-highlight-soft: rgba(168, 85, 247, 0.16);
+  --hero-chip-text: #ddd6fe;
+  --hero-copy-muted: rgba(237, 233, 254, 0.84);
+  --hero-card-bg: rgba(49, 46, 129, 0.34);
+  --hero-card-border: rgba(196, 181, 253, 0.2);
+  --hero-card-muted: rgba(237, 233, 254, 0.76);
+  --avatar-ring: rgba(49, 46, 129, 0.9);
+  --danger-soft: rgba(244, 63, 94, 0.14);
+  --danger-text: #fda4af;
+  --theme-total-start: rgba(245, 158, 11, 0.18);
+  --theme-total-end: rgba(250, 204, 21, 0.24);
+  --theme-success-start: rgba(34, 197, 94, 0.18);
+  --theme-success-end: rgba(74, 222, 128, 0.26);
+  --theme-failed-start: rgba(244, 63, 94, 0.18);
+  --theme-failed-end: rgba(251, 113, 133, 0.24);
+  --theme-pending-start: rgba(96, 165, 250, 0.18);
+  --theme-pending-end: rgba(129, 140, 248, 0.26);
+  --theme-success-pill-bg: rgba(34, 197, 94, 0.18);
+  --theme-success-pill-text: #bbf7d0;
+  --theme-failed-pill-bg: rgba(244, 63, 94, 0.18);
+  --theme-failed-pill-text: #fda4af;
+  --theme-pending-pill-bg: rgba(96, 165, 250, 0.18);
+  --theme-pending-pill-text: #bfdbfe;
+  --field-bg: rgba(49, 46, 129, 0.72);
+  --field-text: #f8fafc;
+  --field-border: rgba(196, 181, 253, 0.24);
+  --field-placeholder: rgba(221, 214, 254, 0.72);
+  --field-focus-ring: rgba(168, 85, 247, 0.22);
+}
+
+body.theme-coral {
+  --app-bg-start: #fff5ef;
+  --app-bg-mid: #fff0e8;
+  --app-bg-end: #fdf3ec;
+  --header-bg: rgba(255, 247, 242, 0.88);
+  --sidebar-bg-start: #3a2418;
+  --sidebar-bg-end: #4d2f1b;
+  --brand-chip: linear-gradient(135deg, #fb7185, #f97316);
+  --button-accent-start: #ea580c;
+  --button-accent-end: #fb7185;
+  --theme-hero-start: #3a2418;
+  --theme-hero-mid: #ea580c;
+  --theme-hero-end: #fb7185;
+  --theme-highlight-soft: rgba(249, 115, 22, 0.14);
+  --theme-total-start: #ffedd5;
+  --theme-total-end: #fdba74;
+  --theme-pending-start: #ffe4e6;
+  --theme-pending-end: #fbcfe8;
+}
+
+body.theme-teal {
+  --app-bg-start: #effcfb;
+  --app-bg-mid: #edf8f7;
+  --app-bg-end: #eef8fb;
+  --header-bg: rgba(242, 254, 252, 0.88);
+  --sidebar-bg-start: #16332f;
+  --sidebar-bg-end: #134e4a;
+  --brand-chip: linear-gradient(135deg, #14b8a6, #0f766e);
+  --button-accent-start: #0f766e;
+  --button-accent-end: #14b8a6;
+  --theme-hero-start: #16332f;
+  --theme-hero-mid: #0f766e;
+  --theme-hero-end: #14b8a6;
+  --theme-highlight-soft: rgba(20, 184, 166, 0.14);
+  --theme-pending-start: #cffafe;
+  --theme-pending-end: #99f6e4;
+}
+
+body.theme-slate {
+  --edu-ink: #f8fafc;
+  --edu-muted: #cbd5e1;
+  --app-bg-start: #020617;
+  --app-bg-mid: #111827;
+  --app-bg-end: #1f2937;
+  --workspace-panel: rgba(17, 24, 39, 0.86);
+  --workspace-border: rgba(148, 163, 184, 0.18);
+  --header-bg: rgba(17, 24, 39, 0.9);
+  --header-border: rgba(148, 163, 184, 0.12);
+  --sidebar-bg-start: #030712;
+  --sidebar-bg-end: #111827;
+  --sidebar-text: #e5e7eb;
+  --sidebar-muted: rgba(203, 213, 225, 0.8);
+  --brand-chip: linear-gradient(135deg, #94a3b8, #64748b);
+  --button-accent-start: #475569;
+  --button-accent-end: #94a3b8;
+  --surface-soft: rgba(30, 41, 59, 0.68);
+  --theme-hero-start: #030712;
+  --theme-hero-mid: #334155;
+  --theme-hero-end: #94a3b8;
+  --theme-soft-surface: rgba(31, 41, 55, 0.72);
+  --theme-soft-border: rgba(148, 163, 184, 0.16);
+  --theme-table-head: rgba(31, 41, 55, 0.88);
+  --theme-row-hover: rgba(51, 65, 85, 0.32);
+  --theme-highlight-soft: rgba(148, 163, 184, 0.16);
+  --hero-chip-text: #cbd5e1;
+  --hero-copy-muted: rgba(226, 232, 240, 0.82);
+  --hero-card-bg: rgba(51, 65, 85, 0.34);
+  --hero-card-border: rgba(148, 163, 184, 0.2);
+  --hero-card-muted: rgba(226, 232, 240, 0.76);
+  --avatar-ring: rgba(51, 65, 85, 0.92);
+  --danger-soft: rgba(239, 68, 68, 0.14);
+  --danger-text: #fecaca;
+  --theme-total-start: rgba(148, 163, 184, 0.18);
+  --theme-total-end: rgba(203, 213, 225, 0.24);
+  --theme-success-start: rgba(34, 197, 94, 0.18);
+  --theme-success-end: rgba(74, 222, 128, 0.26);
+  --theme-failed-start: rgba(239, 68, 68, 0.18);
+  --theme-failed-end: rgba(248, 113, 113, 0.24);
+  --theme-pending-start: rgba(59, 130, 246, 0.18);
+  --theme-pending-end: rgba(96, 165, 250, 0.24);
+  --theme-success-pill-bg: rgba(34, 197, 94, 0.18);
+  --theme-success-pill-text: #bbf7d0;
+  --theme-failed-pill-bg: rgba(239, 68, 68, 0.18);
+  --theme-failed-pill-text: #fecaca;
+  --theme-pending-pill-bg: rgba(59, 130, 246, 0.18);
+  --theme-pending-pill-text: #bfdbfe;
+  --field-bg: rgba(31, 41, 55, 0.9);
+  --field-text: #f8fafc;
+  --field-border: rgba(148, 163, 184, 0.24);
+  --field-placeholder: rgba(203, 213, 225, 0.72);
+  --field-focus-ring: rgba(148, 163, 184, 0.2);
+}
+
+body.theme-rose {
+  --app-bg-start: #fff1f5;
+  --app-bg-mid: #fff5f7;
+  --app-bg-end: #fdf2f8;
+  --header-bg: rgba(255, 245, 248, 0.88);
+  --sidebar-bg-start: #3b1523;
+  --sidebar-bg-end: #4c1d33;
+  --brand-chip: linear-gradient(135deg, #f43f5e, #e11d48);
+  --button-accent-start: #e11d48;
+  --button-accent-end: #fb7185;
+  --theme-hero-start: #3b1523;
+  --theme-hero-mid: #e11d48;
+  --theme-hero-end: #fb7185;
+  --theme-highlight-soft: rgba(225, 29, 72, 0.14);
+  --theme-pending-start: #ffe4e6;
+  --theme-pending-end: #fbcfe8;
+}
+
+body.theme-amber {
+  --app-bg-start: #fff8eb;
+  --app-bg-mid: #fff8f0;
+  --app-bg-end: #fef3c7;
+  --header-bg: rgba(255, 250, 239, 0.9);
+  --sidebar-bg-start: #382515;
+  --sidebar-bg-end: #5b3412;
+  --brand-chip: linear-gradient(135deg, #f59e0b, #d97706);
+  --button-accent-start: #d97706;
+  --button-accent-end: #f59e0b;
+  --theme-hero-start: #382515;
+  --theme-hero-mid: #d97706;
+  --theme-hero-end: #f59e0b;
+  --theme-highlight-soft: rgba(217, 119, 6, 0.14);
+  --theme-total-start: #fef3c7;
+  --theme-total-end: #fcd34d;
+  --theme-pending-start: #ffedd5;
+  --theme-pending-end: #fdba74;
+}
+
+body.theme-ocean {
+  --edu-ink: #ecfeff;
+  --edu-muted: #bae6fd;
+  --app-bg-start: #082f49;
+  --app-bg-mid: #0c4a6e;
+  --app-bg-end: #164e63;
+  --workspace-panel: rgba(8, 47, 73, 0.84);
+  --workspace-border: rgba(125, 211, 252, 0.18);
+  --header-bg: rgba(8, 47, 73, 0.9);
+  --header-border: rgba(125, 211, 252, 0.14);
+  --sidebar-bg-start: #072033;
+  --sidebar-bg-end: #082f49;
+  --sidebar-text: #ecfeff;
+  --sidebar-muted: rgba(165, 243, 252, 0.78);
+  --brand-chip: linear-gradient(135deg, #06b6d4, #0ea5e9);
+  --button-accent-start: #0284c7;
+  --button-accent-end: #06b6d4;
+  --surface-soft: rgba(12, 74, 110, 0.58);
+  --theme-hero-start: #072033;
+  --theme-hero-mid: #0284c7;
+  --theme-hero-end: #06b6d4;
+  --theme-soft-surface: rgba(12, 74, 110, 0.52);
+  --theme-soft-border: rgba(125, 211, 252, 0.16);
+  --theme-table-head: rgba(12, 74, 110, 0.84);
+  --theme-row-hover: rgba(8, 47, 73, 0.4);
+  --theme-highlight-soft: rgba(6, 182, 212, 0.16);
+  --hero-chip-text: #a5f3fc;
+  --hero-copy-muted: rgba(236, 254, 255, 0.82);
+  --hero-card-bg: rgba(12, 74, 110, 0.34);
+  --hero-card-border: rgba(125, 211, 252, 0.2);
+  --hero-card-muted: rgba(236, 254, 255, 0.76);
+  --avatar-ring: rgba(12, 74, 110, 0.9);
+  --danger-soft: rgba(239, 68, 68, 0.14);
+  --danger-text: #fecaca;
+  --theme-total-start: rgba(14, 165, 233, 0.18);
+  --theme-total-end: rgba(34, 211, 238, 0.24);
+  --theme-success-start: rgba(16, 185, 129, 0.18);
+  --theme-success-end: rgba(45, 212, 191, 0.24);
+  --theme-failed-start: rgba(239, 68, 68, 0.18);
+  --theme-failed-end: rgba(248, 113, 113, 0.24);
+  --theme-pending-start: rgba(245, 158, 11, 0.18);
+  --theme-pending-end: rgba(250, 204, 21, 0.24);
+  --theme-success-pill-bg: rgba(16, 185, 129, 0.18);
+  --theme-success-pill-text: #99f6e4;
+  --theme-failed-pill-bg: rgba(239, 68, 68, 0.18);
+  --theme-failed-pill-text: #fecaca;
+  --theme-pending-pill-bg: rgba(245, 158, 11, 0.18);
+  --theme-pending-pill-text: #fde68a;
+  --field-bg: rgba(8, 47, 73, 0.88);
+  --field-text: #ecfeff;
+  --field-border: rgba(125, 211, 252, 0.24);
+  --field-placeholder: rgba(186, 230, 253, 0.72);
+  --field-focus-ring: rgba(34, 211, 238, 0.2);
+}
+
+body.theme-forest {
+  --edu-ink: #ecfdf5;
+  --edu-muted: #bbf7d0;
+  --app-bg-start: #0f2418;
+  --app-bg-mid: #14532d;
+  --app-bg-end: #166534;
+  --workspace-panel: rgba(20, 83, 45, 0.82);
+  --workspace-border: rgba(134, 239, 172, 0.16);
+  --header-bg: rgba(15, 36, 24, 0.88);
+  --header-border: rgba(134, 239, 172, 0.14);
+  --sidebar-bg-start: #08130d;
+  --sidebar-bg-end: #14532d;
+  --sidebar-text: #ecfdf5;
+  --sidebar-muted: rgba(187, 247, 208, 0.8);
+  --brand-chip: linear-gradient(135deg, #22c55e, #16a34a);
+  --button-accent-start: #15803d;
+  --button-accent-end: #22c55e;
+  --surface-soft: rgba(21, 128, 61, 0.54);
+  --theme-hero-start: #08130d;
+  --theme-hero-mid: #15803d;
+  --theme-hero-end: #22c55e;
+  --theme-soft-surface: rgba(21, 128, 61, 0.5);
+  --theme-soft-border: rgba(134, 239, 172, 0.14);
+  --theme-table-head: rgba(21, 128, 61, 0.72);
+  --theme-row-hover: rgba(21, 128, 61, 0.28);
+  --theme-highlight-soft: rgba(34, 197, 94, 0.16);
+  --hero-chip-text: #bbf7d0;
+  --hero-copy-muted: rgba(236, 253, 245, 0.84);
+  --hero-card-bg: rgba(21, 128, 61, 0.32);
+  --hero-card-border: rgba(134, 239, 172, 0.18);
+  --hero-card-muted: rgba(236, 253, 245, 0.78);
+  --avatar-ring: rgba(21, 128, 61, 0.9);
+  --danger-soft: rgba(239, 68, 68, 0.14);
+  --danger-text: #fecaca;
+  --theme-total-start: rgba(245, 158, 11, 0.16);
+  --theme-total-end: rgba(250, 204, 21, 0.22);
+  --theme-success-start: rgba(34, 197, 94, 0.18);
+  --theme-success-end: rgba(134, 239, 172, 0.24);
+  --theme-failed-start: rgba(239, 68, 68, 0.18);
+  --theme-failed-end: rgba(248, 113, 113, 0.22);
+  --theme-pending-start: rgba(20, 184, 166, 0.18);
+  --theme-pending-end: rgba(94, 234, 212, 0.24);
+  --theme-success-pill-bg: rgba(34, 197, 94, 0.18);
+  --theme-success-pill-text: #bbf7d0;
+  --theme-failed-pill-bg: rgba(239, 68, 68, 0.18);
+  --theme-failed-pill-text: #fecaca;
+  --theme-pending-pill-bg: rgba(20, 184, 166, 0.18);
+  --theme-pending-pill-text: #99f6e4;
+  --field-bg: rgba(20, 83, 45, 0.88);
+  --field-text: #ecfdf5;
+  --field-border: rgba(134, 239, 172, 0.22);
+  --field-placeholder: rgba(187, 247, 208, 0.72);
+  --field-focus-ring: rgba(34, 197, 94, 0.18);
+}
+
+body.theme-graphite {
+  --edu-ink: #fafafa;
+  --edu-muted: #d4d4d8;
+  --app-bg-start: #09090b;
+  --app-bg-mid: #171717;
+  --app-bg-end: #262626;
+  --workspace-panel: rgba(23, 23, 23, 0.86);
+  --workspace-border: rgba(212, 212, 216, 0.14);
+  --header-bg: rgba(23, 23, 23, 0.9);
+  --header-border: rgba(212, 212, 216, 0.12);
+  --sidebar-bg-start: #09090b;
+  --sidebar-bg-end: #18181b;
+  --sidebar-text: #fafafa;
+  --sidebar-muted: rgba(228, 228, 231, 0.72);
+  --brand-chip: linear-gradient(135deg, #f59e0b, #f97316);
+  --button-accent-start: #f59e0b;
+  --button-accent-end: #fb7185;
+  --surface-soft: rgba(39, 39, 42, 0.72);
+  --theme-hero-start: #09090b;
+  --theme-hero-mid: #f59e0b;
+  --theme-hero-end: #fb7185;
+  --theme-soft-surface: rgba(39, 39, 42, 0.78);
+  --theme-soft-border: rgba(212, 212, 216, 0.16);
+  --theme-table-head: rgba(39, 39, 42, 0.92);
+  --theme-row-hover: rgba(63, 63, 70, 0.4);
+  --theme-highlight-soft: rgba(245, 158, 11, 0.16);
+  --hero-chip-text: #fde68a;
+  --hero-copy-muted: rgba(250, 250, 250, 0.84);
+  --hero-card-bg: rgba(39, 39, 42, 0.38);
+  --hero-card-border: rgba(212, 212, 216, 0.18);
+  --hero-card-muted: rgba(250, 250, 250, 0.76);
+  --avatar-ring: rgba(39, 39, 42, 0.92);
+  --danger-soft: rgba(239, 68, 68, 0.14);
+  --danger-text: #fecaca;
+  --theme-total-start: rgba(245, 158, 11, 0.18);
+  --theme-total-end: rgba(251, 146, 60, 0.24);
+  --theme-success-start: rgba(34, 197, 94, 0.18);
+  --theme-success-end: rgba(74, 222, 128, 0.24);
+  --theme-failed-start: rgba(239, 68, 68, 0.18);
+  --theme-failed-end: rgba(251, 113, 133, 0.24);
+  --theme-pending-start: rgba(168, 85, 247, 0.18);
+  --theme-pending-end: rgba(192, 132, 252, 0.24);
+  --theme-success-pill-bg: rgba(34, 197, 94, 0.18);
+  --theme-success-pill-text: #bbf7d0;
+  --theme-failed-pill-bg: rgba(239, 68, 68, 0.18);
+  --theme-failed-pill-text: #fecaca;
+  --theme-pending-pill-bg: rgba(168, 85, 247, 0.18);
+  --theme-pending-pill-text: #e9d5ff;
+  --field-bg: rgba(39, 39, 42, 0.9);
+  --field-text: #fafafa;
+  --field-border: rgba(212, 212, 216, 0.22);
+  --field-placeholder: rgba(212, 212, 216, 0.7);
+  --field-focus-ring: rgba(245, 158, 11, 0.2);
 }
 
 body {
   font-family: 'Outfit', 'Segoe UI', sans-serif;
-  background: radial-gradient(circle at top, #fff4ea 0%, #f7efe6 45%, #f2ebe2 100%);
+  background: radial-gradient(circle at top, var(--app-bg-start) 0%, var(--app-bg-mid) 45%, var(--app-bg-end) 100%);
   color: var(--edu-ink);
 }
 
@@ -1537,4 +2028,67 @@ input,
 select,
 textarea {
   font: inherit;
+}
+
+.form-control,
+.form-select,
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
+select,
+textarea {
+  background-color: var(--field-bg);
+  color: var(--field-text);
+  border-color: var(--field-border);
+}
+
+.form-control::placeholder,
+textarea::placeholder,
+input::placeholder {
+  color: var(--field-placeholder);
+  opacity: 1;
+}
+
+.form-control:focus,
+.form-select:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  background-color: var(--field-bg);
+  color: var(--field-text);
+  border-color: var(--button-accent-start);
+  box-shadow: 0 0 0 0.2rem var(--field-focus-ring);
+}
+
+.form-select {
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+body.dark-theme .form-select {
+  --bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23e2e8f0' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+body.dark-theme {
+  .mat-mdc-form-field-infix,
+  .mdc-text-field--filled:not(.mdc-text-field--disabled),
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled) {
+    background-color: var(--field-bg);
+  }
+
+  .mat-mdc-input-element,
+  .mat-mdc-select-value-text,
+  .mat-mdc-form-field .mat-mdc-floating-label,
+  .mat-mdc-form-field .mat-mdc-form-field-hint-wrapper,
+  .mat-mdc-form-field .mat-mdc-form-field-error-wrapper,
+  .mat-mdc-form-field .mdc-floating-label {
+    color: var(--field-text) !important;
+  }
+
+  .mat-mdc-input-element::placeholder {
+    color: var(--field-placeholder) !important;
+  }
+
+  .mdc-notched-outline__leading,
+  .mdc-notched-outline__notch,
+  .mdc-notched-outline__trailing {
+    border-color: var(--field-border) !important;
+  }
 }

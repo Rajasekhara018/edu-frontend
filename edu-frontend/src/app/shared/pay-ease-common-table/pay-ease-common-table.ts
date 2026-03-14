@@ -253,5 +253,21 @@ export class PayEaseCommonTable implements OnInit {
       default: return 'bg-light text-dark';
     }
   }
+
+  getUserStatusClass(status: string): string {
+    switch (status) {
+      case 'ACTIVE': return 'status-active';
+      case 'INACTIVE': return 'status-inactive';
+      case 'PENDING_VERIFICATION': return 'status-pending';
+      case 'BLOCKED': return 'status-blocked';
+      case 'SUSPENDED': return 'status-suspended';
+      case 'DEACTIVATED': return 'status-deactivated';
+      case 'LOCKED': return 'status-locked';
+      case 'EXPIRED': return 'status-expired';
+      case 'DISABLED': return 'status-disabled';
+      case 'ARCHIVED': return 'status-archived';
+      default: return 'status-unknown';
+    }
+  }
 }
 

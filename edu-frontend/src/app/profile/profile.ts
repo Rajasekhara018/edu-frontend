@@ -15,6 +15,48 @@ import { PayeaseRestservice } from '../shared/services/payease-restservice';
 export class Profile {
 
   constructor(private dialog:MatDialog, private http:HttpClient, private postService:PayeaseRestservice){}
+  readonly profileSummary = {
+    fullName: 'Indoori Kavya',
+    businessName: 'KAVYA SOLUTIONS',
+    phone: '8179085457',
+    email: 'kavya.indoori@gmail.com',
+    tier: 'Verified operator',
+    memberSince: 'Since Jan 2024'
+  };
+
+  readonly profileMetrics = [
+    { label: 'Profile status', value: '96%', note: 'Core KYC and business identity are complete' },
+    { label: 'Security level', value: 'High', note: 'Password and PIN controls are active' },
+    { label: 'Document state', value: 'Pending', note: 'Supporting files can be added in the documents tab' }
+  ];
+
+  readonly transactionCharges = [
+    { label: 'Card transactions', value: '1.25%' },
+    { label: 'Wallet funding', value: '1.00%' }
+  ];
+
+  readonly contactDetails = [
+    { label: 'Full Name', value: 'Indoori Kavya' },
+    { label: 'Business Name', value: 'KAVYA SOLUTIONS' },
+    { label: 'Aadhar', value: '311568585973' },
+    { label: 'PAN Name', value: 'AFDPI2089B' },
+    { label: 'PAN', value: 'AFDPI2089B' },
+    { label: 'Date of Birth', value: '1984-01-27' },
+    { label: 'Email', value: 'kavya.indoori@gmail.com' },
+    { label: 'Phone', value: '8179085457' }
+  ];
+
+  readonly addressDetails = [
+    {
+      label: 'Residential Address',
+      value: 'C/O: Indoori Laxmi Narayana, F No 102 Bharathi Arcade, Ashok Colony, Kapra, Ecil, Medchal-malkajgiri, Telangana, India'
+    },
+    {
+      label: 'Business Address',
+      value: 'GOLETI TOWNSHIP'
+    }
+  ];
+
   customerObj = new Customer();
   checkType!: boolean;
   checkSize!: boolean;

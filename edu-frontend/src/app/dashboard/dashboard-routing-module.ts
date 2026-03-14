@@ -12,6 +12,8 @@ import { TransactionStatus } from './transaction-status/transaction-status';
 import { TransactionHistory } from './transaction-history/transaction-history';
 import { RaiseCompliant } from './raise-compliant/raise-compliant';
 import { ComplaintStatus } from './complaint-status/complaint-status';
+import { MakePayment } from './make-payment/make-payment';
+import { PaymentInvoice } from './payment-invoice/payment-invoice';
 
 const routes: Routes = [
   { path: 'add-money', component: AddMoney },
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'customers/:id', component: Customers },
   { path: 'history', component: History },
   { path: 'internal-transfer', component: InternalTransfer },
+  { path: 'make-payment', component: MakePayment },
+  { path: 'payment-invoice/:status', component: PaymentInvoice },
   { path: 'payment-link', component: PaymentLink },
 ];
 

@@ -23,6 +23,7 @@ export class Sidenav {
   isMobile = true;
   userRole!: string[];
   ngOnInit() {
+    this.checkScreenSize();
     let loggedInUser = sessionStorage.getItem('loggedInUser')!
     let lu: any = loggedInUser;
     if (lu) {
@@ -35,10 +36,10 @@ export class Sidenav {
   }
   filterNavItems(): void {
     console.log(this.userRole)
-    this.navItems = this.navItems.filter(item => {
-      if (!item.rolesAllowed) return true;
-      return this.userRole.some(role => item.rolesAllowed.includes(role));
-    });
+    // this.navItems = this.navItems.filter(item => {
+      // if (!item.rolesAllowed) return true;
+      // return this.userRole.some(role => item.rolesAllowed.includes(role));
+    // });
   }
   @HostListener('window:resize', [])
   onResize() {
@@ -49,8 +50,10 @@ export class Sidenav {
     this.isMobile = window.innerWidth < 768; // Bootstrap sm breakpoint
     if (this.isMobile) {
       this.isCollapsed = true;
+      this.postService.isCollapsed = true;
     } else {
       this.isCollapsed = false;
+      this.postService.isCollapsed = false;
     }
   }
 
@@ -85,9 +88,10 @@ export class Sidenav {
     // { label: 'Settings', route: '/settings', icon: 'settings', iconType: 'lucide', tooltip: 'Settings' }
     { label: 'Dashboard', route: '/home', icon: 'home', iconType: 'lucide', tooltip: 'Dashboard' },
     { label: 'Add Money', route: '/dashboard/add-money', icon: 'file-text', iconType: 'lucide', tooltip: 'Add Money' },
+    { label: 'Make Payment', route: '/dashboard/make-payment', icon: 'credit-card', iconType: 'lucide', tooltip: 'Make Payment' },
     // { label: 'Bill Transafer', route: '/dashboard/bill-transfer', icon: 'check-circle', iconType: 'lucide', tooltip: 'Bill Transafer' },
     { label: 'History', route: '/dashboard/history', icon: 'folder-open', iconType: 'lucide', tooltip: 'History', rolesAllowed: ['SUPER_ADMIN', 'HOD'] },
-    { label: 'Customer', route: 'csearch/GET_CUSTOMERS', icon: 'users', iconType: 'lucide', tooltip: 'Customers' },
+    { label: 'Customer', route: '/csearch/GET_CUSTOMERS', icon: 'users', iconType: 'lucide', tooltip: 'Customers' },
     { label: 'Bill Payments', route: '/dashboard/bill-payments', icon: 'check-circle', iconType: 'lucide', tooltip: 'Bill Payments' },
     // { label: 'Internal Transfer', route: '/dashboard/internal-transfer', icon: 'bar-chart-3', iconType: 'lucide', tooltip: 'Internal Transfer' },
     // { label: 'Payment Link', route: '/dashboard/payment-link', icon: 'settings', iconType: 'lucide', tooltip: 'Payment Link' }

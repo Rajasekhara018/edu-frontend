@@ -1,7 +1,25 @@
-<div class="container py-4">
-    <div class="card card-profile p-4">
-        <!-- Tabs -->
-        <ul class="nav nav-tabs mb-4" id="profileTabs" role="tablist">
+<section class="profile-page">
+    <div class="profile-hero">
+        <div>
+            <span class="eyebrow">Account centre</span>
+            <h1>Manage operator identity, security, and compliance records.</h1>
+            <p>
+                Keep the profile complete, maintain password and PIN hygiene, and track document readiness from one
+                structured workspace.
+            </p>
+        </div>
+
+        <div class="hero-metrics">
+            <article class="hero-metric" *ngFor="let metric of profileMetrics">
+                <span>{{ metric.label }}</span>
+                <strong>{{ metric.value }}</strong>
+                <p>{{ metric.note }}</p>
+            </article>
+        </div>
+    </div>
+
+    <div class="profile-shell">
+        <ul class="nav profile-tabs" id="profileTabs" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="myProfile-tab" data-bs-toggle="tab" data-bs-target="#myProfile"
                     type="button" role="tab" aria-controls="myProfile" aria-selected="true">
@@ -27,139 +45,142 @@
                 </button>
             </li>
         </ul>
+
         <div class="tab-content" id="profileTabsContent">
             <div class="tab-pane fade show active" id="myProfile" role="tabpanel" aria-labelledby="myProfile-tab">
-                <div class="d-flex flex-lg-row flex-column">
-                    <div class="col-lg-3 profile-left text-center px-3 pb-4">
-                        <div class="bg-white rounded shadow-sm p-3">
-                            <label for="imageUpload" class="cursor-pointer">
-                                <img *ngIf="croppedImage" [src]="croppedImage" alt="Profile"
-                                    class="img-thumbnail rounded-circle shadow profile-img"
-                                    style="width: 140px; height: 140px; object-fit: cover;" />
-                                <img *ngIf="!croppedImage" src="assets/images/picture-icon.svg"
-                                    class="img-thumbnail rounded-circle bg-light p-3 profile-img" alt="Default Profile"
-                                    style="width: 140px; height: 140px;" />
-                            </label>
-                            <input type="file" id="imageUpload" (change)="fileChangeEvent($event)" hidden />
-                            <div *ngIf="checkType">
-                                <span style="color: red;">{{invalidTypeMessage}}</span>
+                <div class="profile-grid">
+                    <aside class="profile-sidebar">
+                        <div class="profile-card">
+                            <div class="avatar-wrap">
+                                <label for="imageUpload" class="cursor-pointer">
+                                    <img *ngIf="croppedImage" [src]="croppedImage" alt="Profile"
+                                        class="profile-img" />
+                                    <img *ngIf="!croppedImage" src="assets/images/picture-icon.svg"
+                                        class="profile-img profile-img-fallback" alt="Default Profile" />
+                                </label>
+                                <input type="file" id="imageUpload" (change)="fileChangeEvent($event)" hidden />
                             </div>
-                            <h5 class="mb-1">Indoori Kavya</h5>
-                            <div class="mb-1 text-muted" style="font-size: 0.97rem;">KAVYA SOLUTIONS</div>
-                            <div class="mb-3 text-secondary" style="font-size: 0.96rem;">8179085457</div>
+
+                            <div *ngIf="checkType" class="upload-error">{{invalidTypeMessage}}</div>
+
+                            <span class="profile-badge">{{ profileSummary.tier }}</span>
+                            <h2>{{ profileSummary.fullName }}</h2>
+                            <p class="business-name">{{ profileSummary.businessName }}</p>
+                            <p class="contact-copy">{{ profileSummary.phone }} • {{ profileSummary.email }}</p>
+
+                            <div class="profile-meta">
+                                <span>{{ profileSummary.memberSince }}</span>
+                                <span>Profile review active</span>
+                            </div>
+
                             <button class="btn btn-primary edit-profile-btn">Edit Profile</button>
                         </div>
-                        <div class="bg-white rounded shadow-sm mt-4 p-3">
-                            <h6 class="fw-bold mb-3">Transaction Charges</h6>
-                            <table class="table table-borderless charges-table mb-0">
-                                <tbody>
-                                    <tr>
-                                        <td>Card</td>
-                                        <td class="text-end">1.25</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Money</td>
-                                        <td class="text-end">1.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="col-lg-9 px-lg-5 px-2">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="info-label">Full Name</div>
-                                <div class="info-value">Indoori Kavya</div>
+
+                        <div class="charges-card">
+                            <div class="card-title-row">
+                                <span class="section-kicker">Charges</span>
+                                <h3>Transaction pricing</h3>
                             </div>
-                            <div class="col-md-6">
-                                <div class="info-label">Business Name</div>
-                                <div class="info-value">KAVYA SOLUTIONS</div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-label">Aadhar</div>
-                                <div class="info-value">311568585973</div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-label">PAN Name</div>
-                                <div class="info-value">AFDPI2089B</div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-label">PAN</div>
-                                <div class="info-value">AFDPI2089B</div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-label">Date of Birth</div>
-                                <div class="info-value">1984-01-27</div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-label">Email</div>
-                                <div class="info-value">kavya.indoori@gmail.com</div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-label">Phone</div>
-                                <div class="info-value">8179085457</div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="info-label">Address</div>
-                                <div class="info-value">
-                                    C/O: Indoori Laxmi Narayana, F No 102 Bharathi Arcade, Ashok Colony, Kapra, Ecil,
-                                    Medchal-malkajgiri, Telangana, India
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="info-label">Business Address</div>
-                                <div class="info-value">GOLETI TOWNSHIP</div>
+
+                            <div class="charge-row" *ngFor="let charge of transactionCharges">
+                                <span>{{ charge.label }}</span>
+                                <strong>{{ charge.value }}</strong>
                             </div>
                         </div>
-                    </div>
+                    </aside>
+
+                    <section class="profile-main">
+                        <div class="info-card">
+                            <div class="card-title-row">
+                                <span class="section-kicker">Identity</span>
+                                <h3>Profile and business information</h3>
+                            </div>
+
+                            <div class="info-grid">
+                                <article class="info-item" *ngFor="let detail of contactDetails">
+                                    <span class="info-label">{{ detail.label }}</span>
+                                    <strong class="info-value">{{ detail.value }}</strong>
+                                </article>
+                            </div>
+                        </div>
+
+                        <div class="address-card">
+                            <div class="card-title-row">
+                                <span class="section-kicker">Addresses</span>
+                                <h3>Residential and business locations</h3>
+                            </div>
+
+                            <article class="address-item" *ngFor="let address of addressDetails">
+                                <span class="info-label">{{ address.label }}</span>
+                                <strong class="info-value address-value">{{ address.value }}</strong>
+                            </article>
+                        </div>
+                    </section>
                 </div>
             </div>
+
             <div class="tab-pane fade" id="changePassword" role="tabpanel" aria-labelledby="changePassword-tab">
-                <div class="p-4">
-                    <h5>Change Password</h5>
-                    <form class="mt-3" style="max-width: 350px;">
-                        <div class="mb-3">
+                <div class="form-card">
+                    <div class="card-title-row">
+                        <span class="section-kicker">Security</span>
+                        <h3>Change password</h3>
+                    </div>
+                    <p class="card-copy">Use a strong password with a mix of letters, numbers, and symbols.</p>
+
+                    <form class="security-form">
+                        <div class="form-field">
                             <label for="currentPassword" class="form-label">Current Password</label>
                             <input type="password" class="form-control" id="currentPassword">
                         </div>
-                        <div class="mb-3">
+                        <div class="form-field">
                             <label for="newPassword" class="form-label">New Password</label>
                             <input type="password" class="form-control" id="newPassword">
                         </div>
-                        <div class="mb-3">
+                        <div class="form-field">
                             <label for="confirmPassword" class="form-label">Confirm New Password</label>
                             <input type="password" class="form-control" id="confirmPassword">
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Update Password</button>
+                        <button type="submit" class="btn btn-primary">Update Password</button>
                     </form>
                 </div>
             </div>
+
             <div class="tab-pane fade" id="changePin" role="tabpanel" aria-labelledby="changePin-tab">
-                <div class="p-4">
-                    <h5>Change PIN</h5>
-                    <form class="mt-3" style="max-width: 350px;">
-                        <div class="mb-3">
+                <div class="form-card">
+                    <div class="card-title-row">
+                        <span class="section-kicker">Security</span>
+                        <h3>Change PIN</h3>
+                    </div>
+                    <p class="card-copy">Update the operator PIN regularly to reduce exposure during desk handover.</p>
+
+                    <form class="security-form">
+                        <div class="form-field">
                             <label for="currentPin" class="form-label">Current PIN</label>
                             <input type="password" class="form-control" id="currentPin" maxlength="6">
                         </div>
-                        <div class="mb-3">
+                        <div class="form-field">
                             <label for="newPin" class="form-label">New PIN</label>
                             <input type="password" class="form-control" id="newPin" maxlength="6">
                         </div>
-                        <div class="mb-3">
+                        <div class="form-field">
                             <label for="confirmPin" class="form-label">Confirm New PIN</label>
                             <input type="password" class="form-control" id="confirmPin" maxlength="6">
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Update PIN</button>
+                        <button type="submit" class="btn btn-primary">Update PIN</button>
                     </form>
                 </div>
             </div>
+
             <div class="tab-pane fade" id="documents" role="tabpanel" aria-labelledby="documents-tab">
-                <div class="p-4">
-                    <h5>Documents</h5>
-                    <div class="alert alert-info mt-3">No documents uploaded yet.</div>
+                <div class="documents-card">
+                    <div class="card-title-row">
+                        <span class="section-kicker">Compliance</span>
+                        <h3>Documents</h3>
+                    </div>
+                    <p class="card-copy">Upload KYC and business support files here when document collection begins.</p>
+                    <div class="documents-empty">No documents uploaded yet.</div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
