@@ -111,7 +111,6 @@
                 </tr>
               </tbody>
             </table>
-
             <app-pagination [totalElements]="cardTxnTotalElements" [currentPage]="cardTxnCurrentPage"
               [pageSize]="cardTxnPageSize" (pageChange)="cardsTransactionsHistory($event.pageNumber, $event.pageSize)">
             </app-pagination>
@@ -306,20 +305,23 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let row of commissionRows">
-                  <td>{{ row.srNo }}</td>
-                  <td>{{ row.paymentDate }}</td>
-                  <td>{{ row.name }}</td>
+                <tr *ngFor="let row of commissionDataSource;let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ row.saleDateTime }}</td>
+                  <td>{{ row.customerName }}</td>
                   <td>{{ row.mobile }}</td>
-                  <td>{{ row.mode }}</td>
-                  <td>Rs. {{ formatAmount(row.amount) }}</td>
+                  <td>{{ row.paymentMode }}</td>
+                  <td>Rs. {{ formatAmount(row.transactionAmount) }}</td>
                   <td>Rs. {{ formatAmount(row.distributorCommission) }}</td>
-                  <td>Rs. {{ formatAmount(row.retailerCommission) }}</td>
-                  <td>Rs. {{ formatAmount(row.yugmaCommission) }}</td>
+                  <td>Rs. {{ formatAmount(row.agentCommission) }}</td>
+                  <td>Rs. {{ formatAmount(row.platformCommission) }}</td>
                   <td><span class="status-pill" [ngClass]="statusTone(row.status)">{{ row.status }}</span></td>
                 </tr>
               </tbody>
             </table>
+            <app-pagination [totalElements]="commissionTotalElements" [currentPage]="commissionCurrentPage"
+              [pageSize]="commissionPageSize" (pageChange)="commissionReport($event.pageNumber, $event.pageSize)">
+            </app-pagination>
           </div>
         </div>
       </div>

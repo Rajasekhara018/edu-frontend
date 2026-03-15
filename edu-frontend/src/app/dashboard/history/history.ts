@@ -14,12 +14,18 @@ export class History implements OnInit {
   cardTxnPageSize!: number;
   cardTxnCurrentPage!: number;
   cardTxnIsLoading!: boolean;
-  pagedData:any[]=[];
+  commissionDataSource!: any;
+  commissionTotalElements!: number;
+  commissionPageSize!: number;
+  commissionCurrentPage!: number;
+  commissionIsLoading!: boolean;
+  pagedData: any[] = [];
   constructor(private postService: PayeaseRestservice) {
 
   }
   ngOnInit(): void {
-    this.cardsTransactionsHistory(0,10);
+    this.cardsTransactionsHistory(0, 10);
+    this.commissionReport(0, 10);
   }
   readonly reportTabs = [
     { id: 'cards', label: 'Cards Transactions', subtitle: 'Card gateway collections and wallet funding history' },
@@ -27,36 +33,6 @@ export class History implements OnInit {
     { id: 'statements', label: 'Statements', subtitle: 'Audit-ready ledger and payout statement lines' },
     { id: 'commission', label: 'Commission Report', subtitle: 'Distributor, agent, and platform commission view' }
   ];
-  // readonly cardsTransactions: Transaction[] = [
-  //   {
-  //     srNo: 1,
-  //     paymentDate: '14/03/2026, 12:23:06',
-  //     urn: '5457250714065305393IN',
-  //     name: 'Laxmi',
-  //     mobile: '9441188744',
-  //     paymentId: '24281494005',
-  //     accountDetails: 'CardType: NA, Issuer: NA, Card#3025',
-  //     mode: 'CARD',
-  //     amount: 997.15,
-  //     charge: 15.95,
-  //     transferAmount: 981.20,
-  //     status: 'SUCCESS'
-  //   },
-  //   {
-  //     srNo: 2,
-  //     paymentDate: '14/03/2026, 13:10:42',
-  //     urn: '5457250714068801204IN',
-  //     name: 'Rohit',
-  //     mobile: '9701182214',
-  //     paymentId: '24281494188',
-  //     accountDetails: 'CardType: VISA, Issuer: HDFC, Card#1842',
-  //     mode: 'CARD',
-  //     amount: 998.19,
-  //     charge: 16.20,
-  //     transferAmount: 981.99,
-  //     status: 'PENDING'
-  //   }
-  // ];
 
   readonly bankTransactions: BankTransaction[] = [
     {
@@ -146,20 +122,20 @@ export class History implements OnInit {
     }
   ];
 
-  readonly commissionRows: CommissionRow[] = [
-    {
-      srNo: 1,
-      paymentDate: '14/03/2026, 12:23:06',
-      name: 'Laxmi',
-      mobile: '9441188744',
-      mode: 'IMPS',
-      amount: 1000,
-      distributorCommission: 50,
-      retailerCommission: 30,
-      yugmaCommission: 20,
-      status: 'SUCCESS'
-    }
-  ];
+  // readonly commissionRows: CommissionRow[] = [
+  //   {
+  //     srNo: 1,
+  //     paymentDate: '14/03/2026, 12:23:06',
+  //     name: 'Laxmi',
+  //     mobile: '9441188744',
+  //     mode: 'IMPS',
+  //     amount: 1000,
+  //     distributorCommission: 50,
+  //     retailerCommission: 30,
+  //     yugmaCommission: 20,
+  //     status: 'SUCCESS'
+  //   }
+  // ];
 
   readonly topMetrics = [
     { label: 'Report coverage', value: '4 views', note: 'Cards, bank, statements, and commission' },
@@ -182,8 +158,8 @@ export class History implements OnInit {
   }
 
   get totalProcessedAmount(): string {
-    const total = this.cardTxnDataSource?.reduce((sum:any, row:any) => sum + row.transactionAmount, 0)
-      + this.bankTransactions?.reduce((sum:any, row:any) => sum + row.transactionAmount, 0);
+    const total = this.cardTxnDataSource?.reduce((sum: any, row: any) => sum + row.transactionAmount, 0)
+      + this.bankTransactions?.reduce((sum: any, row: any) => sum + row.transactionAmount, 0);
     return this.formatAmount(total);
   }
 
@@ -191,7 +167,7 @@ export class History implements OnInit {
     return this.cardTxnTotalElements
       + this.bankTransactions.length
       + this.statements.length
-      + this.commissionRows.length;
+      + this.commissionTotalElements;
   }
 
   formatAmount(value: number): string {
@@ -213,7 +189,7 @@ export class History implements OnInit {
   }
 
   private buildSummary(rows: Array<{ amount: number; status: HistoryStatus }>) {
-    const total = rows?.reduce((sum:any, row:any) => sum + row.transactionAmount, 0);
+    const total = rows?.reduce((sum: any, row: any) => sum + row.transactionAmount, 0);
     const success = rows?.filter((row) => row.status === 'SUCCESS');
     const failed = rows?.filter((row) => row.status === 'FAILED');
     const pending = rows?.filter((row) => row.status === 'PENDING');
@@ -224,15 +200,15 @@ export class History implements OnInit {
       },
       success: {
         count: success?.length,
-        amount: this.formatAmount(success?.reduce((sum, row:any) => sum + row.transactionAmount, 0))
+        amount: this.formatAmount(success?.reduce((sum, row: any) => sum + row.transactionAmount, 0))
       },
       failed: {
         count: failed?.length,
-        amount: this.formatAmount(failed?.reduce((sum, row:any) => sum + row.transactionAmount, 0))
+        amount: this.formatAmount(failed?.reduce((sum, row: any) => sum + row.transactionAmount, 0))
       },
       pending: {
         count: pending?.length,
-        amount: this.formatAmount(pending?.reduce((sum, row:any) => sum + row.transactionAmount, 0))
+        amount: this.formatAmount(pending?.reduce((sum, row: any) => sum + row.transactionAmount, 0))
       }
     };
   }
@@ -257,18 +233,38 @@ export class History implements OnInit {
       }
     )
   }
-  getStartEntry(): number {
-  if (this.cardTxnTotalElements === 0) return 0;
-  return (this.cardTxnCurrentPage - 1) * this.cardTxnPageSize + 1;
-}
+  commissionReport(pageNumber: number, pageSize: number) {
+    this.postService.doPostGetAll(APIPath.COMMISSON_REPORT, pageNumber, pageSize).subscribe((data: any) => {
+      if (data.status) {
+        const result = data?.object?.content;
+        this.commissionDataSource = result;
+        this.postService.showToast('success', data.errorMsg);
+        this.commissionTotalElements = data?.object?.totalElements;
+        this.commissionPageSize = data?.object?.pageable?.pageSize;
+        this.commissionCurrentPage = data?.object?.pageable?.pageNumber + 1;
+        this.commissionIsLoading = true;
+      } else {
+        this.postService.showToast('error', data.errorMsg);
+      }
+    },
+      (error: any) => {
+        this.cardTxnIsLoading = false;
+        this.postService.showToast('error', error?.message?.toString());
+      }
+    )
+  }
+  // getStartEntry(): number {
+  //   if (this.cardTxnTotalElements === 0) return 0;
+  //   return (this.cardTxnCurrentPage - 1) * this.cardTxnPageSize + 1;
+  // }
 
-getEndEntry(): number {
-  if (this.cardTxnTotalElements === 0) return 0;
-  return Math.min(
-    this.cardTxnCurrentPage * this.cardTxnPageSize,
-    this.cardTxnTotalElements
-  );
-}
+  // getEndEntry(): number {
+  //   if (this.cardTxnTotalElements === 0) return 0;
+  //   return Math.min(
+  //     this.cardTxnCurrentPage * this.cardTxnPageSize,
+  //     this.cardTxnTotalElements
+  //   );
+  // }
 }
 
 type HistoryStatus = 'SUCCESS' | 'FAILED' | 'PENDING';

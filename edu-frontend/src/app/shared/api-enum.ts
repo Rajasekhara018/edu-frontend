@@ -31,6 +31,7 @@ export enum APIPath {
     COMMISSON_SEARCH = "/api/commission/filterData",
 
     CARD_TRANSACTION_HISTORY = "/api/payment/getall",
-    CARD_TRANSACTION_VIEW =  "/api/payment/inq",
+    CARD_TRANSACTION_VIEW = "/api/payment/inq",
+    COMMISSON_REPORT = "/api/payment/commission",
     MAKE_PAYMENT = "/api/payment/create-payment"
 }

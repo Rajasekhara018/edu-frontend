@@ -64,15 +64,6 @@ public class PaymentGatewayController {
     /**
      * Get all payment transactions
      */
-//    @GetMapping("/getall")
-//    public ResponseObject getAllPayments() {
-//        ResponseObject response = new ResponseObject();
-//        response.setObject(paymentService.getAllTransactions());
-//        response.setStatus(true);
-//        response.setErrorMsg("Transactions retrieved successfully");
-//        return response;
-//    }
-
     @PostMapping("/getall")
     public ResponseObject getAllPayments(@RequestBody RequestObject request) {
         ResponseObject response = new ResponseObject();
@@ -98,5 +89,14 @@ public class PaymentGatewayController {
             response.setErrorMsg("Invalid id");
             return response;
         });
+    }
+
+    @PostMapping("/commission")
+    public ResponseObject getAllCommission(@RequestBody RequestObject request) {
+        ResponseObject response = new ResponseObject();
+        response.setObject(paymentService.getAll(request));
+        response.setStatus(true);
+        response.setErrorMsg("Users retrieved successfully.");
+        return response;
     }
 }
