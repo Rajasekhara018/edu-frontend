@@ -6,19 +6,27 @@ import com.payease.app.helper.CreatePaymentRequest;
 import com.payease.app.helper.PaymentMethodCommission;
 import com.payease.app.helper.RequestObject;
 import com.payease.app.model.PaymentGatewayTransaction;
-import com.payease.app.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.*;
+import org.bson.Document;
+import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.payease.app.utility.UrnGenerator.generateURN;
 
 @Service
 public class PaymentGatewayService {
+
+    @Autowired
+    MongoTemplate mongoTemplate;
 
     @Autowired
     CommissionSettingService commissionSettingService;
@@ -65,5 +73,41 @@ public class PaymentGatewayService {
 
     public Page<PaymentGatewayTransaction> getAll(RequestObject requestObj) {
         return paymentDao.getAll(requestObj);
+    }
+
+    public Map<String, Object> getTodayMetrics() {
+        LocalDate today = LocalDate.now();
+        LocalDateTime start = today.atStartOfDay();
+        LocalDateTime end = today.atTime(23,59,59);
+        MatchOperation match = Aggregation.match(
+                Criteria.where("saleDateTime").regex("^" + today)
+        );
+        GroupOperation group = Aggregation.group()
+                .sum("transactionAmount").as("todayVolume")
+                .count().as("totalTransactions")
+                .sum(
+                        ConditionalOperators.when(
+                                Criteria.where("status").is("SUCCESS")
+                        ).then(1).otherwise(0)
+                ).as("successCount");
+        Aggregation aggregation = Aggregation.newAggregation(match, group);
+        AggregationResults<Document> result =
+                mongoTemplate.aggregate(aggregation, "gateway_transaction", Document.class);
+        Document doc = result.getUniqueMappedResult();
+        Number totalTransactions =
+                doc == null ? 0 : (Number) doc.getOrDefault("totalTransactions", 0);
+        Number successCount =
+                doc == null ? 0 : (Number) doc.getOrDefault("successCount", 0);
+        Number todayVolume =
+                doc == null ? 0 : (Number) doc.getOrDefault("todayVolume", 0);
+        double settlementHealth =
+                totalTransactions.longValue() == 0
+                        ? 0
+                        : (successCount.longValue() * 100.0) / totalTransactions.longValue();
+        Map<String, Object> response = new HashMap<>();
+        response.put("todayVolume", todayVolume.doubleValue());
+        response.put("settlementHealth", Math.round(settlementHealth));
+        response.put("totalTransactions", totalTransactions.longValue());
+        return response;
     }
 }

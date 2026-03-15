@@ -29,27 +29,27 @@ export class Landing {
 
   readonly services: ServiceAction[] = [
     {
-      title: 'Add Money',
-      copy: 'Move funds into the operating wallet with a clean approval path and instant balance visibility.',
-      route: '/dashboard/add-money',
-      icon: 'bi bi-wallet2',
-      accent: 'orange'
-    },
-    {
       title: 'Customers',
       copy: 'Create distributors, onboard agents, and review account states from the shared master table.',
       route: '/csearch/GET_CUSTOMERS',
       icon: 'bi bi-people',
-      accent: 'blue',
+      accent: 'plum',
       rolesAllowed: ['ADMIN', 'DISTRIBUTOR']
     },
     {
       title: 'Commission Settings',
       copy: 'Maintain distributor defaults and agent-level commission rules with settlement visibility.',
       route: '/dashboard/commission-settings',
-      icon: 'bi bi-clock-history',
-      accent: 'indigo',
+      icon: 'bi bi-receipt',
+      accent: 'orange',
       rolesAllowed: ['ADMIN', 'DISTRIBUTOR']
+    },
+    {
+      title: 'Make Payment',
+      copy: 'Move funds into the operating wallet with a clean approval path and instant balance visibility.',
+      route: '/dashboard/make-payment',
+      icon: 'bi bi-wallet2',
+      accent: 'orange'
     },
     {
       title: 'History',
@@ -59,9 +59,9 @@ export class Landing {
       accent: 'green'
     },
     {
-      title: 'Bill Payments',
+      title: 'Commission Dashboard',
       copy: 'Run utility and fee collections from one queue with clear status feedback and operator control.',
-      route: '/dashboard/bill-payments',
+      route: '/dashboard/commission-dashboard',
       icon: 'bi bi-receipt',
       accent: 'plum'
     },

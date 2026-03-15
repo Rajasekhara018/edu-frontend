@@ -139,8 +139,8 @@ export class History implements OnInit {
 
   readonly topMetrics = [
     { label: 'Report coverage', value: '4 views', note: 'Cards, bank, statements, and commission' },
-    { label: 'Today volume', value: 'Rs. 16,838', note: 'Across card and bank channels' },
-    { label: 'Settlement health', value: '80%', note: 'Successful or in-progress bank transfers' }
+    // { label: 'Today volume', value: 'Rs. 16,838', note: 'Across card and bank channels' },
+    // { label: 'Settlement health', value: '80%', note: 'Successful or in-progress bank transfers' }
   ];
 
   readonly quickNotes = [
