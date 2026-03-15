@@ -2,6 +2,7 @@ package com.payease.app.service;
 
 import com.payease.app.IDao.IGenericDao;
 import com.payease.app.dao.CommissionSettingDao;
+import com.payease.app.exception.CommissionAlreadyExistsException;
 import com.payease.app.helper.CommissionResult;
 import com.payease.app.helper.PaymentMethodCommission;
 import com.payease.app.helper.RequestObject;
@@ -24,6 +25,10 @@ public class CommissionSettingService {
     CommissionSettingDao commissionSettingDao;
 
     public CommissionSetting create(CommissionSetting setting) {
+        CommissionSetting existing = commissionSettingDao.findByGateway(setting.getGateway());
+        if (existing != null) {
+            throw new CommissionAlreadyExistsException("Commission already configured for gateway: " + setting.getGateway());
+        }
         return genericDao.create(setting);
     }
 
@@ -56,9 +61,9 @@ public class CommissionSettingService {
     }
 
     public CommissionResult calculateCommission(BigDecimal amount, PaymentMethodCommission rule) {
-        BigDecimal distributor = amount.multiply(rule.getDistributorPercent()).divide(BigDecimal.valueOf(100),2, RoundingMode.HALF_UP);
-        BigDecimal agent = amount.multiply(rule.getAgentPercent()).divide(BigDecimal.valueOf(100),2, RoundingMode.HALF_UP);
-        BigDecimal platform = amount.multiply(rule.getPlatformPercent()).divide(BigDecimal.valueOf(100),2, RoundingMode.HALF_UP);  //₹50.235 → ₹50.24
+        BigDecimal distributor = amount.multiply(rule.getDistributorPercent()).divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
+        BigDecimal agent = amount.multiply(rule.getAgentPercent()).divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);
+        BigDecimal platform = amount.multiply(rule.getPlatformPercent()).divide(BigDecimal.valueOf(100), 2, RoundingMode.HALF_UP);  //₹50.235 → ₹50.24
         return new CommissionResult(distributor, agent, platform);
     }
 

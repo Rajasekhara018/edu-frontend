@@ -37,7 +37,7 @@ interface CommissionRule {
   styleUrl: './commission-settings.scss'
 })
 export class CommissionSettings {
-  constructor(private postService:PayeaseRestservice,public location: Location){
+  constructor(private postService: PayeaseRestservice, public location: Location) {
 
   }
   readonly distributors: DistributorProfile[] = [
@@ -217,10 +217,8 @@ export class CommissionSettings {
   gateways = ["YUGMA", "RAZORPAY", "PAYU", "ICICI"];
   paymentModes = ["CARD", "UPI", "NETBANKING"];
   gatewayRules: any = {}
-  objectKeys = Object.keys;
   addRule() {
     if (
-      !this.form2.gateway ||
       !this.form2.paymentMode ||
       !this.form2.paymentType ||
       !this.form2.distributorPercent ||
@@ -230,16 +228,12 @@ export class CommissionSettings {
       alert("Please fill all fields before adding a rule");
       return;
     }
-    if (!this.gatewayRules[this.form2.gateway]) {
-      this.gatewayRules[this.form2.gateway] = [];
-    }
-    const rules = this.gatewayRules[this.form2.gateway];
-    const duplicate = rules.find((r: any) =>
+    const duplicate = this.paymentMethods.find(r =>
       r.paymentMode === this.form2.paymentMode &&
       r.paymentType === this.form2.paymentType
     );
     if (duplicate) {
-      alert("Rule already exists for this gateway");
+      alert("Rule already exists");
       return;
     }
     const rule = {
@@ -249,7 +243,7 @@ export class CommissionSettings {
       agentPercent: this.form2.agentPercent,
       platformPercent: this.form2.platformPercent
     };
-    rules.push(rule);
+    this.paymentMethods.push(rule);
     this.resetForm();
   }
   resetForm() {
@@ -262,40 +256,54 @@ export class CommissionSettings {
   removeRule(index: number) {
     this.paymentMethods.splice(index, 1);
   }
-  isCreateMode!:boolean
-  modelkey!:any
+  isCreateMode!: boolean
+  modelkey!: any
+
   saveGateway() {
     this.isCreateMode = true
-    if (!this.gatewayRules || Object.keys(this.gatewayRules).length === 0) {
-      alert("At least one commission rule must be added");
+    if (!this.form2.gateway) {
+      alert("Please select gateway");
       return;
     }
-    const payload: { gateway: string; paymentMethods: any; }[] = [];
-    Object.keys(this.gatewayRules).forEach(gateway => {
-      payload.push({
-        gateway: gateway,
-        paymentMethods: this.gatewayRules[gateway]
-      });
-    });
+    if (this.paymentMethods.length === 0) {
+      alert("Add at least one commission rule");
+      return;
+    }
+    const payload = {
+      gateway: this.form2.gateway,
+      paymentMethods: this.paymentMethods
+    };
     console.log(payload);
-      const apiPath = this.isCreateMode ? APIPath.COMMISSON_CRE : APIPath.COMMISSON_UPD;
-      const requestObj: any = {
-        ...payload,
-        ...(this.isCreateMode ? {} : { id: this.modelkey })
-      };
-      let requestType = this.isCreateMode ? "CREATE" : "UPDATE";
-      this.postService.doPost(apiPath, requestObj, requestType).subscribe({
+    const apiPath = this.isCreateMode
+      ? APIPath.COMMISSON_CRE
+      : APIPath.COMMISSON_UPD;
+    const requestObj: any = {
+      ...payload,
+      ...(this.isCreateMode ? {} : { id: this.modelkey })
+    };
+    let requestType = this.isCreateMode ? "CREATE" : "UPDATE";
+    this.postService
+      .doPost(apiPath, requestObj, requestType)
+      .subscribe({
         next: (response: any) => {
           if (response.status) {
-            // this.customerObj = response.status;
             this.location.back();
-            this.postService.showToast('success', response?.errorMsg?.toString());
+            this.postService.showToast(
+              'success',
+              response?.errorMsg?.toString()
+            );
           } else {
-            this.postService.showToast('error', response?.errorMsg?.toString());
+            this.postService.showToast(
+              'error',
+              response?.errorMsg?.toString()
+            );
           }
         },
         error: (err: any) => {
-          this.postService.showToast('error', err?.errorMsg?.toString());
+          this.postService.showToast(
+            'error',
+            err?.errorMsg?.toString()
+          );
         }
       });
   }

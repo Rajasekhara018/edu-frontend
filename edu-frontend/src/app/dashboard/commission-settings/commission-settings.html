@@ -207,7 +207,7 @@
                         Add Rule
                     </button>
                     <button class="btn btn-success" (click)="saveGateway()"
-                        [disabled]="!gatewayRules || objectKeys(gatewayRules).length === 0">
+                        [disabled]="!gatewayRules">
                         Save Gateway Rules
                     </button>
                 </div>
@@ -216,29 +216,34 @@
         <!-- RULES TABLE -->
         <section class="panel commission-table">
             <h3>Configured Rules</h3>
-            <div *ngFor="let gateway of objectKeys(gatewayRules)">
-                <h3>{{gateway}}</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Mode</th>
-                            <th>Type</th>
-                            <th>Distributor</th>
-                            <th>Agent</th>
-                            <th>Platform</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let r of gatewayRules[gateway]">
-                            <td>{{r.paymentMode}}</td>
-                            <td>{{r.paymentType}}</td>
-                            <td>{{r.distributorPercent}}</td>
-                            <td>{{r.agentPercent}}</td>
-                            <td>{{r.platformPercent}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Mode</th>
+                        <th>Type</th>
+                        <th>Distributor</th>
+                        <th>Agent</th>
+                        <th>Platform</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let r of paymentMethods; let i = index">
+                        <td>{{r.paymentMode}}</td>
+                        <td>{{r.paymentType}}</td>
+                        <td>{{r.distributorPercent}}</td>
+                        <td>{{r.agentPercent}}</td>
+                        <td>{{r.platformPercent}}</td>
+
+                        <td>
+                            <button class="btn btn-danger btn-sm" (click)="removeRule(i)">
+                                Delete
+                            </button>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </div>
     <section class="panel rules-panel">
