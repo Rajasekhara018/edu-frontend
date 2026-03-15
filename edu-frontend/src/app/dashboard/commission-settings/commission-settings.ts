@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { PayeaseRestservice } from '../../shared/services/payease-restservice';
+import { APIPath } from '../../shared/api-enum';
+import { Location } from '@angular/common';
 
 type UserContext = 'ADMIN' | 'DISTRIBUTOR' | 'AGENT';
 
@@ -34,6 +37,9 @@ interface CommissionRule {
   styleUrl: './commission-settings.scss'
 })
 export class CommissionSettings {
+  constructor(private postService:PayeaseRestservice,public location: Location){
+
+  }
   readonly distributors: DistributorProfile[] = [
     { id: 'DST-1001', name: 'Northline Distribution', status: 'Active', baseRate: '1.80%' },
     { id: 'DST-1002', name: 'Campus Pay Network', status: 'Active', baseRate: '1.55%' },
@@ -196,5 +202,101 @@ export class CommissionSettings {
     this.selectedDistributorId = this.distributors[0].id;
     this.form.scope = 'Agent';
     this.selectedAgentId = this.visibleAgents[0]?.id || '';
+  }
+  form2: any = {
+    gateway: '',
+    paymentMode: '',
+    paymentType: '',
+    distributorPercent: '',
+    agentPercent: '',
+    platformPercent: ''
+  };
+
+  paymentMethods: any[] = [];
+
+  gateways = ["YUGMA", "RAZORPAY", "PAYU", "ICICI"];
+  paymentModes = ["CARD", "UPI", "NETBANKING"];
+  gatewayRules: any = {}
+  objectKeys = Object.keys;
+  addRule() {
+    if (
+      !this.form2.gateway ||
+      !this.form2.paymentMode ||
+      !this.form2.paymentType ||
+      !this.form2.distributorPercent ||
+      !this.form2.agentPercent ||
+      !this.form2.platformPercent
+    ) {
+      alert("Please fill all fields before adding a rule");
+      return;
+    }
+    if (!this.gatewayRules[this.form2.gateway]) {
+      this.gatewayRules[this.form2.gateway] = [];
+    }
+    const rules = this.gatewayRules[this.form2.gateway];
+    const duplicate = rules.find((r: any) =>
+      r.paymentMode === this.form2.paymentMode &&
+      r.paymentType === this.form2.paymentType
+    );
+    if (duplicate) {
+      alert("Rule already exists for this gateway");
+      return;
+    }
+    const rule = {
+      paymentMode: this.form2.paymentMode,
+      paymentType: this.form2.paymentType,
+      distributorPercent: this.form2.distributorPercent,
+      agentPercent: this.form2.agentPercent,
+      platformPercent: this.form2.platformPercent
+    };
+    rules.push(rule);
+    this.resetForm();
+  }
+  resetForm() {
+    this.form2.paymentMode = '';
+    this.form2.paymentType = '';
+    this.form2.distributorPercent = '';
+    this.form2.agentPercent = '';
+    this.form2.platformPercent = '';
+  }
+  removeRule(index: number) {
+    this.paymentMethods.splice(index, 1);
+  }
+  isCreateMode!:boolean
+  modelkey!:any
+  saveGateway() {
+    this.isCreateMode = true
+    if (!this.gatewayRules || Object.keys(this.gatewayRules).length === 0) {
+      alert("At least one commission rule must be added");
+      return;
+    }
+    const payload: { gateway: string; paymentMethods: any; }[] = [];
+    Object.keys(this.gatewayRules).forEach(gateway => {
+      payload.push({
+        gateway: gateway,
+        paymentMethods: this.gatewayRules[gateway]
+      });
+    });
+    console.log(payload);
+      const apiPath = this.isCreateMode ? APIPath.COMMISSON_CRE : APIPath.COMMISSON_UPD;
+      const requestObj: any = {
+        ...payload,
+        ...(this.isCreateMode ? {} : { id: this.modelkey })
+      };
+      let requestType = this.isCreateMode ? "CREATE" : "UPDATE";
+      this.postService.doPost(apiPath, requestObj, requestType).subscribe({
+        next: (response: any) => {
+          if (response.status) {
+            // this.customerObj = response.status;
+            this.location.back();
+            this.postService.showToast('success', response?.errorMsg?.toString());
+          } else {
+            this.postService.showToast('error', response?.errorMsg?.toString());
+          }
+        },
+        error: (err: any) => {
+          this.postService.showToast('error', err?.errorMsg?.toString());
+        }
+      });
   }
 }
