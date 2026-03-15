@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class PaymentGatewayDao extends GenericDao<PaymentGatewayTransaction> {
+public class PaymentCallbackDao extends GenericDao<PaymentGatewayTransaction> {
 
     @Override
     public Class<PaymentGatewayTransaction> getEntityClass() {

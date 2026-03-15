@@ -1,6 +1,5 @@
-package com.payease.app.controller;
+package com.payease.app.helper;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.math.BigDecimal;

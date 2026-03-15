@@ -1,6 +1,6 @@
 package com.payease.app.service;
 
-import com.payease.app.dao.PaymentGatewayDao;
+import com.payease.app.dao.PaymentCallbackDao;
 import com.payease.app.exception.FinancePaymentGatewayException;
 import com.payease.app.model.PaymentGatewayTransaction;
 import lombok.extern.slf4j.Slf4j;
@@ -8,32 +8,51 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class PaymentGatewayService {
+public class PaymentCallbackService {
 
-    private final PaymentGatewayDao paymentGatewayDao;
+    private final PaymentCallbackDao paymentGatewayDao;
 
-    public PaymentGatewayService(PaymentGatewayDao paymentGatewayDao) {
+    public PaymentCallbackService(PaymentCallbackDao paymentGatewayDao) {
         this.paymentGatewayDao = paymentGatewayDao;
     }
 
-    public void processSuccessPayment(PaymentGatewayTransaction dto) throws FinancePaymentGatewayException {
+    public void processSuccessPayment(PaymentGatewayTransaction dto)
+            throws FinancePaymentGatewayException {
         validate(dto);
-        PaymentGatewayTransaction existing = paymentGatewayDao.findByInvoiceNumber(dto.getInvoiceNumber());
-        if (existing != null) {
+        PaymentGatewayTransaction existing =
+                paymentGatewayDao.findByInvoiceNumber(dto.getInvoiceNumber());
+        if (existing == null) {
+            throw new FinancePaymentGatewayException(
+                    "Payment not found for invoice " + dto.getInvoiceNumber());
+        }
+        if ("SUCCESS".equals(existing.getStatus())) {
             log.warn("Payment already processed for invoice {}", dto.getInvoiceNumber());
             return;
         }
-        PaymentGatewayTransaction entity = map(dto);
-        entity.setStatus("SUCCESS");
-        paymentGatewayDao.create(entity);
+        existing.setRrn(dto.getRrn());
+        existing.setTransactionId(dto.getTransactionId());
+        existing.setAuthCode(dto.getAuthCode());
+        existing.setActionCode(dto.getActionCode());
+        existing.setMerchantName(dto.getMerchantName());
+        existing.setTerminalNumber(dto.getTerminalNumber());
+        existing.setSaleDateTime(dto.getSaleDateTime());
+        existing.setStatus("SUCCESS");
+        paymentGatewayDao.update(existing);
         log.info("Payment success processed for invoice {}", dto.getInvoiceNumber());
     }
 
-    public void processFailedPayment(PaymentGatewayTransaction dto) throws FinancePaymentGatewayException {
+    public void processFailedPayment(PaymentGatewayTransaction dto)
+            throws FinancePaymentGatewayException {
         validate(dto);
-        PaymentGatewayTransaction entity = map(dto);
-        entity.setStatus("FAILED");
-        paymentGatewayDao.create(entity);
+        PaymentGatewayTransaction existing =
+                paymentGatewayDao.findByInvoiceNumber(dto.getInvoiceNumber());
+        if (existing == null) {
+            throw new FinancePaymentGatewayException(
+                    "Payment not found for invoice " + dto.getInvoiceNumber());
+        }
+        existing.setErrorMessage(dto.getErrorMessage());
+        existing.setStatus("FAILED");
+        paymentGatewayDao.update(existing);
         log.info("Payment failure processed for invoice {}", dto.getInvoiceNumber());
     }
 
