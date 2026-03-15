@@ -4,12 +4,16 @@ import com.payease.app.dao.PaymentGatewayTransactionDao;
 import com.payease.app.helper.CommissionResult;
 import com.payease.app.helper.CreatePaymentRequest;
 import com.payease.app.helper.PaymentMethodCommission;
+import com.payease.app.helper.RequestObject;
 import com.payease.app.model.PaymentGatewayTransaction;
+import com.payease.app.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static com.payease.app.utility.UrnGenerator.generateURN;
 
@@ -53,5 +57,13 @@ public class PaymentGatewayService {
         BigDecimal transferAmount = request.getAmount().subtract(commission.getDistributorCommission()).subtract(commission.getAgentCommission()).subtract(commission.getPlatformCommission());
         payment.setTransferAmount(transferAmount);
         return paymentDao.create(payment);
+    }
+
+    public PaymentGatewayTransaction findOne(String id) {
+        return paymentDao.fineOne(id);
+    }
+
+    public Page<PaymentGatewayTransaction> getAll(RequestObject requestObj) {
+        return paymentDao.getAll(requestObj);
     }
 }

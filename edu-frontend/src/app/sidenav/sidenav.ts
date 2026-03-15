@@ -108,7 +108,7 @@ export class Sidenav {
     // { label: 'Analytics', route: '/analytics', icon: 'bar-chart-3', iconType: 'lucide', tooltip: 'Analytics' },
     // { label: 'Settings', route: '/settings', icon: 'settings', iconType: 'lucide', tooltip: 'Settings' }
     { label: 'Dashboard', route: '/home', icon: 'home', iconType: 'lucide', tooltip: 'Dashboard' },
-    { label: 'Add Money', route: '/dashboard/add-money', icon: 'file-text', iconType: 'lucide', tooltip: 'Add Money' },
+    // { label: 'Add Money', route: '/dashboard/add-money', icon: 'file-text', iconType: 'lucide', tooltip: 'Add Money' },
     { label: 'Make Payment', route: '/dashboard/make-payment', icon: 'credit-card', iconType: 'lucide', tooltip: 'Make Payment' },
     { label: 'Commission Dashboard', route: '/dashboard/commission-dashboard', icon: 'bar-chart-3', iconType: 'lucide', tooltip: 'Commission Dashboard', rolesAllowed: ['ADMIN', 'DISTRIBUTOR', 'AGENT'] },
     { label: 'Commission Settings', route: '/dashboard/commission-settings', icon: 'bi-cash-coin', iconType: 'bootstrap', tooltip: 'Commission Settings', rolesAllowed: ['ADMIN', 'DISTRIBUTOR'] },

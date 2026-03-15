@@ -3,7 +3,8 @@
     <div class="hero-copy">
       <span class="eyebrow">Reporting workspace</span>
       <h1>Track collections, settlements, statements, and commission performance.</h1>
-      <p>Review transaction movement across payment rails, audit payout activity, and monitor settlement health from one structured workspace.</p>
+      <p>Review transaction movement across payment rails, audit payout activity, and monitor settlement health from one
+        structured workspace.</p>
     </div>
     <div class="hero-metrics">
       <article class="hero-metric" *ngFor="let metric of topMetrics">
@@ -36,72 +37,163 @@
       <div class="tab-pane fade show active" id="cards">
         <div class="toolbar-card">
           <div class="toolbar-grid">
-            <label class="field"><span>From date</span><input type="date" class="form-control" value="2026-03-14"></label>
+            <label class="field"><span>From date</span><input type="date" class="form-control"
+                value="2026-03-14"></label>
             <label class="field"><span>To date</span><input type="date" class="form-control" value="2026-03-14"></label>
-            <label class="field field-wide"><span>Search reference</span><input type="text" class="form-control" placeholder="Search mobile, payment id, or order id"></label>
-            <label class="field"><span>Status</span><select class="form-select"><option>All statuses</option><option>Success</option><option>Failed</option><option>Pending</option></select></label>
+            <label class="field field-wide"><span>Search reference</span><input type="text" class="form-control"
+                placeholder="Search mobile, payment id, or order id"></label>
+            <label class="field"><span>Status</span><select class="form-select">
+                <option>All statuses</option>
+                <option>Success</option>
+                <option>Failed</option>
+                <option>Pending</option>
+              </select></label>
             <div class="field action-field"><span>Action</span><button class="btn btn-primary">Search</button></div>
           </div>
         </div>
 
         <div class="stats-grid">
-          <article class="stats-card stats-total"><span>Total volume</span><strong>{{ cardsStats.total.count }} records</strong><p>Rs. {{ cardsStats.total.amount }}</p></article>
-          <article class="stats-card stats-success"><span>Successful</span><strong>{{ cardsStats.success.count }} records</strong><p>Rs. {{ cardsStats.success.amount }}</p></article>
-          <article class="stats-card stats-failed"><span>Failed</span><strong>{{ cardsStats.failed.count }} records</strong><p>Rs. {{ cardsStats.failed.amount }}</p></article>
-          <article class="stats-card stats-pending"><span>Pending</span><strong>{{ cardsStats.pending.count }} records</strong><p>Rs. {{ cardsStats.pending.amount }}</p></article>
+          <article class="stats-card stats-total"><span>Total volume</span><strong>{{ cardsStats.total.count }}
+              records</strong>
+            <p>Rs. {{ cardsStats.total.amount }}</p>
+          </article>
+          <article class="stats-card stats-success"><span>Successful</span><strong>{{ cardsStats.success.count }}
+              records</strong>
+            <p>Rs. {{ cardsStats.success.amount }}</p>
+          </article>
+          <article class="stats-card stats-failed"><span>Failed</span><strong>{{ cardsStats.failed.count }}
+              records</strong>
+            <p>Rs. {{ cardsStats.failed.amount }}</p>
+          </article>
+          <article class="stats-card stats-pending"><span>Pending</span><strong>{{ cardsStats.pending.count }}
+              records</strong>
+            <p>Rs. {{ cardsStats.pending.amount }}</p>
+          </article>
         </div>
 
         <div class="table-card">
           <div class="table-head">
-            <div><span class="section-kicker">Card ledger</span><h3>Gateway transaction history</h3></div>
+            <div><span class="section-kicker">Card ledger</span>
+              <h3>Gateway transaction history</h3>
+            </div>
             <p>Card-originated collections with charge deductions and transfer values.</p>
           </div>
           <div class="table-responsive">
             <table class="table report-table align-middle">
               <thead>
-                <tr><th>Sr No</th><th>Payment Date</th><th>URN</th><th>Name</th><th>Mobile</th><th>Payment Id</th><th>Account Details</th><th>Amount</th><th>Charge</th><th>Transfer Amount</th><th>Status</th></tr>
+                <tr>
+                  <th>Sr No</th>
+                  <th>Payment Date</th>
+                  <th>URN</th>
+                  <th>Name</th>
+                  <th>Mobile</th>
+                  <th>Payment Id</th>
+                  <th>Account Details</th>
+                  <th>Amount</th>
+                  <th>Charge</th>
+                  <th>Transfer Amount</th>
+                  <th>Status</th>
+                </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let tx of cardsTransactions">
-                  <td>{{ tx.srNo }}</td><td>{{ tx.paymentDate }}</td><td>{{ tx.urn }}</td><td>{{ tx.name }}</td><td>{{ tx.mobile }}</td><td>{{ tx.paymentId }}</td><td>{{ tx.accountDetails }}</td><td>Rs. {{ formatAmount(tx.amount) }}</td><td>Rs. {{ formatAmount(tx.charge) }}</td><td>Rs. {{ formatAmount(tx.transferAmount) }}</td><td><span class="status-pill" [ngClass]="statusTone(tx.status)">{{ tx.status }}</span></td>
+                <tr *ngFor="let tx of cardTxnDataSource;let i = index">
+                  <td>{{ i + 1 }}</td>
+                  <td>{{ tx.saleDateTime }}</td>
+                  <td>{{ tx.urn }}</td>
+                  <td>{{ tx.customerName }}</td>
+                  <td>{{ tx.mobile }}</td>
+                  <td>{{ tx.paymentId }}</td>
+                  <td>{{ tx.accountDetails }}</td>
+                  <td>Rs. {{ formatAmount(tx.transactionAmount) }}</td>
+                  <td>Rs. {{ formatAmount(tx.charge) }}</td>
+                  <td>Rs. {{ formatAmount(tx.transferAmount) }}</td>
+                  <td><span class="status-pill" [ngClass]="statusTone(tx.status)">{{ tx.status }}</span></td>
                 </tr>
               </tbody>
             </table>
+
+            <app-pagination [totalElements]="cardTxnTotalElements" [currentPage]="cardTxnCurrentPage"
+              [pageSize]="cardTxnPageSize" (pageChange)="cardsTransactionsHistory($event.pageNumber, $event.pageSize)">
+            </app-pagination>
           </div>
         </div>
       </div>
-
       <div class="tab-pane fade" id="bank">
         <div class="toolbar-card">
           <div class="toolbar-grid">
-            <label class="field"><span>From date</span><input type="date" class="form-control" value="2026-03-14"></label>
+            <label class="field"><span>From date</span><input type="date" class="form-control"
+                value="2026-03-14"></label>
             <label class="field"><span>To date</span><input type="date" class="form-control" value="2026-03-14"></label>
-            <label class="field field-wide"><span>Search reference</span><input type="text" class="form-control" placeholder="Search mobile, payment id, or order id"></label>
-            <label class="field"><span>Status</span><select class="form-select"><option>All statuses</option><option>Success</option><option>Failed</option><option>Pending</option></select></label>
+            <label class="field field-wide"><span>Search reference</span><input type="text" class="form-control"
+                placeholder="Search mobile, payment id, or order id"></label>
+            <label class="field"><span>Status</span><select class="form-select">
+                <option>All statuses</option>
+                <option>Success</option>
+                <option>Failed</option>
+                <option>Pending</option>
+              </select></label>
             <div class="field action-field"><span>Action</span><button class="btn btn-primary">Search</button></div>
           </div>
         </div>
 
         <div class="stats-grid">
-          <article class="stats-card stats-total"><span>Total volume</span><strong>{{ bankStats.total.count }} records</strong><p>Rs. {{ bankStats.total.amount }}</p></article>
-          <article class="stats-card stats-success"><span>Successful</span><strong>{{ bankStats.success.count }} records</strong><p>Rs. {{ bankStats.success.amount }}</p></article>
-          <article class="stats-card stats-failed"><span>Failed</span><strong>{{ bankStats.failed.count }} records</strong><p>Rs. {{ bankStats.failed.amount }}</p></article>
-          <article class="stats-card stats-pending"><span>Pending</span><strong>{{ bankStats.pending.count }} records</strong><p>Rs. {{ bankStats.pending.amount }}</p></article>
+          <article class="stats-card stats-total"><span>Total volume</span><strong>{{ bankStats.total.count }}
+              records</strong>
+            <p>Rs. {{ bankStats.total.amount }}</p>
+          </article>
+          <article class="stats-card stats-success"><span>Successful</span><strong>{{ bankStats.success.count }}
+              records</strong>
+            <p>Rs. {{ bankStats.success.amount }}</p>
+          </article>
+          <article class="stats-card stats-failed"><span>Failed</span><strong>{{ bankStats.failed.count }}
+              records</strong>
+            <p>Rs. {{ bankStats.failed.amount }}</p>
+          </article>
+          <article class="stats-card stats-pending"><span>Pending</span><strong>{{ bankStats.pending.count }}
+              records</strong>
+            <p>Rs. {{ bankStats.pending.amount }}</p>
+          </article>
         </div>
 
         <div class="table-card">
           <div class="table-head">
-            <div><span class="section-kicker">Bank ledger</span><h3>Settlement transaction history</h3></div>
+            <div><span class="section-kicker">Bank ledger</span>
+              <h3>Settlement transaction history</h3>
+            </div>
             <p>Monitor payout mode, bank-side charges, and final transfer value per request.</p>
           </div>
           <div class="table-responsive">
             <table class="table report-table align-middle">
               <thead>
-                <tr><th>Sr No</th><th>Payment Date</th><th>URN</th><th>Name</th><th>Mobile</th><th>Payment Id</th><th>Account Details</th><th>Mode</th><th>Amount</th><th>Charge</th><th>Transfer Amount</th><th>Status</th></tr>
+                <tr>
+                  <th>Sr No</th>
+                  <th>Payment Date</th>
+                  <th>URN</th>
+                  <th>Name</th>
+                  <th>Mobile</th>
+                  <th>Payment Id</th>
+                  <th>Account Details</th>
+                  <th>Mode</th>
+                  <th>Amount</th>
+                  <th>Charge</th>
+                  <th>Transfer Amount</th>
+                  <th>Status</th>
+                </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let tx of bankTransactions">
-                  <td>{{ tx.srNo }}</td><td>{{ tx.paymentDate }}</td><td>{{ tx.urn }}</td><td>{{ tx.name }}</td><td>{{ tx.mobile }}</td><td>{{ tx.paymentId }}</td><td>{{ tx.accountDetails }}</td><td>{{ tx.mode }}</td><td>Rs. {{ formatAmount(tx.amount) }}</td><td>Rs. {{ formatAmount(tx.charge) }}</td><td>Rs. {{ formatAmount(tx.transferAmount) }}</td><td><span class="status-pill" [ngClass]="statusTone(tx.status)">{{ tx.status }}</span></td>
+                  <td>{{ tx.srNo }}</td>
+                  <td>{{ tx.paymentDate }}</td>
+                  <td>{{ tx.urn }}</td>
+                  <td>{{ tx.name }}</td>
+                  <td>{{ tx.mobile }}</td>
+                  <td>{{ tx.paymentId }}</td>
+                  <td>{{ tx.accountDetails }}</td>
+                  <td>{{ tx.mode }}</td>
+                  <td>Rs. {{ formatAmount(tx.amount) }}</td>
+                  <td>Rs. {{ formatAmount(tx.charge) }}</td>
+                  <td>Rs. {{ formatAmount(tx.transferAmount) }}</td>
+                  <td><span class="status-pill" [ngClass]="statusTone(tx.status)">{{ tx.status }}</span></td>
                 </tr>
               </tbody>
             </table>
@@ -114,8 +206,13 @@
           <div class="toolbar-grid">
             <label class="field"><span>From date</span><input type="date" class="form-control"></label>
             <label class="field"><span>To date</span><input type="date" class="form-control"></label>
-            <label class="field field-wide"><span>Search reference</span><input type="text" class="form-control" placeholder="Search mobile, payment id, or order id"></label>
-            <label class="field"><span>Statement type</span><select class="form-select"><option>All types</option><option>Commission</option><option>Settlement</option></select></label>
+            <label class="field field-wide"><span>Search reference</span><input type="text" class="form-control"
+                placeholder="Search mobile, payment id, or order id"></label>
+            <label class="field"><span>Statement type</span><select class="form-select">
+                <option>All types</option>
+                <option>Commission</option>
+                <option>Settlement</option>
+              </select></label>
             <div class="field action-field"><span>Action</span><button class="btn btn-primary">Search</button></div>
           </div>
         </div>
@@ -123,17 +220,39 @@
         <div class="split-panel">
           <div class="table-card">
             <div class="table-head">
-              <div><span class="section-kicker">Statement lines</span><h3>Ledger-ready payout statements</h3></div>
+              <div><span class="section-kicker">Statement lines</span>
+                <h3>Ledger-ready payout statements</h3>
+              </div>
               <p>Use these rows during audit review and statement export checks.</p>
             </div>
             <div class="table-responsive">
               <table class="table report-table align-middle">
                 <thead>
-                  <tr><th>Sr No</th><th>Payment Date</th><th>Payment Type</th><th>URN</th><th>Name</th><th>Mobile</th><th>Account Details</th><th>Mode</th><th>PG</th><th>Payment Id</th></tr>
+                  <tr>
+                    <th>Sr No</th>
+                    <th>Payment Date</th>
+                    <th>Payment Type</th>
+                    <th>URN</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>Account Details</th>
+                    <th>Mode</th>
+                    <th>PG</th>
+                    <th>Payment Id</th>
+                  </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let row of statements">
-                    <td>{{ row.srNo }}</td><td>{{ row.paymentDate }}</td><td>{{ row.paymentType }}</td><td>{{ row.urn }}</td><td>{{ row.name }}</td><td>{{ row.mobile }}</td><td>{{ row.accountDetails }}</td><td>{{ row.mode }}</td><td>{{ row.pg }}</td><td>{{ row.paymentId }}</td>
+                    <td>{{ row.srNo }}</td>
+                    <td>{{ row.paymentDate }}</td>
+                    <td>{{ row.paymentType }}</td>
+                    <td>{{ row.urn }}</td>
+                    <td>{{ row.name }}</td>
+                    <td>{{ row.mobile }}</td>
+                    <td>{{ row.accountDetails }}</td>
+                    <td>{{ row.mode }}</td>
+                    <td>{{ row.pg }}</td>
+                    <td>{{ row.paymentId }}</td>
                   </tr>
                 </tbody>
               </table>
@@ -143,8 +262,11 @@
           <aside class="insights-card">
             <span class="section-kicker">Usage notes</span>
             <h3>How to work with this report set</h3>
-            <ul class="insights-list"><li *ngFor="let note of quickNotes">{{ note }}</li></ul>
-            <div class="insight-total"><span>Total processed amount</span><strong>Rs. {{ totalProcessedAmount }}</strong></div>
+            <ul class="insights-list">
+              <li *ngFor="let note of quickNotes">{{ note }}</li>
+            </ul>
+            <div class="insight-total"><span>Total processed amount</span><strong>Rs. {{ totalProcessedAmount
+                }}</strong></div>
           </aside>
         </div>
       </div>
@@ -154,24 +276,47 @@
           <div class="toolbar-grid toolbar-grid-commission">
             <label class="field"><span>From date</span><input type="date" class="form-control"></label>
             <label class="field"><span>To date</span><input type="date" class="form-control"></label>
-            <label class="field field-wide"><span>Search reference</span><input type="text" class="form-control" placeholder="Search mobile, payment id, or order id"></label>
+            <label class="field field-wide"><span>Search reference</span><input type="text" class="form-control"
+                placeholder="Search mobile, payment id, or order id"></label>
             <div class="field action-field"><span>Action</span><button class="btn btn-primary">Search</button></div>
           </div>
         </div>
 
         <div class="table-card">
           <div class="table-head">
-            <div><span class="section-kicker">Commission ledger</span><h3>Partner earnings and platform share</h3></div>
+            <div><span class="section-kicker">Commission ledger</span>
+              <h3>Partner earnings and platform share</h3>
+            </div>
             <p>Review distributor, agent, and Yugma commission values against the original amount.</p>
           </div>
           <div class="table-responsive">
             <table class="table report-table align-middle">
               <thead>
-                <tr><th>Sr No</th><th>Payment Date</th><th>Name</th><th>Mobile</th><th>Mode</th><th>Amount</th><th>Distributor Commission</th><th>Agent Commission</th><th>Yugma Commission</th><th>Status</th></tr>
+                <tr>
+                  <th>Sr No</th>
+                  <th>Payment Date</th>
+                  <th>Name</th>
+                  <th>Mobile</th>
+                  <th>Mode</th>
+                  <th>Amount</th>
+                  <th>Distributor Commission</th>
+                  <th>Agent Commission</th>
+                  <th>Yugma Commission</th>
+                  <th>Status</th>
+                </tr>
               </thead>
               <tbody>
                 <tr *ngFor="let row of commissionRows">
-                  <td>{{ row.srNo }}</td><td>{{ row.paymentDate }}</td><td>{{ row.name }}</td><td>{{ row.mobile }}</td><td>{{ row.mode }}</td><td>Rs. {{ formatAmount(row.amount) }}</td><td>Rs. {{ formatAmount(row.distributorCommission) }}</td><td>Rs. {{ formatAmount(row.retailerCommission) }}</td><td>Rs. {{ formatAmount(row.yugmaCommission) }}</td><td><span class="status-pill" [ngClass]="statusTone(row.status)">{{ row.status }}</span></td>
+                  <td>{{ row.srNo }}</td>
+                  <td>{{ row.paymentDate }}</td>
+                  <td>{{ row.name }}</td>
+                  <td>{{ row.mobile }}</td>
+                  <td>{{ row.mode }}</td>
+                  <td>Rs. {{ formatAmount(row.amount) }}</td>
+                  <td>Rs. {{ formatAmount(row.distributorCommission) }}</td>
+                  <td>Rs. {{ formatAmount(row.retailerCommission) }}</td>
+                  <td>Rs. {{ formatAmount(row.yugmaCommission) }}</td>
+                  <td><span class="status-pill" [ngClass]="statusTone(row.status)">{{ row.status }}</span></td>
                 </tr>
               </tbody>
             </table>

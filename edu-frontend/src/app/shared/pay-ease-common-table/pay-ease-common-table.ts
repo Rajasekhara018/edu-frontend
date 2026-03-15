@@ -93,8 +93,8 @@ export class PayEaseCommonTable implements OnInit {
         this.dataSource = result;
         this.postService.showToast('success', data.errorMsg);
         this.totalElements = data?.object?.totalElements;
-        this.pageSize = data?.pageable?.pageSize;
-        this.currentPage = data?.pageable?.pageNumber + 1;
+        this.pageSize = data?.object?.pageable?.pageSize;
+        this.currentPage = data?.object?.pageable?.pageNumber + 1;
         this.isLoading = true;
       } else {
         this.postService.showToast('error', data.errorMsg);

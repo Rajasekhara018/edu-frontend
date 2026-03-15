@@ -1,0 +1,98 @@
+/* PAGINATION FOOTER CONTAINER */
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 14px 18px;
+
+  border-top: 1px solid var(--workspace-border);
+  background: var(--workspace-panel);
+
+  border-radius: 0 0 12px 12px;
+}
+
+/* LEFT INFO TEXT */
+
+.table-footer-left {
+  font-size: 13px;
+  color: var(--edu-muted);
+  font-weight: 500;
+}
+
+/* RIGHT SIDE */
+
+.table-footer-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* PAGINATION BUTTON GROUP */
+
+.pagination-controls {
+  display: flex;
+  gap: 6px;
+}
+
+/* PAGE BUTTON */
+
+.page-btn {
+  border: 1px solid var(--workspace-border);
+  background: var(--surface-soft);
+
+  padding: 6px 10px;
+  font-size: 13px;
+
+  border-radius: 6px;
+  cursor: pointer;
+
+  color: var(--edu-ink);
+
+  transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+  background: var(--theme-highlight-soft);
+}
+
+/* ACTIVE PAGE */
+
+.page-btn.active {
+  background: linear-gradient(
+    135deg,
+    var(--button-accent-start),
+    var(--button-accent-end)
+  );
+  color: white;
+  border-color: transparent;
+}
+
+/* DISABLED */
+
+.page-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* PAGE SIZE SELECTOR */
+
+.page-size {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 13px;
+  color: var(--edu-ink);
+}
+
+.page-size select {
+  border: 1px solid var(--workspace-border);
+  border-radius: 6px;
+
+  padding: 4px 8px;
+
+  background: var(--field-bg);
+  color: var(--field-text);
+}

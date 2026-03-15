@@ -7,12 +7,14 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { PayeaseIdleTimeoutDailog } from './payease-idle-timeout-dailog/payease-idle-timeout-dailog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { Pagination } from './components/pagination/pagination';
 
 
 @NgModule({
   declarations: [
     PayEaseCommonTable,
-    PayeaseIdleTimeoutDailog
+    PayeaseIdleTimeoutDailog,
+    Pagination
   ],
   imports: [
     CommonModule,
@@ -25,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
   exports: [
     PayEaseCommonTable,
+    Pagination,
     PayeaseIdleTimeoutDailog
   ],
   providers: [
