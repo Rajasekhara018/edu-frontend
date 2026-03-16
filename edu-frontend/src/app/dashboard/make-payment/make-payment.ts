@@ -1,7 +1,10 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import * as sha512 from 'js-sha512';
+import { makePaymentReq } from '../../shared/model';
+import { APIPath } from '../../shared/api-enum';
+import { PayeaseRestservice } from '../../shared/services/payease-restservice';
 @Component({
   selector: 'app-make-payment',
   standalone: false,
@@ -9,13 +12,7 @@ import * as sha512 from 'js-sha512';
   styleUrl: './make-payment.scss'
 })
 export class MakePayment {
-  form = {
-    name: '',
-    phone: '',
-    email: '',
-    amount: ''
-  };
-
+  makePaymentObj = new makePaymentReq();
   readonly paymentChannels = [
     { label: 'Instant bank debit', note: 'Best for direct account-backed collections.' },
     { label: 'Card payment', note: 'Use for customers paying by debit or credit card.' },
@@ -28,21 +25,21 @@ export class MakePayment {
     'Review the amount once before submitting to reduce failed retries.'
   ];
 
-  constructor(private router: Router,public datepipe: DatePipe,) { }
+  constructor(private router: Router, public datepipe: DatePipe,private postService:PayeaseRestservice, private location:Location) { }
 
   openInvoice(status: 'success' | 'failure') {
+    this.makePay();
     const timestamp = new Date();
     const gateway = status === 'success' ? 'Yugma PG 6' : 'Yugma PG 6';
     const orderId = `ORD-${timestamp.getFullYear()}${String(timestamp.getMonth() + 1).padStart(2, '0')}${String(timestamp.getDate()).padStart(2, '0')}-${timestamp.getHours()}${timestamp.getMinutes()}${timestamp.getSeconds()}`;
     const paymentId = `PAY-${Math.floor(1000000000 + Math.random() * 9000000000)}`;
     const processorRef = `PGREF${Math.floor(1000000000 + Math.random() * 9000000000)}`;
-
     this.router.navigate([`/dashboard/payment-invoice/${status}`], {
       queryParams: {
-        name: this.form.name || 'Aarav Sharma',
-        phone: this.form.phone || '+91 98765 43210',
-        email: this.form.email || 'aarav.sharma@example.com',
-        amount: this.form.amount || '2,450.00',
+        name: this.makePaymentObj.name || 'Aarav Sharma',
+        phone: this.makePaymentObj.phone || '+91 98765 43210',
+        email: this.makePaymentObj.email || 'aarav.sharma@example.com',
+        amount: this.makePaymentObj.amount || '2,450.00',
         mode: 'Instant collection',
         orderId,
         paymentId,
@@ -57,6 +54,27 @@ export class MakePayment {
           hour12: false
         }) + ' IST',
         reason: 'The issuing bank declined the transaction because the payer authentication check was not completed.'
+      }
+    });
+  }
+  makePay(): void {
+    const apiPath = APIPath.MAKE_PAYMENT;
+    const requestObj: any = {
+      ...this.makePaymentObj,
+    };
+    let requestType = "CREATE";
+    this.postService.doPost(apiPath, requestObj, requestType).subscribe({
+      next: (response: any) => {
+        if (response.status) {
+          this.makePaymentObj = response.status;
+          this.location.back();
+          this.postService.showToast('success', response?.errorMsg?.toString());
+        } else {
+          this.postService.showToast('error', response?.errorMsg?.toString());
+        }
+      },
+      error: (err: any) => {
+        this.postService.showToast('error', err?.errorMsg?.toString());
       }
     });
   }

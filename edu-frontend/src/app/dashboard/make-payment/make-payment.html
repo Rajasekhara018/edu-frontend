@@ -32,23 +32,24 @@
                 <p>Enter the payer details and requested amount before creating the payment request.</p>
             </div>
 
-            <form class="payment-form">
+            <form class="payment-form" #paymentForm="ngForm" (keydown.enter)="$event.preventDefault()"
+                name="paymentForm" autocomplete="off">
                 <div class="row g-3">
                     <div class="col-md-6">
                         <label class="form-label" for="payment-name">Full name <span class="required-mark">*</span></label>
-                        <input id="payment-name" type="text" class="form-control" placeholder="Enter full name" [(ngModel)]="form.name" name="paymentName">
+                        <input id="payment-name" type="text" class="form-control" placeholder="Enter full name" [(ngModel)]="makePaymentObj.name" name="paymentName">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="payment-phone">Phone number <span class="required-mark">*</span></label>
-                        <input id="payment-phone" type="tel" class="form-control" placeholder="Enter phone number" [(ngModel)]="form.phone" name="paymentPhone">
+                        <input id="payment-phone" type="tel" class="form-control" placeholder="Enter phone number" [(ngModel)]="makePaymentObj.phone" name="paymentPhone">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="payment-email">Email <span class="required-mark">*</span></label>
-                        <input id="payment-email" type="email" class="form-control" placeholder="Enter email address" [(ngModel)]="form.email" name="paymentEmail">
+                        <input id="payment-email" type="email" class="form-control" placeholder="Enter email address" [(ngModel)]="makePaymentObj.email" name="paymentEmail">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label" for="payment-amount">Amount <span class="required-mark">*</span></label>
-                        <input id="payment-amount" type="number" class="form-control" placeholder="Enter amount" [(ngModel)]="form.amount" name="paymentAmount">
+                        <input id="payment-amount" type="number" class="form-control" placeholder="Enter amount" [(ngModel)]="makePaymentObj.amount" name="paymentAmount">
                     </div>
                     <div class="col-12">
                         <div class="inline-note">
@@ -57,7 +58,7 @@
                     </div>
                     <div class="col-12">
                         <div class="action-row">
-                            <button type="button" class="btn btn-primary" (click)="openInvoice('success')">Create payment request</button>
+                            <button type="button" class="btn btn-primary" (click)="openInvoice('success')" [disabled]="paymentForm.invalid">Create payment request</button>
                             <button type="button" class="btn btn-outline-primary" (click)="openInvoice('failure')">Preview failed invoice</button>
                         </div>
                     </div>

@@ -122,14 +122,21 @@ export class CommissionRule {
 }
 
 export class CommissionSetting {
-    gateway!:string; // YUGMA, RAZORPAY, PAYU
-    paymentMethods!:Array<PaymentMethodCommission>;
+    gateway!: string; // YUGMA, RAZORPAY, PAYU
+    paymentMethods!: Array<PaymentMethodCommission>;
 }
 
 export class PaymentMethodCommission {
-    paymentMode!:string;  // CARD, UPI, NETBANKING
-    paymentType!:string;  // VISA, MASTERCARD, IMPS, RTGS (optional)
-    distributorPercent!:number;
-    agentPercent!:number;
-    platformPercent!:number;
+    paymentMode!: string;  // CARD, UPI, NETBANKING
+    paymentType!: string;  // VISA, MASTERCARD, IMPS, RTGS (optional)
+    distributorPercent!: number;
+    agentPercent!: number;
+    platformPercent!: number;
+}
+
+export class makePaymentReq {
+    name!: string;
+    phone!: string;
+    email!: string;
+    amount!: string;
 }
