@@ -29,19 +29,19 @@ export class Landing {
 
   readonly services: ServiceAction[] = [
     {
-      title: 'Customers',
-      copy: 'Create distributors, onboard agents, and review account states from the shared master table.',
-      route: '/csearch/GET_CUSTOMERS',
+      title: 'Users',
+      copy: 'Create Owners, distributors, onboard agents, and review account states from the shared master table.',
+      route: '/csearch/GET_USERS',
       icon: 'bi bi-people',
       accent: 'plum',
       rolesAllowed: ['ADMIN', 'DISTRIBUTOR']
     },
     {
-      title: 'Commission Settings',
+      title: 'Commission Rules',
       copy: 'Maintain distributor defaults and agent-level commission rules with settlement visibility.',
       route: '/dashboard/commission-settings',
       icon: 'bi bi-receipt',
-      accent: 'orange',
+      accent: 'plum',
       rolesAllowed: ['ADMIN', 'DISTRIBUTOR']
     },
     {

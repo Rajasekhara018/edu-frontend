@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PayEaseCommonTable } from './shared/pay-ease-common-table/pay-ease-common-table';
+import { PayEaseCommonTable } from './shared/components/pay-ease-common-table/pay-ease-common-table';
 import { authGuard } from './auth/auth.guard';
 import { Landing } from './landing/landing';
 import { Profile } from './profile/profile';

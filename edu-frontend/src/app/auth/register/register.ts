@@ -7,7 +7,7 @@ import { PayeaseThemeService } from '../../shared/services/payease-theme-service
 import { PayeaseRestservice } from '../../shared/services/payease-restservice';
 import { PayeaseIdleTimeoutService } from '../../shared/services/payease-idle-timeout-service';
 import { APIPath } from '../../shared/api-enum';
-import { Customer } from '../../shared/model';
+import { User } from '../../shared/model';
 declare var bootstrap: any;
 
 @Component({
@@ -41,7 +41,7 @@ export class Register {
   loginObj = new LoginObj();
   hide = true;
   disabledMode!: boolean;
-  customerObj = new Customer();
+  userObj = new User();
   isLoading!: boolean;
   registrationSubmitted = false;
   registrationMessage = '';
@@ -62,7 +62,7 @@ export class Register {
   register() {
     this.isLoading = true;
     const requestObj: any = {
-      ...this.customerObj,
+      ...this.userObj,
       adminUser: false,
       distributeUser: true,
       retailUser: false
@@ -73,8 +73,8 @@ export class Register {
         if (response.status) {
           this.registrationSubmitted = true;
           this.registrationMessage = response?.errorMsg?.toString() || 'Registration submitted successfully.';
-          this.submittedEmail = this.customerObj.emailId;
-          this.customerObj = new Customer();
+          this.submittedEmail = this.userObj.emailId;
+          this.userObj = new User();
           this.setDistributorDefaults();
           this.postService.showToast('success', this.registrationMessage);
         } else {
@@ -93,9 +93,9 @@ export class Register {
   }
 
   private setDistributorDefaults() {
-    this.customerObj.adminUser = false;
-    this.customerObj.distributeUser = true;
-    this.customerObj.retailUser = false;
+    this.userObj.adminUser = false;
+    this.userObj.distributeUser = true;
+    this.userObj.retailUser = false;
   }
 
   private getAdultDateLimit(): string {

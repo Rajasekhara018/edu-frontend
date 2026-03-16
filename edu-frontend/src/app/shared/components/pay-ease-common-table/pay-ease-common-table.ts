@@ -1,12 +1,12 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
-import { APIPath } from '../api-enum';
+import { APIPath } from '../../api-enum';
 import { Subscription } from 'rxjs';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { PayeaseTableSearchview } from '../services/payease-table-searchview';
-import { PayeaseRestservice } from '../services/payease-restservice';
+import { PayeaseTableSearchview } from '../../services/payease-table-searchview';
+import { PayeaseRestservice } from '../../services/payease-restservice';
 
 @Component({
   selector: 'app-pay-ease-common-table',
@@ -190,29 +190,6 @@ export class PayEaseCommonTable implements OnInit {
 
   }
   isLoading!: boolean;
-  // editRow(tableID: any, data: any) {
-  //   switch (tableID) {
-  //     case 'GET_USERS':
-  //       this.router.navigate(['/add-users/' + data.id]);
-  //       return;
-  //     case 'GET_ROLES':
-  //       this.router.navigate(['/add-roles/' + data.id]);
-  //       return;
-  //   }
-  // }
-  // newRow(tableID: string) {
-  //   switch (tableID) {
-  //     case 'GET_USERS':
-  //       this.router.navigate(['/add-users/cre']);
-  //       return;
-  //     case 'GET_ROLES':
-  //       this.router.navigate(['/add-roles/cre']);
-  //       return;
-  //     case 'GET_CUSTOMERS':
-  //       this.router.navigate(['/dashboard/customers/cre']);
-  //       return;
-  //   }
-  // }
   getRoles(user: any): string[] {
     const roles: string[] = [];
     if (user.adminUser) roles.push('Admin');
@@ -273,17 +250,17 @@ export class PayEaseCommonTable implements OnInit {
     }
   }
 
-  canApproveCustomer(element: any): boolean {
-    return this.tableID === 'GET_CUSTOMERS' && element?.status === 'PENDING';
+  canApproveUser(element: any): boolean {
+    return this.tableID === 'GET_USERS' && element?.status === 'PENDING';
   }
 
-  approveCustomer(element: any) {
+  approveUser(element: any) {
     if (!element?.id) {
       this.postService.showToast('error', 'User id is missing.');
       return;
     }
 
-    this.postService.doPostWithKey(APIPath.CUSTOMER_APPROVE, 'APPROVE', element.id).subscribe({
+    this.postService.doPostWithKey(APIPath.USER_APPROVE, 'APPROVE', element.id).subscribe({
       next: (data: any) => {
         if (data.status) {
           this.postService.showToast('success', data.errorMsg);

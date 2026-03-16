@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing-module';
 import { AddMoney } from './add-money/add-money';
 import { BillTransfer } from './bill-transfer/bill-transfer';
-import { Customers } from './customers/customers';
 import { History } from './history/history';
 import { PaymentLink } from './payment-link/payment-link';
 import { InternalTransfer } from './internal-transfer/internal-transfer';
@@ -15,7 +14,6 @@ import { SharedModule } from '../shared/shared-module';
 import { MaterialModule } from '../shared/material.module';
 import { FormsModule } from '@angular/forms';
 import { ImageCropperModule } from 'ngx-image-cropper';
-import { ViewCustomers } from './view-customers/view-customers';
 import { TransactionStatus } from './transaction-status/transaction-status';
 import { TransactionHistory } from './transaction-history/transaction-history';
 import { RaiseCompliant } from './raise-compliant/raise-compliant';
@@ -24,19 +22,18 @@ import { MakePayment } from './make-payment/make-payment';
 import { PaymentInvoice } from './payment-invoice/payment-invoice';
 import { CommissionSettings } from './commission-settings/commission-settings';
 import { CommissionDashboard } from './commission-dashboard/commission-dashboard';
+import { Users } from './users/users';
 
 @NgModule({
   declarations: [
     AddMoney,
     BillTransfer,
-    Customers,
     History,
     PaymentLink,
     InternalTransfer,
     BillPayments,
     CcPayments,
     ImageCropDialog,
-    ViewCustomers,
     TransactionStatus,
     TransactionHistory,
     RaiseCompliant,
@@ -44,7 +41,8 @@ import { CommissionDashboard } from './commission-dashboard/commission-dashboard
     MakePayment,
     PaymentInvoice,
     CommissionSettings,
-    CommissionDashboard
+    CommissionDashboard,
+    Users
   ],
   imports: [
     CommonModule,

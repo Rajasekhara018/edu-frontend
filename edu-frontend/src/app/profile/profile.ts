@@ -2,7 +2,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ImageCropDialog } from '../dashboard/image-crop-dialog/image-crop-dialog';
 import { HttpClient } from '@angular/common/http';
-import { Customer } from '../shared/model';
+import { User } from '../shared/model';
 import { APIPath } from '../shared/api-enum';
 import { PayeaseRestservice } from '../shared/services/payease-restservice';
 
@@ -57,7 +57,7 @@ export class Profile {
     }
   ];
 
-  customerObj = new Customer();
+  customerObj = new User();
   checkType!: boolean;
   checkSize!: boolean;
   imageRequiredMessage!: string;

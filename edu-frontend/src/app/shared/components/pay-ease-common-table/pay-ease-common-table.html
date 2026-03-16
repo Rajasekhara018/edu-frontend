@@ -1,5 +1,5 @@
 <div class="common-table-shell">
-  <div class="table-surface" *ngIf="tableID !== 'GET_USERS' && tableID !== 'GET_ROLES'">
+  <div class="table-surface" >
     <div class="table-surface__header">
       <div class="table-heading">
         <span class="table-kicker">Shared data view</span>
@@ -26,7 +26,7 @@
                 <ng-container [ngSwitch]="column">
                   <ng-container *ngSwitchCase="'action'">
                     <div class="row-actions">
-                      <button *ngIf="canApproveCustomer(element)" class="row-action-btn approve" (click)="approveCustomer(element)" title="Approve customer">
+                      <button *ngIf="canApproveUser(element)" class="row-action-btn approve" (click)="approveUser(element)" title="Approve User">
                         <i class="bi bi-check2-circle"></i>
                       </button>
                       <button class="row-action-btn" (click)="tableService.goToInq(tableID, element.id)" title="Edit record">

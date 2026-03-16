@@ -6,20 +6,20 @@ export enum APIPath {
     AUTH_RESET_PASSWORD = "/api/auth/reset-password",
 
     // Customer
-    CUSTOMER_GETALL = "/api/dstuser/getall",
-    CUSTOMER_CRE = "/api/dstuser/cre",
+    USER_GETALL = "/api/dstuser/getall",
+    USER_CRE = "/api/dstuser/cre",
     DISTRIBUTOR_GETALL = "/api/dstuser/distributors",
-    CUSTOMER_SEARCH = "/api/dstuser/filterData",
-    CUSTOMER_INQ = "/api/dstuser/inq",
-    CUSTOMER_UPD = "/api/dstuser/upd",
-    CUSTOMER_APPROVE = "/api/dstuser/approve",
+    USER_SEARCH = "/api/dstuser/filterData",
+    USER_INQ = "/api/dstuser/inq",
+    USER_UPD = "/api/dstuser/upd",
+    USER_APPROVE = "/api/dstuser/approve",
 
     ROLE_GETALL = "/api/v1/uam/role/getAll",
-    USER_GETALL = "/api/v1/uam/user/getAll",
+    // USER_GETALL = "/api/v1/uam/user/getAll",
     USER_AUTHENTICATE = "/api/v1/uam/otp/authenticate",
     FORGOT_PASSWORD = "/api/auth/forgot-password",
     USER_EDIT = "",
-    USER_CRE = "",
+    // USER_CRE = "",
     FILE_UPLOAD = "",
     USER_VIEW = "",
 

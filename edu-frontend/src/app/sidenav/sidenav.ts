@@ -100,8 +100,8 @@ export class Sidenav {
   isCollapsed = false;
   navItems: NavItem[] = [
     { label: 'Dashboard', route: '/home', icon: 'home', iconType: 'lucide', tooltip: 'Dashboard' },
-    { label: 'Customer', route: '/csearch/GET_CUSTOMERS', icon: 'users', iconType: 'lucide', tooltip: 'Customers', rolesAllowed: ['ADMIN', 'DISTRIBUTOR'] },
-    { label: 'Commission Settings', route: '/dashboard/commission-settings', icon: 'bi-cash-coin', iconType: 'bootstrap', tooltip: 'Commission Settings', rolesAllowed: ['ADMIN', 'DISTRIBUTOR'] },
+    { label: 'Users', route: '/csearch/GET_USERS', icon: 'users', iconType: 'lucide', tooltip: 'Users', rolesAllowed: ['ADMIN', 'DISTRIBUTOR'] },
+    { label: 'Commission Rules', route: '/dashboard/commission-settings', icon: 'bi-cash-coin', iconType: 'bootstrap', tooltip: 'Commission Rules', rolesAllowed: ['ADMIN', 'DISTRIBUTOR'] },
     { label: 'Make Payment', route: '/dashboard/make-payment', icon: 'credit-card', iconType: 'lucide', tooltip: 'Make Payment' },
     { label: 'History', route: '/dashboard/history', icon: 'folder-open', iconType: 'lucide', tooltip: 'History' },
     { label: 'Commission Dashboard', route: '/dashboard/commission-dashboard', icon: 'bar-chart-3', iconType: 'lucide', tooltip: 'Commission Dashboard', rolesAllowed: ['ADMIN', 'DISTRIBUTOR', 'AGENT'] },

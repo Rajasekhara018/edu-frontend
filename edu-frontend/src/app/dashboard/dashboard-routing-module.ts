@@ -4,7 +4,6 @@ import { AddMoney } from './add-money/add-money';
 import { PaymentLink } from './payment-link/payment-link';
 import { InternalTransfer } from './internal-transfer/internal-transfer';
 import { History } from './history/history';
-import { Customers } from './customers/customers';
 import { CcPayments } from './cc-payments/cc-payments';
 import { BillTransfer } from './bill-transfer/bill-transfer';
 import { BillPayments } from './bill-payments/bill-payments';
@@ -17,15 +16,16 @@ import { PaymentInvoice } from './payment-invoice/payment-invoice';
 import { CommissionSettings } from './commission-settings/commission-settings';
 import { CommissionDashboard } from './commission-dashboard/commission-dashboard';
 import { authGuard } from '../auth/auth.guard';
+import { Users } from './users/users';
 
 const routes: Routes = [
   { path: 'add-money', component: AddMoney, canActivate: [authGuard] },
   { path: 'bill-payments', component: BillPayments, canActivate: [authGuard] },
   { path: 'bill-transfer', component: BillTransfer, canActivate: [authGuard] },
   { path: 'cc-payments', component: CcPayments, canActivate: [authGuard] },
-  { path: 'customers', component: Customers, canActivate: [authGuard] },
-  { path: 'customers/cre', component: Customers, canActivate: [authGuard] },
-  { path: 'customers/:id', component: Customers, canActivate: [authGuard] },
+  { path: 'user', component: Users, canActivate: [authGuard] },
+  { path: 'user/cre', component: Users, canActivate: [authGuard] },
+  { path: 'user/:id', component: Users, canActivate: [authGuard] },
   { path: 'history', component: History, canActivate: [authGuard] },
   { path: 'internal-transfer', component: InternalTransfer, canActivate: [authGuard] },
   { path: 'make-payment', component: MakePayment, canActivate: [authGuard] },

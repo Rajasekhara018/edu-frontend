@@ -7,27 +7,26 @@ import { Location } from '@angular/common';
 import { ImageCropDialog } from '../image-crop-dialog/image-crop-dialog';
 // import { Role, user } from '../../shared/model';
 import { HttpClient } from '@angular/common/http';
-import { Customer } from '../../shared/model';
+import { User } from '../../shared/model';
 
 interface DistributorOption {
   id: string;
   label: string;
   status?: string;
 }
-
 @Component({
-  selector: 'app-customers',
+  selector: 'app-users',
   standalone: false,
-  templateUrl: './customers.html',
-  styleUrl: './customers.scss'
+  templateUrl: './users.html',
+  styleUrl: './users.scss'
 })
-export class Customers {
-  fullName!: string;
+export class Users {
+ fullName!: string;
   email!: string;
   department!: string;
   accessType!: string;
   isDisabled!: boolean;
-  customerObj = new Customer();
+  userObj = new User();
   reqId!: string;
   modelkey!: string | null;
   disabledMode!: boolean;
@@ -55,7 +54,7 @@ export class Customers {
     this.modelkey = this.route.snapshot.paramMap.get('id')!;
 
     if (this.isAgentUser && !this.modelkey) {
-      this.postService.showToast('error', 'Agent users do not have permission to create customers.');
+      this.postService.showToast('error', 'Agent users do not have permission to create users.');
       this.router.navigate(['/dashboard/commission-dashboard']);
       return;
     }
@@ -76,24 +75,24 @@ export class Customers {
     }
   }
   userType!: string;
-  submitCustomerDetails(): void {
+  submituserDetails(): void {
     if (!this.canCreateUsers) {
-      this.postService.showToast('error', 'Agent users do not have permission to create customers.');
+      this.postService.showToast('error', 'Agent users do not have permission to create users.');
       return;
     }
 
     this.prepareRolePayload();
-    const apiPath = this.isCreateMode ? APIPath.CUSTOMER_CRE : APIPath.CUSTOMER_UPD;
+    const apiPath = this.isCreateMode ? APIPath.USER_CRE : APIPath.USER_UPD;
     const requestObj: any = {
-      ...this.customerObj,
+      ...this.userObj,
       ...(this.isCreateMode ? {} : { id: this.modelkey })
     };
     let requestType = this.isCreateMode ? "CREATE" : "UPDATE";
     this.postService.doPost(apiPath, requestObj, requestType).subscribe({
       next: (response: any) => {
         if (response.status) {
-          this.customerObj = response.status;
-          this.syncUserTypeFromCustomer();
+          this.userObj = response.status;
+          this.syncUserTypeFromuser();
           this.location.back();
           this.postService.showToast('success', response?.errorMsg?.toString());
         } else {
@@ -106,11 +105,11 @@ export class Customers {
     });
   }
   gotoInq(modelkey: string) {
-    this.postService.doPostInq(APIPath.CUSTOMER_INQ, modelkey).subscribe({
+    this.postService.doPostInq(APIPath.USER_INQ, modelkey).subscribe({
       next: (response: any) => {
         if (response.status) {
-          this.customerObj = response.object;
-          this.syncUserTypeFromCustomer();
+          this.userObj = response.object;
+          this.syncUserTypeFromuser();
           this.postService.showToast('success', response?.errorMsg?.toString());
         } else {
           this.postService.showToast('error', response?.errorMsg?.toString());
@@ -138,11 +137,11 @@ export class Customers {
   }
 
   onUserTypeChange() {
-    this.customerObj.distributeId = '';
-    this.customerObj.distributorAccountDetails = '';
-    this.customerObj.retailerAccountDetails = '';
+    this.userObj.distributeId = '';
+    this.userObj.distributorAccountDetails = '';
+    this.userObj.retailerAccountDetails = '';
     if (this.userType === 'AGENT' && this.isDistributorUser) {
-      this.customerObj.distributeId = this.currentDistributorId;
+      this.userObj.distributeId = this.currentDistributorId;
     }
   }
 
@@ -189,37 +188,37 @@ export class Customers {
 
     if (this.isDistributorUser && !this.isAdminUser) {
       this.userType = 'AGENT';
-      this.customerObj.distributeId = this.currentDistributorId;
+      this.userObj.distributeId = this.currentDistributorId;
     }
   }
 
   private prepareRolePayload() {
-    this.customerObj.adminUser = false;
-    this.customerObj.distributeUser = this.userType === 'DISTRIBUTOR';
-    this.customerObj.retailUser = this.userType === 'AGENT';
+    this.userObj.adminUser = false;
+    this.userObj.distributeUser = this.userType === 'DISTRIBUTOR';
+    this.userObj.retailUser = this.userType === 'AGENT';
 
     if (this.userType === 'DISTRIBUTOR') {
-      this.customerObj.distributeId = '';
-      this.customerObj.retailerAccountDetails = '';
+      this.userObj.distributeId = '';
+      this.userObj.retailerAccountDetails = '';
     }
 
     if (this.userType === 'AGENT') {
-      this.customerObj.distributorAccountDetails = '';
+      this.userObj.distributorAccountDetails = '';
       if (this.isDistributorUser && !this.isAdminUser) {
-        this.customerObj.distributeId = this.currentDistributorId;
-      } else if (this.isAdminUser && !this.customerObj.distributeId) {
-        this.customerObj.distributeId = '';
+        this.userObj.distributeId = this.currentDistributorId;
+      } else if (this.isAdminUser && !this.userObj.distributeId) {
+        this.userObj.distributeId = '';
       }
     }
   }
 
-  private syncUserTypeFromCustomer() {
-    if (this.customerObj.distributeUser) {
+  private syncUserTypeFromuser() {
+    if (this.userObj.distributeUser) {
       this.userType = 'DISTRIBUTOR';
       return;
     }
 
-    if (this.customerObj.retailUser) {
+    if (this.userObj.retailUser) {
       this.userType = 'AGENT';
       return;
     }
@@ -231,7 +230,7 @@ export class Customers {
     this.isLoadingDistributors = true;
     this.postService.doPostFindAll(APIPath.DISTRIBUTOR_GETALL).subscribe({
       next: (response: any) => {
-        const items = this.extractCustomerList(response);
+        const items = this.extractuserList(response);
         this.distributorOptions = items
           .filter((item: any) => item?.distributeUser)
           .map((item: any) => ({
@@ -251,7 +250,7 @@ export class Customers {
     });
   }
 
-  private extractCustomerList(response: any): any[] {
+  private extractuserList(response: any): any[] {
     if (Array.isArray(response)) {
       return response;
     }

@@ -1,20 +1,20 @@
-<section class="customer-page">
-    <div class="customer-hero">
-        <div class="customer-hero__copy">
-            <span class="customer-kicker">Customer onboarding</span>
-            <h1>{{ isCreateMode ? 'Create a new operator customer profile' : 'Review and update customer account details' }}</h1>
+<section class="user-page">
+    <div class="user-hero">
+        <div class="user-hero__copy">
+            <span class="user-kicker">User onboarding</span>
+            <h1>{{ isCreateMode ? 'Create a new operator User profile' : 'Review and update User account details' }}</h1>
             <p>
                 Capture business identity, contact details, and verification information in one structured workspace.
                 Use this screen to onboard distributors and agents with cleaner data quality from the start.
             </p>
-            <div class="customer-hero__chips">
+            <div class="user-hero__chips">
                 <span>Identity-ready</span>
                 <span>Theme-aware</span>
                 <span>Operations aligned</span>
             </div>
         </div>
 
-        <div class="customer-hero__aside">
+        <div class="user-hero__aside">
             <article class="hero-metric-card">
                 <span class="hero-metric-label">Flow type</span>
                 <strong>{{ isCreateMode ? 'New onboarding' : 'Existing account' }}</strong>
@@ -28,31 +28,31 @@
         </div>
     </div>
 
-    <div class="customer-toolbar">
-        <button class="customer-nav-btn" (click)="switchToCancel()">
+    <div class="user-toolbar">
+        <button class="user-nav-btn" (click)="switchToCancel()">
             <i class="bi bi-chevron-left"></i>
             <span>Back</span>
         </button>
 
-        <div class="customer-toolbar__actions">
+        <div class="user-toolbar__actions">
             <button *ngIf="!isEditMode" class="toolbar-btn secondary" (click)="onEditClick()">Edit</button>
             <ng-container *ngIf="isEditMode">
                 <a *ngIf="canCreateUsers" routerLink="/dashboard/commission-settings" class="toolbar-btn secondary">
                     Commission Settings
                 </a>
                 <button class="toolbar-btn secondary" (click)="onCancelEdit()">Cancel</button>
-                <button class="toolbar-btn primary" (click)="submitCustomerDetails()" [disabled]="customerForm.invalid || !canCreateUsers">
+                <button class="toolbar-btn primary" (click)="submituserDetails()" [disabled]="userForm.invalid || !canCreateUsers">
                     {{ isCreateMode ? 'Create User' : 'Update User' }}
                 </button>
             </ng-container>
         </div>
     </div>
 
-    <form class="customer-layout" #customerForm="ngForm" (keydown.enter)="$event.preventDefault()" name="customerForm" autocomplete="off">
-        <section class="customer-form-card">
+    <form class="user-layout" #userForm="ngForm" (keydown.enter)="$event.preventDefault()" name="userForm" autocomplete="off">
+        <section class="user-form-card">
             <div class="card-header-block">
                 <span class="section-kicker">Profile details</span>
-                <h2>Customer registration</h2>
+                <h2>User registration</h2>
                 <p>Collect primary identity, contact, and business information in a consistent format.</p>
             </div>
 
@@ -68,47 +68,47 @@
                 Select a distributor when available. If no distributor is assigned, the agent can still be created and mapped later.
             </div>
 
-            <div class="customer-grid">
+            <div class="user-grid">
                 <div class="field-span-4">
-                    <label class="form-label" for="customer-full-name">Full Name <span class="required-mark">*</span></label>
-                    <input id="customer-full-name" class="form-control" name="fName" [(ngModel)]="customerObj.fullName" #fName="ngModel" [disabled]="disabledMode" required />
+                    <label class="form-label" for="user-full-name">Full Name <span class="required-mark">*</span></label>
+                    <input id="user-full-name" class="form-control" name="fName" [(ngModel)]="userObj.fullName" #fName="ngModel" [disabled]="disabledMode" required />
                     <div class="field-error" *ngIf="fName.errors?.['required'] && fName.touched">Full Name is required</div>
                 </div>
                 <div class="field-span-4">
-                    <label class="form-label" for="customer-mobile">Mobile Number <span class="required-mark">*</span></label>
-                    <input id="customer-mobile" class="form-control" name="mblNum" [(ngModel)]="customerObj.phNo" #mblNum="ngModel" [disabled]="disabledMode" required />
+                    <label class="form-label" for="user-mobile">Mobile Number <span class="required-mark">*</span></label>
+                    <input id="user-mobile" class="form-control" name="mblNum" [(ngModel)]="userObj.phNo" #mblNum="ngModel" [disabled]="disabledMode" required />
                     <div class="field-error" *ngIf="mblNum.errors?.['required'] && mblNum.touched">Mobile Number is required</div>
                 </div>
                 <div class="field-span-4">
-                    <label class="form-label" for="customer-email">Email <span class="required-mark">*</span></label>
-                    <input id="customer-email" class="form-control" name="eml" [(ngModel)]="customerObj.emailId" #eml="ngModel" [disabled]="disabledMode" required />
+                    <label class="form-label" for="user-email">Email <span class="required-mark">*</span></label>
+                    <input id="user-email" class="form-control" name="eml" [(ngModel)]="userObj.emailId" #eml="ngModel" [disabled]="disabledMode" required />
                     <div class="field-error" *ngIf="eml.errors?.['required'] && eml.touched">Email is required</div>
                 </div>
 
                 <div class="field-span-4">
-                    <label class="form-label" for="customer-address">Address <span class="required-mark">*</span></label>
-                    <input id="customer-address" class="form-control" name="add" [(ngModel)]="customerObj.address" #add="ngModel" [disabled]="disabledMode" required />
+                    <label class="form-label" for="user-address">Address <span class="required-mark">*</span></label>
+                    <input id="user-address" class="form-control" name="add" [(ngModel)]="userObj.address" #add="ngModel" [disabled]="disabledMode" required />
                     <div class="field-error" *ngIf="add.errors?.['required'] && add.touched">Address is required</div>
                 </div>
                 <div class="field-span-4">
-                    <label class="form-label" for="customer-dob">Date of Birth <span class="required-mark">*</span></label>
-                    <input id="customer-dob" type="date" class="form-control" name="dbth" [(ngModel)]="customerObj.dateOfBirth" #dbth="ngModel" [disabled]="disabledMode" required />
+                    <label class="form-label" for="user-dob">Date of Birth <span class="required-mark">*</span></label>
+                    <input id="user-dob" type="date" class="form-control" name="dbth" [(ngModel)]="userObj.dateOfBirth" #dbth="ngModel" [disabled]="disabledMode" required />
                     <div class="field-error" *ngIf="dbth.errors?.['required'] && dbth.touched">Date of Birth is required</div>
                 </div>
                 <div class="field-span-4">
-                    <label class="form-label" for="customer-business-name">Business Name <span class="required-mark">*</span></label>
-                    <input id="customer-business-name" class="form-control" name="bnam" [(ngModel)]="customerObj.businessName" #bnam="ngModel" [disabled]="disabledMode" required />
+                    <label class="form-label" for="user-business-name">Business Name <span class="required-mark">*</span></label>
+                    <input id="user-business-name" class="form-control" name="bnam" [(ngModel)]="userObj.businessName" #bnam="ngModel" [disabled]="disabledMode" required />
                     <div class="field-error" *ngIf="bnam.errors?.['required'] && bnam.touched">Business Name is required</div>
                 </div>
 
                 <div class="field-span-4">
-                    <label class="form-label" for="customer-business-address">Business Address <span class="required-mark">*</span></label>
-                    <input id="customer-business-address" class="form-control" name="bAdd" [(ngModel)]="customerObj.businessAddress" #bAdd="ngModel" [disabled]="disabledMode" required />
+                    <label class="form-label" for="user-business-address">Business Address <span class="required-mark">*</span></label>
+                    <input id="user-business-address" class="form-control" name="bAdd" [(ngModel)]="userObj.businessAddress" #bAdd="ngModel" [disabled]="disabledMode" required />
                     <div class="field-error" *ngIf="bAdd.errors?.['required'] && bAdd.touched">Business Address is required</div>
                 </div>
                 <div class="field-span-4">
-                    <label class="form-label" for="customer-user-type">User Type <span class="required-mark">*</span></label>
-                    <select id="customer-user-type" class="form-select" [(ngModel)]="userType" #usrTyp="ngModel" name="usrTyp" required [disabled]="disabledMode || (isDistributorUser && !isAdminUser) || !canCreateUsers" (ngModelChange)="onUserTypeChange()">
+                    <label class="form-label" for="user-user-type">User Type <span class="required-mark">*</span></label>
+                    <select id="user-user-type" class="form-select" [(ngModel)]="userType" #usrTyp="ngModel" name="usrTyp" required [disabled]="disabledMode || (isDistributorUser && !isAdminUser) || !canCreateUsers" (ngModelChange)="onUserTypeChange()">
                         <option value="" disabled selected>Select user type</option>
                         <option *ngFor="let user of availableUserTypes" [value]="user">{{ user }}</option>
                     </select>
@@ -116,12 +116,12 @@
                 </div>
 
                 <div class="field-span-4" *ngIf="showDistributorDropdown">
-                    <label class="form-label" for="customer-distributor-id">Distributor</label>
+                    <label class="form-label" for="user-distributor-id">Distributor</label>
                     <select
-                        id="customer-distributor-id"
+                        id="user-distributor-id"
                         class="form-select"
                         name="dstId"
-                        [(ngModel)]="customerObj.distributeId"
+                        [(ngModel)]="userObj.distributeId"
                         #dstId="ngModel"
                         [disabled]="disabledMode || isLoadingDistributors">
                         <option value="">No distributor selected</option>
@@ -135,53 +135,53 @@
                     </div>
                 </div>
                 <div class="field-span-4" *ngIf="userType === 'AGENT' && isDistributorUser && !isAdminUser">
-                    <label class="form-label" for="customer-distributor-id-readonly">Distributor Id <span class="required-mark">*</span></label>
+                    <label class="form-label" for="user-distributor-id-readonly">Distributor Id <span class="required-mark">*</span></label>
                     <input
-                        id="customer-distributor-id-readonly"
+                        id="user-distributor-id-readonly"
                         class="form-control"
                         name="dstIdReadonly"
-                        [(ngModel)]="customerObj.distributeId"
+                        [(ngModel)]="userObj.distributeId"
                         #dstIdReadonly="ngModel"
                         [disabled]="true"
                         [required]="distributorSelectionRequired" />
                     <div class="field-hint">This agent will be mapped to your distributor profile automatically.</div>
                 </div>
                 <div class="field-span-4" *ngIf="userType === 'AGENT'">
-                    <label class="form-label" for="customer-retailer-account">Agent Account Details <span class="required-mark">*</span></label>
-                    <input id="customer-retailer-account" class="form-control" name="reAcc" [(ngModel)]="customerObj.retailerAccountDetails" #reAcc="ngModel" [disabled]="disabledMode" required />
+                    <label class="form-label" for="user-retailer-account">Agent Account Details <span class="required-mark">*</span></label>
+                    <input id="user-retailer-account" class="form-control" name="reAcc" [(ngModel)]="userObj.retailerAccountDetails" #reAcc="ngModel" [disabled]="disabledMode" required />
                     <div class="field-error" *ngIf="reAcc.errors?.['required'] && reAcc.touched">Agent Account Details is required</div>
                 </div>
                 <div class="field-span-4" *ngIf="userType === 'DISTRIBUTOR'">
-                    <label class="form-label" for="customer-distributor-account">Distributor Account Details <span class="required-mark">*</span></label>
-                    <input id="customer-distributor-account" class="form-control" name="dAcc" [(ngModel)]="customerObj.distributorAccountDetails" #dAcc="ngModel" [disabled]="disabledMode" required />
+                    <label class="form-label" for="user-distributor-account">Distributor Account Details <span class="required-mark">*</span></label>
+                    <input id="user-distributor-account" class="form-control" name="dAcc" [(ngModel)]="userObj.distributorAccountDetails" #dAcc="ngModel" [disabled]="disabledMode" required />
                     <div class="field-error" *ngIf="dAcc.errors?.['required'] && dAcc.touched">Distributor Account Details is required</div>
                 </div>
             </div>
         </section>
 
-        <aside class="customer-side-panel">
-            <section class="customer-form-card compact">
+        <aside class="user-side-panel">
+            <section class="user-form-card compact">
                 <div class="card-header-block">
                     <span class="section-kicker">Verification</span>
                     <h2>Identity checks</h2>
                     <p>Complete the compliance fields required for onboarding approval.</p>
                 </div>
 
-                <div class="customer-grid customer-grid--stacked">
+                <div class="user-grid user-grid--stacked">
                     <div class="field-span-12">
-                        <label class="form-label" for="customer-aadhar">Aadhar <span class="required-mark">*</span></label>
-                        <input id="customer-aadhar" class="form-control" name="adh" [(ngModel)]="customerObj.aadharNo" #adh="ngModel" [disabled]="disabledMode" required />
+                        <label class="form-label" for="user-aadhar">Aadhar <span class="required-mark">*</span></label>
+                        <input id="user-aadhar" class="form-control" name="adh" [(ngModel)]="userObj.aadharNo" #adh="ngModel" [disabled]="disabledMode" required />
                         <div class="field-error" *ngIf="adh.errors?.['required'] && adh.touched">Aadhar is required</div>
                     </div>
                     <div class="field-span-12">
-                        <label class="form-label" for="customer-pan">PAN <span class="required-mark">*</span></label>
-                        <input id="customer-pan" class="form-control" name="pn" [(ngModel)]="customerObj.panNo" #pn="ngModel" [disabled]="disabledMode" required />
+                        <label class="form-label" for="user-pan">PAN <span class="required-mark">*</span></label>
+                        <input id="user-pan" class="form-control" name="pn" [(ngModel)]="userObj.panNo" #pn="ngModel" [disabled]="disabledMode" required />
                         <div class="field-error" *ngIf="pn.errors?.['required'] && pn.touched">PAN is required</div>
                     </div>
                 </div>
             </section>
 
-            <section class="customer-tip-card">
+            <section class="user-tip-card">
                 <span class="section-kicker">Operator note</span>
                 <h3>Onboarding quality guidance</h3>
                 <ul>
