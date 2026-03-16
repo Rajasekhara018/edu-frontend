@@ -275,6 +275,7 @@
 }
 
 @media (max-width: 1100px) {
+
   .commission-hero,
   .commission-layout {
     grid-template-columns: 1fr;
@@ -282,6 +283,7 @@
 }
 
 @media (max-width: 760px) {
+
   .commission-hero,
   .panel {
     padding: 1.1rem;
@@ -291,4 +293,75 @@
   .action-strip .btn {
     width: 100%;
   }
+}
+
+//Toolbar
+.user-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.user-toolbar__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 760px) {
+  .user-page {
+    padding: 1rem;
+  }
+
+  .user-form-card,
+  .user-tip-card,
+  .user-hero {
+    padding: 1.1rem;
+    border-radius: 22px;
+  }
+
+  .field-span-4 {
+    grid-column: span 12;
+  }
+
+  .user-toolbar {
+    align-items: stretch;
+  }
+
+  .user-toolbar__actions {
+    width: 100%;
+  }
+
+  .user-nav-btn,
+  .toolbar-btn {
+    justify-content: center;
+    flex: 1 1 auto;
+  }
+}
+
+.user-nav-btn,
+.toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.88rem 1.15rem;
+  border-radius: 16px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.user-nav-btn,
+.toolbar-btn.primary {
+  background: linear-gradient(135deg, var(--button-accent-start), var(--button-accent-end));
+  color: #f8fafc;
+  box-shadow: 0 18px 30px var(--theme-highlight-soft);
+}
+
+.user-nav-btn,
+.toolbar-btn.secondary {
+  background: color-mix(in srgb, var(--workspace-panel) 92%, transparent);
+  color: var(--edu-ink);
+  border-color: color-mix(in srgb, var(--theme-soft-border) 88%, transparent);
 }

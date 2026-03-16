@@ -20,6 +20,9 @@ export class PayeaseTableSearchview {
       case 'GET_USERS':
         returnValue = 'Users';
         break;
+      case 'GET_COMMISSIONS':
+        returnValue = 'Commissions';
+        break;
       default:
         break;
     }
@@ -29,6 +32,9 @@ export class PayeaseTableSearchview {
     let returnValue = '';
     switch (tableID) {
       case 'GET_USERS':
+        returnValue = 'Use User name in your input to search for records containing the search input';
+        break;
+      case 'GET_COMMISSIONS':
         returnValue = 'Use User name in your input to search for records containing the search input';
         break;
       default:
@@ -50,6 +56,13 @@ export class PayeaseTableSearchview {
           panNo: 'Pan No',
           roles: 'ROLE',
           status: 'STATUS',
+          action: 'Actions',
+        }
+        displayedColumns = Object.keys(columnNames);
+        break;
+      case 'GET_COMMISSIONS':
+        columnNames = {
+          gateway: 'Gateway',
           action: 'Actions',
         }
         displayedColumns = Object.keys(columnNames);
@@ -76,6 +89,9 @@ export class PayeaseTableSearchview {
       case 'GET_USERS':
         columnName = APIPath.USER_GETALL;
         break;
+      case 'GET_COMMISSIONS':
+        columnName = APIPath.COMMISSON_GETALL;
+        break;
       default:
         break;
     }
@@ -87,6 +103,9 @@ export class PayeaseTableSearchview {
       case 'GET_USERS':
         creurl = '/dashboard/user/cre';
         break;
+      case 'GET_COMMISSIONS':
+        creurl = '/dashboard/commission-rules/cre';
+        break;
       default:
         break;
     }
@@ -96,7 +115,10 @@ export class PayeaseTableSearchview {
     let inqurl: string;
     switch (tableID) {
       case 'GET_USERS':
-        inqurl ='/dashboard/user/'+ modelKey;
+        inqurl = '/dashboard/user/' + modelKey;
+        break;
+      case 'GET_COMMISSIONS':
+        inqurl = '/dashboard/commission-rules/' + modelKey;
         break;
       default:
         break;

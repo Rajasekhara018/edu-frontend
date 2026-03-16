@@ -30,7 +30,9 @@ const routes: Routes = [
   { path: 'internal-transfer', component: InternalTransfer, canActivate: [authGuard] },
   { path: 'make-payment', component: MakePayment, canActivate: [authGuard] },
   { path: 'commission-dashboard', component: CommissionDashboard, canActivate: [authGuard] },
-  { path: 'commission-settings', component: CommissionSettings, canActivate: [authGuard] },
+  { path: 'commission-rules', component: CommissionSettings, canActivate: [authGuard] },
+  { path: 'commission-rules/cre', component: CommissionSettings, canActivate: [authGuard] },
+  { path: 'commission-rules/:id', component: CommissionSettings, canActivate: [authGuard] },
   { path: 'payment-invoice/:status', component: PaymentInvoice, canActivate: [authGuard] },
   { path: 'payment-link', component: PaymentLink, canActivate: [authGuard] },
 ];

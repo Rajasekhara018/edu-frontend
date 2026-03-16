@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        <div class="commission-hero__metrics">
+        <!-- <div class="commission-hero__metrics">
             <article class="metric-card">
                 <span>Current role</span>
                 <strong>{{ userContext }}</strong>
@@ -23,130 +23,24 @@
                 <p>{{ currentDistributor?.status || 'No distributor context' }} · Base {{ currentDistributor?.baseRate
                     || '-' }}</p>
             </article>
+        </div> -->
+    </div>
+    <div class="user-toolbar">
+        <button class="user-nav-btn" (click)="switchToCancel()">
+            <i class="bi bi-chevron-left"></i>
+            <span>Back</span>
+        </button>
+        <div class="user-toolbar__actions">
+            <button *ngIf="!isEditMode" class="toolbar-btn secondary" (click)="onEditClick()">Edit</button>
+            <ng-container *ngIf="isEditMode">
+                <button class="toolbar-btn secondary" (click)="onCancelEdit()">Cancel</button>
+                <button class="toolbar-btn primary" (click)="saveGateway()"
+                    [disabled]="commissionForm.invalid || !canCreateUsers">
+                    {{ isCreateMode ? 'Create Commission Rules' : 'Update Commission Rules' }}
+                </button>
+            </ng-container>
         </div>
     </div>
-    <!-- <div class="commission-layout">
-        <section class="panel commission-form-panel">
-            <div class="panel-head">
-                <div>
-                    <span class="section-kicker">Configuration</span>
-                    <h2>Commission setup</h2>
-                </div>
-                <p>Maintain distributor defaults and agent-level overrides from one workspace.</p>
-            </div>
-
-            <div class="alert alert-warning" *ngIf="!canManage">
-                Agents can review commission rules but cannot update them.
-            </div>
-
-            <form class="row g-3 commission-form" (keydown.enter)="$event.preventDefault()">
-                <div class="col-md-6">
-                    <label class="form-label" for="commission-distributor">Distributor</label>
-                    <select id="commission-distributor" class="form-select" [(ngModel)]="selectedDistributorId"
-                        name="selectedDistributorId" [disabled]="userContext !== 'ADMIN'">
-                        <option *ngFor="let distributor of distributors" [value]="distributor.id">{{ distributor.name }}
-                        </option>
-                    </select>
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label" for="commission-scope">Rule scope</label>
-                    <select id="commission-scope" class="form-select" [(ngModel)]="form.scope" name="scope"
-                        [disabled]="!canManage || userContext === 'DISTRIBUTOR'" (ngModelChange)="onScopeChange()">
-                        <option value="Distributor">Distributor level</option>
-                        <option value="Agent">Agent level</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6" *ngIf="form.scope === 'Agent'">
-                    <label class="form-label" for="commission-agent">Agent</label>
-                    <select id="commission-agent" class="form-select" [(ngModel)]="selectedAgentId"
-                        name="selectedAgentId" [disabled]="!canManage">
-                        <option value="" disabled>Select agent</option>
-                        <option *ngFor="let agent of visibleAgents" [value]="agent.id">{{ agent.name }}</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label" for="commission-payment-type">Payment type</label>
-                    <select id="commission-payment-type" class="form-select" [(ngModel)]="form.paymentType"
-                        name="paymentType" [disabled]="!canManage">
-                        <option *ngFor="let paymentType of paymentTypes" [value]="paymentType">{{ paymentType }}
-                        </option>
-                    </select>
-                </div>
-
-                <div class="col-md-4">
-                    <label class="form-label" for="commission-mode">Commission mode</label>
-                    <select id="commission-mode" class="form-select" [(ngModel)]="form.mode" name="mode"
-                        [disabled]="!canManage">
-                        <option *ngFor="let mode of modes" [value]="mode">{{ mode }}</option>
-                    </select>
-                </div>
-
-                <div class="col-md-4">
-                    <label class="form-label" for="commission-distributor-rate">Distributor commission</label>
-                    <input id="commission-distributor-rate" class="form-control" [(ngModel)]="form.distributorRate"
-                        name="distributorRate" [disabled]="!canManage" placeholder="Enter distributor rate">
-                </div>
-
-                <div class="col-md-4">
-                    <label class="form-label" for="commission-agent-rate">Agent commission</label>
-                    <input id="commission-agent-rate" class="form-control" [(ngModel)]="form.agentRate" name="agentRate"
-                        [disabled]="!canManage || form.scope === 'Distributor'" placeholder="Enter agent rate">
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label" for="commission-cap">Cap amount</label>
-                    <input id="commission-cap" class="form-control" [(ngModel)]="form.capAmount" name="capAmount"
-                        [disabled]="!canManage" placeholder="Enter cap amount">
-                </div>
-
-                <div class="col-md-6">
-                    <label class="form-label" for="commission-notes">Notes</label>
-                    <input id="commission-notes" class="form-control" [(ngModel)]="form.notes" name="notes"
-                        [disabled]="!canManage" placeholder="Operational note">
-                </div>
-
-                <div class="col-12">
-                    <div class="action-strip">
-                        <button type="button" class="btn btn-primary" [disabled]="!canManage">Save commission
-                            rule</button>
-                        <a routerLink="/dashboard/commission-dashboard" class="btn btn-outline-primary">Open commission
-                            dashboard</a>
-                        <a routerLink="/dashboard/customers/cre" class="btn btn-outline-primary">Go to user
-                            onboarding</a>
-                    </div>
-                </div>
-            </form>
-        </section>
-
-        <aside class="panel guidance-panel">
-            <div class="panel-head">
-                <div>
-                    <span class="section-kicker">Workflow</span>
-                    <h2>Ownership rules</h2>
-                </div>
-                <p>Keep commission control aligned with the distributor-agent hierarchy.</p>
-            </div>
-
-            <div class="guidance-list">
-                <article class="guidance-card">
-                    <strong>Admin</strong>
-                    <p>Create distributors, create agents, and manage base commission or agent overrides.</p>
-                </article>
-                <article class="guidance-card">
-                    <strong>Distributor</strong>
-                    <p>Create agents under the distributor and manage only that distributor’s agent commission rules.
-                    </p>
-                </article>
-                <article class="guidance-card">
-                    <strong>Agent</strong>
-                    <p>View assigned commission setup and settlement expectations without edit access.</p>
-                </article>
-            </div>
-        </aside>
-    </div> -->
     <div class="commission-layout">
         <!-- FORM PANEL -->
         <section class="panel commission-form-panel">
@@ -157,7 +51,8 @@
                 </div>
                 <p>Create commission rules per gateway and payment method.</p>
             </div>
-            <form class="row g-3 commission-form" (keydown.enter)="$event.preventDefault()">
+            <form class="row g-3 commission-form" #commissionForm="ngForm" (keydown.enter)="$event.preventDefault()"
+                name="commissionForm" autocomplete="off">
                 <!-- Gateway -->
                 <div class="col-md-6">
                     <label class="form-label">Gateway</label>
@@ -206,8 +101,7 @@
   ">
                         Add Rule
                     </button>
-                    <button class="btn btn-success" (click)="saveGateway()"
-                        [disabled]="!gatewayRules">
+                    <button class="btn btn-success" (click)="saveGateway()" [disabled]="!gatewayRules">
                         Save Gateway Rules
                     </button>
                 </div>
@@ -246,43 +140,4 @@
             </table>
         </section>
     </div>
-    <section class="panel rules-panel">
-        <div class="panel-head">
-            <div>
-                <span class="section-kicker">Applied rules</span>
-                <h2>Commission matrix</h2>
-            </div>
-            <p>Review which distributor and agent commission values are active for each payment route.</p>
-        </div>
-
-        <div class="table-shell">
-            <table class="table commission-table">
-                <thead>
-                    <tr>
-                        <th>Scope</th>
-                        <th>Owner</th>
-                        <th>Payment type</th>
-                        <th>Distributor rate</th>
-                        <th>Agent rate</th>
-                        <th>Mode</th>
-                        <th>Cap</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let rule of commissionRules">
-                        <td><span class="scope-pill">{{ getScopeLabel(rule.scope) }}</span></td>
-                        <td>{{ rule.ownerName }}</td>
-                        <td>{{ rule.paymentType }}</td>
-                        <td>{{ rule.distributorRate }}</td>
-                        <td>{{ rule.agentRate }}</td>
-                        <td>{{ rule.mode }}</td>
-                        <td>{{ rule.cap }}</td>
-                        <td><span class="status-pill" [ngClass]="getStatusClass(rule.status)">{{ rule.status }}</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
 </section>

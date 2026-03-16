@@ -5,15 +5,8 @@ import { PayeaseRestservice } from '../../shared/services/payease-restservice';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ImageCropDialog } from '../image-crop-dialog/image-crop-dialog';
-// import { Role, user } from '../../shared/model';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../../shared/model';
-
-interface DistributorOption {
-  id: string;
-  label: string;
-  status?: string;
-}
+import { DistributorOption, User } from '../../shared/model';
 @Component({
   selector: 'app-users',
   standalone: false,
@@ -21,7 +14,7 @@ interface DistributorOption {
   styleUrl: './users.scss'
 })
 export class Users {
- fullName!: string;
+  fullName!: string;
   email!: string;
   department!: string;
   accessType!: string;
@@ -30,12 +23,6 @@ export class Users {
   reqId!: string;
   modelkey!: string | null;
   disabledMode!: boolean;
-  constructor(public location: Location,
-    public postService: PayeaseRestservice, public router: Router, private cdr: ChangeDetectorRef,
-    private route: ActivatedRoute, private dialog: MatDialog,
-    public http: HttpClient
-  ) {
-  }
   departments!: any;
   loggedInUserRole!: string;
   isSuperAdmin!: boolean;
@@ -49,16 +36,21 @@ export class Users {
   currentDistributorId = '';
   distributorOptions: DistributorOption[] = [];
   isLoadingDistributors = false;
+  userType!: string;
+  constructor(public location: Location,
+    public postService: PayeaseRestservice, public router: Router, private cdr: ChangeDetectorRef,
+    private route: ActivatedRoute, private dialog: MatDialog,
+    public http: HttpClient
+  ) {
+  }
   ngOnInit(): void {
     this.initializeRoleContext();
     this.modelkey = this.route.snapshot.paramMap.get('id')!;
-
     if (this.isAgentUser && !this.modelkey) {
       this.postService.showToast('error', 'Agent users do not have permission to create users.');
       this.router.navigate(['/dashboard/commission-dashboard']);
       return;
     }
-
     if (this.modelkey) {
       this.isEditMode = false;
       this.disabledMode = true;
@@ -74,13 +66,11 @@ export class Users {
       this.loadDistributorOptions();
     }
   }
-  userType!: string;
   submituserDetails(): void {
     if (!this.canCreateUsers) {
       this.postService.showToast('error', 'Agent users do not have permission to create users.');
       return;
     }
-
     this.prepareRolePayload();
     const apiPath = this.isCreateMode ? APIPath.USER_CRE : APIPath.USER_UPD;
     const requestObj: any = {
@@ -185,7 +175,6 @@ export class Users {
       this.isEditMode = false;
       return;
     }
-
     if (this.isDistributorUser && !this.isAdminUser) {
       this.userType = 'AGENT';
       this.userObj.distributeId = this.currentDistributorId;
@@ -196,12 +185,10 @@ export class Users {
     this.userObj.adminUser = false;
     this.userObj.distributeUser = this.userType === 'DISTRIBUTOR';
     this.userObj.retailUser = this.userType === 'AGENT';
-
     if (this.userType === 'DISTRIBUTOR') {
       this.userObj.distributeId = '';
       this.userObj.retailerAccountDetails = '';
     }
-
     if (this.userType === 'AGENT') {
       this.userObj.distributorAccountDetails = '';
       if (this.isDistributorUser && !this.isAdminUser) {
@@ -217,12 +204,10 @@ export class Users {
       this.userType = 'DISTRIBUTOR';
       return;
     }
-
     if (this.userObj.retailUser) {
       this.userType = 'AGENT';
       return;
     }
-
     this.userType = '';
   }
 
@@ -254,19 +239,15 @@ export class Users {
     if (Array.isArray(response)) {
       return response;
     }
-
     if (Array.isArray(response?.object)) {
       return response.object;
     }
-
     if (Array.isArray(response?.responseObject)) {
       return response.responseObject;
     }
-
     if (Array.isArray(response?.responseObject?.content)) {
       return response.responseObject.content;
     }
-
     return [];
   }
 
@@ -274,15 +255,12 @@ export class Users {
     const fullName = item?.fullName?.trim?.() || '';
     const businessName = item?.businessName?.trim?.() || '';
     const userName = item?.userName?.trim?.() || item?.id?.trim?.() || '';
-
     if (fullName && businessName) {
       return `${fullName} - ${businessName}`;
     }
-
     if (businessName && userName) {
       return `${businessName} (${userName})`;
     }
-
     return fullName || businessName || userName || 'Unnamed distributor';
   }
 }

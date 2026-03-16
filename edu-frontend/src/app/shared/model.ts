@@ -54,14 +54,6 @@ export class CommonReqObject {
     sortOrder!: string;
 }
 export class User {
-    // name!: string;
-    // mobile!: string;
-    // email!: string;
-    // scheme!:string;
-    // businessName!: string;
-    // image!:any;
-    // aadhar!:string;
-    // pan!:string;
     fullName!: string;
     businessName!: string;
     emailId!: string;
@@ -96,4 +88,35 @@ export class ResponseObject {
     status!: boolean;
     object: any;
     errorMsg!: string;
+}
+
+export class DistributorOption {
+  id!: string;
+  label!: string;
+  status?: string;
+}
+
+export class DistributorProfile {
+  id!: string;
+  name!: string;
+  status!: string;
+  baseRate!: string;
+}
+
+export class AgentProfile {
+  id!: string;
+  distributorId!: string;
+  name!: string;
+  channel!: string;
+}
+
+export class CommissionRule {
+  scope!: 'Distributor' | 'Agent';
+  ownerName!: string;
+  paymentType!: string;
+  distributorRate!: string;
+  agentRate!: string;
+  mode!: string;
+  cap!: string;
+  status!: string;
 }

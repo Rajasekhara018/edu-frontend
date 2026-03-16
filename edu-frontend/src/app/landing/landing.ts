@@ -39,7 +39,7 @@ export class Landing {
     {
       title: 'Commission Rules',
       copy: 'Maintain distributor defaults and agent-level commission rules with settlement visibility.',
-      route: '/dashboard/commission-settings',
+      route: '/dashboard/commission-rules',
       icon: 'bi bi-receipt',
       accent: 'plum',
       rolesAllowed: ['ADMIN', 'DISTRIBUTOR']
