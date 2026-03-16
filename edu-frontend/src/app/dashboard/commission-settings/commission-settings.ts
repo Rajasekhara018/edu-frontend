@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { PayeaseRestservice } from '../../shared/services/payease-restservice';
 import { APIPath } from '../../shared/api-enum';
 import { Location } from '@angular/common';
-import { AgentProfile, CommissionRule, DistributorProfile } from '../../shared/model';
+import { AgentProfile, CommissionRule, CommissionSetting, DistributorProfile } from '../../shared/model';
 import { ActivatedRoute } from '@angular/router';
 
 type UserContext = 'ADMIN' | 'DISTRIBUTOR' | 'AGENT';
@@ -69,6 +69,7 @@ export class CommissionSettings {
   selectedDistributorId = 'DST-1001';
   selectedAgentId = '';
   isEditMode!: boolean;
+  commissionObj = new CommissionSetting();
   constructor(private postService: PayeaseRestservice, public location: Location, private route: ActivatedRoute) {
 
   }
@@ -248,7 +249,7 @@ export class CommissionSettings {
     this.postService.doPostInq(APIPath.USER_INQ, modelkey).subscribe({
       next: (response: any) => {
         if (response.status) {
-          // this.userObj = response.object;
+          this.commissionObj = response.object;
           this.postService.showToast('success', response?.errorMsg?.toString());
         } else {
           this.postService.showToast('error', response?.errorMsg?.toString());

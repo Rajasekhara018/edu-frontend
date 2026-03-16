@@ -11,19 +11,19 @@
             </div>
         </div>
 
-        <!-- <div class="commission-hero__metrics">
+        <div class="commission-hero__metrics">
             <article class="metric-card">
                 <span>Current role</span>
                 <strong>{{ userContext }}</strong>
                 <p>{{ canManage ? 'Can manage commission rules' : 'Read-only commission visibility' }}</p>
             </article>
-            <article class="metric-card">
+            <!-- <article class="metric-card">
                 <span>Selected distributor</span>
                 <strong>{{ currentDistributor?.name || 'Not selected' }}</strong>
                 <p>{{ currentDistributor?.status || 'No distributor context' }} · Base {{ currentDistributor?.baseRate
                     || '-' }}</p>
-            </article>
-        </div> -->
+            </article> -->
+        </div>
     </div>
     <div class="user-toolbar">
         <button class="user-nav-btn" (click)="switchToCancel()">
@@ -90,18 +90,11 @@
                     <input class="form-control" [(ngModel)]="form2.platformPercent" name="platformPercent"
                         type="number">
                 </div>
-                <div class="col-12">
-                    <button class="btn btn-primary" (click)="addRule()" [disabled]="
-      !form2.gateway ||
-      !form2.paymentMode ||
-      !form2.paymentType ||
-      !form2.distributorPercent ||
-      !form2.agentPercent ||
-      !form2.platformPercent
-  ">
+                <div class="user-toolbar">
+                    <button class="toolbar-btn secondary" (click)="addRule()" [disabled]="!form2.gateway ||!form2.paymentMode ||!form2.paymentType || !form2.distributorPercent || !form2.agentPercent || !form2.platformPercent">
                         Add Rule
                     </button>
-                    <button class="btn btn-success" (click)="saveGateway()" [disabled]="!gatewayRules">
+                    <button class="toolbar-btn primary" (click)="saveGateway()" [disabled]="!gatewayRules">
                         Save Gateway Rules
                     </button>
                 </div>
@@ -128,7 +121,6 @@
                         <td>{{r.distributorPercent}}</td>
                         <td>{{r.agentPercent}}</td>
                         <td>{{r.platformPercent}}</td>
-
                         <td>
                             <button class="btn btn-danger btn-sm" (click)="removeRule(i)">
                                 Delete

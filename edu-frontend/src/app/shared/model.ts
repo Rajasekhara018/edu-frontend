@@ -73,8 +73,8 @@ export class User {
     retailUser!: boolean;
     distributeId!: string;
     profilePicLocation!: string;
-    retailerAccountDetails!:string;
-    distributorAccountDetails!:string;
+    retailerAccountDetails!: string;
+    distributorAccountDetails!: string;
 }
 
 export class RequestObject {
@@ -91,32 +91,45 @@ export class ResponseObject {
 }
 
 export class DistributorOption {
-  id!: string;
-  label!: string;
-  status?: string;
+    id!: string;
+    label!: string;
+    status?: string;
 }
 
 export class DistributorProfile {
-  id!: string;
-  name!: string;
-  status!: string;
-  baseRate!: string;
+    id!: string;
+    name!: string;
+    status!: string;
+    baseRate!: string;
 }
 
 export class AgentProfile {
-  id!: string;
-  distributorId!: string;
-  name!: string;
-  channel!: string;
+    id!: string;
+    distributorId!: string;
+    name!: string;
+    channel!: string;
 }
 
 export class CommissionRule {
-  scope!: 'Distributor' | 'Agent';
-  ownerName!: string;
-  paymentType!: string;
-  distributorRate!: string;
-  agentRate!: string;
-  mode!: string;
-  cap!: string;
-  status!: string;
+    scope!: 'Distributor' | 'Agent';
+    ownerName!: string;
+    paymentType!: string;
+    distributorRate!: string;
+    agentRate!: string;
+    mode!: string;
+    cap!: string;
+    status!: string;
+}
+
+export class CommissionSetting {
+    gateway!:string; // YUGMA, RAZORPAY, PAYU
+    paymentMethods!:Array<PaymentMethodCommission>;
+}
+
+export class PaymentMethodCommission {
+    paymentMode!:string;  // CARD, UPI, NETBANKING
+    paymentType!:string;  // VISA, MASTERCARD, IMPS, RTGS (optional)
+    distributorPercent!:number;
+    agentPercent!:number;
+    platformPercent!:number;
 }
