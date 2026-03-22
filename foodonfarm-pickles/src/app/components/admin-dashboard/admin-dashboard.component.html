@@ -1,0 +1,61 @@
+<section class="admin-page">
+  <h2>Admin Dashboard</h2>
+
+  <div class="stats">
+    <div class="card"><span>Total Products</span><strong>{{ products.length }}</strong></div>
+    <div class="card"><span>Orders Received</span><strong>{{ ordersCount }}</strong></div>
+  </div>
+
+  <div class="admin-grid">
+    <form class="product-form" #productForm="ngForm" (ngSubmit)="submitProduct()">
+      <h3>{{ editingId ? 'Edit Product' : 'Add Product' }}</h3>
+      <label>Name <input [(ngModel)]="formModel.name" name="name" required></label>
+      <label>Category <input [(ngModel)]="formModel.category" name="category" required></label>
+      <label>Description <textarea [(ngModel)]="formModel.description" name="description" required rows="3"></textarea></label>
+      <div class="row">
+        <label>Price <input type="number" [(ngModel)]="formModel.price" name="price" required></label>
+        <label>Original Price <input type="number" [(ngModel)]="formModel.originalPrice" name="originalPrice"></label>
+      </div>
+      <label>Image URL <input [(ngModel)]="formModel.image" name="image"></label>
+      <label>Weight Options (comma separated)
+        <input [ngModel]="formModel.weightOptions.join(', ')" (ngModelChange)="updateWeightOptions($event)" name="weightOptions">
+      </label>
+
+      <div class="checks">
+        <label><input type="checkbox" [(ngModel)]="formModel.inStock" name="inStock"> In Stock</label>
+        <label><input type="checkbox" [(ngModel)]="formModel.featured" name="featured"> Featured</label>
+      </div>
+
+      <div class="actions">
+        <button type="submit" [disabled]="productForm.invalid">{{ editingId ? 'Update Product' : 'Add Product' }}</button>
+        <button type="button" class="secondary" (click)="resetForm()">Reset</button>
+      </div>
+    </form>
+
+    <div class="products-table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.name }}</td>
+            <td>{{ product.category }}</td>
+            <td>Rs {{ product.price | number:'1.0-0' }}</td>
+            <td>{{ product.inStock ? 'In Stock' : 'Out' }}</td>
+            <td>
+              <button (click)="editProduct(product)">Edit</button>
+              <button class="danger" (click)="deleteProduct(product.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,384 @@
+{
+  "branding": {
+    "name": "AmmaKitchen Store",
+    "tagline": "Mother?s recipes and Packed fresh from curated home-food brands.",
+    "logoMark": "AK",
+    "logoText": "AmmaKitchen",
+    "logoDot": ".store",
+    "favicon": "favicon.ico",
+    "pageTitle": "AmmaKitchen Store",
+    "locationLabel": "Serving premium pantry orders in Hyderabad",
+    "locationAction": "Change area",
+    "searchPlaceholder": "Search pickles, sweets, pantry packs...",
+    "accountGreeting": "Welcome back",
+    "accountLabel": "AmmaKitchen member",
+    "ordersSmall": "Track",
+    "ordersLabel": "Orders & gifting",
+    "footerTagline": "Mother?s recipes and Packed fresh with dependable packing and dispatch.",
+    "footerCopyright": "(C) 2026 AmmaKitchen Store. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff3ee 0%, #ffe2d7 44%, #ffd2c4 100%)",
+    "ink": "#351d15",
+    "muted": "#6f5a4d",
+    "accent": "#d16d45",
+    "accentStrong": "#d16d45",
+    "neon": "#f6d365",
+    "mint": "#ffe7d5",
+    "cream": "#fffaf4",
+    "panel": "#fffdf9",
+    "border": "color-mix(in srgb, #351d15 12%, transparent)",
+    "shadow": "0 18px 40px color-mix(in srgb, #351d15 14%, transparent)",
+    "headerGradient": "radial-gradient(circle at top, #fff3ee 0%, #ffe2d7 44%, #ffd2c4 100%)",
+    "headerBorder": "color-mix(in srgb, #351d15 10%, transparent)",
+    "darkSurface": "#351d15",
+    "darkSurfaceAlt": "#351d15",
+    "onDark": "#fff8f0",
+    "onDarkMuted": "#f0dcc8",
+    "focusRing": "color-mix(in srgb, #d16d45 18%, transparent)"
+  },
+  "about": {
+    "eyebrow": "AmmaKitchen Store",
+    "title": "Mother?s recipes, Packed fresh, and pantry staples for modern homes.",
+    "description": "AmmaKitchen Store curates pickles, sweets, savories, snacks and more through trusted kitchen partners and gift-ready packing.",
+    "primaryCta": "Start shopping",
+    "secondaryCta": "Book a curated order",
+    "highlights": [
+      {
+        "icon": "bi-stars",
+        "title": "Curated batches",
+        "description": "Mother?s recipes across seasonal and daily staples."
+      },
+      {
+        "icon": "bi-gift",
+        "title": "Gift-ready",
+        "description": "Packed fresh for families and teams."
+      },
+      {
+        "icon": "bi-box-seam",
+        "title": "Safe packing",
+        "description": "Leak-safe jars, crisp snack packs, and reliable dispatch."
+      }
+    ],
+    "stats": [
+      {
+        "value": "320+",
+        "label": "Products Listed"
+      },
+      {
+        "value": "48 hrs",
+        "label": "Dispatch Promise"
+      },
+      {
+        "value": "4.8",
+        "label": "Average Rating"
+      },
+      {
+        "value": "1M+",
+        "label": "Packs Delivered"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Need help?",
+    "title": "Talk to AmmaKitchen Store about gifting, pantry planning, and bulk orders.",
+    "description": "We help with curated assortments, spice guidance, festival combos, and recurring pantry packs.",
+    "ctaLabel": "Talk to our team",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Call",
+        "lines": [
+          "+91 (800) 30135-1010",
+          "WhatsApp: +91 9013501010"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "hello@ammakitchen.store",
+          "support@ammakitchen.store"
+        ]
+      },
+      {
+        "icon": "bi-geo-alt",
+        "title": "Hub",
+        "lines": [
+          "Jubilee Hills Kitchen Hub",
+          "Hyderabad, India - 500033"
+        ]
+      },
+      {
+        "icon": "bi-clock",
+        "title": "Hours",
+        "lines": [
+          "Mon - Sat: 8:00 AM - 8:00 PM",
+          "Sunday: 9:00 AM - 2:00 PM"
+        ]
+      }
+    ],
+    "formTitle": "Send us a Message",
+    "formNote": "By submitting, you agree to be contacted regarding your inquiry."
+  },
+  "footer": {
+    "shopLinks": [
+      "Pickles",
+      "Sweets",
+      "Savories",
+      "Snacks"
+    ],
+    "supportLinks": [
+      "Delivery info",
+      "Bulk orders",
+      "Gifting",
+      "Returns"
+    ],
+    "companyLinks": [
+      "Our story",
+      "Kitchen partners",
+      "Careers",
+      "Journal"
+    ],
+    "socialLinks": [
+      {
+        "icon": "bi-facebook",
+        "label": "Facebook",
+        "href": "#"
+      },
+      {
+        "icon": "bi-instagram",
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "icon": "bi-youtube",
+        "label": "YouTube",
+        "href": "#"
+      },
+      {
+        "icon": "bi-linkedin",
+        "label": "LinkedIn",
+        "href": "#"
+      }
+    ],
+    "contactLines": [
+      "+91 (800) 30135-1010",
+      "hello@ammakitchen.store",
+      "Jubilee Hills, Hyderabad"
+    ],
+    "appCtaLabel": "Request catalog"
+  },
+  "hero": {
+    "eyebrow": "AmmaKitchen Store",
+    "title": "Mother?s recipes, Packed fresh, and dependable pantry favorites.",
+    "subtitle": "Shop pickles, sweets, savories, snacks, ready mixes with clear pricing and reliable 24-48 hour dispatch.",
+    "tags": [
+      "Mother?s recipes",
+      "Packed fresh"
+    ],
+    "cardTitle": "Popular pantry picks",
+    "cardItems": [
+      "Pickles bestsellers",
+      "Sweets bestsellers",
+      "Savories bestsellers"
+    ],
+    "deliveryLine": "Dispatch in 24-48 hrs",
+    "detailDeliveryLine": "Dispatch in 24-48 hrs",
+    "relatedTitle": "More to explore"
+  },
+  "searchCategories": [
+    "All",
+    "Pickles",
+    "Sweets",
+    "Savories",
+    "Snacks",
+    "Ready Mixes",
+    "Papads & Fryums",
+    "Beverages",
+    "Festival Boxes"
+  ],
+  "navLinks": [
+    "Pickles",
+    "Sweets",
+    "Savories",
+    "Snacks",
+    "Ready Mixes",
+    "Papads & Fryums",
+    "Beverages",
+    "About",
+    "Contact"
+  ],
+  "mobileLinks": [
+    "All items",
+    "Pickles",
+    "Sweets",
+    "Savories",
+    "Snacks",
+    "Ready Mixes",
+    "Papads & Fryums",
+    "About",
+    "Contact"
+  ],
+  "promoMessages": [
+    "Mother?s recipes",
+    "Packed fresh"
+  ],
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "AmmaKitchen Mango Pickle Reserve",
+        "description": "Signature mango pickle from AmmaKitchen Store.",
+        "price": 275,
+        "originalPrice": 325,
+        "image": "",
+        "category": "Pickles",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1840,
+        "sku": "AK-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Style": "Signature",
+          "ShelfLife": "6 months",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 2,
+        "name": "SundayPot Festival Sweet Box",
+        "description": "Popular sweet assortment curated by AmmaKitchen Store.",
+        "price": 395,
+        "originalPrice": 465,
+        "image": "",
+        "category": "Sweets",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1320,
+        "sku": "AK-0002",
+        "specifications": {
+          "Pack": "300 g",
+          "Finish": "Gift-ready",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        }
+      },
+      {
+        "id": 3,
+        "name": "FamilyJar Pantry Crunch Mix",
+        "description": "Best-selling crunchy snack from AmmaKitchen Store.",
+        "price": 225,
+        "originalPrice": 255,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 940,
+        "sku": "AK-0003",
+        "specifications": {
+          "Pack": "200 g",
+          "Texture": "Crunchy",
+          "ShelfLife": "20 days",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 4,
+        "name": "KitchenBlessing Kitchen Mix",
+        "description": "Ready pantry mix from AmmaKitchen Store.",
+        "price": 245,
+        "originalPrice": 285,
+        "image": "",
+        "category": "Ready Mixes",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 870,
+        "sku": "AK-0004",
+        "specifications": {
+          "Pack": "500 g",
+          "Use": "Quick prep",
+          "ShelfLife": "4 months",
+          "Storage": "Dry place"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "AmmaKitchen",
+        "SundayPot",
+        "FamilyJar",
+        "KitchenBlessing",
+        "GharanaFoods",
+        "MealMemory"
+      ],
+      "categories": [
+        "Pickles",
+        "Sweets",
+        "Savories",
+        "Snacks",
+        "Ready Mixes",
+        "Papads & Fryums",
+        "Beverages",
+        "Festival Boxes"
+      ],
+      "categorySpecifications": {
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Style": "Pickles",
+          "ShelfLife": "4 months",
+          "Storage": "Cool and dry"
+        },
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Style": "Sweets",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        },
+        "Savories": {
+          "Pack": "Standard pack",
+          "Style": "Savories",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Style": "Snacks",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Ready Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Papads & Fryums": {
+          "Pack": "Standard pack",
+          "Style": "Papads & Fryums",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Style": "Beverages",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Style": "Festival Boxes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        }
+      },
+      "basePriceStart": 135,
+      "priceStep": 35,
+      "priceModulo": 2600,
+      "categoryPriceFactor": 24,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

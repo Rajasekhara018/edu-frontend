@@ -1,0 +1,36 @@
+<section class="cart-page" *ngIf="cartItems$ | async as items">
+  <div class="title-row">
+    <h2>Your Cart ({{ items.length }} items)</h2>
+    <button (click)="clearCart()" *ngIf="items.length > 0">Clear Cart</button>
+  </div>
+
+  <div class="empty" *ngIf="items.length === 0">No items in cart.</div>
+
+  <div class="cart-grid" *ngIf="items.length > 0">
+    <div class="item-list">
+      <article class="item" *ngFor="let item of items">
+        <img [src]="getSafeImage(item.image, item.name)" [alt]="item.name" (error)="onImageError($event, item.name)">
+        <div>
+          <h4>{{ item.name }}</h4>
+          <p>{{ item.selectedWeight }}</p>
+          <strong>Rs {{ item.price | number:'1.0-0' }}</strong>
+        </div>
+        <div class="qty">
+          <button (click)="updateQuantity(item, -1)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="updateQuantity(item, 1)">+</button>
+        </div>
+        <button class="remove" (click)="removeItem(item)">Remove</button>
+      </article>
+    </div>
+
+    <aside class="summary" *ngIf="summary$ | async as summary">
+      <h3>Estimated Total</h3>
+      <div><span>Subtotal</span><span>Rs {{ summary.subtotal | number:'1.0-0' }}</span></div>
+      <div><span>Shipping</span><span>{{ summary.shipping === 0 ? 'Free' : ('Rs ' + summary.shipping) }}</span></div>
+      <div><span>Tax</span><span>Rs {{ summary.tax | number:'1.0-0' }}</span></div>
+      <div class="total"><span>Total</span><span>Rs {{ summary.total | number:'1.0-0' }}</span></div>
+      <button type="button" class="checkout-btn" (click)="openCheckout()">Proceed</button>
+    </aside>
+  </div>
+</section>

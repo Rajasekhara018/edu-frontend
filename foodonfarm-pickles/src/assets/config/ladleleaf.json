@@ -1,0 +1,384 @@
+{
+  "branding": {
+    "name": "LadleLeaf Pantry",
+    "tagline": "Balanced pantry and Herb-led blends from curated home-food brands.",
+    "logoMark": "LL",
+    "logoText": "LadleLeaf",
+    "logoDot": ".pantry",
+    "favicon": "favicon.ico",
+    "pageTitle": "LadleLeaf Pantry",
+    "locationLabel": "Serving premium pantry orders in Hyderabad",
+    "locationAction": "Change area",
+    "searchPlaceholder": "Search health & herbal, millet mixes, pantry packs...",
+    "accountGreeting": "Welcome back",
+    "accountLabel": "LadleLeaf member",
+    "ordersSmall": "Track",
+    "ordersLabel": "Orders & gifting",
+    "footerTagline": "Balanced pantry and Herb-led blends with dependable packing and dispatch.",
+    "footerCopyright": "(C) 2026 LadleLeaf Pantry. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #f4f8ea 0%, #e6efd6 44%, #d5e5c1 100%)",
+    "ink": "#203018",
+    "muted": "#6f5a4d",
+    "accent": "#6f8b4b",
+    "accentStrong": "#6f8b4b",
+    "neon": "#f6d365",
+    "mint": "#ffe7d5",
+    "cream": "#fffaf4",
+    "panel": "#fffdf9",
+    "border": "color-mix(in srgb, #203018 12%, transparent)",
+    "shadow": "0 18px 40px color-mix(in srgb, #203018 14%, transparent)",
+    "headerGradient": "radial-gradient(circle at top, #f4f8ea 0%, #e6efd6 44%, #d5e5c1 100%)",
+    "headerBorder": "color-mix(in srgb, #203018 10%, transparent)",
+    "darkSurface": "#203018",
+    "darkSurfaceAlt": "#203018",
+    "onDark": "#fff8f0",
+    "onDarkMuted": "#f0dcc8",
+    "focusRing": "color-mix(in srgb, #6f8b4b 18%, transparent)"
+  },
+  "about": {
+    "eyebrow": "LadleLeaf Pantry",
+    "title": "Balanced pantry, Herb-led blends, and pantry staples for modern homes.",
+    "description": "LadleLeaf Pantry curates health & herbal, millet mixes, beverages, ready mixes and more through trusted kitchen partners and gift-ready packing.",
+    "primaryCta": "Start shopping",
+    "secondaryCta": "Book a curated order",
+    "highlights": [
+      {
+        "icon": "bi-stars",
+        "title": "Curated batches",
+        "description": "Balanced pantry across seasonal and daily staples."
+      },
+      {
+        "icon": "bi-gift",
+        "title": "Gift-ready",
+        "description": "Herb-led blends for families and teams."
+      },
+      {
+        "icon": "bi-box-seam",
+        "title": "Safe packing",
+        "description": "Leak-safe jars, crisp snack packs, and reliable dispatch."
+      }
+    ],
+    "stats": [
+      {
+        "value": "320+",
+        "label": "Products Listed"
+      },
+      {
+        "value": "48 hrs",
+        "label": "Dispatch Promise"
+      },
+      {
+        "value": "4.8",
+        "label": "Average Rating"
+      },
+      {
+        "value": "1M+",
+        "label": "Packs Delivered"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Need help?",
+    "title": "Talk to LadleLeaf Pantry about gifting, pantry planning, and bulk orders.",
+    "description": "We help with curated assortments, spice guidance, festival combos, and recurring pantry packs.",
+    "ctaLabel": "Talk to our team",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Call",
+        "lines": [
+          "+91 (800) 30128-1010",
+          "WhatsApp: +91 9012801010"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "hello@ladleleaf.store",
+          "support@ladleleaf.store"
+        ]
+      },
+      {
+        "icon": "bi-geo-alt",
+        "title": "Hub",
+        "lines": [
+          "Jubilee Hills Kitchen Hub",
+          "Hyderabad, India - 500033"
+        ]
+      },
+      {
+        "icon": "bi-clock",
+        "title": "Hours",
+        "lines": [
+          "Mon - Sat: 8:00 AM - 8:00 PM",
+          "Sunday: 9:00 AM - 2:00 PM"
+        ]
+      }
+    ],
+    "formTitle": "Send us a Message",
+    "formNote": "By submitting, you agree to be contacted regarding your inquiry."
+  },
+  "footer": {
+    "shopLinks": [
+      "Health & Herbal",
+      "Millet Mixes",
+      "Beverages",
+      "Ready Mixes"
+    ],
+    "supportLinks": [
+      "Delivery info",
+      "Bulk orders",
+      "Gifting",
+      "Returns"
+    ],
+    "companyLinks": [
+      "Our story",
+      "Kitchen partners",
+      "Careers",
+      "Journal"
+    ],
+    "socialLinks": [
+      {
+        "icon": "bi-facebook",
+        "label": "Facebook",
+        "href": "#"
+      },
+      {
+        "icon": "bi-instagram",
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "icon": "bi-youtube",
+        "label": "YouTube",
+        "href": "#"
+      },
+      {
+        "icon": "bi-linkedin",
+        "label": "LinkedIn",
+        "href": "#"
+      }
+    ],
+    "contactLines": [
+      "+91 (800) 30128-1010",
+      "hello@ladleleaf.store",
+      "Jubilee Hills, Hyderabad"
+    ],
+    "appCtaLabel": "Request catalog"
+  },
+  "hero": {
+    "eyebrow": "LadleLeaf Pantry",
+    "title": "Balanced pantry, Herb-led blends, and dependable pantry favorites.",
+    "subtitle": "Shop health & herbal, millet mixes, beverages, ready mixes, pickles with clear pricing and reliable 24-48 hour dispatch.",
+    "tags": [
+      "Balanced pantry",
+      "Herb-led blends"
+    ],
+    "cardTitle": "Popular pantry picks",
+    "cardItems": [
+      "Health & Herbal bestsellers",
+      "Millet Mixes bestsellers",
+      "Beverages bestsellers"
+    ],
+    "deliveryLine": "Dispatch in 24-48 hrs",
+    "detailDeliveryLine": "Dispatch in 24-48 hrs",
+    "relatedTitle": "More to explore"
+  },
+  "searchCategories": [
+    "All",
+    "Health & Herbal",
+    "Millet Mixes",
+    "Beverages",
+    "Ready Mixes",
+    "Pickles",
+    "Snacks",
+    "Spice Powders",
+    "Sweets"
+  ],
+  "navLinks": [
+    "Health & Herbal",
+    "Millet Mixes",
+    "Beverages",
+    "Ready Mixes",
+    "Pickles",
+    "Snacks",
+    "Spice Powders",
+    "About",
+    "Contact"
+  ],
+  "mobileLinks": [
+    "All items",
+    "Health & Herbal",
+    "Millet Mixes",
+    "Beverages",
+    "Ready Mixes",
+    "Pickles",
+    "Snacks",
+    "About",
+    "Contact"
+  ],
+  "promoMessages": [
+    "Balanced pantry",
+    "Herb-led blends"
+  ],
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "LadleLeaf Mango Pickle Reserve",
+        "description": "Signature mango pickle from LadleLeaf Pantry.",
+        "price": 268,
+        "originalPrice": 318,
+        "image": "",
+        "category": "Health & Herbal",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1840,
+        "sku": "LL-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Style": "Signature",
+          "ShelfLife": "6 months",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 2,
+        "name": "GreenMortar Festival Sweet Box",
+        "description": "Popular sweet assortment curated by LadleLeaf Pantry.",
+        "price": 388,
+        "originalPrice": 458,
+        "image": "",
+        "category": "Sweets",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1320,
+        "sku": "LL-0002",
+        "specifications": {
+          "Pack": "300 g",
+          "Finish": "Gift-ready",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        }
+      },
+      {
+        "id": 3,
+        "name": "WellRoot Pantry Crunch Mix",
+        "description": "Best-selling crunchy snack from LadleLeaf Pantry.",
+        "price": 218,
+        "originalPrice": 248,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 940,
+        "sku": "LL-0003",
+        "specifications": {
+          "Pack": "200 g",
+          "Texture": "Crunchy",
+          "ShelfLife": "20 days",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 4,
+        "name": "LeafPan Kitchen Mix",
+        "description": "Ready pantry mix from LadleLeaf Pantry.",
+        "price": 238,
+        "originalPrice": 278,
+        "image": "",
+        "category": "Millet Mixes",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 870,
+        "sku": "LL-0004",
+        "specifications": {
+          "Pack": "500 g",
+          "Use": "Quick prep",
+          "ShelfLife": "4 months",
+          "Storage": "Dry place"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "LadleLeaf",
+        "GreenMortar",
+        "WellRoot",
+        "LeafPan",
+        "GardenJar",
+        "SmartGrain"
+      ],
+      "categories": [
+        "Health & Herbal",
+        "Millet Mixes",
+        "Beverages",
+        "Ready Mixes",
+        "Pickles",
+        "Snacks",
+        "Spice Powders",
+        "Sweets"
+      ],
+      "categorySpecifications": {
+        "Health & Herbal": {
+          "Pack": "Standard pack",
+          "Style": "Health & Herbal",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Millet Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Millet Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Style": "Beverages",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Ready Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Style": "Pickles",
+          "ShelfLife": "4 months",
+          "Storage": "Cool and dry"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Style": "Snacks",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Style": "Spice Powders",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Style": "Sweets",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        }
+      },
+      "basePriceStart": 128,
+      "priceStep": 27,
+      "priceModulo": 2600,
+      "categoryPriceFactor": 24,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

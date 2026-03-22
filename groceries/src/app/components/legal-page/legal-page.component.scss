@@ -1,0 +1,85 @@
+.legal-page {
+  background: var(--body-bg);
+  padding: 2rem;
+}
+
+.legal-container {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.legal-header {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.legal-eyebrow {
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+}
+
+.legal-header h1 {
+  margin: 0;
+  font-family: 'Bodoni Moda', 'Outfit', serif;
+  color: var(--ink);
+  font-size: 2rem;
+}
+
+.legal-date {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.legal-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 1.4rem 1.5rem;
+}
+
+.legal-card h2 {
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+  font-size: 1.25rem;
+}
+
+.legal-card p,
+.legal-card li {
+  font-size: 1rem;
+  color: var(--ink);
+  margin: 0 0 0.75rem;
+}
+
+.legal-card ul {
+  margin: 0.25rem 0 0;
+  padding-left: 1.2rem;
+}
+
+@media (max-width: 720px) {
+  .legal-page {
+    padding: 1.5rem;
+  }
+
+  .legal-header,
+  .legal-card {
+    padding: 1.2rem;
+  }
+
+  .legal-header h1 {
+    font-size: 1.6rem;
+  }
+}

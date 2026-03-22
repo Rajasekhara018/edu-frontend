@@ -1,0 +1,212 @@
+<section class="home-page" *ngIf="isHomeExperience; else catalogMode">
+  <section
+    class="hero"
+    (mouseenter)="pauseHeroAutoScroll()"
+    (mouseleave)="resumeHeroAutoScroll()"
+    (touchstart)="pauseHeroAutoScroll()"
+    (touchend)="resumeHeroAutoScroll()">
+    <img
+      [src]="getSafeImage(heroSlides[heroIndex].image, heroSlides[heroIndex].title, 'Hero Banner')"
+      [alt]="heroSlides[heroIndex].title"
+      (error)="onImageError($event, heroSlides[heroIndex].title, 'Hero Banner')" />
+    <div class="hero-overlay">
+      <h1>{{ heroSlides[heroIndex].title }}</h1>
+      <p>{{ heroSlides[heroIndex].subtitle }}</p>
+    </div>
+    <button class="hero-nav prev" type="button" (click)="prevHero()" aria-label="Previous slide">
+      <i class="bi bi-chevron-left"></i>
+    </button>
+    <button class="hero-nav next" type="button" (click)="nextHero()" aria-label="Next slide">
+      <i class="bi bi-chevron-right"></i>
+    </button>
+  </section>
+
+  <section class="home-intro">
+    <div class="intro-copy">
+      <span class="kicker">Food On Farm Standards</span>
+      <h2>Professional quality, authentic recipes, and dependable delivery.</h2>
+      <p>
+        Discover handcrafted pickles and pantry favorites made with consistency, quality control, and a modern
+        customer-first shopping experience.
+      </p>
+    </div>
+    <div class="intro-metrics">
+      <article class="metric-card" *ngFor="let item of homeHighlights">
+        <span>{{ item.label }}</span>
+        <strong>{{ item.value }}</strong>
+      </article>
+    </div>
+  </section>
+
+  <section class="best-sellers">
+    <div class="section-head">
+      <div>
+        <span class="kicker">Top products</span>
+        <h2>Best Sellers</h2>
+      </div>
+      <p>Most ordered products this week from our signature collections.</p>
+    </div>
+    <div class="rail-wrap">
+      <button class="rail-nav prev" type="button" (click)="scrollBestSellers(-1)" aria-label="Scroll left">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <div class="product-rail" #bestSellerRail>
+        <article class="product-card" *ngFor="let product of bestSellers">
+          <div class="image-wrap">
+            <img
+              [src]="getSafeImage(product.image, product.name, product.category)"
+              [alt]="product.name"
+              (error)="onImageError($event, product.name, product.category)" />
+          </div>
+          <h3>{{ product.name }}</h3>
+          <div class="price-row">
+            <small>From</small>
+            <strong>Rs. {{ product.price | number:'1.0-0' }}</strong>
+          </div>
+          <button class="add-btn" (click)="addToCart(product)" [disabled]="!product.inStock">
+            {{ product.inStock ? 'Quick Add' : 'Notify Me' }}
+          </button>
+        </article>
+      </div>
+      <button class="rail-nav next" type="button" (click)="scrollBestSellers(1)" aria-label="Scroll right">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+    <a class="view-all" routerLink="/products">View All</a>
+  </section>
+
+  <section class="brand-values">
+    <article class="value-card" *ngFor="let item of brandPromises">
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.copy }}</p>
+    </article>
+  </section>
+
+  <section class="section-head section-head-collections">
+    <div>
+      <span class="kicker">Shop by category</span>
+      <h2>Explore Collections</h2>
+    </div>
+    <p>Find pickles, powders, snacks, and festive assortments by product family.</p>
+  </section>
+
+  <section class="spotlight-grid">
+    <a class="spotlight-card" *ngFor="let card of spotlightCards" [routerLink]="'/collections/' + card.slug">
+      <img
+        [src]="getSafeImage(card.image, card.title, 'Collection')"
+        [alt]="card.title"
+        (error)="onImageError($event, card.title, 'Collection')" />
+      <span>{{ card.title }}</span>
+    </a>
+  </section>
+
+  <section class="promo-strip">
+    <a class="promo-banner" *ngFor="let promo of widePromos" [routerLink]="'/collections/' + promo.slug">
+      <img
+        [src]="getSafeImage(promo.image, promo.title, 'Promo')"
+        [alt]="promo.title"
+        (error)="onImageError($event, promo.title, 'Promo')" />
+      <h3>{{ promo.title }}</h3>
+    </a>
+  </section>
+</section>
+
+<ng-template #catalogMode>
+  <section class="products-page">
+    <div class="crumbs">Home <span>&gt;</span> {{ pageTitle }}</div>
+    <h1 class="page-heading">{{ pageTitle }}</h1>
+    <div class="line-separator"></div>
+
+    <section class="lookup-panel">
+      <div class="lookup-input-wrap">
+        <label for="catalog-search">Product lookup</label>
+        <div class="lookup-input">
+          <i class="bi bi-search"></i>
+          <input
+            id="catalog-search"
+            type="text"
+            [(ngModel)]="search"
+            (ngModelChange)="onLookupChange($event)"
+            placeholder="Search by product name, category, or keyword" />
+          <button type="button" class="clear-btn" *ngIf="search" (click)="clearLookup()">Clear</button>
+        </div>
+      </div>
+
+      <div class="lookup-selects">
+        <div class="control-item">
+          <label for="category-filter">Category</label>
+          <select id="category-filter" [(ngModel)]="selectedCategory" (change)="applyFilters()">
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+          </select>
+        </div>
+
+        <div class="control-item">
+          <label for="sort-filter">Sort by</label>
+          <select id="sort-filter" [(ngModel)]="sortBy" (change)="applyFilters()">
+            <option value="featured">Featured</option>
+            <option value="bestSelling">Best selling</option>
+            <option value="alphaAsc">Alphabetically, A-Z</option>
+            <option value="alphaDesc">Alphabetically, Z-A</option>
+            <option value="priceLow">Price: Low to High</option>
+            <option value="priceHigh">Price: High to Low</option>
+            <option value="dateOld">Date, old to new</option>
+            <option value="dateNew">Date, new to old</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="lookup-meta">
+        <span>{{ filteredProducts.length }} items found</span>
+        <span *ngIf="search">Lookup: "{{ search }}"</span>
+      </div>
+    </section>
+
+    <div class="toolbar">
+      <div class="view-as">
+        <span>View As</span>
+        <button type="button" (click)="setViewMode('list')" [class.active]="viewMode === 'list'" title="List view">
+          <i class="bi bi-list"></i>
+        </button>
+        <button type="button" (click)="setViewMode('grid2')" [class.active]="viewMode === 'grid2'" title="2 column">
+          <i class="bi bi-grid-1x2"></i>
+        </button>
+        <button type="button" (click)="setViewMode('grid3')" [class.active]="viewMode === 'grid3'" title="3 column">
+          <i class="bi bi-grid-3x3-gap"></i>
+        </button>
+        <button type="button" (click)="setViewMode('grid4')" [class.active]="viewMode === 'grid4'" title="4 column">
+          <i class="bi bi-grid-fill"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="products-grid" [ngClass]="gridClass">
+      <article class="product-card" *ngFor="let product of filteredProducts">
+        <div class="image-wrap">
+          <img
+            [src]="getSafeImage(product.image, product.name, product.category)"
+            [alt]="product.name"
+            (error)="onImageError($event, product.name, product.category)" />
+        </div>
+
+        <div class="product-content">
+          <h3>{{ product.name }}</h3>
+          <p class="desc">{{ product.description }}</p>
+          <div class="price-row">
+            <small>From</small>
+            <strong>Rs. {{ product.price | number:'1.0-0' }}</strong>
+          </div>
+
+          <button class="add-btn" (click)="addToCart(product)" [disabled]="!product.inStock">
+            {{ product.inStock ? 'Quick Add' : 'Notify Me' }}
+          </button>
+        </div>
+      </article>
+    </div>
+
+    <div class="empty-state" *ngIf="!filteredProducts.length">
+      <h3>No products found</h3>
+      <p>Try a different keyword or category to continue your lookup.</p>
+      <button type="button" (click)="clearLookup()">Reset lookup</button>
+    </div>
+  </section>
+</ng-template>

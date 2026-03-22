@@ -1,0 +1,384 @@
+{
+  "branding": {
+    "name": "NativeTable Foods",
+    "tagline": "Regional menus and Cultural staples from curated home-food brands.",
+    "logoMark": "NT",
+    "logoText": "NativeTable",
+    "logoDot": ".foods",
+    "favicon": "favicon.ico",
+    "pageTitle": "NativeTable Foods",
+    "locationLabel": "Serving premium pantry orders in Hyderabad",
+    "locationAction": "Change area",
+    "searchPlaceholder": "Search pickles, sweets, pantry packs...",
+    "accountGreeting": "Welcome back",
+    "accountLabel": "NativeTable member",
+    "ordersSmall": "Track",
+    "ordersLabel": "Orders & gifting",
+    "footerTagline": "Regional menus and Cultural staples with dependable packing and dispatch.",
+    "footerCopyright": "(C) 2026 NativeTable Foods. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff5ee 0%, #f8e6da 43%, #eed5c4 100%)",
+    "ink": "#2d1c14",
+    "muted": "#6f5a4d",
+    "accent": "#9c5f38",
+    "accentStrong": "#9c5f38",
+    "neon": "#f6d365",
+    "mint": "#ffe7d5",
+    "cream": "#fffaf4",
+    "panel": "#fffdf9",
+    "border": "color-mix(in srgb, #2d1c14 12%, transparent)",
+    "shadow": "0 18px 40px color-mix(in srgb, #2d1c14 14%, transparent)",
+    "headerGradient": "radial-gradient(circle at top, #fff5ee 0%, #f8e6da 43%, #eed5c4 100%)",
+    "headerBorder": "color-mix(in srgb, #2d1c14 10%, transparent)",
+    "darkSurface": "#2d1c14",
+    "darkSurfaceAlt": "#2d1c14",
+    "onDark": "#fff8f0",
+    "onDarkMuted": "#f0dcc8",
+    "focusRing": "color-mix(in srgb, #9c5f38 18%, transparent)"
+  },
+  "about": {
+    "eyebrow": "NativeTable Foods",
+    "title": "Regional menus, Cultural staples, and pantry staples for modern homes.",
+    "description": "NativeTable Foods curates pickles, sweets, savories, ready mixes and more through trusted kitchen partners and gift-ready packing.",
+    "primaryCta": "Start shopping",
+    "secondaryCta": "Book a curated order",
+    "highlights": [
+      {
+        "icon": "bi-stars",
+        "title": "Curated batches",
+        "description": "Regional menus across seasonal and daily staples."
+      },
+      {
+        "icon": "bi-gift",
+        "title": "Gift-ready",
+        "description": "Cultural staples for families and teams."
+      },
+      {
+        "icon": "bi-box-seam",
+        "title": "Safe packing",
+        "description": "Leak-safe jars, crisp snack packs, and reliable dispatch."
+      }
+    ],
+    "stats": [
+      {
+        "value": "320+",
+        "label": "Products Listed"
+      },
+      {
+        "value": "48 hrs",
+        "label": "Dispatch Promise"
+      },
+      {
+        "value": "4.8",
+        "label": "Average Rating"
+      },
+      {
+        "value": "1M+",
+        "label": "Packs Delivered"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Need help?",
+    "title": "Talk to NativeTable Foods about gifting, pantry planning, and bulk orders.",
+    "description": "We help with curated assortments, spice guidance, festival combos, and recurring pantry packs.",
+    "ctaLabel": "Talk to our team",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Call",
+        "lines": [
+          "+91 (800) 30145-1010",
+          "WhatsApp: +91 9014501010"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "hello@nativetable.store",
+          "support@nativetable.store"
+        ]
+      },
+      {
+        "icon": "bi-geo-alt",
+        "title": "Hub",
+        "lines": [
+          "Jubilee Hills Kitchen Hub",
+          "Hyderabad, India - 500033"
+        ]
+      },
+      {
+        "icon": "bi-clock",
+        "title": "Hours",
+        "lines": [
+          "Mon - Sat: 8:00 AM - 8:00 PM",
+          "Sunday: 9:00 AM - 2:00 PM"
+        ]
+      }
+    ],
+    "formTitle": "Send us a Message",
+    "formNote": "By submitting, you agree to be contacted regarding your inquiry."
+  },
+  "footer": {
+    "shopLinks": [
+      "Pickles",
+      "Sweets",
+      "Savories",
+      "Ready Mixes"
+    ],
+    "supportLinks": [
+      "Delivery info",
+      "Bulk orders",
+      "Gifting",
+      "Returns"
+    ],
+    "companyLinks": [
+      "Our story",
+      "Kitchen partners",
+      "Careers",
+      "Journal"
+    ],
+    "socialLinks": [
+      {
+        "icon": "bi-facebook",
+        "label": "Facebook",
+        "href": "#"
+      },
+      {
+        "icon": "bi-instagram",
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "icon": "bi-youtube",
+        "label": "YouTube",
+        "href": "#"
+      },
+      {
+        "icon": "bi-linkedin",
+        "label": "LinkedIn",
+        "href": "#"
+      }
+    ],
+    "contactLines": [
+      "+91 (800) 30145-1010",
+      "hello@nativetable.store",
+      "Jubilee Hills, Hyderabad"
+    ],
+    "appCtaLabel": "Request catalog"
+  },
+  "hero": {
+    "eyebrow": "NativeTable Foods",
+    "title": "Regional menus, Cultural staples, and dependable pantry favorites.",
+    "subtitle": "Shop pickles, sweets, savories, ready mixes, rice mixes with clear pricing and reliable 24-48 hour dispatch.",
+    "tags": [
+      "Regional menus",
+      "Cultural staples"
+    ],
+    "cardTitle": "Popular pantry picks",
+    "cardItems": [
+      "Pickles bestsellers",
+      "Sweets bestsellers",
+      "Savories bestsellers"
+    ],
+    "deliveryLine": "Dispatch in 24-48 hrs",
+    "detailDeliveryLine": "Dispatch in 24-48 hrs",
+    "relatedTitle": "More to explore"
+  },
+  "searchCategories": [
+    "All",
+    "Pickles",
+    "Sweets",
+    "Savories",
+    "Ready Mixes",
+    "Rice Mixes",
+    "Spice Powders",
+    "Papads & Fryums",
+    "Festival Boxes"
+  ],
+  "navLinks": [
+    "Pickles",
+    "Sweets",
+    "Savories",
+    "Ready Mixes",
+    "Rice Mixes",
+    "Spice Powders",
+    "Papads & Fryums",
+    "About",
+    "Contact"
+  ],
+  "mobileLinks": [
+    "All items",
+    "Pickles",
+    "Sweets",
+    "Savories",
+    "Ready Mixes",
+    "Rice Mixes",
+    "Spice Powders",
+    "About",
+    "Contact"
+  ],
+  "promoMessages": [
+    "Regional menus",
+    "Cultural staples"
+  ],
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "NativeTable Mango Pickle Reserve",
+        "description": "Signature mango pickle from NativeTable Foods.",
+        "price": 285,
+        "originalPrice": 335,
+        "image": "",
+        "category": "Pickles",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1840,
+        "sku": "NT-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Style": "Signature",
+          "ShelfLife": "6 months",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 2,
+        "name": "RegionRoot Festival Sweet Box",
+        "description": "Popular sweet assortment curated by NativeTable Foods.",
+        "price": 405,
+        "originalPrice": 475,
+        "image": "",
+        "category": "Sweets",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1320,
+        "sku": "NT-0002",
+        "specifications": {
+          "Pack": "300 g",
+          "Finish": "Gift-ready",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        }
+      },
+      {
+        "id": 3,
+        "name": "ClayDining Pantry Crunch Mix",
+        "description": "Best-selling crunchy snack from NativeTable Foods.",
+        "price": 235,
+        "originalPrice": 265,
+        "image": "",
+        "category": "Savories",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 940,
+        "sku": "NT-0003",
+        "specifications": {
+          "Pack": "200 g",
+          "Texture": "Crunchy",
+          "ShelfLife": "20 days",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 4,
+        "name": "VillageMeal Kitchen Mix",
+        "description": "Ready pantry mix from NativeTable Foods.",
+        "price": 255,
+        "originalPrice": 295,
+        "image": "",
+        "category": "Ready Mixes",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 870,
+        "sku": "NT-0004",
+        "specifications": {
+          "Pack": "500 g",
+          "Use": "Quick prep",
+          "ShelfLife": "4 months",
+          "Storage": "Dry place"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "NativeTable",
+        "RegionRoot",
+        "ClayDining",
+        "VillageMeal",
+        "TraditionTray",
+        "FolkPantry"
+      ],
+      "categories": [
+        "Pickles",
+        "Sweets",
+        "Savories",
+        "Ready Mixes",
+        "Rice Mixes",
+        "Spice Powders",
+        "Papads & Fryums",
+        "Festival Boxes"
+      ],
+      "categorySpecifications": {
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Style": "Pickles",
+          "ShelfLife": "4 months",
+          "Storage": "Cool and dry"
+        },
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Style": "Sweets",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        },
+        "Savories": {
+          "Pack": "Standard pack",
+          "Style": "Savories",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Ready Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Rice Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Rice Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Style": "Spice Powders",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Papads & Fryums": {
+          "Pack": "Standard pack",
+          "Style": "Papads & Fryums",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Style": "Festival Boxes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        }
+      },
+      "basePriceStart": 145,
+      "priceStep": 34,
+      "priceModulo": 2600,
+      "categoryPriceFactor": 24,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<section class="legal-page">
+  <div class="legal-container">
+    <div class="legal-header">
+      <p class="legal-eyebrow">Legal</p>
+      <h1>{{ title }}</h1>
+      <p class="legal-date">Effective Date: {{ effectiveDate }}</p>
+    </div>
+
+    <article class="legal-card" *ngFor="let section of sections">
+      <h2>{{ section.heading }}</h2>
+      <p *ngFor="let paragraph of section.paragraphs">{{ paragraph }}</p>
+      <ul *ngIf="section.bullets?.length">
+        <li *ngFor="let item of section.bullets">{{ item }}</li>
+      </ul>
+    </article>
+  </div>
+</section>

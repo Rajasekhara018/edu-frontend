@@ -1,0 +1,384 @@
+{
+  "branding": {
+    "name": "SweetKadai House",
+    "tagline": "Ghee sweets and Festive boxes from curated home-food brands.",
+    "logoMark": "SK",
+    "logoText": "SweetKadai",
+    "logoDot": ".house",
+    "favicon": "favicon.ico",
+    "pageTitle": "SweetKadai House",
+    "locationLabel": "Serving premium pantry orders in Hyderabad",
+    "locationAction": "Change area",
+    "searchPlaceholder": "Search sweets, festival boxes, pantry packs...",
+    "accountGreeting": "Welcome back",
+    "accountLabel": "SweetKadai member",
+    "ordersSmall": "Track",
+    "ordersLabel": "Orders & gifting",
+    "footerTagline": "Ghee sweets and Festive boxes with dependable packing and dispatch.",
+    "footerCopyright": "(C) 2026 SweetKadai House. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff2ec 0%, #ffe4d8 45%, #ffd7c7 100%)",
+    "ink": "#3d1f17",
+    "muted": "#6f5a4d",
+    "accent": "#cc5e3f",
+    "accentStrong": "#cc5e3f",
+    "neon": "#f6d365",
+    "mint": "#ffe7d5",
+    "cream": "#fffaf4",
+    "panel": "#fffdf9",
+    "border": "color-mix(in srgb, #3d1f17 12%, transparent)",
+    "shadow": "0 18px 40px color-mix(in srgb, #3d1f17 14%, transparent)",
+    "headerGradient": "radial-gradient(circle at top, #fff2ec 0%, #ffe4d8 45%, #ffd7c7 100%)",
+    "headerBorder": "color-mix(in srgb, #3d1f17 10%, transparent)",
+    "darkSurface": "#3d1f17",
+    "darkSurfaceAlt": "#3d1f17",
+    "onDark": "#fff8f0",
+    "onDarkMuted": "#f0dcc8",
+    "focusRing": "color-mix(in srgb, #cc5e3f 18%, transparent)"
+  },
+  "about": {
+    "eyebrow": "SweetKadai House",
+    "title": "Ghee sweets, Festive boxes, and pantry staples for modern homes.",
+    "description": "SweetKadai House curates sweets, festival boxes, snacks, beverages and more through trusted kitchen partners and gift-ready packing.",
+    "primaryCta": "Start shopping",
+    "secondaryCta": "Book a curated order",
+    "highlights": [
+      {
+        "icon": "bi-stars",
+        "title": "Curated batches",
+        "description": "Ghee sweets across seasonal and daily staples."
+      },
+      {
+        "icon": "bi-gift",
+        "title": "Gift-ready",
+        "description": "Festive boxes for families and teams."
+      },
+      {
+        "icon": "bi-box-seam",
+        "title": "Safe packing",
+        "description": "Leak-safe jars, crisp snack packs, and reliable dispatch."
+      }
+    ],
+    "stats": [
+      {
+        "value": "320+",
+        "label": "Products Listed"
+      },
+      {
+        "value": "48 hrs",
+        "label": "Dispatch Promise"
+      },
+      {
+        "value": "4.8",
+        "label": "Average Rating"
+      },
+      {
+        "value": "1M+",
+        "label": "Packs Delivered"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Need help?",
+    "title": "Talk to SweetKadai House about gifting, pantry planning, and bulk orders.",
+    "description": "We help with curated assortments, spice guidance, festival combos, and recurring pantry packs.",
+    "ctaLabel": "Talk to our team",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Call",
+        "lines": [
+          "+91 (800) 30180-1010",
+          "WhatsApp: +91 9018001010"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "hello@sweetkadai.store",
+          "support@sweetkadai.store"
+        ]
+      },
+      {
+        "icon": "bi-geo-alt",
+        "title": "Hub",
+        "lines": [
+          "Jubilee Hills Kitchen Hub",
+          "Hyderabad, India - 500033"
+        ]
+      },
+      {
+        "icon": "bi-clock",
+        "title": "Hours",
+        "lines": [
+          "Mon - Sat: 8:00 AM - 8:00 PM",
+          "Sunday: 9:00 AM - 2:00 PM"
+        ]
+      }
+    ],
+    "formTitle": "Send us a Message",
+    "formNote": "By submitting, you agree to be contacted regarding your inquiry."
+  },
+  "footer": {
+    "shopLinks": [
+      "Sweets",
+      "Festival Boxes",
+      "Snacks",
+      "Beverages"
+    ],
+    "supportLinks": [
+      "Delivery info",
+      "Bulk orders",
+      "Gifting",
+      "Returns"
+    ],
+    "companyLinks": [
+      "Our story",
+      "Kitchen partners",
+      "Careers",
+      "Journal"
+    ],
+    "socialLinks": [
+      {
+        "icon": "bi-facebook",
+        "label": "Facebook",
+        "href": "#"
+      },
+      {
+        "icon": "bi-instagram",
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "icon": "bi-youtube",
+        "label": "YouTube",
+        "href": "#"
+      },
+      {
+        "icon": "bi-linkedin",
+        "label": "LinkedIn",
+        "href": "#"
+      }
+    ],
+    "contactLines": [
+      "+91 (800) 30180-1010",
+      "hello@sweetkadai.store",
+      "Jubilee Hills, Hyderabad"
+    ],
+    "appCtaLabel": "Request catalog"
+  },
+  "hero": {
+    "eyebrow": "SweetKadai House",
+    "title": "Ghee sweets, Festive boxes, and dependable pantry favorites.",
+    "subtitle": "Shop sweets, festival boxes, snacks, beverages, dry fruit boxes with clear pricing and reliable 24-48 hour dispatch.",
+    "tags": [
+      "Ghee sweets",
+      "Festive boxes"
+    ],
+    "cardTitle": "Popular pantry picks",
+    "cardItems": [
+      "Sweets bestsellers",
+      "Festival Boxes bestsellers",
+      "Snacks bestsellers"
+    ],
+    "deliveryLine": "Dispatch in 24-48 hrs",
+    "detailDeliveryLine": "Dispatch in 24-48 hrs",
+    "relatedTitle": "More to explore"
+  },
+  "searchCategories": [
+    "All",
+    "Sweets",
+    "Festival Boxes",
+    "Snacks",
+    "Beverages",
+    "Dry Fruit Boxes",
+    "Savories",
+    "Millet Sweets",
+    "Gift Hampers"
+  ],
+  "navLinks": [
+    "Sweets",
+    "Festival Boxes",
+    "Snacks",
+    "Beverages",
+    "Dry Fruit Boxes",
+    "Savories",
+    "Millet Sweets",
+    "About",
+    "Contact"
+  ],
+  "mobileLinks": [
+    "All items",
+    "Sweets",
+    "Festival Boxes",
+    "Snacks",
+    "Beverages",
+    "Dry Fruit Boxes",
+    "Savories",
+    "About",
+    "Contact"
+  ],
+  "promoMessages": [
+    "Ghee sweets",
+    "Festive boxes"
+  ],
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "SweetKadai Mango Pickle Reserve",
+        "description": "Signature mango pickle from SweetKadai House.",
+        "price": 320,
+        "originalPrice": 370,
+        "image": "",
+        "category": "Sweets",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1840,
+        "sku": "SK-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Style": "Signature",
+          "ShelfLife": "6 months",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 2,
+        "name": "GheeCraft Festival Sweet Box",
+        "description": "Popular sweet assortment curated by SweetKadai House.",
+        "price": 440,
+        "originalPrice": 510,
+        "image": "",
+        "category": "Sweets",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1320,
+        "sku": "SK-0002",
+        "specifications": {
+          "Pack": "300 g",
+          "Finish": "Gift-ready",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        }
+      },
+      {
+        "id": 3,
+        "name": "RoyalLaddu Pantry Crunch Mix",
+        "description": "Best-selling crunchy snack from SweetKadai House.",
+        "price": 270,
+        "originalPrice": 300,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 940,
+        "sku": "SK-0003",
+        "specifications": {
+          "Pack": "200 g",
+          "Texture": "Crunchy",
+          "ShelfLife": "20 days",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 4,
+        "name": "KajuRoom Kitchen Mix",
+        "description": "Ready pantry mix from SweetKadai House.",
+        "price": 290,
+        "originalPrice": 330,
+        "image": "",
+        "category": "Beverages",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 870,
+        "sku": "SK-0004",
+        "specifications": {
+          "Pack": "500 g",
+          "Use": "Quick prep",
+          "ShelfLife": "4 months",
+          "Storage": "Dry place"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "SweetKadai",
+        "GheeCraft",
+        "RoyalLaddu",
+        "KajuRoom",
+        "FestivalLeaf",
+        "SugarBrass"
+      ],
+      "categories": [
+        "Sweets",
+        "Festival Boxes",
+        "Snacks",
+        "Beverages",
+        "Dry Fruit Boxes",
+        "Savories",
+        "Millet Sweets",
+        "Gift Hampers"
+      ],
+      "categorySpecifications": {
+        "Sweets": {
+          "Pack": "Standard pack",
+          "Style": "Sweets",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        },
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Style": "Festival Boxes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Style": "Snacks",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Style": "Beverages",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Dry Fruit Boxes": {
+          "Pack": "Gift assortment",
+          "Style": "Dry Fruit Boxes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Savories": {
+          "Pack": "Standard pack",
+          "Style": "Savories",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Millet Sweets": {
+          "Pack": "Standard pack",
+          "Style": "Millet Sweets",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        },
+        "Gift Hampers": {
+          "Pack": "Gift assortment",
+          "Style": "Gift Hampers",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        }
+      },
+      "basePriceStart": 180,
+      "priceStep": 42,
+      "priceModulo": 2600,
+      "categoryPriceFactor": 24,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

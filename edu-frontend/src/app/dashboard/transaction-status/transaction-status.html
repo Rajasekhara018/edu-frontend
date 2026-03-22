@@ -1,28 +1,47 @@
-<div class="container py-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-7">
-            <div class="card p-4">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h5 class="card-header p-0">Check Transaction Status</h5>
-                    <img src="bharat-connect-logo.png" alt="Bharat Connect" class="logo">
-                </div>
-                <p class="text-muted mb-3">
-                    You can verify the status of your online transaction by entering your transaction reference ID.
-                </p>
-                <div class="alert alert-warning py-2">
-                    <small>Check your transaction status using transaction ref id</small>
-                </div>
-                <form>
-                    <div class="mb-3">
-                        <label for="transactionRefId" class="form-label">Transaction Ref Id</label>
-                        <input type="text" class="form-control" id="transactionRefId"
-                            placeholder="Enter transaction reference id">
-                    </div>
-                    <div class="text-end">
-                        <button type="submit" class="btn btn-primary">SUBMIT</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+<section class="status-page">
+  <div class="status-hero">
+    <div>
+      <span class="section-kicker">Transaction verification</span>
+      <h1>Validate transaction status before taking a support action.</h1>
+      <p>
+        Confirm whether a payment was successful, pending, or failed by querying with a transaction reference ID.
+        Use the result to guide refund, retry, or reconciliation workflows.
+      </p>
     </div>
-</div>
+    <div class="hero-note">
+      <span>Lookup scope</span>
+      <strong>Transaction reference ID</strong>
+      <p>Use the exact processor reference captured during payment initiation.</p>
+    </div>
+  </div>
+
+  <section class="panel form-panel">
+    <div class="panel-head">
+      <div>
+        <span class="section-kicker">Status lookup</span>
+        <h2>Transaction status search</h2>
+      </div>
+      <p>Search the latest status using the transaction reference ID.</p>
+    </div>
+
+    <div class="inline-alert">
+      Check transaction status using a valid transaction reference ID.
+    </div>
+
+    <form class="lookup-form" autocomplete="off">
+      <div class="row g-3 align-items-end">
+        <div class="col-md-8">
+          <label for="transactionRefId" class="form-label">Transaction reference ID</label>
+          <input
+            type="text"
+            class="form-control"
+            id="transactionRefId"
+            placeholder="Enter transaction reference ID" />
+        </div>
+        <div class="col-md-4 d-grid">
+          <button type="submit" class="btn btn-primary">Check status</button>
+        </div>
+      </div>
+    </form>
+  </section>
+</section>

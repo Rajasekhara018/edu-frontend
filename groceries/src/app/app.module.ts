@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 import { CartComponent } from './components/cart/cart.component';
+import { LegalPageComponent } from './components/legal-page/legal-page.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from './Services/material.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,7 +19,7 @@ function initializeGroceryConfig(configService: GroceryConfigService): () => Pro
 }
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, ProductsListComponent, ProductDetailComponent, CartComponent],
+  declarations: [AppComponent, HeaderComponent, ProductsListComponent, ProductDetailComponent, CartComponent, LegalPageComponent],
   imports: [BrowserAnimationsModule, BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, MaterialModule],
   providers: [
     DatePipe,

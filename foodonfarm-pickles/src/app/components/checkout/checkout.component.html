@@ -1,0 +1,96 @@
+﻿<section class="checkout-page" *ngIf="cartItems$ | async as items">
+  <div class="checkout-backdrop" (click)="closeCheckout()"></div>
+
+  <div class="checkout-modal" *ngIf="summary$ | async as summary">
+    <button class="floating-close" type="button" (click)="closeCheckout()" aria-label="Close">
+      <i class="bi bi-x-lg"></i>
+    </button>
+
+    <header class="top-row">
+      <button class="back" type="button" (click)="closeCheckout()" aria-label="Back">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <div class="mini-brand">
+        <img [src]="getSafeImage('', 'Food On Farm', 'Checkout')" alt="Food On Farm" (error)="onImageError($event, 'Food On Farm', 'Checkout')" />
+      </div>
+      <p>100% Secured Payment <i class="bi bi-lock-fill"></i></p>
+    </header>
+
+    <div class="free-strip">10% Off for Orders Above Rs. 1500</div>
+
+    <section class="address-step">
+      <h2>Add Delivery Address</h2>
+      <label>
+        <input [(ngModel)]="customer.address" name="addressLine" placeholder="Apartment, Area, Sector, Village *" />
+      </label>
+
+      <h3>Customer Information</h3>
+      <label>
+        <input [(ngModel)]="customer.fullName" name="fullName" placeholder="Full Name *" />
+      </label>
+      <label>
+        <input [(ngModel)]="email" name="email" placeholder="Email Address *" />
+      </label>
+
+      <h3>Save Address As</h3>
+      <div class="save-as">
+        <button type="button" [class.active]="saveAs==='Home'" (click)="saveAs='Home'">
+          Home <i class="bi" [class.bi-record-circle-fill]="saveAs==='Home'" [class.bi-circle]="saveAs!=='Home'"></i>
+        </button>
+        <button type="button" [class.active]="saveAs==='Work'" (click)="saveAs='Work'">
+          Work <i class="bi" [class.bi-record-circle-fill]="saveAs==='Work'" [class.bi-circle]="saveAs!=='Work'"></i>
+        </button>
+      </div>
+
+      <div class="shipping-box">
+        <p class="title">Shipping Method</p>
+        <button type="button" class="ship-option active">
+          <span>
+            <strong>Standard Shipping</strong>
+            <small>Delivery in 7-10 Days</small>
+          </span>
+          <em>{{ summary.subtotal >= 1500 ? 'Free' : 'Rs 69' }}</em>
+          <i class="bi bi-record-circle-fill"></i>
+        </button>
+      </div>
+
+      <div class="billing-row">
+        <label class="same-box">
+          <input type="checkbox" [(ngModel)]="sameAsShipping" name="sameAsShipping" (ngModelChange)="onSameAsShippingChange()" />
+          Same as shipping address
+        </label>
+        <button type="button" class="billing-btn" (click)="toggleBillingAddressForm()">
+          {{ showBillingAddressForm ? 'Hide Billing Address' : '+ Add Billing Address' }}
+        </button>
+      </div>
+
+      <section class="billing-form" *ngIf="showBillingAddressForm">
+        <h3>Billing Address</h3>
+        <label>
+          <input [(ngModel)]="billingCustomer.address" name="billingAddressLine" placeholder="Billing Apartment, Area, Sector, Village *" />
+        </label>
+        <label>
+          <input [(ngModel)]="billingCustomer.fullName" name="billingFullName" placeholder="Billing Full Name *" />
+        </label>
+        <div class="billing-grid">
+          <label>
+            <input [(ngModel)]="billingCustomer.city" name="billingCity" placeholder="City" />
+          </label>
+          <label>
+            <input [(ngModel)]="billingCustomer.pincode" name="billingPincode" placeholder="Pincode" />
+          </label>
+        </div>
+        <label>
+          <input [(ngModel)]="billingCustomer.phone" name="billingPhone" placeholder="Phone Number" />
+        </label>
+      </section>
+
+      <button
+        class="proceed"
+        [disabled]="!canPlaceOrder(items) || isSubmitting"
+        (click)="placeOrder()">
+        {{ isSubmitting ? 'Placing Order...' : 'Proceed' }}
+      </button>
+    </section>
+  </div>
+</section>

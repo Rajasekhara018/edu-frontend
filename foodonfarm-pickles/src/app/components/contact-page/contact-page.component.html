@@ -1,0 +1,53 @@
+<section class="contact-page">
+  <div class="contact-wrap">
+    <div class="left">
+      <p class="crumb">Home &gt; Contact</p>
+      <h1>CONTACT</h1>
+      <p class="intro">
+        Have a question or comment?<br>
+        Use the form below to send us a message or contact us by mail at:
+      </p>
+
+      <form class="contact-form" #contactForm="ngForm">
+        <label>Name
+          <input type="text" name="name" ngModel required>
+        </label>
+        <label>Phone Number
+          <input type="tel" name="phone" ngModel>
+        </label>
+        <label>Email *
+          <input type="email" name="email" ngModel required>
+        </label>
+        <label>Comment *
+          <textarea name="comment" ngModel rows="6" required></textarea>
+        </label>
+        <button type="button">Submit Contact</button>
+      </form>
+    </div>
+
+    <aside class="right">
+      <h2>Get In Touch</h2>
+      <p>
+        We'd Love to Hear From You! We are dedicated to providing exceptional products and outstanding customer service.
+        Whether you have a question about our pickles, need assistance with an order, or simply want to share your
+        feedback, we're here to help.
+      </p>
+      <p><strong>TEXT</strong> {{ contact.phone }}</p>
+      <p><i class="bi bi-envelope-fill"></i> {{ contact.email }}</p>
+      <p class="address" *ngFor="let line of contact.address">{{ line }}</p>
+      <hr>
+      <p class="hours-title">Opening Hours:</p>
+      <p>MON to SAT: 9:00AM - 10:00PM</p>
+      <p>SUN: 10:00AM - 10:00PM</p>
+    </aside>
+  </div>
+
+  <div class="map-wrap">
+    <iframe
+      title="Food On Farm Pickles Location"
+      loading="lazy"
+      allowfullscreen
+      src="https://maps.google.com/maps?q=16.018723,80.691973&z=14&output=embed">
+    </iframe>
+  </div>
+</section>

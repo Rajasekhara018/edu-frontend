@@ -1,0 +1,156 @@
+.contact-page {
+  width: 100%;
+  color: #1f1a14;
+  background: #f7f2ea;
+}
+
+.contact-wrap {
+  width: min(1120px, 94%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 42px;
+  padding: 20px 0 24px;
+  align-items: start;
+}
+
+.crumb {
+  margin: 0 0 10px;
+  font-size: 0.85rem;
+  color: #665d54;
+}
+
+h1 {
+  margin: 0 0 14px;
+  font-size: 2.05rem;
+  letter-spacing: 0.04em;
+  color: #17120f;
+}
+
+.intro {
+  margin: 0 0 14px;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #2f2925;
+}
+
+.contact-form {
+  display: grid;
+  gap: 0.85rem;
+}
+
+label {
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #28211c;
+}
+
+input,
+textarea {
+  border: 1px solid #bdb2a5;
+  border-radius: 16px;
+  padding: 0.8rem 0.95rem;
+  background: #f7f8fb;
+  outline: none;
+  font-size: 1rem;
+  color: #1f1a14;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #c95b3f;
+  box-shadow: 0 0 0 3px rgba(201, 91, 63, 0.15);
+}
+
+textarea {
+  border-radius: 14px;
+  resize: vertical;
+  min-height: 150px;
+}
+
+button {
+  width: fit-content;
+  border: 0;
+  background: #123d2f;
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.right h2 {
+  margin: 0 0 10px;
+  font-size: 1.12rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #1f1a14;
+}
+
+.right p {
+  margin: 0 0 0.55rem;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: #2d2722;
+}
+
+.address {
+  margin-bottom: 0.2rem;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #c9c2b7;
+  margin: 0.9rem 0;
+}
+
+.hours-title {
+  font-weight: 700;
+}
+
+.right {
+  background: #fff;
+  border: 1px solid #dfd2c5;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+}
+
+.map-wrap {
+  width: 100%;
+  height: 280px;
+  margin-top: 10px;
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 900px) {
+  .contact-wrap {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding-top: 14px;
+  }
+
+  h1 {
+    font-size: 1.65rem;
+  }
+
+  .intro,
+  .right p,
+  label,
+  input,
+  textarea {
+    font-size: 0.95rem;
+  }
+
+  .map-wrap {
+    height: 230px;
+  }
+}

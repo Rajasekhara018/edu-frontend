@@ -1,0 +1,174 @@
+<header class="header">
+  <div class="header-bar">
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a routerLink="/products">Home</a>
+      <a [routerLink]="'/products'" [queryParams]="{ q: 'best sellers' }">Best Sellers</a>
+      <div class="nav-dropdown">
+        <a routerLink="/collections/veg-pickles">Collections</a>
+        <div class="dropdown-menu">
+          <a routerLink="/collections/veg-pickles">Vegetarian Pickles</a>
+          <a routerLink="/collections/non-veg-pickles">Non-Vegetarian Pickles</a>
+          <a routerLink="/collections/masala-kaaram-powders">Masala and Kaaram Powders</a>
+          <a routerLink="/collections/sweets-snacks">Sweets and Snacks</a>
+          <a routerLink="/collections/fryums">Fryums</a>
+          <a routerLink="/collections/instant-mixes">Instant Mixes</a>
+        </div>
+      </div>
+      <a routerLink="/pages/contact">Contact</a>
+    </nav>
+
+    <a class="logo" routerLink="/products" aria-label="Food On Farm home">
+      <span>Food On Farm</span>
+      <small>Authentic Pickles</small>
+    </a>
+
+    <div class="actions">
+      <div class="search-wrap" (click)="openSearchPanel($event)">
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+          <input
+            [(ngModel)]="searchTerm"
+            (keyup.enter)="search()"
+            placeholder="Search pickles, powders, snacks"
+            aria-label="Search products" />
+          <button type="button" (click)="search()">Search</button>
+        </div>
+
+        <div class="search-panel" *ngIf="showSearchPanel" (click)="$event.stopPropagation()">
+          <div class="search-panel-head">
+            <h4>Smart Lookup</h4>
+            <p>Find products quickly by name, category, or popular picks.</p>
+          </div>
+
+          <section class="lookup-group">
+            <h5>Popular Searches</h5>
+            <div class="chip-list">
+              <button type="button" class="chip" *ngFor="let pick of topPicks" (click)="useTopPick(pick, $event)">
+                {{ pick }}
+              </button>
+            </div>
+          </section>
+
+          <section class="lookup-group">
+            <h5>Recommended Products</h5>
+            <div class="popular-list">
+              <button
+                type="button"
+                class="popular-item"
+                *ngFor="let product of popularProducts"
+                (click)="viewProduct(product, $event)"
+                [title]="product.name">
+                <img
+                  [src]="getSafeImage(product.image, product.name, product.category)"
+                  [alt]="product.name"
+                  (error)="onImageError($event, product.name, product.category)" />
+                <div>
+                  <p class="product-name">{{ product.name }}</p>
+                  <p class="product-price"><span>From</span> Rs. {{ product.price | number:'1.0-0' }}</p>
+                </div>
+              </button>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <button class="icon-btn" type="button" aria-label="Account" (click)="openAccountPopup($event)"><i class="bi bi-person"></i></button>
+      <button class="icon-btn" type="button" aria-label="Wishlist"><i class="bi bi-heart"></i></button>
+      <button class="icon-btn cart-icon-btn" (click)="openCart()" type="button" aria-label="Cart">
+        <i class="bi bi-bag"></i>
+        <span class="cart-badge">{{ cartCount$ | async }}</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="account-overlay" *ngIf="showAccountPopup" (click)="closeAccountPopup()">
+    <div class="account-popup" (click)="$event.stopPropagation()">
+      <button class="account-close" type="button" aria-label="Close popup" title="Close" (click)="closeAccountPopup()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <div class="account-left">
+        <img
+          [src]="getAccountPromoImage()"
+          alt="Food On Farm"
+          (error)="onImageError($event, 'Food On Farm', 'Account Login')" />
+        <h3>Login now to avail best offers!</h3>
+        <p>Track orders, save addresses, and get exclusive member deals.</p>
+      </div>
+
+      <form *ngIf="!showOtpStep; else otpStep" class="account-right" (submit)="$event.preventDefault(); submitAccountForm();">
+        <label for="account-mobile">Enter Mobile Number</label>
+        <div class="mobile-input-wrap" [class.invalid]="accountFormSubmitted && !isMobileValid">
+          <div class="country-select-wrap">
+            <span class="flag-badge" [attr.aria-label]="selectedCountryLabel">
+              <img
+                *ngIf="selectedCountryFlagImage; else emojiFlag"
+                [src]="selectedCountryFlagImage"
+                loading="lazy" />
+              <ng-template #emojiFlag>{{ selectedCountryFlag }}</ng-template>
+            </span>
+            <select name="country-code" [(ngModel)]="countryCode" aria-label="Country code" (change)="onCountryChange()">
+              <option *ngFor="let country of countryOptions" [value]="country.code">
+                {{ country.code }}
+              </option>
+            </select>
+          </div>
+          <input
+            id="account-mobile"
+            name="account-mobile"
+            type="tel"
+            [attr.maxlength]="expectedMobileLength"
+            [(ngModel)]="accountMobile"
+            (input)="onMobileInput($event)"
+            placeholder="Enter Mobile Number"
+            autocomplete="tel-national" />
+        </div>
+        <p class="field-error" *ngIf="mobileValidationMessage">{{ mobileValidationMessage }}</p>
+
+        <label class="notify-check">
+          <input type="checkbox" name="notify-offers" [(ngModel)]="notifyOffers" />
+          Notify me with offers & updates
+        </label>
+
+        <button type="submit" class="account-submit">Submit</button>
+        <p class="account-note">I accept Terms, Privacy Policy and communication updates.</p>
+      </form>
+
+      <ng-template #otpStep>
+        <div class="account-right otp-panel">
+          <h4>OTP Verification</h4>
+          <p class="otp-subtext">Verification code sent to</p>
+          <div class="otp-target">
+            <span class="otp-flag" [attr.aria-label]="selectedCountryLabel">
+              <img
+                *ngIf="selectedCountryFlagImage; else otpEmojiFlag"
+                [src]="selectedCountryFlagImage"
+                [alt]="selectedCountryLabel + ' flag'"
+                loading="lazy" />
+              <ng-template #otpEmojiFlag>{{ selectedCountryFlag }}</ng-template>
+            </span>
+            <strong>{{ formattedMobile }}</strong>
+            <button type="button" (click)="editMobile()">Edit</button>
+          </div>
+          <div class="otp-inputs">
+            <input
+              *ngFor="let digit of otpDigits; let idx = index"
+              [id]="'otp-' + idx"
+              [value]="digit"
+              maxlength="1"
+              inputmode="numeric"
+              type="text"
+              aria-label="OTP digit"
+              (input)="onOtpInput(idx, $event)"
+              (keydown)="onOtpBackspace(idx, $event)" />
+          </div>
+          <p class="field-error otp-error" *ngIf="otpFormSubmitted && !isOtpComplete">Enter complete 4-digit OTP.</p>
+          <button type="button" class="resend-btn" [disabled]="otpCountdown > 0" (click)="resendOtp()">
+            {{ otpCountdown > 0 ? ('Resend OTP in ' + otpCountdown + ' sec') : 'Resend OTP' }}
+          </button>
+          <button type="button" class="account-submit" [disabled]="!isOtpComplete" (click)="verifyOtp()">Verify</button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,384 @@
+{
+  "branding": {
+    "name": "Tiffin Tradition",
+    "tagline": "Breakfast staples and Home-style mixes from curated home-food brands.",
+    "logoMark": "TT",
+    "logoText": "Tiffin",
+    "logoDot": ".foods",
+    "favicon": "favicon.ico",
+    "pageTitle": "Tiffin Tradition",
+    "locationLabel": "Serving premium pantry orders in Hyderabad",
+    "locationAction": "Change area",
+    "searchPlaceholder": "Search ready mixes, spice powders, pantry packs...",
+    "accountGreeting": "Welcome back",
+    "accountLabel": "Tiffin member",
+    "ordersSmall": "Track",
+    "ordersLabel": "Orders & gifting",
+    "footerTagline": "Breakfast staples and Home-style mixes with dependable packing and dispatch.",
+    "footerCopyright": "(C) 2026 Tiffin Tradition. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff7e8 0%, #ffeac7 45%, #ffd69e 100%)",
+    "ink": "#362010",
+    "muted": "#6f5a4d",
+    "accent": "#d6772c",
+    "accentStrong": "#d6772c",
+    "neon": "#f6d365",
+    "mint": "#ffe7d5",
+    "cream": "#fffaf4",
+    "panel": "#fffdf9",
+    "border": "color-mix(in srgb, #362010 12%, transparent)",
+    "shadow": "0 18px 40px color-mix(in srgb, #362010 14%, transparent)",
+    "headerGradient": "radial-gradient(circle at top, #fff7e8 0%, #ffeac7 45%, #ffd69e 100%)",
+    "headerBorder": "color-mix(in srgb, #362010 10%, transparent)",
+    "darkSurface": "#362010",
+    "darkSurfaceAlt": "#362010",
+    "onDark": "#fff8f0",
+    "onDarkMuted": "#f0dcc8",
+    "focusRing": "color-mix(in srgb, #d6772c 18%, transparent)"
+  },
+  "about": {
+    "eyebrow": "Tiffin Tradition",
+    "title": "Breakfast staples, Home-style mixes, and pantry staples for modern homes.",
+    "description": "Tiffin Tradition curates ready mixes, spice powders, chutney powders, millet mixes and more through trusted kitchen partners and gift-ready packing.",
+    "primaryCta": "Start shopping",
+    "secondaryCta": "Book a curated order",
+    "highlights": [
+      {
+        "icon": "bi-stars",
+        "title": "Curated batches",
+        "description": "Breakfast staples across seasonal and daily staples."
+      },
+      {
+        "icon": "bi-gift",
+        "title": "Gift-ready",
+        "description": "Home-style mixes for families and teams."
+      },
+      {
+        "icon": "bi-box-seam",
+        "title": "Safe packing",
+        "description": "Leak-safe jars, crisp snack packs, and reliable dispatch."
+      }
+    ],
+    "stats": [
+      {
+        "value": "320+",
+        "label": "Products Listed"
+      },
+      {
+        "value": "48 hrs",
+        "label": "Dispatch Promise"
+      },
+      {
+        "value": "4.8",
+        "label": "Average Rating"
+      },
+      {
+        "value": "1M+",
+        "label": "Packs Delivered"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Need help?",
+    "title": "Talk to Tiffin Tradition about gifting, pantry planning, and bulk orders.",
+    "description": "We help with curated assortments, spice guidance, festival combos, and recurring pantry packs.",
+    "ctaLabel": "Talk to our team",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Call",
+        "lines": [
+          "+91 (800) 30100-1010",
+          "WhatsApp: +91 9010001010"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "hello@tiffintradition.store",
+          "support@tiffintradition.store"
+        ]
+      },
+      {
+        "icon": "bi-geo-alt",
+        "title": "Hub",
+        "lines": [
+          "Jubilee Hills Kitchen Hub",
+          "Hyderabad, India - 500033"
+        ]
+      },
+      {
+        "icon": "bi-clock",
+        "title": "Hours",
+        "lines": [
+          "Mon - Sat: 8:00 AM - 8:00 PM",
+          "Sunday: 9:00 AM - 2:00 PM"
+        ]
+      }
+    ],
+    "formTitle": "Send us a Message",
+    "formNote": "By submitting, you agree to be contacted regarding your inquiry."
+  },
+  "footer": {
+    "shopLinks": [
+      "Ready Mixes",
+      "Spice Powders",
+      "Chutney Powders",
+      "Millet Mixes"
+    ],
+    "supportLinks": [
+      "Delivery info",
+      "Bulk orders",
+      "Gifting",
+      "Returns"
+    ],
+    "companyLinks": [
+      "Our story",
+      "Kitchen partners",
+      "Careers",
+      "Journal"
+    ],
+    "socialLinks": [
+      {
+        "icon": "bi-facebook",
+        "label": "Facebook",
+        "href": "#"
+      },
+      {
+        "icon": "bi-instagram",
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "icon": "bi-youtube",
+        "label": "YouTube",
+        "href": "#"
+      },
+      {
+        "icon": "bi-linkedin",
+        "label": "LinkedIn",
+        "href": "#"
+      }
+    ],
+    "contactLines": [
+      "+91 (800) 30100-1010",
+      "hello@tiffintradition.store",
+      "Jubilee Hills, Hyderabad"
+    ],
+    "appCtaLabel": "Request catalog"
+  },
+  "hero": {
+    "eyebrow": "Tiffin Tradition",
+    "title": "Breakfast staples, Home-style mixes, and dependable pantry favorites.",
+    "subtitle": "Shop ready mixes, spice powders, chutney powders, millet mixes, pickles with clear pricing and reliable 24-48 hour dispatch.",
+    "tags": [
+      "Breakfast staples",
+      "Home-style mixes"
+    ],
+    "cardTitle": "Popular pantry picks",
+    "cardItems": [
+      "Ready Mixes bestsellers",
+      "Spice Powders bestsellers",
+      "Chutney Powders bestsellers"
+    ],
+    "deliveryLine": "Dispatch in 24-48 hrs",
+    "detailDeliveryLine": "Dispatch in 24-48 hrs",
+    "relatedTitle": "More to explore"
+  },
+  "searchCategories": [
+    "All",
+    "Ready Mixes",
+    "Spice Powders",
+    "Chutney Powders",
+    "Millet Mixes",
+    "Pickles",
+    "Snacks",
+    "Papads & Fryums",
+    "Beverages"
+  ],
+  "navLinks": [
+    "Ready Mixes",
+    "Spice Powders",
+    "Chutney Powders",
+    "Millet Mixes",
+    "Pickles",
+    "Snacks",
+    "Papads & Fryums",
+    "About",
+    "Contact"
+  ],
+  "mobileLinks": [
+    "All items",
+    "Ready Mixes",
+    "Spice Powders",
+    "Chutney Powders",
+    "Millet Mixes",
+    "Pickles",
+    "Snacks",
+    "About",
+    "Contact"
+  ],
+  "promoMessages": [
+    "Breakfast staples",
+    "Home-style mixes"
+  ],
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "TiffinTradition Mango Pickle Reserve",
+        "description": "Signature mango pickle from Tiffin Tradition.",
+        "price": 240,
+        "originalPrice": 290,
+        "image": "",
+        "category": "Ready Mixes",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1840,
+        "sku": "TT-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Style": "Signature",
+          "ShelfLife": "6 months",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 2,
+        "name": "MorningStone Festival Sweet Box",
+        "description": "Popular sweet assortment curated by Tiffin Tradition.",
+        "price": 360,
+        "originalPrice": 430,
+        "image": "",
+        "category": "Spice Powders",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1320,
+        "sku": "TT-0002",
+        "specifications": {
+          "Pack": "300 g",
+          "Finish": "Gift-ready",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        }
+      },
+      {
+        "id": 3,
+        "name": "DosaRoot Pantry Crunch Mix",
+        "description": "Best-selling crunchy snack from Tiffin Tradition.",
+        "price": 190,
+        "originalPrice": 220,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 940,
+        "sku": "TT-0003",
+        "specifications": {
+          "Pack": "200 g",
+          "Texture": "Crunchy",
+          "ShelfLife": "20 days",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 4,
+        "name": "IdliCraft Kitchen Mix",
+        "description": "Ready pantry mix from Tiffin Tradition.",
+        "price": 210,
+        "originalPrice": 250,
+        "image": "",
+        "category": "Ready Mixes",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 870,
+        "sku": "TT-0004",
+        "specifications": {
+          "Pack": "500 g",
+          "Use": "Quick prep",
+          "ShelfLife": "4 months",
+          "Storage": "Dry place"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "TiffinTradition",
+        "MorningStone",
+        "DosaRoot",
+        "IdliCraft",
+        "BrassBatter",
+        "HeritageMix"
+      ],
+      "categories": [
+        "Ready Mixes",
+        "Spice Powders",
+        "Chutney Powders",
+        "Millet Mixes",
+        "Pickles",
+        "Snacks",
+        "Papads & Fryums",
+        "Beverages"
+      ],
+      "categorySpecifications": {
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Ready Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Style": "Spice Powders",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Chutney Powders": {
+          "Pack": "Standard pack",
+          "Style": "Chutney Powders",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Millet Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Millet Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Style": "Pickles",
+          "ShelfLife": "4 months",
+          "Storage": "Cool and dry"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Style": "Snacks",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Papads & Fryums": {
+          "Pack": "Standard pack",
+          "Style": "Papads & Fryums",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Beverages": {
+          "Pack": "Standard pack",
+          "Style": "Beverages",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        }
+      },
+      "basePriceStart": 100,
+      "priceStep": 26,
+      "priceModulo": 2600,
+      "categoryPriceFactor": 24,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}

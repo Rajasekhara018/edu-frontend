@@ -1,0 +1,156 @@
+﻿<div class="app-shell">
+  <div class="top-strip">
+    Preservative-Free, Home-Style and 100% Natural Goodness
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    Get 10% OFF on all orders above Rs. 1200
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    Shop More, Save More
+  </div>
+
+  <app-header></app-header>
+
+  <main class="page-content">
+    <router-outlet></router-outlet>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <section>
+        <h4>Shop</h4>
+        <a routerLink="/products">Home</a>
+        <a [routerLink]="'/products'" [queryParams]="{ q: 'best sellers' }">Best Sellers</a>
+        <a routerLink="/collections/veg-pickles">Shop by Collection</a>
+        <a routerLink="/pages/contact">Contact</a>
+      </section>
+
+      <section>
+        <h4>Information</h4>
+        <a routerLink="/pages/terms-conditions">Terms and Conditions</a>
+        <a routerLink="/pages/shipping-delivery-policies">Shipping, Returns, Refunds, and Cancellation Policy</a>
+        <a routerLink="/pages/privacy-policy">Privacy Policy</a>
+      </section>
+
+      <section>
+        <h4>Customer Service</h4>
+        <a routerLink="/products">Home</a>
+        <a [routerLink]="'/products'" [queryParams]="{ q: 'best sellers' }">Best Sellers</a>
+        <a routerLink="/collections/veg-pickles">Shop by Collection</a>
+        <a routerLink="/pages/contact">Contact</a>
+      </section>
+
+      <section class="about">
+        <h4>About Us</h4>
+        <p>
+          Food On Farm Pickles brings authentic, flavorful, and traditionally crafted pickles to your table.
+          We preserve proven recipes while delivering a modern shopping experience for every home.
+          <strong>FSSAI License No:</strong> 10123021000072
+        </p>
+        <div class="socials">
+          <button type="button" aria-label="Facebook"><i class="bi bi-facebook"></i></button>
+          <button type="button" aria-label="Instagram"><i class="bi bi-instagram"></i></button>
+          <button type="button" aria-label="Pinterest"><i class="bi bi-pinterest"></i></button>
+          <button type="button" aria-label="YouTube"><i class="bi bi-youtube"></i></button>
+          <button type="button" aria-label="X"><i class="bi bi-twitter-x"></i></button>
+        </div>
+      </section>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Food On Farm Pickles.</p>
+      <p>Crafted for trusted direct-to-customer commerce.</p>
+      <div class="payment-list">
+        <span>VISA</span>
+        <span>Mastercard</span>
+        <span>AMEX</span>
+        <span>Apple Pay</span>
+        <span>Discover</span>
+        <span>PayPal</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-drawer-overlay" *ngIf="isDrawerOpen$ | async" (click)="closeDrawer()"></div>
+
+  <aside class="cart-drawer" [class.open]="isDrawerOpen$ | async">
+    <div class="drawer-header">
+      <div>
+        <h3>Your Cart ({{ (cartItems$ | async)?.length || 0 }} items)</h3>
+        <p>Review items and totals before checkout</p>
+      </div>
+      <button type="button" (click)="closeDrawer()"><i class="bi bi-x-lg"></i></button>
+    </div>
+    <div class="offer-strip">10% OFF for orders above Rs. 1500</div>
+
+    <div class="drawer-body" *ngIf="cartItems$ | async as items">
+      <ng-container *ngIf="items.length; else emptyCartState">
+        <div class="progress-wrap" *ngIf="summary$ | async as summary">
+          <p>{{ getProgressMessage(summary.subtotal) }}</p>
+          <div class="progress-marks">
+            <span [class.active]="summary.subtotal >= 750">Rs. 750.00</span>
+            <span [class.active]="summary.subtotal >= 1199">Rs. 1,199.00</span>
+            <span [class.active]="summary.subtotal >= 1500">Rs. 1,500.00</span>
+          </div>
+          <div class="progress-line">
+            <span class="progress-fill" [style.width.%]="getProgressPercent(summary.subtotal)"></span>
+          </div>
+        </div>
+
+        <div class="drawer-item" *ngFor="let item of items">
+          <img [src]="getSafeImage(item.image, item.name, 'Cart Drawer')" [alt]="item.name" (error)="onImageError($event, item.name, 'Cart Drawer')" />
+          <div class="details">
+            <strong>{{ item.name }}</strong>
+            <span>Unit Price: Rs. {{ item.price | number:'1.0-0' }}</span>
+            <select>
+              <option>{{ item.selectedWeight }}</option>
+            </select>
+          </div>
+          <div class="qty">
+            <button (click)="updateQuantity(item, -1)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button (click)="updateQuantity(item, 1)">+</button>
+          </div>
+          <button class="remove" (click)="removeItem(item)" aria-label="Remove"><i class="bi bi-trash3"></i></button>
+        </div>
+
+        <div class="coupon-box">
+          <i class="bi bi-tag-fill"></i>
+          <input [(ngModel)]="couponCode" placeholder="Enter coupon code" />
+        </div>
+
+        <button type="button" class="instruction-btn">Add special instructions</button>
+
+        <div class="upsell-wrap">
+          <h4>Cart Upsell</h4>
+          <div class="upsell-list">
+            <article class="upsell-card" *ngFor="let product of upsellProducts | slice:0:4">
+              <img [src]="getSafeImage(product.image, product.name, 'Recommended Product')" [alt]="product.name" (error)="onImageError($event, product.name, 'Recommended Product')" />
+              <div>
+                <p>{{ product.name }}</p>
+                <strong>Rs. {{ product.price | number:'1.0-0' }}</strong>
+                <button type="button" (click)="addToCart(product)">+ Add</button>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="summary sticky" *ngIf="summary$ | async as summary">
+          <div class="line"><span>Items</span><span>{{ summary.itemsCount }}</span></div>
+          <div class="line"><span>Subtotal</span><span>Rs. {{ summary.subtotal | number:'1.0-0' }}</span></div>
+          <div class="line"><span>Shipping</span><span>Rs. {{ summary.shipping | number:'1.0-0' }}</span></div>
+          <div class="line total"><span>Estimated Total</span><span>Rs. {{ summary.total | number:'1.0-0' }}</span></div>
+          <button type="button" class="proceed-btn" (click)="openCheckout()">Proceed to Checkout</button>
+          <p class="sample-note">Free Podi sample for orders above Rs. 750</p>
+        </div>
+      </ng-container>
+
+      <ng-template #emptyCartState>
+        <div class="empty">
+          <p>Your cart is empty.</p>
+          <a routerLink="/products" (click)="closeDrawer()">Continue shopping</a>
+        </div>
+      </ng-template>
+    </div>
+  </aside>
+
+  <app-checkout *ngIf="isCheckoutOpen$ | async"></app-checkout>
+</div>

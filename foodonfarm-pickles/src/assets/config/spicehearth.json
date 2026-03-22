@@ -1,0 +1,400 @@
+{
+  "branding": {
+    "name": "SpiceHearth Pantry",
+    "tagline": "Fiery classics and Kitchen staples from curated home-food brands.",
+    "logoMark": "SH",
+    "logoText": "SpiceHearth",
+    "logoDot": ".pantry",
+    "favicon": "favicon.ico",
+    "pageTitle": "SpiceHearth Pantry",
+    "locationLabel": "Serving premium pantry orders in Hyderabad",
+    "locationAction": "Change area",
+    "searchPlaceholder": "Search pickles, spice powders, pantry packs...",
+    "accountGreeting": "Welcome back",
+    "accountLabel": "SpiceHearth member",
+    "ordersSmall": "Track",
+    "ordersLabel": "Orders & gifting",
+    "footerTagline": "Fiery classics and Kitchen staples with dependable packing and dispatch.",
+    "footerCopyright": "(C) 2026 SpiceHearth Pantry. All rights reserved."
+  },
+  "theme": {
+    "bodyBackground": "radial-gradient(circle at top, #fff1eb 0%, #ffe1d6 42%, #ffd0c2 100%)",
+    "ink": "#351914",
+    "muted": "#6f5a4d",
+    "accent": "#b6482f",
+    "accentStrong": "#b6482f",
+    "neon": "#f6d365",
+    "mint": "#ffe7d5",
+    "cream": "#fffaf4",
+    "panel": "#fffdf9",
+    "border": "color-mix(in srgb, #351914 12%, transparent)",
+    "shadow": "0 18px 40px color-mix(in srgb, #351914 14%, transparent)",
+    "headerGradient": "radial-gradient(circle at top, #fff1eb 0%, #ffe1d6 42%, #ffd0c2 100%)",
+    "headerBorder": "color-mix(in srgb, #351914 10%, transparent)",
+    "darkSurface": "#351914",
+    "darkSurfaceAlt": "#351914",
+    "onDark": "#fff8f0",
+    "onDarkMuted": "#f0dcc8",
+    "focusRing": "color-mix(in srgb, #b6482f 18%, transparent)"
+  },
+  "about": {
+    "eyebrow": "SpiceHearth Pantry",
+    "title": "Fiery classics, Kitchen staples, and pantry staples for modern homes.",
+    "description": "SpiceHearth Pantry curates pickles, spice powders, ready mixes, savories and more through trusted kitchen partners and gift-ready packing.",
+    "primaryCta": "Start shopping",
+    "secondaryCta": "Book a curated order",
+    "highlights": [
+      {
+        "icon": "bi-stars",
+        "title": "Curated batches",
+        "description": "Fiery classics across seasonal and daily staples."
+      },
+      {
+        "icon": "bi-gift",
+        "title": "Gift-ready",
+        "description": "Kitchen staples for families and teams."
+      },
+      {
+        "icon": "bi-box-seam",
+        "title": "Safe packing",
+        "description": "Leak-safe jars, crisp snack packs, and reliable dispatch."
+      }
+    ],
+    "stats": [
+      {
+        "value": "320+",
+        "label": "Products Listed"
+      },
+      {
+        "value": "48 hrs",
+        "label": "Dispatch Promise"
+      },
+      {
+        "value": "4.8",
+        "label": "Average Rating"
+      },
+      {
+        "value": "1M+",
+        "label": "Packs Delivered"
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "Need help?",
+    "title": "Talk to SpiceHearth Pantry about gifting, pantry planning, and bulk orders.",
+    "description": "We help with curated assortments, spice guidance, festival combos, and recurring pantry packs.",
+    "ctaLabel": "Talk to our team",
+    "infoCards": [
+      {
+        "icon": "bi-telephone",
+        "title": "Call",
+        "lines": [
+          "+91 (800) 30110-1010",
+          "WhatsApp: +91 9011001010"
+        ]
+      },
+      {
+        "icon": "bi-envelope",
+        "title": "Email",
+        "lines": [
+          "hello@spicehearth.store",
+          "support@spicehearth.store"
+        ]
+      },
+      {
+        "icon": "bi-geo-alt",
+        "title": "Hub",
+        "lines": [
+          "Jubilee Hills Kitchen Hub",
+          "Hyderabad, India - 500033"
+        ]
+      },
+      {
+        "icon": "bi-clock",
+        "title": "Hours",
+        "lines": [
+          "Mon - Sat: 8:00 AM - 8:00 PM",
+          "Sunday: 9:00 AM - 2:00 PM"
+        ]
+      }
+    ],
+    "formTitle": "Send us a Message",
+    "formNote": "By submitting, you agree to be contacted regarding your inquiry."
+  },
+  "footer": {
+    "shopLinks": [
+      "Pickles",
+      "Spice Powders",
+      "Ready Mixes",
+      "Savories"
+    ],
+    "supportLinks": [
+      "Delivery info",
+      "Bulk orders",
+      "Gifting",
+      "Returns"
+    ],
+    "companyLinks": [
+      "Our story",
+      "Kitchen partners",
+      "Careers",
+      "Journal"
+    ],
+    "socialLinks": [
+      {
+        "icon": "bi-facebook",
+        "label": "Facebook",
+        "href": "#"
+      },
+      {
+        "icon": "bi-instagram",
+        "label": "Instagram",
+        "href": "#"
+      },
+      {
+        "icon": "bi-youtube",
+        "label": "YouTube",
+        "href": "#"
+      },
+      {
+        "icon": "bi-linkedin",
+        "label": "LinkedIn",
+        "href": "#"
+      }
+    ],
+    "contactLines": [
+      "+91 (800) 30110-1010",
+      "hello@spicehearth.store",
+      "Jubilee Hills, Hyderabad"
+    ],
+    "appCtaLabel": "Request catalog"
+  },
+  "hero": {
+    "eyebrow": "SpiceHearth Pantry",
+    "title": "Fiery classics, Kitchen staples, and dependable pantry favorites.",
+    "subtitle": "Shop pickles, spice powders, ready mixes, savories, snacks with clear pricing and reliable 24-48 hour dispatch.",
+    "tags": [
+      "Fiery classics",
+      "Kitchen staples"
+    ],
+    "cardTitle": "Popular pantry picks",
+    "cardItems": [
+      "Pickles bestsellers",
+      "Spice Powders bestsellers",
+      "Ready Mixes bestsellers"
+    ],
+    "deliveryLine": "Dispatch in 24-48 hrs",
+    "detailDeliveryLine": "Dispatch in 24-48 hrs",
+    "relatedTitle": "More to explore"
+  },
+  "searchCategories": [
+    "All",
+    "Pickles",
+    "Spice Powders",
+    "Ready Mixes",
+    "Savories",
+    "Snacks",
+    "Oils & Ghee",
+    "Rice Mixes",
+    "Chutney Powders",
+    "Festival Boxes",
+    "Herbal Blends"
+  ],
+  "navLinks": [
+    "Pickles",
+    "Spice Powders",
+    "Ready Mixes",
+    "Savories",
+    "Snacks",
+    "Oils & Ghee",
+    "Rice Mixes",
+    "About",
+    "Contact"
+  ],
+  "mobileLinks": [
+    "All items",
+    "Pickles",
+    "Spice Powders",
+    "Ready Mixes",
+    "Savories",
+    "Snacks",
+    "Oils & Ghee",
+    "About",
+    "Contact"
+  ],
+  "promoMessages": [
+    "Fiery classics",
+    "Kitchen staples"
+  ],
+  "catalog": {
+    "seedProducts": [
+      {
+        "id": 1,
+        "name": "SpiceHearth Mango Pickle Reserve",
+        "description": "Signature mango pickle from SpiceHearth Pantry.",
+        "price": 250,
+        "originalPrice": 300,
+        "image": "",
+        "category": "Pickles",
+        "inStock": true,
+        "rating": 4.8,
+        "reviews": 1840,
+        "sku": "SH-0001",
+        "specifications": {
+          "Pack": "500 g",
+          "Style": "Signature",
+          "ShelfLife": "6 months",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 2,
+        "name": "FireClay Festival Sweet Box",
+        "description": "Popular sweet assortment curated by SpiceHearth Pantry.",
+        "price": 370,
+        "originalPrice": 440,
+        "image": "",
+        "category": "Spice Powders",
+        "inStock": true,
+        "rating": 4.7,
+        "reviews": 1320,
+        "sku": "SH-0002",
+        "specifications": {
+          "Pack": "300 g",
+          "Finish": "Gift-ready",
+          "ShelfLife": "8 days",
+          "Storage": "Airtight container"
+        }
+      },
+      {
+        "id": 3,
+        "name": "GrandmaPan Pantry Crunch Mix",
+        "description": "Best-selling crunchy snack from SpiceHearth Pantry.",
+        "price": 200,
+        "originalPrice": 230,
+        "image": "",
+        "category": "Snacks",
+        "inStock": true,
+        "rating": 4.5,
+        "reviews": 940,
+        "sku": "SH-0003",
+        "specifications": {
+          "Pack": "200 g",
+          "Texture": "Crunchy",
+          "ShelfLife": "20 days",
+          "Storage": "Cool and dry"
+        }
+      },
+      {
+        "id": 4,
+        "name": "PepperRoot Kitchen Mix",
+        "description": "Ready pantry mix from SpiceHearth Pantry.",
+        "price": 220,
+        "originalPrice": 260,
+        "image": "",
+        "category": "Ready Mixes",
+        "inStock": true,
+        "rating": 4.6,
+        "reviews": 870,
+        "sku": "SH-0004",
+        "specifications": {
+          "Pack": "500 g",
+          "Use": "Quick prep",
+          "ShelfLife": "4 months",
+          "Storage": "Dry place"
+        }
+      }
+    ],
+    "generation": {
+      "minProductCount": 320,
+      "brands": [
+        "SpiceHearth",
+        "FireClay",
+        "GrandmaPan",
+        "PepperRoot",
+        "StoneMilled",
+        "BrassTin"
+      ],
+      "categories": [
+        "Pickles",
+        "Spice Powders",
+        "Ready Mixes",
+        "Savories",
+        "Snacks",
+        "Oils & Ghee",
+        "Rice Mixes",
+        "Chutney Powders",
+        "Festival Boxes",
+        "Herbal Blends"
+      ],
+      "categorySpecifications": {
+        "Pickles": {
+          "Pack": "Standard pack",
+          "Style": "Pickles",
+          "ShelfLife": "4 months",
+          "Storage": "Cool and dry"
+        },
+        "Spice Powders": {
+          "Pack": "Standard pack",
+          "Style": "Spice Powders",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Ready Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Ready Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Savories": {
+          "Pack": "Standard pack",
+          "Style": "Savories",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Snacks": {
+          "Pack": "Standard pack",
+          "Style": "Snacks",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Oils & Ghee": {
+          "Pack": "Standard pack",
+          "Style": "Oils & Ghee",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Rice Mixes": {
+          "Pack": "Standard pack",
+          "Style": "Rice Mixes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Chutney Powders": {
+          "Pack": "Standard pack",
+          "Style": "Chutney Powders",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Festival Boxes": {
+          "Pack": "Gift assortment",
+          "Style": "Festival Boxes",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        },
+        "Herbal Blends": {
+          "Pack": "Standard pack",
+          "Style": "Herbal Blends",
+          "ShelfLife": "4 months",
+          "Storage": "Airtight container"
+        }
+      },
+      "basePriceStart": 110,
+      "priceStep": 32,
+      "priceModulo": 2600,
+      "categoryPriceFactor": 24,
+      "discountEvery": 3,
+      "discountRate": 0.18
+    }
+  }
+}
